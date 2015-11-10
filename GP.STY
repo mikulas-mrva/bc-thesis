@@ -1,0 +1,156 @@
+% GENTZEN PROOFS
+%
+\newdimen\Lgl\newdimen\Mgl\newdimen\Rgl
+\newdimen\lgl\newdimen\mgl\newdimen\rgl
+\newdimen\Ugl\newdimen\Wgl\newdimen\Vgl
+\newbox\xgp
+%
+\newcommand{\GPT}[3]{{\vbox{%
+\hbox{%
+% Calling #1 may set L, M, and R. If not, set manually
+\Mgl=0pt\setbox\xgp\hbox{$#1$}%
+\ifdim\Mgl=0pt\Mgl=\wd\xgp\Lgl=0pt\Rgl=0pt\fi\box\xgp%
+% Save values before calling #2: m:=M, l:=L, r:=R
+\mgl=\Mgl\lgl=\Lgl\rgl=\Rgl%
+% L, M, R treated as above
+\Mgl=0pt\setbox\xgp\hbox{$#2$}%
+\ifdim\Mgl=0pt\Mgl=\wd\xgp\Lgl=0pt\Rgl=0pt\fi\hskip1.5em\box\xgp%
+% W:=m+r+1.5em+L+M
+\global\Wgl=\Mgl\global\advance\Wgl\Lgl%
+\global\advance\Wgl\rgl\global\advance\Wgl\mgl\global\advance\Wgl1.5em%
+% U:=l, V:=R
+\global\Ugl=\lgl\global\Vgl=\Rgl}% Hbox
+\setbox\xgp\hbox{$#3$}\global\Mgl=\wd\xgp%
+% L:=U+(W-M)/2, R:=V+(W-M)/2
+\mgl=\Wgl\advance\mgl-\Mgl\divide\mgl2%
+\global\Lgl=\mgl\global\advance\Lgl\Ugl%
+\global\Rgl=\mgl\global\advance\Rgl\Vgl%
+\vskip-7pt%
+\hbox{\hskip\Ugl\vrule height.4pt depth0pt width\Wgl}%
+\vskip-2.5pt\hbox{\hskip\Lgl\box\xgp}}}}
+%
+\newcommand{\GPS}[2]{{%
+% Since #1 may be \GP?, its expansion may set M, L and R
+\Mgl=0pt\setbox\xgp=\hbox{$#1$}%
+% If not, set M, L and R manually
+\ifdim\Mgl=0pt\Mgl=\wd\xgp\Lgl=0pt\Rgl=0pt\fi%
+% m:=M, M:=new value, W:=max{m,M}
+\mgl=\Mgl\settowidth{\global\Mgl}{$#2$}\Wgl=\mgl\ifdim\Wgl<\Mgl\Wgl=\Mgl\fi%
+% l:=L+(m-M)/2, r:=R+(m-M)/2
+\lgl=\mgl\advance\lgl-\Mgl\divide\lgl2\rgl=\lgl%
+\advance\lgl\Lgl\advance\rgl\Rgl%
+% U:=L, L:=max{l,0}, R:=max{r,0}
+\Ugl=\Lgl\global\Lgl=\lgl\global\Rgl=\rgl%
+\ifdim\Lgl<0pt\global\Lgl=0pt\fi\ifdim\Rgl<0pt\global\Rgl=0pt\fi%
+% U:=max{old L,L}
+\ifdim\Lgl<\Ugl\Ugl=\Lgl\fi%
+\vbox{%
+\hbox{\ifdim\lgl<0pt\hskip-\lgl\fi\box\xgp\ifdim\rgl<0pt\hskip-\rgl\fi}%
+\vskip-7pt%
+\hbox{\hskip\Ugl\vrule height.4pt depth0pt width\Wgl}%
+\vskip-2.5pt%
+\hbox{\hskip\Lgl$#2$}}}}
+%!
+\newcommand{\GPleft}[2]{\mbox{%
+\setbox\xgp=\hbox{$#2$}\global\Mgl=\wd\xgp%
+% l:=31-M/2, r:=29-M/2
+\lgl=-\Mgl\divide\lgl2\rgl=\lgl\advance\lgl31pt\advance\rgl29pt%
+% L:=max{l,0}, R:=max{r,0}
+\global\Lgl=\lgl\ifdim\Lgl<0pt\global\Lgl=0pt\fi%
+\global\Rgl=\rgl\ifdim\Rgl<0pt\global\Rgl=0pt\fi%
+\ifdim\lgl<0pt\hskip-\lgl\fi%
+\begin{picture}(60,38)%
+%\graphpaper(0,0)(60,38)%
+\put(31,-3){\makebox(0,0)[b]{\box\xgp}}%
+\put(15,10){\line(-1,2){14}}%
+\put(45,10){\line(1,4){7}}%
+\put(01,38){\line(1,0){51}}%
+\put(28.25,24){\makebox(0,0){$#1$}}%
+\end{picture}\ifdim\rgl<0pt\hskip-\rgl\fi}}
+%
+\newcommand{\GPright}[2]{\mbox{%
+\setbox\xgp=\hbox{$#2$}\global\Mgl=\wd\xgp%
+% l:=29-M/2, r:=31-M/2
+\lgl=-\Mgl\divide\lgl2\rgl=\lgl\advance\lgl29pt\advance\rgl31pt%
+% L:=max{l,0}, R:=max{r,0}
+\global\Lgl=\lgl\ifdim\Lgl<0pt\global\Lgl=0pt\fi%
+\global\Rgl=\rgl\ifdim\Rgl<0pt\global\Rgl=0pt\fi%
+\ifdim\lgl<0pt\hskip-\lgl\fi%
+\begin{picture}(60,38)%
+%\graphpaper(0,0)(60,38)%
+\put(29,-3){\makebox(0,0)[b]{\box\xgp}}%
+\put(15,10){\line(-1,4){7}}%
+\put(45,10){\line(1,2){14}}%
+\put(08,38){\line(1,0){51}}%
+\put(31.75,24){\makebox(0,0){$#1$}}%
+\end{picture}\ifdim\rgl<0pt\hskip-\rgl\fi}}
+%
+\newcommand{\GPsym}[2]{\mbox{%
+\setbox\xgp=\hbox{$#2$}\global\Mgl=\wd\xgp%
+% l:=30-M/2, r:=30-M/2
+\lgl=-\Mgl\divide\lgl2\rgl=\lgl\advance\lgl30pt\advance\rgl30pt%
+% L:=max{l,0}, R:=max{r,0}
+\global\Lgl=\lgl\ifdim\Lgl<0pt\global\Lgl=0pt\fi%
+\global\Rgl=\rgl\ifdim\Rgl<0pt\global\Rgl=0pt\fi%
+\ifdim\lgl<0pt\hskip-\lgl\fi%
+\begin{picture}(60,38)%
+%\graphpaper(0,0)(60,38)%
+\put(30,-3){\makebox(0,0)[b]{\box\xgp}}%
+\put(15,10){\line(-1,2){14}}%
+\put(45,10){\line(1,2){14}}%
+\put(01,38){\line(1,0){58}}%
+\put(30,24){\makebox(0,0){$#1$}}%
+\end{picture}\ifdim\rgl<0pt\hskip-\rgl\fi}}
+%
+\newcommand{\GPLeft}[2]{\mbox{%
+\setbox\xgp=\hbox{$#2$}\global\Mgl=\wd\xgp%
+% l:=41-M/2, r:=39-M/2
+\lgl=-\Mgl\divide\lgl2\rgl=\lgl\advance\lgl41pt\advance\rgl39pt%
+% L:=max{l,0}, R:=max{r,0}
+\global\Lgl=\lgl\ifdim\Lgl<0pt\global\Lgl=0pt\fi%
+\global\Rgl=\rgl\ifdim\Rgl<0pt\global\Rgl=0pt\fi%
+\ifdim\lgl<0pt\hskip-\lgl\fi%
+\begin{picture}(80,58)%
+%\graphpaper(0,0)(80,58)%
+\put(41,-3){\makebox(0,0)[b]{\box\xgp}}%
+\put(25,10){\line(-1,2){24}}%
+\put(55,10){\line(1,4){12}}%
+\put(01,58){\line(1,0){66}}%
+\put(37,34){\makebox(0,0){$#1$}}%
+\end{picture}\ifdim\rgl<0pt\hskip-\rgl\fi}}
+%
+\newcommand{\GPRight}[2]{\mbox{%
+\setbox\xgp=\hbox{$#2$}\global\Mgl=\wd\xgp%
+% l:=39-M/2, r:=41-M/2
+\lgl=-\Mgl\divide\lgl2\rgl=\lgl\advance\lgl39pt\advance\rgl41pt%
+% L:=max{l,0}, R:=max{r,0}
+\global\Lgl=\lgl\ifdim\Lgl<0pt\global\Lgl=0pt\fi%
+\global\Rgl=\rgl\ifdim\Rgl<0pt\global\Rgl=0pt\fi%
+\ifdim\lgl<0pt\hskip-\lgl\fi%
+\begin{picture}(80,58)%
+%\graphpaper(0,0)(80,58)%
+\put(39,-3){\makebox(0,0)[b]{\box\xgp}}%
+\put(25,10){\line(-1,4){12}}%
+\put(55,10){\line(1,2){24}}%
+\put(13,58){\line(1,0){66}}%
+\put(43,34){\makebox(0,0){$#1$}}%
+\end{picture}\ifdim\rgl<0pt\hskip-\rgl\fi}}
+%
+\newcommand{\GPSym}[2]{\mbox{%
+\setbox\xgp=\hbox{$#2$}\global\Mgl=\wd\xgp%
+% l:=40-M/2, r:=40-M/2
+\lgl=-\Mgl\divide\lgl2\rgl=\lgl\advance\lgl40pt\advance\rgl40pt%
+% L:=max{l,0}, R:=max{r,0}
+\global\Lgl=\lgl\ifdim\Lgl<0pt\global\Lgl=0pt\fi%
+\global\Rgl=\rgl\ifdim\Rgl<0pt\global\Rgl=0pt\fi%
+\ifdim\lgl<0pt\hskip-\lgl\fi%
+\begin{picture}(80,58)%
+%\graphpaper(0,0)(80,58)%
+\put(40,-3){\makebox(0,0)[b]{\box\xgp}}%
+\put(25,10){\line(-1,2){24}}%
+\put(55,10){\line(1,2){24}}%
+\put(01,58){\line(1,0){78}}%
+\put(40,34){\makebox(0,0){$#1$}}%
+\end{picture}\ifdim\rgl<0pt\hskip-\rgl\fi}}
+%
+%
