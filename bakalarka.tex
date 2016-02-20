@@ -173,15 +173,66 @@ Prohlašuj, že jsem bakalářkou práci vypracoval samostatně a~že jsem uvedl
 % taky debilni formulace, ale co uz
 \subsection{Motivation and Origin}
 \begin{displayquote}
-The Universe of sets cannot be uniquely characterized (i. e. distinguished from all its initial elements) by any internal structural property of the membership relation in it, which is expressible in any logic of finite of transfinite type, including infantry logics of any cardinal order.
+The Universe of sets cannot be uniquely characterized (i. e. distinguished from all its initial elements) by any internal structural property of the membership relation in it, which is expressible in any logic of finite of transfinite type, including infinitary logics of any cardinal order.
 \end{displayquote}
 \rightline{{\rm --- Kurt Gödel \cite{GodelWang}}}
 
-To understand why do we talk about reflection in the first place, we shall now ask some rather vague questions that are fundamental to the development of mathemathics and set theory in particular. The notion of infinity is central to this, together with the quest for a formal framework and verifiable truth. Let's be informal for a second and think about infinity, in the old intuitive sense, as a an upper limit of all numbers. For centuries, this was merely a philosophical concept, closely bound to religious or metaphysical thinking. % zdroje
+To understand why do need reflection in the first place, let's think about infinity for a moment. In the intuitive sense, infinity is an upper limit of all numbers. But for centuries, this was merely a philosophical concept, closely bound to religious and metaphysical way of thinking, 
+% aquinas -- summa, question 7
+considered separate from numbers used for calculations or geometry. It was a rather vague concept. 
+% neco o nekonecnech?
+In ancient Greece, Aristotle's response to famous Zeno's paradoxes introduced the distinction between actual and potential infinity.
+% zdroje
+% http://www.iep.utm.edu/infinite/#SH1a
+% (See Aristotle’s Physics, Book III, for his account of infinity.)
+% viz A.W.Moore The Infinite -- je tam nejak reflexe?
+He argued, that potential infinity is (in today's words) well defined, as opposed to actual infinity, which remained a vague incoherent concept. He didn't think it's possible for infinity to inhabit a bounded place in space or time, rejecting Zeno's thought experiments as a whole. 
+% co Archimedes?
+Aristotle's thoughts shaped western thinking partly due to Aquinas, who himself believed actual infinity to be more of a metaphysical concept for describing God than a mathematical property attributed to any other entity. In his Summa Theologica \footnote{Part I, Question 7, Article 3, Reply to Objection 1} he argues:
+\begin{displayquote}
+A geometrician does not need to assume a line actually infinite, but takes some actually finite line, from which he subtracts whatever he finds necessary; which line he calls infinite.
+\end{displayquote} % formalni citace?
 
+Less than hundred years later, Gregory of Rimini wrote
+\begin{displayquote}
+If God can endlessly add a cubic foot to a stone–which He can–then He can create an infinitely big stone. For He need only add one cubic foot at some time, another half an hour later, another a quarter of an hour later than that, and so on ad infinitum. He would then have before Him an infinite stone at the end of the hour.
+\end{displayquote}
+% citace (Moore 2001, 53)  "anti-Aristotelian backlash among the medievals"
+Which is basically a Zeno's Paradox made plausible with God being the actor. In contrast to Aquinas' position, Gregory of Rimini theoretically constructs an object with actual infinite magnitude that is essentially different from God.
+\medskip
 % byl prvni cantor? jak presne to definoval Leibniz a Newton?
-In the 17th century, european mathematicians started to use infinity in their work. It was used by Euler to obtain infinite products. Leibniz used it to lay foundations of what would later become modern calculus. What is most relevant to our topic is work done by Cantor. He used infinity as if was just another type of mathematical object, which effectively made it one. %zdroj, kde to udelal?
-In his work, he defined transfinite numbers to extend existing number % existovala fakt? kdo to udelal? asi peano
+Even later, in the 17th century, pushing the property of infinitness from the Creator to his creation, Nature, Leibniz wrote to Foucher in 1962:
+% citace? zdroj: http://www.humanities.mcmaster.ca/~rarthur/papers/LeibCant.pdf
+\begin{displayquote}
+I am so in favor of the actual infinite that instead of admitting that Nature abhors
+it, as is commonly said, I hold that Nature makes frequent use of it everywhere,
+in order to show more effectively the perfections of its Author. Thus I believe that
+there is no part of matter which is not, I do not say divisible, but actually divided;
+and consequently the least particle ought to be considered as a world full of an
+infinity of different creatures.
+\end{displayquote}
+But even though he used potential infinity in what would become foundations of modern Calculus and argued for actual infinity in Nature, Leibniz refused the existence of an infinite, thinking that Galileo's Paradoxon\footnote{zneni galileova paradoxu} is in fact a contradiction. The so called Galileo's Paradoxon is an observation Galileo Galilei made in his final book "Discourses and Mathematical Demonstrations Relating to Two New Sciences".
+He states that if all numbers are either squares and non–squares, there seem to be less squares than there is all numbers. On the other hand, every number can be squared and every square has it's square root. Therefore, there seem to be as many squares as there are all numbers. Galileo concludes, that the idea of comparing sizes makes sense only in the finite realm.
+\begin{displayquote}
+Salviati: So far as I see we can only infer that the totality of all numbers is infinite, that the number of squares is infinite, and that the number of their roots is infinite; neither is the number of squares less than the totality of all the numbers, nor the latter greater than the former; and finally the attributes "equal," "greater," and "less," are not applicable to infinite, but only to finite, quantities. When therefore Simplicio introduces several lines of different lengths and asks me how it is possible that the longer ones do not contain more points than the shorter, I answer him that one line does not contain more or less or just as many points as another, but that each line contains an infinite number.
+\end{displayquote}
+%citace?  Galilei, Galileo (1954) [1638]. Dialogues concerning two new sciences. Transl. Crew and de Salvio. New York: Dover. pp. 31–33.
+% btw: http://www.humanities.mcmaster.ca/~rarthur/papers/Lairam.pdf  Leibniz’s Actual Infinite in Relation to his Analysis of Matter
+Leibniz insists in part being smaller than the whole saying
+\begin{displayquote}
+Among numbers there are infinite roots, infinite squares, infinite cubes. Moreover, there are
+as many roots as numbers. And there are as many squares as roots. Therefore there are as
+many squares as numbers, that is to say, there are as many square numbers as there are
+numbers in the universe. Which is impossible. Hence it follows either that in the infinite the
+whole is not greater than the part, which is the opinion of Galileo and Gregory of St.
+Vincent, and which I cannot accept; or that infinity itself is nothing, i.e. that it is not one and
+not a whole. % (LoC 9) je co?
+\end{displayquote}
+% viz G.W. Leibniz, Interrelations between Mathematics and Philosophy
+% nejakej Hegel--strucne?
+% Cantor
+
+In his work, he defined transfinite numbers to extend existing natural number % existovala fakt? kdo to udelal? asi peano
 structure so it contains more objects that behave like natural numbers and are based on an object (rather a meta-object) that doesn't explicitly exist in the structure, but is closely related to it. This is the first instance of reflection. 
 This paper will focus on taking this principle a step further, extending Cantor's (or Zermelo–Fraenkel's, to be more precise) universe so it includes objects so big, they could be considered the universe itself, in a certain sense. % dost vagni?
 
