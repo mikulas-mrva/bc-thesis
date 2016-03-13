@@ -155,7 +155,7 @@ Prohlašuj, že jsem bakalářkou práci vypracoval samostatně a~že jsem uvedl
 \bigskip
 \renewcommand{\abstractname}{Abstract}
 \begin{abstract}
-\noindent Resumé práce v~anglickém jazyce.
+\noindent Resumé práce v~anglickém jazyce. % todo
 \end{abstract}
 \clearpage
 
@@ -169,7 +169,7 @@ Prohlašuj, že jsem bakalářkou práci vypracoval samostatně a~že jsem uvedl
 
 \section{Introduction}\label{sec:vr}
 
-%Reflection principle is kind of a theorem scheme stating the following:
+%Reflection principle is a kind of a theorem scheme stating the following:
 % taky debilni formulace, ale co uz
 \subsection{Motivation and Origin}
 \begin{displayquote}
@@ -270,7 +270,7 @@ Interested reader should note that this is a theorem scheme rather than a single
 %Reflection is, among others, a tool for constructing models of finitely axiomatizable theories within stronger frameworks of proving impossibility thereof. ?!
 \medskip
 
-\subsection{A few historical remarks on reflection}\label{sec:History}
+\subsection{A few historical remarks on reflection}\label{sec:History}  % mozna reflection itself?
 % co motivace? (jako treba ze kdyz existuje inaccessible cardinal tak je ZFC relativne konzistentni, protoze $V_\kappa$ je jeji model)
 % viz kanamori
 % jak to bylo s tim Godelem?
@@ -299,8 +299,47 @@ Reflection made it's first in set-theoretical appearance in G{\"o}del's proof of
 \newpage
 \section{Levy's Reflection}\label{sec:fixed}
 
-%\subsection{In {\sf ZF}}\label{sec:ZF} % bude jeste nekde jinde?
-% neni pak lepsi subsection stronger versions?
+\subsection{Levy's Axiom Schemata of Strong Infinity}\label{sec:Levy1960}
+This section will try to present Levy's proof of a general reflection principle being equivalent to Replacement and Infinity under ZF minus Replacement and Infinity.
+We will first introduce a few axioms and definitions that were a bit different in Levy's paper, but are equivalent to today's terms. We will write them in contemporary notation, our aim is the result, not history of set theory notation.
+% term je asi debilni slovo?
+% druhoradova axiomatizace 
+
+\begin{definition}{The Axiom of Subsets}\label{def:subsets_axiom}
+$\forall x \exists y \forall z (z \in y \iff (z \in x ))$
+\end{definition}
+
+
+\begin{definition}{Standard Complete Model of \sf{S}($Scm^S$)}\label{def:scm_a}
+???
+\end{definition}
+
+\begin{definition}{ $Rel(u, \varphi)$ }\label{def:rel}
+???
+\end{definition}
+
+\begin{definition}{\sf{S}}\label{def:set_theory_s}
+ZF minus Replacement Scheme minus Axiom of Infinity
+\end{definition}
+
+\begin{definition}{$N_0$}
+\begin{equation}
+\exists u (Scm^{\sf{S}} \& x_1, \ldots , x_n \in u \then \varphi \iff Rel(u, \varphi))
+\end{equation}
+where $\varphi$ is a formula which does not contain free variables except $x_1, \ldots , x_n$.
+\end{definition}
+
+\begin{theorem}
+In \sf{S} the axiom schema of replacement in conjuction with the axiom of infiniy is equivalent to the schema $N_0$.
+\end{theorem}
+
+\begin{proof}  % sezen toho montagua!!!  Journal of symbolic logic, 1961
+
+\end{proof}
+
+% --------------------------------------------------------------------------------
+
+\subsection{Contemporary restatement} % todo asi prepsat lip?
 
 As we have mentioned above, Levy has proved that the following is equivalent to Replacement ({\sf R}) and Infinity ({\sf I}) axioms (under {\sf ZF} minus R and I), which we shall prove later. \cite{Levy60a}
 
@@ -472,7 +511,7 @@ Then $\langle$
 
 \subsection{Mahlo cardinals}
 % reflektuji nedosazitelnost
-\begin{definition}{weakly Mahlo Cardinals}\label{def:weakly_mahlo}
+\begin{definition}{Weakly Mahlo Cardinals}\label{def:weakly_mahlo}
 $\kappa$ is \emph{weakly Mahlo} $\iff$ it is a limit ordinal and the set of all regular ordinals less then $\kappa$ is stationary in $\kappa$
 \end{definition}
 

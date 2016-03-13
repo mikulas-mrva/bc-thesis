@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.12.2)  20 FEB 2016 12:58
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.12.2)  7 MAR 2016 23:56
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -292,7 +292,7 @@ LaTeX Warning: Citation `GodelWang' on page 4 undefined on input line 178.
 (/usr/local/texlive/2015/texmf-dist/tex/latex/ucs/data/uni-32.def
 File: uni-32.def 2013/05/13 UCS: Unicode data U+2000..U+20FF
 )
-Overfull \hbox (3.88898pt too wide) in paragraph at lines 196--197
+Overfull \hbox (3.88898pt too wide) in paragraph at lines 198--199
 []\OT1/cmr/m/n/12 If God can end-lessly add a cu-bic foot to a stone{which He c
 an{then
  []
@@ -301,69 +301,69 @@ an{then
 
 ] [5] [6]
 
-LaTeX Warning: Citation `JechBook' on page 7 undefined on input line 262.
+LaTeX Warning: Citation `JechBook' on page 7 undefined on input line 264.
 
 [7]
 
-LaTeX Warning: Citation `Levy60a' on page 8 undefined on input line 303.
+LaTeX Warning: Citation `Levy60a' on page 8 undefined on input line 344.
 
 
-LaTeX Warning: Citation `JechBook' on page 8 undefined on input line 321.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 359--364
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 359--364
-
- []
+LaTeX Warning: Citation `JechBook' on page 8 undefined on input line 362.
 
 [8]
-Underfull \hbox (badness 10000) in paragraph at lines 366--376
+Underfull \hbox (badness 10000) in paragraph at lines 400--405
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 378--385
+Underfull \hbox (badness 10000) in paragraph at lines 400--405
 
  []
 
-[9] [10]
-Overfull \hbox (3.52345pt too wide) in paragraph at lines 429--431
+
+Underfull \hbox (badness 10000) in paragraph at lines 407--417
+
+ []
+
+[9]
+Underfull \hbox (badness 10000) in paragraph at lines 419--426
+
+ []
+
+[10]
+Overfull \hbox (3.52345pt too wide) in paragraph at lines 470--472
 []\OT1/cmr/m/it/12 (inaccessibility)[] $\OML/cmm/m/it/12 ^^T$ \OT1/cmr/m/it/12 
 is \OT1/cmr/m/n/12 in-ac-ces-si-ble $\OMS/cmsy/m/n/12 $$ \OT1/cmr/m/it/12 it is
  \OT1/cmr/m/n/12 reg-u-lar \OT1/cmr/m/it/12 and \OT1/cmr/m/n/12 strongly
  []
 
 
-LaTeX Warning: Citation `KanamoriBook' on page 11 undefined on input line 443.
+LaTeX Warning: Citation `KanamoriBook' on page 11 undefined on input line 484.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 442--465
+Underfull \hbox (badness 10000) in paragraph at lines 483--506
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 442--465
+Underfull \hbox (badness 10000) in paragraph at lines 483--506
 
  []
 
 [11] [12] [13]
-Underfull \hbox (badness 10000) in paragraph at lines 542--545
+Underfull \hbox (badness 10000) in paragraph at lines 583--586
 
  []
 
 
-Overfull \hbox (144.7233pt too wide) detected at line 590
+Overfull \hbox (144.7233pt too wide) detected at line 631
 []\OML/cmm/m/it/12 '[]\OMS/cmsy/m/n/12 8\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 (\OML
 /cmm/m/it/12 x \OMS/cmsy/m/n/12 2 \OML/cmm/m/it/12 A \OMS/cmsy/m/n/12 $ \OML/cm
 m/m/it/12 '\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 ))
  []
 
 [14] [15] [16]
-Overfull \hbox (88.55293pt too wide) detected at line 675
+Overfull \hbox (88.55293pt too wide) detected at line 716
 \OML/cmm/m/it/12 Def\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 X\OT1/cmr/m/n/12 ) := \OM
 S/cmsy/m/n/12 ff[] 2 \OML/cmm/m/it/12 X \OMS/cmsy/m/n/12 ^ h\OML/cmm/m/it/12 X;
  \OMS/cmsy/m/n/12 2i j[]\OT1/cmr/m/n/12 = \OML/cmm/m/it/12 '\OT1/cmr/m/n/12 (\O
@@ -378,11 +378,11 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 5045 strings out of 493089
- 63391 string characters out of 6134842
- 135383 words of memory out of 5000000
- 8467 multiletter control sequences out of 15000+600000
- 15360 words of font info for 60 fonts, out of 8000000 for 9000
+ 5055 strings out of 493089
+ 63525 string characters out of 6134842
+ 135434 words of memory out of 5000000
+ 8476 multiletter control sequences out of 15000+600000
+ 16565 words of font info for 64 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  35i,13n,43p,815b,591s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
@@ -409,7 +409,7 @@ f-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2015/texmf
 -dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2015/t
 exmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/20
 15/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb>
-Output written on bakalarka.pdf (18 pages, 307423 bytes).
+Output written on bakalarka.pdf (18 pages, 313856 bytes).
 PDF statistics:
  159 PDF objects out of 1000 (max. 8388607)
  113 compressed objects within 2 object streams
