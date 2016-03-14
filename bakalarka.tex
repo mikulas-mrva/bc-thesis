@@ -246,9 +246,9 @@ If we try to express the universe as a set $\{x  |  x = x\}$, a paradox appears,
 %wtf
 If there is an object containing all sets, it must not be a set itself. The notion of class seems inevitable. Either directly the ways for example the Bernays–Gödel set theory, we will also discuss later in this paper, does in, or on a meta–level like the Zermelo–Fraenkel set theory, that doesn't refer to them in the axioms but often works with the notion of a universal class.
 duet
-Another obstacle of constructing a set of all sets comes from Georg Cantor, who proved that the set of all subsets of a set (let A be the set and \power(A) its powerset) is strictly larger that A. That would turn every aspiration to finally establish an universal set into a contradictory infinite regression.\footnote{An intuitive analogy of this \emph{reductio ad infinitum} is the status of $\omega$, which was originally thought to be an ureachble absolute, only to become starting point of Cantor's hierarchy of sets growing beyond all boundaries around the end of the $19^{th}$ century}. We will use $V$ for the class of all sets. %Riemann!
+Another obstacle of constructing a set of all sets comes from Georg Cantor, who proved that the set of all subsets of a set (let A be the set and \power(A) its powerset) is strictly larger that A. That would turn every aspiration to finally establish an universal set into a contradictory infinite regression.\footnote{An intuitive analogy of this \emph{reductio ad infinitum} is the status of $\omega$, which was originally thought to be an unreachble absolute, only to become starting point of Cantor's hierarchy of sets growing beyond all boundaries around the end of the $19^{th}$ century}. We will use $V$ for the class of all sets. %Riemann!
 \newpage
-From previous thoughts we can easily argue, that it is impossible to construct a property that holds for $V$ and no set and is neither paradoxical like $\{x  |  x = x\}$ nor trivial. Previous observation can be transposed to a rather naive formulation of th reflection principle:
+From previous thoughts we can easily argue, that it is impossible to construct a property that holds for $V$ and no set and is neither paradoxical like $\{x  |  x = x\}$ nor trivial. Previous observation can be transposed to a rather naive formulation of the reflection principle:
 
 
 \medskip
@@ -324,24 +324,59 @@ ZF minus Replacement Scheme minus Axiom of Infinity
 
 \begin{definition}{$N_0$}
 \begin{equation}
-\exists u (Scm^{\sf{S}} \& x_1, \ldots , x_n \in u \then \varphi \iff Rel(u, \varphi))
+\exists u (Scm^{\sf{S}}(u) \& x_1, \ldots , x_n \in u \then \varphi \iff Rel(u, \varphi))
 \end{equation}
 where $\varphi$ is a formula which does not contain free variables except $x_1, \ldots , x_n$.
 \end{definition}
 
+observation: $Scm^{y\sf{S}}(u) = In(\kappa) \iff \exists \kappa (V_\kappa = u)$
+
 \begin{theorem}
-In \sf{S} the axiom schema of replacement in conjuction with the axiom of infiniy is equivalent to the schema $N_0$.
+In $\sf{S}$, the schema $N_0$ implies the Axiom of Infinity.
 \end{theorem}
 
-\begin{proof}  % sezen toho montagua!!!  Journal of symbolic logic, 1961
+\begin{proof}
+This is pretty straightforward since we already have $In(\kappa)$, which is itself an inductive set. % fle podle ktere vybereme omegu z  In(\alpha)?
+% dk? sporem?
+% existuje x \in \kapa pro ktere neplati x \subset \kappa, takze \kappa neni limitni nebo tak neco?
+\end{proof}
 
+
+\begin{theorem}
+In $\sf{S}$, the schema $N_0$ implies Replacement schema.
+\end{theorem}
+
+\begin{proof}
+Let $\varphi(v, w)$ be a formula wth no free variables except $v, w, x_1, \ldots, x_n$ where $n$ is any natural number.
+Let $\chi$ be an instance of replacement schema for this $\varphi$:
+\begin{equation}
+\chi = \forall r, s, t(\varphi(r, s) \& \varphi(r, t) \then s = t) \then \exists y \forall w (w \in y \iff \exists v (v \in x \& \varphi(v, w)))
+\end{equation}
+\medskip
+We can deduce the following from $N_0$: 
+\bce[(i)]
+\item $x_1, \ldots, x_n, v, w \in u \then (\varphi \iff Rel(u, \varphi) $
+\item $x_1, \ldots, x_n, v \in u \then (\exists w \varphi \iff Rel(u, \exists w \varphi))$
+\item $x_1, \ldots, x_n, x \in u \then (\chi \iff Rel(u, \chi)$
+\item $\forall x_1, \ldots, x_n \forall x (\chi \iff Rel(u, \forall x_1, \ldots, x_n \forall x \chi))$
+\ece
+
+Note that (i), (ii), (iii) are obtained from instances of $N_0$ for $\varphi$, $\exists w \varphi$ and $\chi$ respectively.  % asi ne teda, spis je to postup dukazu, neco jako plan. % spis ne
+From relativization we also know that $Rel(u, \exists w \varphi)$ is equivalent to $\exists w (w \in u \& Rel(u, \varphi))$.
+Therefore (ii) is equivalent to $x_1, \ldots, x_n, v \in u \then (\exists w (w \in u \& Rel(u, \varphi))$. 
+
+If $\varphi$ is a function ($ \forall r, s, t(\varphi(r, s) \& \varphi(r, t) \then r=t $), then for every $x \in u$, which is also $x \subset u$ by $Scm^{\sf{S}}(u)$,
+it maps elements of $x$ onto $u$. From the axiom scheme of comprehension\footnote{axiom of subsets in Levy's version}, we can find a set of all images of elements of $x$. Let's call it $y$.
+That gives us $x_1, \ldots, x_n, x \in u \then \chi$. By (iii) we get $x_1, \ldots, x_n, x \in u \then Rel(u, \chi)$, closure of this formula is $Rel(u, \forall x_1, \ldots, x_n \forall x \chi)$, 
+which together with (iv) yields $\forall x_1, \ldots, x_n \forall x \chi$. By the means of specification we end up with $\chi$, which is all we need for now. 
+% btw co je x? nemela by tam tam byt nejaka volna promenna?
 \end{proof}
 
 % --------------------------------------------------------------------------------
 
 \subsection{Contemporary restatement} % todo asi prepsat lip?
 
-As we have mentioned above, Levy has proved that the following is equivalent to Replacement ({\sf R}) and Infinity ({\sf I}) axioms (under {\sf ZF} minus R and I), which we shall prove later. \cite{Levy60a}
+% As we have mentioned above, Levy has proved that the following is equivalent to Replacement ({\sf R}) and Infinity ({\sf I}) axioms (under {\sf ZF} minus R and I), which we shall prove later. \cite{Levy60a}
 
 \medskip
 
@@ -440,7 +475,7 @@ This is the easy part since Infinity says that \emph{there is an infinite set} a
 \medskip
 
 (Refl) $\then$ (Replacement)
-
+% todo asi odkaz na levyho?
 
 \end{proof}
 

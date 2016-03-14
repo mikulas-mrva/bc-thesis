@@ -3,15 +3,15 @@
 \contentsline {subsection}{\numberline {1.2}A few historical remarks on reflection}{7}
 \contentsline {section}{\numberline {2}Levy's Reflection}{8}
 \contentsline {subsection}{\numberline {2.1}Levy's Axiom Schemata of Strong Infinity}{8}
-\contentsline {subsection}{\numberline {2.2}Contemporary restatement}{8}
-\contentsline {section}{\numberline {3}Large Cardinals}{11}
-\contentsline {subsection}{\numberline {3.1}Preliminaries}{11}
-\contentsline {subsection}{\numberline {3.2}Inaccelssibility}{11}
-\contentsline {subsection}{\numberline {3.3}Mahlo cardinals}{12}
-\contentsline {subsection}{\numberline {3.4}Weakly Compact Cardinals}{12}
-\contentsline {subsection}{\numberline {3.5}Indescribable Cardinals}{13}
-\contentsline {subsection}{\numberline {3.6}Measurable Cardinals}{13}
-\contentsline {subsection}{\numberline {3.7}Supercompact cardinals}{13}
-\contentsline {subsection}{\numberline {3.8}Bernays\IeC {\textendash }G{\"o}del Set Theory}{14}
-\contentsline {subsection}{\numberline {3.9}Morse\IeC {\textendash }Kelley Set Theory}{16}
-\contentsline {subsection}{\numberline {3.10}Reflection and the constructible universe}{17}
+\contentsline {subsection}{\numberline {2.2}Contemporary restatement}{9}
+\contentsline {section}{\numberline {3}Large Cardinals}{12}
+\contentsline {subsection}{\numberline {3.1}Preliminaries}{12}
+\contentsline {subsection}{\numberline {3.2}Inaccelssibility}{12}
+\contentsline {subsection}{\numberline {3.3}Mahlo cardinals}{13}
+\contentsline {subsection}{\numberline {3.4}Weakly Compact Cardinals}{13}
+\contentsline {subsection}{\numberline {3.5}Indescribable Cardinals}{14}
+\contentsline {subsection}{\numberline {3.6}Measurable Cardinals}{14}
+\contentsline {subsection}{\numberline {3.7}Supercompact cardinals}{14}
+\contentsline {subsection}{\numberline {3.8}Bernays\IeC {\textendash }G{\"o}del Set Theory}{15}
+\contentsline {subsection}{\numberline {3.9}Morse\IeC {\textendash }Kelley Set Theory}{17}
+\contentsline {subsection}{\numberline {3.10}Reflection and the constructible universe}{18}

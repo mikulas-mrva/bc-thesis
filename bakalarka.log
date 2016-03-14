@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.12.2)  7 MAR 2016 23:56
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.12.2)  14 MAR 2016 01:34
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -264,22 +264,7 @@ File: uni-1.def 2013/05/13 UCS: Unicode data U+0100..U+01FF
 {/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [1] [2
 
 ]
-(./bakalarka.toc
-LaTeX Font Info:    Try loading font information for U+rsfs on input line 2.
-
-(/usr/local/texlive/2015/texmf-dist/tex/latex/jknapltx/ursfs.fd
-File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
-)
-LaTeX Font Info:    Try loading font information for U+msa on input line 2.
-
-(/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Try loading font information for U+msb on input line 2.
-
-(/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-))
+(./bakalarka.toc)
 \tf@toc=\write3
 \openout3 = `bakalarka.toc'.
 
@@ -289,6 +274,20 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 LaTeX Warning: Citation `GodelWang' on page 4 undefined on input line 178.
 
+LaTeX Font Info:    Try loading font information for U+rsfs on input line 191.
+(/usr/local/texlive/2015/texmf-dist/tex/latex/jknapltx/ursfs.fd
+File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
+)
+LaTeX Font Info:    Try loading font information for U+msa on input line 191.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 191.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
 (/usr/local/texlive/2015/texmf-dist/tex/latex/ucs/data/uni-32.def
 File: uni-32.def 2013/05/13 UCS: Unicode data U+2000..U+20FF
 )
@@ -303,67 +302,77 @@ an{then
 
 LaTeX Warning: Citation `JechBook' on page 7 undefined on input line 264.
 
-[7]
+[7] [8]
 
-LaTeX Warning: Citation `Levy60a' on page 8 undefined on input line 344.
-
-
-LaTeX Warning: Citation `JechBook' on page 8 undefined on input line 362.
-
-[8]
-Underfull \hbox (badness 10000) in paragraph at lines 400--405
-
- []
+LaTeX Warning: Citation `JechBook' on page 9 undefined on input line 397.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 400--405
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 407--417
-
- []
+LaTeX Warning: Reference `equation_refl_lemma' on page 9 undefined on input lin
+e 404.
 
 [9]
-Underfull \hbox (badness 10000) in paragraph at lines 419--426
+Underfull \hbox (badness 10000) in paragraph at lines 435--440
 
  []
 
-[10]
-Overfull \hbox (3.52345pt too wide) in paragraph at lines 470--472
+
+Underfull \hbox (badness 10000) in paragraph at lines 435--440
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 442--452
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 454--461
+
+ []
+
+[10] [11]
+Overfull \hbox (3.52345pt too wide) in paragraph at lines 505--507
 []\OT1/cmr/m/it/12 (inaccessibility)[] $\OML/cmm/m/it/12 ^^T$ \OT1/cmr/m/it/12 
 is \OT1/cmr/m/n/12 in-ac-ces-si-ble $\OMS/cmsy/m/n/12 $$ \OT1/cmr/m/it/12 it is
  \OT1/cmr/m/n/12 reg-u-lar \OT1/cmr/m/it/12 and \OT1/cmr/m/n/12 strongly
  []
 
 
-LaTeX Warning: Citation `KanamoriBook' on page 11 undefined on input line 484.
+LaTeX Warning: Citation `KanamoriBook' on page 12 undefined on input line 519.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 483--506
+LaTeX Warning: Reference `def:reflection_2' on page 12 undefined on input line 
+532.
 
- []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 483--506
-
- []
-
-[11] [12] [13]
-Underfull \hbox (badness 10000) in paragraph at lines 583--586
+Underfull \hbox (badness 10000) in paragraph at lines 518--541
 
  []
 
 
-Overfull \hbox (144.7233pt too wide) detected at line 631
+Underfull \hbox (badness 10000) in paragraph at lines 518--541
+
+ []
+
+[12]
+
+LaTeX Warning: Reference `th:refl_inaccessible' on page 13 undefined on input l
+ine 569.
+
+[13] [14]
+Underfull \hbox (badness 10000) in paragraph at lines 618--621
+
+ []
+
+
+Overfull \hbox (144.7233pt too wide) detected at line 666
 []\OML/cmm/m/it/12 '[]\OMS/cmsy/m/n/12 8\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 (\OML
 /cmm/m/it/12 x \OMS/cmsy/m/n/12 2 \OML/cmm/m/it/12 A \OMS/cmsy/m/n/12 $ \OML/cm
 m/m/it/12 '\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 ))
  []
 
-[14] [15] [16]
-Overfull \hbox (88.55293pt too wide) detected at line 716
+[15] [16] [17]
+Overfull \hbox (88.55293pt too wide) detected at line 751
 \OML/cmm/m/it/12 Def\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 X\OT1/cmr/m/n/12 ) := \OM
 S/cmsy/m/n/12 ff[] 2 \OML/cmm/m/it/12 X \OMS/cmsy/m/n/12 ^ h\OML/cmm/m/it/12 X;
  \OMS/cmsy/m/n/12 2i j[]\OT1/cmr/m/n/12 = \OML/cmm/m/it/12 '\OT1/cmr/m/n/12 (\O
@@ -372,15 +381,18 @@ ML/cmm/m/it/12 y; z[]; [] ; z[]\OT1/cmr/m/n/12 )\OMS/cmsy/m/n/12 gj[]\OML/cmm/m
 
  []
 
-[17] (./bakalarka.bbl) (./bakalarka.aux)
+[18] (./bakalarka.bbl) [19] (./bakalarka.aux)
 
 LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  ) 
 Here is how much of TeX's memory you used:
  5055 strings out of 493089
  63525 string characters out of 6134842
- 135434 words of memory out of 5000000
+ 135190 words of memory out of 5000000
  8476 multiletter control sequences out of 15000+600000
  16565 words of font info for 64 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -409,10 +421,10 @@ f-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2015/texmf
 -dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2015/t
 exmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/20
 15/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb>
-Output written on bakalarka.pdf (18 pages, 313856 bytes).
+Output written on bakalarka.pdf (20 pages, 315268 bytes).
 PDF statistics:
- 159 PDF objects out of 1000 (max. 8388607)
- 113 compressed objects within 2 object streams
+ 166 PDF objects out of 1000 (max. 8388607)
+ 118 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
