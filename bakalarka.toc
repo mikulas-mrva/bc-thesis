@@ -1,8 +1,8 @@
 \contentsline {section}{\numberline {1}Introduction}{4}
 \contentsline {subsection}{\numberline {1.1}Motivation and Origin}{4}
 \contentsline {subsection}{\numberline {1.2}A few historical remarks on reflection}{7}
-\contentsline {section}{\numberline {2}Levy's Reflection}{8}
-\contentsline {subsection}{\numberline {2.1}Levy's Axiom Schemata of Strong Infinity}{8}
+\contentsline {section}{\numberline {2}Levy's Original Proof}{8}
+\contentsline {subsection}{\numberline {2.1}Introduction}{8}
 \contentsline {subsection}{\numberline {2.2}Contemporary restatement}{9}
 \contentsline {section}{\numberline {3}Large Cardinals}{12}
 \contentsline {subsection}{\numberline {3.1}Preliminaries}{12}

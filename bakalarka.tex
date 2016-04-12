@@ -155,7 +155,7 @@ Prohlašuj, že jsem bakalářkou práci vypracoval samostatně a~že jsem uvedl
 \bigskip
 \renewcommand{\abstractname}{Abstract}
 \begin{abstract}
-\noindent Resumé práce v~anglickém jazyce. % todo
+\noindent TODO Resumé práce v~anglickém jazyce. % todo
 \end{abstract}
 \clearpage
 
@@ -229,8 +229,8 @@ Vincent, and which I cannot accept; or that infinity itself is nothing, i.e. tha
 not a whole. % (LoC 9) je co?
 \end{displayquote}
 % viz G.W. Leibniz, Interrelations between Mathematics and Philosophy
-% nejakej Hegel--strucne?
-% Cantor
+TODO  nejakej Hegel--strucne?
+TODO Cantor
 
 In his work, he defined transfinite numbers to extend existing natural number % existovala fakt? kdo to udelal? asi peano
 structure so it contains more objects that behave like natural numbers and are based on an object (rather a meta-object) that doesn't explicitly exist in the structure, but is closely related to it. This is the first instance of reflection. 
@@ -297,29 +297,17 @@ Reflection made it's first in set-theoretical appearance in G{\"o}del's proof of
 %\medskip
 
 \newpage
-\section{Levy's Reflection}\label{sec:fixed}
+\section{Levy's Original Proof}\label{sec:fixed}
 
-\subsection{Levy's Axiom Schemata of Strong Infinity}\label{sec:Levy1960}
+\subsection{Introduction}\label{sec:Levy1960}
 This section will try to present Levy's proof of a general reflection principle being equivalent to Replacement and Infinity under ZF minus Replacement and Infinity.
-We will first introduce a few axioms and definitions that were a bit different in Levy's paper\cite{Levy60a}, but are equivalent to today's terms. We will write them in contemporary notation, our aim is the result, not history of set theory notation.
-% term je asi debilni slovo?
-% druhoradova axiomatizace 
+We will first introduce a few axioms and definitions that were a different in Levy's paper\cite{Levy60a}, but are equivalent to today's terms. We will write them in contemporary notation, our aim is the result, not history of set theory notation. 
 
-\begin{definition}{The Axiom of Subsets}\label{def:subsets_axiom}
-\begin{equation}
-\forall x \exists y \forall z (z \in y \iff (z \in x ))
-\end{equation}
-\end{definition}
+Please note that Levy's paper was written in a period when Set theory was oriented towards semantics, which means that everything was done in a model. All proofs were done on a model that was $V_\alpha$ (notated as $R(\alpha)$ at the time) for some cardinal $\alpha$, which means that $\alpha$ is a inaccessible cadinal. Please bear in mind that this is vastly different from saying that there is an inaccessible $\alpha$ inside the model. This $V_\alpha$ is also referred to as $Scm^Q(u)$, which means that u ($u=V_\alpha$ in our case) is a standard complete model of an undisclosed axiomatic set theory $Q$ formulated in the "non-simple applied first order functional calculus", which is second-order theory is today's terminology, we are allowed to quantify over functions and thus get rid of axiom schemes. (Note that Levy always speaks of "the axiom of replacement"). Besides placeholder set theory $Q$ and $ZF$, which the reader should be familiar with, theories $Z$, $S$, and $SF$ are used in the text. $Z$ is ZF minus replacement, $S$ is $ZF$ minus replacement and infinity, and finally $SF$ is $ZF$ minus infinity. "The axiom of subsets" is an older name for the axiom scheme of specification (and it's not a scheme since we are now working in second order logic). 
 
-\begin{definition}{Standard Complete Model of \sf{S}($Scm^S$)}\label{def:scm_a}
-\begin{equation}
-Scm^{Q}(V_\alpha) \iff In^{Q}(\alpha)
-\end{equation}
-\end{definition}
+Also note that universal quantifier does not appear, $\forall x \varphi (x)$ would be written as $(x) \varphi (x)$, the symbol for negation is "$\sim$".
 
-\begin{definition}{\sf{S}}\label{def:set_theory_s}
-S is a set theory obtained from ZF by leaving out the Replacement Scheme and the Axiom of Infinity.
-\end{definition}
+
 
 \begin{definition}{$N_0$}
 \begin{equation}
