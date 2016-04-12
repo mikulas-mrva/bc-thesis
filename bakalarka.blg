@@ -3,46 +3,44 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: bakalarka.aux
 The style file: plain.bst
 Database file #1: bc_biblio.bib
-Warning--empty journal in Levy60a
 You've used 4 entries,
             2118 wiz_defined-function locations,
-            524 strings with 4563 characters,
-and the built_in function-call counts, 910 in all, are:
-= -- 88
+            526 strings with 4595 characters,
+and the built_in function-call counts, 915 in all, are:
+= -- 90
 > -- 28
 < -- 0
 + -- 13
 - -- 8
-* -- 40
-:= -- 169
+* -- 41
+:= -- 171
 add.period$ -- 14
 call.type$ -- 4
 change.case$ -- 15
 chr.to.int$ -- 0
-cite$ -- 5
+cite$ -- 4
 duplicate$ -- 46
 empty$ -- 84
 format.name$ -- 8
-if$ -- 191
+if$ -- 193
 int.to.chr$ -- 0
 int.to.str$ -- 4
 missing$ -- 7
 newline$ -- 23
 num.names$ -- 8
-pop$ -- 24
+pop$ -- 20
 preamble$ -- 1
 purify$ -- 12
 quote$ -- 0
-skip$ -- 25
+skip$ -- 26
 stack$ -- 0
 substring$ -- 21
-swap$ -- 3
+swap$ -- 4
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 10
-warning$ -- 1
+warning$ -- 0
 while$ -- 8
 width$ -- 5
-write$ -- 45
-(There was 1 warning)
+write$ -- 47

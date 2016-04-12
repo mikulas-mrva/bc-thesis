@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.12.2)  14 MAR 2016 01:34
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.12.2)  12 APR 2016 15:06
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -264,30 +264,28 @@ File: uni-1.def 2013/05/13 UCS: Unicode data U+0100..U+01FF
 {/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [1] [2
 
 ]
-(./bakalarka.toc)
+(./bakalarka.toc
+LaTeX Font Info:    Try loading font information for U+rsfs on input line 2.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/jknapltx/ursfs.fd
+File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
+)
+LaTeX Font Info:    Try loading font information for U+msa on input line 2.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 2.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+))
 \tf@toc=\write3
 \openout3 = `bakalarka.toc'.
 
  [3
 
 ]
-
-LaTeX Warning: Citation `GodelWang' on page 4 undefined on input line 178.
-
-LaTeX Font Info:    Try loading font information for U+rsfs on input line 191.
-(/usr/local/texlive/2015/texmf-dist/tex/latex/jknapltx/ursfs.fd
-File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
-)
-LaTeX Font Info:    Try loading font information for U+msa on input line 191.
-
-(/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Try loading font information for U+msb on input line 191.
-
-(/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
 (/usr/local/texlive/2015/texmf-dist/tex/latex/ucs/data/uni-32.def
 File: uni-32.def 2013/05/13 UCS: Unicode data U+2000..U+20FF
 )
@@ -298,81 +296,61 @@ an{then
 
 [4
 
-] [5] [6]
-
-LaTeX Warning: Citation `JechBook' on page 7 undefined on input line 264.
-
-[7] [8]
-
-LaTeX Warning: Citation `JechBook' on page 9 undefined on input line 397.
-
-
-LaTeX Warning: Reference `equation_refl_lemma' on page 9 undefined on input lin
-e 404.
-
-[9]
-Underfull \hbox (badness 10000) in paragraph at lines 435--440
+] [5] [6] [7] [8] [9]
+Underfull \hbox (badness 10000) in paragraph at lines 436--441
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 435--440
+Underfull \hbox (badness 10000) in paragraph at lines 436--441
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 442--452
+Underfull \hbox (badness 10000) in paragraph at lines 443--453
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 454--461
+Underfull \hbox (badness 10000) in paragraph at lines 455--462
 
  []
 
 [10] [11]
-Overfull \hbox (3.52345pt too wide) in paragraph at lines 505--507
+Overfull \hbox (3.52345pt too wide) in paragraph at lines 507--509
 []\OT1/cmr/m/it/12 (inaccessibility)[] $\OML/cmm/m/it/12 ^^T$ \OT1/cmr/m/it/12 
 is \OT1/cmr/m/n/12 in-ac-ces-si-ble $\OMS/cmsy/m/n/12 $$ \OT1/cmr/m/it/12 it is
  \OT1/cmr/m/n/12 reg-u-lar \OT1/cmr/m/it/12 and \OT1/cmr/m/n/12 strongly
  []
 
 
-LaTeX Warning: Citation `KanamoriBook' on page 12 undefined on input line 519.
-
-
-LaTeX Warning: Reference `def:reflection_2' on page 12 undefined on input line 
-532.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 518--541
+Underfull \hbox (badness 10000) in paragraph at lines 520--543
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 518--541
+Underfull \hbox (badness 10000) in paragraph at lines 520--543
 
  []
 
-[12]
+[12] [13]
 
-LaTeX Warning: Reference `th:refl_inaccessible' on page 13 undefined on input l
-ine 569.
+LaTeX Warning: Citation `Jech' on page 14 undefined on input line 624.
 
-[13] [14]
-Underfull \hbox (badness 10000) in paragraph at lines 618--621
+[14] [15]
+Underfull \hbox (badness 10000) in paragraph at lines 638--641
 
  []
 
 
-Overfull \hbox (144.7233pt too wide) detected at line 666
+Overfull \hbox (144.7233pt too wide) detected at line 686
 []\OML/cmm/m/it/12 '[]\OMS/cmsy/m/n/12 8\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 (\OML
 /cmm/m/it/12 x \OMS/cmsy/m/n/12 2 \OML/cmm/m/it/12 A \OMS/cmsy/m/n/12 $ \OML/cm
 m/m/it/12 '\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 ))
  []
 
-[15] [16] [17]
-Overfull \hbox (88.55293pt too wide) detected at line 751
+[16] [17] [18]
+Overfull \hbox (88.55293pt too wide) detected at line 773
 \OML/cmm/m/it/12 Def\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 X\OT1/cmr/m/n/12 ) := \OM
 S/cmsy/m/n/12 ff[] 2 \OML/cmm/m/it/12 X \OMS/cmsy/m/n/12 ^ h\OML/cmm/m/it/12 X;
  \OMS/cmsy/m/n/12 2i j[]\OT1/cmr/m/n/12 = \OML/cmm/m/it/12 '\OT1/cmr/m/n/12 (\O
@@ -381,7 +359,7 @@ ML/cmm/m/it/12 y; z[]; [] ; z[]\OT1/cmr/m/n/12 )\OMS/cmsy/m/n/12 gj[]\OML/cmm/m
 
  []
 
-[18] (./bakalarka.bbl) [19] (./bakalarka.aux)
+[19] (./bakalarka.bbl) [20] (./bakalarka.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -391,8 +369,8 @@ LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
  ) 
 Here is how much of TeX's memory you used:
  5055 strings out of 493089
- 63525 string characters out of 6134842
- 135190 words of memory out of 5000000
+ 63522 string characters out of 6134842
+ 135436 words of memory out of 5000000
  8476 multiletter control sequences out of 15000+600000
  16565 words of font info for 64 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -421,10 +399,10 @@ f-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2015/texmf
 -dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2015/t
 exmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/20
 15/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb>
-Output written on bakalarka.pdf (20 pages, 315268 bytes).
+Output written on bakalarka.pdf (21 pages, 318053 bytes).
 PDF statistics:
- 166 PDF objects out of 1000 (max. 8388607)
- 118 compressed objects within 2 object streams
+ 169 PDF objects out of 1000 (max. 8388607)
+ 120 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

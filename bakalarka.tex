@@ -301,30 +301,29 @@ Reflection made it's first in set-theoretical appearance in G{\"o}del's proof of
 
 \subsection{Levy's Axiom Schemata of Strong Infinity}\label{sec:Levy1960}
 This section will try to present Levy's proof of a general reflection principle being equivalent to Replacement and Infinity under ZF minus Replacement and Infinity.
-We will first introduce a few axioms and definitions that were a bit different in Levy's paper, but are equivalent to today's terms. We will write them in contemporary notation, our aim is the result, not history of set theory notation.
+We will first introduce a few axioms and definitions that were a bit different in Levy's paper\cite{Levy60a}, but are equivalent to today's terms. We will write them in contemporary notation, our aim is the result, not history of set theory notation.
 % term je asi debilni slovo?
 % druhoradova axiomatizace 
 
 \begin{definition}{The Axiom of Subsets}\label{def:subsets_axiom}
-$\forall x \exists y \forall z (z \in y \iff (z \in x ))$
+\begin{equation}
+\forall x \exists y \forall z (z \in y \iff (z \in x ))
+\end{equation}
 \end{definition}
-
 
 \begin{definition}{Standard Complete Model of \sf{S}($Scm^S$)}\label{def:scm_a}
-???
-\end{definition}
-
-\begin{definition}{ $Rel(u, \varphi)$ }\label{def:rel}
-???
+\begin{equation}
+Scm^{Q}(V_\alpha) \iff In^{Q}(\alpha)
+\end{equation}
 \end{definition}
 
 \begin{definition}{\sf{S}}\label{def:set_theory_s}
-ZF minus Replacement Scheme minus Axiom of Infinity
+S is a set theory obtained from ZF by leaving out the Replacement Scheme and the Axiom of Infinity.
 \end{definition}
 
 \begin{definition}{$N_0$}
 \begin{equation}
-\exists u (Scm^{\sf{S}}(u) \& x_1, \ldots , x_n \in u \then \varphi \iff Rel(u, \varphi))
+\exists u (Scm^{\sf{S}}(u) \& x_1, \ldots , x_n \in u \then \varphi \iff \varphi^{u})
 \end{equation}
 where $\varphi$ is a formula which does not contain free variables except $x_1, \ldots , x_n$.
 \end{definition}
@@ -355,24 +354,26 @@ Let $\chi$ be an instance of replacement schema for this $\varphi$:
 \medskip
 We can deduce the following from $N_0$: 
 \bce[(i)]
-\item $x_1, \ldots, x_n, v, w \in u \then (\varphi \iff Rel(u, \varphi) $
-\item $x_1, \ldots, x_n, v \in u \then (\exists w \varphi \iff Rel(u, \exists w \varphi))$
-\item $x_1, \ldots, x_n, x \in u \then (\chi \iff Rel(u, \chi)$
-\item $\forall x_1, \ldots, x_n \forall x (\chi \iff Rel(u, \forall x_1, \ldots, x_n \forall x \chi))$
+\item $x_1, \ldots, x_n, v, w \in u \then (\varphi \iff \varphi^{u}) $
+\item $x_1, \ldots, x_n, v \in u \then (\exists w \varphi \iff (\exists w \varphi)^{u})$
+\item $x_1, \ldots, x_n, x \in u \then (\chi \iff \chi^{u})$
+\item $\forall x_1, \ldots, x_n \forall x (\chi \iff (\forall x_1, \ldots, x_n \forall x \chi)^{u})$
 \ece
 
 Note that (i), (ii), (iii) are obtained from instances of $N_0$ for $\varphi$, $\exists w \varphi$ and $\chi$ respectively.  % asi ne teda, spis je to postup dukazu, neco jako plan. % spis ne
-From relativization we also know that $Rel(u, \exists w \varphi)$ is equivalent to $\exists w (w \in u \& Rel(u, \varphi))$.
-Therefore (ii) is equivalent to $x_1, \ldots, x_n, v \in u \then (\exists w (w \in u \& Rel(u, \varphi))$. 
+From relativization we also know that $(\exists w \varphi)^{u}$ is equivalent to $\exists w (w \in u \& \varphi^{u})$.
+Therefore (ii) is equivalent to $x_1, \ldots, x_n, v \in u \then (\exists w (w \in u \& \varphi^{u})$. 
 
 If $\varphi$ is a function ($ \forall r, s, t(\varphi(r, s) \& \varphi(r, t) \then r=t $), then for every $x \in u$, which is also $x \subset u$ by $Scm^{\sf{S}}(u)$,
 it maps elements of $x$ onto $u$. From the axiom scheme of comprehension\footnote{axiom of subsets in Levy's version}, we can find a set of all images of elements of $x$. Let's call it $y$.
-That gives us $x_1, \ldots, x_n, x \in u \then \chi$. By (iii) we get $x_1, \ldots, x_n, x \in u \then Rel(u, \chi)$, closure of this formula is $Rel(u, \forall x_1, \ldots, x_n \forall x \chi)$, 
+That gives us $x_1, \ldots, x_n, x \in u \then \chi$. By (iii) we get $x_1, \ldots, x_n, x \in u \then \chi^{u}$, closure of this formula is $(\forall x_1, \ldots, x_n \forall x \chi)^{u}$, 
 which together with (iv) yields $\forall x_1, \ldots, x_n \forall x \chi$. By the means of specification we end up with $\chi$, which is all we need for now. 
 % btw co je x? nemela by tam tam byt nejaka volna promenna?
 \end{proof}
 
-% --------------------------------------------------------------------------------
+
+% todo Jech strana 444 -- stacionarni veci a reflexe?
+% =====================================================================================================================================
 
 \subsection{Contemporary restatement} % todo asi prepsat lip?
 
@@ -488,6 +489,7 @@ Let $\varphi(R)$ be a $\Pi^n_m$-formula which contains only one free variable $R
 \end{definition}
 
 \newpage
+% =====================================================================================================================================
 \section{Large Cardinals}
 % prerekvizity nekam?
 \subsection{Preliminaries}
@@ -502,7 +504,7 @@ $kappa$ is a \emph{strong limit cardinal} if for every $\lambda < \kappa$, $2^\l
 \begin{definition}(weak inaccessibility)\label{def:weakly_inaccessible}
 $\kappa$ is \emph{weakly inaccessible} $\iff$ it is \emph{regular} and \emph{ weakly limit}.
 \end{definition}
-\begin{definition}(inaccessibility)\label{def:inaccessible}
+\begin{definition}(inaccessibility)\label{def:inaccessible} % nema byt vetsi nez \omega ?
 $\kappa$ is \emph{inaccessible} $\iff$ it is \emph{regular} and \emph{strongly limit}.
 \end{definition}
 % \cite{JechBook} % ? 
@@ -543,7 +545,7 @@ Then $\langle$
 %
 % supercompact
 %
-
+% =====================================================================================================================================
 \subsection{Mahlo cardinals}
 % reflektuji nedosazitelnost
 \begin{definition}{Weakly Mahlo Cardinals}\label{def:weakly_mahlo}
@@ -570,7 +572,12 @@ Start with the proof of (\ref{th:refl_inaccessible}) and add the following:\newl
 $\kappa$ is Mahlo by the following contradiction. If not, there would be a $C$ closed unbounded in $\kappa$ containing no inaccessible cardinals. By the hypothesis there is in inaccessible $\alpha < \kappa$ such that $\langle V_\alpha, \in, C \cap V_\alpha \rangle \prec \langle V_\kappa, \in, C \rangle$. By elementarity $C \cap \alpha$ is unbounded in $\alpha$. But then, $\alpha \in C$, which is the contradiction we need.
 \end{proof}
 
+Note that Mahlo cardinals were first described in 1911, almost 50 years before Levy's reflection, which was heavily inspired by those. % neco jako ze pouzil podobnou konstrukci, ... jen zjistit k cemu
+
+%sjednotil \then a \implies
+% =====================================================================================================================================
 \subsection{Weakly Compact Cardinals}
+In this section, we will introduce various well-known large cardinals and establish them via reflection.
 \begin{definition}
 A cardinal $\kappa$ is \emph{weakly compact} if it is uncountable and satisfies the partition property $\kappa \then (\kappa)^2$
 \end{definition}
@@ -608,12 +615,25 @@ $U \subseteq V_\kappa$ and $\varphi$ is a Q sentence such that $\langle V_\kappa
 % souvislosti s refl nebo L?!?!
 
 \subsection{Measurable Cardinals}
-TODO
+% http://mathreview.uwaterloo.ca/archive/volii/2/measure-cardinality.pdf
+% Jech  str. 127
+\begin{definition}
+An uncountable cardinal $\kappa$ is measurable if there exists a $\kappa-complete$ nonprincipal ultrafilter $U$ on $\kappa$.
+\end{definition}
+
+Every measurable cardinal is inaccessible\footnote{See Jech\cite{Jech} for a proof.}
 
 \subsection{Supercompact cardinals}
 TODO
 
+\subsection{Reflecting cardinals}
+TODO
+
+\subsection{Strongly compact cardinals}
+TODO
+
 \newpage
+% =====================================================================================================================================
 \subsection{Bernays–G{\"o}del Set Theory}
 G{\"o}del–Bernays set theory, also known as Von Neumann–Bernays–G{\"o}del set theory is an axiomatic set theory that 
 explicitly talks about proper classes as well as sets, which allows it to be finitely axiomatizable, albeit our version stated below contains one schema. It is a conservative extension of Zermalo–Fraenkel set theory. Using forcing, one can prove equiconsistency of BGC and ZFC.
@@ -740,6 +760,8 @@ TODO
 
 
 \newpage
+% =====================================================================================================================================
+
 \subsection{Reflection and the constructible universe}
 $L$ was introduced by Kurt Gödel in 1938 in his paper \emph{The Consistency of the Axiom of Choice and of the Generalised Continuum Hypothesis} and denotes a class of sets built recursively in terms of simpler sets, somewhat similar to Von Neumann universe $V$. Assertion of their equality, $V=L$, is called the \emph{axiom of constructibility}. The axiom implies GCH and therefore also AC and contradicts the existence of some of the large cardinals, our goal is to decide whether those introduced earlier are among them.
 
@@ -783,6 +805,13 @@ TODO zduvodneni
 
 TODO kratka diskuse jestli refl implikuje transcendenci na L - polemika, nazor - V=L a slaba kompaktnost a dalsi
 \newpage
+% =====================================================================================================================================
+\section{Further reflection} % preformulovat
+\subsection{Sharp}
+TODO
+
+\subsection{Welek: Global Reflection Principles}
+TODO
 
 \bibliographystyle{plain}
 \bibliography{bc_biblio}
