@@ -231,6 +231,8 @@ not a whole. % (LoC 9) je co?
 % viz G.W. Leibniz, Interrelations between Mathematics and Philosophy
 TODO  nejakej Hegel--strucne?
 TODO Cantor
+TODO mene teologie, vice matematiky
+TODO definovat pojmy (trida etc)
 
 In his work, he defined transfinite numbers to extend existing natural number % existovala fakt? kdo to udelal? asi peano
 structure so it contains more objects that behave like natural numbers and are based on an object (rather a meta-object) that doesn't explicitly exist in the structure, but is closely related to it. This is the first instance of reflection. 
@@ -283,7 +285,7 @@ Interested reader should note that this is a theorem scheme rather than a single
  % motivace ke kardinalum:
  % velke kardinaly vznikly v podstate reflektovanim zajimavych vlastnosti absolutniho nekonecna, mnoho z nich ma i omega
  % popis vyvoje axiomu nekonecna: zadny->nejaky->silnejsi??
-Reflection made it's first in set-theoretical appearance in G{\"o}del's proof of GCH in L  (citace Kanamori ? Levy and set theory), but it was around even earlier as a concept. G{\"o}del himself regarded it as very close to Russel's reducibility axiom (an earlier equivalent of the axiom schema of Zermelo's separation). Richard Montague then studied reflection properties as a tool for verifying that Replacement is not finitely axiomatizable (citace?). A few years later Levy proved (citace?) equivalence of reflection with Axiom of infinity together with Replacement.
+Reflection made it's first in set-theoretical appearance in G{\"o}del's proof of GCH in L  (citace Kanamori ? Lévy and set theory), but it was around even earlier as a concept. G{\"o}del himself regarded it as very close to Russel's reducibility axiom (an earlier equivalent of the axiom schema of Zermelo's separation). Richard Montague then studied reflection properties as a tool for verifying that Replacement is not finitely axiomatizable (citace?). A few years later Lévy proved (citace?) equivalence of reflection with Axiom of infinity together with Replacement.
 % co dal? recent results?
 % dukaz ekvivalence Inifinity+Replacement: Levy1960a:234 !!!!
 
@@ -297,15 +299,20 @@ Reflection made it's first in set-theoretical appearance in G{\"o}del's proof of
 %\medskip
 
 \newpage
-\section{Levy's Original Proof}\label{sec:fixed}
+\section{Lévy's Original Proof}\label{sec:fixed}
 
 \subsection{Introduction}\label{sec:Levy1960}
-This section will try to present Levy's proof of a general reflection principle being equivalent to Replacement and Infinity under ZF minus Replacement and Infinity.
-We will first introduce a few axioms and definitions that were a different in Levy's paper\cite{Levy60a}, but are equivalent to today's terms. We will write them in contemporary notation, our aim is the result, not history of set theory notation. 
+This section will try to present Lévy's proof of a general reflection principle being equivalent to Replacement and Infinity under ZF minus Replacement and Infinity.
+We will first introduce a few axioms and definitions that were a different in Lévy's paper\cite{Levy60a}, but are equivalent to today's terms. We will write them in contemporary notation, our aim is the result, not history of set theory notation. 
 
-Please note that Levy's paper was written in a period when Set theory was oriented towards semantics, which means that everything was done in a model. All proofs were done on a model that was $V_\alpha$ (notated as $R(\alpha)$ at the time) for some cardinal $\alpha$, which means that $\alpha$ is a inaccessible cadinal. Please bear in mind that this is vastly different from saying that there is an inaccessible $\alpha$ inside the model. This $V_\alpha$ is also referred to as $Scm^Q(u)$, which means that u ($u=V_\alpha$ in our case) is a standard complete model of an undisclosed axiomatic set theory $Q$ formulated in the "non-simple applied first order functional calculus", which is second-order theory is today's terminology, we are allowed to quantify over functions and thus get rid of axiom schemes. (Note that Levy always speaks of "the axiom of replacement"). Besides placeholder set theory $Q$ and $ZF$, which the reader should be familiar with, theories $Z$, $S$, and $SF$ are used in the text. $Z$ is ZF minus replacement, $S$ is $ZF$ minus replacement and infinity, and finally $SF$ is $ZF$ minus infinity. "The axiom of subsets" is an older name for the axiom scheme of specification (and it's not a scheme since we are now working in second order logic). 
+Please note that Lévy's paper was written in a period when Set theory was oriented towards semantics, which means that everything was done in a model. All proofs were done on a model that was $V_\alpha$ (notated as $R(\alpha)$ at the time) for some cardinal $\alpha$, which means that $\alpha$ is a inaccessible cadinal. Please bear in mind that this is vastly different from saying that there is an inaccessible $\alpha$ inside the model. This $V_\alpha$ is also referred to as $Scm^{\sf{Q}}(u)$, which means that u ($u=V_\alpha$ in our case) is a standard complete model of an undisclosed axiomatic set theory $\sf{Q}$ formulated in the "non-simple applied first order functional calculus", which is second-order theory is today's terminology, we are allowed to quantify over functions and thus get rid of axiom schemes. (Note that Lévy always speaks of "the axiom of replacement"). Besides placeholder set theory $\sf{Q}$ and $\sf{ZF}$, which the reader should be familiar with, theories $\sf{Z}$, $\sf{S}$, and $\sf{SF}$ are used in the text. $\sf{Z}$ is $\sf{ZF}$ minus replacement, $\sf{S}$ is $\sf{ZF}$ minus replacement and infinity, and finally $\sf{SF}$ is $\sf{ZF}$ minus infinity. "The axiom of subsets" is an older name for the axiom scheme of specification (and it's not a scheme since we are now working in second order logic). Also note that universal quantifier does not appear, $\forall x \varphi (x)$ would be written as $(x) \varphi (x)$, the symbol for negation is "$\sim$".
 
-Also note that universal quantifier does not appear, $\forall x \varphi (x)$ would be written as $(x) \varphi (x)$, the symbol for negation is "$\sim$".
+Lévy then mentions Mahlo's arithmetic construction of cardinals, noting, that he will use similar strategy to build higher levels of strong axioms of infinity. 
+
+TODO porovnani Mahlovy a Lévyho konstrukce
+
+TODO asi doplnit jak to souvisi se soucasnou definici slabe Mahlovych kardinalu pres stacionarni mnoziny?
+
 
 
 
@@ -316,16 +323,15 @@ Also note that universal quantifier does not appear, $\forall x \varphi (x)$ wou
 where $\varphi$ is a formula which does not contain free variables except $x_1, \ldots , x_n$.
 \end{definition}
 
-observation: $Scm^{y\sf{S}}(u) = In(\kappa) \iff \exists \kappa (V_\kappa = u)$
+%observation: $Scm^{\sf{S}}(u) = In(\kappa) \iff \exists \kappa (V_\kappa = u)$
 
 \begin{theorem}
 In $\sf{S}$, the schema $N_0$ implies the Axiom of Infinity.
 \end{theorem}
 
 \begin{proof}
-This is pretty straightforward since we already have $In(\kappa)$, which is itself an inductive set. % fle podle ktere vybereme omegu z  In(\alpha)?
-% dk? sporem?
-% existuje x \in \kapa pro ktere neplati x \subset \kappa, takze \kappa neni limitni nebo tak neco?
+For any $\varphi$, $N_0$ gives us $\exists u Scm^{\sf{S}}(u)$, which means that there is a set $u$ that is identical to $V_\alpha$ for some alpha.
+We don't know the exact size of this $u$, but we know that it's either identical to $\omega$ or it contains $\omega$, otherwise $u$ would be finite, which would contradict the axiom of powersets which is supposed to hold in o model of $\sf{S}$. Since Von Neumann's hierarchy is inductive, ((potrebuju tohle?)) the smallest $u$ satisfying $Scm^{\sf{S}}(u)$, easily obtained by intersetion is $\omega$. \footnote{Note that $\omega$ satisfies the axioms of $\sf{S}$ and every smaller model is finite and thus breaking the powerset axiom.}
 \end{proof}
 
 
@@ -334,6 +340,9 @@ In $\sf{S}$, the schema $N_0$ implies Replacement schema.
 \end{theorem}
 
 \begin{proof}
+TODO vysvetlit
+
+
 Let $\varphi(v, w)$ be a formula wth no free variables except $v, w, x_1, \ldots, x_n$ where $n$ is any natural number.
 Let $\chi$ be an instance of replacement schema for this $\varphi$:
 \begin{equation}
@@ -365,7 +374,7 @@ which together with (iv) yields $\forall x_1, \ldots, x_n \forall x \chi$. By th
 
 \subsection{Contemporary restatement} % todo asi prepsat lip?
 
-% As we have mentioned above, Levy has proved that the following is equivalent to Replacement ({\sf R}) and Infinity ({\sf I}) axioms (under {\sf ZF} minus R and I), which we shall prove later. \cite{Levy60a}
+% As we have mentioned above, Lévy has proved that the following is equivalent to Replacement ({\sf R}) and Infinity ({\sf I}) axioms (under {\sf ZF} minus R and I), which we shall prove later. \cite{Levy60a}
 
 \medskip
 
@@ -560,7 +569,7 @@ Start with the proof of (\ref{th:refl_inaccessible}) and add the following:\newl
 $\kappa$ is Mahlo by the following contradiction. If not, there would be a $C$ closed unbounded in $\kappa$ containing no inaccessible cardinals. By the hypothesis there is in inaccessible $\alpha < \kappa$ such that $\langle V_\alpha, \in, C \cap V_\alpha \rangle \prec \langle V_\kappa, \in, C \rangle$. By elementarity $C \cap \alpha$ is unbounded in $\alpha$. But then, $\alpha \in C$, which is the contradiction we need.
 \end{proof}
 
-Note that Mahlo cardinals were first described in 1911, almost 50 years before Levy's reflection, which was heavily inspired by those. % neco jako ze pouzil podobnou konstrukci, ... jen zjistit k cemu
+Note that Mahlo cardinals were first described in 1911, almost 50 years before Lévy's reflection, which was heavily inspired by those. % neco jako ze pouzil podobnou konstrukci, ... jen zjistit k cemu
 
 %sjednotil \then a \implies
 % =====================================================================================================================================
