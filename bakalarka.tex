@@ -229,26 +229,35 @@ Vincent, and which I cannot accept; or that infinity itself is nothing, i.e. tha
 not a whole. % (LoC 9) je co?
 \end{displayquote}
 % viz G.W. Leibniz, Interrelations between Mathematics and Philosophy
+
 TODO  nejakej Hegel--strucne?
+
 TODO Cantor
+
 TODO mene teologie, vice matematiky
+
 TODO definovat pojmy (trida etc)
+
 
 In his work, he defined transfinite numbers to extend existing natural number % existovala fakt? kdo to udelal? asi peano
 structure so it contains more objects that behave like natural numbers and are based on an object (rather a meta-object) that doesn't explicitly exist in the structure, but is closely related to it. This is the first instance of reflection. 
 This paper will focus on taking this principle a step further, extending Cantor's (or Zermelo–Fraenkel's, to be more precise) universe so it includes objects so big, they could be considered the universe itself, in a certain sense. % dost vagni?
 
 
-% dal asi smazal, ale radsi az po zaverzovani do gitu .)I
+TODO dal asi smazat
+
+
 % nemuzeme nikdy zachytit cele univerzum
 % snaha udelat to stala za vznikem pojmu nekonecno, naivni teorie mnozin i jejich formalizaci
 The original idea behind reflection principles probably comes from what could be informally called \textquote{universality of the universe}.
 The effort to precisely describe the universe of sets was natural and could be regarded as one of the impulses for formalization of naive set theory.
 If we try to express the universe as a set $\{x  |  x = x\}$, a paradox appears, because either our set is contained in itself and therefore is contained in a set (itself again), which contradicts the intuitive notion of a universe that contains everything but is not contained itself.
-%wtf
+
+TODO ???
+
 If there is an object containing all sets, it must not be a set itself. The notion of class seems inevitable. Either directly the ways for example the Bernays–Gödel set theory, we will also discuss later in this paper, does in, or on a meta–level like the Zermelo–Fraenkel set theory, that doesn't refer to them in the axioms but often works with the notion of a universal class.
 duet
-Another obstacle of constructing a set of all sets comes from Georg Cantor, who proved that the set of all subsets of a set (let A be the set and \power(A) its powerset) is strictly larger that A. That would turn every aspiration to finally establish an universal set into a contradictory infinite regression.\footnote{An intuitive analogy of this \emph{reductio ad infinitum} is the status of $\omega$, which was originally thought to be an unreachble absolute, only to become starting point of Cantor's hierarchy of sets growing beyond all boundaries around the end of the $19^{th}$ century}. We will use $V$ for the class of all sets. %Riemann!
+Another obstacle of constructing a set of all sets comes from Georg Cantor, who proved that the set of all subsets of a set (let $A$ be the set and $\power (A)$ its powerset) is strictly larger that $A$. That would turn every aspiration to finally establish an universal set into a contradictory infinite regression.\footnote{An intuitive analogy of this \emph{reductio ad infinitum} is the status of $\omega$, which was originally thought to be an unreachable absolute, only to become starting point of Cantor's hierarchy of sets growing beyond all boundaries around the end of the $19^{th}$ century}. We will use $V$ to denote the class of all sets. %Riemann!
 \newpage
 From previous thoughts we can easily argue, that it is impossible to construct a property that holds for $V$ and no set and is neither paradoxical like $\{x  |  x = x\}$ nor trivial. Previous observation can be transposed to a rather naive formulation of the reflection principle:
 
@@ -285,15 +294,17 @@ Interested reader should note that this is a theorem scheme rather than a single
  % motivace ke kardinalum:
  % velke kardinaly vznikly v podstate reflektovanim zajimavych vlastnosti absolutniho nekonecna, mnoho z nich ma i omega
  % popis vyvoje axiomu nekonecna: zadny->nejaky->silnejsi??
-Reflection made it's first in set-theoretical appearance in G{\"o}del's proof of GCH in L  (citace Kanamori ? Lévy and set theory), but it was around even earlier as a concept. G{\"o}del himself regarded it as very close to Russel's reducibility axiom (an earlier equivalent of the axiom schema of Zermelo's separation). Richard Montague then studied reflection properties as a tool for verifying that Replacement is not finitely axiomatizable (citace?). A few years later Lévy proved (citace?) equivalence of reflection with Axiom of infinity together with Replacement.
-% co dal? recent results?
+Reflection made it's first in set-theoretical appearance in G{\"o}del's proof of GCH in L  (citace Kanamori ? Lévy and set theory), but it was around even earlier as a concept. G{\"o}del himself regarded it as very close to Russel's reducibility axiom (an earlier equivalent of the axiom schema of Zermelo's separation). Richard Montague then studied reflection properties as a tool for verifying that Replacement is not finitely axiomatizable (citace?). A few years later Lévy proved (citace? 1960a) equivalence of reflection with Axiom of infinity together with Replacement in proof we shall examine closely in chaper 2.
+
+
+TODO co dal? recent results?
 % dukaz ekvivalence Inifinity+Replacement: Levy1960a:234 !!!!
 
 
 % nekonecno je jasny, protoze z reflexe urcite existuje nekonecna mnozina
 
 % replacement nasledovne:
-% jelikoz obraz ty funkce je urcite v nejakym u, ktery to reflektuje, je v mnozine a tedy je to ze schematu nahrazeni taky mnozina
+% jelikoz obraz ty funkce (JAKY FUNKCE) je urcite v nejakym u, ktery to reflektuje, je v mnozine a tedy je to ze schematu nahrazeni taky mnozina
 % 
 
 %\medskip
@@ -340,7 +351,7 @@ In $\sf{S}$, the schema $N_0$ implies Replacement schema.
 \end{theorem}
 
 \begin{proof}
-TODO vysvetlit
+TODO vysvetlit!
 
 
 Let $\varphi(v, w)$ be a formula wth no free variables except $v, w, x_1, \ldots, x_n$ where $n$ is any natural number.
@@ -365,21 +376,23 @@ If $\varphi$ is a function ($ \forall r, s, t(\varphi(r, s) \& \varphi(r, t) \th
 it maps elements of $x$ onto $u$. From the axiom scheme of comprehension\footnote{axiom of subsets in Levy's version}, we can find a set of all images of elements of $x$. Let's call it $y$.
 That gives us $x_1, \ldots, x_n, x \in u \then \chi$. By (iii) we get $x_1, \ldots, x_n, x \in u \then \chi^{u}$, closure of this formula is $(\forall x_1, \ldots, x_n \forall x \chi)^{u}$, 
 which together with (iv) yields $\forall x_1, \ldots, x_n \forall x \chi$. By the means of specification we end up with $\chi$, which is all we need for now. 
-% btw co je x? nemela by tam tam byt nejaka volna promenna?
+
+
+TODO btw co je x? nemela by tam tam byt nejaka volna promenna?
 \end{proof}
 
 
 % todo Jech strana 444 -- stacionarni veci a reflexe?
 % =====================================================================================================================================
 
-\subsection{Contemporary restatement} % todo asi prepsat lip?
-
-% As we have mentioned above, Lévy has proved that the following is equivalent to Replacement ({\sf R}) and Infinity ({\sf I}) axioms (under {\sf ZF} minus R and I), which we shall prove later. \cite{Levy60a}
+\subsection{Contemporary restatement}
 
 \medskip
 
 % Z jecha, p 168, Theorem 12.14
 % +remarks?
+TODO Plagiat Jecha -- prepsat a vysvetlit
+
 \begin{theorem}[L{\'e}vy] \label{th:refl} ZFC: 
 \bce[(i)]
 \item Let $\varphi(x_1, \ldots, x_n)$ be a first-order formula with free variables shown. Then for each set $M_0$ there exists a set $M \supset M_0$ such that
@@ -468,7 +481,7 @@ Since (Refl) is a sound theorem in ZFC, we are only interested in showing the co
 \medskip
 (Refl) $\then$ (Infinity)
 
-This is the easy part since Infinity says that \emph{there is an infinite set} and (Refl) is just a stronger version that says "there is an inaccessible cardinal" which is all we need.
+This is the easy part since Infinity says that \emph{there is an infinite set} and (Refl) is just a stronger version that says "there is an inaccessible cardinal" which is all we need. ((PREFORMULOVAT))
 
 \medskip
 
@@ -476,6 +489,8 @@ This is the easy part since Infinity says that \emph{there is an infinite set} a
 % todo asi odkaz na levyho?
 
 \end{proof}
+
+TODO Plagiat -- prepsat a vysvetlit
 
 
 \begin{definition}\label{def:reflection_2}
@@ -489,6 +504,10 @@ Let $\varphi(R)$ be a $\Pi^n_m$-formula which contains only one free variable $R
 % =====================================================================================================================================
 \section{Large Cardinals}
 % prerekvizity nekam?
+
+TODO pozor na opsane definice, prefurmulovvat!!!
+% TODO preformulovat
+
 \subsection{Preliminaries}
 To avoid confusion\footnote{While in most sources refer to \emph{weak limit cardinal} as a \emph{limit cardinal} and to \emph{strong limit cardinal}, in some cases the distinction is \emph{weak limit cardinal} and \emph{limit cardinal} respectively. That's why I have decided to explicitly define those otherwise elementary terms.}, let's first define some basic terms.
 \begin{definition}(weak limit cardinal)\label{def:weak_limit}
@@ -544,7 +563,9 @@ Then $\langle$
 %
 % =====================================================================================================================================
 \subsection{Mahlo cardinals}
-% reflektuji nedosazitelnost
+TODO reflektuji nedosazitelnost?
+TODO zminit Mahlovu konstrukci?
+
 \begin{definition}{Weakly Mahlo Cardinals}\label{def:weakly_mahlo}
 $\kappa$ is \emph{weakly Mahlo} $\iff$ it is a limit ordinal and the set of all regular ordinals less then $\kappa$ is stationary in $\kappa$
 \end{definition}
@@ -574,6 +595,8 @@ Note that Mahlo cardinals were first described in 1911, almost 50 years before L
 %sjednotil \then a \implies
 % =====================================================================================================================================
 \subsection{Weakly Compact Cardinals}
+TODO souvislost s reflexi!
+
 In this section, we will introduce various well-known large cardinals and establish them via reflection.
 \begin{definition}
 A cardinal $\kappa$ is \emph{weakly compact} if it is uncountable and satisfies the partition property $\kappa \then (\kappa)^2$
@@ -611,27 +634,13 @@ $U \subseteq V_\kappa$ and $\varphi$ is a Q sentence such that $\langle V_\kappa
 % intuice?
 % souvislosti s refl nebo L?!?!
 
-\subsection{Measurable Cardinals}
-% http://mathreview.uwaterloo.ca/archive/volii/2/measure-cardinality.pdf
-% Jech  str. 127
-\begin{definition}
-An uncountable cardinal $\kappa$ is measurable if there exists a $\kappa-complete$ nonprincipal ultrafilter $U$ on $\kappa$.
-\end{definition}
-
-Every measurable cardinal is inaccessible\footnote{See Jech\cite{Jech} for a proof.}
-
-\subsection{Supercompact cardinals}
-TODO
-
-\subsection{Reflecting cardinals}
-TODO
-
-\subsection{Strongly compact cardinals}
-TODO
-
 \newpage
 % =====================================================================================================================================
 \subsection{Bernays–G{\"o}del Set Theory}
+
+TODO Plagiat -- prepsat a vysvetlit
+
+
 G{\"o}del–Bernays set theory, also known as Von Neumann–Bernays–G{\"o}del set theory is an axiomatic set theory that 
 explicitly talks about proper classes as well as sets, which allows it to be finitely axiomatizable, albeit our version stated below contains one schema. It is a conservative extension of Zermalo–Fraenkel set theory. Using forcing, one can prove equiconsistency of BGC and ZFC.
 \newline
@@ -689,6 +698,7 @@ Comprehension schema tells us, that proper classes are basically first-order pre
 % opsano !!!!!
 %Since {\sf GB}, G{\"o}del-Bernays' first-order theory with two sorts of variables (sets and classes), is finitely axiomatizable, there is no analogue of L{\'e}vy's theorem \ref{th:refl} provable in {\sf GB}. However if we go above the consistency strength of {\sf GB}, we can derive the existence of an inaccessible from such reflection (with a second-order parameter).
 ...
+ TODO Plagiat -- prepsat a vysvetlit
  
 \begin{definition}\label{def:reflBG}
 We say that $\varphi(R)$ with a class parameter $R$ reflects if there is $\alpha$ such that
@@ -760,6 +770,12 @@ TODO
 % =====================================================================================================================================
 
 \subsection{Reflection and the constructible universe}
+
+
+TODO reflektovat muzeme jenom kardinaly konzistentni s V=L, proc?
+
+TODO Plagiat -- prepsat a vysvetlit
+
 $L$ was introduced by Kurt Gödel in 1938 in his paper \emph{The Consistency of the Axiom of Choice and of the Generalised Continuum Hypothesis} and denotes a class of sets built recursively in terms of simpler sets, somewhat similar to Von Neumann universe $V$. Assertion of their equality, $V=L$, is called the \emph{axiom of constructibility}. The axiom implies GCH and therefore also AC and contradicts the existence of some of the large cardinals, our goal is to decide whether those introduced earlier are among them.
 
 On order to formally establish this class, we need to formalize the notion of definability first:
@@ -793,23 +809,30 @@ L = \bigcup_{\alpha\in Ord} L_{\alpha}
 \ece
 \end{definition}
 
-% opsano!!!
+TODO Plagiat -- prepsat a vysvetlit
 \begin{Fact}
 The reflection -- constructed as explained in the previous paragraph (!!! preformulovat !!!) -- with second-order parameters for higher-order formulas (even of transfinite type) does not yield transcendence over $L$.
 \end{Fact}
-% /opsano !!!
+
+
 TODO zduvodneni
 
 TODO kratka diskuse jestli refl implikuje transcendenci na L - polemika, nazor - V=L a slaba kompaktnost a dalsi
 \newpage
 % =====================================================================================================================================
-\section{Further reflection} % preformulovat
+\section{Higher-order reflection} % preformulovat
+TODO rict ze to je zobecneni a nejaky dalsi uvodni veci
+
 \subsection{Sharp}
-TODO
+TODO je tohle higher-order vec?
 
 \subsection{Welek: Global Reflection Principles}
 TODO
 
+\section{Conclusion}
+TODO asi tady neco bude, ne?
+
+\newpage
 \bibliographystyle{plain}
 \bibliography{bc_biblio}
 

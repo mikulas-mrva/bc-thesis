@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.12.2)  13 APR 2016 21:37
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.12.2)  13 APR 2016 21:54
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -296,61 +296,57 @@ an{then
 
 [4
 
-] [5] [6] [7] [8] [9]
-Underfull \hbox (badness 10000) in paragraph at lines 433--438
+] [5] [6] [7] [8] [9] [10]
+Underfull \hbox (badness 10000) in paragraph at lines 446--451
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 433--438
-
- []
-
-[10]
-Underfull \hbox (badness 10000) in paragraph at lines 440--450
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 452--459
+Underfull \hbox (badness 10000) in paragraph at lines 446--451
 
  []
 
 [11]
-Overfull \hbox (3.52345pt too wide) in paragraph at lines 504--506
+Underfull \hbox (badness 10000) in paragraph at lines 453--463
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 465--472
+
+ []
+
+[12]
+Overfull \hbox (3.52345pt too wide) in paragraph at lines 523--525
 []\OT1/cmr/m/it/12 (inaccessibility)[] $\OML/cmm/m/it/12 ^^T$ \OT1/cmr/m/it/12 
 is \OT1/cmr/m/n/12 in-ac-ces-si-ble $\OMS/cmsy/m/n/12 $$ \OT1/cmr/m/it/12 it is
  \OT1/cmr/m/n/12 reg-u-lar \OT1/cmr/m/it/12 and \OT1/cmr/m/n/12 strongly
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 517--540
+Underfull \hbox (badness 10000) in paragraph at lines 536--559
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 517--540
+Underfull \hbox (badness 10000) in paragraph at lines 536--559
 
  []
 
-[12] [13]
-
-LaTeX Warning: Citation `Jech' on page 14 undefined on input line 621.
-
-[14] [15]
-Underfull \hbox (badness 10000) in paragraph at lines 635--638
+[13] [14] [15]
+Underfull \hbox (badness 10000) in paragraph at lines 644--647
 
  []
 
 
-Overfull \hbox (144.7233pt too wide) detected at line 683
+Overfull \hbox (144.7233pt too wide) detected at line 692
 []\OML/cmm/m/it/12 '[]\OMS/cmsy/m/n/12 8\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 (\OML
 /cmm/m/it/12 x \OMS/cmsy/m/n/12 2 \OML/cmm/m/it/12 A \OMS/cmsy/m/n/12 $ \OML/cm
 m/m/it/12 '\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 ))
  []
 
 [16] [17] [18]
-Overfull \hbox (88.55293pt too wide) detected at line 770
+Overfull \hbox (88.55293pt too wide) detected at line 786
 \OML/cmm/m/it/12 Def\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 X\OT1/cmr/m/n/12 ) := \OM
 S/cmsy/m/n/12 ff[] 2 \OML/cmm/m/it/12 X \OMS/cmsy/m/n/12 ^ h\OML/cmm/m/it/12 X;
  \OMS/cmsy/m/n/12 2i j[]\OT1/cmr/m/n/12 = \OML/cmm/m/it/12 '\OT1/cmr/m/n/12 (\O
@@ -359,48 +355,45 @@ ML/cmm/m/it/12 y; z[]; [] ; z[]\OT1/cmr/m/n/12 )\OMS/cmsy/m/n/12 gj[]\OML/cmm/m
 
  []
 
-[19] (./bakalarka.bbl) [20] (./bakalarka.aux)
-
-LaTeX Warning: There were undefined references.
-
- ) 
+[19] [20] (./bakalarka.bbl) [21] (./bakalarka.aux) ) 
 Here is how much of TeX's memory you used:
- 5052 strings out of 493089
- 63474 string characters out of 6134842
- 135406 words of memory out of 5000000
- 8473 multiletter control sequences out of 15000+600000
- 16565 words of font info for 64 fonts, out of 8000000 for 9000
+ 5050 strings out of 493089
+ 63453 string characters out of 6134842
+ 135407 words of memory out of 5000000
+ 8471 multiletter control sequences out of 15000+600000
+ 16257 words of font info for 63 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  35i,13n,43p,1537b,591s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
-></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
-</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb>
-</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><
-/usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></
-usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></u
-sr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr
-/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/l
-ocal/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/loc
-al/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local
-/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/t
-exlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/tex
-live/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texliv
-e/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2
-015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl12.pfb></usr/local/texlive/20
-15/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/local/texlive/201
-5/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/local/texlive/2015
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/local/texlive/2015/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2015/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2015/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2015/texmf
--dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2015/texmf-
-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2015/te
-xmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/201
-5/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb>
-Output written on bakalarka.pdf (21 pages, 328065 bytes).
+</usr/local/texlive/2015/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2015/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2015/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/local/texlive/2015/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2015/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2015/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2015/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2015/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2015/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2015/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2015/texmf-dist/font
+s/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2015/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2015/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmsl12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmss10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmss12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmss8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmsy10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmsy8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmti10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmti12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfo
+nts/symbols/msam10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/a
+msfonts/symbols/msbm10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/publ
+ic/rsfs/rsfs10.pfb>
+Output written on bakalarka.pdf (22 pages, 328916 bytes).
 PDF statistics:
- 173 PDF objects out of 1000 (max. 8388607)
- 123 compressed objects within 2 object streams
+ 176 PDF objects out of 1000 (max. 8388607)
+ 125 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
