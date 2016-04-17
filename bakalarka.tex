@@ -346,7 +346,8 @@ For any $\varphi$, $N_0$ gives us $\exists u Scm^{\sf{S}}(u)$, which means that 
 We don't know the exact size of this $\alpha$, but we know that $\alpha \geq \omega$, otherwise $\alpha$ would be finite, therefore not closed under the powerset operation, which would contradict the axiom of powersets. 
 In order to prove that it is a model of $\sf{S}$, we would need to verify all axioms of $\sf{S}$ . We have already shown that $\omega$ is closed under the powerset operation. Foundation, extensionality and comprehension are clear from the fact that we work in $\sf{ZF}$\footnote{We only need to verify axioms that provide means of constructing larger sets from smaller to make sure they don't exceed $\omega$. Since $\omega$ is an initial segment of $ZF$, the axiom scheme of specification can't be broken, the same holds for foundation and extensionality.}, pairing is clear from the fact, that given two sets $A$, $B$, they have ranks $a$, $b$, without loss of generality we can assume that $a \leq b$, which means that $A \in V_a \in V_b$, therefore $V_b$ is a set that satisfies the paring axiom: it contains both $A$ and $B$.
 
-TODO what about union?
+TODO vyhodit axiomy, staci vyrobit $\omega$
+%TODO what about union?
 
 We now want to prove that $V_\alpha$ leads to existence of an inductive set, which is a set that satisfies $\exists A(\emptyset \in A \& \forall  x \in A ((x \cup \{ x\}) \in A)$. If we can find a way to construct $V_\omega$ from any $V_\alpha$ satisfying $\alpha \geq \omega$, we are done. Since $\omega$ is the least limit ordinal, all we need is the following
 
@@ -368,7 +369,7 @@ TODO vysvetlit!
 Let $\varphi(v, w)$ be a formula wth no free variables except $v, w, x_1, \ldots, x_n$ where $n$ is any natural number.
 Let $\chi$ be an instance of replacement schema for this $\varphi$:
 \begin{equation}
-\chi = \forall r, s, t(\varphi(r, s) \& \varphi(r, t) \then s = t) \then \exists y \forall w (w \in y \iff \exists v (v \in x \& \varphi(v, w)))
+\chi = \forall r, s, t(\varphi(r, s) \& \varphi(r, t) \then s = t) \then \forall x \exists y \forall w (w \in y \iff \exists v (v \in x \& \varphi(v, w)))
 \end{equation}
 \medskip
 We can deduce the following from $N_0$: 
@@ -397,91 +398,70 @@ TODO btw co je x? nemela by tam tam byt nejaka volna promenna?
 % =====================================================================================================================================
 
 \subsection{Contemporary restatement}
-
+TODO nejaky uvod. Levy rika ze existuje $Scm^S(u)$ reflektujici varphi, coz uz nepotrebujeme. atd.
 \medskip
 
-% Z jecha, p 168, Theorem 12.14
-% +remarks?
-TODO Plagiat Jecha -- prepsat a vysvetlit
-
-\begin{theorem}[L{\'e}vy] \label{th:refl} ZFC: 
-\bce[(i)]
-\item Let $\varphi(x_1, \ldots, x_n)$ be a first-order formula with free variables shown. Then for each set $M_0$ there exists a set $M \supset M_0$ such that
+The following lemma is usually done in parts, the first being with one formula and the other with $n$. Will will only state and prove the generalised version for $n$ formulas.
+\begin{lemma}{Lemma}\label{lemma:reflection_lemma}
+Let $\varphi_1, \ldots, \varphi_n$ be any formulas with $m$ parameters\footnote{For formulas with different number of parameters take for $m$ the highest number of parameters among given formulas. Add spare parameters to the other formulas so that $x$ remains the last parameter. That can be done in a following manner: Let $\varphi'_i$ be the a formula with k parameters, $k < m$. Let us set $\varphi_i(u_1, \ldots, u_{m-1}, x) = \varphi'_i(u_1, \ldots, u_{k-1}, u_k, \ldots, u_{m-1}, x)$, notice that $u_k, \ldots, u_{m-1}$ are spare variables added just for formal simplicity.} . For each set $M_0$ there is such $M$ that $M_0 \subset M$ and the following holds for every $i \leq n$
 \begin{equation}
-%\forall \alpha \; \forall x_1, \ldots, x_n \in V_\alpha \; \exists \beta \ge \alpha \; \big(\varphi(x_1, \ldots,x_n) \iff (V_\beta,\in) \models \varphi(x_1,\ldots, x_n)\big).
-\varphi^M (x_1,\ldots,x_n) \iff \varphi(x_1,\ldots,x_n)
+\exists x \varphi_i(u_1, \ldots, u_{m-1}, x) \then (\exists x \in M) \varphi_i(u_1, \ldots, u_{m-1}, x)
 \end{equation}
-(We say that M reflects $\varphi$)
-\item There is transitive $M \supset M_0$ that reflects $\varphi$; moreover, there is a limit ordinal $\alpha$ such that $M \subset V_\alpha$ and $V_\alpha$ reflects $\varphi$.
-\ece
-\end{theorem}
-
-In order to prove this theorem let's first state a lemma, similarly to \cite{JechBook}.
-\begin{lemma}
-\bce[(i)]
-\item Let $\varphi(u_1,\ldots,u_n,x)$ be a formula. For each set $M_0$ there exists a set $M \supset M_0$ such that
-\begin{equation}\label{equation_refl_lemma}
-\mbox{If }\exists x \varphi(u_1,\ldots,u_n,x) \mbox{ then } (\exists x \in M)\varphi (u_1,\ldots,u_n,x)
-\end{equation}
-\item If $\varphi_1,\ldots,\varphi_k$ are formulas, then for each $M_0$ there is an $M \supset M_0$ such that \ref{equation_refl_lemma} holds for each $\varphi_1,\ldots,\varphi_k$.
-\ece
 \end{lemma}
 
 \begin{proof}
-%dukaz lemmatu
-Let's first prove $(i)$. 
-For every $u_1,\ldots,u_n$, let 
+Let us first define operation $H(u_1, \ldots, u_{m-1})$ that gives us the set of $x$'s with minimal rank, satisfying $\varphi_i(u_1, ldots, u_{m-1}, x)$ for given parameteres $u_1, \ldots, u_{m-1}$ for every $i \leq n$.
+
 \begin{equation}
-H(u_1,\ldots,u_n) = \hat{C}
+H_i(u_1, \ldots, u_n) = \{x \in C_i: (\forall z \in C)(rank(x) \leq rank(z))\} \mbox{ for $i \leq n$}
 \end{equation}
-where $\hat{C}$ is defined as follows:
+where
 \begin{equation}
-\hat{C} = \{x \in C : (\forall z \in C) \mbox{ rank x} \leq \mbox{rank z} \},
+C_i = \{x: \varphi_i(u_1, \ldots, u_{m-1}, x)\} \mbox{ for $i \leq n$}
 \end{equation}
+\medskip
+Next, let's construct $M$ from given $M_0$ by induction. 
 \begin{equation}
-C = \{x: \varphi(u_1,\ldots,u_n,x)\}.
+M_{i+1} = M_i \cup \bigcup_{j=0}^{n} \{\bigcup\{H_j(u_1, \ldots, u_{m-1}): u_1, \ldots, u_{m-1} \in M_i\}\}
 \end{equation}
-Intuitively, $C$ is a set of all witnesses of property $\varphi$ with $n$ fixed parameters. $\hat{C}$ contains the elements of $C$ that are minimal with respect to rank.
-$H(u_1,\ldots,u_n)$ is in a fact a set with the following property
+In other words, in each step we add the elements satisfying $\varphi(u_1, \ldots, u_{m-1}, x)$ for those parameters that were either available earlier or were added in the previous step. The final $M$ is obtained by joining all incremental steps together.
 \begin{equation}
-\mbox{ if }\exists x \varphi(u_1,\ldots,u_n,x), \mbox{ then } (\exists x \in H(u_1,\ldots,u_n))\varphi(u_1,\ldots,u_n,x)
+M = \bigcup_{i=0}^{\infty} M_i
 \end{equation}
-In other words, if there is are witnesses of $\varphi$ being valid with fixed parameters $u_1,\ldots,u_n$, at least one of them has is an element of $H(u_1,\ldots,u_n)$.
-\newline
-We can now inductively construct the set M. Note that $M_0$ is given to us from the very beginning.
+
+\medskip 
+Let's try to construct a set $M'$ that satisfies the same conditions like $M$ but is kept as small as possible. Assuming the Axiom of Choice, we can modify the process so that cardinality of $M'$ is at most $|M_0| \cdot \aleph_0$. Note that the size of $M'$ is determined by the size of $M_0$ an, most importantly, by the size of $H_i(u_1, \ldots, u_{m-1})$ for any $i \leq n$ in individual levels of the construction. Since the lemma only states existence of some $x$ that satisfies $\varphi_i(u_1, \ldots, u_{m-1}, x)$ for any $i \leq n$, we only need to add one $x$ for every set of parameters but $H_i(u_1, \dots, u_{m-1})$ can be arbitrarily large. Since Axiom of Choice ensures that there is a choice function, let $F$ be a choice function on $\power(M')$. Also let $h_i(u_1, \ldots, u_{m-1}) = F(H_i(u_1, \ldots, u_{m-1}))$ for $i \leq n$, which means that $h$ is a function that outputs an $x$ that satisfies $\varphi_i(u_1, \ldots, u_{m-1}, x)$ for $i \leq n$ and has minimal rank among all such witnesses. The induction step needs to be redefined to
 \begin{equation}
-M_{i+1}=M_i \cup \bigcup\{H(u_1,\ldots,u_n): u_1,\ldots,u_n\in M_i \} ,
+M'_{i+1} = M'_i \cup \bigcup_j=0^n \{ h_j(u_1, \ldots, u_{m-1}): u_1, \ldots, u_{m-1} \in M'_i \}
 \end{equation}
-\begin{equation}
-M=\bigcup_{i=0}^\infty M_i
-\end{equation}
-We have defined $H$ and $M$ in a way that if $u_1,\ldots,u_n \in M$, then there is some $i \in \mathbb{N}$ such that $u_1,\ldots,u_n \in M_i$ and if $\varphi(u_1,\ldots,u_n,x)$ holds for some $x$, it then holds for some $x \in M_{i+1}$.
-\newline\newline
-In order to modify this proof to work also for $(ii)$, we need to change the definition of $H(u_1,\ldots,u_n) = \hat{C}$ to $H_i(u_1,\ldots,u_n) = \hat{C_i}$ where $\hat{C_i}$ uses $C_i$ instead of $C$, which in turn contains $\varphi_i$ in place of $\varphi$.
-Next, we modify the contruction of $M$ in a similar manner:\newline
-\begin{equation}
-M_{i+1}=M_i \cup \bigcup\{\bigcup_{j \in 1,\ldots,k}\{H_j(u_1,\ldots,u_n)\}: u_1,\ldots,u_n\in M_i \} ,
-\end{equation}
-Last step of the construction stays the same, which means we are finished with this lemma.
+In every step, the amount of elements added in $M'_{i+1}$ is equivalent to the amount of sets of parameters the yielded elements not included in $M'_i$. So the cardinality of $M'_{i+1}$ exceeds the cardinality of $M'_i$ only for finite $M'_i$. It is easy to see that if $M_0$ is finite, $M'$ is countable because it was built from countable union of finite sets. If $M_0$ is countable or larger, cardinaly of $M'$ is equal to the cardinality of $M_0$.\footnote{It can not be smaller because $|M'_{i+1}|  \geq |M'_i|$ for every $i$. It may not be significantly larger because the maximum of elements added is the number of $n$-tuples in $M'_i$, which is of the same cardinality is $M'_i$. ((proc? Ramsey?))}
+Therefore $|M'| \leq |M_0| \cdot \aleph_0$
+
 \end{proof}
-\newline
-\newline
-We are now ready to prove our first version of the Reflection principle.
-\begin{proof}
-%TODO dukaz (Jech 12.14 (i), doplnit a vyjasnit)
-Let $\varphi(x_1,\ldots,x_n)$ be a formula with no universal quantifiers and $\varphi_1,\ldots,\varphi_k$ all sub formulas in $\varphi$. 
-Given a set $M_0$, thanks to the previous lemma we know, that there exists a set $M \supset M_0$, such that
-\begin{equation}
-\exists x \varphi_j(u,\ldots,x) \to (\exists x \in M) \varphi_j (u,\ldots,x),\quad j = 1,\ldots,k
-\end{equation}
-for all $u,\ldots \in M$.
-%we claim. ...
-% ...
-\newline\newline
-TODO (ii)
-\end{proof}
+ 
+ 
+TODO proc $\leq$ a ne $=$?
+
+TODO nemel bych neco rict o $u_1, \ldots, u_n$? urcite se dostanou do nektereho $M_i$?
+
+
 
 \medskip
+
+\begin{theorem}{First-order Reflection}
+
+\end{theorem}
+
+
+\begin{proof}
+
+\end{proof}
+
+
+\medskip
+
+
+
 
 \begin{theorem}
 (Refl) is equivalent to (Infinity) $\&$ (Replacement) under ZFC minus (Infinity) $\&$ (Replacement)
@@ -502,8 +482,6 @@ This is the easy part since Infinity says that \emph{there is an infinite set} a
 \end{proof}
 
 TODO Plagiat -- prepsat a vysvetlit
-
-
 \begin{definition}\label{def:reflection_2}
 Let $\varphi(R)$ be a $\Pi^n_m$-formula which contains only one free variable $R$ which is second-order. Given $R \sub V_\kappa$, we say that $\varphi(R)$ reflects in $V_\kappa$ if there is some $\alpha<\kappa$ such that:
 \begin{equation}
