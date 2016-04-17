@@ -316,7 +316,7 @@ TODO co dal? recent results?
 This section will try to present Lévy's proof of a general reflection principle being equivalent to Replacement and Infinity under ZF minus Replacement and Infinity.
 We will first introduce a few axioms and definitions that were a different in Lévy's paper\cite{Levy60a}, but are equivalent to today's terms. We will write them in contemporary notation, our aim is the result, not history of set theory notation. 
 
-Please note that Lévy's paper was written in a period when Set theory was oriented towards semantics, which means that everything was done in a model. All proofs were done on a model that was $V_\alpha$ (notated as $R(\alpha)$ at the time) for some cardinal $\alpha$, which means that $\alpha$ is a inaccessible cadinal. Please bear in mind that this is vastly different from saying that there is an inaccessible $\alpha$ inside the model. This $V_\alpha$ is also referred to as $Scm^{\sf{Q}}(u)$, which means that u ($u=V_\alpha$ in our case) is a standard complete model of an undisclosed axiomatic set theory $\sf{Q}$ formulated in the "non-simple applied first order functional calculus", which is second-order theory is today's terminology, we are allowed to quantify over functions and thus get rid of axiom schemes. (Note that Lévy always speaks of "the axiom of replacement"). Besides placeholder set theory $\sf{Q}$ and $\sf{ZF}$, which the reader should be familiar with, theories $\sf{Z}$, $\sf{S}$, and $\sf{SF}$ are used in the text. $\sf{Z}$ is $\sf{ZF}$ minus replacement, $\sf{S}$ is $\sf{ZF}$ minus replacement and infinity, and finally $\sf{SF}$ is $\sf{ZF}$ minus infinity. "The axiom of subsets" is an older name for the axiom scheme of specification (and it's not a scheme since we are now working in second order logic). Also note that universal quantifier does not appear, $\forall x \varphi (x)$ would be written as $(x) \varphi (x)$, the symbol for negation is "$\sim$".
+Please note that Lévy's paper was written in a period when Set theory was oriented towards semantics, which means that everything was done in a model. All proofs were theodel that of $\sf{ZFC}$ was $V_\alpha$ (notated as $R(\alpha)$ at the time) for some cardinal $\alpha$, which means that $\alpha$ is a inaccessible cadinal. Please bear in mind that this is vastly different from saying that there is an inaccessible $\alpha$ inside the model. This $V_\alpha$ is also referred to as $Scm^{\sf{Q}}(u)$, which means that $u$ ($u=V_\alpha$ in our case) is a standard complete model of an undisclosed axiomatic set theory $\sf{Q}$ formulated in the "non-simple applied first order functional calculus", which is second-order theory is today's terminology, we are allowed to quantify over functions and thus get rid of axiom schemes. (Note that Lévy always speaks of "the axiom of replacement"). Besides placeholder set theory $\sf{Q}$ and $\sf{ZF}$, which the reader should be familiar with, theories $\sf{Z}$, $\sf{S}$, and $\sf{SF}$ are used in the text. $\sf{Z}$ is $\sf{ZF}$ minus replacement, $\sf{S}$ is $\sf{ZF}$ minus replacement and infinity, and finally $\sf{SF}$ is $\sf{ZF}$ minus infinity. "The axiom of subsets" is an older name for the axiom scheme of specification (and it's not a scheme since we are now working in second order logic). Also note that universal quantifier does not appear, $\forall x \varphi (x)$ would be written as $(x) \varphi (x)$, the symbol for negation is "$\sim$".
 
 Lévy then mentions Mahlo's arithmetic construction of cardinals, noting, that he will use similar strategy to build higher levels of strong axioms of infinity. 
 
@@ -327,13 +327,14 @@ TODO asi doplnit jak to souvisi se soucasnou definici slabe Mahlovych kardinalu 
 
 
 
-\begin{definition}{$N_0$}
+\begin{definition}{$N_0(\varphi)$}
 \begin{equation}
 \exists u (Scm^{\sf{S}}(u) \& x_1, \ldots , x_n \in u \then \varphi \iff \varphi^{u})
 \end{equation}
 where $\varphi$ is a formula which does not contain free variables except $x_1, \ldots , x_n$.
 \end{definition}
 
+TODO muzu vyhodit 
 %observation: $Scm^{\sf{S}}(u) = In(\kappa) \iff \exists \kappa (V_\kappa = u)$
 
 \begin{theorem}
@@ -341,8 +342,18 @@ In $\sf{S}$, the schema $N_0$ implies the Axiom of Infinity.
 \end{theorem}
 
 \begin{proof}
-For any $\varphi$, $N_0$ gives us $\exists u Scm^{\sf{S}}(u)$, which means that there is a set $u$ that is identical to $V_\alpha$ for some alpha.
-We don't know the exact size of this $u$, but we know that it's either identical to $\omega$ or it contains $\omega$, otherwise $u$ would be finite, which would contradict the axiom of powersets which is supposed to hold in o model of $\sf{S}$. Since Von Neumann's hierarchy is inductive, ((potrebuju tohle?)) the smallest $u$ satisfying $Scm^{\sf{S}}(u)$, easily obtained by intersetion is $\omega$. \footnote{Note that $\omega$ satisfies the axioms of $\sf{S}$ and every smaller model is finite and thus breaking the powerset axiom.}
+For any $\varphi$, $N_0$ gives us $\exists u Scm^{\sf{S}}(u)$, which means that there is a set $u$ that is identical to $V_\alpha$ for some alpha, so $\exists \alpha Scm^{\sf{S}}(V_\alpha)$.
+We don't know the exact size of this $\alpha$, but we know that $\alpha \geq \omega$, otherwise $\alpha$ would be finite, therefore not closed under the powerset operation, which would contradict the axiom of powersets. 
+In order to prove that it is a model of $\sf{S}$, we would need to verify all axioms of $\sf{S}$ . We have already shown that $\omega$ is closed under the powerset operation. Foundation, extensionality and comprehension are clear from the fact that we work in $\sf{ZF}$\footnote{We only need to verify axioms that provide means of constructing larger sets from smaller to make sure they don't exceed $\omega$. Since $\omega$ is an initial segment of $ZF$, the axiom scheme of specification can't be broken, the same holds for foundation and extensionality.}, pairing is clear from the fact, that given two sets $A$, $B$, they have ranks $a$, $b$, without loss of generality we can assume that $a \leq b$, which means that $A \in V_a \in V_b$, therefore $V_b$ is a set that satisfies the paring axiom: it contains both $A$ and $B$.
+
+TODO what about union?
+
+We now want to prove that $V_\alpha$ leads to existence of an inductive set, which is a set that satisfies $\exists A(\emptyset \in A \& \forall  x \in A ((x \cup \{ x\}) \in A)$. If we can find a way to construct $V_\omega$ from any $V_\alpha$ satisfying $\alpha \geq \omega$, we are done. Since $\omega$ is the least limit ordinal, all we need is the following
+
+\begin{equation}
+\bigcap \{V_\kappa\ |\  \forall \lambda(\lambda < \kappa \then \exists \mu(\lambda < \mu < \kappa))\}
+\end{equation}
+because $V_\kappa$ is a transitive set for every $\kappa$, thus the intersection is non-empty unless empty set satisfies the property or the set of $V_\kappa$s is itself empty.
 \end{proof}
 
 
