@@ -368,7 +368,7 @@ TODO vysvetlit!
 Let $\varphi(v, w)$ be a formula wth no free variables except $v, w, x_1, \ldots, x_n$ where $n$ is any natural number.
 Let $\chi$ be an instance of replacement schema for this $\varphi$:
 \begin{equation}
-\chi = \forall r, s, t(\varphi(r, s) \& \varphi(r, t) \then s = t) \then \exists y \forall w (w \in y \iff \exists v (v \in x \& \varphi(v, w)))
+\chi = \forall r, s, t(\varphi(r, s) \& \varphi(r, t) \then s = t) \then \forall x \exists y \forall w (w \in y \iff \exists v (v \in x \& \varphi(v, w)))
 \end{equation}
 \medskip
 We can deduce the following from $N_0$: 

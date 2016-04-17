@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.12.2)  17 APR 2016 23:30
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.12.2)  17 APR 2016 23:40
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -296,7 +296,21 @@ an{then
 
 [4
 
-] [5] [6] [7] [8] [9] [10] [11]
+] [5] [6] [7] [8] [9]
+Overfull \hbox (4.57101pt too wide) detected at line 372
+\OML/cmm/m/it/12 ^^_ \OT1/cmr/m/n/12 = \OMS/cmsy/m/n/12 8\OML/cmm/m/it/12 r; s;
+ t\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 '\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 r; s\OT1
+/cmr/m/n/12 )&\OML/cmm/m/it/12 '\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 r; t\OT1/cmr/
+m/n/12 ) \OMS/cmsy/m/n/12 ! \OML/cmm/m/it/12 s \OT1/cmr/m/n/12 = \OML/cmm/m/it/
+12 t\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 ! 8\OML/cmm/m/it/12 x\OMS/cmsy/m/n/12 9\
+OML/cmm/m/it/12 y\OMS/cmsy/m/n/12 8\OML/cmm/m/it/12 w\OT1/cmr/m/n/12 (\OML/cmm/
+m/it/12 w \OMS/cmsy/m/n/12 2 \OML/cmm/m/it/12 y \OMS/cmsy/m/n/12 $ 9\OML/cmm/m/
+it/12 v\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 v \OMS/cmsy/m/n/12 2 \OML/cmm/m/it/12 
+x\OT1/cmr/m/n/12 &\OML/cmm/m/it/12 '\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 v; w\OT1/
+cmr/m/n/12 )))
+ []
+
+[10] [11]
 Underfull \hbox (badness 10000) in paragraph at lines 457--462
 
  []
