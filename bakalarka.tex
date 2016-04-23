@@ -309,10 +309,12 @@ TODO co dal? recent results?
 
 %\medskip
 
-\newpage
-\section{Lévy's Original Proof}\label{sec:fixed}
 
-\subsection{Introduction}\label{sec:Levy1960}
+
+\newpage
+\section{Levy's first-order reflection}\label{sec:fixed}  % skutecne, kdyz je formulovana v druhoradove logice?
+
+\subsection{Introduction}
 This section will try to present Lévy's proof of a general reflection principle being equivalent to Replacement and Infinity under ZF minus Replacement and Infinity.
 We will first introduce a few axioms and definitions that were a different in Lévy's paper\cite{Levy60a}, but are equivalent to today's terms. We will write them in contemporary notation, our aim is the result, not history of set theory notation. 
 
@@ -324,9 +326,13 @@ TODO porovnani Mahlovy a Lévyho konstrukce
 
 TODO asi doplnit jak to souvisi se soucasnou definici slabe Mahlovych kardinalu pres stacionarni mnoziny?
 
+\subsection{Preliminaries}
+\begin{definition}{Relativization}\label{def:relativization}
+TODO (jech:161)
+\end{definition}
 
 
-
+\subsection{Lévy's Original Proof From 1960}\label{sec:Levy1960}
 \begin{definition}{$N_0(\varphi)$}
 \begin{equation}
 \exists u (Scm^{\sf{S}}(u) \& x_1, \ldots , x_n \in u \then \varphi \iff \varphi^{u})
@@ -349,7 +355,7 @@ In order to prove that it is a model of $\sf{S}$, we would need to verify all ax
 TODO vyhodit axiomy, staci vyrobit $\omega$
 %TODO what about union?
 
-We now want to prove that $V_\alpha$ leads to existence of an inductive set, which is a set that satisfies $\exists A(\emptyset \in A \& \forall  x \in A ((x \cup \{ x\}) \in A)$. If we can find a way to construct $V_\omega$ from any $V_\alpha$ satisfying $\alpha \geq \omega$, we are done. Since $\omega$ is the least limit ordinal, all we need is the following
+We now want to prove that $V_\alpha$ leads to existence of an inductive set, which is a set that satisfies $\exists A(\emptyset \in A \& \forall  x \in A ((x \cup \{ x\}) \in A))$. If we can find a way to construct $V_\omega$ from any $V_\alpha$ satisfying $\alpha \geq \omega$, we are done. Since $\omega$ is the least limit ordinal, all we need is the following
 
 \begin{equation}
 \bigcap \{V_\kappa\ |\  \forall \lambda(\lambda < \kappa \then \exists \mu(\lambda < \mu < \kappa))\}
@@ -384,7 +390,7 @@ Note that (i), (ii), (iii) are obtained from instances of $N_0$ for $\varphi$, $
 From relativization we also know that $(\exists w \varphi)^{u}$ is equivalent to $\exists w (w \in u \& \varphi^{u})$.
 Therefore (ii) is equivalent to $x_1, \ldots, x_n, v \in u \then (\exists w (w \in u \& \varphi^{u})$. 
 
-If $\varphi$ is a function ($ \forall r, s, t(\varphi(r, s) \& \varphi(r, t) \then r=t $), then for every $x \in u$, which is also $x \subset u$ by $Scm^{\sf{S}}(u)$,
+If $\varphi$ is a function ($ \forall r, s, t(\varphi(r, s) \& \varphi(r, t) \then r=t $)), then for every $x \in u$, which is also $x \subset u$ by $Scm^{\sf{S}}(u)$,
 it maps elements of $x$ onto $u$. From the axiom scheme of comprehension\footnote{axiom of subsets in Levy's version}, we can find a set of all images of elements of $x$. Let's call it $y$.
 That gives us $x_1, \ldots, x_n, x \in u \then \chi$. By (iii) we get $x_1, \ldots, x_n, x \in u \then \chi^{u}$, closure of this formula is $(\forall x_1, \ldots, x_n \forall x \chi)^{u}$, 
 which together with (iv) yields $\forall x_1, \ldots, x_n \forall x \chi$. By the means of specification we end up with $\chi$, which is all we need for now. 
@@ -403,13 +409,23 @@ TODO nejaky uvod. Levy rika ze existuje $Scm^S(u)$ reflektujici varphi, coz uz n
 
 The following lemma is usually done in parts, the first being with one formula and the other with $n$. Will will only state and prove the generalised version for $n$ formulas.
 \begin{lemma}{Lemma}\label{lemma:reflection_lemma}
-Let $\varphi_1, \ldots, \varphi_n$ be any formulas with $m$ parameters\footnote{For formulas with different number of parameters take for $m$ the highest number of parameters among given formulas. Add spare parameters to the other formulas so that $x$ remains the last parameter. That can be done in a following manner: Let $\varphi'_i$ be the a formula with k parameters, $k < m$. Let us set $\varphi_i(u_1, \ldots, u_{m-1}, x) = \varphi'_i(u_1, \ldots, u_{k-1}, u_k, \ldots, u_{m-1}, x)$, notice that $u_k, \ldots, u_{m-1}$ are spare variables added just for formal simplicity.} . For each set $M_0$ there is such $M$ that $M_0 \subset M$ and the following holds for every $i \leq n$
+Let $\varphi_1, \ldots, \varphi_n$ be any formulas with $m$ parameters\footnote{For formulas with different number of parameters take for $m$ the highest number of parameters among given formulas. Add spare parameters to the other formulas so that $x$ remains the last parameter. That can be done in a following manner: Let $\varphi'_i$ be the a formula with k parameters, $k < m$. Let us set $\varphi_i(u_1, \ldots, u_{m-1}, x) = \varphi'_i(u_1, \ldots, u_{k-1}, u_k, \ldots, u_{m-1}, x)$, notice that $u_k, \ldots, u_{m-1}$ are spare variables added just for formal simplicity.}. 
+\bce[(i)]
+\item For each set $M_0$ there is such $M$ that $M_0 \subset M$ and the following holds for every $i \leq n$:
 \begin{equation}
 \exists x \varphi_i(u_1, \ldots, u_{m-1}, x) \then (\exists x \in M) \varphi_i(u_1, \ldots, u_{m-1}, x)
 \end{equation}
+
+\item Furthermore there is an ordinal $\alpha$ such that $M_0 \subset V_\alpha$ and the following holds for each $i \leq n$:
+\begin{equation}
+\exists x \varphi_i(u_1, \ldots, u_{m-1}, x) \then (\exists x \in V_\alpha) \varphi_i(u_1, \ldots, u_{m-1}, x)
+\end{equation}
+\ece
 \end{lemma}
 
 \begin{proof}
+We will simultaneously prove statements (i) and (ii), denoting $M^T$ the transitive model required by part (ii). Unless explicitly stated otherwise, it is equivalent to $M$.
+
 Let us first define operation $H(u_1, \ldots, u_{m-1})$ that gives us the set of $x$'s with minimal rank, satisfying $\varphi_i(u_1, ldots, u_{m-1}, x)$ for given parameteres $u_1, \ldots, u_{m-1}$ for every $i \leq n$.
 
 \begin{equation}
@@ -422,11 +438,21 @@ C_i = \{x: \varphi_i(u_1, \ldots, u_{m-1}, x)\} \mbox{ for $i \leq n$}
 \medskip
 Next, let's construct $M$ from given $M_0$ by induction. 
 \begin{equation}
-M_{i+1} = M_i \cup \bigcup_{j=0}^{n} \{\bigcup\{H_j(u_1, \ldots, u_{m-1}): u_1, \ldots, u_{m-1} \in M_i\}\}
 \end{equation}
-In other words, in each step we add the elements satisfying $\varphi(u_1, \ldots, u_{m-1}, x)$ for those parameters that were either available earlier or were added in the previous step. The final $M$ is obtained by joining all incremental steps together.
+In other words, in each step we add the elements satisfying $\varphi(u_1, \ldots, u_{m-1}, x)$ for those parameters that were either available earlier or were added in the previous step. 
+
+For statement (ii), this is the only part that differs from (i). Let us take for each step transitive closure of $M_{i+1}$ from (i). In other words, let $\gamma$ be the smallest ordinal such that 
 \begin{equation}
-M = \bigcup_{i=0}^{\infty} M_i
+(M^T_i \cup \bigcup_{j=0}^{n} \{\bigcup\{H_j(u_1, \ldots, u_{m-1}): u_1, \ldots, u_{m-1} \in M_i\}\}) \subset V_\gamma
+\end{equation}
+Then the incremetal step is like so:
+\begin{equation}
+M^T_{i+1} = V_\gamma
+\end{equation}
+
+The final $M$ is obtained by joining all incremental steps together. 
+\begin{equation}
+M = \bigcup_{i=0}^{\infty} M_i, \mbox{  }M^T = \bigcup_{i=0}^{\infty} M^T_i
 \end{equation}
 
 \medskip 
@@ -449,32 +475,100 @@ TODO nemel bych neco rict o $u_1, \ldots, u_n$? urcite se dostanou do nektereho 
 \medskip
 
 \begin{theorem}{First-order Reflection}
+$\varphi(x_1, \ldots, x_n)$ is a first-order formula.
+\bce[(i)]
+\item For every set $M_0$ there exists $M$ such that $M_0 \subset M$ and the following holds:
+\begin{equation}
+\varphi^M(x_1, \ldots, x_n) \iff \varphi(x_1, \ldots, x_n)
+\end{equation}
+for every $x_1, \ldots, x_n$.
 
+\item For every set $M_0$  there is a transitive set $M$, $M_0 \subset M$ such that the following holds:
+\begin{equation}
+\varphi^M(x_1, \ldots, x_n) \iff \varphi(x_1, \ldots, x_n)
+\end{equation}
+for every $x_1, \ldots, x_n$.
+
+\item For every set $M_0$ there is $\alpha$ such that $M_0 \subset V_{\alpha}$ and the following holds:
+\begin{equation}
+\varphi^{V_{\alpha}}(x_1, \ldots, x_n) \iff \varphi(x_1, \ldots, x_n)
+\end{equation}
+for every $x_1, \ldots, x_n$.
+
+\item Assuming the Axiom of Choice, for every set $M_0$ there is $M$ such that $M_0 \subset M$ and $|M| \leq |M_0| \cdot \aleph_0$ and the following holds:
+\begin{equation}
+\varphi^M(x_1, \ldots, x_n) \iff \varphi(x_1, \ldots, x_n)
+\end{equation}
+for every $x_1, \ldots, x_n$.)
+
+TODO mozna vyhodit (iv) z vety, abychom mohli rict "the following are equivalent"
+\ece
 \end{theorem}
 
 
 \begin{proof}
+Let's prove (i) for one formula $\varphi$ via induction by complexity first. We can safely assume that $\varphi$ contains no quantifiers besides $\exists$ and no logical connectives other than $\neg$ and $\&$.
+Assume that this $M$ is obtained from lemma \ref{lemma:reflection_lemma}.
+
+The fact, that atomic formulas are reflected in every $M$ comes directly from definition of relativization and the fact that they contain no quantifiers.\footnote{Note that this does not hold generally for relativizations to $M, E$, but only for relativization to $M, \in$, which is our case.}
+
+The same holds for formulas in the form of $\varphi = \neg \varphi'$. Let us recall the definition of relativization for those formulas in \label{def:relativization}.
+\begin{equation}
+(\neg \varphi_1)^M \iff \neg (\varphi_1^M)
+\end{equation}
+Because we can assume from induction that $\varphi'^M \iff \varphi'$, the following holds:
+\begin{equation}
+(\neg \varphi')^M \iff \neg (\varphi'^M) \iff \neg \varphi'
+\end{equation}
+
+The same holds for $\varphi = \varphi_1\mbox{ }\&\mbox{ }\varphi_2$. From the induction hypothesis we know that $\varphi_1^M \iff \varphi_1$ and $\varphi_2^M \iff \varphi_2$, which together with relativization for formulas of form $\varphi_1 \& \varphi_2$ gives up 
+\begin{equation}
+(\varphi_1\mbox{ }\&\mbox{ }\varphi_2)^M \iff \varphi_1^M\mbox{ }\&\mbox{ }\varphi_2^M \iff \varphi_1\mbox{ }\&\mbox{ }\varphi_2
+\end{equation}
+
+
+Let's now examine the case when from the induction hypethesis, $M$ reflects $\varphi'(u_1, \ldots, u_n, x)$ and we are interested in $\varphi = \exists x \varphi'(u_1, \ldots, u_n, x)$.
+The induction hypothesis tells us, that 
+\begin{equation}
+\varphi'^M(u_1, \ldots, u_n, x) \iff \varphi'(u_1, \ldots, u_n, x)
+\end{equation}
+Together with above lemma \ref{lemma:reflection_lemma} the following holds:
+\begin{equation}
+\exists x \varphi'(u_1, \ldots, u_n, x)
+\end{equation}
+\begin{equation}
+\iff (\exists x \in M) \varphi'(u_1, \ldots, u_n, x)
+\end{equation}
+\begin{equation}
+\iff (\exists x \in M) \varphi'^M (u_1, \ldots, u_n, x) 
+\end{equation}
+\begin{equation}
+\iff (\exists x \varphi'(u_1, \ldots, u_n, x))^M
+\end{equation}
+Which is what we needed to prove.
+
+% mezera
+So far we have proven part (i) of this theorem for one formula $\varphi$, we only need to verify that the same holds for any finite number of formulas. This has in fact been already done sice lemma \ref{lemma:reflection_lemma} gives us $M$ for any (finite) amount of formulas. We can than use the induction above  to verify that it reflects each of the formulas individually. 
+
+\medskip
+Now we want to verify other parts of our theorem. Since $V_\alpha$ is a transitive set, by proving (iii) we also satisfy (ii). To do so, we only need to look at part (ii) of lemma \ref{lemma:reflection_lemma}. All of the above proof also holds for $M = V_\alpha$. To finish part (iv)
 
 \end{proof}
 
 
-\medskip
-
-
-
-
+% mezera
 \begin{theorem}
 (Refl) is equivalent to (Infinity) $\&$ (Replacement) under ZFC minus (Infinity) $\&$ (Replacement)
 \end{theorem}
-
+% mezera
 \begin{proof}
 Since (Refl) is a sound theorem in ZFC, we are only interested in showing the converse:
-\medskip
+
 (Refl) $\then$ (Infinity)
 
 This is the easy part since Infinity says that \emph{there is an infinite set} and (Refl) is just a stronger version that says "there is an inaccessible cardinal" which is all we need. ((PREFORMULOVAT))
 
-\medskip
+
 
 (Refl) $\then$ (Replacement)
 % todo asi odkaz na levyho?

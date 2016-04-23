@@ -1,19 +1,21 @@
 \contentsline {section}{\numberline {1}Introduction}{4}
 \contentsline {subsection}{\numberline {1.1}Motivation and Origin}{4}
 \contentsline {subsection}{\numberline {1.2}A few historical remarks on reflection}{8}
-\contentsline {section}{\numberline {2}L\IeC {\'e}vy's Original Proof}{9}
+\contentsline {section}{\numberline {2}Levy's first-order reflection}{9}
 \contentsline {subsection}{\numberline {2.1}Introduction}{9}
-\contentsline {subsection}{\numberline {2.2}Contemporary restatement}{11}
-\contentsline {section}{\numberline {3}Large Cardinals}{14}
-\contentsline {subsection}{\numberline {3.1}Preliminaries}{14}
-\contentsline {subsection}{\numberline {3.2}Inaccelssibility}{14}
-\contentsline {subsection}{\numberline {3.3}Mahlo cardinals}{15}
-\contentsline {subsection}{\numberline {3.4}Weakly Compact Cardinals}{16}
-\contentsline {subsection}{\numberline {3.5}Indescribable Cardinals}{16}
-\contentsline {subsection}{\numberline {3.6}Bernays\IeC {\textendash }G{\"o}del Set Theory}{17}
-\contentsline {subsection}{\numberline {3.7}Morse\IeC {\textendash }Kelley Set Theory}{19}
-\contentsline {subsection}{\numberline {3.8}Reflection and the constructible universe}{20}
-\contentsline {section}{\numberline {4}Higher-order reflection}{21}
-\contentsline {subsection}{\numberline {4.1}Sharp}{21}
-\contentsline {subsection}{\numberline {4.2}Welek: Global Reflection Principles}{21}
-\contentsline {section}{\numberline {5}Conclusion}{21}
+\contentsline {subsection}{\numberline {2.2}Preliminaries}{9}
+\contentsline {subsection}{\numberline {2.3}L\IeC {\'e}vy's Original Proof From 1960}{10}
+\contentsline {subsection}{\numberline {2.4}Contemporary restatement}{11}
+\contentsline {section}{\numberline {3}Large Cardinals}{16}
+\contentsline {subsection}{\numberline {3.1}Preliminaries}{16}
+\contentsline {subsection}{\numberline {3.2}Inaccelssibility}{16}
+\contentsline {subsection}{\numberline {3.3}Mahlo cardinals}{17}
+\contentsline {subsection}{\numberline {3.4}Weakly Compact Cardinals}{18}
+\contentsline {subsection}{\numberline {3.5}Indescribable Cardinals}{18}
+\contentsline {subsection}{\numberline {3.6}Bernays\IeC {\textendash }G{\"o}del Set Theory}{19}
+\contentsline {subsection}{\numberline {3.7}Morse\IeC {\textendash }Kelley Set Theory}{21}
+\contentsline {subsection}{\numberline {3.8}Reflection and the constructible universe}{22}
+\contentsline {section}{\numberline {4}Higher-order reflection}{23}
+\contentsline {subsection}{\numberline {4.1}Sharp}{23}
+\contentsline {subsection}{\numberline {4.2}Welek: Global Reflection Principles}{23}
+\contentsline {section}{\numberline {5}Conclusion}{23}
