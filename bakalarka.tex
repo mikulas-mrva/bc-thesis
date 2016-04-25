@@ -7,6 +7,7 @@
 \usepackage{longtable}
 \usepackage{paralist}
 \usepackage{lineno}
+\usepackage{verbatim}
 \linenumbers
 
 \usepackage{color} %pro barevné odkazy, pøíp. nadpisy
@@ -155,7 +156,7 @@ Prohlašuj, že jsem bakalářkou práci vypracoval samostatně a~že jsem uvedl
 \bigskip
 \renewcommand{\abstractname}{Abstract}
 \begin{abstract}
-\noindent TODO Resumé práce v~anglickém jazyce. % todo
+\noindent This thesis aims to examine relations between so called "Reflection Principles" and Large cardinals. Lévy has shown that Reflection Theorem is a sound theorem of ZFC and it is equivalent to Replacement Scheme and the Axiom of Infinity. From this point of view, Reflection theorem can be seen a~specific version of an Axiom of Infinity. This paper aims to examine the Reflection Principle and it's generalisations with respect to existence of Large Cardinals. This thesis will establish Inaccessible, Mahlo and Indescribable cardinals and their definition via reflection. A natural limit of Large Cardinals obtained via reflection are cardinals inconsistent with L. The thesis will offer an intuitive explanation of why this is the case.
 \end{abstract}
 \clearpage
 
@@ -188,19 +189,19 @@ In ancient Greece, Aristotle's response to famous Zeno's paradoxes introduced th
 % viz A.W.Moore The Infinite -- je tam nejak reflexe?
 He argued, that potential infinity is (in today's words) well defined, as opposed to actual infinity, which remained a vague incoherent concept. He didn't think it's possible for infinity to inhabit a bounded place in space or time, rejecting Zeno's thought experiments as a whole. 
 % co Archimedes?
-Aristotle's thoughts shaped western thinking partly due to Aquinas, who himself believed actual infinity to be more of a metaphysical concept for describing God than a mathematical property attributed to any other entity. In his Summa Theologica \footnote{Part I, Question 7, Article 3, Reply to Objection 1} he argues:
+Aristotle's thoughts shaped western thinking partly due to Aquinas, who himself believed actual infinity to be more of a~metaphysical concept for describing God than a~mathematical property attributed to any other entity. In his Summa Theologica \footnote{Part I, Question 7, Article 3, Reply to Objection 1} he argues:
 \begin{displayquote}
-A geometrician does not need to assume a line actually infinite, but takes some actually finite line, from which he subtracts whatever he finds necessary; which line he calls infinite.
+A geometrician does not need to assume a~line actually infinite, but takes some actually finite line, from which he subtracts whatever he finds necessary; which line he calls infinite.
 \end{displayquote} % formalni citace?
 
 Less than hundred years later, Gregory of Rimini wrote
 \begin{displayquote}
-If God can endlessly add a cubic foot to a stone–which He can–then He can create an infinitely big stone. For He need only add one cubic foot at some time, another half an hour later, another a quarter of an hour later than that, and so on ad infinitum. He would then have before Him an infinite stone at the end of the hour.
+If God can endlessly add a~cubic foot to a~stone–which He can–then He can create an infinitely big stone. For He need only add one cubic foot at some time, another half an hour later, another a~quarter of an hour later than that, and so on ad infinitum. He would then have before Him an infinite stone at the end of the hour.
 \end{displayquote}
 % citace (Moore 2001, 53)  "anti-Aristotelian backlash among the medievals"
-Which is basically a Zeno's Paradox made plausible with God being the actor. In contrast to Aquinas' position, Gregory of Rimini theoretically constructs an object with actual infinite magnitude that is essentially different from God.
+Which is basically a~Zeno's Paradox made plausible with God being the actor. In contrast to Aquinas' position, Gregory of Rimini theoretically constructs an object with actual infinite magnitude that is essentially different from God.
 \medskip
-% byl prvni cantor? jak presne to definoval Leibniz a Newton?
+% byl prvni cantor? jak presne to definoval Leibniz a~Newton?
 Even later, in the 17th century, pushing the property of infinitness from the Creator to his creation, Nature, Leibniz wrote to Foucher in 1962:
 % citace? zdroj: http://www.humanities.mcmaster.ca/~rarthur/papers/LeibCant.pdf
 \begin{displayquote}
@@ -208,10 +209,10 @@ I am so in favor of the actual infinite that instead of admitting that Nature ab
 it, as is commonly said, I hold that Nature makes frequent use of it everywhere,
 in order to show more effectively the perfections of its Author. Thus I believe that
 there is no part of matter which is not, I do not say divisible, but actually divided;
-and consequently the least particle ought to be considered as a world full of an
+and consequently the least particle ought to be considered as a~world full of an
 infinity of different creatures.
 \end{displayquote}
-But even though he used potential infinity in what would become foundations of modern Calculus and argued for actual infinity in Nature, Leibniz refused the existence of an infinite, thinking that Galileo's Paradoxon\footnote{zneni galileova paradoxu} is in fact a contradiction. The so called Galileo's Paradoxon is an observation Galileo Galilei made in his final book "Discourses and Mathematical Demonstrations Relating to Two New Sciences".
+But even though he used potential infinity in what would become foundations of modern Calculus and argued for actual infinity in Nature, Leibniz refused the existence of an infinite, thinking that Galileo's Paradoxon\footnote{zneni galileova paradoxu} is in fact a~contradiction. The so called Galileo's Paradoxon is an observation Galileo Galilei made in his final book "Discourses and Mathematical Demonstrations Relating to Two New Sciences".
 He states that if all numbers are either squares and non–squares, there seem to be less squares than there is all numbers. On the other hand, every number can be squared and every square has it's square root. Therefore, there seem to be as many squares as there are all numbers. Galileo concludes, that the idea of comparing sizes makes sense only in the finite realm.
 \begin{displayquote}
 Salviati: So far as I see we can only infer that the totality of all numbers is infinite, that the number of squares is infinite, and that the number of their roots is infinite; neither is the number of squares less than the totality of all the numbers, nor the latter greater than the former; and finally the attributes "equal," "greater," and "less," are not applicable to infinite, but only to finite, quantities. When therefore Simplicio introduces several lines of different lengths and asks me how it is possible that the longer ones do not contain more points than the shorter, I answer him that one line does not contain more or less or just as many points as another, but that each line contains an infinite number.
@@ -226,7 +227,7 @@ many squares as numbers, that is to say, there are as many square numbers as the
 numbers in the universe. Which is impossible. Hence it follows either that in the infinite the
 whole is not greater than the part, which is the opinion of Galileo and Gregory of St.
 Vincent, and which I cannot accept; or that infinity itself is nothing, i.e. that it is not one and
-not a whole. % (LoC 9) je co?
+not a~whole. % (LoC 9) je co?
 \end{displayquote}
 % viz G.W. Leibniz, Interrelations between Mathematics and Philosophy
 
@@ -240,8 +241,8 @@ TODO definovat pojmy (trida etc)
 
 
 In his work, he defined transfinite numbers to extend existing natural number % existovala fakt? kdo to udelal? asi peano
-structure so it contains more objects that behave like natural numbers and are based on an object (rather a meta-object) that doesn't explicitly exist in the structure, but is closely related to it. This is the first instance of reflection. 
-This paper will focus on taking this principle a step further, extending Cantor's (or Zermelo–Fraenkel's, to be more precise) universe so it includes objects so big, they could be considered the universe itself, in a certain sense. % dost vagni?
+structure so it contains more objects that behave like natural numbers and are based on an object (rather a~meta-object) that doesn't explicitly exist in the structure, but is closely related to it. This is the first instance of reflection. 
+This paper will focus on taking this principle a~step further, extending Cantor's (or Zermelo–Fraenkel's, to be more precise) universe so it includes objects so big, they could be considered the universe itself, in a~certain sense. % dost vagni?
 
 
 TODO dal asi smazat
@@ -251,15 +252,15 @@ TODO dal asi smazat
 % snaha udelat to stala za vznikem pojmu nekonecno, naivni teorie mnozin i jejich formalizaci
 The original idea behind reflection principles probably comes from what could be informally called \textquote{universality of the universe}.
 The effort to precisely describe the universe of sets was natural and could be regarded as one of the impulses for formalization of naive set theory.
-If we try to express the universe as a set $\{x  |  x = x\}$, a paradox appears, because either our set is contained in itself and therefore is contained in a set (itself again), which contradicts the intuitive notion of a universe that contains everything but is not contained itself.
+If we try to express the universe as a~set $\{x  |  x = x\}$, a~paradox appears, because either our set is contained in itself and therefore is contained in a~set (itself again), which contradicts the intuitive notion of a~universe that contains everything but is not contained itself.
 
 TODO ???
 
-If there is an object containing all sets, it must not be a set itself. The notion of class seems inevitable. Either directly the ways for example the Bernays–Gödel set theory, we will also discuss later in this paper, does in, or on a meta–level like the Zermelo–Fraenkel set theory, that doesn't refer to them in the axioms but often works with the notion of a universal class.
+If there is an object containing all sets, it must not be a~set itself. The notion of class seems inevitable. Either directly the ways for example the Bernays–Gödel set theory, we will also discuss later in this paper, does in, or on a~meta–level like the Zermelo–Fraenkel set theory, that doesn't refer to them in the axioms but often works with the notion of a~universal class.
 duet
-Another obstacle of constructing a set of all sets comes from Georg Cantor, who proved that the set of all subsets of a set (let $A$ be the set and $\power (A)$ its powerset) is strictly larger that $A$. That would turn every aspiration to finally establish an universal set into a contradictory infinite regression.\footnote{An intuitive analogy of this \emph{reductio ad infinitum} is the status of $\omega$, which was originally thought to be an unreachable absolute, only to become starting point of Cantor's hierarchy of sets growing beyond all boundaries around the end of the $19^{th}$ century}. We will use $V$ to denote the class of all sets. %Riemann!
-\newpage
-From previous thoughts we can easily argue, that it is impossible to construct a property that holds for $V$ and no set and is neither paradoxical like $\{x  |  x = x\}$ nor trivial. Previous observation can be transposed to a rather naive formulation of the reflection principle:
+Another obstacle of constructing a~set of all sets comes from Georg Cantor, who proved that the set of all subsets of a~set (let $A$ be the set and $\power (A)$ its powerset) is strictly larger that $A$. That would turn every aspiration to finally establish an universal set into a~contradictory infinite regression.\footnote{An intuitive analogy of this \emph{reductio ad infinitum} is the status of $\omega$, which was originally thought to be an unreachable absolute, only to become starting point of Cantor's hierarchy of sets growing beyond all boundaries around the end of the $19^{th}$ century}. We will use $V$ to denote the class of all sets. %Riemann!
+%\newpage
+From previous thoughts we can easily argue, that it is impossible to construct a~property that holds for $V$ and no set and is neither paradoxical like $\{x  |  x = x\}$ nor trivial. Previous observation can be transposed to a~rather naive formulation of the reflection principle:
 
 
 \medskip
@@ -268,7 +269,7 @@ From previous thoughts we can easily argue, that it is impossible to construct a
 
 \medskip
 
-To avoid vagueness of the term "property", we could informally reformulate the above statement into a schema: 
+To avoid vagueness of the term "property", we could informally reformulate the above statement into a~schema: 
 
 \medskip
 
@@ -276,17 +277,17 @@ For every first-order formula\footnote{this also works for finite sets of formul
 
 \medskip 
 
-Interested reader should note that this is a theorem scheme rather than a single theorem. \footnote{If there were a single theorem stating "for any formula $\varphi$ that holds in $V$ there is an initial segment of $V$ where $\varphi$ also holds", we would obtain the following contradiction with the second G{\"o}del's theorem: In ZFC, any finite group of axioms of ZFC holds in some initial segment of the universe. If we take the largest of those initial segments it is still strictly smaller than the universe and thus we have, via compactness, constructed a model of ZFC within ZFC. That is, of course a harsh contradiction. This also leads to an elegant way to prove that ZFC is not finitely axiomatizable.}
+Interested reader should note that this is a~theorem scheme rather than a~single theorem. \footnote{If there were a~single theorem stating "for any formula $\varphi$ that holds in $V$ there is an initial segment of $V$ where $\varphi$ also holds", we would obtain the following contradiction with the second G{\"o}del's theorem: In ZFC, any finite group of axioms of ZFC holds in some initial segment of the universe. If we take the largest of those initial segments it is still strictly smaller than the universe and thus we have, via compactness, constructed a~model of ZFC within ZFC. That is, of course a~harsh contradiction. This also leads to an elegant way to prove that ZFC is not finitely axiomatizable.}
 
-%Reflection is, among others, a tool for constructing models of finitely axiomatizable theories within stronger frameworks of proving impossibility thereof. ?!
+%Reflection is, among others, a~tool for constructing models of finitely axiomatizable theories within stronger frameworks of proving impossibility thereof. ?!
 \medskip
 
 \subsection{A few historical remarks on reflection}\label{sec:History}  % mozna reflection itself?
 % co motivace? (jako treba ze kdyz existuje inaccessible cardinal tak je ZFC relativne konzistentni, protoze $V_\kappa$ je jeji model)
 % viz kanamori
 % jak to bylo s tim Godelem?
-% nejdriv Montague ukazal ze ZFC neni konecne axiomatizovatelna "in a strong sense"
-%The first notion of reflection in our sense was formally stated and proved as a theorem of ZF by Azriel L{\'e}vy in his 1960 article \emph{Axiomatic schemata of strong infinity in axiomatic set theory}\cite{Levy60a}. Only a year later, this was followed by Richard Montague's \emph{Fraenkel's addition to the axioms of Zermelo}.
+% nejdriv Montague ukazal ze ZFC neni konecne axiomatizovatelna "in a~strong sense"
+%The first notion of reflection in our sense was formally stated and proved as a~theorem of ZF by Azriel L{\'e}vy in his 1960 article \emph{Axiomatic schemata of strong infinity in axiomatic set theory}\cite{Levy60a}. Only a~year later, this was followed by Richard Montague's \emph{Fraenkel's addition to the axioms of Zermelo}.
  %citace?
  % konecna axiomatizovatelnost? reflexe spolu se 2. Godelovou vetou, ~Montague
  
@@ -294,7 +295,7 @@ Interested reader should note that this is a theorem scheme rather than a single
  % motivace ke kardinalum:
  % velke kardinaly vznikly v podstate reflektovanim zajimavych vlastnosti absolutniho nekonecna, mnoho z nich ma i omega
  % popis vyvoje axiomu nekonecna: zadny->nejaky->silnejsi??
-Reflection made it's first in set-theoretical appearance in G{\"o}del's proof of GCH in L  (citace Kanamori ? Lévy and set theory), but it was around even earlier as a concept. G{\"o}del himself regarded it as very close to Russel's reducibility axiom (an earlier equivalent of the axiom schema of Zermelo's separation). Richard Montague then studied reflection properties as a tool for verifying that Replacement is not finitely axiomatizable (citace?). A few years later Lévy proved (citace? 1960a) equivalence of reflection with Axiom of infinity together with Replacement in proof we shall examine closely in chaper 2.
+Reflection made it's first in set-theoretical appearance in G{\"o}del's proof of GCH in L  (citace Kanamori ? Lévy and set theory), but it was around even earlier as a~concept. G{\"o}del himself regarded it as very close to Russel's reducibility axiom (an earlier equivalent of the axiom schema of Zermelo's separation). Richard Montague then studied reflection properties as a~tool for verifying that Replacement is not finitely axiomatizable (citace?). a~few years later Lévy proved (citace? 1960a) equivalence of reflection with Axiom of infinity together with Replacement in proof we shall examine closely in chaper 2.
 
 
 TODO co dal? recent results?
@@ -304,7 +305,7 @@ TODO co dal? recent results?
 % nekonecno je jasny, protoze z reflexe urcite existuje nekonecna mnozina
 
 % replacement nasledovne:
-% jelikoz obraz ty funkce (JAKY FUNKCE) je urcite v nejakym u, ktery to reflektuje, je v mnozine a tedy je to ze schematu nahrazeni taky mnozina
+% jelikoz obraz ty funkce (JAKY FUNKCE) je urcite v nejakym u, ktery to reflektuje, je v mnozine a~tedy je to ze schematu nahrazeni taky mnozina
 % 
 
 %\medskip
@@ -315,14 +316,14 @@ TODO co dal? recent results?
 \section{Levy's first-order reflection}\label{sec:fixed}  % skutecne, kdyz je formulovana v druhoradove logice?
 
 \subsection{Introduction}
-This section will try to present Lévy's proof of a general reflection principle being equivalent to Replacement and Infinity under ZF minus Replacement and Infinity.
-We will first introduce a few axioms and definitions that were a different in Lévy's paper\cite{Levy60a}, but are equivalent to today's terms. We will write them in contemporary notation, our aim is the result, not history of set theory notation. 
+This section will try to present Lévy's proof of a~general reflection principle being equivalent to Replacement and Infinity under ZF minus Replacement and Infinity.
+We will first introduce a~few axioms and definitions that were a~different in Lévy's paper\cite{Levy60a}, but are equivalent to today's terms. We will write them in contemporary notation, our aim is the result, not history of set theory notation. 
 
-Please note that Lévy's paper was written in a period when Set theory was oriented towards semantics, which means that everything was done in a model. All proofs were theodel that of $\sf{ZFC}$ was $V_\alpha$ (notated as $R(\alpha)$ at the time) for some cardinal $\alpha$, which means that $\alpha$ is a inaccessible cadinal. Please bear in mind that this is vastly different from saying that there is an inaccessible $\alpha$ inside the model. This $V_\alpha$ is also referred to as $Scm^{\sf{Q}}(u)$, which means that $u$ ($u=V_\alpha$ in our case) is a standard complete model of an undisclosed axiomatic set theory $\sf{Q}$ formulated in the "non-simple applied first order functional calculus", which is second-order theory is today's terminology, we are allowed to quantify over functions and thus get rid of axiom schemes. (Note that Lévy always speaks of "the axiom of replacement"). Besides placeholder set theory $\sf{Q}$ and $\sf{ZF}$, which the reader should be familiar with, theories $\sf{Z}$, $\sf{S}$, and $\sf{SF}$ are used in the text. $\sf{Z}$ is $\sf{ZF}$ minus replacement, $\sf{S}$ is $\sf{ZF}$ minus replacement and infinity, and finally $\sf{SF}$ is $\sf{ZF}$ minus infinity. "The axiom of subsets" is an older name for the axiom scheme of specification (and it's not a scheme since we are now working in second order logic). Also note that universal quantifier does not appear, $\forall x \varphi (x)$ would be written as $(x) \varphi (x)$, the symbol for negation is "$\sim$".
+Please note that Lévy's paper was written in a~period when Set theory was oriented towards semantics, which means that everything was done in a~model. All proofs were theodel that of $\sf{ZFC}$ was $V_\alpha$ (notated as $R(\alpha)$ at the time) for some cardinal $\alpha$, which means that $\alpha$ is a~inaccessible cadinal. Please bear in mind that this is vastly different from saying that there is an inaccessible $\alpha$ inside the model. This $V_\alpha$ is also referred to as $Scm^{\sf{Q}}(u)$, which means that $u$ ($u=V_\alpha$ in our case) is a~standard complete model of an undisclosed axiomatic set theory $\sf{Q}$ formulated in the "non-simple applied first order functional calculus", which is second-order theory is today's terminology, we are allowed to quantify over functions and thus get rid of axiom schemes. (Note that Lévy always speaks of "the axiom of replacement"). Besides placeholder set theory $\sf{Q}$ and $\sf{ZF}$, which the reader should be familiar with, theories $\sf{Z}$, $\sf{S}$, and $\sf{SF}$ are used in the text. $\sf{Z}$ is $\sf{ZF}$ minus replacement, $\sf{S}$ is $\sf{ZF}$ minus replacement and infinity, and finally $\sf{SF}$ is $\sf{ZF}$ minus infinity. "The axiom of subsets" is an older name for the axiom scheme of specification (and it's not a~scheme since we are now working in second order logic). Also note that universal quantifier does not appear, $\forall x \varphi (x)$ would be written as $(x) \varphi (x)$, the symbol for negation is "$\sim$".
 
 Lévy then mentions Mahlo's arithmetic construction of cardinals, noting, that he will use similar strategy to build higher levels of strong axioms of infinity. 
 
-TODO porovnani Mahlovy a Lévyho konstrukce
+TODO porovnani Mahlovy a~Lévyho konstrukce
 
 TODO asi doplnit jak to souvisi se soucasnou definici slabe Mahlovych kardinalu pres stacionarni mnoziny?
 
@@ -337,7 +338,7 @@ TODO (jech:161)
 \begin{equation}
 \exists u (Scm^{\sf{S}}(u) \& x_1, \ldots , x_n \in u \then \varphi \iff \varphi^{u})
 \end{equation}
-where $\varphi$ is a formula which does not contain free variables except $x_1, \ldots , x_n$.
+where $\varphi$ is a~formula which does not contain free variables except $x_1, \ldots , x_n$.
 \end{definition}
 
 TODO muzu vyhodit 
@@ -348,19 +349,19 @@ In $\sf{S}$, the schema $N_0$ implies the Axiom of Infinity.
 \end{theorem}
 
 \begin{proof}
-For any $\varphi$, $N_0$ gives us $\exists u Scm^{\sf{S}}(u)$, which means that there is a set $u$ that is identical to $V_\alpha$ for some alpha, so $\exists \alpha Scm^{\sf{S}}(V_\alpha)$.
+For any $\varphi$, $N_0$ gives us $\exists u Scm^{\sf{S}}(u)$, which means that there is a~set $u$ that is identical to $V_\alpha$ for some alpha, so $\exists \alpha Scm^{\sf{S}}(V_\alpha)$.
 We don't know the exact size of this $\alpha$, but we know that $\alpha \geq \omega$, otherwise $\alpha$ would be finite, therefore not closed under the powerset operation, which would contradict the axiom of powersets. 
-In order to prove that it is a model of $\sf{S}$, we would need to verify all axioms of $\sf{S}$ . We have already shown that $\omega$ is closed under the powerset operation. Foundation, extensionality and comprehension are clear from the fact that we work in $\sf{ZF}$\footnote{We only need to verify axioms that provide means of constructing larger sets from smaller to make sure they don't exceed $\omega$. Since $\omega$ is an initial segment of $ZF$, the axiom scheme of specification can't be broken, the same holds for foundation and extensionality.}, pairing is clear from the fact, that given two sets $A$, $B$, they have ranks $a$, $b$, without loss of generality we can assume that $a \leq b$, which means that $A \in V_a \in V_b$, therefore $V_b$ is a set that satisfies the paring axiom: it contains both $A$ and $B$.
+In order to prove that it is a~model of $\sf{S}$, we would need to verify all axioms of $\sf{S}$ . We have already shown that $\omega$ is closed under the powerset operation. Foundation, extensionality and comprehension are clear from the fact that we work in $\sf{ZF}$\footnote{We only need to verify axioms that provide means of constructing larger sets from smaller to make sure they don't exceed $\omega$. Since $\omega$ is an initial segment of $ZF$, the axiom scheme of specification can't be broken, the same holds for foundation and extensionality.}, pairing is clear from the fact, that given two sets $A$, $B$, they have ranks $a$, $b$, without loss of generality we can assume that $a \leq b$, which means that $A \in V_a \in V_b$, therefore $V_b$ is a~set that satisfies the paring axiom: it contains both $A$ and $B$.
 
 TODO vyhodit axiomy, staci vyrobit $\omega$
 %TODO what about union?
 
-We now want to prove that $V_\alpha$ leads to existence of an inductive set, which is a set that satisfies $\exists A(\emptyset \in A \& \forall  x \in A ((x \cup \{ x\}) \in A))$. If we can find a way to construct $V_\omega$ from any $V_\alpha$ satisfying $\alpha \geq \omega$, we are done. Since $\omega$ is the least limit ordinal, all we need is the following
+We now want to prove that $V_\alpha$ leads to existence of an inductive set, which is a~set that satisfies $\exists A(\emptyset \in A \& \forall  x \in A ((x \cup \{ x\}) \in A))$. If we can find a~way to construct $V_\omega$ from any $V_\alpha$ satisfying $\alpha \geq \omega$, we are done. Since $\omega$ is the least limit ordinal, all we need is the following
 
 \begin{equation}
 \bigcap \{V_\kappa\ |\  \forall \lambda(\lambda < \kappa \then \exists \mu(\lambda < \mu < \kappa))\}
 \end{equation}
-because $V_\kappa$ is a transitive set for every $\kappa$, thus the intersection is non-empty unless empty set satisfies the property or the set of $V_\kappa$s is itself empty.
+because $V_\kappa$ is a~transitive set for every $\kappa$, thus the intersection is non-empty unless empty set satisfies the property or the set of $V_\kappa$s is itself empty.
 \end{proof}
 
 
@@ -369,10 +370,9 @@ In $\sf{S}$, the schema $N_0$ implies Replacement schema.
 \end{theorem}
 
 \begin{proof}
-TODO vysvetlit!
+TODO vysvetlit! (podle contemporary verze)
 
-
-Let $\varphi(v, w)$ be a formula wth no free variables except $v, w, x_1, \ldots, x_n$ where $n$ is any natural number.
+Let $\varphi(v, w)$ be a~formula wth no free variables except $v, w, x_1, \ldots, x_n$ where $n$ is any natural number.
 Let $\chi$ be an instance of replacement schema for this $\varphi$:
 \begin{equation}
 \chi = \forall r, s, t(\varphi(r, s) \& \varphi(r, t) \then s = t) \then \forall x \exists y \forall w (w \in y \iff \exists v (v \in x \& \varphi(v, w)))
@@ -390,8 +390,8 @@ Note that (i), (ii), (iii) are obtained from instances of $N_0$ for $\varphi$, $
 From relativization we also know that $(\exists w \varphi)^{u}$ is equivalent to $\exists w (w \in u \& \varphi^{u})$.
 Therefore (ii) is equivalent to $x_1, \ldots, x_n, v \in u \then (\exists w (w \in u \& \varphi^{u})$. 
 
-If $\varphi$ is a function ($ \forall r, s, t(\varphi(r, s) \& \varphi(r, t) \then r=t $)), then for every $x \in u$, which is also $x \subset u$ by $Scm^{\sf{S}}(u)$,
-it maps elements of $x$ onto $u$. From the axiom scheme of comprehension\footnote{axiom of subsets in Levy's version}, we can find a set of all images of elements of $x$. Let's call it $y$.
+If $\varphi$ is a~function ($ \forall r, s, t(\varphi(r, s) \& \varphi(r, t) \then r=t $)), then for every $x \in u$, which is also $x \subset u$ by $Scm^{\sf{S}}(u)$,
+it maps elements of $x$ onto $u$. From the axiom scheme of comprehension\footnote{axiom of subsets in Levy's version}, we can find a~set of all images of elements of $x$. Let's call it $y$.
 That gives us $x_1, \ldots, x_n, x \in u \then \chi$. By (iii) we get $x_1, \ldots, x_n, x \in u \then \chi^{u}$, closure of this formula is $(\forall x_1, \ldots, x_n \forall x \chi)^{u}$, 
 which together with (iv) yields $\forall x_1, \ldots, x_n \forall x \chi$. By the means of specification we end up with $\chi$, which is all we need for now. 
 
@@ -400,16 +400,17 @@ TODO btw co je x? nemela by tam tam byt nejaka volna promenna?
 \end{proof}
 
 
-% todo Jech strana 444 -- stacionarni veci a reflexe?
+% todo Jech strana 444 -- stacionarni veci a~reflexe?
 % =====================================================================================================================================
 
 \subsection{Contemporary restatement}
 TODO nejaky uvod. Levy rika ze existuje $Scm^S(u)$ reflektujici varphi, coz uz nepotrebujeme. atd.
+Ze prvoradova reflexe je theorem ZFC, vys uz je to nezavisle tvrzeni. (mozna dk. nezavislosti?)
 \medskip
 
 The following lemma is usually done in parts, the first being with one formula and the other with $n$. Will will only state and prove the generalised version for $n$ formulas.
 \begin{lemma}{Lemma}\label{lemma:reflection_lemma}
-Let $\varphi_1, \ldots, \varphi_n$ be any formulas with $m$ parameters\footnote{For formulas with different number of parameters take for $m$ the highest number of parameters among given formulas. Add spare parameters to the other formulas so that $x$ remains the last parameter. That can be done in a following manner: Let $\varphi'_i$ be the a formula with k parameters, $k < m$. Let us set $\varphi_i(u_1, \ldots, u_{m-1}, x) = \varphi'_i(u_1, \ldots, u_{k-1}, u_k, \ldots, u_{m-1}, x)$, notice that $u_k, \ldots, u_{m-1}$ are spare variables added just for formal simplicity.}. 
+Let $\varphi_1, \ldots, \varphi_n$ be any formulas with $m$ parameters\footnote{For formulas with different number of parameters take for $m$ the highest number of parameters among given formulas. Add spare parameters to the other formulas so that $x$ remains the last parameter. That can be done in a~following manner: Let $\varphi'_i$ be the a~formula with k parameters, $k < m$. Let us set $\varphi_i(u_1, \ldots, u_{m-1}, x) = \varphi'_i(u_1, \ldots, u_{k-1}, u_k, \ldots, u_{m-1}, x)$, notice that $u_k, \ldots, u_{m-1}$ are spare variables added just for formal simplicity.}. 
 \bce[(i)]
 \item For each set $M_0$ there is such $M$ that $M_0 \subset M$ and the following holds for every $i \leq n$:
 \begin{equation}
@@ -456,7 +457,7 @@ M = \bigcup_{i=0}^{\infty} M_i, \mbox{  }M^T = \bigcup_{i=0}^{\infty} M^T_i
 \end{equation}
 
 \medskip 
-Let's try to construct a set $M'$ that satisfies the same conditions like $M$ but is kept as small as possible. Assuming the Axiom of Choice, we can modify the process so that cardinality of $M'$ is at most $|M_0| \cdot \aleph_0$. Note that the size of $M'$ is determined by the size of $M_0$ an, most importantly, by the size of $H_i(u_1, \ldots, u_{m-1})$ for any $i \leq n$ in individual levels of the construction. Since the lemma only states existence of some $x$ that satisfies $\varphi_i(u_1, \ldots, u_{m-1}, x)$ for any $i \leq n$, we only need to add one $x$ for every set of parameters but $H_i(u_1, \dots, u_{m-1})$ can be arbitrarily large. Since Axiom of Choice ensures that there is a choice function, let $F$ be a choice function on $\power(M')$. Also let $h_i(u_1, \ldots, u_{m-1}) = F(H_i(u_1, \ldots, u_{m-1}))$ for $i \leq n$, which means that $h$ is a function that outputs an $x$ that satisfies $\varphi_i(u_1, \ldots, u_{m-1}, x)$ for $i \leq n$ and has minimal rank among all such witnesses. The induction step needs to be redefined to
+Let's try to construct a~set $M'$ that satisfies the same conditions like $M$ but is kept as small as possible. Assuming the Axiom of Choice, we can modify the process so that cardinality of $M'$ is at most $|M_0| \cdot \aleph_0$. Note that the size of $M'$ is determined by the size of $M_0$ an, most importantly, by the size of $H_i(u_1, \ldots, u_{m-1})$ for any $i \leq n$ in individual levels of the construction. Since the lemma only states existence of some $x$ that satisfies $\varphi_i(u_1, \ldots, u_{m-1}, x)$ for any $i \leq n$, we only need to add one $x$ for every set of parameters but $H_i(u_1, \dots, u_{m-1})$ can be arbitrarily large. Since Axiom of Choice ensures that there is a~choice function, let $F$ be a~choice function on $\power(M')$. Also let $h_i(u_1, \ldots, u_{m-1}) = F(H_i(u_1, \ldots, u_{m-1}))$ for $i \leq n$, which means that $h$ is a~function that outputs an $x$ that satisfies $\varphi_i(u_1, \ldots, u_{m-1}, x)$ for $i \leq n$ and has minimal rank among all such witnesses. The induction step needs to be redefined to
 \begin{equation}
 M'_{i+1} = M'_i \cup \bigcup_j=0^n \{ h_j(u_1, \ldots, u_{m-1}): u_1, \ldots, u_{m-1} \in M'_i \}
 \end{equation}
@@ -468,14 +469,12 @@ Therefore $|M'| \leq |M_0| \cdot \aleph_0$
  
 TODO proc $\leq$ a ne $=$?
 
-TODO nemel bych neco rict o $u_1, \ldots, u_n$? urcite se dostanou do nektereho $M_i$?
-
-
+TODO trochu vyjasnit parametry
 
 \medskip
 
-\begin{theorem}{First-order Reflection}
-$\varphi(x_1, \ldots, x_n)$ is a first-order formula.
+\begin{theorem}{First-order Reflection}\label{theorem:first_order_reflection}
+$\varphi(x_1, \ldots, x_n)$ is a~first-order formula.
 \bce[(i)]
 \item For every set $M_0$ there exists $M$ such that $M_0 \subset M$ and the following holds:
 \begin{equation}
@@ -483,7 +482,7 @@ $\varphi(x_1, \ldots, x_n)$ is a first-order formula.
 \end{equation}
 for every $x_1, \ldots, x_n$.
 
-\item For every set $M_0$  there is a transitive set $M$, $M_0 \subset M$ such that the following holds:
+\item For every set $M_0$  there is a~transitive set $M$, $M_0 \subset M$ such that the following holds:
 \begin{equation}
 \varphi^M(x_1, \ldots, x_n) \iff \varphi(x_1, \ldots, x_n)
 \end{equation}
@@ -500,8 +499,6 @@ for every $x_1, \ldots, x_n$.
 \varphi^M(x_1, \ldots, x_n) \iff \varphi(x_1, \ldots, x_n)
 \end{equation}
 for every $x_1, \ldots, x_n$.)
-
-TODO mozna vyhodit (iv) z vety, abychom mohli rict "the following are equivalent"
 \ece
 \end{theorem}
 
@@ -548,10 +545,10 @@ Together with above lemma \ref{lemma:reflection_lemma} the following holds:
 Which is what we needed to prove.
 
 % mezera
-So far we have proven part (i) of this theorem for one formula $\varphi$, we only need to verify that the same holds for any finite number of formulas. This has in fact been already done sice lemma \ref{lemma:reflection_lemma} gives us $M$ for any (finite) amount of formulas. We can than use the induction above  to verify that it reflects each of the formulas individually. 
+So far we have proven part (i) of this theorem for one formula $\varphi$, we only need to verify that the same holds for any finite number of formulas. This has in fact been already done since lemma \ref{lemma:reflection_lemma} gives us $M$ for any (finite) amount of formulas. We can than use the induction above  to verify that it reflects each of the formulas individually. 
 
 \medskip
-Now we want to verify other parts of our theorem. Since $V_\alpha$ is a transitive set, by proving (iii) we also satisfy (ii). To do so, we only need to look at part (ii) of lemma \ref{lemma:reflection_lemma}. All of the above proof also holds for $M = V_\alpha$. To finish part (iv)
+Now we want to verify other parts of our theorem. Since $V_\alpha$ is a~transitive set, by proving (iii) we also satisfy (ii). To do so, we only need to look at part (ii) of lemma \ref{lemma:reflection_lemma}. All of the above proof also holds for $M = V_\alpha$. To finish part (iv)
 
 \end{proof}
 
@@ -562,42 +559,60 @@ Now we want to verify other parts of our theorem. Since $V_\alpha$ is a transiti
 \end{theorem}
 % mezera
 \begin{proof}
-Since (Refl) is a sound theorem in ZFC, we are only interested in showing the converse:
+Since \ref{theorem:first_order_reflection} already gives one side of the implication, we are only interested in showing the converse:
 
-(Refl) $\then$ (Infinity)
+$\bold{(Refl) \then (Infinity)}$
 
-This is the easy part since Infinity says that \emph{there is an infinite set} and (Refl) is just a stronger version that says "there is an inaccessible cardinal" which is all we need. ((PREFORMULOVAT))
+Let us first find a~formula to be reflected that requires a~set $M$ at least as large as $V_\omega$.
+Let us consider the following formula:
+\begin{equation}
+\varphi'(x) = \forall \lambda(\lambda < x \then \exists \mu(\lambda < \mu < x))
+\end{equation}
+Because $\varphi$ says "there is a~limit ordinal", if it holds for some $x$, the Infinity axiom is very easy to satisfy. But we know that there are limit ordinals in $\sf{ZF}$, therefore $\varphi = \exists x \varphi'(x)$ is a~valid statement. (Refl) then gives us a~set $M$ in which $\varphi^M$ holds, that is, a~set that contains a~limit ordinal. So the set of off limit ordinals is non-empty and because ordinals are well-founded, it has a~minimal element. Let's call it $\mu$.
+$\mu = \bigcap \{V_\kappa\ :\  \forall \lambda(\lambda < \kappa \then \exists \mu(\lambda < \mu < \kappa))\}$
+We can see that $\mu$ is the least limit ordinal and therefore it satisfies (Infinity).
 
 
+$\bold{(Refl) \then (Replacement)}$
 
-(Refl) $\then$ (Replacement)
-% todo asi odkaz na levyho?
+Given a~formula $\varphi(x, y, u_1, \ldots, u_n)$, we can suppose that it is reflected in any $M$ \footnote{Which means that for $x, y, u_1, \ldots, u_n \in M$, $\varphi^M(x, y, u_1, \ldots, u_n) \iff \varphi(x, y, u_1, \ldots, u_n)$.}
+What we want to obtain is the following:
+\begin{equation}
+(\forall x, y, z (\varphi(x, y, u_1, \ldots, u_n) \& \varphi(x, z, u_1, \ldots, u_n) \then y = z)) \then (\forall X \exists Y (\forall y\ (y \in Y \iff \exists x (x \in X \& \varphi(x, y, u_1, \ldots, u_n)))))
+\end{equation}
+TODO co je dom?
 
+We do also know that $x, y \in M$, in other words for every $X$, $Y\ =\ \{y\ |\ \varphi(x, y, u_1, \ldots, u_n\}$ we know that $X \subset M$ and $Y \subset M$, which, together with the comprehension schema\footnote{Called the axiom of subsets in Levy's proof.} implies that $Y$, the image of $X$ over $\varphi$, is a~set.
+Which is exactly the Replacement Schema.
 \end{proof}
 
-TODO Plagiat -- prepsat a vysvetlit
+
+{\color{red}
+TODO Plagiat -- prepsat a~vysvetlit
+TODO asi citace?
 \begin{definition}\label{def:reflection_2}
-Let $\varphi(R)$ be a $\Pi^n_m$-formula which contains only one free variable $R$ which is second-order. Given $R \sub V_\kappa$, we say that $\varphi(R)$ reflects in $V_\kappa$ if there is some $\alpha<\kappa$ such that:
+Let $\varphi(R)$ be a~$\Pi^n_m$-formula which contains only one free variable $R$ which is second-order. Given $R \sub V_\kappa$, we say that $\varphi(R)$ reflects in $V_\kappa$ if there is some $\alpha<\kappa$ such that:
 \begin{equation}
 \mbox{If }(V_\kappa,\in, R)\models \varphi(R), \mbox{ then }(V_\alpha,\in, R\cap V_\alpha) \models \varphi(R\cap V_\alpha).
 \end{equation}
 \end{definition}
-
+}
 \newpage
 % =====================================================================================================================================
 \section{Large Cardinals}
 % prerekvizity nekam?
 
+{\color{red}
 TODO pozor na opsane definice, prefurmulovvat!!!
 % TODO preformulovat
 
 \subsection{Preliminaries}
-To avoid confusion\footnote{While in most sources refer to \emph{weak limit cardinal} as a \emph{limit cardinal} and to \emph{strong limit cardinal}, in some cases the distinction is \emph{weak limit cardinal} and \emph{limit cardinal} respectively. That's why I have decided to explicitly define those otherwise elementary terms.}, let's first define some basic terms.
+To avoid confusion\footnote{While in most sources refer to \emph{weak limit cardinal} as a~\emph{limit cardinal} and to \emph{strong limit cardinal}, in some cases the distinction is \emph{weak limit cardinal} and \emph{limit cardinal} respectively. That's why I have decided to explicitly define those otherwise elementary terms.}, let's first define some basic terms.
 \begin{definition}(weak limit cardinal)\label{def:weak_limit}
-$kappa$ is a \emph{weak limit cardinal} if it is $\aleph_\alpha$ for some limit $\alpha$.
+$kappa$ is a~\emph{weak limit cardinal} if it is $\aleph_\alpha$ for some limit $\alpha$.
 \end{definition}
 \begin{definition}(strong limit cardinal)\label{def:strong_limit}
-$kappa$ is a \emph{strong limit cardinal} if for every $\lambda < \kappa$, $2^\lambda < \kappa$
+$kappa$ is a~\emph{strong limit cardinal} if for every $\lambda < \kappa$, $2^\lambda < \kappa$
 \end{definition}
 \subsection{Inaccelssibility}
 \begin{definition}(weak inaccessibility)\label{def:weakly_inaccessible}
@@ -617,7 +632,7 @@ $\kappa$ is \emph{inaccessible} $\iff$ it is \emph{regular} and \emph{strongly l
 \ece
 \end{theorem}
 \begin{proof}
-Let's start with (i) $\then$ (iii) in a way similar to \cite{KanamoriBook}.\newline
+Let's start with (i) $\then$ (iii) in a~way similar to \cite{KanamoriBook}.\newline
 The set $\set{\alpha<\kappa}{\langle V_\alpha,\in,R \cap V_\alpha \rangle \el \langle V_\kappa,\in,R\rangle}$ is clearly closed, it remains to show that it is also unbounded.
 To do so, let $\alpha<\kappa$ be arbitrary. Define $\alpha_n < \kappa$ for $n\in\omega$ by recursion as follows:\newline
 Set $\alpha_0=\alpha$. Given $\alpha_n < \kappa$ define $\alpha_{n+1}$ to be the least $\beta \geq \alpha_n$ such as 
@@ -632,11 +647,12 @@ Then $\langle$
  \newline\newline
  The next part, proving $(iii) \then (ii)$, should be elementary since $C$ is closed unbounded, which means that it contains at least countably many elements but we need only one such $\alpha$ to satisfy (\ref{def:reflection_2}).
  \newline
- Finally, we shall prove that $(ii) \then (i)$. Since it obviously holds that $\kappa > \omega$, we have yet to prove that $\kappa$ is regular and a strong limit. Let's argue by contradiction that it is regular. 
- If it wasn't, there would be a $\beta < \kappa$ and a function $F: \beta \implies \kappa$ with range unbounded in $\kappa$. Set $R = \{\beta\} \cup F$. By hypothesis there is an $\alpha < \kappa$ such that $\langle V_\alpha, \in, R \cap V_\alpha \rangle \prec \langle V_\kappa, \in, R \rangle$. Since $\beta$ is the single ordinal in R, $\beta \in V_\alpha$ by elementarity. This yields the desired contradiction since the domain if $F \cap V_\alpha$ cannot be all of $\beta$.
+ Finally, we shall prove that $(ii) \then (i)$. Since it obviously holds that $\kappa > \omega$, we have yet to prove that $\kappa$ is regular and a~strong limit. Let's argue by contradiction that it is regular. 
+ If it wasn't, there would be a~$\beta < \kappa$ and a~function $F: \beta \implies \kappa$ with range unbounded in $\kappa$. Set $R = \{\beta\} \cup F$. By hypothesis there is an $\alpha < \kappa$ such that $\langle V_\alpha, \in, R \cap V_\alpha \rangle \prec \langle V_\kappa, \in, R \rangle$. Since $\beta$ is the single ordinal in R, $\beta \in V_\alpha$ by elementarity. This yields the desired contradiction since the domain if $F \cap V_\alpha$ cannot be all of $\beta$.
  \newline\newline
- Next, let's see whether $\kappa$ is indeed a strong limit, again by contradiction. If not, there would be a $\lambda < \kappa$ such that $2^\lambda \geq \kappa$. Let $G: \power{\lambda} \implies \kappa$ be surjective and set $R = \{\lambda + 1\} \cup G$. By hypothesis, there is an $\alpha < \kappa$ such that $\langle V_\alpha, \in, R \cap V_\alpha \rangle \prec \langle V_\kappa, \in, R \rangle$. $\lambda + 1 \in V_\alpha$ and so $\power{\lambda} \in V_\alpha$, but this is again a contradiction.
+ Next, let's see whether $\kappa$ is indeed a~strong limit, again by contradiction. If not, there would be a~$\lambda < \kappa$ such that $2^\lambda \geq \kappa$. Let $G: \power{\lambda} \implies \kappa$ be surjective and set $R = \{\lambda + 1\} \cup G$. By hypothesis, there is an $\alpha < \kappa$ such that $\langle V_\alpha, \in, R \cap V_\alpha \rangle \prec \langle V_\kappa, \in, R \rangle$. $\lambda + 1 \in V_\alpha$ and so $\power{\lambda} \in V_\alpha$, but this is again a~contradiction.
 \end{proof}
+}
 % todo vymenit < za prohnute
 % todo vymenit P za potencni P
 
@@ -645,12 +661,14 @@ Then $\langle$
 % supercompact
 %
 % =====================================================================================================================================
+\newpage
 \subsection{Mahlo cardinals}
 TODO reflektuji nedosazitelnost?
 TODO zminit Mahlovu konstrukci?
 
+{\color{red}
 \begin{definition}{Weakly Mahlo Cardinals}\label{def:weakly_mahlo}
-$\kappa$ is \emph{weakly Mahlo} $\iff$ it is a limit ordinal and the set of all regular ordinals less then $\kappa$ is stationary in $\kappa$
+$\kappa$ is \emph{weakly Mahlo} $\iff$ it is a~limit ordinal and the set of all regular ordinals less then $\kappa$ is stationary in $\kappa$
 \end{definition}
 
 \begin{definition}{Mahlo cardinals}\label{def:mahlo}
@@ -658,8 +676,8 @@ The folllowing definitions are equivalent:
 \bce[(i)]
 \item $\kappa$ is Mahlo
 \item $\kappa$ is weakly Mahlo and strong limit
-\item $\kappa$ is inaccessible and the regular cardinals below $\kappa$ form a stationary subset of $\kappa$.
-\item $\kappa$ is regular and the stationary sets below $\kappa$ form a stationary subset of $\kappa$.
+\item $\kappa$ is inaccessible and the regular cardinals below $\kappa$ form a~stationary subset of $\kappa$.
+\item $\kappa$ is regular and the stationary sets below $\kappa$ form a~stationary subset of $\kappa$.
 \ece
 \end{definition}
 
@@ -670,13 +688,14 @@ $\kappa$ is Mahlo $\iff$ for any $R \subset V_\kappa$ there is an inaccessible c
 
 \begin{proof}
 Start with the proof of (\ref{th:refl_inaccessible}) and add the following:\newline
-$\kappa$ is Mahlo by the following contradiction. If not, there would be a $C$ closed unbounded in $\kappa$ containing no inaccessible cardinals. By the hypothesis there is in inaccessible $\alpha < \kappa$ such that $\langle V_\alpha, \in, C \cap V_\alpha \rangle \prec \langle V_\kappa, \in, C \rangle$. By elementarity $C \cap \alpha$ is unbounded in $\alpha$. But then, $\alpha \in C$, which is the contradiction we need.
+$\kappa$ is Mahlo by the following contradiction. If not, there would be a~$C$ closed unbounded in $\kappa$ containing no inaccessible cardinals. By the hypothesis there is in inaccessible $\alpha < \kappa$ such that $\langle V_\alpha, \in, C \cap V_\alpha \rangle \prec \langle V_\kappa, \in, C \rangle$. By elementarity $C \cap \alpha$ is unbounded in $\alpha$. But then, $\alpha \in C$, which is the contradiction we need.
 \end{proof}
-
+}
 Note that Mahlo cardinals were first described in 1911, almost 50 years before Lévy's reflection, which was heavily inspired by those. % neco jako ze pouzil podobnou konstrukci, ... jen zjistit k cemu
 
-%sjednotil \then a \implies
+%sjednotil \then a~\implies
 % =====================================================================================================================================
+\newpage
 \subsection{Weakly Compact Cardinals}
 TODO souvislost s reflexi!
 
@@ -684,57 +703,63 @@ In this section, we will introduce various well-known large cardinals and establ
 \begin{definition}
 A cardinal $\kappa$ is \emph{weakly compact} if it is uncountable and satisfies the partition property $\kappa \then (\kappa)^2$
 \end{definition}
-
+{\color{red}
 % opsano z jecha
 \begin{lemma}
 Every weakly compact cardinal is inaccessible
 \end{lemma}
 
 \begin{proof}
-Let $\kappa$ b a weakly compact cardinal. To show that $\kappa$ is regular, let us assume that $\kappa$ i the disjoint union
+Let $\kappa$ b a~weakly compact cardinal. To show that $\kappa$ is regular, let us assume that $\kappa$ i the disjoint union
 $\bigcup\{A_{\gamma}: \gamma < \lambda\}$ such that $\lambda < \kappa$ and $|A_{\gamma}| < \kappa$ for each $\gamma < \lambda$.
- We define a partition $F: [\kappa]^2 \then \{0, 1\}$ as follows: $F(\{\alpha, \beta\}) = 0$ just in cas $\alpha$ and $\beta$ are the same size $A_{\gamma}$. Obviously, this partition does not have a homogenous set $H \subset \kappa$ of size $\kappa$.
+ We define a~partition $F: [\kappa]^2 \then \{0, 1\}$ as follows: $F(\{\alpha, \beta\}) = 0$ just in cas $\alpha$ and $\beta$ are the same size $A_{\gamma}$. Obviously, this partition does not have a~homogenous set $H \subset \kappa$ of size $\kappa$.
  % todo lte, not implies
-That $\kappa$ is a strong limit cardinal follows from Lemma 9.4: (?? doplnit z jecha): If $\kappa \geq 2^{\lambda}$ for some $\lambda < \kappa$,
+That $\kappa$ is a~strong limit cardinal follows from Lemma 9.4: (?? doplnit z jecha): If $\kappa \geq 2^{\lambda}$ for some $\lambda < \kappa$,
 the because $2^{\lambda} \leq (\lambda^{+})^2$, we have $\kappa \leq (\lambda^{+})^2$ and hence $\kappa \leq (\kappa)^2$.
 \end{proof}
 
 % balcar - stepanek strana 314, veta 5.10.
 \begin{theorem}\label{th:refl_weakly_compact}
-Let $\kappa$ be a weakly compact cardinal. Then for every stationary set $S \subset \kappa$ there is an uncountable regular cardinal $\lambda < \kappa$ such that the set $S \cap \lambda$ is stationary in $\lambda$.
+Let $\kappa$ be a~weakly compact cardinal. Then for every stationary set $S \subset \kappa$ there is an uncountable regular cardinal $\lambda < \kappa$ such that the set $S \cap \lambda$ is stationary in $\lambda$.
 \end{theorem}
 \begin{proof}
 TODO
 \end{proof}
 
+\newpage
 \subsection{Indescribable Cardinals}
 % prliminaries - kanamori sekce 0
 \begin{definition}[Indescribability]
 For Q either $\Pi^m_n$ or $\Sigma^m_n$\newline
 A cardinal $\kappa$ is \emph{$Q-indescribable$} if whenever
-$U \subseteq V_\kappa$ and $\varphi$ is a Q sentence such that $\langle V_\kappa, \in, U \rangle \models \varphi$, then for some $\alpha < \kappa$, $\langle V_\alpha, \in, U \cap V_\alpha \rangle \models \varphi$.
+$U \subseteq V_\kappa$ and $\varphi$ is a~Q sentence such that $\langle V_\kappa, \in, U \rangle \models \varphi$, then for some $\alpha < \kappa$, $\langle V_\alpha, \in, U \cap V_\alpha \rangle \models \varphi$.
 \end{definition}
 % intuice?
 % souvislosti s refl nebo L?!?!
+}
+TODO uvod / intuice
+
+TODO souvislost s refleu
+
 
 \newpage
 % =====================================================================================================================================
 \subsection{Bernays–G{\"o}del Set Theory}
 
-TODO Plagiat -- prepsat a vysvetlit
+TODO Plagiat -- prepsat a~vysvetlit
 
-
+{\color{red}
 G{\"o}del–Bernays set theory, also known as Von Neumann–Bernays–G{\"o}del set theory is an axiomatic set theory that 
-explicitly talks about proper classes as well as sets, which allows it to be finitely axiomatizable, albeit our version stated below contains one schema. It is a conservative extension of Zermalo–Fraenkel set theory. Using forcing, one can prove equiconsistency of BGC and ZFC.
+explicitly talks about proper classes as well as sets, which allows it to be finitely axiomatizable, albeit our version stated below contains one schema. It is a~conservative extension of Zermalo–Fraenkel set theory. Using forcing, one can prove equiconsistency of BGC and ZFC.
 \newline
  
-Bernays–G{\"o}del set theory contains two types of objects: proper classes and sets. The notion of set, usually denoted by a lower case letter, is identical to set in ZF, whereas proper classes are usually denoted by upper case letters. The difference between the two is in a fact, that 
+Bernays–G{\"o}del set theory contains two types of objects: proper classes and sets. The notion of set, usually denoted by a~lower case letter, is identical to set in ZF, whereas proper classes are usually denoted by upper case letters. The difference between the two is in a~fact, that 
 proper classes are not members of other classes, sets, on the other hand, have to be members of classes.
 \begin{definition}(G{\"o}del–Bernay set theory)
 \bce[(i)]
 \item \emph{extensionality for sets}
 \begin{equation}
-\forall a \forall b [\forall x(x \in a \iff x \in b) \then a = b]
+\forall a \forall b [\forall x(x \in a~\iff x \in b) \then a = b]
 \end{equation}
 \item \emph{pairing for sets}
 \begin{equation}
@@ -764,14 +789,14 @@ proper classes are not members of other classes, sets, on the other hand, have t
 
 \item \emph{Limitation of size for sets}
 \begin{equation}
-\mbox{For any class C a set x such that x=C exists iff}\newline
+\mbox{For any class C a~set x such that x=C exists iff}\newline
 \end{equation}
 \begin{equation}
 \mbox{there is no bijection between C and the class V of all sets}
 \end{equation}
 \item \emph{Comprehension schema for classes}
 \begin{equation}
-\mbox{For any formula }\varphi\mbox{ with no quantifiers over classes, there is a class A such that }\forall x (x \in A \iff \varphi(x))
+\mbox{For any formula }\varphi\mbox{ with no quantifiers over classes, there is a~class A~such that }\forall x (x \in A \iff \varphi(x))
 \end{equation}
 \ece
 \end{definition}
@@ -779,12 +804,12 @@ proper classes are not members of other classes, sets, on the other hand, have t
 The first five axioms are identical to axioms in ZF. \newline
 Comprehension schema tells us, that proper classes are basically first-order predicates.
 % opsano !!!!!
-%Since {\sf GB}, G{\"o}del-Bernays' first-order theory with two sorts of variables (sets and classes), is finitely axiomatizable, there is no analogue of L{\'e}vy's theorem \ref{th:refl} provable in {\sf GB}. However if we go above the consistency strength of {\sf GB}, we can derive the existence of an inaccessible from such reflection (with a second-order parameter).
+%Since {\sf GB}, G{\"o}del-Bernays' first-order theory with two sorts of variables (sets and classes), is finitely axiomatizable, there is no analogue of L{\'e}vy's theorem \ref{th:refl} provable in {\sf GB}. However if we go above the consistency strength of {\sf GB}, we can derive the existence of an inaccessible from such reflection (with a~second-order parameter).
 ...
  TODO Plagiat -- prepsat a vysvetlit
  
 \begin{definition}\label{def:reflBG}
-We say that $\varphi(R)$ with a class parameter $R$ reflects if there is $\alpha$ such that
+We say that $\varphi(R)$ with a~class parameter $R$ reflects if there is $\alpha$ such that
 \begin{equation}
 \varphi(R) \then (V_\alpha,V_{\alpha+1})\models \varphi(R\cap V_\alpha).
 \end{equation} 
@@ -793,7 +818,7 @@ We say that $\varphi(R)$ with a class parameter $R$ reflects if there is $\alpha
 %Note that since $\varphi$ may contain class variables, we need to specify the intended range of class variables in $V_\alpha$. As in the previous section, where the parameter $R$ ranged over entire $V_{\alpha+1}$, we postulate that the intended range of the class variables in Definition \ref{def:reflGB} is equal to $V_{\alpha+1}$.
 
 \begin{theorem}\label{th:refl01}
-There is a second-order sentence $\varphi$ which is provable in {\sf GB} such that if $\varphi$ reflects at $\alpha$, i.e. if
+There is a~second-order sentence $\varphi$ which is provable in {\sf GB} such that if $\varphi$ reflects at $\alpha$, i.e. if
 \begin{equation}
 \varphi \then (V_\alpha,V_{\alpha+1}) \models \varphi,
 \end{equation}
@@ -804,7 +829,7 @@ then $\alpha$ is an inaccessible cardinal.
 Take $\varphi$ to say ``there is no function from $\gamma \in \mx{ORD}$ cofinal in $\mx{ORD}$ and for every $\gamma \in \mx{ORD}$, $2^\gamma \in \mx{ORD}$''. Clearly, if $\varphi$ reflects at some $\alpha$, then $\alpha$ is inaccessible (here we use that the second-order variable range over $\power{V_\alpha} = V_{\alpha+1}$).
 \end{proof}
 
-As a corollary we obtain:
+As a~corollary we obtain:
 
 \begin{Cor}\label{cor:refl01}
 Second-order reflection in {\sf GB} implies the existence of an inaccessible cardinal.
@@ -832,7 +857,7 @@ asdf
 \begin{equation}
 \forall W_1, \ldots, W_n \exists Y \forall x (x \in Y \iff (\phi (x, W_1, \ldots, W_n) \& set(x))).
 \end{equation}
-Where $set(x)$ is monadic predicate stating that class $x$ is a set.
+Where $set(x)$ is monadic predicate stating that class $x$ is a~set.
 \item \emph{Limitation Of Size For Classes}
 \begin{equation}
 asdf
@@ -847,7 +872,7 @@ asdf
 \end{equation}
 \ece
 TODO
-
+}
 
 \newpage
 % =====================================================================================================================================
@@ -857,15 +882,15 @@ TODO
 
 TODO reflektovat muzeme jenom kardinaly konzistentni s V=L, proc?
 
-TODO Plagiat -- prepsat a vysvetlit
+TODO Plagiat -- prepsat a~vysvetlit
 
-$L$ was introduced by Kurt Gödel in 1938 in his paper \emph{The Consistency of the Axiom of Choice and of the Generalised Continuum Hypothesis} and denotes a class of sets built recursively in terms of simpler sets, somewhat similar to Von Neumann universe $V$. Assertion of their equality, $V=L$, is called the \emph{axiom of constructibility}. The axiom implies GCH and therefore also AC and contradicts the existence of some of the large cardinals, our goal is to decide whether those introduced earlier are among them.
+$L$ was introduced by Kurt Gödel in 1938 in his paper \emph{The Consistency of the Axiom of Choice and of the Generalised Continuum Hypothesis} and denotes a~class of sets built recursively in terms of simpler sets, somewhat similar to Von Neumann universe $V$. Assertion of their equality, $V=L$, is called the \emph{axiom of constructibility}. The axiom implies GCH and therefore also AC and contradicts the existence of some of the large cardinals, our goal is to decide whether those introduced earlier are among them.
 
 On order to formally establish this class, we need to formalize the notion of definability first:
-
+{\color{red}
 \begin{definition}[Definable sets]
 \begin{equation}
-Def(X) := \{\{{y | x }\in X \land \langle X, \in \rangle \models \varphi(y, z_1,\ldots,z_n) \} |\mbox{ }\varphi\mbox{ is a first-order formula, }z_1,\ldots,z_n \in X \}
+Def(X) := \{\{{y | x }\in X \land \langle X, \in \rangle \models \varphi(y, z_1,\ldots,z_n) \} |\mbox{ }\varphi\mbox{ is a~first-order formula, }z_1,\ldots,z_n \in X \}
 \end{equation}
 \end{definition}
 
@@ -883,7 +908,7 @@ L_{\alpha+1} := Def(L_{\alpha})
 \end{equation}
 \item
 \begin{equation}
-L_{\lambda} = \bigcup_{\alpha < \lambda} L_{\alpha}\mbox{ If }\lambda\mbox{ is a limit ordinal }
+L_{\lambda} = \bigcup_{\alpha < \lambda} L_{\alpha}\mbox{ If }\lambda\mbox{ is a~limit ordinal }
 \end{equation}
 \item
 \begin{equation}
@@ -892,19 +917,19 @@ L = \bigcup_{\alpha\in Ord} L_{\alpha}
 \ece
 \end{definition}
 
-TODO Plagiat -- prepsat a vysvetlit
+TODO Plagiat -- prepsat a~vysvetlit
 \begin{Fact}
 The reflection -- constructed as explained in the previous paragraph (!!! preformulovat !!!) -- with second-order parameters for higher-order formulas (even of transfinite type) does not yield transcendence over $L$.
 \end{Fact}
-
+}
 
 TODO zduvodneni
 
-TODO kratka diskuse jestli refl implikuje transcendenci na L - polemika, nazor - V=L a slaba kompaktnost a dalsi
+TODO kratka diskuse jestli refl implikuje transcendenci na L - polemika, nazor - V=L a~slaba kompaktnost a~dalsi
 \newpage
 % =====================================================================================================================================
 \section{Higher-order reflection} % preformulovat
-TODO rict ze to je zobecneni a nejaky dalsi uvodni veci
+TODO rict ze to je zobecneni a~nejaky dalsi uvodni veci
 
 \subsection{Sharp}
 TODO je tohle higher-order vec?
@@ -912,8 +937,9 @@ TODO je tohle higher-order vec?
 \subsection{Welek: Global Reflection Principles}
 TODO
 
+\newpage
 \section{Conclusion}
-TODO asi tady neco bude, ne?
+TODO na konec
 
 \newpage
 \bibliographystyle{plain}

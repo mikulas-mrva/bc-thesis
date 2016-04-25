@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.12.2)  23 APR 2016 23:24
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.12.2)  25 APR 2016 22:24
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -141,6 +141,12 @@ Package: lineno 2005/11/02 line numbers on paragraphs v4.41
 \bframebox=\box32
 LaTeX Info: Redefining \\ on input line 3056.
 )
+(/usr/local/texlive/2015/texmf-dist/tex/latex/tools/verbatim.sty
+Package: verbatim 2014/10/28 v1.5q LaTeX2e package for verbatim enhancements
+\every@verbatim=\toks23
+\verbatim@line=\toks24
+\verbatim@in@stream=\read1
+)
 (/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/color.sty
 Package: color 2014/10/28 v1.1a Standard LaTeX Color (DPC)
 
@@ -162,8 +168,8 @@ Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 ))
 (/usr/local/texlive/2015/texmf-dist/tex/latex/base/inputenc.sty
 Package: inputenc 2015/03/17 v1.2c Input encoding file
-\inpenc@prehook=\toks23
-\inpenc@posthook=\toks24
+\inpenc@prehook=\toks25
+\inpenc@posthook=\toks26
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/ucs/utf8x.def
 File: utf8x.def 2004/10/17 UCS: Input encoding UTF-8
@@ -175,9 +181,9 @@ Package: ucs 2013/05/11 v2.2 UCS: Unicode input support
 File: uni-global.def 2013/05/13 UCS: Unicode global data
 )
 \uc@secondtry=\count112
-\uc@combtoks=\toks25
-\uc@combtoksb=\toks26
-\uc@temptokena=\toks27
+\uc@combtoks=\toks27
+\uc@combtoksb=\toks28
+\uc@temptokena=\toks29
 )
 (./fancyhdr.sty
 \fancy@headwidth=\skip54
@@ -199,7 +205,7 @@ Package: etoolbox 2015/05/04 v2.2 e-TeX tools for LaTeX (JAW)
 )
 (/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
-\KV@toks@=\toks28
+\KV@toks@=\toks30
 )
 \csq@reset=\count114
 \csq@gtype=\count115
@@ -207,7 +213,7 @@ Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \csq@qlevel=\count117
 \csq@maxlvl=\count118
 \csq@tshold=\count119
-\csq@ltx@everypar=\toks29
+\csq@ltx@everypar=\toks31
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/csquotes/csquotes.def
 File: csquotes.def 2015/04/15 v5.1e csquotes generic definitions (JAW)
@@ -229,18 +235,18 @@ LaTeX Warning: Label `def:relativization' multiply defined.
 )
 \openout1 = `bakalarka.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 120.
-LaTeX Font Info:    ... okay on input line 120.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 120.
-LaTeX Font Info:    ... okay on input line 120.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 120.
-LaTeX Font Info:    ... okay on input line 120.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 120.
-LaTeX Font Info:    ... okay on input line 120.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 120.
-LaTeX Font Info:    ... okay on input line 120.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 120.
-LaTeX Font Info:    ... okay on input line 120.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 121.
+LaTeX Font Info:    ... okay on input line 121.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 121.
+LaTeX Font Info:    ... okay on input line 121.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 121.
+LaTeX Font Info:    ... okay on input line 121.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 121.
+LaTeX Font Info:    ... okay on input line 121.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 121.
+LaTeX Font Info:    ... okay on input line 121.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 121.
+LaTeX Font Info:    ... okay on input line 121.
  (/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count121
@@ -248,12 +254,12 @@ LaTeX Font Info:    ... okay on input line 120.
 \scratchbox=\box33
 \nofMPsegments=\count122
 \nofMParguments=\count123
-\everyMPshowfont=\toks30
+\everyMPshowfont=\toks32
 \MPscratchCnt=\count124
 \MPscratchDim=\dimen119
 \MPnumerator=\count125
 \makeMPintoPDFobject=\count126
-\everyMPtoPDFconversion=\toks31
+\everyMPtoPDFconversion=\toks33
 ) (/usr/local/texlive/2015/texmf-dist/tex/latex/ucs/ucsencs.def
 File: ucsencs.def 2011/01/21 Fixes to fontencodings LGR, T3
 )
@@ -292,14 +298,14 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 (/usr/local/texlive/2015/texmf-dist/tex/latex/ucs/data/uni-32.def
 File: uni-32.def 2013/05/13 UCS: Unicode data U+2000..U+20FF
 )
-Overfull \hbox (3.88898pt too wide) in paragraph at lines 198--199
+Overfull \hbox (3.88898pt too wide) in paragraph at lines 199--200
 []\OT1/cmr/m/n/12 If God can end-lessly add a cu-bic foot to a stone{which He c
 an{then
  []
 
 [4
 
-] [5] [6] [7] [8] [9]
+] [5] [6] [7] [8]
 Overfull \hbox (4.57101pt too wide) detected at line 379
 \OML/cmm/m/it/12 ^^_ \OT1/cmr/m/n/12 = \OMS/cmsy/m/n/12 8\OML/cmm/m/it/12 r; s;
  t\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 '\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 r; s\OT1
@@ -313,37 +319,57 @@ x\OT1/cmr/m/n/12 &\OML/cmm/m/it/12 '\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 v; w\OT1/
 cmr/m/n/12 )))
  []
 
-[10] [11] [12] [13] [14] [15]
-Overfull \hbox (3.52345pt too wide) in paragraph at lines 608--610
+[9] [10] [11] [12] [13]
+
+Package amsfonts Warning: Obsolete command \bold; \mathbf should be used instea
+d on input line 564.
+
+
+Overfull \hbox (198.36195pt too wide) detected at line 582
+\OT1/cmr/m/n/12 (\OMS/cmsy/m/n/12 8\OML/cmm/m/it/12 x; y; z\OT1/cmr/m/n/12 (\OM
+L/cmm/m/it/12 '\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x; y; u[]; [] ; u[]\OT1/cmr/m/
+n/12 )&\OML/cmm/m/it/12 '\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x; z; u[]; [] ; u[]\
+OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 ! \OML/cmm/m/it/12 y \OT1/cmr/m/n/12 = \OML/c
+mm/m/it/12 z\OT1/cmr/m/n/12 )) \OMS/cmsy/m/n/12 ! \OT1/cmr/m/n/12 (\OMS/cmsy/m/
+n/12 8\OML/cmm/m/it/12 X\OMS/cmsy/m/n/12 9\OML/cmm/m/it/12 Y\OT1/cmr/m/n/12 (\O
+MS/cmsy/m/n/12 8\OML/cmm/m/it/12 y \OT1/cmr/m/n/12 (\OML/cmm/m/it/12 y \OMS/cms
+y/m/n/12 2 \OML/cmm/m/it/12 Y \OMS/cmsy/m/n/12 $ 9\OML/cmm/m/it/12 x\OT1/cmr/m/
+n/12 (\OML/cmm/m/it/12 x \OMS/cmsy/m/n/12 2 \OML/cmm/m/it/12 X\OT1/cmr/m/n/12 &
+\OML/cmm/m/it/12 '\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x; y; u[]; [] ; u[]\OT1/cmr
+/m/n/12 )))))
+ []
+
+[14] [15]
+Overfull \hbox (3.52345pt too wide) in paragraph at lines 621--623
 []\OT1/cmr/m/it/12 (inaccessibility)[] $\OML/cmm/m/it/12 ^^T$ \OT1/cmr/m/it/12 
 is \OT1/cmr/m/n/12 in-ac-ces-si-ble $\OMS/cmsy/m/n/12 $$ \OT1/cmr/m/it/12 it is
  \OT1/cmr/m/n/12 reg-u-lar \OT1/cmr/m/it/12 and \OT1/cmr/m/n/12 strongly
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 621--644
+Underfull \hbox (badness 10000) in paragraph at lines 634--658
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 621--644
+Underfull \hbox (badness 10000) in paragraph at lines 634--658
 
  []
 
-[16] [17] [18]
-Underfull \hbox (badness 10000) in paragraph at lines 729--732
+[16] [17] [18] [19] [20]
+Underfull \hbox (badness 10000) in paragraph at lines 752--755
 
  []
 
 
-Overfull \hbox (144.7233pt too wide) detected at line 777
+Overfull \hbox (144.7233pt too wide) detected at line 800
 []\OML/cmm/m/it/12 '[]\OMS/cmsy/m/n/12 8\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 (\OML
 /cmm/m/it/12 x \OMS/cmsy/m/n/12 2 \OML/cmm/m/it/12 A \OMS/cmsy/m/n/12 $ \OML/cm
 m/m/it/12 '\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 ))
  []
 
-[19] [20] [21]
-Overfull \hbox (88.55293pt too wide) detected at line 871
+[21] [22] [23]
+Overfull \hbox (88.55293pt too wide) detected at line 894
 \OML/cmm/m/it/12 Def\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 X\OT1/cmr/m/n/12 ) := \OM
 S/cmsy/m/n/12 ff[] 2 \OML/cmm/m/it/12 X \OMS/cmsy/m/n/12 ^ h\OML/cmm/m/it/12 X;
  \OMS/cmsy/m/n/12 2i j[]\OT1/cmr/m/n/12 = \OML/cmm/m/it/12 '\OT1/cmr/m/n/12 (\O
@@ -352,19 +378,19 @@ ML/cmm/m/it/12 y; z[]; [] ; z[]\OT1/cmr/m/n/12 )\OMS/cmsy/m/n/12 gj[]\OML/cmm/m
 
  []
 
-[22] [23] (./bakalarka.bbl) [24] (./bakalarka.aux)
+[24] [25] [26] (./bakalarka.bbl) [27] (./bakalarka.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 5050 strings out of 493089
- 63467 string characters out of 6134842
- 135447 words of memory out of 5000000
- 8471 multiletter control sequences out of 15000+600000
- 16257 words of font info for 63 fonts, out of 8000000 for 9000
+ 5085 strings out of 493089
+ 64047 string characters out of 6134842
+ 134087 words of memory out of 5000000
+ 8500 multiletter control sequences out of 15000+600000
+ 17805 words of font info for 68 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 35i,13n,43p,1545b,591s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 31i,13n,43p,1545b,591s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 </usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb>
@@ -389,10 +415,10 @@ mf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2015/texmf
 dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2015/texmf-d
 ist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2015/tex
 mf-dist/fonts/type1/public/rsfs/rsfs10.pfb>
-Output written on bakalarka.pdf (25 pages, 344148 bytes).
+Output written on bakalarka.pdf (28 pages, 345365 bytes).
 PDF statistics:
- 182 PDF objects out of 1000 (max. 8388607)
- 129 compressed objects within 2 object streams
+ 191 PDF objects out of 1000 (max. 8388607)
+ 135 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
