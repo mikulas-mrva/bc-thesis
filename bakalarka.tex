@@ -598,58 +598,68 @@ Which is exactly the Replacement Schema we hoped to obtain.
 \end{proof}
 \
 We have shown that $(Refl)$ for first-order formulas is a theorem of $\sf{ZF}$, which means that it won't yield us any large cardinals. We have shown that it can be used instead of the Axiom of Infinity and Replacement Scheme, but $\sf{ZF} + (Refl)$ is a conservative extension of $\sf{ZF}$. Besides being a starting point for more general and powerful statements, it can be used to show that $\sf{ZF}$ is not finitely axiomatizable. That is because $(Refl)$ gives a model to any finite number of (consistent) formulas. So if $\varphi_1, \ldots, \varphi_n$ for any finite $n$ would be the axioms of $\sf{ZF}$, $(Refl)$ would contain a model of itself, which would contradict the Second Gödel's Theorem.
+Notice, that reflection in a way counterpart to compactness. Compactness argues that for an infinite\footnote{Countable?} set of formulas, if every finite subset yields a model, then so does the whole set. Reflection, on the other hand, says that while the whole set has no model in the underlying theory, every finite subset does have a model.
 
+%posl. vetu do jine sekce?
 
-TODO znacit $(Refl)$ asi jako $(Refl)_1$ pokud mluvime o prvoradovych formulich
+TODO znacit $ (Refl) $ asi jako $(Refl)_1$ pokud mluvime o prvoradovych formulich
+
 In the next section, we will try to generalize it in a way that transcends $\sf{ZF}$ and finally yields us some large cardinals.
 
 \newpage
 % =====================================================================================================================================
 \section{Large Cardinals and Higher-order Reflection}
+
+In this chapter we aim to explore possible generalisations of $(Refl)$ for second- and higher-order formulas and use them to establish existence of various large cardinals. We will also argue whether there is a limit to the size of large cardinals accessible via generalised $(Refl)$. 
+
 \subsection{Reflecting Second-order Formulas}
 
 % viz Shapiro, Stewart. 1987. “Principles of Reflection and Second-order Logic”. Journal of Philosophical Logic 16 (3). Springer: 309–33. http://www.jstor.org/stable/30227043.
 % Reflections on Replacement and Reflection: The axioms in a structuralist setting (Geoffrey Hellman)
 
 % fakt several? kolik vlastne
+To see that there is a way to transcend $\sf{ZF}$, let us briefly show how a model of $\sf{ZF}$ can be obtained in $\sf{ZF} + "second-order reflection"$. This will be more closely examined in section \ref{section:inaccessibility}.
+Since 
+%TODO Plagiat -- prepsat a~vysvetlit
 
-In this chapter we aim to explore possible generalisations of $(Refl)$ for second- and higher-order formulas and use them to establish existence of various large cardinals. We will also argue whether there is a limit to the size of large cardinals accessible via generalised $(Refl)$.  To see that there is a way to transcend $\sf{ZF}$, let us briefly show how a model of $\sf{ZF}$ can be obtained in $\sf{ZF} + "second-order reflection"$. This will be more closely examined in section \ref{section:inaccessibility}.
+%TODO asi citace? presunout do patricne sekce pro reflexi vyssich radu?
 
-
-{\color{red}
-TODO Plagiat -- prepsat a~vysvetlit
-
-TODO asi citace? presunout do patricne sekce pro reflexi vyssich radu?
-
-\begin{definition}\label{def:reflection_2}
-Let $\varphi(R)$ be a~$\Pi^n_m$-formula which contains only one free variable $R$ which is second-order. Given $R \sub V_\kappa$, we say that $\varphi(R)$ reflects in $V_\kappa$ if there is some $\alpha<\kappa$ such that:
-\begin{equation}
-\mbox{If }(V_\kappa,\in, R)\models \varphi(R), \mbox{ then }(V_\alpha,\in, R\cap V_\alpha) \models \varphi(R\cap V_\alpha).
-\end{equation}
-\end{definition}
+%\begin{definition}\label{def:reflection_2}
+%Let $\varphi(R)$ be a~$\Pi^n_m$-formula which contains only one free variable $R$ which is second-order. Given $R \sub V_\kappa$, we say that $\varphi(R)$ reflects in $V_\kappa$ if there is some $\alpha<\kappa$ such that:
+%\begin{equation}
+%\mbox{If }(V_\kappa,\in, R)\models \varphi(R), \mbox{ then }(V_\alpha,\in, R\cap V_\alpha) \models \varphi(R\cap V_\alpha).
+%\end{equation}
+%\end{definition}
 
 
 
 \subsection{Preliminaries}
-TODO pozor na opsane definice, preformulovat
-% TODO preformulovat
-
 \begin{definition}(limit cardinal)\label{def:limit}
-$kappa$ is a~\emph{limit cardinal} if it is $\aleph_\alpha$ for some limit $\alpha$.
+$kappa$ is a~\emph{limit cardinal} if it is $\aleph_\alpha$ for some limit ordinal $\alpha$.
 \end{definition}
+
 \begin{definition}(strong limit cardinal)\label{def:strong_limit}
 $kappa$ is a~\emph{strong limit cardinal} if for every $\lambda < \kappa$, $2^\lambda < \kappa$
 \end{definition}
-\subsection{Inaccelssibility}
+
+
+\subsection{Inaccessibility}\label{section:inaccessibility}
+TODO nejaky uvody, model ZFC, motivace k vete z kanamoriho, prepis vety z kanamoriho
+
 \begin{definition}(weak inaccessibility)\label{def:weakly_inaccessible}
-$\kappa$ is \emph{weakly inaccessible} $\iff$ it is \emph{regular} and \emph{ weakly limit}.
+$\kappa$ is \emph{weakly inaccessible} $\iff$ it is \emph{regular} and \emph{limit}.
 \end{definition}
 \begin{definition}(inaccessibility)\label{def:inaccessible} % nema byt vetsi nez \omega ?
 $\kappa$ is \emph{inaccessible} $\iff$ it is \emph{regular} and \emph{strongly limit}.
 \end{definition}
 % \cite{JechBook} % ? 
 % [L{\'e}vy] ?
-% duke viz Kan book 6.1, 6.2
+% dukaz viz Kan book 6.1, 6.2
+% todo pouziva emph in jinde?
+
+{\color{red}
+\begin{comment}
+
 \begin{theorem}\label{th:refl_inaccessible}[Lévy] The following are equivalent:
 \bce[(i)]
 \item $\kappa$ is inaccessible.
@@ -678,6 +688,8 @@ Then $\langle$
  \newline\newline
  Next, let's see whether $\kappa$ is indeed a~strong limit, again by contradiction. If not, there would be a~$\lambda < \kappa$ such that $2^\lambda \geq \kappa$. Let $G: \power{\lambda} \implies \kappa$ be surjective and set $R = \{\lambda + 1\} \cup G$. By hypothesis, there is an $\alpha < \kappa$ such that $\langle V_\alpha, \in, R \cap V_\alpha \rangle \prec \langle V_\kappa, \in, R \rangle$. $\lambda + 1 \in V_\alpha$ and so $\power{\lambda} \in V_\alpha$, but this is again a~contradiction.
 \end{proof}
+
+\end{comment}
 }
 % todo vymenit < za prohnute
 % todo vymenit P za potencni P
@@ -687,16 +699,17 @@ Then $\langle$
 % supercompact
 %
 % =====================================================================================================================================
-\subsection{Inaccessibility}\label{section:inaccessibility}
 
 \subsection{Mahlo cardinals}
 TODO reflektuji nedosazitelnost?
-TODO zminit Mahlovu konstrukci?
+TODO zminit Mahlovu konstrukci v Levym?
+TODO zavest pomoci reflexe
 
-{\color{red}
 \begin{definition}{Weakly Mahlo Cardinals}\label{def:weakly_mahlo}
 $\kappa$ is \emph{weakly Mahlo} $\iff$ it is a~limit ordinal and the set of all regular ordinals less then $\kappa$ is stationary in $\kappa$
 \end{definition}
+
+TODO napsat co to znamena
 
 \begin{definition}{Mahlo cardinals}\label{def:mahlo}
 The folllowing definitions are equivalent:
@@ -708,6 +721,9 @@ The folllowing definitions are equivalent:
 \ece
 \end{definition}
 
+{\color{red}
+\begin{comment}
+
 % kanamori p. 80 6.2 (b)
 \begin{theorem}\label{th:refl_mahlo}
 $\kappa$ is Mahlo $\iff$ for any $R \subset V_\kappa$ there is an inaccessible cardinal $\alpha < \kappa$ such that $\langle V_\alpha, \in, R \cap V_\alpha \rangle \prec \langle V_\kappa, \in, R \rangle$.
@@ -717,21 +733,26 @@ $\kappa$ is Mahlo $\iff$ for any $R \subset V_\kappa$ there is an inaccessible c
 Start with the proof of (\ref{th:refl_inaccessible}) and add the following:\newline
 $\kappa$ is Mahlo by the following contradiction. If not, there would be a~$C$ closed unbounded in $\kappa$ containing no inaccessible cardinals. By the hypothesis there is in inaccessible $\alpha < \kappa$ such that $\langle V_\alpha, \in, C \cap V_\alpha \rangle \prec \langle V_\kappa, \in, C \rangle$. By elementarity $C \cap \alpha$ is unbounded in $\alpha$. But then, $\alpha \in C$, which is the contradiction we need.
 \end{proof}
+
+\end{comment}
 }
-Note that Mahlo cardinals were first described in 1911, almost 50 years before Lévy's reflection, which was heavily inspired by those. % neco jako ze pouzil podobnou konstrukci, ... jen zjistit k cemu
+Note that Mahlo cardinals were first described in 1911, almost 50 years before Lévy's reflection, which was heavily inspired by them.
 
 %sjednotil \then a~\implies
 % =====================================================================================================================================
-\newpage
+% \newpage
 \subsection{Weakly Compact Cardinals}
-TODO souvislost s reflexi!
 
-In this section, we will introduce various well-known large cardinals and establish them via reflection.
+TODO souvislost s reflexi!
+TODO co je "partition property"?
+
 \begin{definition}
 A cardinal $\kappa$ is \emph{weakly compact} if it is uncountable and satisfies the partition property $\kappa \then (\kappa)^2$
 \end{definition}
 {\color{red}
-% opsano z jecha
+opsano z jecha!
+\begin{comment}
+
 \begin{lemma}
 Every weakly compact cardinal is inaccessible
 \end{lemma}
@@ -745,6 +766,13 @@ That $\kappa$ is a~strong limit cardinal follows from Lemma 9.4: (?? doplnit z j
 the because $2^{\lambda} \leq (\lambda^{+})^2$, we have $\kappa \leq (\lambda^{+})^2$ and hence $\kappa \leq (\kappa)^2$.
 \end{proof}
 
+\end{comment}
+}
+
+{\color{red}
+\begin{comment}
+
+
 % balcar - stepanek strana 314, veta 5.10.
 \begin{theorem}\label{th:refl_weakly_compact}
 Let $\kappa$ be a~weakly compact cardinal. Then for every stationary set $S \subset \kappa$ there is an uncountable regular cardinal $\lambda < \kappa$ such that the set $S \cap \lambda$ is stationary in $\lambda$.
@@ -753,9 +781,16 @@ Let $\kappa$ be a~weakly compact cardinal. Then for every stationary set $S \sub
 TODO
 \end{proof}
 
-\newpage
+\end{comment}
+}
+%\newpage
 \subsection{Indescribable Cardinals}
 % prliminaries - kanamori sekce 0
+
+
+{\color{red}
+\begin{comment}
+
 \begin{definition}[Indescribability]
 For Q either $\Pi^m_n$ or $\Sigma^m_n$\newline
 A cardinal $\kappa$ is \emph{$Q-indescribable$} if whenever
@@ -763,19 +798,23 @@ $U \subseteq V_\kappa$ and $\varphi$ is a~Q sentence such that $\langle V_\kappa
 \end{definition}
 % intuice?
 % souvislosti s refl nebo L?!?!
+
+\end{comment}
 }
 TODO uvod / intuice
 
-TODO souvislost s refleu
+TODO souvislost s reflexi
 
 
-\newpage
+% \newpage
 % =====================================================================================================================================
 \subsection{Bernays–G{\"o}del Set Theory}
 
 TODO Plagiat -- prepsat a~vysvetlit
 
 {\color{red}
+\begin{comment}
+
 G{\"o}del–Bernays set theory, also known as Von Neumann–Bernays–G{\"o}del set theory is an axiomatic set theory that 
 explicitly talks about proper classes as well as sets, which allows it to be finitely axiomatizable, albeit our version stated below contains one schema. It is a~conservative extension of Zermalo–Fraenkel set theory. Using forcing, one can prove equiconsistency of BGC and ZFC.
 \newline
@@ -863,7 +902,7 @@ Second-order reflection in {\sf GB} implies the existence of an inaccessible car
 \end{Cor}
 % / opsano, upravit !!!
 
-\newpage
+% \newpage
 \subsection{Morse–Kelley Set Theory}
 Axioms not 
 \bce[(i)]
@@ -898,10 +937,12 @@ asdf
 asdf
 \end{equation}
 \ece
+
+\end{comment}
 TODO
 }
 
-\newpage
+%\newpage
 % =====================================================================================================================================
 
 \subsection{Reflection and the constructible universe}
@@ -915,6 +956,8 @@ $L$ was introduced by Kurt Gödel in 1938 in his paper \emph{The Consistency of 
 
 On order to formally establish this class, we need to formalize the notion of definability first:
 {\color{red}
+\begin{comment}
+
 \begin{definition}[Definable sets]
 \begin{equation}
 Def(X) := \{\{{y | x }\in X \land \langle X, \in \rangle \models \varphi(y, z_1,\ldots,z_n) \} |\mbox{ }\varphi\mbox{ is a~first-order formula, }z_1,\ldots,z_n \in X \}
@@ -948,12 +991,14 @@ TODO Plagiat -- prepsat a~vysvetlit
 \begin{Fact}
 The reflection -- constructed as explained in the previous paragraph (!!! preformulovat !!!) -- with second-order parameters for higher-order formulas (even of transfinite type) does not yield transcendence over $L$.
 \end{Fact}
+
+\end{comment}
 }
 
 TODO zduvodneni
 
 TODO kratka diskuse jestli refl implikuje transcendenci na L - polemika, nazor - V=L a~slaba kompaktnost a~dalsi
-\newpage
+%\newpage
 % =====================================================================================================================================
 \section{Higher-order reflection} % preformulovat
 TODO rict ze to je zobecneni a~nejaky dalsi uvodni veci
@@ -964,7 +1009,7 @@ TODO je tohle higher-order vec?
 \subsection{Welek: Global Reflection Principles}
 TODO
 
-\newpage
+%\newpage
 \section{Conclusion}
 TODO na konec
 

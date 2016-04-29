@@ -9,15 +9,13 @@
 \contentsline {section}{\numberline {3}Large Cardinals and Higher-order Reflection}{16}
 \contentsline {subsection}{\numberline {3.1}Reflecting Second-order Formulas}{16}
 \contentsline {subsection}{\numberline {3.2}Preliminaries}{16}
-\contentsline {subsection}{\numberline {3.3}Inaccelssibility}{16}
-\contentsline {subsection}{\numberline {3.4}Inaccessibility}{17}
-\contentsline {subsection}{\numberline {3.5}Mahlo cardinals}{17}
-\contentsline {subsection}{\numberline {3.6}Weakly Compact Cardinals}{19}
-\contentsline {subsection}{\numberline {3.7}Indescribable Cardinals}{20}
-\contentsline {subsection}{\numberline {3.8}Bernays\IeC {\textendash }G{\"o}del Set Theory}{21}
-\contentsline {subsection}{\numberline {3.9}Morse\IeC {\textendash }Kelley Set Theory}{23}
-\contentsline {subsection}{\numberline {3.10}Reflection and the constructible universe}{24}
-\contentsline {section}{\numberline {4}Higher-order reflection}{25}
-\contentsline {subsection}{\numberline {4.1}Sharp}{25}
-\contentsline {subsection}{\numberline {4.2}Welek: Global Reflection Principles}{25}
-\contentsline {section}{\numberline {5}Conclusion}{26}
+\contentsline {subsection}{\numberline {3.3}Inaccessibility}{16}
+\contentsline {subsection}{\numberline {3.4}Mahlo cardinals}{16}
+\contentsline {subsection}{\numberline {3.5}Weakly Compact Cardinals}{17}
+\contentsline {subsection}{\numberline {3.6}Indescribable Cardinals}{17}
+\contentsline {subsection}{\numberline {3.7}Bernays\IeC {\textendash }G{\"o}del Set Theory}{17}
+\contentsline {subsection}{\numberline {3.8}Reflection and the constructible universe}{17}
+\contentsline {section}{\numberline {4}Higher-order reflection}{18}
+\contentsline {subsection}{\numberline {4.1}Sharp}{18}
+\contentsline {subsection}{\numberline {4.2}Welek: Global Reflection Principles}{18}
+\contentsline {section}{\numberline {5}Conclusion}{18}
