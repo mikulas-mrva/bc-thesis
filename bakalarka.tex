@@ -397,6 +397,7 @@ which together with (iv) yields $\forall x_1, \ldots, x_n \forall x \chi$. By th
 
 
 TODO btw co je x? nemela by tam tam byt nejaka volna promenna?
+
 \end{proof}
 
 
@@ -404,11 +405,16 @@ TODO btw co je x? nemela by tam tam byt nejaka volna promenna?
 % =====================================================================================================================================
 
 \subsection{Contemporary restatement}
-TODO nejaky uvod. Levy rika ze existuje $Scm^S(u)$ reflektujici varphi, coz uz nepotrebujeme. atd.
-Ze prvoradova reflexe je theorem ZFC, vys uz je to nezavisle tvrzeni. (mozna dk. nezavislosti?)
-\medskip
+TODO nejaky uvod. 
 
-The following lemma is usually done in parts, the first being with one formula and the other with $n$. Will will only state and prove the generalised version for $n$ formulas.
+TODO Levy rika ze existuje $Scm^S(u)$ reflektujici varphi, coz uz nepotrebujeme. atd.
+
+TODO Ze prvoradova reflexe je theorem ZFC, vys uz max jako axiom/schema.
+
+TODO ?
+
+The following lemma is usually done in more parts, the first being with one formula and the other with $n$. We will only state and prove the generalised version for $n$ formulas, knowing that $n=1$ is just a specific case and the proof is exactly the same.
+
 \begin{lemma}{Lemma}\label{lemma:reflection_lemma}
 Let $\varphi_1, \ldots, \varphi_n$ be any formulas with $m$ parameters\footnote{For formulas with different number of parameters take for $m$ the highest number of parameters among given formulas. Add spare parameters to the other formulas so that $x$ remains the last parameter. That can be done in a~following manner: Let $\varphi'_i$ be the a~formula with k parameters, $k < m$. Let us set $\varphi_i(u_1, \ldots, u_{m-1}, x) = \varphi'_i(u_1, \ldots, u_{k-1}, u_k, \ldots, u_{m-1}, x)$, notice that $u_k, \ldots, u_{m-1}$ are spare variables added just for formal simplicity.}. 
 \bce[(i)]
@@ -416,32 +422,34 @@ Let $\varphi_1, \ldots, \varphi_n$ be any formulas with $m$ parameters\footnote{
 \begin{equation}
 \exists x \varphi_i(u_1, \ldots, u_{m-1}, x) \then (\exists x \in M) \varphi_i(u_1, \ldots, u_{m-1}, x)
 \end{equation}
+for every $u_1, \ldots, u_{m-1} \in M$.
 
 \item Furthermore there is an ordinal $\alpha$ such that $M_0 \subset V_\alpha$ and the following holds for each $i \leq n$:
 \begin{equation}
 \exists x \varphi_i(u_1, \ldots, u_{m-1}, x) \then (\exists x \in V_\alpha) \varphi_i(u_1, \ldots, u_{m-1}, x)
 \end{equation}
+for every $u_1, \ldots, u_{m-1} \in M$.
 \ece
 \end{lemma}
 
 \begin{proof}
-We will simultaneously prove statements (i) and (ii), denoting $M^T$ the transitive model required by part (ii). Unless explicitly stated otherwise, it is equivalent to $M$.
+We will simultaneously prove statements (i) and (ii), denoting $M^T$ the transitive set required by part (ii). Unless explicitly stated otherwise for specific steps, it is thought to be equivalent to $M$.
 
-Let us first define operation $H(u_1, \ldots, u_{m-1})$ that gives us the set of $x$'s with minimal rank, satisfying $\varphi_i(u_1, ldots, u_{m-1}, x)$ for given parameteres $u_1, \ldots, u_{m-1}$ for every $i \leq n$.
+Let us first define operation $H(u_1, \ldots, u_{m-1})$ that gives us the set of $x$'s with minimal rank satisfying $\varphi_i(u_1, \ldots, u_{m-1}, x)$ for given parameters $u_1, \ldots, u_{m-1}$ for every $i \leq n$.
 
 \begin{equation}
-H_i(u_1, \ldots, u_n) = \{x \in C_i: (\forall z \in C)(rank(x) \leq rank(z))\} \mbox{ for $i \leq n$}
+H_i(u_1, \ldots, u_n) = \{x \in C_i: (\forall z \in C)(rank(x) \leq rank(z))\}
 \end{equation}
-where
+for each $i \leq n$, where
 \begin{equation}
 C_i = \{x: \varphi_i(u_1, \ldots, u_{m-1}, x)\} \mbox{ for $i \leq n$}
 \end{equation}
 \medskip
 Next, let's construct $M$ from given $M_0$ by induction. 
 \begin{equation}
+M_{i+1} = M_i \cup \bigcup_{j=0}^{n} \bigcup \{H_j(u_1, \ldots, u_{m-1}): u_1, \ldots, u_{m-1} \in M_i\}
 \end{equation}
-In other words, in each step we add the elements satisfying $\varphi(u_1, \ldots, u_{m-1}, x)$ for those parameters that were either available earlier or were added in the previous step. 
-
+In other words, in each step we add the elements satisfying $\varphi(u_1, \ldots, u_{m-1}, x)$ for all parameters that were either available earlier or were added in the previous step. 
 For statement (ii), this is the only part that differs from (i). Let us take for each step transitive closure of $M_{i+1}$ from (i). In other words, let $\gamma$ be the smallest ordinal such that 
 \begin{equation}
 (M^T_i \cup \bigcup_{j=0}^{n} \{\bigcup\{H_j(u_1, \ldots, u_{m-1}): u_1, \ldots, u_{m-1} \in M_i\}\}) \subset V_\gamma
@@ -450,7 +458,6 @@ Then the incremetal step is like so:
 \begin{equation}
 M^T_{i+1} = V_\gamma
 \end{equation}
-
 The final $M$ is obtained by joining all incremental steps together. 
 \begin{equation}
 M = \bigcup_{i=0}^{\infty} M_i, \mbox{  }M^T = \bigcup_{i=0}^{\infty} M^T_i
@@ -465,13 +472,8 @@ In every step, the amount of elements added in $M'_{i+1}$ is equivalent to the a
 Therefore $|M'| \leq |M_0| \cdot \aleph_0$
 
 \end{proof}
- 
- 
+  
 TODO proc $\leq$ a ne $=$?
-
-TODO trochu vyjasnit parametry
-
-\medskip
 
 \begin{theorem}{First-order Reflection}\label{theorem:first_order_reflection}
 $\varphi(x_1, \ldots, x_n)$ is a~first-order formula.
@@ -505,10 +507,7 @@ for every $x_1, \ldots, x_n$.)
 
 \begin{proof}
 Let's prove (i) for one formula $\varphi$ via induction by complexity first. We can safely assume that $\varphi$ contains no quantifiers besides $\exists$ and no logical connectives other than $\neg$ and $\&$.
-Assume that this $M$ is obtained from lemma \ref{lemma:reflection_lemma}.
-
-The fact, that atomic formulas are reflected in every $M$ comes directly from definition of relativization and the fact that they contain no quantifiers.\footnote{Note that this does not hold generally for relativizations to $M, E$, but only for relativization to $M, \in$, which is our case.}
-
+Assume that this $M$ is obtained from lemma \ref{lemma:reflection_lemma}. The fact, that atomic formulas are reflected in every $M$ comes directly from definition of relativization and the fact that they contain no quantifiers.\footnote{Note that this does not hold generally for relativizations to $M, E$, but only for relativization to $M, \in$, which is our case.}
 The same holds for formulas in the form of $\varphi = \neg \varphi'$. Let us recall the definition of relativization for those formulas in \label{def:relativization}.
 \begin{equation}
 (\neg \varphi_1)^M \iff \neg (\varphi_1^M)
@@ -518,20 +517,23 @@ Because we can assume from induction that $\varphi'^M \iff \varphi'$, the follow
 (\neg \varphi')^M \iff \neg (\varphi'^M) \iff \neg \varphi'
 \end{equation}
 
-The same holds for $\varphi = \varphi_1\mbox{ }\&\mbox{ }\varphi_2$. From the induction hypothesis we know that $\varphi_1^M \iff \varphi_1$ and $\varphi_2^M \iff \varphi_2$, which together with relativization for formulas of form $\varphi_1 \& \varphi_2$ gives up 
+The same holds for $\varphi = \varphi_1\mbox{ }\&\mbox{ }\varphi_2$. From the induction hypothesis we know that $\varphi_1^M \iff \varphi_1$ and $\varphi_2^M \iff \varphi_2$, which together with relativization for formulas in the form of $\varphi_1 \& \varphi_2$ gives us
 \begin{equation}
 (\varphi_1\mbox{ }\&\mbox{ }\varphi_2)^M \iff \varphi_1^M\mbox{ }\&\mbox{ }\varphi_2^M \iff \varphi_1\mbox{ }\&\mbox{ }\varphi_2
 \end{equation}
 
 
 Let's now examine the case when from the induction hypethesis, $M$ reflects $\varphi'(u_1, \ldots, u_n, x)$ and we are interested in $\varphi = \exists x \varphi'(u_1, \ldots, u_n, x)$.
-The induction hypothesis tells us, that 
+The induction hypothesis tells us that 
 \begin{equation}
 \varphi'^M(u_1, \ldots, u_n, x) \iff \varphi'(u_1, \ldots, u_n, x)
 \end{equation}
-Together with above lemma \ref{lemma:reflection_lemma} the following holds:
+so, together with above lemma \ref{lemma:reflection_lemma}, the following holds:
 \begin{equation}
-\exists x \varphi'(u_1, \ldots, u_n, x)
+\varphi(u_1, \ldots, u_n, x)
+\end{equation}
+\begin{equation}
+\iff \exists x \varphi'(u_1, \ldots, u_n, x)
 \end{equation}
 \begin{equation}
 \iff (\exists x \in M) \varphi'(u_1, \ldots, u_n, x)
@@ -542,7 +544,11 @@ Together with above lemma \ref{lemma:reflection_lemma} the following holds:
 \begin{equation}
 \iff (\exists x \varphi'(u_1, \ldots, u_n, x))^M
 \end{equation}
-Which is what we needed to prove.
+\begin{equation}
+\iff \varphi^M(u_1, \ldots, u_n, x)
+\end{equation}
+Which is what we have needed to prove:
+
 
 % mezera
 So far we have proven part (i) of this theorem for one formula $\varphi$, we only need to verify that the same holds for any finite number of formulas. This has in fact been already done since lemma \ref{lemma:reflection_lemma} gives us $M$ for any (finite) amount of formulas. We can than use the induction above  to verify that it reflects each of the formulas individually. 
@@ -569,7 +575,9 @@ Let us consider the following formula:
 \varphi'(x) = \forall \lambda(\lambda < x \then \exists \mu(\lambda < \mu < x))
 \end{equation}
 Because $\varphi$ says "there is a~limit ordinal", if it holds for some $x$, the Infinity axiom is very easy to satisfy. But we know that there are limit ordinals in $\sf{ZF}$, therefore $\varphi = \exists x \varphi'(x)$ is a~valid statement. (Refl) then gives us a~set $M$ in which $\varphi^M$ holds, that is, a~set that contains a~limit ordinal. So the set of off limit ordinals is non-empty and because ordinals are well-founded, it has a~minimal element. Let's call it $\mu$.
-$\mu = \bigcap \{V_\kappa\ :\  \forall \lambda(\lambda < \kappa \then \exists \mu(\lambda < \mu < \kappa))\}$
+\begin{equation}
+\mu = \bigcap \{V_\kappa\ :\  \forall \lambda(\lambda < \kappa \then \exists \mu(\lambda < \mu < \kappa))\}
+\end{equation}
 We can see that $\mu$ is the least limit ordinal and therefore it satisfies (Infinity).
 
 
@@ -578,38 +586,56 @@ $\bold{(Refl) \then (Replacement)}$
 Given a~formula $\varphi(x, y, u_1, \ldots, u_n)$, we can suppose that it is reflected in any $M$ \footnote{Which means that for $x, y, u_1, \ldots, u_n \in M$, $\varphi^M(x, y, u_1, \ldots, u_n) \iff \varphi(x, y, u_1, \ldots, u_n)$.}
 What we want to obtain is the following:
 \begin{equation}
-(\forall x, y, z (\varphi(x, y, u_1, \ldots, u_n) \& \varphi(x, z, u_1, \ldots, u_n) \then y = z)) \then (\forall X \exists Y (\forall y\ (y \in Y \iff \exists x (x \in X \& \varphi(x, y, u_1, \ldots, u_n)))))
+\forall x, y, z (\varphi(x, y, u_1, \ldots, u_n) \& \varphi(x, z, u_1, \ldots, u_n) \then y = z) \then
 \end{equation}
-TODO co je dom?
+\begin{equation}
+\then \forall X \exists Y \forall y\ (y \in Y \iff \exists x (\varphi(x, y, u_1, \ldots, u_n)\ \&\ x \in X ))
+\end{equation}
 
 We do also know that $x, y \in M$, in other words for every $X$, $Y\ =\ \{y\ |\ \varphi(x, y, u_1, \ldots, u_n\}$ we know that $X \subset M$ and $Y \subset M$, which, together with the comprehension schema\footnote{Called the axiom of subsets in Levy's proof.} implies that $Y$, the image of $X$ over $\varphi$, is a~set.
-Which is exactly the Replacement Schema.
+Which is exactly the Replacement Schema we hoped to obtain.
+
 \end{proof}
+\
+We have shown that $(Refl)$ for first-order formulas is a theorem of $\sf{ZF}$, which means that it won't yield us any large cardinals. We have shown that it can be used instead of the Axiom of Infinity and Replacement Scheme, but $\sf{ZF} + (Refl)$ is a conservative extension of $\sf{ZF}$. Besides being a starting point for more general and powerful statements, it can be used to show that $\sf{ZF}$ is not finitely axiomatizable. That is because $(Refl)$ gives a model to any finite number of (consistent) formulas. So if $\varphi_1, \ldots, \varphi_n$ for any finite $n$ would be the axioms of $\sf{ZF}$, $(Refl)$ would contain a model of itself, which would contradict the Second Gödel's Theorem.
+
+
+TODO znacit $(Refl)$ asi jako $(Refl)_1$ pokud mluvime o prvoradovych formulich
+In the next section, we will try to generalize it in a way that transcends $\sf{ZF}$ and finally yields us some large cardinals.
+
+\newpage
+% =====================================================================================================================================
+\section{Large Cardinals and Higher-order Reflection}
+\subsection{Reflecting Second-order Formulas}
+
+% viz Shapiro, Stewart. 1987. “Principles of Reflection and Second-order Logic”. Journal of Philosophical Logic 16 (3). Springer: 309–33. http://www.jstor.org/stable/30227043.
+% Reflections on Replacement and Reflection: The axioms in a structuralist setting (Geoffrey Hellman)
+
+% fakt several? kolik vlastne
+
+In this chapter we aim to explore possible generalisations of $(Refl)$ for second- and higher-order formulas and use them to establish existence of various large cardinals. We will also argue whether there is a limit to the size of large cardinals accessible via generalised $(Refl)$.  To see that there is a way to transcend $\sf{ZF}$, let us briefly show how a model of $\sf{ZF}$ can be obtained in $\sf{ZF} + "second-order reflection"$. This will be more closely examined in section \ref{section:inaccessibility}.
 
 
 {\color{red}
 TODO Plagiat -- prepsat a~vysvetlit
-TODO asi citace?
+
+TODO asi citace? presunout do patricne sekce pro reflexi vyssich radu?
+
 \begin{definition}\label{def:reflection_2}
 Let $\varphi(R)$ be a~$\Pi^n_m$-formula which contains only one free variable $R$ which is second-order. Given $R \sub V_\kappa$, we say that $\varphi(R)$ reflects in $V_\kappa$ if there is some $\alpha<\kappa$ such that:
 \begin{equation}
 \mbox{If }(V_\kappa,\in, R)\models \varphi(R), \mbox{ then }(V_\alpha,\in, R\cap V_\alpha) \models \varphi(R\cap V_\alpha).
 \end{equation}
 \end{definition}
-}
-\newpage
-% =====================================================================================================================================
-\section{Large Cardinals}
-% prerekvizity nekam?
 
-{\color{red}
-TODO pozor na opsane definice, prefurmulovvat!!!
-% TODO preformulovat
+
 
 \subsection{Preliminaries}
-To avoid confusion\footnote{While in most sources refer to \emph{weak limit cardinal} as a~\emph{limit cardinal} and to \emph{strong limit cardinal}, in some cases the distinction is \emph{weak limit cardinal} and \emph{limit cardinal} respectively. That's why I have decided to explicitly define those otherwise elementary terms.}, let's first define some basic terms.
-\begin{definition}(weak limit cardinal)\label{def:weak_limit}
-$kappa$ is a~\emph{weak limit cardinal} if it is $\aleph_\alpha$ for some limit $\alpha$.
+TODO pozor na opsane definice, preformulovat
+% TODO preformulovat
+
+\begin{definition}(limit cardinal)\label{def:limit}
+$kappa$ is a~\emph{limit cardinal} if it is $\aleph_\alpha$ for some limit $\alpha$.
 \end{definition}
 \begin{definition}(strong limit cardinal)\label{def:strong_limit}
 $kappa$ is a~\emph{strong limit cardinal} if for every $\lambda < \kappa$, $2^\lambda < \kappa$
@@ -661,7 +687,8 @@ Then $\langle$
 % supercompact
 %
 % =====================================================================================================================================
-\newpage
+\subsection{Inaccessibility}\label{section:inaccessibility}
+
 \subsection{Mahlo cardinals}
 TODO reflektuji nedosazitelnost?
 TODO zminit Mahlovu konstrukci?

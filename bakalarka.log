@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.12.2)  25 APR 2016 22:24
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.12.2)  29 APR 2016 23:47
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -228,11 +228,7 @@ File: csquotes.cfg
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... none found.
 
-(./bakalarka.aux
-
-LaTeX Warning: Label `def:relativization' multiply defined.
-
-)
+(./bakalarka.aux)
 \openout1 = `bakalarka.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 121.
@@ -247,7 +243,8 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 121.
 LaTeX Font Info:    ... okay on input line 121.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 121.
 LaTeX Font Info:    ... okay on input line 121.
- (/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
+
+(/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count121
 \scratchdimen=\dimen118
@@ -273,28 +270,30 @@ File: uni-1.def 2013/05/13 UCS: Unicode data U+0100..U+01FF
 {/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [1] [2
 
 ]
-(./bakalarka.toc
-LaTeX Font Info:    Try loading font information for U+rsfs on input line 2.
-
-(/usr/local/texlive/2015/texmf-dist/tex/latex/jknapltx/ursfs.fd
-File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
-)
-LaTeX Font Info:    Try loading font information for U+msa on input line 2.
-
-(/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Try loading font information for U+msb on input line 2.
-
-(/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-))
+(./bakalarka.toc)
 \tf@toc=\write3
 \openout3 = `bakalarka.toc'.
 
  [3
 
 ]
+
+LaTeX Warning: Citation `GodelWang' on page 4 undefined on input line 179.
+
+LaTeX Font Info:    Try loading font information for U+rsfs on input line 192.
+(/usr/local/texlive/2015/texmf-dist/tex/latex/jknapltx/ursfs.fd
+File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
+)
+LaTeX Font Info:    Try loading font information for U+msa on input line 192.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 192.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
 (/usr/local/texlive/2015/texmf-dist/tex/latex/ucs/data/uni-32.def
 File: uni-32.def 2013/05/13 UCS: Unicode data U+2000..U+20FF
 )
@@ -305,7 +304,15 @@ an{then
 
 [4
 
-] [5] [6] [7] [8]
+] [5] [6]
+
+LaTeX Warning: Citation `JechBook' on page 7 undefined on input line 276.
+
+[7]
+
+LaTeX Warning: Citation `Levy60a' on page 8 undefined on input line 320.
+
+[8]
 Overfull \hbox (4.57101pt too wide) detected at line 379
 \OML/cmm/m/it/12 ^^_ \OT1/cmr/m/n/12 = \OMS/cmsy/m/n/12 8\OML/cmm/m/it/12 r; s;
  t\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 '\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 r; s\OT1
@@ -319,57 +326,80 @@ x\OT1/cmr/m/n/12 &\OML/cmm/m/it/12 '\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 v; w\OT1/
 cmr/m/n/12 )))
  []
 
-[9] [10] [11] [12] [13]
+[9] [10] [11] [12]
+
+LaTeX Warning: Reference `lemma:reflection_lemma' on page 13 undefined on input
+ line 510.
+
+[13]
+
+LaTeX Warning: Reference `lemma:reflection_lemma' on page 14 undefined on input
+ line 531.
+
+
+LaTeX Warning: Reference `lemma:reflection_lemma' on page 14 undefined on input
+ line 554.
+
+
+LaTeX Warning: Reference `lemma:reflection_lemma' on page 14 undefined on input
+ line 557.
+
+
+LaTeX Warning: Reference `theorem:first_order_reflection' on page 14 undefined 
+on input line 568.
+
 
 Package amsfonts Warning: Obsolete command \bold; \mathbf should be used instea
-d on input line 564.
-
-
-Overfull \hbox (198.36195pt too wide) detected at line 582
-\OT1/cmr/m/n/12 (\OMS/cmsy/m/n/12 8\OML/cmm/m/it/12 x; y; z\OT1/cmr/m/n/12 (\OM
-L/cmm/m/it/12 '\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x; y; u[]; [] ; u[]\OT1/cmr/m/
-n/12 )&\OML/cmm/m/it/12 '\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x; z; u[]; [] ; u[]\
-OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 ! \OML/cmm/m/it/12 y \OT1/cmr/m/n/12 = \OML/c
-mm/m/it/12 z\OT1/cmr/m/n/12 )) \OMS/cmsy/m/n/12 ! \OT1/cmr/m/n/12 (\OMS/cmsy/m/
-n/12 8\OML/cmm/m/it/12 X\OMS/cmsy/m/n/12 9\OML/cmm/m/it/12 Y\OT1/cmr/m/n/12 (\O
-MS/cmsy/m/n/12 8\OML/cmm/m/it/12 y \OT1/cmr/m/n/12 (\OML/cmm/m/it/12 y \OMS/cms
-y/m/n/12 2 \OML/cmm/m/it/12 Y \OMS/cmsy/m/n/12 $ 9\OML/cmm/m/it/12 x\OT1/cmr/m/
-n/12 (\OML/cmm/m/it/12 x \OMS/cmsy/m/n/12 2 \OML/cmm/m/it/12 X\OT1/cmr/m/n/12 &
-\OML/cmm/m/it/12 '\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x; y; u[]; [] ; u[]\OT1/cmr
-/m/n/12 )))))
- []
+d on input line 570.
 
 [14] [15]
-Overfull \hbox (3.52345pt too wide) in paragraph at lines 621--623
+
+LaTeX Warning: Reference `section:inaccessibility' on page 16 undefined on inpu
+t line 616.
+
+
+Overfull \hbox (3.52345pt too wide) in paragraph at lines 647--649
 []\OT1/cmr/m/it/12 (inaccessibility)[] $\OML/cmm/m/it/12 ^^T$ \OT1/cmr/m/it/12 
 is \OT1/cmr/m/n/12 in-ac-ces-si-ble $\OMS/cmsy/m/n/12 $$ \OT1/cmr/m/it/12 it is
  \OT1/cmr/m/n/12 reg-u-lar \OT1/cmr/m/it/12 and \OT1/cmr/m/n/12 strongly
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 634--658
+LaTeX Warning: Citation `KanamoriBook' on page 16 undefined on input line 661.
+
+
+LaTeX Warning: Reference `def:reflection_2' on page 16 undefined on input line 
+674.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 660--684
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 634--658
+Underfull \hbox (badness 10000) in paragraph at lines 660--684
 
  []
 
-[16] [17] [18] [19] [20]
-Underfull \hbox (badness 10000) in paragraph at lines 752--755
+[16] [17]
+
+LaTeX Warning: Reference `th:refl_inaccessible' on page 18 undefined on input l
+ine 717.
+
+[18] [19] [20]
+Underfull \hbox (badness 10000) in paragraph at lines 779--782
 
  []
 
 
-Overfull \hbox (144.7233pt too wide) detected at line 800
+Overfull \hbox (144.7233pt too wide) detected at line 827
 []\OML/cmm/m/it/12 '[]\OMS/cmsy/m/n/12 8\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 (\OML
 /cmm/m/it/12 x \OMS/cmsy/m/n/12 2 \OML/cmm/m/it/12 A \OMS/cmsy/m/n/12 $ \OML/cm
 m/m/it/12 '\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 ))
  []
 
 [21] [22] [23]
-Overfull \hbox (88.55293pt too wide) detected at line 894
+Overfull \hbox (88.55293pt too wide) detected at line 921
 \OML/cmm/m/it/12 Def\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 X\OT1/cmr/m/n/12 ) := \OM
 S/cmsy/m/n/12 ff[] 2 \OML/cmm/m/it/12 X \OMS/cmsy/m/n/12 ^ h\OML/cmm/m/it/12 X;
  \OMS/cmsy/m/n/12 2i j[]\OT1/cmr/m/n/12 = \OML/cmm/m/it/12 '\OT1/cmr/m/n/12 (\O
@@ -380,17 +410,20 @@ ML/cmm/m/it/12 y; z[]; [] ; z[]\OT1/cmr/m/n/12 )\OMS/cmsy/m/n/12 gj[]\OML/cmm/m
 
 [24] [25] [26] (./bakalarka.bbl) [27] (./bakalarka.aux)
 
-LaTeX Warning: There were multiply-defined labels.
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  ) 
 Here is how much of TeX's memory you used:
- 5085 strings out of 493089
- 64047 string characters out of 6134842
- 134087 words of memory out of 5000000
- 8500 multiletter control sequences out of 15000+600000
+ 5086 strings out of 493089
+ 64067 string characters out of 6134842
+ 137668 words of memory out of 5000000
+ 8501 multiletter control sequences out of 15000+600000
  17805 words of font info for 68 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 31i,13n,43p,1545b,591s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 32i,13n,43p,1545b,591s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 </usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb>
@@ -415,7 +448,7 @@ mf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2015/texmf
 dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2015/texmf-d
 ist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2015/tex
 mf-dist/fonts/type1/public/rsfs/rsfs10.pfb>
-Output written on bakalarka.pdf (28 pages, 345365 bytes).
+Output written on bakalarka.pdf (28 pages, 352528 bytes).
 PDF statistics:
  191 PDF objects out of 1000 (max. 8388607)
  135 compressed objects within 2 object streams
