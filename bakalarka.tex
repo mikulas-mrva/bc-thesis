@@ -168,7 +168,7 @@ Prohlašuj, že jsem bakalářkou práci vypracoval samostatně a~že jsem uvedl
 \renewcommand{\sectionmark}[1]{\markboth{\slshape\thesection.\ #1}{}}
 
 
-\section{Introduction}\label{sec:vr}
+\section{Introduction}\label{sec:introduction}
 
 %Reflection principle is a kind of a theorem scheme stating the following:
 % taky debilni formulace, ale co uz
@@ -309,8 +309,13 @@ TODO co dal? recent results?
 % 
 
 %\medskip
-
-
+\subsection{Notation (??) TODO}
+\bce
+\item $(Refl)$ je obecne reflexe (jaka presne)
+\item $(Refl)_1$ je reflexe prvoradovych formuli
+\item $(Refl)_2$ je reflexe druhoradovych formuli
+\item etc...
+\ece
 
 \newpage
 \section{Levy's first-order reflection}\label{sec:fixed}  % skutecne, kdyz je formulovana v druhoradove logice?
@@ -323,7 +328,7 @@ Please note that Lévy's paper was written in a~period when Set theory was orien
 
 Lévy then mentions Mahlo's arithmetic construction of cardinals, noting, that he will use similar strategy to build higher levels of strong axioms of infinity. 
 
-TODO porovnani Mahlovy a~Lévyho konstrukce
+TODO porovnani Mahlovy a~Lévyho konstrukce, viz ref\{mahlovy kardinaly\}
 
 TODO asi doplnit jak to souvisi se soucasnou definici slabe Mahlovych kardinalu pres stacionarni mnoziny?
 
@@ -597,20 +602,22 @@ Which is exactly the Replacement Schema we hoped to obtain.
 
 \end{proof}
 \
-We have shown that $(Refl)$ for first-order formulas is a theorem of $\sf{ZF}$, which means that it won't yield us any large cardinals. We have shown that it can be used instead of the Axiom of Infinity and Replacement Scheme, but $\sf{ZF} + (Refl)$ is a conservative extension of $\sf{ZF}$. Besides being a starting point for more general and powerful statements, it can be used to show that $\sf{ZF}$ is not finitely axiomatizable. That is because $(Refl)$ gives a model to any finite number of (consistent) formulas. So if $\varphi_1, \ldots, \varphi_n$ for any finite $n$ would be the axioms of $\sf{ZF}$, $(Refl)$ would contain a model of itself, which would contradict the Second Gödel's Theorem.
-Notice, that reflection in a way counterpart to compactness. Compactness argues that for an infinite\footnote{Countable?} set of formulas, if every finite subset yields a model, then so does the whole set. Reflection, on the other hand, says that while the whole set has no model in the underlying theory, every finite subset does have a model.
+We have shown that $(Refl)$ for first-order formulas is a theorem of $\sf{ZF}$, which means that it won't yield us any large cardinals. We have shown that it can be used instead of the Axiom of Infinity and Replacement Scheme, but $\sf{ZF} + (Refl)$ is a conservative extension of $\sf{ZF}$. Besides being a starting point for more general and powerful statements, it can be used to show that $\sf{ZF}$ is not finitely axiomatizable. That is because $(Refl)$ gives a model to any finite number of (consistent) formulas. So if $\varphi_1, \ldots, \varphi_n$ for any finite $n$ would be the axioms of $\sf{ZF}$, $(Refl)$ would always contain a model of itself, which would in turn contradict the Second Gödel's Theorem\footnote{See chapter \ref{section:inaccessibility} for further details.}.
+Notice, that reflection in a way counterpart to compactness. Compactness argues that for an infinite\footnote{Countable?} set of sentences, if every finite subset yields a model, then so does the whole set. Reflection, on the other hand, says that while the whole set has no model in the underlying theory, every finite subset does have a model.
 
-%posl. vetu do jine sekce?
+Also, notice how reflection can be used in ways similar to upward Löwenheim–Skolem theorem. Since Reflection extends any set $M_0$ into a model of given formulas $\varphi_1, \ldots, \varphi_n$, we can choose $M_0$ such that the final $M$ is at least as big as we need.\footnote{Too vague?}
 
-TODO znacit $ (Refl) $ asi jako $(Refl)_1$ pokud mluvime o prvoradovych formulich
+TODO znacit $ (Refl) $ asi jako $(Refl)_1$ pokud mluvime o prvoradovych formulich, nekde nahore zavest
 
-In the next section, we will try to generalize it in a way that transcends $\sf{ZF}$ and finally yields us some large cardinals.
+TODO sjednotit kdy pisu Reflection a kdy (Refl)
+
+In the next section, we will try to generalize Reflection in a way that transcends $\sf{ZF}$ and finally yields us some large cardinals.
 
 \newpage
 % =====================================================================================================================================
 \section{Large Cardinals and Higher-order Reflection}
 
-In this chapter we aim to explore possible generalisations of $(Refl)$ for second- and higher-order formulas and use them to establish existence of various large cardinals. We will also argue whether there is a limit to the size of large cardinals accessible via generalised $(Refl)$. 
+In this chapter we aim to explore possible generalisations of $(Refl)$ for second- and higher-order formulas and use those to establish existence of various large cardinals. We will also argue whether there is a limit to the size of large cardinals accessible via generalised $(Refl)$. 
 
 \subsection{Reflecting Second-order Formulas}
 
@@ -618,11 +625,21 @@ In this chapter we aim to explore possible generalisations of $(Refl)$ for secon
 % Reflections on Replacement and Reflection: The axioms in a structuralist setting (Geoffrey Hellman)
 
 % fakt several? kolik vlastne
-To see that there is a way to transcend $\sf{ZF}$, let us briefly show how a model of $\sf{ZF}$ can be obtained in $\sf{ZF} + "second-order reflection"$. This will be more closely examined in section \ref{section:inaccessibility}.
-Since 
-%TODO Plagiat -- prepsat a~vysvetlit
+To see that there is a way to transcend $\sf{ZF}$, let us briefly show how a model of $\sf{ZF}$ can be obtained in $\sf{ZF^2} + "second-order reflection"$\footnote{$\sf{ZF^2}$ is an axiomatization of $\sf{ZF}$ in second-order formulas, to be more rigorously established later.}. This will be more closely examined in section \ref{section:inaccessibility}.
+
+We know that $\sf{ZF}$ can not be finitely axiomatized in first-order formulas, however if Replacement and Comprehension schemes can be substituted by second-order formulas, $\sf{ZF}$ becomes $\sf{ZF^2}$, which is finitely axiomatizable in second-order logic. Therefore if we take second-order reflection into consideration, we can obtain a set $M$ that is a model of $\sf{ZF^2}$. Therefore, second-order reflection. For now, we have left out the details of how exactly is first-order reflection generalised into stronger statements and how second-order axiomatization of $\sf{ZF}$ looks like. The purpose of this chapter is to try to answer these questions, as well as examine the relation of said reflection axioms to large cardinals.
+
+We will now define reflection for second-order formulas.
+
+\begin{definition}{Second-order reflection}\label{def:reflection}
+TODO
+\end{definition}
 
 %TODO asi citace? presunout do patricne sekce pro reflexi vyssich radu?
+
+%TODO vice-mene Plagiat -- prepsat a~vysvetlit -- Shapiro reflexi zobecnuje ve vice variantach -- diskutovat?
+
+%TODO zdroj?
 
 %\begin{definition}\label{def:reflection_2}
 %Let $\varphi(R)$ be a~$\Pi^n_m$-formula which contains only one free variable $R$ which is second-order. Given $R \sub V_\kappa$, we say that $\varphi(R)$ reflects in $V_\kappa$ if there is some $\alpha<\kappa$ such that:
@@ -634,6 +651,9 @@ Since
 
 
 \subsection{Preliminaries}
+
+But first, let's establish some elementary terms that will allow us to define the relevant large cardinals.
+
 \begin{definition}(limit cardinal)\label{def:limit}
 $kappa$ is a~\emph{limit cardinal} if it is $\aleph_\alpha$ for some limit ordinal $\alpha$.
 \end{definition}
@@ -642,20 +662,42 @@ $kappa$ is a~\emph{limit cardinal} if it is $\aleph_\alpha$ for some limit ordin
 $kappa$ is a~\emph{strong limit cardinal} if for every $\lambda < \kappa$, $2^\lambda < \kappa$
 \end{definition}
 
+TODO budeme potrebovat club sety, stacionarni mnoziny? treba abychom dokazali ekvivalence?
+
+% -----------------------------------------------
 
 \subsection{Inaccessibility}\label{section:inaccessibility}
-TODO nejaky uvody, model ZFC, motivace k vete z kanamoriho, prepis vety z kanamoriho
+The inaccessible cardinal is the smallest of large cardinals\footnote{citation needed.}
 
 \begin{definition}(weak inaccessibility)\label{def:weakly_inaccessible}
-$\kappa$ is \emph{weakly inaccessible} $\iff$ it is \emph{regular} and \emph{limit}.
+An uncountable cardinal $\kappa$ is \emph{weakly inaccessible} $\iff$ it is \emph{regular} and \emph{limit}.
 \end{definition}
 \begin{definition}(inaccessibility)\label{def:inaccessible} % nema byt vetsi nez \omega ?
-$\kappa$ is \emph{inaccessible} $\iff$ it is \emph{regular} and \emph{strongly limit}.
+An uncountable cardinal $\kappa$ is \emph{inaccessible} $\iff$ it is \emph{regular} and \emph{strongly limit}.
 \end{definition}
-% \cite{JechBook} % ? 
-% [L{\'e}vy] ?
-% dukaz viz Kan book 6.1, 6.2
-% todo pouziva emph in jinde?
+
+Note that the above requirements could in fact be satisfied by $V_\omega$, except for the need for uncountability, which is being added exactly to leave out $V_\omega$ for practical purposes.\footnote{Informally, this clearly illustrates the fact stressed in section \ref{sec:introduction}, that large cardinals are obtained by similar way of thining that lead mathematicians to establish $\omega$ as an actual object.}
+
+We will now show that the above notion is equivalent to the definition Levy uses in \cite{Levy60a}, which is, in more contemporary notation, the following:
+\begin{theorem}\label{theorem:inaccessible_models_zfc}
+The following are equivalent:
+\bce
+\item $\kappa$ in inaccessible
+\item $\langle V_\kappa, \in \rangle \models \sf{ZFC}$
+\ece
+\end{theorem}
+
+\begin{proof}
+Let's first prove that if $\kappa$ is inaccessible, it is a model of $\sf{ZFC}$. We will do that by verifying the axioms of $\sf{ZFC}$ just like Kanamori does it in $\bold{1.2}$ in \cite{KanamoriBook}. Because $\kappa$ is a limit ordinal, there's no need for us to verify the Powerset, Foundation, Extensionality, Subset, Pairing and Union axioms and the Specification scheme. Thus we only have the Replacement Scheme to verify. 
+
+Given an arbitrary set $x \in V_\kappa$ and a function $F: x \then V_\kappa$, we need to verify that $y = F[x]$ is indeed a set and that it is an element of $V_\kappa$. The fact that $F$ is a function imples that $|y|\ \leq |x|$. It follows from Specification that $y \subset V_\kappa$, which is still not exactly what we want. Let $\alpha < \kappa$ be the least ordinal such that $y \in V_\alpha$\footnote{TODO jak vime ze takove alpha existuje?}, since $V_{\alpha+1} = \power(V_\alpha)$, $y \in V_{\alpha+1}$, together with $\alpha+1 < \kappa$ this means that $y \in V_\kappa$.
+
+
+
+\end{proof}
+
+% dukaz viz Kan book 6.1, 6.2 ?
+% todo pouzivat emph in jinde?
 
 {\color{red}
 \begin{comment}
