@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.12.2)  30 APR 2016 21:53
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.12.2)  1 MAY 2016 02:59
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -228,26 +228,23 @@ File: csquotes.cfg
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... none found.
 
-(./bakalarka.aux
-
-LaTeX Warning: Label `def:relativization' multiply defined.
-
-)
+(./bakalarka.aux)
 \openout1 = `bakalarka.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 121.
-LaTeX Font Info:    ... okay on input line 121.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 121.
-LaTeX Font Info:    ... okay on input line 121.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 121.
-LaTeX Font Info:    ... okay on input line 121.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 121.
-LaTeX Font Info:    ... okay on input line 121.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 121.
-LaTeX Font Info:    ... okay on input line 121.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 121.
-LaTeX Font Info:    ... okay on input line 121.
- (/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 122.
+LaTeX Font Info:    ... okay on input line 122.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 122.
+LaTeX Font Info:    ... okay on input line 122.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 122.
+LaTeX Font Info:    ... okay on input line 122.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 122.
+LaTeX Font Info:    ... okay on input line 122.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 122.
+LaTeX Font Info:    ... okay on input line 122.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 122.
+LaTeX Font Info:    ... okay on input line 122.
+
+(/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count121
 \scratchdimen=\dimen118
@@ -298,24 +295,30 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 (/usr/local/texlive/2015/texmf-dist/tex/latex/ucs/data/uni-32.def
 File: uni-32.def 2013/05/13 UCS: Unicode data U+2000..U+20FF
 )
-Overfull \hbox (3.88898pt too wide) in paragraph at lines 199--200
+Overfull \hbox (3.88898pt too wide) in paragraph at lines 200--201
 []\OT1/cmr/m/n/12 If God can end-lessly add a cu-bic foot to a stone{which He c
 an{then
  []
 
+
+Package Fancyhdr Warning: \headheight is too small (12.5pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
 [4
 
-] [5] [6] [7]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 331.
+] [5] [6] [7] [8]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 334.
 
- (/usr/local/texlive/2015/texmf-dist/tex/latex/base/omscmr.fd
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 331.
-
-[8]
-Overfull \hbox (4.57101pt too wide) detected at line 384
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 334.
+ [9]
+Overfull \hbox (4.57101pt too wide) detected at line 387
 \OML/cmm/m/it/12 ^^_ \OT1/cmr/m/n/12 = \OMS/cmsy/m/n/12 8\OML/cmm/m/it/12 r; s;
  t\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 '\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 r; s\OT1
 /cmr/m/n/12 )&\OML/cmm/m/it/12 '\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 r; t\OT1/cmr/
@@ -328,65 +331,82 @@ x\OT1/cmr/m/n/12 &\OML/cmm/m/it/12 '\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 v; w\OT1/
 cmr/m/n/12 )))
  []
 
-[9] [10] [11] [12] [13]
+[10] [11] [12] [13] [14]
 
 Package amsfonts Warning: Obsolete command \bold; \mathbf should be used instea
-d on input line 575.
+d on input line 580.
 
-[14]
-Overfull \hbox (53.58429pt too wide) in paragraph at lines 608--609
+[15]
+Overfull \hbox (53.58429pt too wide) in paragraph at lines 614--615
 []\OT1/cmr/m/n/12 Also, no-tice how re-flec-tion can be used in ways sim-i-lar 
 to up-ward L^^?owenheim{Skolem
  []
 
-[15] [16] [17]
-Overfull \hbox (10.38586pt too wide) in paragraph at lines 746--749
-\OT1/cmr/m/n/12 TODO re-flek-tuji ne-dosazitel-nost? TODO zminit Mahlovu kon-st
-rukci v Levym?
+[16] [17] [18]
+Underfull \hbox (badness 10000) in paragraph at lines 676--677
+
  []
 
-[18] [19] [20] (./bakalarka.bbl) [21] (./bakalarka.aux)
 
-LaTeX Warning: There were multiply-defined labels.
+Underfull \hbox (badness 10000) in paragraph at lines 687--688
 
- ) 
+ []
+
+
+Overfull \hbox (41.96278pt too wide) in paragraph at lines 719--719
+[][]\OT1/cmr/m/n/10 TODO skutecne plati na obe strany? viz http://math.stackexc
+hange.com/questions/1060005/h-
+ []
+
+[19] [20]
+Underfull \hbox (badness 10000) in paragraph at lines 763--766
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 767--770
+
+ []
+
+[21] [22] [23] [24] [25] (./bakalarka.bbl) [26] (./bakalarka.aux) ) 
 Here is how much of TeX's memory you used:
- 5099 strings out of 493089
- 64335 string characters out of 6134842
- 135042 words of memory out of 5000000
- 8511 multiletter control sequences out of 15000+600000
- 17805 words of font info for 68 fonts, out of 8000000 for 9000
+ 5105 strings out of 493089
+ 64427 string characters out of 6134842
+ 135028 words of memory out of 5000000
+ 8515 multiletter control sequences out of 15000+600000
+ 18506 words of font info for 70 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 32i,12n,43p,1545b,591s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
-></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
-</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb>
-</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><
-/usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></
-usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></u
-sr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr
-/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/l
-ocal/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/loc
-al/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local
-/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/t
-exlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/tex
-live/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texliv
-e/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2
-015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl12.pfb></usr/local/texlive/20
-15/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/local/texlive/201
-5/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/local/texlive/2015
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/local/texlive/2015/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2015/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2015/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2015/texmf-
-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2015/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2015/texmf-di
-st/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2015/texm
-f-dist/fonts/type1/public/rsfs/rsfs10.pfb>
-Output written on bakalarka.pdf (22 pages, 340763 bytes).
+ 34i,15n,43p,1545b,591s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/
+texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/t
+exlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/te
+xlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/local/te
+xlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/tex
+live/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texl
+ive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texli
+ve/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive
+/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2
+015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/201
+5/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2015/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2015/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2015/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2015/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2015/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmsl12.pfb></usr/local/texlive/2015/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/local/texlive/2015/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmss12.pfb></usr/local/texlive/2015/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmss8.pfb></usr/local/texlive/2015/texmf-dist/font
+s/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2015/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2015/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2015/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1
+/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2015/texmf-dist/fonts/t
+ype1/public/rsfs/rsfs10.pfb>
+Output written on bakalarka.pdf (27 pages, 349337 bytes).
 PDF statistics:
- 176 PDF objects out of 1000 (max. 8388607)
- 125 compressed objects within 2 object streams
+ 192 PDF objects out of 1000 (max. 8388607)
+ 136 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
