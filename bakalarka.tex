@@ -1,5 +1,5 @@
 \documentclass[12pt,a4paper]{article}
-% \renewcommand{\baselinestretch}{1.1}   % in case of emergency .)
+% \renewcommand{\baselinestretch}{1.2}   % in case of emergency .)
 
 \usepackage{mathrsfs}
 \usepackage{amssymb}
@@ -11,7 +11,7 @@
 \usepackage{verbatim}
 \linenumbers
 
-\usepackage{color} %pro barevné odkazy, pøíp. nadpisy
+\usepackage{color} %pro barevné odkazy, příp. nadpisy
 \definecolor{odkazy}{rgb}{0.21,0.27,0.53} %tmavì modrá
 \definecolor{nadpisy}{rgb}{0.5812,0.0665,0.0659} %cihlová
 %
@@ -268,7 +268,7 @@ From previous thoughts we can easily argue, that it is impossible to construct a
 
 \
 
-(Refl) Any property which holds in $V$ already holds in some initial segment of $V$. 
+$\emph{Reflection}$ Any property which holds in $V$ already holds in some initial segment of $V$. 
 
 \
 
@@ -314,9 +314,9 @@ TODO co dal? recent results?
 %\
 \subsection{Notation (??) TODO}
 \bce
-\item $(Refl)$ je obecne reflexe (jaka presne)
-\item $(Refl)_1$ je reflexe prvoradovych formuli
-\item $(Refl)_2$ je reflexe druhoradovych formuli
+\item $\emph{Reflection}$ je obecne reflexe (jaka presne)
+\item $\emph{Reflection}_1$ je reflexe prvoradovych formuli
+\item $\emph{Reflection}_2$ je reflexe druhoradovych formuli
 \item etc...
 \ece
 
@@ -329,27 +329,123 @@ We will first introduce a~few axioms and definitions that were a~different in L�
 
 Please note that Lévy's paper was written in a~period when Set theory was oriented towards semantics, which means that everything was done in a~model. All proofs were theodel that of $\sf{ZFC}$ was $V_\alpha$ (notated as $R(\alpha)$ at the time) for some cardinal $\alpha$, which means that $\alpha$ is a~inaccessible cadinal. Please bear in mind that this is vastly different from saying that there is an inaccessible $\alpha$ inside the model. This $V_\alpha$ is also referred to as $Scm^{\sf{Q}}(u)$, which means that $u$ ($u=V_\alpha$ in our case) is a~standard complete model of an undisclosed axiomatic set theory $\sf{Q}$ formulated in the "non-simple applied first order functional calculus", which is second-order theory is today's terminology, we are allowed to quantify over functions and thus get rid of axiom schemes. (Note that Lévy always speaks of "the axiom of replacement"). Besides placeholder set theory $\sf{Q}$ and $\sf{ZF}$, which the reader should be familiar with, theories $\sf{Z}$, $\sf{S}$, and $\sf{SF}$ are used in the text. $\sf{Z}$ is $\sf{ZF}$ minus replacement, $\sf{S}$ is $\sf{ZF}$ minus replacement and infinity, and finally $\sf{SF}$ is $\sf{ZF}$ minus infinity. "The axiom of subsets" is an older name for the axiom scheme of specification (and it's not a~scheme since we are now working in second order logic). Also note that universal quantifier does not appear, $\forall x \varphi (x)$ would be written as $(x) \varphi (x)$, the symbol for negation is "$\sim$".
 
-Lévy then mentions Mahlo's arithmetic construction of cardinals, noting, that he will use similar strategy to build higher levels of strong axioms of infinity. 
+%\subsection{Preliminaries}
+\subsection{Lévy's Original Paper}\label{sec:Levy1960}
+
+The following are a few definitions that are used in Lévy's original article. \footnote{While some of them won't be of much use in this paper, they will provide extremely helpful when reading the original article as set theory notation and terminology has evolved in the last 50 years considerably.}
+
+\begin{definition}{Relativization}\label{def:relativization}\\
+TODO (jech:161)
+\end{definition}
+
+Next two definitions are not used in contemporary set theory, but they illustrate 1960's set theory mind-set and they are used heavily in Lévy's text, so we will include and explain them for clarity. Generally in this chapter, $\sf{Q}$ stands for an undisclosed axiomatic set theory, $u$ is usually a model, counterpart of today's $V$\footnote{Which is of course not referred to as a model, but it is used in a similar fashion, in this case the term "model" was a metamathematical notion because it was not based on any underlying structure of theory. It can be easily formalized in any set theory, but it's not helpful for our case.}, $e$ is a relation that serves as $\in$ in the given model.
+\begin{definition}{Standard model of a set theory}\\
+We say the $u$ is a standard model of $\sf{Q}$ with a membership relation $e$, written as $Sm^{\sf{Q}}(u)$, if both of the following hold
+\bce[(i)]
+\item $(x, y) \in e \iff y \in u\ \&\ x \in y$
+\item $y \in u\ \&\ x \in y \then x \in u$
+\ece
+\end{definition}
+\begin{definition}{Standard complete model of a set theory}\\
+We say that that $u$ is a standard complete model of a set theory $\sf{Q}$ with a membership relation $e$ if:
+\bce[(i)]
+\item $u$ is a transitive set with respect to $\in$
+\item $\forall e ((x, y) \in e \iff (y \in u\ \&\ x \in y)\ \&\ Sm^{\sf{Q}}(u, e))$
+\ece
+this is written as $Scm^{\sf{Q}}(u)$.
+\end{definition}
+
+\
+
+TODO what is "simple first-order functional calculus" a "non-simple first-order functional calculus"? Levyho ucebnice?
+
+\
+
+\begin{definition}{Cardinal inaccessible with respect to $\sf{Q}$}\label{def:levy_inaccessible}
+\begin{equation}
+In^{\sf{Q}}(\alpha)\ =\ Scm^{\sf{Q}}(V_\alpha)
+\end{equation}
+\end{definition}
+
+
+\begin{definition}{Strictly increasing function}\\
+A function $F(\alpha)$ defined on the ordinal number into the ordinal numbers is said to be \emph{strictly increasing} if
+$\forall \alpha, \beta \in On (\alpha < \beta \then F(\alpha) < F(\beta)).$
+\end{definition}
+
+\begin{definition}{Continuous function}\\
+A function $F(\alpha)$ defined on the ordinal number into the ordinal numbers is said to be \emph{continuous} if
+for any limit $\alpha$, $F(\alpha) = lim_{\beta < \alpha} F(\beta)$.
+\end{definition}
+
+\begin{definition}{Normal function}\\
+A function $F(\alpha)$ defined on the ordinal number into the ordinal numbers is said to be \emph{normal} if it is \emph{strictly increasing} and \emph{continuous}
+\end{definition}
+
+TODO jak znacim usporadane dvojice?
 
 TODO porovnani Mahlovy a~Lévyho konstrukce, viz ref\{mahlovy kardinaly\}
 
 TODO asi doplnit jak to souvisi se soucasnou definici slabe Mahlovych kardinalu pres stacionarni mnoziny?
 
-\subsection{Preliminaries}
-\begin{definition}{Relativization}\label{def:relativization}
-TODO (jech:161)
+\
+
+Lévy's article mentions various schemata that are not instances of reflection themselves. We will mention them because they are equivalent to $N_0$ and because they are fixed-point theorems, which we will find useful later in this thesis.
+
+\begin{definition}{$M$}
+Every normal function defined for all ordinals has at least one inaccessible number in its range.
+\end{definition}
+
+\begin{definition}{$M'$}
+Every normal function defined for all ordinals has at least one fixed point which is inaccessible.
 \end{definition}
 
 
-\subsection{Lévy's Original Proof From 1960}\label{sec:Levy1960}
-\begin{definition}{$N_0(\varphi)$}
+\begin{definition}{$M''$}
+Every normal function defined for all ordinals has arbitrarily great fixed points which are inaccessible.
+\end{definition}
+
+\begin{theorem}
 \begin{equation}
-\exists u (Scm^{\sf{S}}(u) \& x_1, \ldots , x_n \in u \then \varphi \iff \varphi^{u})
+M \iff M' \iff M''
+\end{equation}
+\end{theorem}
+
+We will omit this proof because it is not essential for our goal. An interested reader will find it in \cite{Levy60a, \emph{Theorem 1}}.
+
+\
+
+The following is a principle of complete reflection over $\sf{ZF}$.
+\begin{definition}{$N(\varphi)$}
+\begin{equation}
+\exists u (Scm^{\sf{ZF}}(u)\ \&\ \forall x_1, \ldots , x_n (x_1, \ldots , x_n \in u \then \varphi \iff \varphi^{u}))
 \end{equation}
 where $\varphi$ is a~formula which does not contain free variables except $x_1, \ldots , x_n$.
 \end{definition}
 
-\
+Note that this by (\ref{def:levy_inaccessible}) equivalent to $\exists u (In^{\sf{ZF}}(u)\ \&\ \forall x_1, \ldots , x_n (x_1, \ldots , x_n \in u \then \varphi \iff \varphi^{u}))$, where $In(\alpha)$ is equivalent to the standard notion of inaccessibility.
+
+\begin{theorem}\label{theorem:levy_m_iff_n}
+\begin{equation}
+M \iff N
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+TODO (Theorem 3)?
+\end{proof}
+
+\subsection{$\sf{S} \models \emph{Reflection}\ \iff\ (\emph{Replacement}\ \&\ \emph{Infinity})$} 
+% nebyl by to lepsi nadpis bez S?
+
+\begin{definition}{$N_0(\varphi)$}
+\begin{equation}
+\exists u (Scm^{\sf{S}}(u)\ \&\ \forall x_1, \ldots , x_n (x_1, \ldots , x_n \in u \then \varphi \iff \varphi^{u}))
+\end{equation}
+where $\varphi$ is a~formula which does not contain free variables except $x_1, \ldots , x_n$.
+\end{definition}
+
+Note that the only difference between $N$ and $N_0$ is the set theory used.
 
 \begin{theorem}
 In $\sf{S}$, the schema $N_0$ implies the Axiom of Infinity.
@@ -363,7 +459,7 @@ In order to prove that it is a~model of $\sf{S}$, we would need to verify all ax
 TODO vyhodit axiomy, staci vyrobit $\omega$
 %TODO what about union?
 
-We now want to prove that $V_\alpha$ leads to existence of an inductive set, which is a~set that satisfies $\exists A(\emptyset \in A \& \forall  x \in A ((x \cup \{ x\}) \in A))$. If we can find a~way to construct $V_\omega$ from any $V_\alpha$ satisfying $\alpha \geq \omega$, we are done. Since $\omega$ is the least limit ordinal, all we need is the following
+We now want to prove that $V_\alpha$ leads to existence of an inductive set, which is a~set that satisfies $\exists A(\emptyset \in A~\& \forall  x \in A~((x \cup \{ x\}) \in A))$. If we can find a~way to construct $V_\omega$ from any $V_\alpha$ satisfying $\alpha \geq \omega$, we are done. Since $\omega$ is the least limit ordinal, all we need is the following
 
 \begin{equation}
 \bigcap \{V_\kappa\ |\  \forall \lambda(\lambda < \kappa \then \exists \mu(\lambda < \mu < \kappa))\}
@@ -408,6 +504,10 @@ which together with (iv) yields $\forall x_1, \ldots, x_n \forall x \chi$. By th
 
 TODO btw co je x? nemela by tam tam byt nejaka volna promenna?
 
+TODO shrnout zbytek clanku, fixed-point vety a spol
+
+TODO S->ZM->ZM'->ZM'', neco jako mahlovy kardinaly
+
 \end{proof}
 
 
@@ -423,7 +523,7 @@ TODO Ze prvoradova reflexe je theorem ZFC, vys uz max jako axiom/schema.
 
 TODO ?
 
-The following lemma is usually done in more parts, the first being with one formula and the other with $n$. We will only state and prove the generalised version for $n$ formulas, knowing that $n=1$ is just a specific case and the proof is exactly the same.
+The following lemma is usually done in more parts, the first being with one formula and the other with $n$. We will only state and prove the generalised version for $n$ formulas, knowing that $n=1$ is just a~specific case and the proof is exactly the same.
 
 \begin{lemma}{Lemma}\label{lemma:reflection_lemma}
 Let $\varphi_1, \ldots, \varphi_n$ be any formulas with $m$ parameters\footnote{For formulas with different number of parameters take for $m$ the highest number of parameters among given formulas. Add spare parameters to the other formulas so that $x$ remains the last parameter. That can be done in a~following manner: Let $\varphi'_i$ be the a~formula with k parameters, $k < m$. Let us set $\varphi_i(u_1, \ldots, u_{m-1}, x) = \varphi'_i(u_1, \ldots, u_{k-1}, u_k, \ldots, u_{m-1}, x)$, notice that $u_k, \ldots, u_{m-1}$ are spare variables added just for formal simplicity.}. 
@@ -569,7 +669,7 @@ Now we want to verify other parts of our theorem. Since $V_\alpha$ is a~transiti
 \
 
 \begin{theorem}
-(Refl) is equivalent to (Infinity) $\&$ (Replacement) under ZFC minus (Infinity) $\&$ (Replacement)
+$\emph{Reflection}$ is equivalent to $\emph{Infinity}\ \&\ \emph{Replacement}$ under ZFC minus $\emph{Infinity}\ \&\ \emph{Replacement}$
 \end{theorem}
 
 \
@@ -577,21 +677,21 @@ Now we want to verify other parts of our theorem. Since $V_\alpha$ is a~transiti
 \begin{proof}
 Since \ref{theorem:first_order_reflection} already gives one side of the implication, we are only interested in showing the converse:
 
-$\bold{(Refl) \then (Infinity)}$
+$\bold{\emph{Reflection} \then \emph{Infinity}}$
 
 Let us first find a~formula to be reflected that requires a~set $M$ at least as large as $V_\omega$.
 Let us consider the following formula:
 \begin{equation}
 \varphi'(x) = \forall \lambda(\lambda < x \then \exists \mu(\lambda < \mu < x))
 \end{equation}
-Because $\varphi$ says "there is a~limit ordinal", if it holds for some $x$, the Infinity axiom is very easy to satisfy. But we know that there are limit ordinals in $\sf{ZF}$, therefore $\varphi = \exists x \varphi'(x)$ is a~valid statement. (Refl) then gives us a~set $M$ in which $\varphi^M$ holds, that is, a~set that contains a~limit ordinal. So the set of off limit ordinals is non-empty and because ordinals are well-founded, it has a~minimal element. Let's call it $\mu$.
+Because $\varphi$ says "there is a~limit ordinal", if it holds for some $x$, the Infinity axiom is very easy to satisfy. But we know that there are limit ordinals in $\sf{ZF}$, therefore $\varphi = \exists x \varphi'(x)$ is a~valid statement. $\emph{Reflection}$ then gives us a~set $M$ in which $\varphi^M$ holds, that is, a~set that contains a~limit ordinal. So the set of off limit ordinals is non-empty and because ordinals are well-founded, it has a~minimal element. Let's call it $\mu$.
 \begin{equation}
 \mu = \bigcap \{V_\kappa\ :\  \forall \lambda(\lambda < \kappa \then \exists \mu(\lambda < \mu < \kappa))\}
 \end{equation}
-We can see that $\mu$ is the least limit ordinal and therefore it satisfies (Infinity).
+We can see that $\mu$ is the least limit ordinal and therefore it satisfies $\emph{Infinity}$.
 
 
-$\bold{(Refl) \then (Replacement)}$
+$\bold{\emph{Reflection} \then \emph{Replacement}}$
 
 Given a~formula $\varphi(x, y, u_1, \ldots, u_n)$, we can suppose that it is reflected in any $M$ \footnote{Which means that for $x, y, u_1, \ldots, u_n \in M$, $\varphi^M(x, y, u_1, \ldots, u_n) \iff \varphi(x, y, u_1, \ldots, u_n)$.}
 What we want to obtain is the following:
@@ -608,32 +708,32 @@ Which is exactly the Replacement Schema we hoped to obtain.
 
 \
 
-We have shown that $(Refl)$ for first-order formulas is a theorem of $\sf{ZF}$, which means that it won't yield us any large cardinals. We have shown that it can be used instead of the Axiom of Infinity and Replacement Scheme, but $\sf{ZF} + (Refl)$ is a conservative extension of $\sf{ZF}$. Besides being a starting point for more general and powerful statements, it can be used to show that $\sf{ZF}$ is not finitely axiomatizable. That is because $(Refl)$ gives a model to any finite number of (consistent) formulas. So if $\varphi_1, \ldots, \varphi_n$ for any finite $n$ would be the axioms of $\sf{ZF}$, $(Refl)$ would always contain a model of itself, which would in turn contradict the Second Gödel's Theorem\footnote{See chapter \ref{section:inaccessibility} for further details.}.
-Notice, that reflection in a way counterpart to compactness. Compactness argues that for an infinite\footnote{Countable?} set of sentences, if every finite subset yields a model, then so does the whole set. Reflection, on the other hand, says that while the whole set has no model in the underlying theory, every finite subset does have a model.
+We have shown that $\emph{Reflection}$ for first-order formulas is a~theorem of $\sf{ZF}$, which means that it won't yield us any large cardinals. We have shown that it can be used instead of the Axiom of Infinity and Replacement Scheme, but $\sf{ZF} + \emph{Reflection}$ is a~conservative extension of $\sf{ZF}$. Besides being a~starting point for more general and powerful statements, it can be used to show that $\sf{ZF}$ is not finitely axiomatizable. That is because $\emph{Reflection}$ gives a~model to any finite number of (consistent) formulas. So if $\varphi_1, \ldots, \varphi_n$ for any finite $n$ would be the axioms of $\sf{ZF}$, $\emph{Reflection}$ would always contain a~model of itself, which would in turn contradict the Second Gödel's Theorem\footnote{See chapter \ref{section:inaccessibility} for further details.}.
+Notice, that reflection in a~way counterpart to compactness. Compactness argues that for an infinite\footnote{Countable?} set of sentences, if every finite subset yields a~model, then so does the whole set. Reflection, on the other hand, says that while the whole set has no model in the underlying theory, every finite subset does have a~model.
 
-Also, notice how reflection can be used in ways similar to upward Löwenheim–Skolem theorem. Since Reflection extends any set $M_0$ into a model of given formulas $\varphi_1, \ldots, \varphi_n$, we can choose $M_0$ such that the final $M$ is at least as big as we need.\footnote{Too vague?}
+Also, notice how reflection can be used in ways similar to upward Löwenheim–Skolem theorem. Since Reflection extends any set $M_0$ into a~model of given formulas $\varphi_1, \ldots, \varphi_n$, we can choose $M_0$ such that the final $M$ is at least as big as we need.\footnote{Too vague?}
 
-TODO znacit $ (Refl) $ asi jako $(Refl)_1$ pokud mluvime o prvoradovych formulich (definice je nahore v posledni subsection section 1)
+TODO znacit $ \emph{Reflection} $ asi jako $\emph{Reflection}_1$ pokud mluvime o prvoradovych formulich (definice je nahore v posledni subsection section 1)
 
-TODO sjednotit kdy pisu Reflection a kdy (Refl)
+TODO sjednotit kdy pisu Reflection a~kdy $\emph{Reflection}$
 
-In the next section, we will try to generalize Reflection in a way that transcends $\sf{ZF}$ and finally yields some large cardinals.
+In the next section, we will try to generalize Reflection in a~way that transcends $\sf{ZF}$ and finally yields some large cardinals.
 
 \newpage
 % =====================================================================================================================================
 \section{Large Cardinals} % used to be "... and Second-order Reflection"
 
-In this chapter we aim to explore possible generalisations of $(Refl)$ for second- and higher-order formulas and use those to establish existence of various large cardinals. We will also argue whether there is a limit to the size of large cardinals accessible via generalised $(Refl)$. 
+In this chapter we aim to explore possible generalisations of $\emph{Reflection}$ for second- and higher-order formulas and use those to establish existence of various large cardinals. We will also argue whether there is a~limit to the size of large cardinals accessible via generalised $\emph{Reflection}$. 
 
 \subsection{Reflecting Second-order Formulas}
 
 % viz Shapiro, Stewart. 1987. “Principles of Reflection and Second-order Logic”. Journal of Philosophical Logic 16 (3). Springer: 309–33. http://www.jstor.org/stable/30227043.
-% Reflections on Replacement and Reflection: The axioms in a structuralist setting (Geoffrey Hellman)
+% Reflections on Replacement and Reflection: The axioms in a~structuralist setting (Geoffrey Hellman)
 
 % fakt several? kolik vlastne
-To see that there is a way to transcend $\sf{ZF}$, let us briefly show how a model of $\sf{ZF}$ can be obtained in $\sf{ZF^2} + "second-order reflection"$\footnote{$\sf{ZF^2}$ is an axiomatization of $\sf{ZF}$ in second-order formulas, to be more rigorously established later.}. This will be more closely examined in section \ref{section:inaccessibility}.
+To see that there is a~way to transcend $\sf{ZF}$, let us briefly show how a~model of $\sf{ZF}$ can be obtained in $\sf{ZF^2} + "second-order reflection"$\footnote{$\sf{ZF^2}$ is an axiomatization of $\sf{ZF}$ in second-order formulas, to be more rigorously established later.}. This will be more closely examined in section \ref{section:inaccessibility}.
 
-We know that $\sf{ZF}$ can not be finitely axiomatized in first-order formulas, however if Replacement and Comprehension schemes can be substituted by second-order formulas, $\sf{ZF}$ becomes $\sf{ZF^2}$, which is finitely axiomatizable in second-order logic. Therefore if we take second-order reflection into consideration, we can obtain a set $M$ that is a model of $\sf{ZF^2}$. Therefore, second-order reflection. For now, we have left out the details of how exactly is first-order reflection generalised into stronger statements and how second-order axiomatization of $\sf{ZF}$ looks like. The purpose of this chapter is to try to answer these questions, as well as examine the relation of said reflection axioms to large cardinals.
+We know that $\sf{ZF}$ can not be finitely axiomatized in first-order formulas, however if Replacement and Comprehension schemes can be substituted by second-order formulas, $\sf{ZF}$ becomes $\sf{ZF^2}$, which is finitely axiomatizable in second-order logic. Therefore if we take second-order reflection into consideration, we can obtain a~set $M$ that is a~model of $\sf{ZF^2}$. For now, we have left out the details of how exactly is first-order reflection generalised into stronger statements and how second-order axiomatization of $\sf{ZF}$ looks like. The purpose of this chapter is to try to answer these questions, as well as examine the relation of said reflection axioms to large cardinals.
 
 We will now define reflection for second-order formulas.
 
@@ -670,7 +770,7 @@ $kappa$ is a~\emph{strong limit cardinal} if for every $\lambda < \kappa$, $2^\l
 
 \
 
-We also need to rigorously define $\sf{ZF^2}$, the second-order axiomatization of $\sf{ZF}$ we have already used in the previous section. Let's take advantage of second-order variables and replace Replacement and Specification schemes with a single Replacement resp. Specification axiom. Lower-case letters represent first-order variables and upper-case $P$ represents a second-order variable.
+We also need to rigorously define $\sf{ZF^2}$, the second-order axiomatization of $\sf{ZF}$ we have already used in the previous section. Let's take advantage of second-order variables and replace Replacement and Specification schemes with a~single Replacement resp. Specification axiom. Lower-case letters represent first-order variables and upper-case $P$ represents a~second-order variable.
 
 % \cite{Shapiro87}
 \begin{definition}{$\emph{Replacement}^2$}\label{def:replacement_2}\\
@@ -691,7 +791,7 @@ We will denote this axiom .
 \end{definition}
 
 \begin{definition}{$\sf{ZF^2}$}\\
-Let $\sf{ZF^2}$ be a theory with all axioms identical with the axioms of $\sf{ZF}$ with the exception of $\emph{Replacement}$ and $\emph{Specification}$ schemes, which are replaced with $\emph{Replacement}^2$ and $\emph{Specification}^2$ respectively.
+Let $\sf{ZF^2}$ be a~theory with all axioms identical with the axioms of $\sf{ZF}$ with the exception of $\emph{Replacement}$ and $\emph{Specification}$ schemes, which are replaced with $\emph{Replacement}^2$ and $\emph{Specification}^2$ respectively.
 \end{definition}
 
 TODO vsechny jmena axiomu emph?
@@ -724,18 +824,18 @@ The following are equivalent:\footnote{TODO skutecne plati na obe strany? viz ht
 \end{theorem}
 
 \begin{proof}
-Let's first prove that if $\kappa$ is inaccessible, it is a model of $\sf{ZFC}$. We will do that by verifying the axioms of $\sf{ZFC}$ just like Kanamori does it in $\bold{1.2}$ in \cite{KanamoriBook}. Because $\kappa$ is a limit ordinal, there's no need for us to verify the Powerset, Foundation, Extensionality, Subset, Pairing and Union axioms and the Specification scheme. Thus we only have the Replacement Scheme to verify. 
+Let's first prove that if $\kappa$ is inaccessible, it is a~model of $\sf{ZFC}$. We will do that by verifying the axioms of $\sf{ZFC}$ just like Kanamori does it in $\bold{1.2}$ in \cite{KanamoriBook}. Because $\kappa$ is a~limit ordinal, there's no need for us to verify the Powerset, Foundation, Extensionality, Subset, Pairing and Union axioms and the Specification scheme. Thus we only have the Replacement Scheme to verify. 
 
-Given an arbitrary set $x \in V_\kappa$ and a function $F: x \then V_\kappa$, we need to verify that $y = F[x]$ is indeed a set and that it is an element of $V_\kappa$. The fact that $F$ is a function imples that $|y|\ \leq |x|$. It follows from Specification that $y \subset V_\kappa$, which is still not exactly what we want. Let $\alpha < \kappa$ be the least ordinal such that $y \in V_\alpha$\footnote{TODO pozor -- jak vime ze takove alpha existuje?}, since $V_{\alpha+1} = \power(V_\alpha)$, $y \in V_{\alpha+1}$, together with $\alpha+1 < \kappa$ this means that $y \in V_\kappa$.
+Given an arbitrary set $x \in V_\kappa$ and a~function $F: x \then V_\kappa$, we need to verify that $y = F[x]$ is indeed a~set and that it is an element of $V_\kappa$. The fact that $F$ is a~function imples that $|y|\ \leq |x|$. It follows from Specification that $y \subset V_\kappa$, which is still not exactly what we want. Let $\alpha < \kappa$ be the least ordinal such that $y \in V_\alpha$\footnote{TODO pozor -- jak vime ze takove alpha existuje?}, since $V_{\alpha+1} = \power(V_\alpha)$, $y \in V_{\alpha+1}$, together with $\alpha+1 < \kappa$ this means that $y \in V_\kappa$.
 
 \
 
-We will now show that if a set is a model of $\sf{ZFC}$, it is in fact an inaccessible cardinal. So let $V_\kappa$ be a model of $\sf{ZFC}$ which means that it is closed under the powerset operation, in other words:
+We will now show that if a~set is a~model of $\sf{ZFC}$, it is in fact an inaccessible cardinal. So let $V_\kappa$ be a~model of $\sf{ZFC}$ which means that it is closed under the powerset operation, in other words:
 \begin{equation}
 \forall \lambda (\lambda < \kappa \then 2^{\lambda} < \kappa)
 \end{equation}
 which is exactly the definition of strong limitness. $\kappa$ is regular from the following argument by contradiction:\\
-Let us suppose for a moment that $\kappa$ is singular. Therefore there is an ordinal $\alpha < \kappa$ and a function $F:\ \alpha \then \kappa$ such that the range of $F$ in unbounded in $\kappa$, in other words, $F[\alpha] \subseteq V_\kappa$ and $sup(F[\alpha])\ =\ \kappa$. In order to achieve the desired contradiction, we need to see that it is the case that $F[\alpha] \in V_\kappa$. Let $\varphi(x, y)$ be the following first-order formula:
+Let us suppose for a~moment that $\kappa$ is singular. Therefore there is an ordinal $\alpha < \kappa$ and a~function $F:\ \alpha \then \kappa$ such that the range of $F$ in unbounded in $\kappa$, in other words, $F[\alpha] \subseteq V_\kappa$ and $sup(F[\alpha])\ =\ \kappa$. In order to achieve the desired contradiction, we need to see that it is the case that $F[\alpha] \in V_\kappa$. Let $\varphi(x, y)$ be the following first-order formula:
 \begin{equation}
 F(x)\ =\ y
 \end{equation}
@@ -746,7 +846,7 @@ Then there is an instance of  Axiom Schema of Replacement that states the follow
 \then (\forall x \exists y \forall z (z \in y \iff \exists w (\varphi(w, z)))
 \end{split}
 \end{equation}
-Which in turn means that there is a set $y = F[\alpha]$ and $y \in V_\kappa$, which is the contradiction with $sup(y) = \kappa$ we are looking for.
+Which in turn means that there is a~set $y = F[\alpha]$ and $y \in V_\kappa$, which is the contradiction with $sup(y) = \kappa$ we are looking for.
 \end{proof}
 
 \
@@ -758,19 +858,21 @@ V_\kappa \models \sf{ZF^2} \iff \mbox{$\kappa$ is inaccessible}
 \end{equation}
 \end{theorem}
 \begin{proof}
-$\kappa$ is a strong limit cardinal because from $\sf{ZF^2}$ and the Powerset Axiom we know that for every $\lambda\ <\ \kappa$, we know that $2^{\lambda} < \kappa$.
+$\kappa$ is a~strong limit cardinal because from $\sf{ZF^2}$ and the Powerset Axiom we know that for every $\lambda\ <\ \kappa$, we know that $2^{\lambda} < \kappa$.
 
-$\kappa$ is also regular, because otherwise there would be an ordinal $\alpha$ and a function $F:\ \alpha \then \kappa$ with a range unbounded in $\kappa$. 
-$\emph{Replacement}^2$ gives us a set $y\ =\ F[\alpha]$, so $y\ \in\ V_\kappa$, which contradicts the fact that $sup(y)\ =\ \kappa$. It can not be the case that $\kappa \in V_\kappa$.
+$\kappa$ is also regular, because otherwise there would be an ordinal $\alpha$ and a~function $F:\ \alpha \then \kappa$ with a~range unbounded in $\kappa$. 
+$\emph{Replacement}^2$ gives us a~set $y\ =\ F[\alpha]$, so $y\ \in\ V_\kappa$, which contradicts the fact that $sup(y)\ =\ \kappa$. It can not be the case that $\kappa \in V_\kappa$.
 \\
 
 The other direction is exactly like the first part of above theorem \ref{theorem:inaccessible_models_zfc}.
 \end{proof}
 \\
 
-The above makes clear that while the existence of inaccessibles is unprovable in $\sf{ZF}$ or $\sf{ZF^2}$, we now know that at least the smallest inaccessible cardinal exists in $\sf{ZF+(Refl^2)}$ because there is a set that models $\sf{ZF}$.
+%The above makes clear that while the existence of inaccessibles is unprovable in $\sf{ZF}$ or $\sf{ZF^2}$, we now know that at least the smallest inaccessible cardinal exists in $\sf{ZF+(Refl^2)}$ because there is a~set that models $\sf{ZF}$. But how exactly can we reach there with second-order reflection?
 
-We have transcended $\sf{ZF}$, but that is just a start. What about cardinals inaccessible with respect to the new theory?
+% TODO
+
+We have transcended $\sf{ZF}$, but that is just a~start. Naturally, we could go on and consider the next inaccessible cardinal, which is inaccessible with respect to the theory $\sf{ZF} + \exists \kappa (\kappa \models \sf{ZF})$. But 
 
 \
 
@@ -778,7 +880,9 @@ TODO $\alpha$-inaccessibles etc?
 
 TODO mention fixed-point phenomena
 
-TODO typografie -- mezery kolem vsech = a asi i vyrokovych ostatnich spojek
+TODO typografie -- mezery kolem vsech = a~asi i vyrokovych ostatnich spojek
+
+TODO krok smerem k Mahlovym kardinalum
 
 % dukaz viz Kan book 6.1, 6.2 ?
 % todo pouzivat emph in jinde?
@@ -836,6 +940,8 @@ TODO zminit Mahlovu konstrukci v Levym?
 
 TODO zavest pomoci reflexe
 
+ocisluj nedosazitelne kardinaly, Mahlovy kardinaly jsou pevne body (ale pevne body nejsou Mahlovy kardinaly)
+
 \begin{definition}{Weakly Mahlo Cardinals}\label{def:weakly_mahlo}
 $\kappa$ is \emph{weakly Mahlo} $\iff$ it is a~limit ordinal and the set of all regular ordinals less then $\kappa$ is stationary in $\kappa$
 \end{definition}
@@ -846,6 +952,11 @@ TODO napsat co to znamena
 
 \
 
+% viz http://euclid.colorado.edu/~monkd/m6730/gradsets12.pdf
+Thus a~Mahlo cardinal $\kappa$ is not only inaccessible, but also has $\kappa$ inaccessibles below it.
+
+\
+
 \begin{definition}{Mahlo cardinals}\label{def:mahlo}\\
 The folllowing definitions are equivalent:
 \bce[(i)]
@@ -853,6 +964,7 @@ The folllowing definitions are equivalent:
 \item $\kappa$ is weakly Mahlo and strong limit
 \item $\kappa$ is inaccessible and the regular cardinals below $\kappa$ form a~stationary subset of $\kappa$.
 \item $\kappa$ is regular and the stationary sets below $\kappa$ form a~stationary subset of $\kappa$.
+\item $\{\lambda < \kappa : \lambda is inaccessible\}$ is stationary in $\kappa$.  % ruzna syntaxe. tohle je ale super
 \ece
 \end{definition}
 
@@ -873,7 +985,14 @@ $\kappa$ is Mahlo by the following contradiction. If not, there would be a~$C$ c
 
 \end{comment}
 }
+
+TODO $\kappa$ is hyper-Mahlo iff $\kappa$ is inaccessible and the set $\{\lambda < \kappa : \lambda is Mahlo\}$ is stationary in $\kappa$.
+
+% TODO viz https://en.wikipedia.org/wiki/Mahlo_cardinal#Mahlo_cardinals_and_reflection_principles
+
 Note that Mahlo cardinals were first described in 1911, almost 50 years before Lévy's reflection, which was heavily inspired by them.
+
+" We also state the appropriate generalization for greatly Mahlo cardinals." % viz http://arxiv.org/abs/math/9204218
 
 %sjednotil \then a~\implies
 % =====================================================================================================================================
