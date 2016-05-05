@@ -7,7 +7,7 @@
 \contentsline {subsection}{\numberline {2.2}L\IeC {\'e}vy's Original Paper}{9}
 \contentsline {subsection}{\numberline {2.3}$\sf {S} \models \emph {Reflection}\ \leftrightarrow \ (\emph {Replacement}\ \&\ \emph {Infinity})$}{12}
 \contentsline {subsection}{\numberline {2.4}Contemporary restatement}{13}
-\contentsline {section}{\numberline {3}Large Cardinals}{20}
+\contentsline {section}{\numberline {3}Reflecting Large Cardinals}{20}
 \contentsline {subsection}{\numberline {3.1}Reflecting Second-order Formulas}{20}
 \contentsline {subsection}{\numberline {3.2}Preliminaries}{20}
 \contentsline {subsection}{\numberline {3.3}Inaccessibility}{21}
