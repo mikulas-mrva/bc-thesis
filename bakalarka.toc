@@ -1,7 +1,7 @@
 \contentsline {section}{\numberline {1}Introduction}{4}
 \contentsline {subsection}{\numberline {1.1}Motivation and Origin}{4}
 \contentsline {subsection}{\numberline {1.2}A few historical remarks on reflection}{7}
-\contentsline {subsection}{\numberline {1.3}Notation (??) TODO}{7}
+\contentsline {subsection}{\numberline {1.3}Notation (??) TODO}{8}
 \contentsline {section}{\numberline {2}Levy's first-order reflection}{9}
 \contentsline {subsection}{\numberline {2.1}Introduction}{9}
 \contentsline {subsection}{\numberline {2.2}L\IeC {\'e}vy's Original Paper}{9}
@@ -11,12 +11,12 @@
 \contentsline {subsection}{\numberline {3.1}Reflecting Second-order Formulas}{20}
 \contentsline {subsection}{\numberline {3.2}Preliminaries}{20}
 \contentsline {subsection}{\numberline {3.3}Inaccessibility}{21}
-\contentsline {subsection}{\numberline {3.4}Mahlo Cardinals}{23}
-\contentsline {subsection}{\numberline {3.5}Weakly Compact Cardinals}{24}
-\contentsline {subsection}{\numberline {3.6}Indescribable Cardinals}{24}
-\contentsline {subsection}{\numberline {3.7}Bernays\IeC {\textendash }G{\"o}del Set Theory}{24}
-\contentsline {subsection}{\numberline {3.8}Reflection and the constructible universe}{25}
-\contentsline {section}{\numberline {4}Higher-order reflection}{26}
-\contentsline {subsection}{\numberline {4.1}Sharp}{26}
-\contentsline {subsection}{\numberline {4.2}Welek: Global Reflection Principles}{26}
-\contentsline {section}{\numberline {5}Conclusion}{27}
+\contentsline {subsection}{\numberline {3.4}Mahlo Cardinals}{25}
+\contentsline {subsection}{\numberline {3.5}Weakly Compact Cardinals}{27}
+\contentsline {subsection}{\numberline {3.6}Indescribable Cardinals}{27}
+\contentsline {subsection}{\numberline {3.7}Bernays\IeC {\textendash }G{\"o}del Set Theory}{27}
+\contentsline {subsection}{\numberline {3.8}Reflection and the constructible universe}{28}
+\contentsline {section}{\numberline {4}Higher-order reflection}{29}
+\contentsline {subsection}{\numberline {4.1}Sharp}{29}
+\contentsline {subsection}{\numberline {4.2}Welek: Global Reflection Principles}{29}
+\contentsline {section}{\numberline {5}Conclusion}{30}
