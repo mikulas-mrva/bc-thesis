@@ -417,7 +417,7 @@ M \iff M' \iff M''
 
 We will omit this proof because it is not essential for our goal. An interested reader will find it in \cite{Levy60a, \emph{Theorem 1}}.
 
-TODO z M se pak odvodi Mahlovska hierarchie?
+TODO Pak i lambda konstrukce, zobecnene
 
 \
 
@@ -500,7 +500,7 @@ We can deduce the following from $N_0$:
 
 Note that (i), (ii), (iii) are obtained from instances of $N_0$ for $\varphi$, $\exists w \varphi$ and $\chi$ respectively.  % asi ne teda, spis je to postup dukazu, neco jako plan. % spis ne
 From relativization we also know that $(\exists w \varphi)^{u}$ is equivalent to $\exists w (w \in u \& \varphi^{u})$.
-Therefore (ii) is equivalent to $x_1, \ldots, x_n, v \in u \then (\exists w (w \in u \& \varphi^{u})$. 
+Therefore (ii) is equivalent to $x_1, \ldots, x_n, v \in u \then (\exists w (w \in u \& \varphi^{u}))$. 
 
 If $\varphi$ is a~function ($ \forall r, s, t(\varphi(r, s) \& \varphi(r, t) \then r=t $)), then for every $x \in u$, which is also $x \subset u$ by $Scm^{\sf{S}}(u)$,
 it maps elements of $x$ onto $u$. From the axiom scheme of comprehension\footnote{axiom of subsets in Levy's version}, we can find a~set of all images of elements of $x$. Let's call it $y$.
@@ -525,9 +525,7 @@ TODO nejaky uvod.
 
 TODO Levy rika ze existuje $Scm^S(u)$ reflektujici varphi, coz uz nepotrebujeme. atd.
 
-TODO Ze prvoradova reflexe je theorem ZFC, vys uz max jako axiom/schema.
-
-TODO ?
+TODO Ze prvoradova reflexe je theorem ZFC, vys uz max jako axiom/schema. (spis ne)
 
 The following lemma is usually done in more parts, the first being with one formula and the other with $n$. We will only state and prove the generalised version for $n$ formulas, knowing that $n=1$ is just a~specific case and the proof is exactly the same.
 
@@ -621,7 +619,7 @@ for every $x_1, \ldots, x_n$.
 \begin{equation}
 \varphi^M(x_1, \ldots, x_n) \iff \varphi(x_1, \ldots, x_n)
 \end{equation}
-for every $x_1, \ldots, x_n$.)
+for every $x_1, \ldots, x_n$.
 \ece
 \end{theorem}
 
@@ -731,12 +729,21 @@ In the next section, we will try to generalize Reflection in a~way that transcen
 % =====================================================================================================================================
 \section{Reflecting Large Cardinals} % used to be "... and Second-order Reflection"
 
-In this chapter we aim to explore the possible generalisations of $\emph{Reflection}$ for second- and higher-order formulas and use those to establish the existence of various large cardinals. We will also argue whether there is a~limit to the size of large cardinals obtainable via generalised form of $\emph{Reflection}$. 
+
+TODO "v nasledujici kapitole budeme reflektovat vlastnosti univerzalni tridy a budeme se divat jake initial segmenty/kardinaly dostavame podle toho, jak se meni presny vyznam pojmu 'vlastnost' atd..."
+
+TODO napsat nekam 
+
+TODO neco jako: for every process for obtaining larger sets, this process can't reach $V$ and, from reflection, there is an initial segment of $V$ that is strictly smaller than $V$ but still can't be reached via said process.
+
+In this chapter we aim to explore the possible generalisations of $\emph{Reflection}$ for second-order formulas and use those to establish the existence of various large cardinals. We will also argue whether there is a~limit to the size of large cardinals obtainable via generalised form of $\emph{Reflection}$. 
 
 \subsection{Reflecting Second-order Formulas}
 
 % viz Shapiro, Stewart. 1987. “Principles of Reflection and Second-order Logic”. Journal of Philosophical Logic 16 (3). Springer: 309–33. http://www.jstor.org/stable/30227043.
 % Reflections on Replacement and Reflection: The axioms in a~structuralist setting (Geoffrey Hellman)
+
+TODO ze "uplne totalni" reflexe se zacykli a rozbije
 
 % fakt several? kolik vlastne
 To see that there is a~way to transcend $\sf{ZF}$, let us briefly show how a~model of $\sf{ZF}$ can be obtained in $\sf{ZF}_2 + \mbox{"second-order reflection"}$\footnote{$\sf{ZF}_2$ is an axiomatization of $\sf{ZF}$ in second-order formulas, to be more rigorously established later.}. This will be more closely examined in section \ref{section:inaccessibility}.
@@ -781,6 +788,8 @@ $kappa$ is a~\emph{limit cardinal} if it is $\aleph_\alpha$ for some limit ordin
 $kappa$ is a~\emph{strong limit cardinal} if for every $\lambda < \kappa$, $2^\lambda < \kappa$
 \end{definition}
 
+
+TODO splyvaji kdyz plati GCH
 \
 
 We also need to rigorously define $\sf{ZF}_2$, the second-order axiomatization of $\sf{ZF}$ we have already used in the previous section. Let's take advantage of second-order variables and replace Replacement and Specification schemes with a~single Replacement and a Specification axiom respectively. Lower-case letters represent first-order variables and upper-case $P$ represents a~second-order variable. \cite{Shapiro87}
@@ -833,6 +842,8 @@ The above should make a clear picture of why $\emph{Infinity}$ is a specific cas
 
 TODO proc je Refl zaroven zobecneny replacement?
 
+TODO nize budeme zkoumat ktere mnoziny jsou "nedosazitelne" reflexi ruznych skupin "properties of V". 
+
 \
 
 We will now show that the above notion is equivalent to the definition Levy uses in \cite{Levy60a}, which is, in more contemporary notation, the following:
@@ -884,11 +895,13 @@ $\kappa$ is a~strong limit cardinal because from $\sf{ZF}_2$ and the Powerset Ax
 
 $\kappa$ is also regular, because otherwise there would be an ordinal $\alpha$ and a~function $F:\ \alpha \then \kappa$ with a~range unbounded in $\kappa$. 
 $\emph{Replacement}^2$ gives us a~set $y\ =\ F[\alpha]$, so $y\ \in\ V_\kappa$, which contradicts the fact that $sup(y)\ =\ \kappa$. It can not be the case that $\kappa \in V_\kappa$.
-\\
+
+\
 
 The other direction is exactly like the first part of above theorem \ref{theorem:inaccessible_models_zfc}.
 \end{proof}
-\\
+
+\
 
 %The above makes clear that while the existence of inaccessibles is unprovable in $\sf{ZF}$ or $\sf{ZF}_2$, we now know that at least the smallest inaccessible cardinal exists in $\sf{ZF+(Refl^2)}$ because there is a~set that models $\sf{ZF}$. But how exactly can we reach there with second-order reflection?
 
@@ -925,8 +938,6 @@ TODO nepotrebuju treba vzit zvlast v uvahu limitni $\alpha$?
 
 Because $\kappa$ is inaccessible and therefore regular, the number of $\beta$-inaccessibles below $\kappa$ is equal to $\kappa$. We have therefore successfully formalized the above vague notion of hyper-inaccessible cardinal into a hierarchy of $\alpha$-hyper-inaccessibles.
 
-TODO mention fixed-point property!
-
 \
 
 Let's now consider iterating this process over again. Since, informally, $V$ would be $\alpha$-hyper-inaccessible for any $\alpha$, this property of the universal class could possibly be reflected to an initial segment, the smallest of those will be the first hyper-hyper-inaccessible cardinal. Such $\kappa$ is larger than any $\alpha$-hyper-inaccessible since from regularity of $\kappa$, for given $\alpha\ <\ \kappa$, $\kappa$ is $\kappa$-th $\alpha$-hyper-inaccessible cardinal. It is in fact "inaccessible" via $\alpha$-hyper-inaccessibility.
@@ -954,6 +965,10 @@ TODO typografie -- mezery kolem vsech = a~asi i vyrokovych ostatnich spojek
 
 {\color{red}
 \begin{comment}
+
+% !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+TODO tohle znamena, ze prvoradovou formuli nerozlisime $V$ od (prvniho) nedosazitelneho $\kappa$
 
 \begin{theorem}\label{th:refl_inaccessible}[Lévy] The following are equivalent:
 \bce[(i)]
@@ -999,49 +1014,82 @@ Then $\langle$
 
 \subsection{Mahlo Cardinals}
 
-While the previous chapter introduced us to a notion of inaccessibility and the possibility of iterating it ad libitum in new theories, there is an even faster way to travel upwards in the cumulative hierarchy, that was proposed by Paul Mahlo in his paper \cite{Mahlo11}, \cite{Mahlo12} and \cite{Mahlo13} at the very beginning of the 20th century, and which can be easily reformulated using $\emph(Reflection)$. To see how Lévy's initial statement of reflection was influenced by Mahlo's work, refer to section \ref{sec:Levy1960}. The aim of the following paragraphs is to give an intuitive explanation of the idea behind Mahlo's hierarchy of cardinals, all claims made here ought to be stated formally later in the very same chapter.
+While the previous chapter introduced us to a notion of inaccessibility and the possibility of iterating it ad libitum in new theories, there is an even faster way to travel upwards in the cumulative hierarchy, that was proposed by Paul Mahlo in his papers (see \cite{Mahlo11}, \cite{Mahlo12} and \cite{Mahlo13}) at the very beginning of the 20th century, and which can be easily reformulated using $\emph(Reflection)$. To see how Lévy's initial statement of reflection was influenced by Mahlo's work, refer to section \ref{sec:Levy1960}. The aim of the following paragraphs is to give an intuitive explanation of the idea behind Mahlo's hierarchy of cardinals, all claims made here ought to be stated formally later in the very same chapter.
 
 At the very end of section \ref{section:inaccessibility}, we have tried to establish the notion of hyper-inaccessibility and iterate it to yield even larger large cardinals. In order to avoid too bulky cardinal names, let's try a different route and establish those cardinals directly via reflection.
 
 \
 
-The following two definitions come from \cite{Infinity_in_mind} and while they are rather informal, we will find them very helpful for understanding Mahlo cardinals.
+The following two definitions come from \cite{Infinity_in_mind} and while they are rather informal, we will find them very helpful for understanding the Mahlo cardinals.
 \begin{definition}{Fixed-point property}\\
-For $\varphi(x)$ which is any property of ordinals, we say that a property $\psi$ is a $\emph{fixed-point property}$ if $\psi$ has the form
+For any $\psi(x, u_1, \ldots, u_n)$ which is any property of ordinals, we say that a property $\varphi$ is a $\emph{fixed-point property}$ if $\varphi$ has the form
 \begin{equation}
-\mbox{$x$ is an inaccessible cardinal and there are $x$ ordinals less than $x$ that have the property $\varphi(x)$)}
+\mbox{$x$ is an inaccessible cardinal and there are $x$ ordinals less than $x$ that have the property $\psi(x, u_1, \ldots, u_n)$.}
 \end{equation}
 \end{definition}
 
-TODO druhoradova? proverit, zkontrolovat.
-
+TODO this is fixed-point property because ... (/fixed-point ceho?)
 \
 
 \begin{definition}{Fixed-point reflection}\\
-TODO jako reflexe ale jenom pro fixed-point properties
+If $\varphi$ is a fixed-point property that holds for $V$, it also holds for some $V_\alpha$, an initial segment of $V$.
+\end{definition}
+
+Obviously those are in on way rigorous definitions because we have no idea what $\psi(x, u_1, \ldots, u_n)$ looks like. Let's try to restate the same idea in a useful way. But first, let's show that the formal counterpart of the idea of containing "enough" ordinals with a property is the notion of stationary set. 
+
+\begin{definition}{Supremum}\\
+Given $A$ a set of ordinals, the supremum of $A$, denoted sup($A$), is the least upper bound of $A$.
+\begin{equation}
+sup(A)\ =\ \bigcup A
+\end{equation}
+where $\alpha$ is an ordinal.
 \end{definition}
 
 \
 
-TODO define stationary set
+\begin{definition}{Limit point}\\
+Given $A$, a set of ordinals and an ordinal $\alpha$, we say that $\alpha$ is a \emph{limit point} of $A$ if $sup(A \cap \alpha)\ =\ \alpha$
+\end{definition}
+% funfuje to, protoze alpha je ordinal, takze kdyz je alpha nejvyssi a je to zaroven mnozina vsech mensich ordinalu, je to presne supremum. kdyz tam neni, ale A obsahuje vsechny mensi ordinaly, je to nejmensi horni zavora, tedy alpha
 
 \
 
-TODO asi podle Jecha?
+\begin{definition}{Club set}\\
+For a regular uncountable $\kappa$, a set $A\ \subset\ \kappa$ is a \emph{closed unbounded} subset (often abbreviated as a \emph{club set}) iff $A$ is both closed, which means it contains all it's limit points, and unbounded, which means that for every $\beta$ < $\kappa$ there is a $\beta'\ \in \alpha$ such that $\beta\ <\ \beta'\ <\ \kappa$.
+\end{definition}
+% TODO mozna kratka uvaha proc to musi byt regularni?
 
 \
 
-TODO via reflection?
+\begin{definition}{Stationary set}\\
+For a regular uncountable $\kappa$, a set $A\ \subset\ \kappa$ is stationary if it intersects every club subset of $\kappa$.
+\end{definition}
 
 \
 
-\begin{definition}{Weakly Mahlo Cardinals}\label{def:weakly_mahlo}\\
+\begin{definition}{Weakly Mahlo Cardinal}\label{def:weakly_mahlo}\\
 $\kappa$ is \emph{weakly Mahlo} $\iff$ it is a~limit ordinal and the set of all regular ordinals less then $\kappa$ is stationary in $\kappa$
 \end{definition}
 
+\begin{definition}{Mahlo Cardinal}\label{def:mahlo_cardinal}\\
+$\kappa$ is a \emph{Mahlo Cardinal} iff it is an inaccessible cardinal and the set of all inaccessible ordinals less then $\kappa$ is stationary in $\kappa$.
+\end{definition}
+
+%It is interesting to note, that weakly-Mahlo cardinals are fixed points of $\alpha$-weakly inaccessible cardinals, so if $\kappa$ is weakly mahlo,  .. viz Kanamori Proposition 1.1
+% tak asi ne, nedefinovali jsme weakly inaccess card.
+Analogously, 
+\begin{definition}{$\alpha$-Mahlo Cardinal}\label{def:alpha_mahlo_cardinal}\\
+$\kappa$ is a \emph{$\alpha$-Mahlo Cardinal} iff it is an $\alpha$-inaccessible cardinal and the set of all $\alpha$-inaccessible ordinals less then $\kappa$ is stationary in $\kappa$.
+\end{definition}
+
 \
 
+In other words, $\kappa$ is a mahlo cardinal if it is inaccessible and every club set in $\kappa$ contains an inaccessible cardinal.
 TODO napsat co to znamena, proc stacionarni?
+
+\
+
+TODO jak to tam dela Levy?
 
 \
 
@@ -1083,20 +1131,24 @@ TODO $\kappa$ is hyper-Mahlo iff $\kappa$ is inaccessible and the set $\{\lambda
 
 % TODO viz https://en.wikipedia.org/wiki/Mahlo_cardinal#Mahlo_cardinals_and_reflection_principles
 
-Note that Mahlo cardinals were first described in 1911, almost 50 years before Lévy's reflection, which was heavily inspired by them.
+% Note that Mahlo cardinals were first described in 1911, almost 50 years before Lévy's reflection, which was heavily inspired by them.
 
 " We also state the appropriate generalization for greatly Mahlo cardinals." % viz http://arxiv.org/abs/math/9204218
 
 %sjednotil \then a~\implies
 % =====================================================================================================================================
 % \newpage
-\subsection{Weakly Compact Cardinals}
+\subsection{Indescribality and Weakly Compact Cardinals}
 
 \
 
-TODO souvislost s reflexi!
+TODO indescribable -- reflecting indescribability -- we can't reach $V$ by a $\Sigma_1^1$ formula, so there's some initial segment $V_\alpha$ that is also unreachable (we say indescribable) by the means of a ... formula
 
 TODO co je "partition property"?
+
+TODO pak dk. ekvivalenci
+
+TODO Kanamori 6.3
 
 \begin{definition}
 A cardinal $\kappa$ is \emph{weakly compact} if it is uncountable and satisfies the partition property $\kappa \then (\kappa)^2$

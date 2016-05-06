@@ -12,11 +12,11 @@
 \contentsline {subsection}{\numberline {3.2}Preliminaries}{20}
 \contentsline {subsection}{\numberline {3.3}Inaccessibility}{21}
 \contentsline {subsection}{\numberline {3.4}Mahlo Cardinals}{25}
-\contentsline {subsection}{\numberline {3.5}Weakly Compact Cardinals}{27}
-\contentsline {subsection}{\numberline {3.6}Indescribable Cardinals}{27}
-\contentsline {subsection}{\numberline {3.7}Bernays\IeC {\textendash }G{\"o}del Set Theory}{27}
-\contentsline {subsection}{\numberline {3.8}Reflection and the constructible universe}{28}
-\contentsline {section}{\numberline {4}Higher-order reflection}{29}
-\contentsline {subsection}{\numberline {4.1}Sharp}{29}
-\contentsline {subsection}{\numberline {4.2}Welek: Global Reflection Principles}{29}
-\contentsline {section}{\numberline {5}Conclusion}{30}
+\contentsline {subsection}{\numberline {3.5}Indescribality and Weakly Compact Cardinals}{28}
+\contentsline {subsection}{\numberline {3.6}Indescribable Cardinals}{28}
+\contentsline {subsection}{\numberline {3.7}Bernays\IeC {\textendash }G{\"o}del Set Theory}{28}
+\contentsline {subsection}{\numberline {3.8}Reflection and the constructible universe}{29}
+\contentsline {section}{\numberline {4}Higher-order reflection}{30}
+\contentsline {subsection}{\numberline {4.1}Sharp}{30}
+\contentsline {subsection}{\numberline {4.2}Welek: Global Reflection Principles}{30}
+\contentsline {section}{\numberline {5}Conclusion}{31}
