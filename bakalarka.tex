@@ -321,6 +321,8 @@ TODO co dal? recent results?
 \item etc...
 \ece
 
+$V$ a $V_\alpha$ odkazuji k Von Neumannove hierarchii (pro jistotu)
+
 \newpage
 \section{Levy's first-order reflection}\label{sec:fixed}
 
@@ -383,58 +385,8 @@ In^{\sf{Q}}(\alpha)\ =\ Scm^{\sf{Q}}(V_\alpha)
 \end{equation}
 \end{definition}
 
-TODO tohle je lepsi protoze nepotrebujes AC
-
-
-\begin{definition}{Strictly increasing function}\\
-A function $F(\alpha)$ defined on the ordinal number into the ordinal numbers is said to be \emph{strictly increasing} if
-$\forall \alpha, \beta \in On (\alpha < \beta \then F(\alpha) < F(\beta)).$
-\end{definition}
-
-\begin{definition}{Continuous function}\\
-A function $F(\alpha)$ defined on the ordinal number into the ordinal numbers is said to be \emph{continuous} if
-for any limit $\alpha$, $F(\alpha) = lim_{\beta < \alpha} F(\beta)$.
-\end{definition}
-
-\begin{definition}{Normal function}\label{def:normal_function}\\
-A function $F(\alpha)$ defined on the ordinal number into the ordinal numbers is said to be \emph{normal} if it is \emph{strictly increasing} and \emph{continuous}
-\end{definition}
-
-TODO vse nize presunout do patricne sekce ve velkych kardinalech?
-
-TODO jak znacim usporadane dvojice?
-
-TODO porovnani Mahlovy a~Lévyho konstrukce, viz ref\{mahlovy kardinaly\}
-
-TODO asi doplnit jak to souvisi se soucasnou definici slabe Mahlovych kardinalu pres stacionarni mnoziny?
-
-\
-
-Lévy's article mentions various schemata that are not instances of reflection themselves. We will mention them because they are equivalent to $N_0$ and because they are fixed-point theorems, which we will find useful later in this thesis.
-
-\begin{definition}{$M$}
-Every normal function defined for all ordinals has at least one inaccessible number in its range.
-\end{definition}
-
-\begin{definition}{$M'$}
-Every normal function defined for all ordinals has at least one fixed point which is inaccessible.
-\end{definition}
-
-\begin{definition}{$M''$}
-Every normal function defined for all ordinals has arbitrarily great fixed points which are inaccessible.
-\end{definition}
-
-\begin{theorem}
-\begin{equation}
-M \iff M' \iff M''
-\end{equation}
-\end{theorem}
-
-We will omit this proof because it is not essential for our goal. An interested reader will find it in \cite{Levy60a, \emph{Theorem 1}}.
-
-TODO Pak i lambda konstrukce, zobecnene
-
-\
+% TODO ekvivalence s beznou definici?
+% TODO tohle je lepsi protoze nepotrebujes AC
 
 The following is a principle of complete reflection over $\sf{ZF}$.
 \begin{definition}{$N(\varphi)$}
@@ -445,17 +397,6 @@ where $\varphi$ is a~formula which does not contain free variables except $x_1, 
 \end{definition}
 
 Note that this by (\ref{def:levy_inaccessible}) equivalent to $\exists u (In^{\sf{ZF}}(u)\ \&\ \forall x_1, \ldots , x_n (x_1, \ldots , x_n \in u \then \varphi \iff \varphi^{u}))$, where $In(\alpha)$ is equivalent to the standard notion of inaccessibility.
-
-\begin{theorem}\label{theorem:levy_m_iff_n}
-\begin{equation}
-M \iff N
-\end{equation}
-\end{theorem}
-
-\begin{proof}
-TODO (Theorem 3)? neudelam ho spis v dalsi sekci v modernejsi variante?
-\end{proof}
-
 \subsection{$\sf{S} \models \emph{Reflection}\ \iff\ (\emph{Replacement}\ \&\ \emph{Infinity})$} 
 % nebyl by to lepsi nadpis bez S?
 
@@ -523,16 +464,9 @@ That gives us $x_1, \ldots, x_n, x \in u \then \chi$. By (iii) we get $x_1, \ldo
 which together with (iv) yields $\forall x_1, \ldots, x_n \forall x \chi$. By the means of specification we end up with $\chi$, which is all we need for now. 
 \end{proof}
 
-\
 
+TODO zbytek clanku v par vetach, odkaz na mista ve 3: kapitole kde je budeme delat.
 % TODO btw co je x? nemela by tam tam byt nejaka volna promenna?
-
-TODO shrnout zbytek clanku, fixed-point vety a spol, rict ze to udelame v sekci "velke kardinaly"
-
-TODO $S->ZM->ZM'->ZM''$, neco jako mahlovy kardinaly, presunout do dane kapitoly
-
-TODO shrnout v par vetach.
-
 % todo Jech strana 444 -- stacionarni veci a~reflexe?
 % =====================================================================================================================================
 
@@ -772,6 +706,89 @@ TODO
 TODO see Hanf-Scott [kanamori:61]?
 
 TODO full reflection, partial reflection? viz Levy60, ten druhy clanek
+
+TODO diskuse, co vede ve vysledku k nepopsatelnym kardinalum
+
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+levyho clanek -- zahrnout na patricna mista tehle kapitoly
+%\subsection{Rest of the article}
+%TODO prejmenovat sekci nebo presunout do patricnych velkych kardinalu (to spis)
+
+\begin{definition}{Strictly increasing function}\\
+A function $F(\alpha)$ defined on the ordinal number into the ordinal numbers is said to be \emph{strictly increasing} if
+$\forall \alpha, \beta \in On (\alpha < \beta \then F(\alpha) < F(\beta)).$
+\end{definition}
+
+\begin{definition}{Continuous function}\\
+A function $F(\alpha)$ defined on the ordinal number into the ordinal numbers is said to be \emph{continuous} if
+for any limit $\alpha$, $F(\alpha) = lim_{\beta < \alpha} F(\beta)$.
+\end{definition}
+
+\begin{definition}{Normal function}\label{def:normal_function}\\
+A function $F(\alpha)$ defined on the ordinal number into the ordinal numbers is said to be \emph{normal} if it is \emph{strictly increasing} and \emph{continuous}
+\end{definition}
+
+TODO vse nize presunout do patricne sekce ve velkych kardinalech?
+
+%TODO jak znacim usporadane dvojice?
+% TODO porovnani Mahlovy a~Lévyho konstrukce, viz ref\{mahlovy kardinaly\}
+
+\
+
+TODO asi doplnit jak to souvisi se soucasnou definici slabe Mahlovych kardinalu pres stacionarni mnoziny?
+
+\
+
+Lévy's article mentions various schemata that are not instances of reflection themselves. We will mention them because they are equivalent to $N_0$ and because they are fixed-point theorems, which we will find useful later in this thesis.
+
+\begin{definition}{$M$}
+Every normal function defined for all ordinals has at least one inaccessible number in its range.
+\end{definition}
+
+\begin{definition}{$M'$}
+Every normal function defined for all ordinals has at least one fixed point which is inaccessible.
+\end{definition}
+
+\begin{definition}{$M''$}
+Every normal function defined for all ordinals has arbitrarily great fixed points which are inaccessible.
+\end{definition}
+
+\
+
+\begin{theorem}
+\begin{equation}
+M \iff M' \iff M''
+\end{equation}
+\end{theorem}
+
+An interested reader will find the proof in \cite{Levy60a, \emph{Theorem 1}}.
+
+\
+
+TODO Pak i lambda konstrukce, zobecnene
+
+
+\begin{theorem}\label{theorem:levy_m_iff_n}
+\begin{equation}
+M \iff N
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+TODO (Theorem 3)? neudelam ho spis v dalsi sekci v modernejsi variante?
+\end{proof}
+
+\
+
+TODO shrnout zbytek clanku, fixed-point vety a spol, rict ze to udelame v sekci "velke kardinaly"
+
+TODO $S->ZM->ZM'->ZM''$, neco jako mahlovy kardinaly, presunout do dane kapitoly
+
+TODO shrnout v par vetach.
+
+------------------------------------------------------------------------------------------------------------------------------------
 
 %TODO asi citace? presunout do patricne sekce pro reflexi vyssich radu?
 
