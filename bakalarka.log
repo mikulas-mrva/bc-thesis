@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.12.2)  6 MAY 2016 19:40
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.12.2)  7 MAY 2016 03:13
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -308,25 +308,25 @@ Package Fancyhdr Warning: \headheight is too small (12.5pt):
 
 [4
 
-] [5] [6] [7] [8] [9]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 392.
+] [5] [6] [7] [8] [9] [10]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 407.
 
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 392.
- [10]
-Overfull \hbox (4.34572pt too wide) in paragraph at lines 432--433
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 407.
+
+Overfull \hbox (4.34572pt too wide) in paragraph at lines 447--448
 []\OT1/cmr/m/n/12 Note that this by (2.4[]) equiv-a-lent to $\OMS/cmsy/m/n/12 9
 \OML/cmm/m/it/12 u\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 In[]\OT1/cmr/m/n/12 (\OML/c
 mm/m/it/12 u\OT1/cmr/m/n/12 ) & \OMS/cmsy/m/n/12 8\OML/cmm/m/it/12 x[]; [] ; x[
 ]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x[]; [] ; x[] \OMS/cmsy/m/n/12 2
  []
 
-[11]
-Overfull \hbox (4.57101pt too wide) detected at line 489
+[11] [12]
+Overfull \hbox (4.57101pt too wide) detected at line 504
 \OML/cmm/m/it/12 ^^_ \OT1/cmr/m/n/12 = \OMS/cmsy/m/n/12 8\OML/cmm/m/it/12 r; s;
  t\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 '\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 r; s\OT1
 /cmr/m/n/12 )&\OML/cmm/m/it/12 '\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 r; t\OT1/cmr/
@@ -339,57 +339,51 @@ x\OT1/cmr/m/n/12 &\OML/cmm/m/it/12 '\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 v; w\OT1/
 cmr/m/n/12 )))
  []
 
-[12] [13] [14] [15] [16]
+[13]
 
 Package amsfonts Warning: Obsolete command \bold; \mathbf should be used instea
-d on input line 687.
+d on input line 566.
 
-[17]
-Overfull \hbox (53.58429pt too wide) in paragraph at lines 722--723
+[14] [15] [16] [17] [18]
+Overfull \hbox (53.58429pt too wide) in paragraph at lines 735--736
 []\OT1/cmr/m/n/12 Also, no-tice how re-flec-tion can be used in ways sim-i-lar 
 to up-ward L^^?owenheim{Skolem
  []
 
-[18] [19] [20]
-Underfull \hbox (badness 10000) in paragraph at lines 796--797
+[19] [20]
+Underfull \hbox (badness 10000) in paragraph at lines 808--809
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 807--808
+Underfull \hbox (badness 10000) in paragraph at lines 819--820
 
  []
 
 [21] [22] [23]
-Overfull \hbox (11.38196pt too wide) in paragraph at lines 939--940
+Overfull \hbox (11.38196pt too wide) in paragraph at lines 948--949
 []\OT1/cmr/m/n/12 Because $\OML/cmm/m/it/12 ^^T$ \OT1/cmr/m/n/12 is in-ac-ces-s
 i-ble and there-fore reg-u-lar, the num-ber of $\OML/cmm/m/it/12 ^^L$\OT1/cmr/m
 /n/12 -inaccessibles
  []
 
-
-Overfull \hbox (31.40674pt too wide) in paragraph at lines 939--940
-\OT1/cmr/m/n/12 vague no-tion of hyper-inaccessible car-di-nal into a hi-er-ar-
-chy of $\OML/cmm/m/it/12 $\OT1/cmr/m/n/12 -hyper-inaccessibles. 
- []
-
 [24] [25]
-Overfull \hbox (143.68556pt too wide) detected at line 1028
+Overfull \hbox (143.68556pt too wide) detected at line 1037
 []
  []
 
-[26] [27] [28] [29] [30] [31] (./bakalarka.bbl) [32] (./bakalarka.aux) )
+[26] [27] [28] [29] [30] [31] [32] (./bakalarka.bbl) [33] (./bakalarka.aux) )
 (\end occurred inside a group at level 1)
 
-### simple group (level 1) entered at line 418 ({)
+### simple group (level 1) entered at line 433 ({)
 ### bottom level
-(\end occurred when \ifx on line 418 was incomplete)
-(\end occurred when \ifx on line 418 was incomplete) 
+(\end occurred when \ifx on line 433 was incomplete)
+(\end occurred when \ifx on line 433 was incomplete) 
 Here is how much of TeX's memory you used:
- 5132 strings out of 493089
- 64841 string characters out of 6134842
- 135103 words of memory out of 5000000
- 8540 multiletter control sequences out of 15000+600000
+ 5135 strings out of 493089
+ 64909 string characters out of 6134842
+ 135138 words of memory out of 5000000
+ 8543 multiletter control sequences out of 15000+600000
  22704 words of font info for 84 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  38i,16n,43p,1545b,591s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -422,10 +416,10 @@ cm/cmti10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/c
 m/cmti12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/sy
 mbols/msam10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/rsfs/rs
 fs10.pfb>
-Output written on bakalarka.pdf (33 pages, 394934 bytes).
+Output written on bakalarka.pdf (34 pages, 402421 bytes).
 PDF statistics:
- 223 PDF objects out of 1000 (max. 8388607)
- 158 compressed objects within 2 object streams
+ 226 PDF objects out of 1000 (max. 8388607)
+ 160 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

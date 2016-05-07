@@ -6,17 +6,16 @@
 \contentsline {subsection}{\numberline {2.1}Introduction}{9}
 \contentsline {subsection}{\numberline {2.2}L\IeC {\'e}vy's Original Paper}{9}
 \contentsline {subsection}{\numberline {2.3}$\sf {S} \models \emph {Reflection}\ \leftrightarrow \ (\emph {Replacement}\ \&\ \emph {Infinity})$}{12}
-\contentsline {subsection}{\numberline {2.4}Contemporary restatement}{13}
+\contentsline {subsection}{\numberline {2.4}Contemporary restatement}{14}
 \contentsline {section}{\numberline {3}Reflecting Large Cardinals}{20}
 \contentsline {subsection}{\numberline {3.1}Reflecting Second-order Formulas}{20}
 \contentsline {subsection}{\numberline {3.2}Preliminaries}{20}
 \contentsline {subsection}{\numberline {3.3}Inaccessibility}{21}
 \contentsline {subsection}{\numberline {3.4}Mahlo Cardinals}{25}
-\contentsline {subsection}{\numberline {3.5}Indescribality and Weakly Compact Cardinals}{28}
-\contentsline {subsection}{\numberline {3.6}Indescribable Cardinals}{28}
-\contentsline {subsection}{\numberline {3.7}Bernays\IeC {\textendash }G{\"o}del Set Theory}{28}
-\contentsline {subsection}{\numberline {3.8}Reflection and the constructible universe}{29}
-\contentsline {section}{\numberline {4}Higher-order reflection}{30}
-\contentsline {subsection}{\numberline {4.1}Sharp}{30}
-\contentsline {subsection}{\numberline {4.2}Welek: Global Reflection Principles}{30}
-\contentsline {section}{\numberline {5}Conclusion}{31}
+\contentsline {subsection}{\numberline {3.5}Indescribality and Weakly Compact Cardinals}{29}
+\contentsline {subsection}{\numberline {3.6}Bernays\IeC {\textendash }G{\"o}del Set Theory}{29}
+\contentsline {subsection}{\numberline {3.7}Reflection and the constructible universe}{29}
+\contentsline {section}{\numberline {4}Higher-order reflection}{31}
+\contentsline {subsection}{\numberline {4.1}Sharp}{31}
+\contentsline {subsection}{\numberline {4.2}Welek: Global Reflection Principles}{31}
+\contentsline {section}{\numberline {5}Conclusion}{32}
