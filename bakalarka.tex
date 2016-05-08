@@ -356,9 +356,9 @@ Defined in the following inductive manner:
 
 Next two definitions are not used in contemporary set theory, but they illustrate 1960's set theory mind-set and they are used heavily in Lévy's text, so we will include and explain them for clarity. Generally in this chapter, $\sf{Q}$ stands for an undisclosed axiomatic set theory, $u$ is usually a model, counterpart of today's $V$\footnote{Which is of course not referred to as a model, but it is used in a similar fashion, in this case the term "model" was a metamathematical notion because it was not based on any underlying structure of theory. It can be easily formalized in any set theory, but it's not helpful for our case.}, $e$ is a relation that serves as $\in$ in the given model.
 
-TODO je to relativizovany, jak rika shepherdson?
+% TODO je to relativizovany, jak rika shepherdson?
 \begin{definition}{Standard model of a set theory}\\
-We say the $u$ is a standard model of $\sf{Q}$ with a membership relation $e$, written as $Sm^{\sf{Q}}(u)$, if both of the following hold
+We say the $u$ is a standard model of $\sf{Q}$ with ša membership relation $e$, written as $Sm^{\sf{Q}}(u)$, if both of the following hold
 \bce[(i)]
 \item $(x, y) \in e \iff y \in u\ \&\ x \in y$
 \item $y \in u\ \&\ x \in y \then x \in u$
@@ -373,18 +373,17 @@ We say that that $u$ is a standard complete model of a set theory $\sf{Q}$ with
 this is written as $Scm^{\sf{Q}}(u)$.
 \end{definition}
 
-\
-
-TODO what is "simple first-order functional calculus" a "non-simple first-order functional calculus"? Levyho ucebnice?
+% TODO what is "simple first-order functional calculus" a "non-simple first-order functional calculus"? math.stackovrflow?
 
 \
 
-\begin{definition}{Cardinal inaccessible with respect to $\sf{Q}$}\label{def:levy_inaccessible}
+\begin{definition}{Cardinal inaccessible with respect to $\sf{Q}$}\label{def:levy_inaccessible_q}
 \begin{equation}
-In^{\sf{Q}}(\alpha)\ =\ Scm^{\sf{Q}}(V_\alpha)
+In^{\sf{Q}}(\kappa)\ =\ Scm^{\sf{Q}}(V_\kappa)
 \end{equation}
 \end{definition}
 
+This definition is more general than the usual one\footnote{Which says that a cardinal $\kappa$ is inaccessible iff it is a strong limit regular cardinal.}, we will often write $In(\kappa)$ as a shorthand for $In^{\sf{ZF}}(\kappa)$.
 % TODO ekvivalence s beznou definici?
 % TODO tohle je lepsi protoze nepotrebujes AC
 
@@ -416,9 +415,10 @@ In $\sf{S}$, the schema $N_0$ implies the Axiom of Infinity.
 \begin{proof}
 For any $\varphi$, $N_0$ gives us $\exists u Scm^{\sf{S}}(u)$, which means that there is a~set $u$ that is identical to $V_\alpha$ for some alpha, so $\exists \alpha Scm^{\sf{S}}(V_\alpha)$.
 We don't know the exact size of this $\alpha$, but we know that $\alpha \geq \omega$, otherwise $\alpha$ would be finite, therefore not closed under the powerset operation, which would contradict the axiom of powersets. 
-In order to prove that it is a~model of $\sf{S}$, we would need to verify all axioms of $\sf{S}$ . We have already shown that $\omega$ is closed under the powerset operation. Foundation, extensionality and comprehension are clear from the fact that we work in $\sf{ZF}$\footnote{We only need to verify axioms that provide means of constructing larger sets from smaller to make sure they don't exceed $\omega$. Since $\omega$ is an initial segment of $ZF$, the axiom scheme of specification can't be broken, the same holds for foundation and extensionality.}, pairing is clear from the fact, that given two sets $A$, $B$, they have ranks $a$, $b$, without loss of generality we can assume that $a \leq b$, which means that $A \in V_a \in V_b$, therefore $V_b$ is a~set that satisfies the paring axiom: it contains both $A$ and $B$.
+In order to prove that it is a~model of $\sf{S}$, we would need to verify all axioms of $\sf{S}$. We have already shown that $\omega$ is closed under the powerset operation. Foundation, extensionality and comprehension are clear from the fact that we work in $\sf{ZF}$\footnote{We only need to verify axioms that provide means of constructing larger sets from smaller to make sure they don't exceed $\omega$. Since $\omega$ is an initial segment of $ZF$, the axiom scheme of specification can't be broken, the same holds for foundation and extensionality.}, pairing is clear from the fact, that given two sets $A$, $B$, they have ranks $a$, $b$, without loss of generality we can assume that $a \leq b$, which means that $A \in V_a \in V_b$, therefore $V_b$ is a~set that satisfies the paring axiom: it contains both $A$ and $B$.
 
-TODO vyhodit axiomy, staci vyrobit $\omega$
+Note that any limit cardinal is a model of $\sf{S}$.
+%TODO vyhodit axiomy, staci vyrobit $\omega$
 %TODO what about union?
 
 We now want to prove that $V_\alpha$ leads to existence of an inductive set, which is a~set that satisfies $\exists A(\emptyset \in A~\& \forall  x \in A~((x \cup \{ x\}) \in A))$. If we can find a~way to construct $V_\omega$ from any $V_\alpha$ satisfying $\alpha \geq \omega$, we are done. Since $\omega$ is the least limit ordinal, all we need is the following
@@ -465,7 +465,7 @@ which together with (iv) yields $\forall x_1, \ldots, x_n \forall x \chi$. By th
 \end{proof}
 
 
-TODO zbytek clanku v par vetach, odkaz na mista ve 3: kapitole kde je budeme delat.
+What we have just proven in only a single theorem form said article, we will introduce other interesting propositions later in this thesis in their appropriate context\footnote{See chapter 3}.
 % TODO btw co je x? nemela by tam tam byt nejaka volna promenna?
 % todo Jech strana 444 -- stacionarni veci a~reflexe?
 % =====================================================================================================================================
@@ -674,47 +674,29 @@ In the next section, we will try to generalize Reflection in a~way that transcen
 
 \newpage
 % =====================================================================================================================================
-\section{Reflecting Large Cardinals} % used to be "... and Second-order Reflection"
+\section{Reflecting To Large Cardinals} % used to be "... and Second-order Reflection"
 
-TODO nekam dat $M$ a Levyho theorem 3
+In this chapter we aim to examine stronger reflection properties in order to reach cardinals unavailable in $\sf{ZF}$. Like we said in the first chapter, % [TODO odkaz na uvod]
+the variety of reflection principles comes from the fact that there are many way to formalize "properties of the universal class". It is not always obvious what properties hold for $V$ because, unlike Lévy's approach, not much attention is paid to what exactly is this $V$, and, more importantly, there are many ways to formalize the notion of property. We have shown that reflecting properties as first-order formulas doesn't allow us to leave $\sf{ZF}$. We will broaden the class of admissible properties to be reflected and see whether there is a~natural limit in the height or width on the reflected universe and also see that no matter how far we go, the universal class is still as elusive as it is when seen from $\sf{S}$. That is because for every process for obtaining larger sets such as for example the powerset operation in $\sf{ZF}$, this process can't reach $V$ and thus, from reflection, there is an initial segment of $V$ that can't be reached via said process. 
 
-TODO "v nasledujici kapitole budeme reflektovat vlastnosti univerzalni tridy a budeme se divat jake initial segmenty/kardinaly dostavame podle toho, jak se meni presny vyznam pojmu 'vlastnost' atd..."
+To see why this is important, let's dedicate a few lines to the intuition behind the notions of limitness, regularity and inaccessibility in a manner strongly influenced by \cite{Infinity_in_mind}. To see why limit and strongly limit cardinals are worth mentioning, note that they are "limit" not only in a sense of being a supremum of an ordinal sequence, they also show that a certain way of obtaining bigger objects from smaller ones limited in terms of possibilities. $\aleph_\lambda$ is a limit cardinal iff there is no $\alpha$ such that $\aleph_{\alpha+1}=\aleph_\lambda$. Strongly limit cardinals point to the limits of the powerset operation. It has been too obvious so far, so let's look at the regular cardinals in this manner. Regular cardinals are those that cannot be\footnote{Assuming $\emph{Choice}$.}, expressed as a supremum of smaller amount of smaller objects\footnote{Just like $\omega$ can not be expressed as a supremum of a finite set consisting solely of finite numbers.}. More precisely, $\kappa$ is regular if there is no way to define it as u union of less than $\kappa$ ordinals, all smaller than $\kappa$. So unless there already is a set of size $\kappa$, \emph{Replacement} is useless in determining whether $\kappa$ is really a set. Note that assuming \emph{Choice}, successor cardinals are always regular, so most\footnote{All provable to exist in $\sf{ZF}$} limit cardinals are singular cardinals. So if one is traversing the class of all cardinals upwards, successor steps are still sets thanks to the powerset axiom while singular limits cardinal are not proper classes because they are images of smaller sets via \emph{Replacement}. Regular cardinals are, in a way, limits of how far can we get by taking limits of increasing sequences of ordinals obtained via $\emph{Replacement}$.
 
-TODO neco jako: for every process for obtaining larger sets, this process can't reach $V$ and, from reflection, there is an initial segment of $V$ that is strictly smaller than $V$ but still can't be reached via said process.
+That all being said, it is easy to see that no cardinals in $\sf{ZF}$ are both strongly limit and regular beucase there is no way in $\sf{ZF}$ to ensure they are sets and not proper classes. The only exception to this rule is $\aleph_0$ which need a special axiom for itself to exist. It should now be obvious why the fact that $\kappa$ is inaccessible implies that $\kappa\ =\ \aleph_\kappa$.\footnote{This doesn't work backwards, the first fixed point of the $\aleph$ function is the limit of $\{\aleph_0,\ \aleph_{\aleph_0},\ \aleph_{\aleph_{\aleph_0}},\ \ldots \}$ is singular since the sequence has countably many elements.}
 
-In this chapter we aim to explore the possible generalisations of $\emph{Reflection}$ for second-order formulas and use those to establish the existence of various large cardinals. We will also argue whether there is a~limit to the size of large cardinals obtainable via generalised form of $\emph{Reflection}$. 
-
-\subsection{Reflecting Second-order Formulas}
-
+We will also examine the connection between reflection principles and fixed points of ordinal functions in a manner proposed by Lévy in \cite{Levy60a}. We will also see that, like Lévy \cite{Levy60a} has proposed, there is a meaningful way to extend the relation between $\sf{S}$ and $\sf{ZF}$ into a hierarchy of axiomatic set theories. Those are the three lines of thinking that we will find are in fact different facets of the same gem, especially in the section devoted to Inaccessible and Mahlo cardinals.
 % viz Shapiro, Stewart. 1987. “Principles of Reflection and Second-order Logic”. Journal of Philosophical Logic 16 (3). Springer: 309–33. http://www.jstor.org/stable/30227043.
 % Reflections on Replacement and Reflection: The axioms in a~structuralist setting (Geoffrey Hellman)
+%TODO neco o tom, ze kdyz je reflexe formule, da se sama reflektovat?
+% The above should make a clear picture of why $\emph{Infinity}$ is a specific case of $\emph{Reflection}$.
+%TODO proc je Refl zaroven zobecneny replacement?
 
-TODO ze "uplne totalni" reflexe se zacykli a rozbije
+% TODO ze "uplne totalni" reflexe se zacykli a rozbije? 
 
-% fakt several? kolik vlastne
-To see that there is a~way to transcend $\sf{ZF}$, let us briefly show how a~model of $\sf{ZF}$ can be obtained in $\sf{ZF}_2 + \mbox{"second-order reflection"}$\footnote{$\sf{ZF}_2$ is an axiomatization of $\sf{ZF}$ in second-order formulas, to be more rigorously established later.}. This will be more closely examined in section \ref{section:inaccessibility}.
+\subsection{Fixed-point phenomena and axioms}
+This small chapter is dedicated to 
 
-We know that $\sf{ZF}$ can not be finitely axiomatized in first-order formulas, however if Replacement and Comprehension schemes can be substituted by second-order formulas, $\sf{ZF}$ becomes $\sf{ZF}_2$, which is finitely axiomatizable in second-order logic. Therefore if we take second-order reflection into consideration, we can obtain a~set $M$ that is a~model of $\sf{ZF}_2$. For now, we have left out the details of how exactly is first-order reflection generalised into stronger statements and how second-order axiomatization of $\sf{ZF}$ looks like as we will examine those problems closely in the following pages. 
-%The purpose of this chapter is to try to answer these questions, as well as examine the relation of said reflection axioms to large cardinals.
+Lévy's article mentions various schemata that are not instances of reflection themselves. We will mention them because they are equivalent to $N_0$ and because they are fixed-point theorems, which we will find useful later in this thesis.
 
-We will now define reflection for second-order formulas.
-
-\begin{definition}{Second-order reflection}\label{def:reflection}\\
-TODO
-\end{definition}
-
-TODO see Hanf-Scott [kanamori:61]?
-
-TODO full reflection, partial reflection? viz Levy60, ten druhy clanek
-
-TODO diskuse, co vede ve vysledku k nepopsatelnym kardinalum
-
-
-------------------------------------------------------------------------------------------------------------------------------------------
-
-levyho clanek -- zahrnout na patricna mista tehle kapitoly
-%\subsection{Rest of the article}
-%TODO prejmenovat sekci nebo presunout do patricnych velkych kardinalu (to spis)
 
 \begin{definition}{Strictly increasing function}\\
 A function $F(\alpha)$ defined on the ordinal number into the ordinal numbers is said to be \emph{strictly increasing} if
@@ -730,19 +712,12 @@ for any limit $\alpha$, $F(\alpha) = lim_{\beta < \alpha} F(\beta)$.
 A function $F(\alpha)$ defined on the ordinal number into the ordinal numbers is said to be \emph{normal} if it is \emph{strictly increasing} and \emph{continuous}
 \end{definition}
 
-TODO vse nize presunout do patricne sekce ve velkych kardinalech?
+\begin{definition}{Fixed point}\\
+We say $\alpha$ is a fixed point of ordinal function $f$ when $\alpha=f(\alpha)$.
+\end{definition}
 
-%TODO jak znacim usporadane dvojice?
-% TODO porovnani Mahlovy a~Lévyho konstrukce, viz ref\{mahlovy kardinaly\}
 
-\
-
-TODO asi doplnit jak to souvisi se soucasnou definici slabe Mahlovych kardinalu pres stacionarni mnoziny?
-
-\
-
-Lévy's article mentions various schemata that are not instances of reflection themselves. We will mention them because they are equivalent to $N_0$ and because they are fixed-point theorems, which we will find useful later in this thesis.
-
+Lévy (\cite{Levy60a}) proposes those axioms as equivalent to one on his reflection principles. Similar axiom is used in \cite{DrakeBook}, but !!!!.
 \begin{definition}{$M$}
 Every normal function defined for all ordinals has at least one inaccessible number in its range.
 \end{definition}
@@ -754,6 +729,7 @@ Every normal function defined for all ordinals has at least one fixed point whic
 \begin{definition}{$M''$}
 Every normal function defined for all ordinals has arbitrarily great fixed points which are inaccessible.
 \end{definition}
+
 
 \
 
@@ -767,62 +743,25 @@ An interested reader will find the proof in \cite{Levy60a, \emph{Theorem 1}}.
 
 \
 
-TODO Pak i lambda konstrukce, zobecnene
+% \subsection{posloupnosti modelu}
 
+% TODO $S->ZM->ZM'->ZM''$, neco jako mahlovy kardinaly, presunout do dane kapitoly
 
-\begin{theorem}\label{theorem:levy_m_iff_n}
-\begin{equation}
-M \iff N
-\end{equation}
-\end{theorem}
+% TODO vety o reflexi tak, jak je uvadi kanamori
 
-\begin{proof}
-TODO (Theorem 3)? neudelam ho spis v dalsi sekci v modernejsi variante?
-\end{proof}
+% -----------------------------------------------
+\subsection{Reflecting Second-order Formulas}
 
-\
+% TODO proc? sem patri ta "kontradikce"!
 
-TODO shrnout zbytek clanku, fixed-point vety a spol, rict ze to udelame v sekci "velke kardinaly"
+To see that there is a~way to transcend $\sf{ZF}$, let us briefly show how a~model of $\sf{ZF}$ can be obtained in $\sf{ZF}_2 + \mbox{"second-order reflection"}$\footnote{$\sf{ZF}_2$ is an axiomatization of $\sf{ZF}$ in second-order formulas, to be more rigorously established later.}. This will be more closely examined in section \ref{section:inaccessibility}.
 
-TODO $S->ZM->ZM'->ZM''$, neco jako mahlovy kardinaly, presunout do dane kapitoly
+We know that $\sf{ZF}$ can not be finitely axiomatized in first-order formulas, however if Replacement and Comprehension schemes can be substituted by second-order formulas, $\sf{ZF}$ becomes $\sf{ZF}_2$, which is finitely axiomatizable in second-order logic. Therefore if we take second-order reflection into consideration, we can obtain a~set $M$ that is a~model of $\sf{ZF}_2$. For now, we have left out the details of how exactly is first-order reflection generalised into stronger statements and how second-order axiomatization of $\sf{ZF}$ looks like as we will examine those problems closely in the following pages. 
 
-TODO shrnout v par vetach.
+% We also need to rigorously define $\sf{ZF}_2$, the second-order axiomatization of $\sf{ZF}$ we have already used in the previous section. Let's take advantage of second-order variables and replace Replacement and Specification schemes with a~single Replacement and a Specification axiom respectively. 
 
-------------------------------------------------------------------------------------------------------------------------------------
-
-%TODO asi citace? presunout do patricne sekce pro reflexi vyssich radu?
-
-%TODO vice-mene Plagiat -- prepsat a~vysvetlit -- Shapiro reflexi zobecnuje ve vice variantach -- diskutovat?
-
-%TODO zdroj?
-
-%\begin{definition}\label{def:reflection_2}
-%Let $\varphi(R)$ be a~$\Pi^n_m$-formula which contains only one free variable $R$ which is second-order. Given $R \sub V_\kappa$, we say that $\varphi(R)$ reflects in $V_\kappa$ if there is some $\alpha<\kappa$ such that:
-%\begin{equation}
-%\mbox{If }(V_\kappa,\in, R)\models \varphi(R), \mbox{ then }(V_\alpha,\in, R\cap V_\alpha) \models \varphi(R\cap V_\alpha).
-%\end{equation}
-%\end{definition}
-
-
-
-\subsection{Preliminaries}
-
-But first, let's establish some elementary terms that will allow us to define the relevant large cardinals.
-
-\begin{definition}(limit cardinal)\label{def:limit}
-$kappa$ is a~\emph{limit cardinal} if it is $\aleph_\alpha$ for some limit ordinal $\alpha$.
-\end{definition}
-
-\begin{definition}(strong limit cardinal)\label{def:strong_limit}
-$kappa$ is a~\emph{strong limit cardinal} if for every $\lambda < \kappa$, $2^\lambda < \kappa$
-\end{definition}
-
-
-TODO splyvaji kdyz plati GCH
-\
-
-We also need to rigorously define $\sf{ZF}_2$, the second-order axiomatization of $\sf{ZF}$ we have already used in the previous section. Let's take advantage of second-order variables and replace Replacement and Specification schemes with a~single Replacement and a Specification axiom respectively. Lower-case letters represent first-order variables and upper-case $P$ represents a~second-order variable. \cite{Shapiro87}
-\begin{definition}{$\emph{Replacement}^2$}\label{def:replacement_2}\\
+Lower-case letters represent first-order variables and upper-case $P$ represents a~second-order variable. \cite{Shapiro87}
+\begin{definition}{$\emph{Replacement}_2$}\label{def:replacement_2}\\
 \begin{equation}
 \begin{split}
 \forall P (\forall x, y, z (P(x, y) \& P(x, z) \then y\ =\ z) \then
@@ -843,35 +782,63 @@ We will denote this axiom $\emph{Replacement}_2$.
 Let $\sf{ZF}_2$ be a~theory with all axioms identical with the axioms of $\sf{ZF}$ with the exception of $\emph{Replacement}$ and $\emph{Specification}$ schemes, which are replaced with $\emph{Replacement}_2$ and $\emph{Specification}_2$ respectively.
 \end{definition}
 
-TODO vsechny jmena axiomu emph?
+%The purpose of this chapter is to try to answer these questions, as well as examine the relation of said reflection axioms to large cardinals.
 
-TODO sjednotit $\emph{Replacement}_2$ s~$\emph{Replacement}^2$
+%We will now define reflection for second-order formulas.
 
-\
+%\begin{definition}{Second-order reflection}\label{def:reflection}\\
+%TODO
+%\end{definition}
 
-TODO budeme potrebovat club sety, stacionarni mnoziny? treba abychom dokazali ekvivalence?
+TODO see Hanf-Scott [kanamori:61]?
 
-% -----------------------------------------------
+TODO full reflection, partial reflection
+
+%TODO diskuse, co vede ve vysledku k nepopsatelnym kardinalum
+
+%\subsection{Rest of the article}
+%TODO prejmenovat sekci nebo presunout do patricnych velkych kardinalu (to spis)
+
+%TODO jak znacim usporadane dvojice?
+% TODO porovnani Mahlovy a~Lévyho konstrukce, viz ref\{mahlovy kardinaly\}
+
+% TODO asi doplnit jak to souvisi se soucasnou definici slabe Mahlovych kardinalu pres stacionarni mnoziny?
+
+%TODO Pak i lambda konstrukce, zobecnene
+
+%TODO asi citace? presunout do patricne sekce pro reflexi vyssich radu?
+
+%TODO vice-mene Plagiat -- prepsat a~vysvetlit -- Shapiro reflexi zobecnuje ve vice variantach -- diskutovat?
+
+%TODO zdroj?
+
+%\begin{definition}\label{def:reflection_2}
+%Let $\varphi(R)$ be a~$\Pi^n_m$-formula which contains only one free variable $R$ which is second-order. Given $R \sub V_\kappa$, we say that $\varphi(R)$ reflects in $V_\kappa$ if there is some $\alpha<\kappa$ such that:
+%\begin{equation}
+%\mbox{If }(V_\kappa,\in, R)\models \varphi(R), \mbox{ then }(V_\alpha,\in, R\cap V_\alpha) \models \varphi(R\cap V_\alpha).
+%\end{equation}
+%\end{definition}
+
 
 \subsection{Inaccessibility}\label{section:inaccessibility}
-The inaccessible cardinal is the smallest of large cardinals\footnote{citation needed.}
+%The inaccessible cardinal is the smallest of large cardinals\footnote{citation needed.}
+\begin{definition}(limit cardinal)\label{def:limit}
+$kappa$ is a~\emph{limit cardinal} if it is $\aleph_\alpha$ for some limit ordinal $\alpha$.
+\end{definition}
+
+\begin{definition}(strong limit cardinal)\label{def:strong_limit}
+$kappa$ is a~\emph{strong limit cardinal} if for every $\lambda < \kappa$, $2^\lambda < \kappa$
+\end{definition}
+
+The two above definition become equivalent when we assume $GCH$.
+
 
 \begin{definition}(weak inaccessibility)\label{def:weakly_inaccessible}
 An uncountable cardinal $\kappa$ is \emph{weakly inaccessible} $\iff$ it is \emph{regular} and \emph{limit}.
 \end{definition}
 \begin{definition}(inaccessibility)\label{def:inaccessible}
-An uncountable cardinal $\kappa$ is \emph{inaccessible} $\iff$ it is \emph{regular} and \emph{strongly limit}.
+An uncountable cardinal $\kappa$ is \emph{inaccessible} (written $In(\alpha)$) $\iff$ it is \emph{regular} and \emph{strongly limit}.
 \end{definition}
-
-To see why this is important, let's dedicate a few lines to the intuition behind the notions of limitness, regularity and inaccessibility in a manner strongly influenced by \cite{Infinity_in_mind}. To see why limit and strongly limit cardinals are worth mentioning, note that they are "limit" not only in a sense of being a supremum of an ordinal sequence, they also show that a certain way of obtaining bigger objects from smaller ones\footnote{TODO elegantnejsi formulace?} limited in terms of possibilities. $\aleph_\lambda$ is a limit cardinal iff there is no $\alpha$ such that $\aleph_{\alpha+1}\ =\ \aleph_\lambda$. Strongly limit cardinals point to the limits of the powerset operation. It has been too obvious so far, so let's look at the regular cardinals in this manner. Regular cardinals are those that cannot be\footnote{Assuming $\emph{Choice}$.}, expressed as a supremum of smaller amount of smaller objects\footnote{Just like $\omega$ can not be expressed as a supremum of a finite set consisting solely of finite numbers.}. More precisely, $\kappa$ is regular if there is no way to define it as u union of less than $\kappa$ ordinals, all smaller than $\kappa$. It is interesting to point out, that many of these sets wouldn't be considered sets without $\emph{Replacement}$, therefore regular cardinals are, in a way, "limits" of how far can we get by taking limits of increasing sequences of ordinals obtained via $\emph{Replacement}$.
-
-That all being said, it is easy to see that no cardinals in $\sf{ZF}$ are both strongly limit and regular, the only exception being $\aleph_0$. This makes it clear why the definition \ref{def:inaccessible} explicitly calls for $\kappa > \aleph_0$. It should be also obvious why the fact that $\kappa$ is inaccessible implies that $\kappa\ =\ \aleph_\kappa$.\footnote{This doesn't work backwards,  the first fixed point of the $\aleph$ function is the limit of $\{\aleph_0,\ \aleph_{\aleph_0},\ \aleph_{\aleph_{\aleph_0}},\ \ldots \}$ is singular since the sequence has countably many elements.}
-
-The above should make a clear picture of why $\emph{Infinity}$ is a specific case of $\emph{Reflection}$.
-
-TODO proc je Refl zaroven zobecneny replacement?
-
-TODO nize budeme zkoumat ktere mnoziny jsou "nedosazitelne" reflexi ruznych skupin "properties of V". 
 
 \
 
@@ -931,15 +898,30 @@ The other direction is exactly like the first part of above theorem \ref{theorem
 
 \
 
+This is how the existence of an inaccessible cardinal is established in \cite{Levy60a}. 
+\begin{definition}{$N$}\\
+\begin{equation}
+\exists u (In(\alpha)\ \&\ \forall x_1, \ldots, x_n (x_1, \ldots, x_n \in u \then (\varphi \iff \varphi^u)))
+\end{equation}
+\end{definition}
+It is interesting to see that the above schema yields the first inaccessible cardinal if we take for $\varphi$ the conjunction of all axioms of $\sf{ZF_2}$.
+
+\
+
+To see that inaccessible cardinal can be also obtained by a fixed-point axiom (or a scheme if were in first-order logic), see the following theorem by Lévy, we won't repeat the proof here, it is available in \cite[Theorem 3]{Levy60a}, 
+\begin{theorem}\label{theorem:levy_m_iff_n}
+\begin{equation}
+M \iff N
+\end{equation}
+\end{theorem}
+
 %The above makes clear that while the existence of inaccessibles is unprovable in $\sf{ZF}$ or $\sf{ZF}_2$, we now know that at least the smallest inaccessible cardinal exists in $\sf{ZF+(Refl^2)}$ because there is a~set that models $\sf{ZF}$. But how exactly can we reach there with second-order reflection?
 
 % TODO
 
 We have transcended $\sf{ZF}$, but that is just a~start. Naturally, we could go on and consider the next inaccessible cardinal, which is inaccessible with respect to the theory $\sf{ZF} + \exists \kappa (\kappa \models \sf{ZF})$. But let's try to find a faster way up, informally at first. 
 
-TODO muzu rict "inaccessible cardinals are unbounded in $V$"?
-
-Since we can find an inaccessible set larger than any chosen set $M_0$, it is clear that inaccessible cardinals are unbounded in $V$. If $V$ were a cardinal, we could say that there are $V$ inaccesible cardinals less than $V$, but this statement of course makes na sense in a set theory as is because $V$ is not a set. But being more careful, we could find a property that can be formalized in first- or second-order logic and reflect it to an initial segment of $V$. That would allow us to construct large cardinals more efficiently than by adding inaccessibles one by one. The property we are looking for ought to look like something like this:
+Since we can find an inaccessible set larger than any chosen set $M_0$, it is clear that there are arbitrarily large inaccessible cardinals in $V$, they are "unbounded"\footnote{The notion is formaly defined for sets, but the meaning should be obvious.} in $V$. If $V$ were a cardinal, we could say that there are $V$ inaccesible cardinals less than $V$, but this statement of course makes no sense in set theory as is because $V$ is not a set. But being more careful, we could find a property that can be formalized in second-order logic and reflect it to an initial segment of $V$. That would allow us to construct large cardinals more efficiently than by adding inaccessibles one by one. The property we are looking for ought to look like something like this:
 \begin{equation}
 \begin{split}
 \kappa \mbox{ is an inaccessible cardinal and}\\
@@ -984,7 +966,7 @@ For any ordinal $\alpha$, $\kappa$ is called $\alpha$-hyper-inaccessible cardina
 
 Obviously we could go on and iterate it ad libitum, but the nomenclature would be increasingly confusing. A smarter way to accomplish the same goal is carried out in the following section.
 
-TODO typografie -- mezery kolem vsech = a~asi i vyrokovych ostatnich spojek
+% TODO typografie -- mezery kolem vsech = a~asi i vyrokovych ostatnich spojek
 
 % dukaz viz Kan book 6.1, 6.2 ?
 % todo pouzivat emph in jinde?
@@ -1024,9 +1006,7 @@ Then $\langle$
  \newline\newline
  Next, let's see whether $\kappa$ is indeed a~strong limit, again by contradiction. If not, there would be a~$\lambda < \kappa$ such that $2^\lambda \geq \kappa$. Let $G: \power{\lambda} \implies \kappa$ be surjective and set $R = \{\lambda + 1\} \cup G$. By hypothesis, there is an $\alpha < \kappa$ such that $\langle V_\alpha, \in, R \cap V_\alpha \rangle \prec \langle V_\kappa, \in, R \rangle$. $\lambda + 1 \in V_\alpha$ and so $\power{\lambda} \in V_\alpha$, but this is again a~contradiction.
 \end{proof}
-
 \
-
 \end{comment}
 }
 % todo vymenit < za prohnute
@@ -1040,6 +1020,8 @@ Then $\langle$
 
 \subsection{Mahlo Cardinals}
 
+% TODO ze je to trochu diagonalni argument
+
 While the previous chapter introduced us to a notion of inaccessibility and the possibility of iterating it ad libitum in new theories, there is an even faster way to travel upwards in the cumulative hierarchy, that was proposed by Paul Mahlo in his papers (see \cite{Mahlo11}, \cite{Mahlo12} and \cite{Mahlo13}) at the very beginning of the 20th century, and which can be easily reformulated using $\emph(Reflection)$. To see how Lévy's initial statement of reflection was influenced by Mahlo's work, refer to section \ref{sec:Levy1960}. The aim of the following paragraphs is to give an intuitive explanation of the idea behind Mahlo's hierarchy of cardinals, all claims made here ought to be stated formally later in the very same chapter.
 
 At the very end of section \ref{section:inaccessibility}, we have tried to establish the notion of hyper-inaccessibility and iterate it to yield even larger large cardinals. In order to avoid too bulky cardinal names, let's try a different route and establish those cardinals directly via reflection.
@@ -1050,11 +1032,13 @@ The following two definitions come from \cite{Infinity_in_mind} and while they a
 \begin{definition}{Fixed-point property}\\
 For any $\psi(x, u_1, \ldots, u_n)$ which is any property of ordinals, we say that a property $\varphi$ is a $\emph{fixed-point property}$ if $\varphi$ has the form
 \begin{equation}
-\mbox{$x$ is an inaccessible cardinal and there are $x$ ordinals less than $x$ that have the property $\psi(x, u_1, \ldots, u_n)$.}
+\begin{split}
+\mbox{$x$ is an inaccessible cardinal and }\\
+\mbox{there are $x$ ordinals less than $x$ that have the property $\psi(x, u_1, \ldots, u_n)$.}
+\end{split}
 \end{equation}
 \end{definition}
 
-TODO this is fixed-point property because ... (/fixed-point ceho?)
 \
 
 \begin{definition}{Fixed-point reflection}\\
@@ -1071,41 +1055,24 @@ sup(A)\ =\ \bigcup A
 where $\alpha$ is an ordinal.
 \end{definition}
 
-\
-
 \begin{definition}{Limit point}\\
 Given $A$, a set of ordinals and an ordinal $\alpha$, we say that $\alpha$ is a \emph{limit point} of $A$ if $sup(A \cap \alpha)\ =\ \alpha$
 \end{definition}
 % funfuje to, protoze alpha je ordinal, takze kdyz je alpha nejvyssi a je to zaroven mnozina vsech mensich ordinalu, je to presne supremum. kdyz tam neni, ale A obsahuje vsechny mensi ordinaly, je to nejmensi horni zavora, tedy alpha
-
-\
 
 \begin{definition}{Club set}\\
 For a regular uncountable $\kappa$, a set $A\ \subset\ \kappa$ is a \emph{closed unbounded} subset (often abbreviated as a \emph{club set}) iff $A$ is both closed, which means it contains all it's limit points, and unbounded, which means that for every $\beta$ < $\kappa$ there is a $\beta'\ \in \alpha$ such that $\beta\ <\ \beta'\ <\ \kappa$.
 \end{definition}
 % TODO mozna kratka uvaha proc to musi byt regularni?
 
-\
-
 \begin{definition}{Stationary set}\\
 For a regular uncountable $\kappa$, a set $A\ \subset\ \kappa$ is stationary if it intersects every club subset of $\kappa$.
 \end{definition}
-
-\
 
 \begin{theorem}{}\label{club_intersection} 
 The intersection of fewer than $\kappa$\footnote{$\kappa$ is again a regular uncountable cardinal and it will always be when we will be talking about club sets.} club subsets of $\kappa$ is a club set.
 \end{theorem}
 For proof, see \cite[Theorem 8.3]{JechBook}
-
-\
-
-\begin{definition}{Normal function}: see definition \ref{def:normal_function}.
-\end{definition}
-
-\begin{definition}{Fixed point}\\
-We say $\alpha$ is a fixed point of ordinal function $f$ when $\alpha=f(\alpha)$.
-\end{definition}
 
 \begin{definition}{Weakly Mahlo Cardinal}\label{def:weakly_mahlo}\\
 $\kappa$ is \emph{weakly Mahlo} $\iff$ it is a~regular limit ordinal and the set of all regular ordinals less then $\kappa$ is stationary in $\kappa$
@@ -1114,8 +1081,8 @@ $\kappa$ is \emph{weakly Mahlo} $\iff$ it is a~regular limit ordinal and the set
 \begin{definition}{Mahlo Cardinal}\label{def:mahlo_cardinal}\\
 $\kappa$ is a \emph{Mahlo Cardinal} iff it is an inaccessible cardinal and the set of all inaccessible ordinals less then $\kappa$ is stationary in $\kappa$.
 \end{definition}
-
 It is interesting to note, that weakly-Mahlo cardinals are fixed points of $\alpha$-weakly inaccessible cardinals, so if $\kappa$ is weakly mahlo,  .. viz Kanamori Proposition 1.1
+
 Analogously, 
 \begin{definition}{$\alpha$-Mahlo Cardinal}\label{def:alpha_mahlo_cardinal}\\
 $\kappa$ is a \emph{$\alpha$-Mahlo Cardinal} iff it is an $\alpha$-inaccessible cardinal and the set of all $\alpha$-inaccessible ordinals less then $\kappa$ is stationary in $\kappa$.
@@ -1127,18 +1094,6 @@ In other words, $\kappa$ is a mahlo cardinal if it is inaccessible and every cl
 % viz http://euclid.colorado.edu/~monkd/m6730/gradsets12.pdf
 %Thus a~Mahlo cardinal $\kappa$ is not only inaccessible, but also has $\kappa$ inaccessibles below it.
 
-\
-
-The following are two formulations of the same principle, the former is a scheme and the latter a second-ordere formula, hence the indexes.
-TODO cite drake?
-\begin{definition}{$Axiom F_1$}\\
-If $F$ is a normal function, $F$ has a regular fixed point.
-\end{definition}
-\begin{definition}{$Axiom F_2$}\\
-$\forall F("F\mbox{ is a normal function}" \then \exists\alpha("\alpha\mbox{ is a regular fixed point of }F"))$
-\end{definition}
-\footnote{"$F$ is a normal function" is a first-order formula, see definition \ref{def:normal_function}}
-\footnote{"$\alpha$ is a regular fixed point of $F$" is in fact the following first-order formula: $\alpha\ =\ f(\alpha)\ =\ cf(\alpha).$}
 \
 
 TODO cite drake?
@@ -1174,11 +1129,11 @@ TODO proc $\lambda\ =\ S \cap C \cap D$ je inaccessible?
 
 $\bold{(iii) \then (iv)}$
 
-TODO jak to tam dela Levy? 
+TODO jak to dela Levy? 
 
 $\bold{(iv) \then (i)}$
 
-TODO jak to tam dela Levy? 
+TODO jak to dela Levy? 
 
 range kazde normalni funkce je club v On. (nevadi ze On je trida?)
 
@@ -1190,9 +1145,6 @@ mozna by stacilo ze jsou unbounded, tedy kazda normalni funkce ma libovolne velk
 \
 
 TODO obdoba pro $\alpha$-Mahlo kardinaly
-
-\
-
 
 {\color{red}
 \begin{comment}
@@ -1221,12 +1173,12 @@ TODO $\kappa$ is hyper-Mahlo iff $\kappa$ is inaccessible and the set $\{\lambda
 
 " We also state the appropriate generalization for greatly Mahlo cardinals." % viz http://arxiv.org/abs/math/9204218
 
-TODO veta na zaver, shrnuti
+%TODO veta na zaver, shrnuti
 
 %sjednotil \then a~\implies
 % =====================================================================================================================================
 % \newpage
-\subsection{Indescribality and Weakly Compact Cardinals}
+\subsection{Indescribality} % Indescribality and Weakly Compact Cardinals
 
 \
 
@@ -1243,6 +1195,9 @@ A cardinal $\kappa$ is \emph{weakly compact} if it is uncountable and satisfies 
 \end{definition}
 {\color{red}
 opsano z jecha!
+
+TODO definice pres nepopsatelnost, ekvivalence
+
 \begin{comment}
 
 \begin{lemma}
@@ -1493,14 +1448,14 @@ TODO kratka diskuse jestli refl implikuje transcendenci na L - polemika, nazor -
 TODO asi nekde bude meritelny kardinal
 \newpage
 % =====================================================================================================================================
-\section{Higher-order reflection} % preformulovat
-TODO rict ze to je zobecneni a~nejaky dalsi uvodni veci
+%\section{Higher-order reflection} % preformulovat
+%TODO rict ze to je zobecneni a~nejaky dalsi uvodni veci
 
-\subsection{Sharp}
-TODO je tohle higher-order vec?
+%\subsection{Sharp}
+%TODO je tohle higher-order vec?
 
-\subsection{Welek: Global Reflection Principles}
-TODO ma to vubec cenu?
+%\subsection{Welek: Global Reflection Principles}
+%TODO ma to vubec cenu?
 
 \newpage
 \section{Conclusion}
