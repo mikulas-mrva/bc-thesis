@@ -434,10 +434,8 @@ In $\sf{S}$, the schema $N_0$ implies Replacement schema.
 \end{theorem}
 
 \begin{proof}
-TODO vysvetlit! (podle contemporary verze)
-
 Let $\varphi(v, w)$ be a~formula wth no free variables except $v, w, x_1, \ldots, x_n$ where $n$ is any natural number.
-Let $\chi$ be an instance of replacement schema for this $\varphi$:
+Let $\chi$ be an instance of replacement schema for this $\varphi$ which is what we want to prove:
 \begin{equation}
 \chi = \forall r, s, t(\varphi(r, s) \& \varphi(r, t) \then s = t) \then \forall x \exists y \forall w (w \in y \iff \exists v (v \in x \& \varphi(v, w)))
 \end{equation}
@@ -450,14 +448,17 @@ We can deduce the following from $N_0$:
 \item $\forall x_1, \ldots, x_n \forall x (\chi \iff (\forall x_1, \ldots, x_n \forall x \chi)^{u})$
 \ece
 
-Note that (i), (ii), (iii) are obtained from instances of $N_0$ for $\varphi$, $\exists w \varphi$ and $\chi$ respectively.  % asi ne teda, spis je to postup dukazu, neco jako plan. % spis ne
+It is easy to see that (i), (ii), (iii) are the instances of $N_0$ for $\varphi$, $\exists w \varphi$ and $\chi$ respectively.  % asi ne teda, spis je to postup dukazu, neco jako plan. % spis ne
 From relativization we also know that $(\exists w \varphi)^{u}$ is equivalent to $\exists w (w \in u \& \varphi^{u})$.
-Therefore (ii) is equivalent to $x_1, \ldots, x_n, v \in u \then (\exists w (w \in u \& \varphi^{u}))$. 
+Therefore (ii) is equivalent to
+\begin{equation}
+x_1, \ldots, x_n, v \in u \then (\exists w (w \in u\ \&\ \varphi^{u})). 
+\end{equation}
 
-If $\varphi$ is a~function ($ \forall r, s, t(\varphi(r, s) \& \varphi(r, t) \then r=t $)), then for every $x \in u$, which is also $x \subset u$ by $Scm^{\sf{S}}(u)$,
-it maps elements of $x$ onto $u$. From the axiom scheme of comprehension\footnote{axiom of subsets in Levy's version}, we can find a~set of all images of elements of $x$. Let's call it $y$.
-That gives us $x_1, \ldots, x_n, x \in u \then \chi$. By (iii) we get $x_1, \ldots, x_n, x \in u \then \chi^{u}$, closure of this formula is $(\forall x_1, \ldots, x_n \forall x \chi)^{u}$, 
-which together with (iv) yields $\forall x_1, \ldots, x_n \forall x \chi$. By the means of specification we end up with $\chi$, which is all we need for now. 
+If $\varphi$ is a~function\footnote{$ \forall r, s, t(\varphi(r, s)\ \&\ \varphi(r, t) \then r=t $)}, then for every $x \in u$, which is also $x \subset u$ by the transitivity of $Scm^{\sf{S}}(u)$,
+it maps elements of $x$ onto $u$. From the axiom scheme of comprehension\footnote{Lévy's uses its equivalent, axiom of subsets}, we can find $y$, a~set of all images of elements of $x$.
+That gives us $x_1, \ldots, x_n, x \in u \then \chi$. By (iii) we get $x_1, \ldots, x_n, x \in u \then \chi^{u}$, the universal closure of this formula is $(\forall x_1, \ldots, x_n \forall x \chi)^{u}$, 
+which together with (iv) yields $\forall x_1, \ldots, x_n \forall x \chi$. By the means of specification we end up with $\chi$, Q.E.D. 
 \end{proof}
 
 
@@ -465,7 +466,7 @@ What we have just proven in only a single theorem form said article, we will int
 % TODO btw co je x? nemela by tam tam byt nejaka volna promenna?
 % todo Jech strana 444 -- stacionarni veci a~reflexe?
 % =====================================================================================================================================
-
+\newpage
 \subsection{Contemporary restatement}
 We will now prove what is also Lévy's reflection theorem, but a little stronger, rephrased with more up to date set theory. The main difference is, that while Lévy reflects $\varphi$ from $V$ into a set $u$ that is a "standard complete model of $\sf{S}$"\footnote{Any limit ordinal is in fact a model of $\sf{S}$, we shall pay more attention to that in a moment.}, we say that there is a $V_\alpha$ that reflects $\varphi$. 
 

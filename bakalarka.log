@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.12.2)  9 MAY 2016 14:56
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.12.2)  9 MAY 2016 15:07
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -322,7 +322,7 @@ T1/cmr/m/n/12 (\OML/cmm/m/it/12 x[]; [] ; x[] \OMS/cmsy/m/n/12 2
  []
 
 [10] [11]
-Overfull \hbox (4.57101pt too wide) detected at line 443
+Overfull \hbox (4.57101pt too wide) detected at line 441
 \OML/cmm/m/it/12 ^^_ \OT1/cmr/m/n/12 = \OMS/cmsy/m/n/12 8\OML/cmm/m/it/12 r; s;
  t\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 '\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 r; s\OT1
 /cmr/m/n/12 )&\OML/cmm/m/it/12 '\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 r; t\OT1/cmr/
@@ -338,16 +338,16 @@ cmr/m/n/12 )))
 [12]
 
 Package amsfonts Warning: Obsolete command \bold; \mathbf should be used instea
-d on input line 498.
+d on input line 497.
 
 [13] [14] [15] [16] [17]
-Overfull \hbox (53.58429pt too wide) in paragraph at lines 667--668
+Overfull \hbox (53.58429pt too wide) in paragraph at lines 666--667
 []\OT1/cmr/m/n/12 Also, no-tice how re-flec-tion can be used in ways sim-i-lar 
 to up-ward L^^?owenheim{Skolem
  []
 
 [18] [19]
-Overfull \hbox (43.6962pt too wide) in paragraph at lines 706--707
+Overfull \hbox (43.6962pt too wide) in paragraph at lines 705--706
 \OT1/cmr/m/n/12 Alternatively, a func-tion $\OML/cmm/m/it/12 F$ \OT1/cmr/m/n/12
  is con-tin-u-ous iff for limit $\OML/cmm/m/it/12 lambda$\OT1/cmr/m/n/12 , $\OM
 L/cmm/m/it/12 F\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 ^^U\OT1/cmr/m/n/12 ) = \OML/cm
@@ -355,22 +355,22 @@ m/m/it/12 sup[]$\OT1/cmr/m/n/12 .
  []
 
 [20]
-Underfull \hbox (badness 10000) in paragraph at lines 775--776
+Underfull \hbox (badness 10000) in paragraph at lines 774--775
 
  []
 
 [21]
-Underfull \hbox (badness 10000) in paragraph at lines 786--787
+Underfull \hbox (badness 10000) in paragraph at lines 785--786
 
  []
 
 [22] [23] [24]
-Underfull \hbox (badness 10000) in paragraph at lines 962--963
+Underfull \hbox (badness 10000) in paragraph at lines 961--962
 
  []
 
 [25]
-Overfull \hbox (11.38196pt too wide) in paragraph at lines 1007--1008
+Overfull \hbox (11.38196pt too wide) in paragraph at lines 1006--1007
 []\OT1/cmr/m/n/12 Because $\OML/cmm/m/it/12 ^^T$ \OT1/cmr/m/n/12 is in-ac-ces-s
 i-ble and there-fore reg-u-lar, the num-ber of $\OML/cmm/m/it/12 ^^L$\OT1/cmr/m
 /n/12 -inaccessibles
@@ -380,11 +380,14 @@ i-ble and there-fore reg-u-lar, the num-ber of $\OML/cmm/m/it/12 ^^L$\OT1/cmr/m
 
 LaTeX Warning: There were undefined references.
 
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
  ) 
 Here is how much of TeX's memory you used:
  5119 strings out of 493089
  64637 string characters out of 6134842
- 135147 words of memory out of 5000000
+ 134147 words of memory out of 5000000
  8530 multiletter control sequences out of 15000+600000
  22704 words of font info for 84 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -417,7 +420,7 @@ st/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2015/texmf-dist
 fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2015/texmf-dist/f
 onts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2015/texmf-di
 st/fonts/type1/public/rsfs/rsfs10.pfb>
-Output written on bakalarka.pdf (33 pages, 403165 bytes).
+Output written on bakalarka.pdf (33 pages, 404549 bytes).
 PDF statistics:
  223 PDF objects out of 1000 (max. 8388607)
  158 compressed objects within 2 object streams
