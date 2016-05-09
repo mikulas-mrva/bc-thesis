@@ -234,7 +234,7 @@ not a~whole. % (LoC 9) je co?
 \end{displayquote}
 % viz G.W. Leibniz, Interrelations between Mathematics and Philosophy
 
-TODO  nejakej Hegel--strucne?
+TODO  Hegel--strucne?
 
 TODO Cantor
 
@@ -303,16 +303,14 @@ Reflection made it's first in set-theoretical appearance in G{\"o}del's proof of
 \
 
 TODO co dal? recent results?
-% dukaz ekvivalence Inifinity+Replacement: Levy1960a:234 !!!!
 
+\subsection{Reflection in Platonism and Structuralism}
+TODO cite "reflection in a structuralist setting"
 
-% nekonecno je jasny, protoze z reflexe urcite existuje nekonecna mnozina
+TODO veci o tom, ze reflexe je ok protoze reflektuje veci ktere objektivne plati, protoze plati pro V ...
 
-% replacement nasledovne:
-% jelikoz obraz ty funkce (JAKY FUNKCE) je urcite v nejakym u, ktery to reflektuje, je v mnozine a~tedy je to ze schematu nahrazeni taky mnozina
-% 
+TODO souvislost s kompaktnosti, hranice formalich systemu nebo alespon ZFC
 
-%\
 \subsection{Notation (??) TODO}
 \bce
 \item $\emph{Reflection}$ je obecne reflexe (jaka presne)
@@ -707,9 +705,14 @@ $\forall \alpha, \beta \in On (\alpha < \beta \then F(\alpha) < F(\beta)).$
 A function $F(\alpha)$ defined on the ordinal number into the ordinal numbers is said to be \emph{continuous} if
 for any limit $\alpha$, $F(\alpha) = lim_{\beta < \alpha} F(\beta)$.
 \end{definition}
+Alternatively, a function $F$ is continuous iff for limit $lambda$, $F(\lambda) = sup {F(\alpha) : \alpha < \lambda}$.
 
 \begin{definition}{Normal function}\label{def:normal_function}\\
-A function $F(\alpha)$ defined on the ordinal number into the ordinal numbers is said to be \emph{normal} if it is \emph{strictly increasing} and \emph{continuous}
+A function $F(\alpha)$ defined on the ordinal numbers into the ordinal numbers is said to be \emph{normal} if it is \emph{strictly increasing} and \emph{continuous}
+\end{definition}
+
+\begin{definition}{Normal function on a set}
+Let $\alpha$ be an ordinal. A function $f: \delta \then \alpha$ is a normal function on $\alpha$ if it is increasing, continuous and its range is unbounded in $\alpha$.
 \end{definition}
 
 \begin{definition}{Fixed point}\\
@@ -717,7 +720,7 @@ We say $\alpha$ is a fixed point of ordinal function $f$ when $\alpha=f(\alpha)$
 \end{definition}
 
 
-Lévy (\cite{Levy60a}) proposes those axioms as equivalent to one on his reflection principles. Similar axiom is used in \cite{DrakeBook}, but !!!!.
+Lévy (\cite{Levy60a}) proposes those axioms as equivalent to one on his reflection principles. 
 \begin{definition}{$M$}
 Every normal function defined for all ordinals has at least one inaccessible number in its range.
 \end{definition}
@@ -730,24 +733,34 @@ Every normal function defined for all ordinals has at least one fixed point whic
 Every normal function defined for all ordinals has arbitrarily great fixed points which are inaccessible.
 \end{definition}
 
-
-\
+The following axiom is proposed by Drake in \cite{DrakeBook}. 
+\begin{definition}{$F$}
+Every normal function for all ordinals has a regular fixed point.
+\end{definition}
 
 \begin{theorem}
 \begin{equation}
-M \iff M' \iff M''
+F \iff M \iff M' \iff M''
 \end{equation}
 \end{theorem}
 
-An interested reader will find the proof in \cite{Levy60a, \emph{Theorem 1}}.
+\begin{proof}
+One can find the proof of $M \iff M' \iff M''$ in \cite{Levy60a}, \emph{Theorem 1}, we will only prove that Drake's $F$ is equivalent too.
 
-\
+Since $M'$ makes sure that for arbitrary $f :\ On \then On$ there is an ordinal $\alpha$ such that $In(\alpha)\ \&\ f(\alpha) = \alpha$ that already satisfies $F$.
 
-% \subsection{posloupnosti modelu}
+%For the opposite direction, suppose we have an ordinal function $f$ that has a regular fixed point. We want to prove that $f$ has an inaccessible fixed point. Let's construct a function $f'$ on all ordinals that enumerates the strongly limit ordinals in the range of $f$. $F$ implies that $f'$ also has a regular fixed point, which is therefore an inaccessible ordinal. Let $\alpha$ be the least such ordinal. We have yet to prove that $\alpha$ is also a fixed point of $f$. There is some $\beta$ such that $f(\beta) = \alpha = f'(\alpha)$. Because $f$ is normal, $\beta \leq f(\beta)$\footnote{This can be easily proven: suppose it's not the case and there's the least $\gamma$ such that $f(\gamma) < \gamma$. Because $f$ is increasing, $f(f(\gamma)) < f(\gamma)$, which contradicts the fact that $\gamma$ was supposed to be the least such ordinal.}, so $\beta \leq \alpha$. Since $\alpha$ is regular
 
-% TODO $S->ZM->ZM'->ZM''$, neco jako mahlovy kardinaly, presunout do dane kapitoly
+Now let's take the function $f: \alpha \then \aleph_\alpha$, it also has a regular fixed point as implied by $F$. Since for successor ordinals it holds that $\alpha < \aleph_\alpha$, all fixed points are limit ordinals and therefore there is an inaccessible cardinal $\kappa$. For any normal $f$ defined on all ordinals, $f(\kappa)$ is also an inaccessible cardinal.\footnote{Proc?}. We have proven $F \then M$.
 
-% TODO vety o reflexi tak, jak je uvadi kanamori
+% WIKI: Any weakly inaccessible cardinal is also a fixed point of the aleph function.[6] This can be shown in ZFC as follows. Suppose \kappa = \aleph_\lambda is a weakly inaccessible cardinal. If \lambda were a successor ordinal, then \aleph_\lambda would be a successor cardinal and hence not weakly inaccessible. If \lambda were a limit ordinal less than  \kappa , then its cofinality (and thus the cofinality of \aleph_\lambda) would be less than \kappa  and so \kappa  would not be regular and thus not weakly inaccessible. Thus \lambda \geq \kappa  and consequently \lambda = \kappa  which makes it a fixed point.
+\end{proof}
+
+\subsection{Model-Theoretic Approach}
+
+TODO $S \then ZM \then ZM' \then ZM''$, neco jako mahlovy kardinaly, presunout do dane kapitoly
+
+TODO takhle to dela napr. kanamori
 
 % -----------------------------------------------
 \subsection{Reflecting Second-order Formulas}
@@ -790,9 +803,9 @@ Let $\sf{ZF}_2$ be a~theory with all axioms identical with the axioms of $\sf{ZF
 %TODO
 %\end{definition}
 
-TODO see Hanf-Scott [kanamori:61]?
+% TODO see Hanf-Scott [kanamori:61]?
 
-TODO full reflection, partial reflection
+% TODO full reflection, partial reflection
 
 %TODO diskuse, co vede ve vysledku k nepopsatelnym kardinalum
 
@@ -1096,7 +1109,7 @@ In other words, $\kappa$ is a mahlo cardinal if it is inaccessible and every cl
 
 \
 
-TODO cite drake?
+\cite{DrakeBook}
 \begin{definition}{}\label{def:mahlo_equivalent}
 The folllowing definitions are equivalent:
 \bce[(i)]
@@ -1144,7 +1157,7 @@ mozna by stacilo ze jsou unbounded, tedy kazda normalni funkce ma libovolne velk
 
 \
 
-TODO obdoba pro $\alpha$-Mahlo kardinaly
+TODO obdoba pro $\alpha$-Mahlo kardinaly?
 
 {\color{red}
 \begin{comment}
@@ -1171,7 +1184,7 @@ TODO $\kappa$ is hyper-Mahlo iff $\kappa$ is inaccessible and the set $\{\lambda
 
 % Note that Mahlo cardinals were first described in 1911, almost 50 years before Lévy's reflection, which was heavily inspired by them.
 
-" We also state the appropriate generalization for greatly Mahlo cardinals." % viz http://arxiv.org/abs/math/9204218
+% " We also state the appropriate generalization for greatly Mahlo cardinals." % viz http://arxiv.org/abs/math/9204218
 
 %TODO veta na zaver, shrnuti
 
