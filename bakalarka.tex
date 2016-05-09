@@ -442,8 +442,6 @@ Let $\chi$ be an instance of replacement schema for this $\varphi$:
 \chi = \forall r, s, t(\varphi(r, s) \& \varphi(r, t) \then s = t) \then \forall x \exists y \forall w (w \in y \iff \exists v (v \in x \& \varphi(v, w)))
 \end{equation}
 
-\
-
 We can deduce the following from $N_0$: 
 \bce[(i)]
 \item $x_1, \ldots, x_n, v, w \in u \then (\varphi \iff \varphi^{u}) $
@@ -620,7 +618,7 @@ To finish part (iv), we take $M$ of size $\leq |M_0| \cdot\aleph_0$, which exist
 
 \
 
-\begin{theorem}
+\begin{theorem}\label{levy_equivalence_contemporary}
 $\emph{Reflection}$ is equivalent to $\emph{Infinity}\ \&\ \emph{Replacement}$ under ZFC minus $\emph{Infinity}\ \&\ \emph{Replacement}$
 \end{theorem}
 
@@ -662,13 +660,11 @@ Which is exactly the Replacement Schema we hoped to obtain.
 \
 
 We have shown that $\emph{Reflection}$ for first-order formulas, $\emph{Reflection}_1$ is a~theorem of $\sf{ZF}$, which means that it won't yield us any large cardinals. We have also shown that it can be used instead of the Axiom of Infinity and Replacement Scheme, but $\sf{ZF}\ +\ \emph{Reflection}_1$ is a~conservative extension of $\sf{ZF}$. Besides being a~starting point for more general and powerful statements, it can be used to show that $\sf{ZF}$ is not finitely axiomatizable. That is because $\emph{Reflection}$ gives a~model to any finite number of (consistent) formulas. So if $\varphi_1, \ldots, \varphi_n$ for any finite $n$ would be the axioms of $\sf{ZF}$, $\emph{Reflection}$ would always contain a~model of itself, which would in turn contradict the Second Gödel's Theorem\footnote{See chapter \ref{section:inaccessibility} for further details.}.
-Notice that, in a~way, reflection is complementary to compactness. Compactness argues that given an infinite\footnote{Countable?} set of sentences, if every finite subset yields a~model, so does the whole set. Reflection, on the other hand, says that while the whole set has no model in the underlying theory, every finite subset does have one.
+Notice that, in a~way, reflection is complementary to compactness. Compactness argues that given a set of sentences, if every finite subset yields a~model, so does the whole set. Reflection, on the other hand, says that while the whole set has no model in the underlying theory, every finite subset does have one.
 
-Also, notice how reflection can be used in ways similar to upward Löwenheim–Skolem theorem. Since Reflection extends any set $M_0$ into a~model of given formulas $\varphi_1, \ldots, \varphi_n$, we can choose $M_0$ such that the final $M$ is at least as big as we need it to be.\footnote{Too vague?}
+Also, notice how reflection can be used in ways similar to upward Löwenheim–Skolem theorem. Since Reflection extends any set $M_0$ into a~model of given formulas $\varphi_1, \ldots, \varphi_n$, we can choose the lower bound of the size of $M$ by appropriately chocing $M_0$.
 
-% TODO znacit $ \emph{Reflection} $ asi jako $\emph{Reflection}_1$ pokud mluvime o prvoradovych formulich (definice je nahore v posledni subsection section 1)
-
-In the next section, we will try to generalize Reflection in a~way that transcends $\sf{ZF}$ and finally yields some large cardinals.
+In the next section, we will try to generalize \emph{Reflection} in a~way that transcends $\sf{ZF}$ and finally yields some large cardinals.
 
 \newpage
 % =====================================================================================================================================
@@ -745,22 +741,22 @@ F \iff M \iff M' \iff M''
 \end{theorem}
 
 \begin{proof}
-One can find the proof of $M \iff M' \iff M''$ in \cite{Levy60a}, \emph{Theorem 1}, we will only prove that Drake's $F$ is equivalent too.
+One can find the proof of $M \iff M' \iff M''$ in \cite{Levy60a}, \emph{Theorem 1}. %, we will only prove that Drake's $F$ is equivalent too.
 
-Since $M'$ makes sure that for arbitrary $f :\ On \then On$ there is an ordinal $\alpha$ such that $In(\alpha)\ \&\ f(\alpha) = \alpha$ that already satisfies $F$.
+%Since $M'$ makes sure that for arbitrary $f :\ On \then On$ there is an ordinal $\alpha$ such that $In(\alpha)\ \&\ f(\alpha) = \alpha$ that already satisfies $F$.
 
 %For the opposite direction, suppose we have an ordinal function $f$ that has a regular fixed point. We want to prove that $f$ has an inaccessible fixed point. Let's construct a function $f'$ on all ordinals that enumerates the strongly limit ordinals in the range of $f$. $F$ implies that $f'$ also has a regular fixed point, which is therefore an inaccessible ordinal. Let $\alpha$ be the least such ordinal. We have yet to prove that $\alpha$ is also a fixed point of $f$. There is some $\beta$ such that $f(\beta) = \alpha = f'(\alpha)$. Because $f$ is normal, $\beta \leq f(\beta)$\footnote{This can be easily proven: suppose it's not the case and there's the least $\gamma$ such that $f(\gamma) < \gamma$. Because $f$ is increasing, $f(f(\gamma)) < f(\gamma)$, which contradicts the fact that $\gamma$ was supposed to be the least such ordinal.}, so $\beta \leq \alpha$. Since $\alpha$ is regular
 
-Now let's take the function $f: \alpha \then \aleph_\alpha$, it also has a regular fixed point as implied by $F$. Since for successor ordinals it holds that $\alpha < \aleph_\alpha$, all fixed points are limit ordinals and therefore there is an inaccessible cardinal $\kappa$. For any normal $f$ defined on all ordinals, $f(\kappa)$ is also an inaccessible cardinal.\footnote{Proc?}. We have proven $F \then M$.
+%Now let's take the function $f: \alpha \then \aleph_\alpha$, it also has a regular fixed point as implied by $F$. Since for successor ordinals it holds that $\alpha < \aleph_\alpha$, all fixed points are limit ordinals and therefore there is an inaccessible cardinal $\kappa$. For any normal $f$ defined on all ordinals, $f(\kappa)$ is also an inaccessible cardinal.\footnote{Proc?}. We have proven $F \then M$.
 
 % WIKI: Any weakly inaccessible cardinal is also a fixed point of the aleph function.[6] This can be shown in ZFC as follows. Suppose \kappa = \aleph_\lambda is a weakly inaccessible cardinal. If \lambda were a successor ordinal, then \aleph_\lambda would be a successor cardinal and hence not weakly inaccessible. If \lambda were a limit ordinal less than  \kappa , then its cofinality (and thus the cofinality of \aleph_\lambda) would be less than \kappa  and so \kappa  would not be regular and thus not weakly inaccessible. Thus \lambda \geq \kappa  and consequently \lambda = \kappa  which makes it a fixed point.
 \end{proof}
 
-\subsection{Model-Theoretic Approach}
+% \subsection{Model-Theoretic Approach}
 
-TODO $S \then ZM \then ZM' \then ZM''$, neco jako mahlovy kardinaly, presunout do dane kapitoly
+% TODO $S \then ZM \then ZM' \then ZM''$, neco jako mahlovy kardinaly, presunout do dane kapitoly
 
-TODO takhle to dela napr. kanamori
+% TODO takhle to dela napr. kanamori
 
 % -----------------------------------------------
 \subsection{Reflecting Second-order Formulas}
@@ -865,10 +861,59 @@ The following are equivalent:
 \end{theorem}
 
 \begin{proof}
-Let's first prove that if $\kappa$ is inaccessible, it is a~model of $\sf{ZFC}$. We will do that by verifying the axioms of $\sf{ZFC}$ just like Kanamori does it in $\bold{1.2}$ in \cite{KanamoriBook}. Because $\kappa$ is a~limit ordinal, there's no need for us to verify the Powerset, Foundation, Extensionality, Subset, Pairing and Union axioms and the Specification scheme. Thus we only have the Replacement Scheme to verify. 
+Let's first prove that if $\kappa$ is inaccessible, it is a~model of $\sf{ZFC}$. We will do that by verifying the axioms of $\sf{ZFC}$ just like Kanamori does it in in \cite[1.2]{KanamoriBook} and Drake in \cite[Chapter 4]{DrakeBook}. 
+\bce[(i)]
+\item \emph{Extensionality}:
+\begin{equation}
+V_\kappa \models \forall x, y(\forall z (z \in x \iff z \in y) \then x = y) 
+\end{equation}
+We need to prove that, given two sets that are equal in $V$, they are equal in $V_\kappa$, in other words, that the \emph{Extensionality} formula is reflected, that is
+\begin{equation}
+V_\kappa \models \forall x, y \in V_\kappa (\forall z \in V_\kappa (z \in x \iff z \in y) \then x = y) 
+\end{equation}
+But that comes from transitivity. If $x$ and $y$ are in $V_\kappa$ their members are also in $V_\kappa$.
 
-Given an arbitrary set $x \in V_\kappa$ and a~function $F: x \then V_\kappa$, we need to verify that $y = F[x]$ is indeed a~set and that it is an element of $V_\kappa$. The fact that $F$ is a~function imples that $|y|\ \leq |x|$. It follows from Specification that $y \subset V_\kappa$, which is still not exactly what we want. Let $\alpha < \kappa$ be the least ordinal such that $y \in V_\alpha$\footnote{TODO pozor -- jak vime ze takove alpha existuje?}, since $V_{\alpha+1} = \power(V_\alpha)$, $y \in V_{\alpha+1}$, together with $\alpha+1 < \kappa$ this means that $y \in V_\kappa$.
+\
 
+\item \emph{Foundation}:
+\begin{equation}
+V_\kappa \models \forall x (\exists z (z \in x) \then \exists z (z \in x\ \&\ \forall u \neg (u \in z\ \&\ u \in x)))
+\end{equation}
+The argument for \emph{Foundation} is almost identical to the one for \emph{Extensionality}. For any set $x \in V_\kappa$, transitivity of $V_\kappa$ makes sure that every element of $x$ is also an element of $V_\kappa$ and the same holds for the elements of elements of $x$ et cetera. So statements about those elements are absolute between any transitive structures. $V$ and $V_\kappa$ are both transitive therefore \emph{Foundation} holds and so does its relativisation to $V_\kappa$, $Foundation^{V_\kappa}$.
+
+\
+
+\item \emph{Powerset}:
+\begin{equation}
+V_\kappa \models \forall x \exists y \forall z (z \subseteq x \then z \in y).
+\end{equation}
+If we take $x$, an element of $V_\kappa$, $\power(x)$ has to be an element of $V_\kappa$ to, because it is transitive and a strong limit cardinal.
+
+\
+
+\item \emph{Pairing}:
+\begin{equation}
+V_\kappa \models \forall x, y \exists z (x \in z \land y \in z).
+\end{equation}
+\emph{Pairing} holds from similar argument like above: let $x$ and $y$ be elements of $V_\kappa$, so there are ordinals $\alpha, \beta < \kappa$ such that $x \in V_\alpha$, $y \in V_\beta$. Without any loss of generality, suppose $\alpha < \beta$, threfore $V_\alpha \subset V_\beta$ which, from transitivity of the cumulative hierarchy, means that $x \in V_\beta$, then $\{x, y\} \in V_{\beta+1}$ which is still in $V_\kappa$ because it is a strong limit cardinal.
+
+\
+
+\item \emph{Union}
+\begin{equation}
+V_\kappa \models \forall x \,\exists y \, \forall z\, \forall w ((w \in z \land z \in x) \then w \in y).
+\end{equation}
+We want to see that for every $x \in V_\kappa$, this is equivalent to 
+\begin{equation}
+V_\kappa \models \forall x \in V_\kappa,\exists y \in V_\kappa\, \forall z \in V_\kappa\, \forall w \in V_\kappa ((w \in z \land z \in x) \then w \in y).
+\end{equation}
+Since $V_\kappa$ is transitive, if $x \in V_\kappa$, all of its elements as well as their elements are in $V_\kappa$. To see that they also form a set themselves we only need to remember that $V_\kappa$ is limit and therefore if $\alpha$ is the least ordinal such that $x \in V_\alpha$, $\bigcup x \in V_{\alpha+1}$.
+
+\
+
+\item \emph{Replacement, Infinity}
+We know that those hold from \ref{levy_equivalence_contemporary}.
+\ece
 \
 
 We will now show that if a~set is a~model of $\sf{ZFC}$, it is in fact an inaccessible cardinal. So let $V_\kappa$ be a~model of $\sf{ZFC}$ which means that it is closed under the powerset operation, in other words:
@@ -899,7 +944,7 @@ V_\kappa \models \sf{ZF}_2 \iff \mbox{$\kappa$ is inaccessible}
 \end{equation}
 \end{theorem}
 \begin{proof}
-$\kappa$ is a~strong limit cardinal because from $\sf{ZF}_2$ and the Powerset Axiom we know that for every $\lambda\ <\ \kappa$, we know that $2^{\lambda} < \kappa$.
+$\kappa$ is a~strong limit cardinal because from $\sf{ZF}_2$ and \emph{Powerset} we know that for every $\lambda\ <\ \kappa$, we know that $2^{\lambda} < \kappa$.
 
 $\kappa$ is also regular, because otherwise there would be an ordinal $\alpha$ and a~function $F:\ \alpha \then \kappa$ with a~range unbounded in $\kappa$. 
 $\emph{Replacement}^2$ gives us a~set $y\ =\ F[\alpha]$, so $y\ \in\ V_\kappa$, which contradicts the fact that $sup(y)\ =\ \kappa$. It can not be the case that $\kappa \in V_\kappa$.
@@ -979,10 +1024,7 @@ For any ordinal $\alpha$, $\kappa$ is called $\alpha$-hyper-inaccessible cardina
 
 Obviously we could go on and iterate it ad libitum, but the nomenclature would be increasingly confusing. A smarter way to accomplish the same goal is carried out in the following section.
 
-% TODO typografie -- mezery kolem vsech = a~asi i vyrokovych ostatnich spojek
-
 % dukaz viz Kan book 6.1, 6.2 ?
-% todo pouzivat emph in jinde?
 
 {\color{red}
 \begin{comment}
