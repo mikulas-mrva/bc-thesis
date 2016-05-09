@@ -311,15 +311,104 @@ TODO veci o tom, ze reflexe je ok protoze reflektuje veci ktere objektivne plati
 
 TODO souvislost s kompaktnosti, hranice formalich systemu nebo alespon ZFC
 
-\subsection{Notation (??) TODO}
+\subsection{Notation and terminology}
 \bce
-\item $\emph{Reflection}$ je obecne reflexe (jaka presne)
-\item $\emph{Reflection}_1$ je reflexe prvoradovych formuli
-\item $\emph{Reflection}_2$ je reflexe druhoradovych formuli
+\item $\emph{Reflection}$ je obecne reflexe (jaka presne?)
+\item $\emph{Reflection}_1$ je reflexe prvoradovych formuli TODO presna formulace!
 \item etc...
 \ece
 
+\
+
 $V$ a $V_\alpha$ odkazuji k Von Neumannove hierarchii (pro jistotu)
+
+\
+
+Vypsat axiomy ZFC a jake formulace pouzivam\\
+\emph{Replacement}, $Replacement_2$ atd
+\emph{Subsets}
+
+\begin{definition}{(\emph{Extensionality})}\label{def:extensionality}\\
+\begin{equation}
+\emph{Extensionality} \iff TODO
+\end{equation}
+\end{definition}
+
+\begin{definition}{(\emph{Foundation})}\label{def:foundation}\\
+\begin{equation}
+\emph{Foundation} \iff TODO
+\end{equation}
+\end{definition}
+
+\begin{definition}{(\emph{Pairing})}\label{def:pairing}\\
+\begin{equation}
+\emph{Pairing} \iff TODO
+\end{equation}
+\end{definition}
+
+\begin{definition}{(\emph{Union})}\label{def:union}\\
+\begin{equation}
+\emph{Union} \iff TODO
+\end{equation}
+\end{definition}
+
+\begin{definition}{(\emph{Powerset})}\label{def:powerset}\\
+\begin{equation}
+\emph{Powerset} \iff TODO
+\end{equation}
+\end{definition}
+
+\begin{definition}{(\emph{Specification})}\label{def:specification}\\
+\begin{equation}
+\emph{Specification} \iff TODO
+\end{equation}
+\end{definition}
+
+\begin{definition}{(\emph{Infinity})}\label{def:infinity}\\
+\begin{equation}
+\emph{Infinity} \iff TODO
+\end{equation}
+\end{definition}
+
+\begin{definition}{(\emph{Replacement})}\label{def:replacement}\\
+\begin{equation}
+\emph{Replacement} \iff TODO
+\end{equation}
+\end{definition}
+
+\begin{definition}{(\emph{Choice})}\label{def:choice}\\
+\begin{equation}
+\emph{Choice} \iff TODO
+\end{equation}
+\end{definition}
+
+\
+
+\begin{definition}{$(\sf{S})$}\label{def:s}\\
+TODO
+\end{definition}
+
+\begin{definition}{$(\sf{ZF})$}\label{def:zf}\\
+TODO
+\end{definition}
+
+\begin{definition}{$(\sf{ZFC})$}\label{def:zfc}\\
+TODO
+\end{definition}
+
+\begin{definition}{$(\sf{ZFC\textsubscript{2}})$}\label{def:zfc_2}\\
+TODO
+\end{definition}
+
+\
+
+TODO definice druhoradoveho splnovani
+
+TODO funkce
+
+\
+
+Asi vsechno budeme delat v ZFC, nic bychom neziskali, pokud ne.
 
 \newpage
 \section{Levy's first-order reflection}\label{sec:fixed}
@@ -328,15 +417,21 @@ $V$ a $V_\alpha$ odkazuji k Von Neumannove hierarchii (pro jistotu)
 This section will try to present Lévy's proof of a~general reflection principle being equivalent to Replacement and Infinity under ZF minus Replacement and Infinity.
 We will first introduce a~few axioms and definitions that were a~different in Lévy's paper\cite{Levy60a}, but are equivalent to today's terms. We will write them in contemporary notation, our aim is the result, not history of set theory notation. 
 
-Please note that Lévy's paper was written in a~period when Set theory was oriented towards semantics, which means that everything was done in a~model. All proofs were theodel that of $\sf{ZFC}$ was $V_\alpha$ (notated as $R(\alpha)$ at the time) for some cardinal $\alpha$, which means that $\alpha$ is a~inaccessible cadinal. Please bear in mind that this is vastly different from saying that there is an inaccessible $\alpha$ inside the model. This $V_\alpha$ is also referred to as $Scm^{\sf{Q}}(u)$, which means that $u$ ($u=V_\alpha$ in our case) is a~standard complete model of an undisclosed axiomatic set theory $\sf{Q}$ formulated in the "non-simple applied first order functional calculus", which is second-order theory is today's terminology, we are allowed to quantify over functions and thus get rid of axiom schemes. (Note that Lévy always speaks of "the axiom of replacement"). Besides placeholder set theory $\sf{Q}$ and $\sf{ZF}$, which the reader should be familiar with, theories $\sf{Z}$, $\sf{S}$, and $\sf{SF}$ are used in the text. $\sf{Z}$ is $\sf{ZF}$ minus replacement, $\sf{S}$ is $\sf{ZF}$ minus replacement and infinity, and finally $\sf{SF}$ is $\sf{ZF}$ minus infinity. "The axiom of subsets" is an older name for the axiom scheme of specification (and it's not a~scheme since we are now working in second order logic). Also note that universal quantifier does not appear, $\forall x \varphi (x)$ would be written as $(x) \varphi (x)$, the symbol for negation is "$\sim$".
+Please note that Lévy's paper was written in a~period when Set theory was oriented towards semantics, which means that everything was done in a~model. 
+All proofs were a~model that of $\sf{ZFC}$ was $V_\kappa$ (notated as $R(\kappa)$ at the time) for some cardinal $\kappa$, which means that $\kappa$ is a~inaccessible cadinal.  % fakt? mozna ze my to proste delame ciste pres semanticky dusledek, ale jinak to vyslo nastejno.
+Please bear in mind that this is vastly different from saying that there is an inaccessible $\kappa$ inside the model. This $V_\kappa$ is also referred to as $Scm^{\sf{Q}}(u)$, which means that $u$ is a~standard complete model of an undisclosed axiomatic set theory $\sf{Q}$ formulated in the "non-simple applied first order functional calculus", which is second-order theory is today's terminology, we are allowed to quantify over functions and thus get rid of axiom schemes. (Note that Lévy always speaks of "the axiom of replacement"). Besides placeholder set theory $\sf{Q}$, and $\sf{ZF}$, which the reader should be familiar with, theories $\sf{Z}$, $\sf{S}$, and $\sf{SF}$ are used in the text. $\sf{Z}$ is $\sf{ZF}$ minus replacement, $\sf{S}$ is $\sf{ZF}$ minus replacement and infinity, and finally $\sf{SF}$ is $\sf{ZF}$ minus infinity. The axiom of \emph{Subsets} is an older name for the axiom scheme of specification (and it's not a~scheme since we are now working in second order logic). Also note that universal quantifier does not appear, $\forall x \varphi (x)$ would be written as $(x) \varphi (x)$, the symbol for negation is "$\sim$", we will use "$\neg$" the whole time.
+
+TODO nebudeme tady pouzivat $\sf{ZFC}$, ale jenom $\sf{ZF}$. (jenom v tehle kapitole)
+
+% TODO mozna neco o simple nebo non-simple logic, viz mathoverflow
 
 %\subsection{Preliminaries}
 \subsection{Lévy's Original Paper}\label{sec:Levy1960}
 
 The following are a few definitions that are used in Lévy's original article. \footnote{While some of them won't be of much use in this paper, they will provide extremely helpful when reading the original article as set theory notation and terminology has evolved in the last 50 years considerably.}
 
-\begin{definition}{Relativization}\label{def:relativization}\cite[Definition 12.6]{JechBook}\\ 
-Let $M$ be a class, $E$ a binary relation on $M$ and let $\varphi(x_1, \ldots, x_n)$ be a formula. The relativization of $\varphi$ to $M$ and $E$ is the formula
+\begin{definition}{(Relativization)}\label{def:relativization}\cite[Definition 12.6]{JechBook}\\ 
+Let $M$ be a class, $E$ a binary relation on $M$ and let $\varphi(x_1, \ldots, x_n)$ be a first-order formula with $n$ parameters. The relativization of $\varphi$ to $M$ and $E$ is the formula written as
 \begin{equation}
 \varphi^{M, E}(x_1, \ldots, x_n)
 \end{equation}
@@ -352,72 +447,78 @@ Defined in the following inductive manner:
 \end{equation}
 \end{definition}
 
-Next two definitions are not used in contemporary set theory, but they illustrate 1960's set theory mind-set and they are used heavily in Lévy's text, so we will include and explain them for clarity. Generally in this chapter, $\sf{Q}$ stands for an undisclosed axiomatic set theory, $u$ is usually a model, counterpart of today's $V$\footnote{Which is of course not referred to as a model, but it is used in a similar fashion, in this case the term "model" was a metamathematical notion because it was not based on any underlying structure of theory. It can be easily formalized in any set theory, but it's not helpful for our case.}, $e$ is a relation that serves as $\in$ in the given model.
+Next two definitions are not used in contemporary set theory, but they illustrate 1960's set theory mind-set and they are used heavily in Lévy's text, so we will include and explain them for clarity. Generally in this chapter, $\sf{Q}$ stands for an undisclosed axiomatic set theory, $u$ is usually a model, counterpart of today's $V$\footnote{Which is of course not referred to as a model, but it is used in a similar fashion, in this case the term "model" was a metamathematical notion because it was not based on any underlying structure of theory. It can be easily formalized in any set theory, but it's not helpful for our case.}, $E$ is a relation that serves as $\in$ in the given model.
+% TODO to uz jsi rikal nahore
 
 % TODO je to relativizovany, jak rika shepherdson?
-\begin{definition}{Standard model of a set theory}\\
-We say the $u$ is a standard model of $\sf{Q}$ with ša membership relation $e$, written as $Sm^{\sf{Q}}(u)$, if both of the following hold
+\begin{definition}{(Standard model of a set theory)}\label{def:sm_q}\\
+Let $\sf{Q}$ be a axiomatic set theory in first-order logic. We say the the a class $u$ is a standard model of $\sf{Q}$ with respect to a membership relation $E$, written as $Sm^{\sf{Q}}(u)$, iff both of the following hold
 \bce[(i)]
-\item $(x, y) \in e \iff y \in u\ \&\ x \in y$
+\item $(x, y) \in E \iff y \in u\ \&\ x \in y$
 \item $y \in u\ \&\ x \in y \then x \in u$
 \ece
 \end{definition}
-\begin{definition}{Standard complete model of a set theory}\\
-We say that that $u$ is a standard complete model of a set theory $\sf{Q}$ with a membership relation $e$ if:
+\begin{definition}{Standard complete model of a set theory}\label{def:scm_q}\\
+Let $\sf{Q}$ and $E$ be like in \ref{def:sm_q}. We say that that $u$ is a standard complete model of $\sf{Q}$ with respect to a membership relation $E$ iff both of the following hold
 \bce[(i)]
 \item $u$ is a transitive set with respect to $\in$
-\item $\forall e ((x, y) \in e \iff (y \in u\ \&\ x \in y)\ \&\ Sm^{\sf{Q}}(u, e))$
+\item $\forall E ((x, y) \in E \iff (y \in u\ \&\ x \in y)\ \&\ Sm^{\sf{Q}}(u, E))$
 \ece
 this is written as $Scm^{\sf{Q}}(u)$.
 \end{definition}
 
 % TODO what is "simple first-order functional calculus" a "non-simple first-order functional calculus"? math.stackovrflow?
 
-\
-
-\begin{definition}{Cardinal inaccessible with respect to $\sf{Q}$}\label{def:levy_inaccessible_q}
+\begin{definition}{(Inaccessible cardinal with respect to $\sf{Q}$)}\label{def:levy_inaccessible_q}\\
+Let $\sf{Q}$ be an axiomatic first-order set theory. We say that a cardinal $\kappa$ is inaccessible with respect to $\sf{Q}$, we write $In^{\sf{Q}}(\kappa)$, iff
 \begin{equation}
-In^{\sf{Q}}(\kappa)\ =\ Scm^{\sf{Q}}(V_\kappa)
+Scm^{\sf{Q}}(V_\kappa).
 \end{equation}
 \end{definition}
 
-This definition is more general than the usual one\footnote{Which says that a cardinal $\kappa$ is inaccessible iff it is a strong limit regular cardinal.}, we will often write $In(\kappa)$ as a shorthand for $In^{\sf{ZF}}(\kappa)$.
+\begin{definition}{(Inaccessible cardinal with respect to $\sf{ZF}$)}\label{def:levy_inaccessible}\\
+When a cardinal $\kappa$ is inaccessible with respect to $\sf{ZF}$, we only say that it is inaccessible. In the abbreviated version, we just leave out the superscript.
+\begin{equation}
+In(\kappa) \iff In^{\sf{ZF}}(\kappa)
+\end{equation}
+\end{definition}
+%Note that this definition is more general than the usual one\footnote{Which says that a cardinal $\kappa$ is inaccessible iff it is a strong limit regular cardinal and only .}, we will often write $In(\kappa)$ as a shorthand for $In^{\sf{ZF}}(\kappa)$.
 % TODO ekvivalence s beznou definici?
 % TODO tohle je lepsi protoze nepotrebujes AC
 
-The following is a principle of complete reflection over $\sf{ZF}$.
-\begin{definition}{$N(\varphi)$}
+% The following is a principle of complete reflection over $\sf{ZF}$.
+\begin{definition}{($N$)}\label{def:levy_axiom_n}\\
+The following is an axiom schema of complete reflection over $\sf{ZF}$, denoted as $N$.
 \begin{equation}
-\exists u (Scm^{\sf{ZF}}(u)\ \&\ \forall x_1, \ldots , x_n (x_1, \ldots , x_n \in u \then \varphi \iff \varphi^{u}))
+N \iff \exists u (Scm^{\sf{ZF}}(u)\ \&\ \forall x_1, \ldots , x_n (x_1, \ldots , x_n \in u \then \varphi \iff \varphi^{u}))
 \end{equation}
-where $\varphi$ is a~formula which does not contain free variables except $x_1, \ldots , x_n$.
+where $\varphi$ is a~formula which contains no free variables except for $x_1, \ldots , x_n$.
 \end{definition}
 
-Note that this by (\ref{def:levy_inaccessible}) equivalent to $\exists u (In^{\sf{ZF}}(u)\ \&\ \forall x_1, \ldots , x_n (x_1, \ldots , x_n \in u \then \varphi \iff \varphi^{u}))$, where $In(\alpha)$ is equivalent to the standard notion of inaccessibility.
-\subsection{$\sf{S} \models \emph{Reflection}\ \iff\ (\emph{Replacement}\ \&\ \emph{Infinity})$} 
+\begin{definition}{($N_0$)}\label{def:levy_axiom_n0}\\
+If we substitute $\sf{ZF}$ for $\sf{S}$, which is $\sf{ZF}$ minus \emph{Replacement} and \emph{Infinity}, we obtain what will now be called $N_0$.
+\begin{equation}
+N_0 \iff \exists u (Scm^{\sf{S}}(u)\ \&\ \forall x_1, \ldots , x_n (x_1, \ldots , x_n \in u \then \varphi \iff \varphi^{u}))
+\end{equation}
+where $\varphi$ is a~formula which contains no free variables except for $x_1, \ldots , x_n$.
+\end{definition}
+
+Once we have established the definitions, it's time to prove something interesting.
+% Note that this by (\ref{def:levy_inaccessible}) equivalent to $\exists u (In^{\sf{ZF}}(u)\ \&\ \forall x_1, \ldots , x_n (x_1, \ldots , x_n \in u \then \varphi \iff \varphi^{u}))$, where $In(\alpha)$ is equivalent to the standard notion of inaccessibility.
+\subsection{$\sf{S} \models (N_0\ \iff\ \emph{Replacement}\ \&\ \emph{Infinity})$} 
 % nebyl by to lepsi nadpis bez S?
 
-\begin{definition}{$N_0(\varphi)$}
-\begin{equation}
-\exists u (Scm^{\sf{S}}(u)\ \&\ \forall x_1, \ldots , x_n (x_1, \ldots , x_n \in u \then \varphi \iff \varphi^{u}))
-\end{equation}
-where $\varphi$ is a~formula which does not contain free variables except $x_1, \ldots , x_n$.
-\end{definition}
-
-Note that the only difference between $N$ and $N_0$ is the set theory used.
-
+Let $N_0$ be defined as in \ref{def:levy_axiom_n0}, for \emph{Infinity} see \ref{def:infinity}.
 \begin{theorem}
-In $\sf{S}$, the schema $N_0$ implies the Axiom of Infinity.
+In $\sf{S}$, the schema $N_0$ implies \emph{Infinity}.
 \end{theorem}
 
 \begin{proof}
 For any $\varphi$, $N_0$ gives us $\exists u Scm^{\sf{S}}(u)$, which means that there is a~set $u$ that is identical to $V_\alpha$ for some alpha, so $\exists \alpha Scm^{\sf{S}}(V_\alpha)$.
-We don't know the exact size of this $\alpha$, but we know that $\alpha \geq \omega$, otherwise $\alpha$ would be finite, therefore not closed under the powerset operation, which would contradict the axiom of powersets. 
-In order to prove that it is a~model of $\sf{S}$, we would need to verify all axioms of $\sf{S}$. We have already shown that $\omega$ is closed under the powerset operation. Foundation, extensionality and comprehension are clear from the fact that we work in $\sf{ZF}$\footnote{We only need to verify axioms that provide means of constructing larger sets from smaller to make sure they don't exceed $\omega$. Since $\omega$ is an initial segment of $ZF$, the axiom scheme of specification can't be broken, the same holds for foundation and extensionality.}, pairing is clear from the fact, that given two sets $A$, $B$, they have ranks $a$, $b$, without loss of generality we can assume that $a \leq b$, which means that $A \in V_a \in V_b$, therefore $V_b$ is a~set that satisfies the paring axiom: it contains both $A$ and $B$.
+We don't know the exact size of this $\alpha$, but we know that $\alpha \geq \omega$, otherwise $\alpha$ would be finite, therefore not closed under the powerset operation, which would contradict \emph{Powerset}. 
+In order to prove that it is a~model of $\sf{S}$, we would need to verify all axioms of $\sf{S}$. We have already shown that $\omega$ is closed under the powerset operation. Foundation, extensionality and comprehension are clear from the fact that we work in $\sf{ZF}$\footnote{We only need to verify axioms that provide means of constructing larger sets from smaller to make sure they don't exceed $\omega$. Since $\omega$ is an initial segment of $ZF$, the axiom scheme of specification can't be broken, the same holds for foundation and extensionality.}, pairing is clear from the fact, that given two sets $x$, $y$, they have ranks $\alpha$, $\beta$, without loss of generality we can assume that $\alpha \leq \beta$, which means that $x \in V_\alpha \in V_\beta$, therefore $V_\beta$ is a~set that satisfies the paring axiom: it contains both $x$ and $B$.
 
-Note that any limit cardinal is a model of $\sf{S}$.
-%TODO vyhodit axiomy, staci vyrobit $\omega$
-%TODO what about union?
+Note that this implies that any (strong) limit cardinal is a model of $\sf{S}$.
 
 We now want to prove that $V_\alpha$ leads to existence of an inductive set, which is a~set that satisfies $\exists A(\emptyset \in A~\& \forall  x \in A~((x \cup \{ x\}) \in A))$. If we can find a~way to construct $V_\omega$ from any $V_\alpha$ satisfying $\alpha \geq \omega$, we are done. Since $\omega$ is the least limit ordinal, all we need is the following
 
@@ -429,15 +530,19 @@ because $V_\kappa$ is a~transitive set for every $\kappa$, thus the intersection
 
 \
 
+Let $N_0$ be defined as in \ref{def:levy_axiom_n0}, for \emph{Replacement} see \ref{def:replacement}.
 \begin{theorem}
-In $\sf{S}$, the schema $N_0$ implies Replacement schema.
+In $\sf{S}$, the schema $N_0$ implies \emph{Replacement}.
 \end{theorem}
 
 \begin{proof}
-Let $\varphi(v, w)$ be a~formula wth no free variables except $v, w, x_1, \ldots, x_n$ where $n$ is any natural number.
+Let $\varphi(v, w, x_1, \ldots, x_n)$ be a~formula wth no free variables except $v, w, x_1, \ldots, x_n$ where $n$ is any natural number.
 Let $\chi$ be an instance of replacement schema for this $\varphi$ which is what we want to prove:
 \begin{equation}
-\chi = \forall r, s, t(\varphi(r, s) \& \varphi(r, t) \then s = t) \then \forall x \exists y \forall w (w \in y \iff \exists v (v \in x \& \varphi(v, w)))
+\begin{split}
+\chi = \forall r, s, t(\varphi(r, s, x_1, \ldots, x_n) \& \varphi(r, t, x_1, \ldots, x_n) \then s = t) \\
+\then \forall x \exists y \forall w (w \in y \iff \exists v (v \in x \& \varphi(v, w, x_1, \ldots, x_n)))
+\end{split}
 \end{equation}
 
 We can deduce the following from $N_0$: 
@@ -448,9 +553,9 @@ We can deduce the following from $N_0$:
 \item $\forall x_1, \ldots, x_n \forall x (\chi \iff (\forall x_1, \ldots, x_n \forall x \chi)^{u})$
 \ece
 
-It is easy to see that (i), (ii), (iii) are the instances of $N_0$ for $\varphi$, $\exists w \varphi$ and $\chi$ respectively.  % asi ne teda, spis je to postup dukazu, neco jako plan. % spis ne
+It is easy to see that $\bold{(i)}$, $\bold{(ii)}$, $\bold{(iii)}$ are the instances of $N_0$ for $\varphi$, $\exists w \varphi$ and $\chi$ respectively.  
 From relativization we also know that $(\exists w \varphi)^{u}$ is equivalent to $\exists w (w \in u \& \varphi^{u})$.
-Therefore (ii) is equivalent to
+Therefore $\bold{(ii)}$ is equivalent to
 \begin{equation}
 x_1, \ldots, x_n, v \in u \then (\exists w (w \in u\ \&\ \varphi^{u})). 
 \end{equation}
@@ -462,11 +567,10 @@ which together with (iv) yields $\forall x_1, \ldots, x_n \forall x \chi$. By th
 \end{proof}
 
 
-What we have just proven in only a single theorem form said article, we will introduce other interesting propositions later in this thesis in their appropriate context\footnote{See chapter 3}.
-% TODO btw co je x? nemela by tam tam byt nejaka volna promenna?
-% todo Jech strana 444 -- stacionarni veci a~reflexe?
+What we have just proven is just a single theorem from said article, we will introduce other interesting propositions, mostly related to the existence of large cardinals, later in their appropriate context in chapter 3.
+
 % =====================================================================================================================================
-\newpage
+% \newpage
 \subsection{Contemporary restatement}
 We will now prove what is also Lévy's reflection theorem, but a little stronger, rephrased with more up to date set theory. The main difference is, that while Lévy reflects $\varphi$ from $V$ into a set $u$ that is a "standard complete model of $\sf{S}$"\footnote{Any limit ordinal is in fact a model of $\sf{S}$, we shall pay more attention to that in a moment.}, we say that there is a $V_\alpha$ that reflects $\varphi$. 
 
@@ -474,8 +578,8 @@ We will prove the equivalence of \emph{$Reflection_1$} with \emph{Replacement} a
 
 The following lemma is usually done in more parts, the first being with one formula and the other with $n$. We will only state and prove the generalised version for $n$ formulas, knowing that $n=1$ is just a~specific case and the proof is exactly the same.
 
-\begin{lemma}{Lemma}\label{lemma:reflection_lemma}
-Let $\varphi_1, \ldots, \varphi_n$ be any formulas with $m$ parameters\footnote{For formulas with different number of parameters take for $m$ the highest number of parameters among given formulas. Add spare parameters to the other formulas so that $x$ remains the last parameter. That can be done in a~following manner: Let $\varphi'_i$ be the a~formula with k parameters, $k < m$. Let us set $\varphi_i(u_1, \ldots, u_{m-1}, x) = \varphi'_i(u_1, \ldots, u_{k-1}, u_k, \ldots, u_{m-1}, x)$, notice that $u_k, \ldots, u_{m-1}$ are spare variables added just for formal simplicity.}. 
+\begin{lemma}{ }\label{lemma:reflection_lemma}
+Let $\varphi_1, \ldots, \varphi_n$ be formulas with $m$ parameters\footnote{For formulas with a different number of parameters, take for $m$ the highest number of parameters among given formulas. Add spare parameters to the other formulas so that $x$ remains the last parameter. That can be done in a~following manner: Let $\varphi'_i$ be the a~formula with k parameters, $k < m$. Let us set $\varphi_i(u_1, \ldots, u_{m-1}, x) = \varphi'_i(u_1, \ldots, u_{k-1}, u_k, \ldots, u_{m-1}, x)$, notice that $u_k, \ldots, u_{m-1}$ are the aforementioned spare variables.}. 
 \bce[(i)]
 \item For each set $M_0$ there is such $M$ that $M_0 \subset M$ and the following holds for every $i \leq n$:
 \begin{equation}\label{equation:refl_lemma_i}
@@ -484,7 +588,7 @@ Let $\varphi_1, \ldots, \varphi_n$ be any formulas with $m$ parameters\footnote{
 for every $u_1, \ldots, u_{m-1} \in M$.
 
 \item Furthermore there is an ordinal $\alpha$ such that $M_0 \subset V_\alpha$ and the following holds for each $i \leq n$:
-\begin{equation}
+\begin{equation}\label{equation:refl_lemma_ii}
 \exists x \varphi_i(u_1, \ldots, u_{m-1}, x) \then (\exists x \in V_\alpha) \varphi_i(u_1, \ldots, u_{m-1}, x)
 \end{equation}
 for every $u_1, \ldots, u_{m-1} \in M$.
@@ -494,7 +598,7 @@ for every $u_1, \ldots, u_{m-1} \in M$.
 \end{lemma}
 
 \begin{proof}
-We will simultaneously prove statements $\bold{(i)}$ and $\bold{(ii)}$, denoting $M^T$ the transitive set required by part (ii). Unless explicitly stated otherwise for specific steps, it is thought to be equivalent to $M$.
+We will simultaneously prove statements $\bold{(i)}$ and $\bold{(ii)}$, denoting $M^T$ the transitive set required by part $\bold{(ii)}$. Unless explicitly stated otherwise for specific steps, it is thought to be equivalent to $M$.
 
 Let us first define operation $H(u_1, \ldots, u_{m-1})$ that gives us the set of $x$'s with minimal rank satisfying $\varphi_i(u_1, \ldots, u_{m-1}, x)$ for given parameters $u_1, \ldots, u_{m-1}$ for every $i \leq n$.
 
@@ -513,7 +617,7 @@ Next, let's construct $M$ from given $M_0$ by induction.
 M_{i+1} = M_i \cup \bigcup_{j=0}^{n} \bigcup \{H_j(u_1, \ldots, u_{m-1}): u_1, \ldots, u_{m-1} \in M_i\}
 \end{equation}
 In other words, in each step we add the elements satisfying $\varphi(u_1, \ldots, u_{m-1}, x)$ for all parameters that were either available earlier or were added in the previous step. 
-For statement (ii), this is the only part that differs from (i). Let us take for each step transitive closure of $M_{i+1}$ from (i). In other words, let $\gamma$ be the smallest ordinal such that 
+For statement $\bold{(ii)}$, this is the only part that differs from (i). Let us take for each step transitive closure of $M_{i+1}$ from (i). In other words, let $\gamma$ be the smallest ordinal such that 
 \begin{equation}
 (M^T_i \cup \bigcup_{j=0}^{n} \{\bigcup\{H_j(u_1, \ldots, u_{m-1}): u_1, \ldots, u_{m-1} \in M_i\}\}) \subset V_\gamma
 \end{equation}
@@ -612,7 +716,7 @@ So far we have proven part (i) of this theorem for one formula $\varphi$, we onl
 
 \
 
-Now we want to verify other parts of our theorem. Since $V_\alpha$ is a~transitive set, by proving (iii) we also satisfy (ii). To do so, we only need to look at part (ii) of lemma \ref{lemma:reflection_lemma}. All of the above proof also holds for $M = V_\alpha$. 
+Now we want to verify other parts of our theorem. Since $V_\alpha$ is a~transitive set, by proving (iii) we also satisfy $\bold{(ii)}$. To do so, we only need to look at part $\bold{(ii)}$ of lemma \ref{lemma:reflection_lemma}. All of the above proof also holds for $M = V_\alpha$. 
 
 To finish part (iv), we take $M$ of size $\leq |M_0| \cdot\aleph_0$, which exists due to part (iii) of lemma \ref{lemma:reflection_lemma}, the rest being identical.
 \end{proof}
@@ -1165,7 +1269,7 @@ The folllowing definitions are equivalent:
 \end{definition}
 
 \begin{proof}
-$\bold{(i) \iff (ii)}$
+$\bold{(i) \iff \bold{(ii)}}$
 Let $\kappa_1$ be a mahlo cardinal and let $\kappa_2$ be a strong limit weakly Mahlo cardinal. We know from the definitions that the set $\{\lambda\ <\ \kappa:\ \lambda\mbox{ is inaccessible}\}$ is stationary in both $\kappa_1$ and $\kappa_2$, the only difference being that $\kappa_1$ is a strongly limit cardinal, but $\kappa_2$ would be limit from weak Mahloness, wasn't it for the fact that it is also strong limit. This eliminates the only difference between them and therefore $\kappa_1$ is also strong limit weakly Mahlo cardinal and $\kappa_2$ is Mahlo.
 
 \
