@@ -22,7 +22,7 @@ unicode,% ? Pravdepodobne bezvyznamne
 pdfauthor={Mikuláš Mrva},
 pdftitle={Reflection principles and large cardinals},
 pdfsubject={Reflection principles and large cardinals},
-pdfkeywords={set theory, large cardinals, reflection principle, ZFC, Azriel Levy},
+pdfkeywords={set theory, large cardinals, reflection principle, ZFC, Azriel Lévy},
 pdffitwindow=false,% Inicialni umisteni textu v okne Readeru
 bookmarksopen=true,% Panel zalozek inicialne zobrazen
 % Je-li tohle nastaveno jinak, nektere odkazy nekdy nefunguji
@@ -262,7 +262,7 @@ TODO ???
 
 If there is an object containing all sets, it must not be a~set itself. The notion of class seems inevitable. Either directly the ways for example the Bernays–Gödel set theory, we will also discuss later in this paper, does in, or on a~meta–level like the Zermelo–Fraenkel set theory, that doesn't refer to them in the axioms but often works with the notion of a~universal class.
 duet
-Another obstacle of constructing a~set of all sets comes from Georg Cantor, who proved that the set of all subsets of a~set (let $A$ be the set and $\power (A)$ its powerset) is strictly larger that $A$. That would turn every aspiration to finally establish an universal set into a~contradictory infinite regression.\footnote{An intuitive analogy of this \emph{reductio ad infinitum} is the status of $\omega$, which was originally thought to be an unreachable absolute, only to become starting point of Cantor's hierarchy of sets growing beyond all boundaries around the end of the $19^{th}$ century}. We will use $V$ to denote the class of all sets. %Riemann!
+Another obstacle of constructing a~set of all sets comes from Georg Cantor, who proved that the set of all subsets of a~set (let $x$ be the set and $\power (x)$ its powerset) is strictly larger that $x$. That would turn every aspiration to finally establish an universal set into a~contradictory infinite regression.\footnote{An intuitive analogy of this \emph{reductio ad infinitum} is the status of $\omega$, which was originally thought to be an unreachable absolute, only to become starting point of Cantor's hierarchy of sets growing beyond all boundaries around the end of the $19^{th}$ century}. We will use $V$ to denote the class of all sets. %Riemann!
 %\newpage
 From previous thoughts we can easily argue, that it is impossible to construct a~property that holds for $V$ and no set and is neither paradoxical like $\{x  |  x = x\}$ nor trivial. Previous observation can be transposed to a~rather naive formulation of the reflection principle:
 
@@ -406,6 +406,11 @@ TODO definice druhoradoveho splnovani
 
 TODO funkce
 
+\begin{definition}{(\emph{Reflection\textsubscript{1}})}\label{def:reflection_1}\\
+\begin{equation}
+ASD
+\end{equation}
+\end{definition}
 \
 
 Asi vsechno budeme delat v ZFC, nic bychom neziskali, pokud ne.
@@ -437,13 +442,13 @@ Let $M$ be a class, $E$ a binary relation on $M$ and let $\varphi(x_1, \ldots, x
 \end{equation}
 Defined in the following inductive manner:
 \begin{equation}
-\begin{split}
+\begin{gathered}
 (x \in y)^{M,E} \iff x E x\\
 (x = y)^{M,E} \iff x = y\\
 (\neg \varphi)^{M,E} \iff \neg \varphi^{M,E}\\
 (\varphi\ \&\ \psi)^{M,E} \iff \varphi^{M,E}\ \&\ \psi^{M,E}\\
 (\exists x\varphi)^{M,E} \iff (\exists x \in M) \varphi^{M,E}
-\end{split}
+\end{gathered}
 \end{equation}
 \end{definition}
 
@@ -539,10 +544,10 @@ In $\sf{S}$, the schema $N_0$ implies \emph{Replacement}.
 Let $\varphi(v, w, x_1, \ldots, x_n)$ be a~formula wth no free variables except $v, w, x_1, \ldots, x_n$ where $n$ is any natural number.
 Let $\chi$ be an instance of replacement schema for this $\varphi$ which is what we want to prove:
 \begin{equation}
-\begin{split}
+\begin{gathered}
 \chi = \forall r, s, t(\varphi(r, s, x_1, \ldots, x_n) \& \varphi(r, t, x_1, \ldots, x_n) \then s = t) \\
 \then \forall x \exists y \forall w (w \in y \iff \exists v (v \in x \& \varphi(v, w, x_1, \ldots, x_n)))
-\end{split}
+\end{gathered}
 \end{equation}
 
 We can deduce the following from $N_0$: 
@@ -572,11 +577,13 @@ What we have just proven is just a single theorem from said article, we will int
 % =====================================================================================================================================
 % \newpage
 \subsection{Contemporary restatement}
-We will now prove what is also Lévy's reflection theorem, but a little stronger, rephrased with more up to date set theory. The main difference is, that while Lévy reflects $\varphi$ from $V$ into a set $u$ that is a "standard complete model of $\sf{S}$"\footnote{Any limit ordinal is in fact a model of $\sf{S}$, we shall pay more attention to that in a moment.}, we say that there is a $V_\alpha$ that reflects $\varphi$. 
+We will now prove what is also Lévy's reflection theorem, but a little stronger, rephrased with more up to date set theory. The main difference is, that while Lévy reflects $\varphi$ from $V$ into a set $u$ that is a "standard complete model of $\sf{S}$"\footnote{Any limit ordinal is in fact a model of $\sf{S}$, we shall pay more attention to that in a moment.}, we say that there is a $V_\alpha$ that reflects $\varphi$. In other words, we don't need $\alpha$ to be an inaccessible cardinal like Lévy does.
 
-We will prove the equivalence of \emph{$Reflection_1$} with \emph{Replacement} and \emph{Infinity} in two parts. First, we will show that \emph{$Reflection_1$} is a theorem of $\sf{ZF}$, then the second implication which proves \emph{Infinity} and \emph{Replacement} from \emph{$Reflection_1$} in $\sf{S}$.
+We will prove the equivalence of $N_0$ with \emph{Replacement} and \emph{Infinity} in $\sf{S}$ in two parts. First, we will show that \emph{$Reflection_1$} is a theorem of $\sf{ZF}$, then the second implication which proves \emph{Infinity} and \emph{Replacement} from $N_0$.
 
 The following lemma is usually done in more parts, the first being with one formula and the other with $n$. We will only state and prove the generalised version for $n$ formulas, knowing that $n=1$ is just a~specific case and the proof is exactly the same.
+
+% TODO Pouzivame ZFC!
 
 \begin{lemma}{ }\label{lemma:reflection_lemma}
 Let $\varphi_1, \ldots, \varphi_n$ be formulas with $m$ parameters\footnote{For formulas with a different number of parameters, take for $m$ the highest number of parameters among given formulas. Add spare parameters to the other formulas so that $x$ remains the last parameter. That can be done in a~following manner: Let $\varphi'_i$ be the a~formula with k parameters, $k < m$. Let us set $\varphi_i(u_1, \ldots, u_{m-1}, x) = \varphi'_i(u_1, \ldots, u_{k-1}, u_k, \ldots, u_{m-1}, x)$, notice that $u_k, \ldots, u_{m-1}$ are the aforementioned spare variables.}. 
@@ -644,7 +651,7 @@ Therefore $|M'| \leq |M_0| \cdot \aleph_0$
 % TODO proc $\leq$ a ne $=$?
 And now for the theorem itself
 
-\begin{theorem}{First-order Reflection}\label{theorem:first_order_reflection}\\
+\begin{theorem}{(Lévy's first-order reflection theorem)}\label{theorem:first_order_reflection}\\
 Let $\varphi(x_1, \ldots, x_n)$ be a~first-order formula.
 \bce[(i)]
 \item For every set $M_0$ there exists $M$ such that $M_0 \subset M$ and the following holds:
@@ -665,7 +672,7 @@ for every $x_1, \ldots, x_n$.
 \end{equation}
 for every $x_1, \ldots, x_n$.
 
-\item Assuming the Axiom of Choice, for every set $M_0$ there is $M$ such that $M_0 \subset M$ and $|M| \leq |M_0| \cdot \aleph_0$ and the following holds:
+\item Assuming \emph{Choice}, for every set $M_0$ there is $M$ such that $M_0 \subset M$ and $|M| \leq |M_0| \cdot \aleph_0$ and the following holds:
 \begin{equation}
 \varphi^M(x_1, \ldots, x_n) \iff \varphi(x_1, \ldots, x_n)
 \end{equation}
@@ -674,7 +681,7 @@ for every $x_1, \ldots, x_n$.
 \end{theorem}
 
 \begin{proof}
-Let's prove (i) for one formula $\varphi$ via induction by complexity first. We can safely assume that $\varphi$ contains no quantifiers besides $\exists$ and no logical connectives other than $\neg$ and $\&$.
+Let's prove $\bold{(i)}$ for one formula $\varphi$ via induction by complexity first. We can safely assume that $\varphi$ contains no quantifiers besides $\exists$ and no logical connectives other than $\neg$ and $\&$.
 Assume that this $M$ is obtained from lemma \ref{lemma:reflection_lemma}. The fact, that atomic formulas are reflected in every $M$ comes directly from definition of relativization and the fact that they contain no quantifiers.\footnote{Note that this does not hold generally for relativizations to $M, E$, but only for relativization to $M, \in$, which is our case.}
 The same holds for formulas in the form of $\varphi = \neg \varphi'$. Let us recall the definition of relativization for those formulas in \ref{def:relativization}.
 \begin{equation}
@@ -699,26 +706,26 @@ The induction hypothesis tells us that
 \end{equation}
 so, together with above lemma \ref{lemma:reflection_lemma}, the following holds:
 \begin{equation}
-\begin{split}
+\begin{gathered}
 \varphi(u_1, \ldots, u_n, x) \\
 \iff \exists x \varphi'(u_1, \ldots, u_n, x) \\
 \iff (\exists x \in M) \varphi'(u_1, \ldots, u_n, x) \\
 \iff (\exists x \in M) \varphi'^M (u_1, \ldots, u_n, x) \\
 \iff (\exists x \varphi'(u_1, \ldots, u_n, x))^M \\
 \iff \varphi^M(u_1, \ldots, u_n, x)
-\end{split}
+\end{gathered}
 \end{equation}
 Which is what we have needed to prove:
 
 \
 
-So far we have proven part (i) of this theorem for one formula $\varphi$, we only need to verify that the same holds for any finite number of formulas. This has in fact been already done since lemma \ref{lemma:reflection_lemma} gives us $M$ for any (finite) amount of formulas. We can than use the induction above  to verify that it reflects each of the formulas individually. 
+So far we have proven part $\bold{(i)}$ of this theorem for one formula $\varphi$, we only need to verify that the same holds for any finite number of formulas. This has in fact been already done since lemma \ref{lemma:reflection_lemma} gives us $M$ for any (finite) amount of formulas. We can than use the induction above  to verify that it reflects each of the formulas individually.
 
 \
 
-Now we want to verify other parts of our theorem. Since $V_\alpha$ is a~transitive set, by proving (iii) we also satisfy $\bold{(ii)}$. To do so, we only need to look at part $\bold{(ii)}$ of lemma \ref{lemma:reflection_lemma}. All of the above proof also holds for $M = V_\alpha$. 
+Now we want to verify other parts of our theorem. Since $V_\alpha$ is a~transitive set, by proving $\bold{(iii)}$ we also satisfy $\bold{(ii)}$. To do so, we only need to look at part $\bold{(ii)}$ of lemma \ref{lemma:reflection_lemma}. All of the above proof also holds for $M = V_\alpha$. 
 
-To finish part (iv), we take $M$ of size $\leq |M_0| \cdot\aleph_0$, which exists due to part (iii) of lemma \ref{lemma:reflection_lemma}, the rest being identical.
+To finish part $\bold{(iv)}$, we take $M$ of size $\leq |M_0| \cdot \aleph_0$, which exists due to part $\bold{(iii)}$ of lemma \ref{lemma:reflection_lemma}, the rest being identical.
 \end{proof}
 
 \
@@ -758,7 +765,7 @@ What we want to obtain is the following:
 \then \forall X \exists Y \forall y\ (y \in Y \iff \exists x (\varphi(x, y, u_1, \ldots, u_n)\ \&\ x \in X ))
 \end{equation}
 
-We do also know that $x, y \in M$, in other words for every $X$, $Y\ =\ \{y\ |\ \varphi(x, y, u_1, \ldots, u_n)\}$ we know that $X \subset M$ and $Y \subset M$, which, together with the comprehension schema\footnote{Called the axiom of subsets in Levy's proof.} implies that $Y$, the image of $X$ over $\varphi$, is a~set.
+We do also know that $x, y \in M$, in other words for every $X$, $Y\ =\ \{y\ |\ \varphi(x, y, u_1, \ldots, u_n)\}$ we know that $X \subset M$ and $Y \subset M$, which, together with the comprehension schema\footnote{Called the axiom of subsets in Lévy's proof.} implies that $Y$, the image of $X$ over $\varphi$, is a~set.
 Which is exactly the Replacement Schema we hoped to obtain.
 \end{proof}
 
@@ -773,16 +780,20 @@ In the next section, we will try to generalize \emph{Reflection} in a~way that t
 
 \newpage
 % =====================================================================================================================================
-\section{Reflecting To Large Cardinals} % used to be "... and Second-order Reflection"
+\section{Reflectiion And Large Cardinals}
 
 In this chapter we aim to examine stronger reflection properties in order to reach cardinals unavailable in $\sf{ZF}$. Like we said in the first chapter, % [TODO odkaz na uvod]
-the variety of reflection principles comes from the fact that there are many way to formalize "properties of the universal class". It is not always obvious what properties hold for $V$ because, unlike Lévy's approach, not much attention is paid to what exactly is this $V$, and, more importantly, there are many ways to formalize the notion of property. We have shown that reflecting properties as first-order formulas doesn't allow us to leave $\sf{ZF}$. We will broaden the class of admissible properties to be reflected and see whether there is a~natural limit in the height or width on the reflected universe and also see that no matter how far we go, the universal class is still as elusive as it is when seen from $\sf{S}$. That is because for every process for obtaining larger sets such as for example the powerset operation in $\sf{ZF}$, this process can't reach $V$ and thus, from reflection, there is an initial segment of $V$ that can't be reached via said process. 
+the variety of reflection principles comes from the fact that there are many way to formalize "properties of the universal class". It is not always obvious what properties hold for $V$ because, 
+%unlike Lévy's approach, not much attention is paid to what exactly is this $V$, and, more importantly, there are many ways to formalize the notion of property. 
+We have shown that reflecting properties as first-order formulas doesn't allow us to leave $\sf{ZF}$. We will broaden the class of admissible properties to be reflected and see whether there is a~natural limit in the height or width on the reflected universe and also see that no matter how far we go, the universal class is still as elusive as it is when seen from $\sf{S}$. That is because for every process for obtaining larger sets such as for example the powerset operation in $\sf{ZF}$, this process can't reach $V$ and thus, from reflection, there is an initial segment of $V$ that can't be reached via said process. 
 
 To see why this is important, let's dedicate a few lines to the intuition behind the notions of limitness, regularity and inaccessibility in a manner strongly influenced by \cite{Infinity_in_mind}. To see why limit and strongly limit cardinals are worth mentioning, note that they are "limit" not only in a sense of being a supremum of an ordinal sequence, they also show that a certain way of obtaining bigger objects from smaller ones limited in terms of possibilities. $\aleph_\lambda$ is a limit cardinal iff there is no $\alpha$ such that $\aleph_{\alpha+1}=\aleph_\lambda$. Strongly limit cardinals point to the limits of the powerset operation. It has been too obvious so far, so let's look at the regular cardinals in this manner. Regular cardinals are those that cannot be\footnote{Assuming $\emph{Choice}$.}, expressed as a supremum of smaller amount of smaller objects\footnote{Just like $\omega$ can not be expressed as a supremum of a finite set consisting solely of finite numbers.}. More precisely, $\kappa$ is regular if there is no way to define it as u union of less than $\kappa$ ordinals, all smaller than $\kappa$. So unless there already is a set of size $\kappa$, \emph{Replacement} is useless in determining whether $\kappa$ is really a set. Note that assuming \emph{Choice}, successor cardinals are always regular, so most\footnote{All provable to exist in $\sf{ZF}$} limit cardinals are singular cardinals. So if one is traversing the class of all cardinals upwards, successor steps are still sets thanks to the powerset axiom while singular limits cardinal are not proper classes because they are images of smaller sets via \emph{Replacement}. Regular cardinals are, in a way, limits of how far can we get by taking limits of increasing sequences of ordinals obtained via $\emph{Replacement}$.
 
-That all being said, it is easy to see that no cardinals in $\sf{ZF}$ are both strongly limit and regular beucase there is no way in $\sf{ZF}$ to ensure they are sets and not proper classes. The only exception to this rule is $\aleph_0$ which need a special axiom for itself to exist. It should now be obvious why the fact that $\kappa$ is inaccessible implies that $\kappa\ =\ \aleph_\kappa$.\footnote{This doesn't work backwards, the first fixed point of the $\aleph$ function is the limit of $\{\aleph_0,\ \aleph_{\aleph_0},\ \aleph_{\aleph_{\aleph_0}},\ \ldots \}$ is singular since the sequence has countably many elements.}
+That all being said, it is easy to see that no cardinals in $\sf{ZF}$ are both strongly limit and regular because there is no way to ensure they are sets and not proper classes in $\sf{ZF}$. The only exception to this rule is $\aleph_0$ which needs \emph{Infinity} to exist. % nase otazka je: proc omega a ne jine kardinaly?
+It should now be obvious why the fact that $\kappa$ is inaccessible implies that $\kappa\ =\ \aleph_\kappa$.\footnote{This doesn't work backwards, the least fixed point of the $\aleph$ function is the limit of $\{\aleph_0,\ \aleph_{\aleph_0},\ \aleph_{\aleph_{\aleph_0}},\ \ldots \}$, it is singular since the sequence has countably many elements.}
 
-We will also examine the connection between reflection principles and fixed points of ordinal functions in a manner proposed by Lévy in \cite{Levy60a}. We will also see that, like Lévy \cite{Levy60a} has proposed, there is a meaningful way to extend the relation between $\sf{S}$ and $\sf{ZF}$ into a hierarchy of axiomatic set theories. Those are the three lines of thinking that we will find are in fact different facets of the same gem, especially in the section devoted to Inaccessible and Mahlo cardinals.
+We will also examine the connection between reflection principles and (regular) fixed points of ordinal functions in a manner proposed by Lévy in \cite{Levy60a}. We will also see that, like Lévy \cite{Levy60a} has proposed, there is a meaningful way to extend the relation between $\sf{S}$ and $\sf{ZF}$ into a hierarchy of stronger axiomatic set theories. 
+% Those are the three lines of thinking that we will find are in fact different facets of the same gem, especially in the section devoted to Inaccessible and Mahlo cardinals.
 % viz Shapiro, Stewart. 1987. “Principles of Reflection and Second-order Logic”. Journal of Philosophical Logic 16 (3). Springer: 309–33. http://www.jstor.org/stable/30227043.
 % Reflections on Replacement and Reflection: The axioms in a~structuralist setting (Geoffrey Hellman)
 %TODO neco o tom, ze kdyz je reflexe formule, da se sama reflektovat?
@@ -791,48 +802,94 @@ We will also examine the connection between reflection principles and fixed poin
 
 % TODO ze "uplne totalni" reflexe se zacykli a rozbije? 
 
-\subsection{Fixed-point phenomena and axioms}
-This small chapter is dedicated to 
+\subsection{Regular Fixed-Point Axioms}
+% This small chapter is dedicated to 
 
 Lévy's article mentions various schemata that are not instances of reflection themselves. We will mention them because they are equivalent to $N_0$ and because they are fixed-point theorems, which we will find useful later in this thesis.
 
-
-\begin{definition}{Strictly increasing function}\\
-A function $F(\alpha)$ defined on the ordinal number into the ordinal numbers is said to be \emph{strictly increasing} if
-$\forall \alpha, \beta \in On (\alpha < \beta \then F(\alpha) < F(\beta)).$
+$Ord$ denotes the class of ordinal numbers.
+\begin{definition}{(Strictly increasing function)}\label{def:increasing_function}\\
+A function $f: Ord \then Ord$ is said to be \emph{strictly increasing} iff
+\begin{equation}
+\forall \alpha, \beta \in Ord (\alpha < \beta \then f(\alpha) < f(\beta)).
+\end{equation}
 \end{definition}
 
-\begin{definition}{Continuous function}\\
-A function $F(\alpha)$ defined on the ordinal number into the ordinal numbers is said to be \emph{continuous} if
-for any limit $\alpha$, $F(\alpha) = lim_{\beta < \alpha} F(\beta)$.
+\begin{definition}{(Continuous function)}\label{def:continuous_function}\\
+A function $f: Ord \then Ord$ is said to be \emph{continuous} iff
+\begin{equation}
+\alpha\mbox{ is limit} \then (f(\alpha) = lim_{\beta < \alpha} f(\beta)).
+\end{equation}
 \end{definition}
-Alternatively, a function $F$ is continuous iff for limit $lambda$, $F(\lambda) = sup {F(\alpha) : \alpha < \lambda}$.
+Alternatively, a function $f: Ord \then Ord$ is continuous iff for limit $\lambda$, $f(\lambda) = \bigcup_{\alpha < \lambda} f(\alpha)$.
+% nebo taky $f(\lambda) = sup {f(\alpha) : \alpha < \lambda}$.
 
-\begin{definition}{Normal function}\label{def:normal_function}\\
-A function $F(\alpha)$ defined on the ordinal numbers into the ordinal numbers is said to be \emph{normal} if it is \emph{strictly increasing} and \emph{continuous}
+\begin{definition}{(Normal function)}\label{def:normal_function}\\
+A function $f: Ord \then Ord$ is said to be \emph{normal} if it is \emph{strictly increasing} and \emph{continuous}.
 \end{definition}
 
-\begin{definition}{Normal function on a set}
-Let $\alpha$ be an ordinal. A function $f: \delta \then \alpha$ is a normal function on $\alpha$ if it is increasing, continuous and its range is unbounded in $\alpha$.
-\end{definition}
+\begin{definition}{(Normal function on a set)} Let $\alpha, \delta$ be ordinals. A function $f: \delta \then \alpha$ is called a \emph{normal function on $\alpha$} iff all of the following hold:
+\bce[(i)]
+\item $f$ is strictly increasing on $\alpha$\footnote{$x \mbox{ is limit} \then (f(x)) = \bigcup_{y < x} f(y)$}
+\item $f$ is continuous on $\alpha$
+\item the $rng(f)\ =\ \{y: \exists x(f(x)\ =\ y)\}$ is unbounded in $\alpha$.
+ \ece
+\end{definition} % TODO potrebujeme ji vubec? nema byt (rostouci na alfa), (spojita na alda), ...?
 
 \begin{definition}{Fixed point}\\
 We say $\alpha$ is a fixed point of ordinal function $f$ when $\alpha=f(\alpha)$.
 \end{definition}
 
 
-Lévy (\cite{Levy60a}) proposes those axioms as equivalent to one on his reflection principles. 
-\begin{definition}{$M$}
-Every normal function defined for all ordinals has at least one inaccessible number in its range.
+Lévy (\cite{Levy60a}) proposes those axioms as equivalent to one on his reflection principles.
+\begin{definition}
+$M \iff$ "Every normal function defined for all ordinals has at least one inaccessible number in its range."
+\end{definition}
+We will rewrite $M$ as a formula to make it clear that it is an axiom scheme and the same can be done with $M'$ as well as $M''$.
+
+Let $\varphi(x, y, u_1, \ldots, u_n)$ be a first-order formula with no free variables besides $x, y, u_1, \ldots, u_n$. Let's first define separate parts of the formula, writing it out full would be rather confusing.
+
+
+"$\varphi$ is a function" iff
+\begin{equation}
+(\forall x, y, z (\varphi(x, y, u_1, \ldots, u_n)\ \&\ \varphi(x, z, u_1, \ldots, u_n) \then y=z))
+\end{equation}
+
+\
+
+"$\varphi$ is defined on all ordinals" iff
+\begin{equation}
+\forall x (x \in Ord \then \exists y(y \in Ord\ \&\ \varphi(x, y, u_1, \ldots, u_n)))
+\end{equation}
+
+"$\varphi$ is strictly increasing" iff
+\begin{equation}
+\begin{gathered}
+\forall x_1, x_2(\exists y_1, y_2 (\varphi(x_1, y_1, u_1, \ldots, u_n)\ \&\ \varphi(x_2, y_2, u_1, \ldots, u_n) \then\\
+\then (x_1 < x_2 \then y_1 < y_2)))
+\end{gathered}
+\end{equation}
+
+$\varphi$ is continous iff
+\begin{equation}
+\forall x (\if )
+\end{equation}
+
+\begin{equation}
+asdf
+\end{equation}
+
+The following is equivalent to $M$.
+\begin{}
+
+\begin{definition}
+$M' \iff $ "Every normal function defined for all ordinals has at least one fixed point which is inaccessible."
 \end{definition}
 
-\begin{definition}{$M'$}
-Every normal function defined for all ordinals has at least one fixed point which is inaccessible.
+\begin{definition}
+$M'' \iff $ "Every normal function defined for all ordinals has arbitrarily great fixed points which are inaccessible."
 \end{definition}
 
-\begin{definition}{$M''$}
-Every normal function defined for all ordinals has arbitrarily great fixed points which are inaccessible.
-\end{definition}
 
 The following axiom is proposed by Drake in \cite{DrakeBook}. 
 \begin{definition}{$F$}
@@ -877,11 +934,11 @@ We know that $\sf{ZF}$ can not be finitely axiomatized in first-order formulas, 
 Lower-case letters represent first-order variables and upper-case $P$ represents a~second-order variable. \cite{Shapiro87}
 \begin{definition}{$\emph{Replacement}_2$}\label{def:replacement_2}\\
 \begin{equation}
-\begin{split}
+\begin{gathered}
 \forall P (\forall x, y, z (P(x, y) \& P(x, z) \then y\ =\ z) \then
 \\
 \then (\forall x \exists y \forall z (z \in y \iff \exists w \in x (P(w, z)))))
-\end{split}
+\end{gathered}
 \end{equation}
 We will denote this axiom $\emph{Replacement}_2$.
 \end{definition}
@@ -956,7 +1013,7 @@ An uncountable cardinal $\kappa$ is \emph{inaccessible} (written $In(\alpha)$) $
 
 \
 
-We will now show that the above notion is equivalent to the definition Levy uses in \cite{Levy60a}, which is, in more contemporary notation, the following:
+We will now show that the above notion is equivalent to the definition Lévy uses in \cite{Levy60a}, which is, in more contemporary notation, the following:
 \begin{theorem}\label{theorem:inaccessible_models_zfc}
 The following are equivalent:
 \bce
@@ -1026,19 +1083,20 @@ We will now show that if a~set is a~model of $\sf{ZFC}$, it is in fact an inacce
 \forall \lambda (\lambda < \kappa \then 2^{\lambda} < \kappa)
 \end{equation}
 which is exactly the definition of strong limitness. $\kappa$ is regular from the following argument by contradiction:\\
-Let us suppose for a~moment that $\kappa$ is singular. Therefore there is an ordinal $\alpha < \kappa$ and a~function $F:\ \alpha \then \kappa$ such that the range of $F$ in unbounded in $\kappa$, in other words, $F[\alpha] \subseteq V_\kappa$ and $sup(F[\alpha])\ =\ \kappa$. In order to achieve the desired contradiction, we need to see that it is the case that $F[\alpha] \in V_\kappa$. Let $\varphi(x, y)$ be the following first-order formula:
+Let us suppose for a~moment that $\kappa$ is singular. Therefore there is an ordinal $\alpha < \kappa$ and a~function $F:\ \alpha \then \kappa$ such that the range of $F$ in unbounded in $\kappa$, in other words, $F[\alpha] \subseteq V_\kappa$ and $sup(F[\alpha])\ =\ \kappa$. In order to achieve the desired contradiction, we need to see that it is the case that $F[\alpha] \in V_\kappa$. Let $\varphi(x, y)$ be the following first-order formula: % TODO vyhodit sup, pouzivat radis $\bigcup$
 \begin{equation}
 F(x)\ =\ y
 \end{equation}
 Then there is an instance of  Axiom Schema of Replacement that states the following:
 \begin{equation}
-\begin{split}
+\begin{gathered}
 (\forall x, y, z(\varphi(x, y) \& \varphi(x, z) \then y\ =\ z)) \then \\
 \then (\forall x \exists y \forall z (z \in y \iff \exists w (\varphi(w, z))))
-\end{split}
+\end{gathered}
 \end{equation}
 Which in turn means that there is a~set $y = F[\alpha]$ and $y \in V_\kappa$, which is the contradiction with $sup(y) = \kappa$ we are looking for.
 \end{proof}
+% TODO vyhodit sup, pouzivat radis $\bigcup$
 
 \
 
@@ -1053,7 +1111,7 @@ $\kappa$ is a~strong limit cardinal because from $\sf{ZF}_2$ and \emph{Powerset}
 
 $\kappa$ is also regular, because otherwise there would be an ordinal $\alpha$ and a~function $F:\ \alpha \then \kappa$ with a~range unbounded in $\kappa$. 
 $\emph{Replacement}^2$ gives us a~set $y\ =\ F[\alpha]$, so $y\ \in\ V_\kappa$, which contradicts the fact that $sup(y)\ =\ \kappa$. It can not be the case that $\kappa \in V_\kappa$.
-
+% TODO vyhodit sup, pouzivat radis $\bigcup$
 \
 
 The other direction is exactly like the first part of above theorem \ref{theorem:inaccessible_models_zfc}.
@@ -1086,10 +1144,10 @@ We have transcended $\sf{ZF}$, but that is just a~start. Naturally, we could go 
 
 Since we can find an inaccessible set larger than any chosen set $M_0$, it is clear that there are arbitrarily large inaccessible cardinals in $V$, they are "unbounded"\footnote{The notion is formaly defined for sets, but the meaning should be obvious.} in $V$. If $V$ were a cardinal, we could say that there are $V$ inaccesible cardinals less than $V$, but this statement of course makes no sense in set theory as is because $V$ is not a set. But being more careful, we could find a property that can be formalized in second-order logic and reflect it to an initial segment of $V$. That would allow us to construct large cardinals more efficiently than by adding inaccessibles one by one. The property we are looking for ought to look like something like this:
 \begin{equation}
-\begin{split}
+\begin{gathered}
 \kappa \mbox{ is an inaccessible cardinal and}\\
 \mbox{there are }\kappa\mbox{ inaccessible cardinals }\mu\ <\ \kappa
-\end{split}
+\end{gathered}
 \end{equation}
 This is in fact a fixed-point type of statement. We shall call those cardinals hyper-inaccessible. Now consider the following definition.
 
@@ -1155,7 +1213,7 @@ $\langle V_{\kappa}, \in, R \rangle \models \exists v_0 \varphi [v_0, y_1, \ldot
 for some formula $\varphi$, there is an $x \in V_{\beta}$ such that $\langle V_{\kappa}, \in, R\rangle \models \varphi [x, y_1, \ldots, y_k]$.
 \newline
 Since $\kappa$ is inaccessible, $|V_{\alpha_n}| < \kappa$ and so $\alpha_{n+1} < \kappa$.\newline
-Finally, set $\alpha = sup({\alpha_n | n \in \omega})$. 
+Finally, set $\alpha = sup({\alpha_n | n \in \omega})$.  % TODO vyhodit sup, pouzivat radis $\bigcup$
 Then $\langle$
  $V_ \alpha, \in, R  \cap V_\alpha \rangle \prec \langle V_{\kappa}, \in, R\rangle$ by the usual (Tarski) criterion for elementary substructure.
  \newline\newline
@@ -1192,10 +1250,10 @@ The following two definitions come from \cite{Infinity_in_mind} and while they a
 \begin{definition}{Fixed-point property}\\
 For any $\psi(x, u_1, \ldots, u_n)$ which is any property of ordinals, we say that a property $\varphi$ is a $\emph{fixed-point property}$ if $\varphi$ has the form
 \begin{equation}
-\begin{split}
+\begin{gathered}
 \mbox{$x$ is an inaccessible cardinal and }\\
 \mbox{there are $x$ ordinals less than $x$ that have the property $\psi(x, u_1, \ldots, u_n)$.}
-\end{split}
+\end{gathered}
 \end{equation}
 \end{definition}
 
@@ -1208,20 +1266,19 @@ If $\varphi$ is a fixed-point property that holds for $V$, it also holds for so
 Obviously those are in on way rigorous definitions because we have no idea what $\psi(x, u_1, \ldots, u_n)$ looks like. Let's try to restate the same idea in a useful way. But first, let's show that the formal counterpart of the idea of containing "enough" ordinals with a property is the notion of stationary set. 
 
 \begin{definition}{Supremum}\\
-Given $A$ a set of ordinals, the supremum of $A$, denoted sup($A$), is the least upper bound of $A$.
+Given $x$ a set of ordinals, the supremum of $x$, denoted sup($x$), is the least upper bound of $x$. % TODO vyhodit sup, pouzivat radis $\bigcup$
 \begin{equation}
-sup(A)\ =\ \bigcup A
+sup(x)\ =\ \bigcup x
 \end{equation}
-where $\alpha$ is an ordinal.
 \end{definition}
 
 \begin{definition}{Limit point}\\
-Given $A$, a set of ordinals and an ordinal $\alpha$, we say that $\alpha$ is a \emph{limit point} of $A$ if $sup(A \cap \alpha)\ =\ \alpha$
+Given $x$, a set of ordinals and an ordinal $\alpha$, we say that $\alpha$ is a \emph{limit point} of $x$ if $sup(x \cap \alpha)\ =\ \alpha$
 \end{definition}
 % funfuje to, protoze alpha je ordinal, takze kdyz je alpha nejvyssi a je to zaroven mnozina vsech mensich ordinalu, je to presne supremum. kdyz tam neni, ale A obsahuje vsechny mensi ordinaly, je to nejmensi horni zavora, tedy alpha
 
 \begin{definition}{Club set}\\
-For a regular uncountable $\kappa$, a set $A\ \subset\ \kappa$ is a \emph{closed unbounded} subset (often abbreviated as a \emph{club set}) iff $A$ is both closed, which means it contains all it's limit points, and unbounded, which means that for every $\beta$ < $\kappa$ there is a $\beta'\ \in \alpha$ such that $\beta\ <\ \beta'\ <\ \kappa$.
+For a regular uncountable $\kappa$, a set $x\ \subset\ \kappa$ is a \emph{closed unbounded} subset (often abbreviated as a \emph{club set}) iff $x$ is both closed, which means it contains all it's limit points, and unbounded, which means that for every $\beta$ < $\kappa$ there is a $\beta'\ \in \alpha$ such that $\beta\ <\ \beta'\ <\ \kappa$.
 \end{definition}
 % TODO mozna kratka uvaha proc to musi byt regularni?
 
@@ -1289,11 +1346,11 @@ TODO proc $\lambda\ =\ S \cap C \cap D$ je inaccessible?
 
 $\bold{(iii) \then (iv)}$
 
-TODO jak to dela Levy? 
+TODO jak to dela Lévy? 
 
 $\bold{(iv) \then (i)}$
 
-TODO jak to dela Levy? 
+TODO jak to dela Lévy? 
 
 range kazde normalni funkce je club v On. (nevadi ze On je trida?)
 

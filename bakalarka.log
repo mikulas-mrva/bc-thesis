@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.12.2)  10 MAY 2016 00:25
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.12.2)  10 MAY 2016 03:00
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -362,81 +362,86 @@ Underfull \hbox (badness 10000) in paragraph at lines 379--380
 
  []
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 409--410
+
+ []
+
 [9]
 
-LaTeX Warning: Citation `Levy60a' on page 10 undefined on input line 418.
+LaTeX Warning: Citation `Levy60a' on page 10 undefined on input line 423.
 
 
-LaTeX Warning: Citation `JechBook' on page 10 undefined on input line 433.
+LaTeX Warning: Citation `JechBook' on page 10 undefined on input line 438.
 
 [10]
 
-LaTeX Warning: Reference `def:sm_q' on page 11 undefined on input line 462.
+LaTeX Warning: Reference `def:sm_q' on page 11 undefined on input line 467.
 
 [11]
 
 LaTeX Warning: Reference `def:levy_axiom_n0' on page 12 undefined on input line
- 511.
+ 516.
 
 
-LaTeX Warning: Reference `def:infinity' on page 12 undefined on input line 511.
+LaTeX Warning: Reference `def:infinity' on page 12 undefined on input line 516.
 
 
 [12]
 
 LaTeX Warning: Reference `def:levy_axiom_n0' on page 13 undefined on input line
- 533.
+ 538.
 
 
 LaTeX Warning: Reference `def:replacement' on page 13 undefined on input line 5
-33.
+38.
 
 
 Package amsfonts Warning: Obsolete command \bold; \mathbf should be used instea
-d on input line 556.
+d on input line 561.
 
 [13]
 
 LaTeX Warning: Reference `equation:refl_lemma_i' on page 14 undefined on input 
-line 596.
+line 603.
 
 [14] [15] [16]
 
 LaTeX Warning: Reference `lemma:reflection_lemma' on page 17 undefined on input
- line 678.
+ line 685.
 
 
 LaTeX Warning: Reference `def:relativization' on page 17 undefined on input lin
-e 679.
+e 686.
 
 
 LaTeX Warning: Reference `lemma:reflection_lemma' on page 17 undefined on input
- line 700.
+ line 707.
 
 
 LaTeX Warning: Reference `lemma:reflection_lemma' on page 17 undefined on input
- line 715.
+ line 722.
 
 [17]
 
 LaTeX Warning: Reference `lemma:reflection_lemma' on page 18 undefined on input
- line 719.
+ line 726.
 
 
 LaTeX Warning: Reference `lemma:reflection_lemma' on page 18 undefined on input
- line 721.
+ line 728.
 
 
 LaTeX Warning: Reference `theorem:first_order_reflection' on page 18 undefined 
-on input line 733.
+on input line 740.
 
 [18]
 
 LaTeX Warning: Reference `section:inaccessibility' on page 19 undefined on inpu
-t line 767.
+t line 774.
 
 
-Overfull \hbox (53.58429pt too wide) in paragraph at lines 770--771
+Overfull \hbox (53.58429pt too wide) in paragraph at lines 777--778
 []\OT1/cmr/m/n/12 Also, no-tice how re-flec-tion can be used in ways sim-i-lar 
 to up-ward L^^?owenheim{Skolem
  []
@@ -444,116 +449,113 @@ to up-ward L^^?owenheim{Skolem
 [19]
 
 LaTeX Warning: Citation `Infinity_in_mind' on page 20 undefined on input line 7
-81.
+90.
 
 [20]
 
-LaTeX Warning: Citation `Levy60a' on page 21 undefined on input line 785.
+LaTeX Warning: Citation `Levy60a' on page 21 undefined on input line 795.
 
 
-LaTeX Warning: Citation `Levy60a' on page 21 undefined on input line 785.
+LaTeX Warning: Citation `Levy60a' on page 21 undefined on input line 795.
 
 
-Overfull \hbox (43.6962pt too wide) in paragraph at lines 809--810
-\OT1/cmr/m/n/12 Alternatively, a func-tion $\OML/cmm/m/it/12 F$ \OT1/cmr/m/n/12
- is con-tin-u-ous iff for limit $\OML/cmm/m/it/12 lambda$\OT1/cmr/m/n/12 , $\OM
-L/cmm/m/it/12 F\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 ^^U\OT1/cmr/m/n/12 ) = \OML/cm
-m/m/it/12 sup[]$\OT1/cmr/m/n/12 . 
- []
-
-
-LaTeX Warning: Citation `Levy60a' on page 21 undefined on input line 824.
+LaTeX Warning: Citation `Levy60a' on page 21 undefined on input line 844.
 
 [21]
 
-LaTeX Warning: Citation `DrakeBook' on page 22 undefined on input line 837.
+LaTeX Warning: Citation `DrakeBook' on page 22 undefined on input line 896.
 
 
-LaTeX Warning: Citation `Levy60a' on page 22 undefined on input line 849.
-
-
-LaTeX Warning: Reference `section:inaccessibility' on page 22 undefined on inpu
-t line 871.
-
-
-LaTeX Warning: Citation `Shapiro87' on page 22 undefined on input line 877.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 878--879
-
- []
+LaTeX Warning: Citation `Levy60a' on page 22 undefined on input line 908.
 
 [22]
-Underfull \hbox (badness 10000) in paragraph at lines 889--890
+
+LaTeX Warning: Reference `section:inaccessibility' on page 23 undefined on inpu
+t line 930.
+
+
+LaTeX Warning: Citation `Shapiro87' on page 23 undefined on input line 936.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 937--938
 
  []
 
 
-LaTeX Warning: Citation `Levy60a' on page 23 undefined on input line 959.
+Underfull \hbox (badness 10000) in paragraph at lines 948--949
+
+ []
+
+[23]
+
+LaTeX Warning: Citation `Levy60a' on page 24 undefined on input line 1018.
 
 
-LaTeX Warning: Citation `KanamoriBook' on page 23 undefined on input line 969.
+LaTeX Warning: Citation `KanamoriBook' on page 24 undefined on input line 1028.
 
 
-LaTeX Warning: Citation `DrakeBook' on page 23 undefined on input line 969.
 
-[23] [24]
+LaTeX Warning: Citation `DrakeBook' on page 24 undefined on input line 1028.
+
+[24]
 
 LaTeX Warning: Reference `levy_equivalence_contemporary' on page 25 undefined o
-n input line 1020.
-
-
-LaTeX Warning: Reference `theorem:inaccessible_models_zfc' on page 25 undefined
- on input line 1059.
-
-
-LaTeX Warning: Citation `Levy60a' on page 25 undefined on input line 1064.
+n input line 1079.
 
 [25]
-Underfull \hbox (badness 10000) in paragraph at lines 1065--1066
+
+LaTeX Warning: Reference `theorem:inaccessible_models_zfc' on page 26 undefined
+ on input line 1119.
+
+
+LaTeX Warning: Citation `Levy60a' on page 26 undefined on input line 1124.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1125--1126
 
  []
 
 
-LaTeX Warning: Citation `Levy60a' on page 26 undefined on input line 1074.
+LaTeX Warning: Citation `Levy60a' on page 26 undefined on input line 1134.
 
 [26]
-Overfull \hbox (11.38196pt too wide) in paragraph at lines 1110--1111
+Overfull \hbox (11.38196pt too wide) in paragraph at lines 1170--1171
 []\OT1/cmr/m/n/12 Because $\OML/cmm/m/it/12 ^^T$ \OT1/cmr/m/n/12 is in-ac-ces-s
 i-ble and there-fore reg-u-lar, the num-ber of $\OML/cmm/m/it/12 ^^L$\OT1/cmr/m
 /n/12 -inaccessibles
  []
 
-
-LaTeX Warning: Citation `Mahlo11' on page 27 undefined on input line 1185.
-
-
-LaTeX Warning: Citation `Mahlo12' on page 27 undefined on input line 1185.
-
-
-LaTeX Warning: Citation `Mahlo13' on page 27 undefined on input line 1185.
-
-
-LaTeX Warning: Reference `sec:Levy1960' on page 27 undefined on input line 1185
-.
-
 [27]
 
+LaTeX Warning: Citation `Mahlo11' on page 28 undefined on input line 1245.
+
+
+LaTeX Warning: Citation `Mahlo12' on page 28 undefined on input line 1245.
+
+
+LaTeX Warning: Citation `Mahlo13' on page 28 undefined on input line 1245.
+
+
+LaTeX Warning: Reference `sec:Levy1960' on page 28 undefined on input line 1245
+.
+
+
 LaTeX Warning: Reference `section:inaccessibility' on page 28 undefined on inpu
-t line 1187.
+t line 1247.
 
 
 LaTeX Warning: Citation `Infinity_in_mind' on page 28 undefined on input line 1
-191.
+251.
 
 [28]
 
-LaTeX Warning: Citation `JechBook' on page 29 undefined on input line 1235.
+LaTeX Warning: Citation `JechBook' on page 29 undefined on input line 1294.
 
+[29]
 
-LaTeX Warning: Citation `DrakeBook' on page 29 undefined on input line 1259.
+LaTeX Warning: Citation `DrakeBook' on page 30 undefined on input line 1318.
 
-[29] [30] [31] [32] (./bakalarka.bbl) [33] (./bakalarka.aux)
+[30] [31] [32] [33] (./bakalarka.bbl) [34] (./bakalarka.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -562,13 +564,13 @@ LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  ) 
 Here is how much of TeX's memory you used:
- 5137 strings out of 493089
- 64890 string characters out of 6134842
+ 5140 strings out of 493089
+ 64958 string characters out of 6134842
  134823 words of memory out of 5000000
- 8548 multiletter control sequences out of 15000+600000
+ 8551 multiletter control sequences out of 15000+600000
  22704 words of font info for 84 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 34i,17n,43p,1855b,591s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 34i,15n,43p,1855b,591s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 </usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb
@@ -598,10 +600,10 @@ fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2015/texmf-dist/f
 onts/type1/public/amsfonts/cm/cmti8.pfb></usr/local/texlive/2015/texmf-dist/fon
 ts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2015/texmf-dist
 /fonts/type1/public/rsfs/rsfs10.pfb>
-Output written on bakalarka.pdf (34 pages, 413372 bytes).
+Output written on bakalarka.pdf (35 pages, 415534 bytes).
 PDF statistics:
- 230 PDF objects out of 1000 (max. 8388607)
- 163 compressed objects within 2 object streams
+ 233 PDF objects out of 1000 (max. 8388607)
+ 165 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
