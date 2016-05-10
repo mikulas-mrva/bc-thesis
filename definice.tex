@@ -1,0 +1,153 @@
+\bce
+\item $\emph{Reflection}$ je obecne reflexe (jaka presne?)
+\item $\emph{Reflection}_1$ je reflexe prvoradovych formuli TODO presna formulace!
+\item etc...
+\ece
+
+\
+
+$V$ a $V_\alpha$ odkazuji k Von Neumannove hierarchii (pro jistotu)
+
+\
+
+zakladni definice
+
+\begin{definition}{(Ord)}\\
+TODO Ord je trida vsech ordinalu
+\end{definition}
+
+\begin{definition}{(Function)}\label{def:function}\\
+We say that a first-order formula $\varphi(x, y, u_1, \ldots, u_n)$ with no free variable besides $x, y, u_1, \ldots, u_n$ is a \emph{function} iff
+\begin{equation}
+\forall x, y, z (\varphi(x, y, u_1, \ldots, u_n)\ \&\ \varphi(x, z, u_1, \ldots, u_n) \then y=z)
+\end{equation}
+\end{definition}
+
+TODO kofinalita
+\begin{definition}{(Cofinality)}\label{def:extensionality}\\
+Let $\kappa$ be a cardinal. The {cofinality} of $\kappa$, written as $cf(\kappa)$ is defined as follows
+\begin{equation}
+TODO
+\end{equation}
+\end{definition}
+
+\begin{definition}{(Limit ordinal)}\label{def:limit_ordinal}\\
+We say that an ordinal $\alpha$ is a \emph{limit ordinal} iff
+\begin{equation}
+\alpha \in Ord\ \&\ \exists x (x\in\alpha)\ \&\ \forall x(x \in \alpha \then x+1 \in \alpha)
+\end{equation}
+\end{definition}
+
+TODO def $\aleph_\alpha$ ?
+
+\begin{definition}{(Limit Cardinal)}\label{def:limit_ordinal}\\
+We say that a cardinal $\kappa$ is a \emph{limit cardinal} iff
+\begin{equation}
+\exists \alpha (\alpha \in Ord\ \&\ \kappa = \aleph_\alpha)
+\end{equation}
+\end{definition}
+
+\begin{definition}{(Strong Limit Cardinal)}\label{def:limit_ordinal}\\
+We say that an ordinal $\kappa$ is a \emph{strong limit cardinal} iff it is a \emph{limit cardinal} and 
+\begin{equation}
+\forall \alpha (\alpha \in \kappa \then \power(\alpha) \in \kappa)
+\end{equation}
+\end{definition}
+\
+
+Vypsat axiomy ZFC a jake formulace pouzivam\\
+\emph{Replacement}, $Replacement_2$ atd
+\emph{Subsets}
+
+\begin{definition}{(\emph{Extensionality})}\label{def:extensionality}\\
+\begin{equation}
+\emph{Extensionality} \iff \forall x, y(\forall z (z \in x \iff z \in y) \then x = y)
+\end{equation}
+\end{definition}
+
+\begin{definition}{(\emph{Foundation})}\label{def:foundation}\\
+\begin{equation}
+\emph{Foundation} \iff \forall x (\exists z (z \in x) \then \exists z (z \in x\ \&\ \forall u \neg (u \in z\ \&\ u \in x)))
+\end{equation}
+\end{definition}
+
+\begin{definition}{(\emph{Pairing})}\label{def:pairing}\\
+\begin{equation}
+\emph{Pairing} \iff \forall x, y \exists z (x \in z\ \&\ y \in z)
+\end{equation}
+\end{definition}
+
+\begin{definition}{(\emph{Union})}\label{def:union}\\
+\begin{equation}
+\emph{Union} \iff \forall x \,\exists y \, \forall z\, \forall w ((w \in z \land z \in x) \then w \in y)
+\end{equation}
+\end{definition}
+
+\begin{definition}{(\emph{Powerset})}\label{def:powerset}\\
+\begin{equation}
+\emph{Powerset} \iff \forall x \exists y \forall z (z \subseteq x \then z \in y)
+\end{equation}
+\end{definition}
+
+\begin{definition}{(\emph{Specification})}\label{def:specification}\\
+The following is a schema for every first-order formula $\varphi$.
+\begin{equation}
+\emph{Specification} \iff \forall x \exists y \forall z \, ( z \in y \iff ( z \in x \& \varphi(z, x)))
+\end{equation}
+\end{definition}
+
+\begin{definition}{(\emph{Infinity})}\label{def:infinity}\\
+\begin{equation}
+\emph{Infinity} \iff \exists x (\exists y (y \in x)\ \&\ \forall y(y \in x \then y+1 \in x))
+\end{equation}
+\end{definition}
+
+\begin{definition}{(\emph{Replacement})}\label{def:replacement}\\
+The following is a schema for every first-order formula $\varphi$.
+\begin{equation}
+\begin{gathered}
+\emph{Replacement} \iff\\
+\forall x, y, z (\varphi(x, y) \& \varphi(x, z) \then y\ =\ z) \then \\
+\then (\forall x \exists y \forall z (z \in y \iff \exists w \in x (\varphi(w, z))))
+\end{gathered}
+\end{equation}
+\end{definition}
+
+\begin{definition}{(\emph{Choice})}\label{def:choice}\\
+\begin{equation}
+\emph{Choice} \iff TODO
+\end{equation}
+\end{definition}
+
+\
+
+\begin{definition}{$(\sf{S})$}\label{def:s}\\
+TODO
+\end{definition}
+
+\begin{definition}{$(\sf{ZF})$}\label{def:zf}\\
+TODO
+\end{definition}
+
+\begin{definition}{$(\sf{ZFC})$}\label{def:zfc}\\
+TODO
+\end{definition}
+
+\begin{definition}{$(\sf{ZFC\textsubscript{2}})$}\label{def:zfc_2}\\
+TODO
+\end{definition}
+
+\
+
+TODO definice druhoradoveho splnovani
+
+TODO analyticka (ne aritmeticka!) hierarchie
+
+\begin{definition}{(\emph{Reflection\textsubscript{1}})}\label{def:reflection_1}\\
+\begin{equation}
+ASD
+\end{equation}
+\end{definition}
+\
+
+Asi vsechno budeme delat v ZFC, nic bychom neziskali, pokud ne.

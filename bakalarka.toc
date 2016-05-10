@@ -1,0 +1,19 @@
+\contentsline {section}{\numberline {1}Introduction}{4}
+\contentsline {subsection}{\numberline {1.1}Motivation and Origin}{4}
+\contentsline {subsection}{\numberline {1.2}A few historical remarks on reflection}{7}
+\contentsline {subsection}{\numberline {1.3}Reflection in Platonism and Structuralism}{8}
+\contentsline {subsection}{\numberline {1.4}Notation and terminology}{8}
+\contentsline {section}{\numberline {2}Levy's first-order reflection}{11}
+\contentsline {subsection}{\numberline {2.1}Introduction}{11}
+\contentsline {subsection}{\numberline {2.2}L\IeC {\'e}vy's Original Paper}{11}
+\contentsline {subsection}{\numberline {2.3}$\sf {S} \models (N_0\ \leftrightarrow \ \emph {Replacement}\ \&\ \emph {Infinity})$}{13}
+\contentsline {subsection}{\numberline {2.4}Contemporary restatement}{15}
+\contentsline {section}{\numberline {3}Reflection And Large Cardinals}{21}
+\contentsline {subsection}{\numberline {3.1}Regular Fixed-Point Axioms}{22}
+\contentsline {subsection}{\numberline {3.2}Reflecting Second-order Formulas}{24}
+\contentsline {subsection}{\numberline {3.3}Inaccessibility}{24}
+\contentsline {subsection}{\numberline {3.4}Mahlo Cardinals}{29}
+\contentsline {subsection}{\numberline {3.5}Indescribality}{31}
+\contentsline {subsection}{\numberline {3.6}Bernays\IeC {\textendash }G{\"o}del Set Theory}{31}
+\contentsline {subsection}{\numberline {3.7}Reflection and the constructible universe}{32}
+\contentsline {section}{\numberline {4}Conclusion}{33}
