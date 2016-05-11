@@ -10,10 +10,11 @@
 \contentsline {subsection}{\numberline {2.4}Contemporary restatement}{15}
 \contentsline {section}{\numberline {3}Reflection And Large Cardinals}{21}
 \contentsline {subsection}{\numberline {3.1}Regular Fixed-Point Axioms}{22}
-\contentsline {subsection}{\numberline {3.2}Reflecting Second-order Formulas}{24}
-\contentsline {subsection}{\numberline {3.3}Inaccessibility}{24}
-\contentsline {subsection}{\numberline {3.4}Mahlo Cardinals}{29}
-\contentsline {subsection}{\numberline {3.5}Indescribality}{31}
-\contentsline {subsection}{\numberline {3.6}Bernays\IeC {\textendash }G{\"o}del Set Theory}{31}
-\contentsline {subsection}{\numberline {3.7}Reflection and the constructible universe}{32}
-\contentsline {section}{\numberline {4}Conclusion}{33}
+\contentsline {subsection}{\numberline {3.2}A Model-Theoretic Intermezzo}{24}
+\contentsline {subsection}{\numberline {3.3}Reflecting Second-order Formulas}{24}
+\contentsline {subsection}{\numberline {3.4}Inaccessibility}{25}
+\contentsline {subsection}{\numberline {3.5}Mahlo Cardinals}{29}
+\contentsline {subsection}{\numberline {3.6}Indescribality}{31}
+\contentsline {subsection}{\numberline {3.7}Bernays\IeC {\textendash }G{\"o}del Set Theory}{34}
+\contentsline {subsection}{\numberline {3.8}Reflection and the constructible universe}{35}
+\contentsline {section}{\numberline {4}Conclusion}{36}

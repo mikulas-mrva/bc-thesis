@@ -1,318 +1,9 @@
 \documentclass[12pt,a4paper]{article}
 % \renewcommand{\baselinestretch}{1.2}   % in case of emergency .)
 
-\usepackage{mathrsfs}
-\usepackage{amssymb}
-\usepackage{amsmath}
-\usepackage{amsfonts}
-\usepackage{longtable}
-\usepackage{paralist}
-\usepackage{lineno}
-\usepackage{verbatim}
-\linenumbers
+\input{00_headers.tex}
 
-\usepackage{color} %pro barevné odkazy, příp. nadpisy
-\definecolor{odkazy}{rgb}{0.21,0.27,0.53} %tmavì modrá
-\definecolor{nadpisy}{rgb}{0.5812,0.0665,0.0659} %cihlová
-%
-% Parametry prevodu do pdf
-\providecommand{\hypersetup}[1]{}%
-\hypersetup{%
-unicode,% ? Pravdepodobne bezvyznamne
-pdfauthor={Mikuláš Mrva},
-pdftitle={Reflection principles and large cardinals},
-pdfsubject={Reflection principles and large cardinals},
-pdfkeywords={set theory, large cardinals, reflection principle, ZFC, Azriel Lévy},
-pdffitwindow=false,% Inicialni umisteni textu v okne Readeru
-bookmarksopen=true,% Panel zalozek inicialne zobrazen
-% Je-li tohle nastaveno jinak, nektere odkazy nekdy nefunguji
-hypertexnames=false,
-plainpages=false,
-%pdfpagelabels,
-%
-breaklinks=true,% Radkovy lom smi prijit do klikatelneho odkazu
-linkcolor=odkazy,% Graficka podoba odkazu
-citecolor=odkazy,% ...
-colorlinks=true,% ...
-pdfhighlight=/O% ... (vzhled odkazu pri stisknuti)
-}%
-% Inputenc je asi zbytecne.
-% Option 'split' ovlivnuje deleni slov obsahujicich v sobe rozdelovnik
-\usepackage[utf8x]{inputenc} % UTF-8 ?
-%\usepackage[czech]{babel} %dnes u je vak hotová integrace èetiny do babelu
-%\usepackage[split]{czech} %dnes u je vak hotová integrace èetiny do babelu
-%
-%\usepackage{logdp} %uiteèné drobnosti
-%\usepackage{amsthm} %lepší práce s větami
-%\usepackage{amsmath} %nová prostøedí pro matematiku a vylepení tìch stávajících
-%\usepackage{latexsym,amsfonts,amssymb} % nová písmenka
-\usepackage{fancyhdr} % zápatí a záhlaví
-%\usepackage[nottoc]{tocbibind} % přidá do obsahu položky Literatura a Rejstřík
-\usepackage{csquotes}
-\pagestyle{plain}
-%pøedbìné nastavení hlavièky (balík fancyhdr)
-%\headheight 13.6pt %moná ji bude tøeba zvednout, fancyhdr si pak stìuje: \headheight
-% too small, make it at least Xpt
-\headheight 12.5pt %moná ji bude tøeba zvednout, fancyhdr si pak stìuje: \headheight too \fancyhead{}
-\fancyhead[R]{\leftmark}
-\fancyfoot{}
-\fancyfoot[C]{\thepage}
-
-
-\newtheorem{theorem}{Theorem}[section]
-\newtheorem{Claim}[theorem]{Claim}
-\newtheorem{definition}[theorem]{Definition}
-\newtheorem{Cor}[theorem]{Corollary}
-\newtheorem{Fact}[theorem]{Fact}
-\newtheorem{lemma}[theorem]{Lemma}
-\newtheorem{sublemma}[theorem]{Sublemma}
-\newtheorem{ex}[theorem]{Example}
-\newtheorem{remark}[theorem]{Remark}
-\newtheorem{obs}[theorem]{Observation}
-\newtheorem{que}[theorem]{Question}
-\newtheorem{conjecture}[theorem]{Conjecture}
-
-\renewcommand{\theequation}{\thesection.\arabic{equation}}
-
-\newenvironment{proof}
-{\noindent \textit{Proof.}}
-{\hspace*{\fill} $\Box$}
-
-\newcommand{\toch}{\fbox{\small {\bf ??}}}
-\newcommand{\bt}[1]{{\underset{\widetilde{}}{#1}}}
-\newcommand{\trcl}[1]{\ensuremath{\mathrm{trcl}(\{#1\})}}
-\newcommand{\cf}[1]{\ensuremath{\mathrm{cf}(#1)}}
-\newcommand{\cl}[1]{\ensuremath{\mathrm{cl}}(#1)}
-\newcommand{\ord}[1]{\ensuremath{\mathrm{ORD}}(#1)}
-\newcommand{\dom}[1]{\ensuremath{\mathrm{dom}}(#1)}
-\newcommand{\rng}[1]{\ensuremath{\mathrm{rng}}(#1)}
-\newcommand{\power}[1]{\ensuremath{\mathscr{P}} (#1)}
-\newcommand{\set}[2]{\ensuremath{\{#1 \,|\, #2 \}}}
-\newcommand{\seq}[2]{\ensuremath{\langle #1 \,|\, #2 \rangle}}
-\newcommand{\singl}[1]{\ensuremath{\{#1\}}}
-\newcommand{\pair}[2]{\ensuremath{\{ #1, #2 \}}}
-\newcommand{\restr}[2]{\ensuremath{#1 \! \upharpoonright \! #2}}
-\renewcommand{\iff}{\leftrightarrow}
-\newcommand{\Iff}{\Leftrightarrow}
-\newcommand{\el}{\prec}
-\newcommand{\iso}{\cong}
-\newcommand{\sub}{\subseteq}
-\newcommand{\super}{\supseteq}
-\newcommand{\la}{\langle}
-\newcommand{\ra}{\rangle}
-\newcommand{\embed}{\rightarrow}
-\newcommand{\mc}{\mathcal}
-\newcommand{\supr}[1]{\mathrm{sup}\,#1}
-\newcommand{\then}{\rightarrow}
-\newcommand{\conc}{^{\smallfrown}}
-\newcommand{\bb}{\mathbb}
-\newcommand{\supp}[1]{\mathrm{supp}(#1)}
-\newcommand{\beq}{\begin{equation}}
-\newcommand{\eeq}{\end{equation}}
-\newcommand{\brm}{\begin{remark}\begin{rm}}
-\newcommand{\erm}{\end{rm}\end{remark}}
-\newcommand{\mx}{\mathrm}
-\newcommand{\bce}{\begin{compactenum}}
-\newcommand{\ece}{\end{compactenum}}
-\newcommand{\op}[2]{\la #1, #2 \ra}
-\newcommand{\treq}{\trianglelefteq}
-\newcommand{\et}{\mathrel{\&}}
-
-
-\begin{document}
-%titulní stránka
-\begin{titlepage}
-%\fontsize{16.16pt}{25pt}\selectfont
-\Large
-\begin{center}
-Univerzita Karlova v~Praze, Filozofick{\/á} fakulta\\
-Katedra logiky
-
-\vspace{8.5em}
-\textsc{Mikluáš Mrva}\\[1.4em]
-{REFLECTION PRINCIPLES AND LARGE CARDINALS}\\
-Bakalářská práce\\[6.8em]
-Vedoucí práce: Mgr. Radek Honzík, Ph.D.\\[6.8em]
-2015
-\end{center}
-\end{titlepage}\
-
-
-
-
-
-\vspace{\fill}
-\noindent 
-Prohlašuji, že jsem bakalářkou práci vypracoval samostatně a~že jsem uvedl všechny použité prameny a~literaturu.
-
-\bigskip
-\noindent V~Praze 14.~dubna 2015\\[3em]
-\hspace*{\fill}Mikuláš Mrva\hspace*{3em}
-\clearpage
-
-\begin{abstract}
-\noindent Práce zkoumá vztah tzv. principů reflexe a velkých kardinálů. Lévy ukázal, že v ZFC platí tzv. věta o reflexi~a dokonce, že věta o reflexi je ekvivalentní schématu nahrazení a~axiomu nekonečna nad teorií ZFC bez axiomu nekonečna a~schématu nahrazení. Tedy lze na větu o~reflexi pohlížet jako na svého druhu axiom nekonečna. Práce zkoumá do jaké míry a~jakým způsobem lze větu o reflexi zobecnit a~jaký to má vliv na existenci tzv. velkých kardinálů. Práce definuje nedosažitelné, Mahlovy a nepopsatelné kardinály a ukáže, jak je lze zavést pomocí reflexe. Přirozenou limitou kardinálů získaných reflexí jsou kardinály nekonzistentní s L. Práce nabídne intuitivní zdůvodněn, proč tomu tak je.
-
-\end{abstract}
-\bigskip
-\renewcommand{\abstractname}{Abstract}
-\begin{abstract}
-\noindent This thesis aims to examine relations between so called "Reflection Principles" and Large cardinals. Lévy has shown that Reflection Theorem is a sound theorem of ZFC and it is equivalent to Replacement Scheme and the Axiom of Infinity. From this point of view, Reflection theorem can be seen a~specific version of an Axiom of Infinity. This paper aims to examine the Reflection Principle and its generalisations with respect to existence of Large Cardinals. This thesis will establish Inaccessible, Mahlo and Indescribable cardinals and their definition via reflection. A natural limit of Large Cardinals obtained via reflection are cardinals inconsistent with L. The thesis will offer an intuitive explanation of why this is the case.
-\end{abstract}
-\clearpage
-
-\tableofcontents
-\clearpage
-
-
-\pagestyle{fancy} %detailní definice chování záhlaví
-\renewcommand{\sectionmark}[1]{\markboth{\slshape\thesection.\ #1}{}}
-
-
-\section{Introduction}\label{sec:introduction}
-
-%Reflection principle is a kind of a theorem scheme stating the following:
-% taky debilni formulace, ale co uz
-\subsection{Motivation and Origin}
-\begin{displayquote}
-The Universe of sets cannot be uniquely characterized (i. e. distinguished from all its initial elements) by any internal structural property of the membership relation in it, which is expressible in any logic of finite of transfinite type, including infinitary logics of any cardinal order.
-\end{displayquote}
-\rightline{{\rm --- Kurt Gödel \cite{GodelWang}}}
-
-To understand why do need reflection in the first place, let's think about infinity for a moment. In the intuitive sense, infinity is an upper limit of all numbers. But for centuries, this was merely a philosophical concept, closely bound to religious and metaphysical way of thinking, 
-% aquinas -- summa, question 7
-considered separate from numbers used for calculations or geometry. It was a rather vague concept. 
-% neco o nekonecnech?
-In ancient Greece, Aristotle's response to famous Zeno's paradoxes introduced the distinction between actual and potential infinity.
-% zdroje
-% http://www.iep.utm.edu/infinite/#SH1a
-% (See Aristotle’s Physics, Book III, for his account of infinity.)
-% viz A.W.Moore The Infinite -- je tam nejak reflexe?
-He argued, that potential infinity is (in today's words) well defined, as opposed to actual infinity, which remained a vague incoherent concept. He didn't think it's possible for infinity to inhabit a bounded place in space or time, rejecting Zeno's thought experiments as a whole. 
-% co Archimedes?
-Aristotle's thoughts shaped western thinking partly due to Aquinas, who himself believed actual infinity to be more of a~metaphysical concept for describing God than a~mathematical property attributed to any other entity. In his Summa Theologica \footnote{Part I, Question 7, Article 3, Reply to Objection 1} he argues:
-\begin{displayquote}
-A geometrician does not need to assume a~line actually infinite, but takes some actually finite line, from which he subtracts whatever he finds necessary; which line he calls infinite.
-\end{displayquote} % formalni citace?
-
-Less than hundred years later, Gregory of Rimini wrote
-\begin{displayquote}
-If God can endlessly add a~cubic foot to a~stone–which He can–then He can create an infinitely big stone. For He need only add one cubic foot at some time, another half an hour later, another a~quarter of an hour later than that, and so on ad infinitum. He would then have before Him an infinite stone at the end of the hour.
-\end{displayquote}
-% citace (Moore 2001, 53)  "anti-Aristotelian backlash among the medievals"
-Which is basically a~Zeno's Paradox made plausible with God being the actor. In contrast to Aquinas' position, Gregory of Rimini theoretically constructs an object with actual infinite magnitude that is essentially different from God.
-
-\
-
-% byl prvni cantor? jak presne to definoval Leibniz a~Newton?
-Even later, in the 17th century, pushing the property of infinitness from the Creator to his creation, Nature, Leibniz wrote to Foucher in 1962:
-% citace? zdroj: http://www.humanities.mcmaster.ca/~rarthur/papers/LeibCant.pdf
-\begin{displayquote}
-I am so in favor of the actual infinite that instead of admitting that Nature abhors
-it, as is commonly said, I hold that Nature makes frequent use of it everywhere,
-in order to show more effectively the perfections of its Author. Thus I believe that
-there is no part of matter which is not, I do not say divisible, but actually divided;
-and consequently the least particle ought to be considered as a~world full of an
-infinity of different creatures.
-\end{displayquote}
-But even though he used potential infinity in what would become foundations of modern Calculus and argued for actual infinity in Nature, Leibniz refused the existence of an infinite, thinking that Galileo's Paradoxon\footnote{zneni galileova paradoxu} is in fact a~contradiction. The so called Galileo's Paradoxon is an observation Galileo Galilei made in his final book "Discourses and Mathematical Demonstrations Relating to Two New Sciences".
-He states that if all numbers are either squares and non–squares, there seem to be less squares than there is all numbers. On the other hand, every number can be squared and every square has it's square root. Therefore, there seem to be as many squares as there are all numbers. Galileo concludes, that the idea of comparing sizes makes sense only in the finite realm.
-\begin{displayquote}
-Salviati: So far as I see we can only infer that the totality of all numbers is infinite, that the number of squares is infinite, and that the number of their roots is infinite; neither is the number of squares less than the totality of all the numbers, nor the latter greater than the former; and finally the attributes "equal," "greater," and "less," are not applicable to infinite, but only to finite, quantities. When therefore Simplicio introduces several lines of different lengths and asks me how it is possible that the longer ones do not contain more points than the shorter, I answer him that one line does not contain more or less or just as many points as another, but that each line contains an infinite number.
-\end{displayquote}
-%citace?  Galilei, Galileo (1954) [1638]. Dialogues concerning two new sciences. Transl. Crew and de Salvio. New York: Dover. pp. 31–33.
-% btw: http://www.humanities.mcmaster.ca/~rarthur/papers/Lairam.pdf  Leibniz’s Actual Infinite in Relation to his Analysis of Matter
-Leibniz insists in part being smaller than the whole saying
-\begin{displayquote}
-Among numbers there are infinite roots, infinite squares, infinite cubes. Moreover, there are
-as many roots as numbers. And there are as many squares as roots. Therefore there are as
-many squares as numbers, that is to say, there are as many square numbers as there are
-numbers in the universe. Which is impossible. Hence it follows either that in the infinite the
-whole is not greater than the part, which is the opinion of Galileo and Gregory of St.
-Vincent, and which I cannot accept; or that infinity itself is nothing, i.e. that it is not one and
-not a~whole. % (LoC 9) je co?
-\end{displayquote}
-% viz G.W. Leibniz, Interrelations between Mathematics and Philosophy
-
-TODO  Hegel--strucne?
-
-TODO Cantor
-
-TODO mene teologie, vice matematiky
-
-TODO definovat pojmy (trida etc)
-
-TODO neni V v nejakem smyslu porad potencialni nekonecno, zatimco mnoziny vetsi nez omega jsou aktualni? nebo jsou potencialni protoze se staveji pres indukci, od spoda.
-
-In his work, he defined transfinite numbers to extend existing natural number % existovala fakt? kdo to udelal? asi peano
-structure so it contains more objects that behave like natural numbers and are based on an object (rather a~meta-object) that doesn't explicitly exist in the structure, but is closely related to it. This is the first instance of reflection. 
-This paper will focus on taking this principle a~step further, extending Cantor's (or Zermelo–Fraenkel's, to be more precise) universe so it includes objects so big, they could be considered the universe itself, in a~certain sense. % dost vagni?
-
-
-TODO dal asi smazat
-
-
-% nemuzeme nikdy zachytit cele univerzum
-% snaha udelat to stala za vznikem pojmu nekonecno, naivni teorie mnozin i jejich formalizaci
-The original idea behind reflection principles probably comes from what could be informally called \textquote{universality of the universe}.
-The effort to precisely describe the universe of sets was natural and could be regarded as one of the impulses for formalization of naive set theory.
-If we try to express the universe as a~set $\{x  |  x = x\}$, a~paradox appears, because either our set is contained in itself and therefore is contained in a~set (itself again), which contradicts the intuitive notion of a~universe that contains everything but is not contained itself.
-
-TODO ???
-
-If there is an object containing all sets, it must not be a~set itself. The notion of class seems inevitable. Either directly the ways for example the Bernays–Gödel set theory, we will also discuss later in this paper, does in, or on a~meta–level like the Zermelo–Fraenkel set theory, that doesn't refer to them in the axioms but often works with the notion of a~universal class.
-duet
-Another obstacle of constructing a~set of all sets comes from Georg Cantor, who proved that the set of all subsets of a~set (let $x$ be the set and $\power (x)$ its powerset) is strictly larger that $x$. That would turn every aspiration to finally establish an universal set into a~contradictory infinite regression.\footnote{An intuitive analogy of this \emph{reductio ad infinitum} is the status of $\omega$, which was originally thought to be an unreachable absolute, only to become starting point of Cantor's hierarchy of sets growing beyond all boundaries around the end of the $19^{th}$ century}. We will use $V$ to denote the class of all sets. %Riemann!
-%\newpage
-From previous thoughts we can easily argue, that it is impossible to construct a~property that holds for $V$ and no set and is neither paradoxical like $\{x  |  x = x\}$ nor trivial. Previous observation can be transposed to a~rather naive formulation of the reflection principle:
-
-
-\
-
-$\emph{Reflection}$ Any property which holds in $V$ already holds in some initial segment of $V$. 
-
-\
-
-To avoid vagueness of the term "property", we could informally reformulate the above statement into a~schema: 
-
-\
-
-For every first-order formula\footnote{this also works for finite sets of formulas \cite[p.~168]{JechBook}} $\varphi$ holds in $V \iff \varphi$ holds in some initial segment of $V$.
-
-\
-
-Interested reader should note that this is a~theorem scheme rather than a~single theorem. \footnote{If there were a~single theorem stating "for any formula $\varphi$ that holds in $V$ there is an initial segment of $V$ where $\varphi$ also holds", we would obtain the following contradiction with the second G{\"o}del's theorem: In ZFC, any finite group of axioms of ZFC holds in some initial segment of the universe. If we take the largest of those initial segments it is still strictly smaller than the universe and thus we have, via compactness, constructed a~model of ZFC within ZFC. That is, of course a~harsh contradiction. This also leads to an elegant way to prove that ZFC is not finitely axiomatizable.}
-
-%Reflection is, among others, a~tool for constructing models of finitely axiomatizable theories within stronger frameworks of proving impossibility thereof. ?!
-
-\subsection{A few historical remarks on reflection}\label{sec:History}  % mozna reflection itself?
-% co motivace? (jako treba ze kdyz existuje inaccessible cardinal tak je ZFC relativne konzistentni, protoze $V_\kappa$ je jeji model)
-% viz kanamori
-% jak to bylo s tim Godelem?
-% nejdriv Montague ukazal ze ZFC neni konecne axiomatizovatelna "in a~strong sense"
-%The first notion of reflection in our sense was formally stated and proved as a~theorem of ZF by Azriel L{\'e}vy in his 1960 article \emph{Axiomatic schemata of strong infinity in axiomatic set theory}\cite{Levy60a}. Only a~year later, this was followed by Richard Montague's \emph{Fraenkel's addition to the axioms of Zermelo}.
- %citace?
- % konecna axiomatizovatelnost? reflexe spolu se 2. Godelovou vetou, ~Montague
- 
- 
- % motivace ke kardinalum:
- % velke kardinaly vznikly v podstate reflektovanim zajimavych vlastnosti absolutniho nekonecna, mnoho z nich ma i omega
- % popis vyvoje axiomu nekonecna: zadny->nejaky->silnejsi??
-Reflection made its first in set-theoretical appearance in G{\"o}del's proof of GCH in L  (citace Kanamori ? Lévy and set theory), but it was around even earlier as a~concept. G{\"o}del himself regarded it as very close to Russel's reducibility axiom (an earlier equivalent of the axiom schema of Zermelo's separation). Richard Montague then studied reflection properties as a~tool for verifying that Replacement is not finitely axiomatizable (citace?). a~few years later Lévy proved in \cite{Levy60a} the equivalence of reflection with Axiom of infinity together with Replacement in proof we shall examine closely in chaper 2.
-
-\
-
-TODO co dal? recent results?
-
-\subsection{Reflection in Platonism and Structuralism}
-TODO cite "reflection in a structuralist setting"
-
-TODO veci o tom, ze reflexe je ok protoze reflektuje veci ktere objektivne plati, protoze plati pro V ...
-
-TODO souvislost s kompaktnosti, hranice formalich systemu nebo alespon ZFC
-
-\subsection{Notation and terminology}
-\input{definice.tex}
+\input{01_introduction.tex}
 
 \newpage
 \section{Levy's first-order reflection}\label{sec:fixed}
@@ -798,11 +489,15 @@ TODO podle Levyho
 % WIKI: Any weakly inaccessible cardinal is also a fixed point of the aleph function.[6] This can be shown in ZFC as follows. Suppose \kappa = \aleph_\lambda is a weakly inaccessible cardinal. If \lambda were a successor ordinal, then \aleph_\lambda would be a successor cardinal and hence not weakly inaccessible. If \lambda were a limit ordinal less than  \kappa , then its cofinality (and thus the cofinality of \aleph_\lambda) would be less than \kappa  and so \kappa  would not be regular and thus not weakly inaccessible. Thus \lambda \geq \kappa  and consequently \lambda = \kappa  which makes it a fixed point.
 \end{proof}
 
-% \subsection{Model-Theoretic Approach}
+\subsection{A Model-Theoretic Intermezzo}
+This is a small notational intermezzo. Reflection theorems asdasd Tarski Berkley model-theoretic methods in set theory.
 
-% TODO $S \then ZM \then ZM' \then ZM''$, neco jako mahlovy kardinaly, presunout do dane kapitoly
+This notation is used for example in \cite{KanBook}.
 
-% TODO takhle to dela napr. kanamori
+TODO def $\langle V_\kappa, \in, R  \rangle \models$ asdf
+
+TODO $S \then ZM \then ZM' \then ZM''$, neco jako mahlovy kardinaly, presunout do dane kapitoly
+
 
 % -----------------------------------------------
 \subsection{Reflecting Second-order Formulas}
@@ -1286,7 +981,7 @@ $\kappa$ is Mahlo by the following contradiction. If not, there would be a~$C$ c
 \end{comment}
 }
 
-TODO $\kappa$ is hyper-Mahlo iff $\kappa$ is inaccessible and the set $\{\lambda < \kappa : \lambda\mbox{ is Mahlo}\}$ is stationary in $\kappa$.
+TODO $\kappa$ is hyper-Mahlo iff $\kappa$ is inaccessible and the set $\{\lambda < \kappa : \lambda\mbox{ is Mahlo}\}$ is stationary in $\kappa$. to je to samy jako $\alpha$-Mahlo, ne?
 
 % TODO viz https://en.wikipedia.org/wiki/Mahlo_cardinal#Mahlo_cardinals_and_reflection_principles
 
@@ -1301,11 +996,82 @@ TODO $\kappa$ is hyper-Mahlo iff $\kappa$ is inaccessible and the set $\{\lambda
 % \newpage
 \subsection{Indescribality} % Indescribality and Weakly Compact Cardinals
 
-\
+$\alpha$-Mahlo are the extreme of regular fixed-point axioms, they are about as high as we can get via normal functions and stationary sets.
 
+Let's try a different strategy. Remember how we said that (Regular, Limit and) various Large cardinals are in a way all determined by being unreachable by a specific process of creating bigger cardinals from already available ones? 
+%TODO neco jako reflecting reflection (uz u Mahlovejch teda)
 TODO indescribable -- reflecting indescribability -- we can't reach $V$ by a $\Sigma_1^1$ formula, so there's some initial segment $V_\alpha$ that is also unreachable (we say indescribable) by the means of a ... formula
 
+
+Let's recall complete reflection theorem first, consider the following:
+\begin{equation}
+\mbox{For every sentence $\varphi$, there is a limit ordinal $\alpha$ such that }\varphi^V_\alpha \iff \varphi
+\end{equation}
+We may also require that $\alpha < \beta$, where $\beta$ is an arbitrary ordinal given.
+
+\
+
+%So far, we have considered individual formulas and examined what $V_\alpha$ is the first that 
+
+% TODO kanamori to dela s parametrem, asi to ma smysl
+% TODO ja zas vyse psal varphi vzdycky s x1...xn, ale TADY JE TO SENTENCE!
+For the exact definition of $\Pi^m_n$ and $\Sigma^m_n$ see \ref{def:analytical_hierarchy}
+
+\begin{definition}{($\Pi^m_n$-indescribable cardinal)}\label{def:pi_mn_indescribable}
+We say that $\kappa$ is $\Pi^m_n$-indescribable iff for any $\Pi^m_n$ sentence $\varphi$ such that $V_\kappa \models \varphi$ there is an $\alpha < \kappa$ such that $V_\alpha \models \varphi$
+\end{definition}
+\begin{definition}{($\Sigma^m_n$-indescribable cardinal)}\label{def:sigma_mn_indescribable}
+We say that $\kappa$ is $\Sigma^m_n$-indescribable iff for any $\Sigma^m_n$ sentence $\varphi$ such that $V_\kappa \models \varphi$ there is an $\alpha < \kappa$ such that $V_\alpha \models \varphi$
+\end{definition}
+
+\begin{lemma}
+Let $\kappa$ be a cardinal, the following holds for any $n \in \omega$. $\kappa$ is $\Pi^1_n$-indescribable iff $\kappa$ is $\Sigma^1_n+1$-indescribable
+\end{lemma}
+
+\begin{proof}
+The forward direction is obvious, we can always add a spare quantifier over a type 2 variable to turn a $\Pi^1_n$ formula $\varphi$ into a $\exists P \varphi$ which is thus a $\Sigma^1_n+1$ formula.\footnote{Note that unlike in previous sections, $\varphi$ is now a sentence so we don't have to worry whether $P$ is free in $\varphi$.}
+
+To prove the opposite direction, suppose that $V_\kappa \models \exists X \varphi(X)$ where $X$ is a type 2 variable and $\varphi$ is a $\Pi^1_n$ formula with one free variable of type 2. This means that there is a set $S \subseteq V_\kappa$ that is a witness of $\exists X \varphi(X)$, in other words, $\varphi(S)$ holds. We can replace every occurence of $X$ in $\varphi$ by a new predicate symbol $S$, this allows us to say that $\kappa$ is $\Pi^1_n$-indescribable (with respect to $\langle V_\kappa, \in, R, S \rangle$).
+\footnote{A different yet interesting approach is taken by Tate in \ref{Tait_constructingcardinals}. He states that for $n\geq 0$, a formula of order $\leq n$ is called a $\Pi^n_0$ and a $\Sigma^n_0$ formula. Then a $\Pi^n_{m+1}$ is a formula of form $\forall Y \psi(Y)$ where $\psi$ is a $\Sigma^n_m$ formula and $Y$ is a variable of type $n$. Finally, a $\Sigma^n_{m+1}$ is the negation of a $\Pi^n_m$ formula. So the above holds ad definitio.}
+\end{proof}
+
+The above lemma tells us that we as long as we stay in the realm of type 1 and type 2 variables, we only need to classify indescribable cardinals with respect to $\Pi^1_n$-indescribability.
+
+\begin{theorem}
+Let $\kappa$ be an ordinal. The following are equivalent.
+\bce[(i)]
+\item $\kappa$ is inaccessible
+\item $\kappa$ is $\Pi^1_0$-indescribable.
+\ece
+\end{theorem}
+
+Note that $\Pi^1_0$ formulas are those that contain zero unbound quantifiers over type-2 variables, they are in fact first-order formulas. We have already shown in \ref{theorem:inaccessible_models_zfc} that there is no way to reach an inaccesible cardinal via first-order formulas in $\sf{ZFC}$. We will now prove it again in for formal clarity.
+
+\begin{proof}
+TODO asi pridat alternativni definici nedosazitelnosti podle kan. 6.2?
+\end{proof}
+
+TODO nejaka veta ze kdyz jsou $\Pi^1_0$-indescribable, jsou i $\Pi^m_n$-indescribable pro $m \leq 1, n \leq 0$? Drake?
+
+The above theorem provides an easy way to show that every following large cardinal is also in inaccessible cardinal\footnote{That is because $\Pi^1_0$ formulas are included $\Pi^m_n$ formulas for $m \leq 1, n \leq 0$.}.
+
+
+\begin{definition}{(Extension property)}
+We say that a cardinal $\kappa$ has the \emph{extension property} iff for any $R \subseteq V_\kappa$ there is a~transitive set 
+$X \neq V_\kappa$ and an $S \subseteq X$ such that 
+$\langle V_\kappa, \in, R \rangle \prec \langle X, \in, S \rangle$
+\end{definition}
+
+TODO co to znamena?
+
+\begin{definition}{(Weakly compact cardinal)}
+We say that a cardinal $\kappa$ is \emph{weakly compact} iff it has the extension property.
+\end{definition}
+
+
 TODO co je "partition property"?
+
+TODO def $\kappa \then (\kappa)^2_2$?
 
 TODO pak dk. ekvivalenci
 
@@ -1339,6 +1105,11 @@ the because $2^{\lambda} \leq (\lambda^{+})^2$, we have $\kappa \leq (\lambda^{+
 \end{comment}
 }
 
+
+TODO asi nekde bude meritelny kardinal
+
+TODO viz Drake, Ch.9 par. 3 -- tam se rika ze kdyz $\kappa$ je meritelny kardinal, pak je $\kappa$ $\Pi^2_1$-nepopsatelny kardinal
+
 {\color{red}
 \begin{comment}
 
@@ -1348,7 +1119,7 @@ the because $2^{\lambda} \leq (\lambda^{+})^2$, we have $\kappa \leq (\lambda^{+
 Let $\kappa$ be a~weakly compact cardinal. Then for every stationary set $S \subset \kappa$ there is an uncountable regular cardinal $\lambda < \kappa$ such that the set $S \cap \lambda$ is stationary in $\lambda$.
 \end{theorem}
 \begin{proof}
-TODO
+TODO % WATT??
 \end{proof}
 
 \
@@ -1371,19 +1142,17 @@ $U \subseteq V_\kappa$ and $\varphi$ is a~Q sentence such that $\langle V_\kappa
 
 \
 
-TODO Plagiat -- prepsat a~vysvetlit
 
 TODO Jech str. 70 \cite{JechBook}
 
-{\color{red}
-\begin{comment}
 
-G{\"o}del–Bernays set theory, also known as Von Neumann–Bernays–G{\"o}del set theory is an axiomatic set theory that 
-explicitly talks about proper classes as well as sets, which allows it to be finitely axiomatizable, albeit our version stated below contains one schema. It is a~conservative extension of Zermalo–Fraenkel set theory. Using forcing, one can prove equiconsistency of BGC and ZFC.
-\newline
+% G{\"o}del–Bernays set theory, also known as Von Neumann–Bernays–G{\"o}del set theory is an axiomatic set theory that  explicitly talks about proper classes as well as sets, which allows it to be finitely axiomatizable, albeit our version stated below contains one schema. It is a~conservative extension of Zermalo–Fraenkel set theory. Using forcing, one can prove equiconsistency of BGC and ZFC. 
+
+\
  
-Bernays–G{\"o}del set theory contains two types of objects: proper classes and sets. The notion of set, usually denoted by a~lower case letter, is identical to set in ZF, whereas proper classes are usually denoted by upper case letters. The difference between the two is in a~fact, that 
-proper classes are not members of other classes, sets, on the other hand, have to be members of classes.
+ TODO popis
+% Bernays–G{\"o}del set theory contains two types of objects: proper classes and sets. The notion of set, usually denoted by a~lower case letter, is identical to set in ZF, whereas proper classes are usually denoted by upper case letters. The difference between the two is in a~fact, that 
+% proper classes are not members of other classes, sets, on the other hand, have to be members of classes.
 \begin{definition}(G{\"o}del–Bernay set theory)
 \bce[(i)]
 \item \emph{extensionality for sets}
@@ -1413,7 +1182,7 @@ proper classes are not members of other classes, sets, on the other hand, have t
 
 \item \emph{Foundation for classes}
 \begin{equation}
-\mbox{Each nonempty class is disjoint from each of its elements.}
+\mbox{Each non-empty class is disjoint from each of its elements.}
 \end{equation}
 
 \item \emph{Limitation of size for sets}
@@ -1425,13 +1194,16 @@ proper classes are not members of other classes, sets, on the other hand, have t
 \end{equation}
 \item \emph{Comprehension schema for classes}
 \begin{equation}
-\mbox{For any formula }\varphi\mbox{ with no quantifiers over classes, there is a~class A~such that }\forall x (x \in A \iff \varphi(x))
+\mbox{For an arbitrary formula }\varphi\mbox{ with no quantifiers over classes, there is a~class $A$~such that }\forall x (x \in A \iff \varphi(x))
 \end{equation}
 \ece
 \end{definition}
 %\newpage
 The first five axioms are identical to axioms in ZF. \newline
-Comprehension schema tells us, that proper classes are basically first-order predicates.
+Comprehension schema tells us that proper classes are basically first-order predicates.
+{\color{red}
+\begin{comment}
+
 % opsano !!!!!
 %Since {\sf GB}, G{\"o}del-Bernays' first-order theory with two sorts of variables (sets and classes), is finitely axiomatizable, there is no analogue of L{\'e}vy's theorem \ref{th:refl} provable in {\sf GB}. However if we go above the consistency strength of {\sf GB}, we can derive the existence of an inaccessible from such reflection (with a~second-order parameter).
 ...
@@ -1512,7 +1284,6 @@ TODO
 
 \subsection{Reflection and the constructible universe}
 
-
 TODO reflektovat muzeme jenom kardinaly konzistentni s V=L, proc?
 
 TODO Plagiat -- prepsat a~vysvetlit
@@ -1520,12 +1291,12 @@ TODO Plagiat -- prepsat a~vysvetlit
 $L$ was introduced by Kurt Gödel in 1938 in his paper \emph{The Consistency of the Axiom of Choice and of the Generalised Continuum Hypothesis} and denotes a~class of sets built recursively in terms of simpler sets, somewhat similar to Von Neumann universe $V$. Assertion of their equality, $V=L$, is called the \emph{axiom of constructibility}. The axiom implies GCH and therefore also AC and contradicts the existence of some of the large cardinals, our goal is to decide whether those introduced earlier are among them.
 
 On order to formally establish this class, we need to formalize the notion of definability first:
-{\color{red}
-\begin{comment}
-
 \begin{definition}[Definable sets]
 \begin{equation}
-Def(X) := \{\{{y | x }\in X \land \langle X, \in \rangle \models \varphi(y, z_1,\ldots,z_n) \} |\mbox{ }\varphi\mbox{ is a~first-order formula, }z_1,\ldots,z_n \in X \}
+\begin{gathered}
+Def(X) := \{\{{y | x }\in X \land \langle X, \in \rangle \models \varphi(y, z_1,\ldots,z_n) \} |\\
+\mbox{ }\varphi\mbox{ is a~first-order formula, }z_1,\ldots,z_n \in X \}
+\end{gathered}
 \end{equation}
 \end{definition}
 
@@ -1552,6 +1323,10 @@ L = \bigcup_{\alpha\in Ord} L_{\alpha}
 \ece
 \end{definition}
 
+
+{\color{red}
+\begin{comment}
+
 TODO Plagiat -- prepsat a~vysvetlit
 \begin{Fact}
 The reflection -- constructed as explained in the previous paragraph (!!! preformulovat !!!) -- with second-order parameters for higher-order formulas (even of transfinite type) does not yield transcendence over $L$.
@@ -1566,10 +1341,9 @@ TODO zduvodneni
 
 TODO kratka diskuse jestli refl implikuje transcendenci na L - polemika, nazor - V=L a~slaba kompaktnost a~dalsi
 
+TODO neco jako ze meritelny kardinal je nepopsatelny vys nez je hierarchie vsech tvrzeni o L?
 \
-
-TODO asi nekde bude meritelny kardinal
-\newpage
+%\newpage
 % =====================================================================================================================================
 %\section{Higher-order reflection} % preformulovat
 %TODO rict ze to je zobecneni a~nejaky dalsi uvodni veci

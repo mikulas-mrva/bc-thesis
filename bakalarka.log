@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.12.2)  11 MAY 2016 01:02
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.12.2)  12 MAY 2016 01:14
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -24,6 +24,7 @@ File: size12.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
 )
+(./00_headers.tex
 (/usr/local/texlive/2015/texmf-dist/tex/latex/jknapltx/mathrsfs.sty
 Package: mathrsfs 1996/01/01 Math RSFS package v1.0 (jk)
 \symrsfs=\mathgroup4
@@ -241,18 +242,18 @@ LaTeX Warning: Label `def:extensionality' multiply defined.
 )
 \openout1 = `bakalarka.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 122.
-LaTeX Font Info:    ... okay on input line 122.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 122.
-LaTeX Font Info:    ... okay on input line 122.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 122.
-LaTeX Font Info:    ... okay on input line 122.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 122.
-LaTeX Font Info:    ... okay on input line 122.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 122.
-LaTeX Font Info:    ... okay on input line 122.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 122.
-LaTeX Font Info:    ... okay on input line 122.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 120.
+LaTeX Font Info:    ... okay on input line 120.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 120.
+LaTeX Font Info:    ... okay on input line 120.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 120.
+LaTeX Font Info:    ... okay on input line 120.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 120.
+LaTeX Font Info:    ... okay on input line 120.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 120.
+LaTeX Font Info:    ... okay on input line 120.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 120.
+LaTeX Font Info:    ... okay on input line 120.
  (/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count121
@@ -300,11 +301,12 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
  [3
 
-]
+])
+(./01_introduction.tex
 (/usr/local/texlive/2015/texmf-dist/tex/latex/ucs/data/uni-32.def
 File: uni-32.def 2013/05/13 UCS: Unicode data U+2000..U+20FF
 )
-Overfull \hbox (3.88898pt too wide) in paragraph at lines 200--201
+Overfull \hbox (3.88898pt too wide) in paragraph at lines 29--30
 []\OT1/cmr/m/n/12 If God can end-lessly add a cu-bic foot to a stone{which He c
 an{then
  []
@@ -353,67 +355,99 @@ Underfull \hbox (badness 10000) in paragraph at lines 116--117
  []
 
 [9]
-Underfull \hbox (badness 10000) in paragraph at lines 145--146
+Underfull \hbox (badness 10000) in paragraph at lines 151--152
 
  []
 
-) [10] [11] [12] [13]
+)) [10] [11] [12] [13]
 
 Package amsfonts Warning: Obsolete command \bold; \mathbf should be used instea
-d on input line 460.
+d on input line 151.
 
 [14] [15] [16] [17] [18] [19]
-Overfull \hbox (53.58429pt too wide) in paragraph at lines 676--677
+Overfull \hbox (53.58429pt too wide) in paragraph at lines 367--368
 []\OT1/cmr/m/n/12 Also, no-tice how re-flec-tion can be used in ways sim-i-lar 
 to up-ward L^^?owenheim{Skolem
  []
 
 [20] [21]
-Overfull \hbox (12.21906pt too wide) in paragraph at lines 709--711
+Overfull \hbox (12.21906pt too wide) in paragraph at lines 400--402
 []\OT1/cmr/m/it/12 (Function) We say that a first-order for-mula $\OML/cmm/m/it
 /12 '\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x; y; u[]; [] ; u[]\OT1/cmr/m/n/12 )$
  []
 
 [22]
-Overfull \hbox (217.70538pt too wide) detected at line 765
+Overfull \hbox (217.70538pt too wide) detected at line 456
 [] []
  []
 
 [23]
-Underfull \hbox (badness 10000) in paragraph at lines 819--820
+
+LaTeX Warning: Citation `KanBook' on page 24 undefined on input line 495.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 514--515
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 829--830
+Underfull \hbox (badness 10000) in paragraph at lines 524--525
 
  []
 
 [24] [25] [26]
-Underfull \hbox (badness 10000) in paragraph at lines 1005--1006
+Underfull \hbox (badness 10000) in paragraph at lines 700--701
 
  []
 
 [27]
-Overfull \hbox (11.38196pt too wide) in paragraph at lines 1050--1051
+Overfull \hbox (11.38196pt too wide) in paragraph at lines 745--746
 []\OT1/cmr/m/n/12 Because $\OML/cmm/m/it/12 ^^T$ \OT1/cmr/m/n/12 is in-ac-ces-s
 i-ble and there-fore reg-u-lar, the num-ber of $\OML/cmm/m/it/12 ^^L$\OT1/cmr/m
 /n/12 -inaccessibles
  []
 
-[28] [29] [30] [31] [32] [33] (./bakalarka.bbl) [34] (./bakalarka.aux)
+[28] [29] [30] [31]
+Overfull \hbox (14.3742pt too wide) in paragraph at lines 1020--1022
+[]\OT1/cmr/m/it/12 ($\OT1/cmr/m/n/12 ^^E[]$\OT1/cmr/m/it/12 -indescribable car-
+di-nal)[] We say that $\OML/cmm/m/it/12 ^^T$ \OT1/cmr/m/it/12 is $\OT1/cmr/m/n/
+12 ^^E[]$\OT1/cmr/m/it/12 -indescribable
+ []
+
+
+Overfull \hbox (13.72977pt too wide) in paragraph at lines 1023--1025
+[]\OT1/cmr/m/it/12 ($\OT1/cmr/m/n/12 ^^F[]$\OT1/cmr/m/it/12 -indescribable car-
+di-nal)[] We say that $\OML/cmm/m/it/12 ^^T$ \OT1/cmr/m/it/12 is $\OT1/cmr/m/n/
+12 ^^F[]$\OT1/cmr/m/it/12 -indescribable
+ []
+
+
+LaTeX Warning: Reference `Tait_constructingcardinals' on page 32 undefined on i
+nput line 1035.
+
+[32] [33]
+Overfull \hbox (188.15964pt too wide) detected at line 1198
+[]\OML/cmm/m/it/12 '[]\OMS/cmsy/m/n/12 8\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 (\OML
+/cmm/m/it/12 x \OMS/cmsy/m/n/12 2 \OML/cmm/m/it/12 A \OMS/cmsy/m/n/12 $ \OML/cm
+m/m/it/12 '\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 ))
+ []
+
+[34] [35] [36] (./bakalarka.bbl) [37] (./bakalarka.aux)
+
+LaTeX Warning: There were undefined references.
+
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 5141 strings out of 493089
- 64942 string characters out of 6134842
- 135410 words of memory out of 5000000
- 8549 multiletter control sequences out of 15000+600000
+ 5152 strings out of 493089
+ 65153 string characters out of 6134842
+ 135477 words of memory out of 5000000
+ 8554 multiletter control sequences out of 15000+600000
  22704 words of font info for 84 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 34i,15n,43p,1856b,591s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 36i,15n,43p,1856b,591s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 </usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb
@@ -443,10 +477,10 @@ fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2015/texmf-dist/f
 onts/type1/public/amsfonts/cm/cmti8.pfb></usr/local/texlive/2015/texmf-dist/fon
 ts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2015/texmf-dist
 /fonts/type1/public/rsfs/rsfs10.pfb>
-Output written on bakalarka.pdf (35 pages, 416776 bytes).
+Output written on bakalarka.pdf (38 pages, 432085 bytes).
 PDF statistics:
- 233 PDF objects out of 1000 (max. 8388607)
- 165 compressed objects within 2 object streams
+ 245 PDF objects out of 1000 (max. 8388607)
+ 174 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
