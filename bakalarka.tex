@@ -490,9 +490,15 @@ TODO podle Levyho
 \end{proof}
 
 \subsection{A Model-Theoretic Intermezzo}
-This is a small notational intermezzo. Reflection theorems asdasd Tarski Berkley model-theoretic methods in set theory.
+% This is a small intermezzo to clarify notation for the following chapter, which will use some basic model theory.
 
-This notation is used for example in \cite{KanBook}.
+Unless stated otherwise, we will work in structures for the language $L_\in$ of the form $\langle M, \in \cap (M \times M) \rangle$ where $M$ is a domain, usually a set\footnote{Unless explicitly stated otherwise. It might as well be a class, but in that case, formally establishing a satisfcation relation is impossible. This problem would be dealt with individually for each situation occuring.}. This structure will be notated either as $\langle M, \in \rangle$ or just $M$\footnote{In situations like $M \models \varphi$, $\varphi$ being a first-order formula.}. If additional unary predicates are required in the language, $\langle M, \in \cap (M \times M), R_1, \ldots, R_n \rangle$ is written as $\langle M, \in, R_1, \ldots, R_n \rangle $ for brevity.
+
+The satiscation relation $\models$ for first-order formulas is defined as usual.
+
+% . Reflection theorems asdasd Tarski Berkley model-theoretic methods in set theory.
+
+%This notation is used for example in \cite{KanBook}.
 
 TODO def $\langle V_\kappa, \in, R  \rangle \models$ asdf
 
@@ -1051,10 +1057,24 @@ Note that $\Pi^1_0$ formulas are those that contain zero unbound quantifiers ove
 TODO asi pridat alternativni definici nedosazitelnosti podle kan. 6.2?
 \end{proof}
 
-TODO nejaka veta ze kdyz jsou $\Pi^1_0$-indescribable, jsou i $\Pi^m_n$-indescribable pro $m \leq 1, n \leq 0$? Drake?
+TODO nejaka veta ze kdyz jsou $\Pi^1_0$-indescribable, jsou i $\Pi^m_n$-indescribable pro $m \leq 1, n \leq 0$? Drake? Adding spare quantifiers?
 
 The above theorem provides an easy way to show that every following large cardinal is also in inaccessible cardinal\footnote{That is because $\Pi^1_0$ formulas are included $\Pi^m_n$ formulas for $m \leq 1, n \leq 0$.}.
 
+\subsection{Weakly Compact Cardinal}
+
+We will examine another large cardinal, one that is defined by many different properties, while we will mention three of them\footnote{(partition, extension, pi11-indesc.?)}, proving their mutual equivalence is out of our scope of interest.
+
+%Weakly Compact Cardinal was first described by Erdős and Tarski in \cite{erdos_tarski_61}
+The notion of weak compactness comes from Tarski's work with infinitary languages and his subsequent generalisation of compactness for those languages. We're not interested in particular details on how exactly is the language constructed, so let's skim though it briefly, just to know where this cardinal's name comes from. For a bit more thorough description and references, see \cite{KanamoriBook}.
+
+Let's suppose that $L_{\lambda, \mu}$ is a language in which formulas are allowed to contain conjunctions and disjunctions of $\alpha$ subformulas for any $\alpha < \lambda$ and quantifiers may quantify over $\beta$ variables for any $\beta < \mu$. Formulas are allowed to contain less than $\mu$ free variables and the language itself contains $max(\{\lambda, \mu\})$ variables. Predicate and function symbols as well as constants are finitary\footnote{In a sense of "the same as in finitary first-order logic"}. Now we can say a collection of $L_{\lambda, \mu}$-formulas is \emph{satisfiable} iff it has a model\footnote{With conjunction, disjuction and quantification interpreted accordingly.} and it is $\kappa$\emph{-satisfiable} iff every collection of formulas of cardinality less than $\kappa$ formulas is satisfiable. This allows us to state the original definition of a weakly compact cardinal.
+
+\begin{definition}
+An uncountable cardinal $\kappa$ is weakly compact iff any collection of $L_{\kappa, \kappa}$ sentences using at most $\kappa$ non-logical symbols,if $\kappa$-satisfiable, is satisfiable.
+\end{definition}
+
+Now that we know why a \emph{Weakly compact cardinal} is weakly compact, let's state a definition we will actually use.
 
 \begin{definition}{(Extension property)}
 We say that a cardinal $\kappa$ has the \emph{extension property} iff for any $R \subseteq V_\kappa$ there is a~transitive set 
@@ -1105,15 +1125,15 @@ the because $2^{\lambda} \leq (\lambda^{+})^2$, we have $\kappa \leq (\lambda^{+
 \end{comment}
 }
 
-
+\subsection{Measurable cardinal}
 TODO asi nekde bude meritelny kardinal
 
 TODO viz Drake, Ch.9 par. 3 -- tam se rika ze kdyz $\kappa$ je meritelny kardinal, pak je $\kappa$ $\Pi^2_1$-nepopsatelny kardinal
 
+TODO vysledek o L: \cite{scott_measurable_constructible}.
+
 {\color{red}
 \begin{comment}
-
-
 % balcar - stepanek strana 314, veta 5.10.
 \begin{theorem}\label{th:refl_weakly_compact}
 Let $\kappa$ be a~weakly compact cardinal. Then for every stationary set $S \subset \kappa$ there is an uncountable regular cardinal $\lambda < \kappa$ such that the set $S \cap \lambda$ is stationary in $\lambda$.
@@ -1123,7 +1143,6 @@ TODO % WATT??
 \end{proof}
 
 \
-
 
 \begin{definition}[Indescribability]
 For Q either $\Pi^m_n$ or $\Sigma^m_n$\newline
@@ -1201,6 +1220,8 @@ TODO Jech str. 70 \cite{JechBook}
 %\newpage
 The first five axioms are identical to axioms in ZF. \newline
 Comprehension schema tells us that proper classes are basically first-order predicates.
+
+TODO Reflexe!!!
 {\color{red}
 \begin{comment}
 
@@ -1301,7 +1322,7 @@ Def(X) := \{\{{y | x }\in X \land \langle X, \in \rangle \models \varphi(y, z_1,
 \end{definition}
 
 Now we can recursively build $L$.
-\begin{definition}[The Constructible universe\newline]
+\begin{definition}{(The Constructible universe)}\\
 \bce[(i)]
 \item
 \begin{equation}
@@ -1342,7 +1363,9 @@ TODO zduvodneni
 TODO kratka diskuse jestli refl implikuje transcendenci na L - polemika, nazor - V=L a~slaba kompaktnost a~dalsi
 
 TODO neco jako ze meritelny kardinal je nepopsatelny vys nez je hierarchie vsech tvrzeni o L?
+
 \
+
 %\newpage
 % =====================================================================================================================================
 %\section{Higher-order reflection} % preformulovat

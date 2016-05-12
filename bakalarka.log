@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.12.2)  12 MAY 2016 01:14
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.12.2)  12 MAY 2016 05:05
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -382,40 +382,36 @@ Overfull \hbox (217.70538pt too wide) detected at line 456
  []
 
 [23]
-
-LaTeX Warning: Citation `KanBook' on page 24 undefined on input line 495.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 514--515
+Underfull \hbox (badness 10000) in paragraph at lines 520--521
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 524--525
+Underfull \hbox (badness 10000) in paragraph at lines 530--531
 
  []
 
 [24] [25] [26]
-Underfull \hbox (badness 10000) in paragraph at lines 700--701
+Underfull \hbox (badness 10000) in paragraph at lines 706--707
 
  []
 
 [27]
-Overfull \hbox (11.38196pt too wide) in paragraph at lines 745--746
+Overfull \hbox (11.38196pt too wide) in paragraph at lines 751--752
 []\OT1/cmr/m/n/12 Because $\OML/cmm/m/it/12 ^^T$ \OT1/cmr/m/n/12 is in-ac-ces-s
 i-ble and there-fore reg-u-lar, the num-ber of $\OML/cmm/m/it/12 ^^L$\OT1/cmr/m
 /n/12 -inaccessibles
  []
 
 [28] [29] [30] [31]
-Overfull \hbox (14.3742pt too wide) in paragraph at lines 1020--1022
+Overfull \hbox (14.3742pt too wide) in paragraph at lines 1026--1028
 []\OT1/cmr/m/it/12 ($\OT1/cmr/m/n/12 ^^E[]$\OT1/cmr/m/it/12 -indescribable car-
 di-nal)[] We say that $\OML/cmm/m/it/12 ^^T$ \OT1/cmr/m/it/12 is $\OT1/cmr/m/n/
 12 ^^E[]$\OT1/cmr/m/it/12 -indescribable
  []
 
 
-Overfull \hbox (13.72977pt too wide) in paragraph at lines 1023--1025
+Overfull \hbox (13.72977pt too wide) in paragraph at lines 1029--1031
 []\OT1/cmr/m/it/12 ($\OT1/cmr/m/n/12 ^^F[]$\OT1/cmr/m/it/12 -indescribable car-
 di-nal)[] We say that $\OML/cmm/m/it/12 ^^T$ \OT1/cmr/m/it/12 is $\OT1/cmr/m/n/
 12 ^^F[]$\OT1/cmr/m/it/12 -indescribable
@@ -423,16 +419,21 @@ di-nal)[] We say that $\OML/cmm/m/it/12 ^^T$ \OT1/cmr/m/it/12 is $\OT1/cmr/m/n/
 
 
 LaTeX Warning: Reference `Tait_constructingcardinals' on page 32 undefined on i
-nput line 1035.
+nput line 1041.
 
-[32] [33]
-Overfull \hbox (188.15964pt too wide) detected at line 1198
+[32] [33] [34]
+Overfull \hbox (188.15964pt too wide) detected at line 1214
 []\OML/cmm/m/it/12 '[]\OMS/cmsy/m/n/12 8\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 (\OML
 /cmm/m/it/12 x \OMS/cmsy/m/n/12 2 \OML/cmm/m/it/12 A \OMS/cmsy/m/n/12 $ \OML/cm
 m/m/it/12 '\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 ))
  []
 
-[34] [35] [36] (./bakalarka.bbl) [37] (./bakalarka.aux)
+
+Underfull \hbox (badness 10000) in paragraph at lines 1322--1324
+
+ []
+
+[35] [36] [37] (./bakalarka.bbl) [38] (./bakalarka.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -441,10 +442,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 5152 strings out of 493089
- 65153 string characters out of 6134842
+ 5151 strings out of 493089
+ 65144 string characters out of 6134842
  135477 words of memory out of 5000000
- 8554 multiletter control sequences out of 15000+600000
+ 8553 multiletter control sequences out of 15000+600000
  22704 words of font info for 84 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  36i,15n,43p,1856b,591s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -477,10 +478,10 @@ fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2015/texmf-dist/f
 onts/type1/public/amsfonts/cm/cmti8.pfb></usr/local/texlive/2015/texmf-dist/fon
 ts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2015/texmf-dist
 /fonts/type1/public/rsfs/rsfs10.pfb>
-Output written on bakalarka.pdf (38 pages, 432085 bytes).
+Output written on bakalarka.pdf (39 pages, 436287 bytes).
 PDF statistics:
- 245 PDF objects out of 1000 (max. 8388607)
- 174 compressed objects within 2 object streams
+ 248 PDF objects out of 1000 (max. 8388607)
+ 176 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

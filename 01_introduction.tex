@@ -1,0 +1,145 @@
+\section{Introduction}\label{sec:introduction}
+
+%Reflection principle is a kind of a theorem scheme stating the following:
+% taky debilni formulace, ale co uz
+\subsection{Motivation and Origin}
+\begin{displayquote}
+The Universe of sets cannot be uniquely characterized (i. e. distinguished from all its initial elements) by any internal structural property of the membership relation in it, which is expressible in any logic of finite of transfinite type, including infinitary logics of any cardinal order.
+\end{displayquote}
+\rightline{{\rm --- Kurt Gödel \cite{GodelWang}}}
+
+To understand why do need reflection in the first place, let's think about infinity for a moment. In the intuitive sense, infinity is an upper limit of all numbers. But for centuries, this was merely a philosophical concept, closely bound to religious and metaphysical way of thinking, 
+% aquinas -- summa, question 7
+considered separate from numbers used for calculations or geometry. It was a rather vague concept. 
+% neco o nekonecnech?
+In ancient Greece, Aristotle's response to famous Zeno's paradoxes introduced the distinction between actual and potential infinity.
+% zdroje
+% http://www.iep.utm.edu/infinite/#SH1a
+% (See Aristotle’s Physics, Book III, for his account of infinity.)
+% viz A.W.Moore The Infinite -- je tam nejak reflexe?
+He argued, that potential infinity is (in today's words) well defined, as opposed to actual infinity, which remained a vague incoherent concept. He didn't think it's possible for infinity to inhabit a bounded place in space or time, rejecting Zeno's thought experiments as a whole. 
+% co Archimedes?
+Aristotle's thoughts shaped western thinking partly due to Aquinas, who himself believed actual infinity to be more of a~metaphysical concept for describing God than a~mathematical property attributed to any other entity. In his Summa Theologica \footnote{Part I, Question 7, Article 3, Reply to Objection 1} he argues:
+\begin{displayquote}
+A geometrician does not need to assume a~line actually infinite, but takes some actually finite line, from which he subtracts whatever he finds necessary; which line he calls infinite.
+\end{displayquote} % formalni citace?
+
+Less than hundred years later, Gregory of Rimini wrote
+\begin{displayquote}
+If God can endlessly add a~cubic foot to a~stone–which He can–then He can create an infinitely big stone. For He need only add one cubic foot at some time, another half an hour later, another a~quarter of an hour later than that, and so on ad infinitum. He would then have before Him an infinite stone at the end of the hour.
+\end{displayquote}
+% citace (Moore 2001, 53)  "anti-Aristotelian backlash among the medievals"
+Which is basically a~Zeno's Paradox made plausible with God being the actor. In contrast to Aquinas' position, Gregory of Rimini theoretically constructs an object with actual infinite magnitude that is essentially different from God.
+
+\
+
+% byl prvni cantor? jak presne to definoval Leibniz a~Newton?
+Even later, in the 17th century, pushing the property of infinitness from the Creator to his creation, Nature, Leibniz wrote to Foucher in 1962:
+% citace? zdroj: http://www.humanities.mcmaster.ca/~rarthur/papers/LeibCant.pdf
+\begin{displayquote}
+I am so in favor of the actual infinite that instead of admitting that Nature abhors
+it, as is commonly said, I hold that Nature makes frequent use of it everywhere,
+in order to show more effectively the perfections of its Author. Thus I believe that
+there is no part of matter which is not, I do not say divisible, but actually divided;
+and consequently the least particle ought to be considered as a~world full of an
+infinity of different creatures.
+\end{displayquote}
+But even though he used potential infinity in what would become foundations of modern Calculus and argued for actual infinity in Nature, Leibniz refused the existence of an infinite, thinking that Galileo's Paradoxon\footnote{zneni galileova paradoxu} is in fact a~contradiction. The so called Galileo's Paradoxon is an observation Galileo Galilei made in his final book "Discourses and Mathematical Demonstrations Relating to Two New Sciences".
+He states that if all numbers are either squares and non–squares, there seem to be less squares than there is all numbers. On the other hand, every number can be squared and every square has it's square root. Therefore, there seem to be as many squares as there are all numbers. Galileo concludes, that the idea of comparing sizes makes sense only in the finite realm.
+\begin{displayquote}
+Salviati: So far as I see we can only infer that the totality of all numbers is infinite, that the number of squares is infinite, and that the number of their roots is infinite; neither is the number of squares less than the totality of all the numbers, nor the latter greater than the former; and finally the attributes "equal," "greater," and "less," are not applicable to infinite, but only to finite, quantities. When therefore Simplicio introduces several lines of different lengths and asks me how it is possible that the longer ones do not contain more points than the shorter, I answer him that one line does not contain more or less or just as many points as another, but that each line contains an infinite number.
+\end{displayquote}
+%citace?  Galilei, Galileo (1954) [1638]. Dialogues concerning two new sciences. Transl. Crew and de Salvio. New York: Dover. pp. 31–33.
+% btw: http://www.humanities.mcmaster.ca/~rarthur/papers/Lairam.pdf  Leibniz’s Actual Infinite in Relation to his Analysis of Matter
+Leibniz insists in part being smaller than the whole saying
+\begin{displayquote}
+Among numbers there are infinite roots, infinite squares, infinite cubes. Moreover, there are
+as many roots as numbers. And there are as many squares as roots. Therefore there are as
+many squares as numbers, that is to say, there are as many square numbers as there are
+numbers in the universe. Which is impossible. Hence it follows either that in the infinite the
+whole is not greater than the part, which is the opinion of Galileo and Gregory of St.
+Vincent, and which I cannot accept; or that infinity itself is nothing, i.e. that it is not one and
+not a~whole. % (LoC 9) je co?
+\end{displayquote}
+% viz G.W. Leibniz, Interrelations between Mathematics and Philosophy
+
+TODO  Hegel--strucne?
+
+TODO Cantor
+
+TODO mene teologie, vice matematiky
+
+TODO definovat pojmy (trida etc)
+
+TODO neni V v nejakem smyslu porad potencialni nekonecno, zatimco mnoziny vetsi nez omega jsou aktualni? nebo jsou potencialni protoze se staveji pres indukci, od spoda.
+
+In his work, he defined transfinite numbers to extend existing natural number % existovala fakt? kdo to udelal? asi peano
+structure so it contains more objects that behave like natural numbers and are based on an object (rather a~meta-object) that doesn't explicitly exist in the structure, but is closely related to it. This is the first instance of reflection. 
+This paper will focus on taking this principle a~step further, extending Cantor's (or Zermelo–Fraenkel's, to be more precise) universe so it includes objects so big, they could be considered the universe itself, in a~certain sense. % dost vagni?
+
+
+TODO dal asi smazat
+
+
+% nemuzeme nikdy zachytit cele univerzum
+% snaha udelat to stala za vznikem pojmu nekonecno, naivni teorie mnozin i jejich formalizaci
+The original idea behind reflection principles probably comes from what could be informally called \textquote{universality of the universe}.
+The effort to precisely describe the universe of sets was natural and could be regarded as one of the impulses for formalization of naive set theory.
+If we try to express the universe as a~set $\{x  |  x = x\}$, a~paradox appears, because either our set is contained in itself and therefore is contained in a~set (itself again), which contradicts the intuitive notion of a~universe that contains everything but is not contained itself.
+
+TODO ???
+
+If there is an object containing all sets, it must not be a~set itself. The notion of class seems inevitable. Either directly the ways for example the Bernays–Gödel set theory, we will also discuss later in this paper, does in, or on a~meta–level like the Zermelo–Fraenkel set theory, that doesn't refer to them in the axioms but often works with the notion of a~universal class.
+duet
+Another obstacle of constructing a~set of all sets comes from Georg Cantor, who proved that the set of all subsets of a~set (let $x$ be the set and $\power (x)$ its powerset) is strictly larger that $x$. That would turn every aspiration to finally establish an universal set into a~contradictory infinite regression.\footnote{An intuitive analogy of this \emph{reductio ad infinitum} is the status of $\omega$, which was originally thought to be an unreachable absolute, only to become starting point of Cantor's hierarchy of sets growing beyond all boundaries around the end of the $19^{th}$ century}. We will use $V$ to denote the class of all sets. %Riemann!
+%\newpage
+From previous thoughts we can easily argue, that it is impossible to construct a~property that holds for $V$ and no set and is neither paradoxical like $\{x  |  x = x\}$ nor trivial. Previous observation can be transposed to a~rather naive formulation of the reflection principle:
+
+
+\
+
+$\emph{Reflection}$ Any property which holds in $V$ already holds in some initial segment of $V$. 
+
+\
+
+To avoid vagueness of the term "property", we could informally reformulate the above statement into a~schema: 
+
+\
+
+For every first-order formula\footnote{this also works for finite sets of formulas \cite[p.~168]{JechBook}} $\varphi$ holds in $V \iff \varphi$ holds in some initial segment of $V$.
+
+\
+
+Interested reader should note that this is a~theorem scheme rather than a~single theorem. \footnote{If there were a~single theorem stating "for any formula $\varphi$ that holds in $V$ there is an initial segment of $V$ where $\varphi$ also holds", we would obtain the following contradiction with the second G{\"o}del's theorem: In ZFC, any finite group of axioms of ZFC holds in some initial segment of the universe. If we take the largest of those initial segments it is still strictly smaller than the universe and thus we have, via compactness, constructed a~model of ZFC within ZFC. That is, of course a~harsh contradiction. This also leads to an elegant way to prove that ZFC is not finitely axiomatizable.}
+
+%Reflection is, among others, a~tool for constructing models of finitely axiomatizable theories within stronger frameworks of proving impossibility thereof. ?!
+
+\subsection{A few historical remarks on reflection}\label{sec:History}  % mozna reflection itself?
+% co motivace? (jako treba ze kdyz existuje inaccessible cardinal tak je ZFC relativne konzistentni, protoze $V_\kappa$ je jeji model)
+% viz kanamori
+% jak to bylo s tim Godelem?
+% nejdriv Montague ukazal ze ZFC neni konecne axiomatizovatelna "in a~strong sense"
+%The first notion of reflection in our sense was formally stated and proved as a~theorem of ZF by Azriel L{\'e}vy in his 1960 article \emph{Axiomatic schemata of strong infinity in axiomatic set theory}\cite{Levy60a}. Only a~year later, this was followed by Richard Montague's \emph{Fraenkel's addition to the axioms of Zermelo}.
+ %citace?
+ % konecna axiomatizovatelnost? reflexe spolu se 2. Godelovou vetou, ~Montague
+ 
+ 
+ % motivace ke kardinalum:
+ % velke kardinaly vznikly v podstate reflektovanim zajimavych vlastnosti absolutniho nekonecna, mnoho z nich ma i omega
+ % popis vyvoje axiomu nekonecna: zadny->nejaky->silnejsi??
+Reflection made its first in set-theoretical appearance in G{\"o}del's proof of GCH in L  (citace Kanamori ? Lévy and set theory), but it was around even earlier as a~concept. G{\"o}del himself regarded it as very close to Russel's reducibility axiom (an earlier equivalent of the axiom schema of Zermelo's separation). Richard Montague then studied reflection properties as a~tool for verifying that Replacement is not finitely axiomatizable (citace?). a~few years later Lévy proved in \cite{Levy60a} the equivalence of reflection with Axiom of infinity together with Replacement in proof we shall examine closely in chaper 2.
+
+\
+
+TODO co dal? recent results?
+
+\subsection{Reflection in Platonism and Structuralism}
+TODO cite "reflection in a structuralist setting"
+
+TODO veci o tom, ze reflexe je ok protoze reflektuje veci ktere objektivne plati, protoze plati pro V ...
+
+TODO souvislost s kompaktnosti, hranice formalich systemu nebo alespon ZFC
+
+\subsection{Notation and terminology}
+\input{definice.tex}
+
