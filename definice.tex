@@ -89,16 +89,16 @@ Vypsat axiomy ZFC a jake formulace pouzivam\\
 \end{equation}
 \end{definition}
 
+\begin{definition}{(\emph{Infinity})}\label{def:infinity}\\
+\begin{equation}
+\emph{Infinity} \iff \exists x (\exists y (y \in x)\ \&\ \forall y(y \in x \then y+1 \in x))
+\end{equation}
+\end{definition}
+
 \begin{definition}{(\emph{Specification})}\label{def:specification}\\
 The following is a schema for every first-order formula $\varphi$.
 \begin{equation}
 \emph{Specification} \iff \forall x \exists y \forall z \, ( z \in y \iff ( z \in x \& \varphi(z, x)))
-\end{equation}
-\end{definition}
-
-\begin{definition}{(\emph{Infinity})}\label{def:infinity}\\
-\begin{equation}
-\emph{Infinity} \iff \exists x (\exists y (y \in x)\ \&\ \forall y(y \in x \then y+1 \in x))
 \end{equation}
 \end{definition}
 
@@ -139,7 +139,16 @@ TODO
 
 \
 
+TODO jak se vyrobi separation z replacementu?
+
 TODO definice druhoradoveho splnovani (nebo to vyhod)
+
+\begin{lemma}\label{lemma:delta_0_absolute}
+$\delta_0$ formulas are absolute in transitive sets, in other words, let $\varphi$ be a first-order $\delta_0$ formula and let $M$ be a transitive class.
+\begin{equation}
+\varphi \iff \varphi^M
+\end{equation}
+\end{lemma}
 
 \begin{definition}{(Analytical hierarchy of formulas)}\\
 \label{def:analytical_hierarchy}
@@ -155,6 +164,8 @@ ASD
 \end{definition}
 
 \
+
+
 
 Asi vsechno budeme delat v ZFC, nic bychom neziskali, pokud ne.
 

@@ -490,15 +490,9 @@ TODO podle Levyho
 \end{proof}
 
 \subsection{A Model-Theoretic Intermezzo}
-% This is a small intermezzo to clarify notation for the following chapter, which will use some basic model theory.
+This is a small notational intermezzo. Reflection theorems asdasd Tarski Berkley model-theoretic methods in set theory.
 
-Unless stated otherwise, we will work in structures for the language $L_\in$ of the form $\langle M, \in \cap (M \times M) \rangle$ where $M$ is a domain, usually a set\footnote{Unless explicitly stated otherwise. It might as well be a class, but in that case, formally establishing a satisfcation relation is impossible. This problem would be dealt with individually for each situation occuring.}. This structure will be notated either as $\langle M, \in \rangle$ or just $M$\footnote{In situations like $M \models \varphi$, $\varphi$ being a first-order formula.}. If additional unary predicates are required in the language, $\langle M, \in \cap (M \times M), R_1, \ldots, R_n \rangle$ is written as $\langle M, \in, R_1, \ldots, R_n \rangle $ for brevity.
-
-The satiscation relation $\models$ for first-order formulas is defined as usual.
-
-% . Reflection theorems asdasd Tarski Berkley model-theoretic methods in set theory.
-
-%This notation is used for example in \cite{KanBook}.
+This notation is used for example in \cite{KanBook}.
 
 TODO def $\langle V_\kappa, \in, R  \rangle \models$ asdf
 
@@ -608,7 +602,8 @@ The following are equivalent:
 \begin{proof}
 Let's first prove that if $\kappa$ is inaccessible, it is a~model of $\sf{ZFC}$. We will do that by verifying the axioms of $\sf{ZFC}$ just like Kanamori does it in in \cite[1.2]{KanamoriBook} and Drake in \cite[Chapter 4]{DrakeBook}. 
 \bce[(i)]
-\item \emph{Extensionality}:
+\item \emph{Extensionality}:\\
+(see \ref{def:extensionality})
 \begin{equation}
 V_\kappa \models \forall x, y(\forall z (z \in x \iff z \in y) \then x = y) 
 \end{equation}
@@ -620,7 +615,8 @@ But that comes from transitivity. If $x$ and $y$ are in $V_\kappa$ their members
 
 \
 
-\item \emph{Foundation}:
+\item \emph{Foundation}:\\
+(see \ref{def:foundation})
 \begin{equation}
 V_\kappa \models \forall x (\exists z (z \in x) \then \exists z (z \in x\ \&\ \forall u \neg (u \in z\ \&\ u \in x)))
 \end{equation}
@@ -628,7 +624,8 @@ The argument for \emph{Foundation} is almost identical to the one for \emph{Exte
 
 \
 
-\item \emph{Powerset}:
+\item \emph{Powerset}:\\
+(see \ref{def:powerset})
 \begin{equation}
 V_\kappa \models \forall x \exists y \forall z (z \subseteq x \then z \in y).
 \end{equation}
@@ -636,7 +633,8 @@ If we take $x$, an element of $V_\kappa$, $\power(x)$ has to be an element of $V
 
 \
 
-\item \emph{Pairing}:
+\item \emph{Pairing}:\\
+(see \ref{def:pairing})
 \begin{equation}
 V_\kappa \models \forall x, y \exists z (x \in z \land y \in z).
 \end{equation}
@@ -644,7 +642,8 @@ V_\kappa \models \forall x, y \exists z (x \in z \land y \in z).
 
 \
 
-\item \emph{Union}
+\item \emph{Union}:\\
+(see \ref{def:union})
 \begin{equation}
 V_\kappa \models \forall x \,\exists y \, \forall z\, \forall w ((w \in z \land z \in x) \then w \in y).
 \end{equation}
@@ -656,7 +655,8 @@ Since $V_\kappa$ is transitive, if $x \in V_\kappa$, all of its elements as well
 
 \
 
-\item \emph{Replacement, Infinity}
+\item \emph{Replacement, Infinity}:\\
+(see \ref{def:replacement}, \ref{def:infinity})\\
 We know that those hold from \ref{levy_equivalence_contemporary}.
 \ece
 \
@@ -1057,24 +1057,10 @@ Note that $\Pi^1_0$ formulas are those that contain zero unbound quantifiers ove
 TODO asi pridat alternativni definici nedosazitelnosti podle kan. 6.2?
 \end{proof}
 
-TODO nejaka veta ze kdyz jsou $\Pi^1_0$-indescribable, jsou i $\Pi^m_n$-indescribable pro $m \leq 1, n \leq 0$? Drake? Adding spare quantifiers?
+TODO nejaka veta ze kdyz jsou $\Pi^1_0$-indescribable, jsou i $\Pi^m_n$-indescribable pro $m \leq 1, n \leq 0$? Drake? Obracene! $\Pi^m_n$-indescribable jsou zaroven $\Pi^a_b$-indescribable pro $a < m, b < n$.
 
 The above theorem provides an easy way to show that every following large cardinal is also in inaccessible cardinal\footnote{That is because $\Pi^1_0$ formulas are included $\Pi^m_n$ formulas for $m \leq 1, n \leq 0$.}.
 
-\subsection{Weakly Compact Cardinal}
-
-We will examine another large cardinal, one that is defined by many different properties, while we will mention three of them\footnote{(partition, extension, pi11-indesc.?)}, proving their mutual equivalence is out of our scope of interest.
-
-%Weakly Compact Cardinal was first described by Erdős and Tarski in \cite{erdos_tarski_61}
-The notion of weak compactness comes from Tarski's work with infinitary languages and his subsequent generalisation of compactness for those languages. We're not interested in particular details on how exactly is the language constructed, so let's skim though it briefly, just to know where this cardinal's name comes from. For a bit more thorough description and references, see \cite{KanamoriBook}.
-
-Let's suppose that $L_{\lambda, \mu}$ is a language in which formulas are allowed to contain conjunctions and disjunctions of $\alpha$ subformulas for any $\alpha < \lambda$ and quantifiers may quantify over $\beta$ variables for any $\beta < \mu$. Formulas are allowed to contain less than $\mu$ free variables and the language itself contains $max(\{\lambda, \mu\})$ variables. Predicate and function symbols as well as constants are finitary\footnote{In a sense of "the same as in finitary first-order logic"}. Now we can say a collection of $L_{\lambda, \mu}$-formulas is \emph{satisfiable} iff it has a model\footnote{With conjunction, disjuction and quantification interpreted accordingly.} and it is $\kappa$\emph{-satisfiable} iff every collection of formulas of cardinality less than $\kappa$ formulas is satisfiable. This allows us to state the original definition of a weakly compact cardinal.
-
-\begin{definition}
-An uncountable cardinal $\kappa$ is weakly compact iff any collection of $L_{\kappa, \kappa}$ sentences using at most $\kappa$ non-logical symbols,if $\kappa$-satisfiable, is satisfiable.
-\end{definition}
-
-Now that we know why a \emph{Weakly compact cardinal} is weakly compact, let's state a definition we will actually use.
 
 \begin{definition}{(Extension property)}
 We say that a cardinal $\kappa$ has the \emph{extension property} iff for any $R \subseteq V_\kappa$ there is a~transitive set 
@@ -1082,55 +1068,32 @@ $X \neq V_\kappa$ and an $S \subseteq X$ such that
 $\langle V_\kappa, \in, R \rangle \prec \langle X, \in, S \rangle$
 \end{definition}
 
-TODO co to znamena?
+%TODO co to znamena?
 
-\begin{definition}{(Weakly compact cardinal)}
+\begin{definition}{(Weakly compact cardinal)}\label{def:weakly_compact_extension}\\
 We say that a cardinal $\kappa$ is \emph{weakly compact} iff it has the extension property.
 \end{definition}
 
+%\begin{definition}{(Weakly compact cardinal)}\label{def:weakly_compact_indescribable}
+%We say that a cardinal $\kappa$ is \emph{weakly compact} iff it is $\Pi^1_1$-indescribable.
+%\end{definition}
 
-TODO co je "partition property"?
+The above definitions are equivalent
 
-TODO def $\kappa \then (\kappa)^2_2$?
+\begin{theorem}
+the following are equivalent:\\
+\bce[(i)]
+\item $\kappa$ is \emph{Weakly compact}.
+\item $\kappa$ is $\Pi^1_1$-indescribable.
+\ece
+\end{theorem}
 
-TODO pak dk. ekvivalenci
+For a proof, see \cite{KanamoriBook, Theorem 6.4}
 
-TODO Kanamori 6.3
 
-\begin{definition}
-A cardinal $\kappa$ is \emph{weakly compact} if it is uncountable and satisfies the partition property $\kappa \then (\kappa)^2$
-\end{definition}
-{\color{red}
-opsano z jecha!
-
-TODO definice pres nepopsatelnost, ekvivalence
-
-\begin{comment}
-
-\begin{lemma}
-Every weakly compact cardinal is inaccessible
-\end{lemma}
-
-\begin{proof}
-Let $\kappa$ b a~weakly compact cardinal. To show that $\kappa$ is regular, let us assume that $\kappa$ i the disjoint union
-$\bigcup\{A_{\gamma}: \gamma < \lambda\}$ such that $\lambda < \kappa$ and $|A_{\gamma}| < \kappa$ for each $\gamma < \lambda$.
- We define a~partition $F: [\kappa]^2 \then \{0, 1\}$ as follows: $F(\{\alpha, \beta\}) = 0$ just in cas $\alpha$ and $\beta$ are the same size $A_{\gamma}$. Obviously, this partition does not have a~homogenous set $H \subset \kappa$ of size $\kappa$.
- % todo lte, not implies
-That $\kappa$ is a~strong limit cardinal follows from Lemma 9.4: (?? doplnit z jecha): If $\kappa \geq 2^{\lambda}$ for some $\lambda < \kappa$,
-the because $2^{\lambda} \leq (\lambda^{+})^2$, we have $\kappa \leq (\lambda^{+})^2$ and hence $\kappa \leq (\kappa)^2$.
-\end{proof}
-
-\
-
-\end{comment}
-}
-
-\subsection{Measurable cardinal}
 TODO asi nekde bude meritelny kardinal
 
 TODO viz Drake, Ch.9 par. 3 -- tam se rika ze kdyz $\kappa$ je meritelny kardinal, pak je $\kappa$ $\Pi^2_1$-nepopsatelny kardinal
-
-TODO vysledek o L: \cite{scott_measurable_constructible}.
 
 {\color{red}
 \begin{comment}
@@ -1143,14 +1106,6 @@ TODO % WATT??
 \end{proof}
 
 \
-
-\begin{definition}[Indescribability]
-For Q either $\Pi^m_n$ or $\Sigma^m_n$\newline
-A cardinal $\kappa$ is \emph{$Q-indescribable$} if whenever
-$U \subseteq V_\kappa$ and $\varphi$ is a~Q sentence such that $\langle V_\kappa, \in, U \rangle \models \varphi$, then for some $\alpha < \kappa$, $\langle V_\alpha, \in, U \cap V_\alpha \rangle \models \varphi$.
-\end{definition}
-% intuice?
-% souvislosti s refl nebo L?!?!
 
 \end{comment}
 }
@@ -1220,8 +1175,6 @@ TODO Jech str. 70 \cite{JechBook}
 %\newpage
 The first five axioms are identical to axioms in ZF. \newline
 Comprehension schema tells us that proper classes are basically first-order predicates.
-
-TODO Reflexe!!!
 {\color{red}
 \begin{comment}
 
@@ -1303,26 +1256,36 @@ TODO
 %\newpage
 % =====================================================================================================================================
 
-\subsection{Reflection and the constructible universe}
+\subsection{The Constructible Universe} % Reflection and the constructible universe
 
-TODO reflektovat muzeme jenom kardinaly konzistentni s V=L, proc?
+% TODO reflektovat muzeme jenom kardinaly konzistentni s V=L, proc?
 
-TODO Plagiat -- prepsat a~vysvetlit
+% TODO Plagiat -- prepsat a~vysvetlit
 
-$L$ was introduced by Kurt Gödel in 1938 in his paper \emph{The Consistency of the Axiom of Choice and of the Generalised Continuum Hypothesis} and denotes a~class of sets built recursively in terms of simpler sets, somewhat similar to Von Neumann universe $V$. Assertion of their equality, $V=L$, is called the \emph{axiom of constructibility}. The axiom implies GCH and therefore also AC and contradicts the existence of some of the large cardinals, our goal is to decide whether those introduced earlier are among them.
+The constructible universe, denoted $L$, is a cumulative hierarchy of sets, presented by Kurt Gödel in his 1938 paper \emph{The Consistency of the Axiom of Choice and of the Generalised Continuum Hypothesis}. For a technical description, see below. Assertion of their equality, $V=L$, is called the \emph{axiom of constructibility}. The axiom implies GCH and therefore also AC and contradicts the existence of some of the large cardinals, our goal is to decide whether those introduced earlier are among them.
 
-On order to formally establish this class, we need to formalize the notion of definability first:
-\begin{definition}[Definable sets]
+On order to formally establish this class, we need to formalize the notion of definability first. 
+\begin{definition}
+We say that a set $X$ is \emph{definable} over a model $\langle M, \in \rangle$ if there is a first-order formula $\varphi$ together with parameters $u_1, \ldots, u_n \in M$ such that
+\begin{equation}
+X = \{x: x \in M\ \&\ \langle M, \in \rangle \models \varphi(x, u_1, \ldots, u_n)\}
+\end{equation}
+\end{definition}
+
+\begin{definition}{(Sets definable in $M$)}\\
+The following is a set of all definable subsets of a given set $M$, denoted Def($M$).
 \begin{equation}
 \begin{gathered}
-Def(X) := \{\{{y | x }\in X \land \langle X, \in \rangle \models \varphi(y, z_1,\ldots,z_n) \} |\\
-\mbox{ }\varphi\mbox{ is a~first-order formula, }z_1,\ldots,z_n \in X \}
+Def($M$) = \{\{y : x \in M \land \langle M, \in \rangle \models \varphi(y, u_1, \ldots, i_n) \} |\\
+\mbox{ $\varphi$ is a~first-order formula, }u_1, \ldots, u_n \in M \}
 \end{gathered}
 \end{equation}
 \end{definition}
 
+% Note that fle?
+
 Now we can recursively build $L$.
-\begin{definition}{(The Constructible universe)}\\
+\begin{definition}{(The Constructible universe)}\label{def:constructible_universe}
 \bce[(i)]
 \item
 \begin{equation}
@@ -1344,6 +1307,79 @@ L = \bigcup_{\alpha\in Ord} L_{\alpha}
 \ece
 \end{definition}
 
+Note that while $L$ bears very close resemblance to $V$, the difference is, that in every successor step of constructing $V$, we take every subset of $V_\alpha$ to be $V_{\alpha+1}$, whereas $L_{\alpha+1}$ consists only of definable subsets of $L_\alpha$. Also not that $L$ is transitive.
+
+TODO:
+\begin{lemma}\label{lemma:ord_in_l}
+$Ord \in L$
+\end{lemma}
+
+\begin{lemma}\label{lemma:l_wo}
+$L$ is well-ordered.\\
+TODO !!
+\end{lemma}
+
+\begin{theorem}
+Let $L$ be as in \ref{def:constructible_universe}.
+\begin{equation}
+L \models \sf{ZFC}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+TODO !!! (strucne) vit \cite{JechBook, Theorem 13.3}
+\bce[(i)]
+\item \emph{Extensionality} (see \ref{def:extensionality}):\\
+\emph{Extensionality} holds in $L$ because $\Delta_0$ formulas are absolute in transitive classes by \ref{lemma:delta_0_absolute}, \emph{Extensionality} is $\Delta_0$ and $L$ is transitive.
+
+\item \emph{Foundation} (see \ref{def:foundation})\\
+Take a non-empty set $X$. Let $x \in X$ be a set such that $X \cap x = \emptyset$. $x$ is therefore defined by the formula $\varphi(x, y) = (x \cap y = \emptyset)$, so $x \in L$. $\varphi$ is $\Delta_0$ and therefore holds in $L$ by \ref{lemma:delta_0_absolute}.
+
+\item \emph{Pairing} (see \ref{def:pairing})\\
+Since \emph{Pairin} is also $\Delta_0$, it holds in $L$ by the same argument as \emph{Extensionality} does by \ref{lemma:delta_0_absolute}.
+
+\item \emph{Union} (see \ref{def:union})\\
+\emph{Union} is also $\Delta_0$, see \emph{Extensionality} and \ref{lemma:delta_0_absolute}.
+
+\item \emph{Power Set} (see \ref{def:powerset})\\
+\emph{Power Set} also holds by \ref{lemma:delta_0_absolute}.
+
+\item \emph{Infinity} (see \ref{def:infinity})\\
+$\omega \in L$ by \ref{lemma:ord_in_l} % neni to trochu kruh?
+
+\item \emph{Specification} (see \ref{def:specification})\\
+.
+
+\item \emph{Replacement} (see \ref{def:replacement})\\
+.
+\item \emph{Choice} (see \ref{def:replacement})\\
+.
+
+\ece
+\end{proof}
+
+\begin{definition}{Constructibility}\\
+$L = V$
+\end{definition}
+
+The following are a few interesting results that we won't prove but refer interested reader to appropriate resources instead.
+
+\begin{definition}{(GCH)}\\
+The following is called the Generalised Continuum Hypothesis, abbreviated as \emph{GCH}. It is an independent statement in $\sf{ZFC}$.
+\begin{equation}
+\mbox{\emph{GCH} iff }\aleph_{\alpha+1}=2^{\aleph_\alpha} \mbox{ for every ordinal }\alpha
+\end{equation}
+\end{definition}
+
+\begin{theorem}
+\begin{equation}
+(L = V) \then GCH
+\end{equation}
+\end{theorem}
+
+This is proven in cite\{neco\}
+
+
 
 {\color{red}
 \begin{comment}
@@ -1363,8 +1399,32 @@ TODO zduvodneni
 TODO kratka diskuse jestli refl implikuje transcendenci na L - polemika, nazor - V=L a~slaba kompaktnost a~dalsi
 
 TODO neco jako ze meritelny kardinal je nepopsatelny vys nez je hierarchie vsech tvrzeni o L?
-
 \
+
+\subsection{Measurable Cardinal}
+
+TODO refaktorizovat fle:
+\begin{definition}{(Ultrafilter)}\\
+Given a set $X$, we say $U \subset \power(X)$ is an \emph{ultrafilter} iff all of the following hold:
+\bce[(i)]
+\item $\emptyset \not\in U$
+\item $\forall a, b (\subset X\ \&\ a \subset b\ \&\ a \in U \then b \in U)$
+\item $\forall a, b \in U (a \cap b) \in U$
+\item $\forall a (a \subset X \then (a \in U \lor (X \setminus a) \in U))$
+\ece
+\end{definition}
+
+\begin{definition}{($\kappa$-complete ultrafilter)}\\
+We say that an ultrafilter $U$ is $\kappa$-complete iff
+\end{definition}
+
+\begin{definition}{(non-principal ultrafilter)}\\
+TODO
+\end{definition}
+
+\begin{definition}{(Measurable Cardinal)}\\
+Let $\kappa$ be a caridnal. We say is a \emph{measurable cardinal} iff it is an uncountable cardinal with a $\kappa$-complete, non-principal ultrafilter.
+\end{definition}
 
 %\newpage
 % =====================================================================================================================================

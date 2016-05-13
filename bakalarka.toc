@@ -14,9 +14,8 @@
 \contentsline {subsection}{\numberline {3.3}Reflecting Second-order Formulas}{24}
 \contentsline {subsection}{\numberline {3.4}Inaccessibility}{25}
 \contentsline {subsection}{\numberline {3.5}Mahlo Cardinals}{29}
-\contentsline {subsection}{\numberline {3.6}Indescribality}{31}
-\contentsline {subsection}{\numberline {3.7}Weakly Compact Cardinal}{33}
-\contentsline {subsection}{\numberline {3.8}Measurable cardinal}{34}
-\contentsline {subsection}{\numberline {3.9}Bernays\IeC {\textendash }G{\"o}del Set Theory}{34}
-\contentsline {subsection}{\numberline {3.10}Reflection and the constructible universe}{35}
-\contentsline {section}{\numberline {4}Conclusion}{37}
+\contentsline {subsection}{\numberline {3.6}Indescribality}{32}
+\contentsline {subsection}{\numberline {3.7}Bernays\IeC {\textendash }G{\"o}del Set Theory}{34}
+\contentsline {subsection}{\numberline {3.8}The Constructible Universe}{35}
+\contentsline {subsection}{\numberline {3.9}Measurable Cardinal}{37}
+\contentsline {section}{\numberline {4}Conclusion}{38}
