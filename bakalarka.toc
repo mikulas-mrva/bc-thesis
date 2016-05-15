@@ -5,23 +5,22 @@
 \contentsline {subsection}{\numberline {1.4}Notation and terminology}{8}
 \contentsline {subsubsection}{\numberline {1.4.1}The Language of Set Theory}{8}
 \contentsline {subsubsection}{\numberline {1.4.2}The Axioms}{9}
-\contentsline {subsubsection}{\numberline {1.4.3}Second-order set theory}{12}
-\contentsline {subsubsection}{\numberline {1.4.4}The transitive universe}{12}
-\contentsline {subsubsection}{\numberline {1.4.5}Cardinal numbers}{14}
-\contentsline {subsubsection}{\numberline {1.4.6}The Hierarchy of Formulas}{15}
-\contentsline {section}{\numberline {2}Levy's first-order reflection}{16}
-\contentsline {subsection}{\numberline {2.1}Introduction}{16}
-\contentsline {subsection}{\numberline {2.2}L\IeC {\'e}vy's Original Paper}{16}
-\contentsline {subsection}{\numberline {2.3}$\sf {S} \models (N_0\ \leftrightarrow \ \emph {Replacement}\ \&\ \emph {Infinity})$}{18}
-\contentsline {subsection}{\numberline {2.4}Contemporary restatement}{19}
+\contentsline {subsubsection}{\numberline {1.4.3}The transitive universe}{12}
+\contentsline {subsubsection}{\numberline {1.4.4}Cardinal numbers}{14}
+\contentsline {subsubsection}{\numberline {1.4.5}Relativisation}{15}
+\contentsline {subsubsection}{\numberline {1.4.6}Higher-Order Logic}{15}
+\contentsline {section}{\numberline {2}Levy's first-order reflection}{17}
+\contentsline {subsection}{\numberline {2.1}L\IeC {\'e}vy's Original Paper}{17}
+\contentsline {subsection}{\numberline {2.2}$\sf {S} \models (N_0\ \leftrightarrow \ \emph {Replacement}\ \&\ \emph {Infinity})$}{18}
+\contentsline {subsection}{\numberline {2.3}Contemporary restatement}{20}
 \contentsline {section}{\numberline {3}Reflection And Large Cardinals}{26}
 \contentsline {subsection}{\numberline {3.1}Regular Fixed-Point Axioms}{27}
 \contentsline {subsection}{\numberline {3.2}A Model-Theoretic Intermezzo}{29}
 \contentsline {subsection}{\numberline {3.3}Reflecting Second-order Formulas}{29}
 \contentsline {subsection}{\numberline {3.4}Inaccessibility}{30}
 \contentsline {subsection}{\numberline {3.5}Mahlo Cardinals}{34}
-\contentsline {subsection}{\numberline {3.6}Indescribality}{36}
-\contentsline {subsection}{\numberline {3.7}Bernays\IeC {\textendash }G{\"o}del Set Theory}{38}
+\contentsline {subsection}{\numberline {3.6}Indescribality}{37}
+\contentsline {subsection}{\numberline {3.7}Bernays\IeC {\textendash }G{\"o}del Set Theory}{39}
 \contentsline {subsection}{\numberline {3.8}The Constructible Universe}{40}
 \contentsline {subsection}{\numberline {3.9}Measurable Cardinal}{42}
 \contentsline {section}{\numberline {4}Conclusion}{44}

@@ -1,5 +1,5 @@
 \documentclass[12pt,a4paper]{article}
-%\renewcommand{\baselinestretch}{1.2}   % in case of emergency .)
+%\renewcommand{\baselinestretch}{1.1}   % in case of emergency .) % spis ne 
 
 \input{00_headers.tex}
 
@@ -8,30 +8,21 @@
 \newpage
 \section{Levy's first-order reflection}\label{sec:fixed}
 
-\subsection{Introduction}
-This section will try to present Lévy's proof of a~general reflection principle being equivalent to Replacement and Infinity under ZF minus Replacement and Infinity.
-We will first introduce a~few axioms and definitions that were a~different in Lévy's paper\cite{Levy60a}, but are equivalent to today's terms. We will write them in contemporary notation, our aim is the result, not history of set theory notation. 
-
-Please note that Lévy's paper was written in a~period when Set theory was oriented towards semantics, which means that everything was done in a~model. 
-All proofs were a~model that of $\sf{ZF(C)}$ was $V_\kappa$ (notated as $R(\kappa)$ at the time) for some cardinal $\kappa$, which means that $\kappa$ is a~inaccessible cadinal.  % fakt? mozna ze my to proste delame ciste pres semanticky dusledek, ale jinak to vyslo nastejno.
-Please bear in mind that this is vastly different from saying that there is an inaccessible $\kappa$ inside the model. This $V_\kappa$ is also referred to as $Scm^{\sf{Q}}(u)$, which means that $u$ is a~standard complete model of an undisclosed axiomatic set theory $\sf{Q}$ formulated in the "non-simple applied first order functional calculus", which is second-order theory is today's terminology, we are allowed to quantify over functions and thus get rid of axiom schemes. (Note that Lévy always speaks of "the axiom of replacement"). Besides placeholder set theory $\sf{Q}$, and $\sf{ZF}$, which the reader should be familiar with, theories $\sf{Z}$, $\sf{S}$, and $\sf{SF}$ are used in the text. $\sf{Z}$ is $\sf{ZF}$ minus replacement, $\sf{S}$ is $\sf{ZF}$ minus replacement and infinity, and finally $\sf{SF}$ is $\sf{ZF}$ minus infinity. The axiom of \emph{Subsets} is an older name for the axiom scheme of specification (and it's not a~scheme since we are now working in second order logic). Also note that universal quantifier does not appear, $\forall x \varphi (x)$ would be written as $(x) \varphi (x)$, the symbol for negation is "$\sim$", we will use "$\neg$" the whole time.
-
-
-
-% TODO mozna neco o simple nebo non-simple logic, viz mathoverflow
-
-%\subsection{Preliminaries}
 \subsection{Lévy's Original Paper}\label{sec:Levy1960}
-This chapter uses $\sf{ZF}$ instead of the usual $\sf{ZFC}$, unless explicitly stated otherwise.
+This section will try to present Lévy's proof of a~general reflection principle being equivalent to \emph{Replacement} and \emph{Infinity} under ZF minus \emph{Replacement} and \emph{Infinity} from his 1960 paper \emph{Axiom Schemata of Strong Infinity in Axiomatic Set Theory}\footnote{\cite{Levy60a}}.
 
-The following are a few definitions that are used in Lévy's original article. \footnote{While some of them won't be of much use in this paper, they will provide extremely helpful when reading the original article as set theory notation and terminology has evolved in the last 50 years considerably.}
+When reading said article, one should bear in mind that it was written in a~period when set theory was semantically oriented, so while there are many statements about a~model of $\sf{ZF}$, usually denoted $u$, this is equivalent to today's universal class $V$, so it doesn't necessarily mean that there is a set $u$ that is a model of $\sf{ZF}$. We will review the notion of a standard complete model used by Lévy throughout the paper in a moment. Let's first say that the set theory $\sf{ZF}$ was formulated in the "non-simple applied first order functional calculus", is 
 
-TODO relativizace -- notace u levy a u nas -- \ref{def:relativisation}
+TODO viz A. Church nebo tak neco. % math.stackovrflow?
 
-Next two definitions are not used in contemporary set theory, but they illustrate 1960's set theory mind-set and they are used heavily in Lévy's text, so we will include and explain them for clarity. Generally in this chapter, $\sf{Q}$ stands for an undisclosed axiomatic set theory, $u$ is usually a model, counterpart of today's $V$\footnote{Which is of course not referred to as a model, but it is used in a similar fashion, in this case the term "model" was a metamathematical notion because it was not based on any underlying structure of theory. It can be easily formalized in any set theory, but it's not helpful for our case.}, $E$ is a relation that serves as $\in$ in the given model.
-% TODO to uz jsi rikal nahore
+The axioms are equivalent to those defined in \ref{def:zf}, except for the \emph{Axiom of Subsets}, which is just a different name for \emph{Specification}.
+Besides $\sf{ZF}$ and $\sf{S}$, defined in \ref{def:zf} and yref{def:s} respectively, the set theories theories $\sf{Z}$, and $\sf{SF}$ are used in the text. $\sf{Z}$ is $\sf{ZF}$ minus replacement, $\sf{SF}$ is $\sf{ZF}$ minus \emph{Infinity}. Also note that universal quantifier does not appear, $\forall x \varphi (x)$ would be written as $(x) \varphi (x)$. The symbol for negation is "$\sim$", implication is written as "$\supset$" and equivalence is "$\equiv$", we will use "$\neg$", "$\then$" and "$\iff$". % TODO neco o : a setreni zavorek?
 
-% TODO je to relativizovany, jak rika shepherdson?
+Next two definitions are not used in contemporary set theory, but they illustrate 1960's set theory mind-set and they are used heavily in Lévy's text, so we will include and explain them for clarity. Generally, in this chapter, $\sf{Q}$ stands for an arbitrary axiomatic set theory used for general definitions, $u$ is usually a model of $\sf{Q}$, counterpart of today's $V$.
+
+This subsection uses $\sf{ZF}$ instead of the usual $\sf{ZFC}$ as the underlying theory.
+
+% TODO je to relativizovany, jak rika shepherdson? % WATT?
 \begin{definition}{(Standard model of a set theory)}\label{def:sm_q}\\
 Let $\sf{Q}$ be a axiomatic set theory in first-order logic. We say the the a class $u$ is a standard model of $\sf{Q}$ with respect to a membership relation $E$, written as $Sm^{\sf{Q}}(u)$, iff both of the following hold
 \bce[(i)]
@@ -48,38 +39,35 @@ Let $\sf{Q}$ and $E$ be like in \ref{def:sm_q}. We say that that $u$ is a stand
 this is written as $Scm^{\sf{Q}}(u)$.
 \end{definition}
 
-% TODO what is "simple first-order functional calculus" a "non-simple first-order functional calculus"? math.stackovrflow?
-
 \begin{definition}{(Inaccessible cardinal with respect to $\sf{Q}$)}\label{def:levy_inaccessible_q}\\
-Let $\sf{Q}$ be an axiomatic first-order set theory. We say that a cardinal $\kappa$ is inaccessible with respect to $\sf{Q}$, we write $In^{\sf{Q}}(\kappa)$, iff
+Let $\sf{Q}$ be an axiomatic first-order set theory. We say that a cardinal $\kappa$ is inaccessible with respect to $\sf{Q}$, we write $In^{\sf{Q}}(\kappa)$.
 \begin{equation}
-Scm^{\sf{Q}}(V_\kappa).
+$In^{\sf{Q}}(\kappa)$ \defeq Scm^{\sf{Q}}(V_\kappa).
 \end{equation}
 \end{definition}
 
 \begin{definition}{(Inaccessible cardinal with respect to $\sf{ZF}$)}\label{def:levy_inaccessible}\\
-When a cardinal $\kappa$ is inaccessible with respect to $\sf{ZF}$, we only say that it is inaccessible. In the abbreviated version, we just leave out the superscript.
+When a cardinal $\kappa$ is inaccessible with respect to $\sf{ZF}$, we only say that it is inaccessible. We write $In(\kappa)$.
 \begin{equation}
-In(\kappa) \iff In^{\sf{ZF}}(\kappa)
+In(\kappa) \defeq In^{\sf{ZF}}(\kappa)
 \end{equation}
 \end{definition}
-%Note that this definition is more general than the usual one\footnote{Which says that a cardinal $\kappa$ is inaccessible iff it is a strong limit regular cardinal and only .}, we will often write $In(\kappa)$ as a shorthand for $In^{\sf{ZF}}(\kappa)$.
-% TODO ekvivalence s beznou definici?
-% TODO tohle je lepsi protoze nepotrebujes AC
+The above definition of inaccessibles is used because it doesn't require \emph{Choice}.
 
-% The following is a principle of complete reflection over $\sf{ZF}$.
+For the definition of relativization, see \ref{def:relativization}. The syntax used by Lévy is $Rel(u, \varphi)$, we will use $\varphi^{u}$, which is more usual these days.
+
 \begin{definition}{($N$)}\label{def:levy_axiom_n}\\
 The following is an axiom schema of complete reflection over $\sf{ZF}$, denoted as $N$.
 \begin{equation}
-N \iff \exists u (Scm^{\sf{ZF}}(u)\ \&\ \forall x_1, \ldots , x_n (x_1, \ldots , x_n \in u \then \varphi \iff \varphi^{u}))
+N \defeq \exists u (Scm^{\sf{ZF}}(u)\ \&\ \forall x_1, \ldots , x_n (x_1, \ldots , x_n \in u \then \varphi \iff \varphi^{u}))
 \end{equation}
 where $\varphi$ is a~formula which contains no free variables except for $x_1, \ldots , x_n$.
 \end{definition}
 
 \begin{definition}{($N_0$)}\label{def:levy_axiom_n0}\\
-If we substitute $\sf{ZF}$ for $\sf{S}$, which is $\sf{ZF}$ minus \emph{Replacement} and \emph{Infinity}, we obtain what will now be called $N_0$.
+With $\sf{S}$ instead of $\sf{ZF}$we obtain what will now be called $N_0$.
 \begin{equation}
-N_0 \iff \exists u (Scm^{\sf{S}}(u)\ \&\ \forall x_1, \ldots , x_n (x_1, \ldots , x_n \in u \then \varphi \iff \varphi^{u}))
+N_0 \defeq \exists u (Scm^{\sf{S}}(u)\ \&\ \forall x_1, \ldots , x_n (x_1, \ldots , x_n \in u \then \varphi \iff \varphi^{u}))
 \end{equation}
 where $\varphi$ is a~formula which contains no free variables except for $x_1, \ldots , x_n$.
 \end{definition}
@@ -89,36 +77,43 @@ Once we have established the definitions, it's time to prove something interesti
 \subsection{$\sf{S} \models (N_0\ \iff\ \emph{Replacement}\ \&\ \emph{Infinity})$} 
 % nebyl by to lepsi nadpis bez S?
 
+Let $\sf{S}$ be a set theory defined in \ref{def:s}.
+\begin{lemma}\label{lemma:scm_s_is_limit}\\
+The following holds for every $u$.
+\begin{equation}
+\mbox{"$u$ is a limit ordinal"} \iff Scm^{\sf{S}}(u)
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+TODO !
+
+----
+
+In order to prove that it is a~model of $\sf{S}$, we would need to verify all axioms of $\sf{S}$. We have already shown that $\omega$ is closed under the powerset operation. Foundation, extensionality and comprehension are clear from the fact that we work in $\sf{ZF}$\footnote{We only need to verify axioms that provide means of constructing larger sets from smaller to make sure they don't exceed $\omega$. Since $\omega$ is an initial segment of $ZF$, the axiom scheme of specification can't be broken, the same holds for foundation and extensionality.}, pairing is clear from the fact, that given two sets $x$, $y$, they have ranks $\alpha$, $\beta$, without loss of generality we can assume that $\alpha \leq \beta$, which means that $x \in V_\alpha \in V_\beta$, therefore $V_\beta$ is a~set that satisfies the paring axiom: it contains both $x$ and $B$.
+
+\end{proof}
+
 Let $N_0$ be defined as in \ref{def:levy_axiom_n0}, for \emph{Infinity} see \ref{def:infinity}.
-\begin{theorem}
+\begin{theorem}\\
 In $\sf{S}$, the schema $N_0$ implies \emph{Infinity}.
 \end{theorem}
 
 \begin{proof}
-For any $\varphi$, $N_0$ gives us $\exists u Scm^{\sf{S}}(u)$, which means that there is a~set $u$ that is identical to $V_\alpha$ for some alpha, so $\exists \alpha Scm^{\sf{S}}(V_\alpha)$.
-We don't know the exact size of this $\alpha$, but we know that $\alpha \geq \omega$, otherwise $\alpha$ would be finite, therefore not closed under the powerset operation, which would contradict \emph{Powerset}. 
-In order to prove that it is a~model of $\sf{S}$, we would need to verify all axioms of $\sf{S}$. We have already shown that $\omega$ is closed under the powerset operation. Foundation, extensionality and comprehension are clear from the fact that we work in $\sf{ZF}$\footnote{We only need to verify axioms that provide means of constructing larger sets from smaller to make sure they don't exceed $\omega$. Since $\omega$ is an initial segment of $ZF$, the axiom scheme of specification can't be broken, the same holds for foundation and extensionality.}, pairing is clear from the fact, that given two sets $x$, $y$, they have ranks $\alpha$, $\beta$, without loss of generality we can assume that $\alpha \leq \beta$, which means that $x \in V_\alpha \in V_\beta$, therefore $V_\beta$ is a~set that satisfies the paring axiom: it contains both $x$ and $B$.
-
-Note that this implies that any (strong) limit cardinal is a model of $\sf{S}$.
-
-We now want to prove that $V_\alpha$ leads to existence of an inductive set, which is a~set that satisfies $\exists A(\emptyset \in A~\& \forall  x \in A~((x \cup \{ x\}) \in A))$. If we can find a~way to construct $V_\omega$ from any $V_\alpha$ satisfying $\alpha \geq \omega$, we are done. Since $\omega$ is the least limit ordinal, all we need is the following
-
-\begin{equation}
-\bigcap \{V_\kappa\ |\  \forall \lambda(\lambda < \kappa \then \exists \mu(\lambda < \mu < \kappa))\}
-\end{equation}
-because $V_\kappa$ is a~transitive set for every $\kappa$, thus the intersection is non-empty unless empty set satisfies the property or the set of $V_\kappa$s is itself empty.
+Lévy skips this proof because it seems too obvious to him, but let's do it here for plasticity.
+For an arbitrary $\varphi$, $N_0$ gives us $\exists u Scm^{\sf{S}}(u)$, but from lemma \ref{lemma:scm_s_is_limit}, we know that this $u$ is a limit ordinal. This effectively satisfies \emph{Infinity}.
 \end{proof}
 
 \
-
-Let $N_0$ be defined as in \ref{def:levy_axiom_n0}, for \emph{Replacement} see \ref{def:replacement}.
+% ------ TODO tady jsem skoncil
+Let $N_0$ be defined as in \ref{def:levy_axiom_n0}, for \emph{Replacement} see \ref{def:replacement}, $\sf{S}$ is again the set theory defined in $\ref{def:s}$.
 \begin{theorem}
 In $\sf{S}$, the schema $N_0$ implies \emph{Replacement}.
 \end{theorem}
 
 \begin{proof}
 Let $\varphi(v, w, x_1, \ldots, x_n)$ be a~formula wth no free variables except $v, w, x_1, \ldots, x_n$ where $n$ is any natural number.
-Let $\chi$ be an instance of replacement schema for this $\varphi$ which is what we want to prove:
+Let $\chi$ be an instance of \emph{Replacement} schema for this $\varphi$ which is what we want to prove:
 \begin{equation}
 \begin{gathered}
 \chi = \forall r, s, t(\varphi(r, s, x_1, \ldots, x_n) \& \varphi(r, t, x_1, \ldots, x_n) \then s = t) \\
@@ -322,7 +317,7 @@ Let us consider the following formula:
 \begin{equation}
 \varphi'(x) = \forall \lambda(\lambda < x \then \exists \mu(\lambda < \mu < x))
 \end{equation}
-Because $\varphi$ says "there is a~limit ordinal", if it holds for some $x$, the Infinity axiom is very easy to satisfy. But we know that there are limit ordinals in $\sf{ZF}$, therefore $\varphi = \exists x \varphi'(x)$ is a~valid statement. $\emph{Reflection}$ then gives us a~set $M$ in which $\varphi^M$ holds, that is, a~set that contains a~limit ordinal. So the set of off limit ordinals is non-empty and because ordinals are well-founded, it has a~minimal element. Let's call it $\mu$.
+Because $\varphi$ says "there is a~limit ordinal", if it holds for some $x$, the \emph{Infinity} axiom is very easy to satisfy. But we know that there are limit ordinals in $\sf{ZF}$, therefore $\varphi = \exists x \varphi'(x)$ is a~valid statement. $\emph{Reflection}$ then gives us a~set $M$ in which $\varphi^M$ holds, that is, a~set that contains a~limit ordinal. So the set of off limit ordinals is non-empty and because ordinals are well-founded, it has a~minimal element. Let's call it $\mu$.
 \begin{equation} % todo mozna sjednotit s definici limitnoho ordinalu?
 \mu = \bigcap \{V_\kappa\ :\  \forall \lambda(\lambda < \kappa \then \exists \mu(\lambda < \mu < \kappa))\}
 \end{equation}
@@ -342,12 +337,12 @@ What we want to obtain is the following:
 \end{equation}
 
 We do also know that $x, y \in M$, in other words for every $X$, $Y\ =\ \{y\ |\ \varphi(x, y, u_1, \ldots, u_n)\}$ we know that $X \subset M$ and $Y \subset M$, which, together with the comprehension schema\footnote{Called the axiom of subsets in Lévy's proof.} implies that $Y$, the image of $X$ over $\varphi$, is a~set.
-Which is exactly the Replacement Schema we hoped to obtain.
+Which is exactly the \emph{Replacement} Schema we hoped to obtain.
 \end{proof}
 
 \
 
-We have shown that $\emph{Reflection}$ for first-order formulas, $\emph{Reflection}_1$ is a~theorem of $\sf{ZF}$, which means that it won't yield us any large cardinals. We have also shown that it can be used instead of the Axiom of Infinity and Replacement Scheme, but $\sf{ZF}\ +\ \emph{Reflection}_1$ is a~conservative extension of $\sf{ZF}$. Besides being a~starting point for more general and powerful statements, it can be used to show that $\sf{ZF}$ is not finitely axiomatizable. That is because $\emph{Reflection}$ gives a~model to any finite number of (consistent) formulas. So if $\varphi_1, \ldots, \varphi_n$ for any finite $n$ would be the axioms of $\sf{ZF}$, $\emph{Reflection}$ would always contain a~model of itself, which would in turn contradict the Second Gödel's Theorem\footnote{See chapter \ref{section:inaccessibility} for further details.}.
+We have shown that $\emph{Reflection}$ for first-order formulas, $\emph{Reflection}_1$ is a~theorem of $\sf{ZF}$, which means that it won't yield us any large cardinals. We have also shown that it can be used instead of the \emph{Infinity} and \emph{Replacement} scheme, but $\sf{ZF}\ +\ \emph{Reflection}_1$ is a~conservative extension of $\sf{ZF}$. Besides being a~starting point for more general and powerful statements, it can be used to show that $\sf{ZF}$ is not finitely axiomatizable. That is because $\emph{Reflection}$ gives a~model to any finite number of (consistent) formulas. So if $\varphi_1, \ldots, \varphi_n$ for any finite $n$ would be the axioms of $\sf{ZF}$, $\emph{Reflection}$ would always contain a~model of itself, which would in turn contradict the Second Gödel's Theorem\footnote{See chapter \ref{section:inaccessibility} for further details.}.
 Notice that, in a~way, reflection is complementary to compactness. Compactness argues that given a set of sentences, if every finite subset yields a~model, so does the whole set. Reflection, on the other hand, says that while the whole set has no model in the underlying theory, every finite subset does have one.
 
 Also, notice how reflection can be used in ways similar to upward Löwenheim–Skolem theorem. Since Reflection extends any set $M_0$ into a~model of given formulas $\varphi_1, \ldots, \varphi_n$, we can choose the lower bound of the size of $M$ by appropriately chocing $M_0$.
@@ -371,7 +366,7 @@ It should now be obvious why the fact that $\kappa$ is inaccessible implies that
 We will also examine the connection between reflection principles and (regular) fixed points of ordinal functions in a manner proposed by Lévy in \cite{Levy60a}. We will also see that, like Lévy has proposed in the same paper, there is a meaningful way to extend the relation between $\sf{S}$ and $\sf{ZFC}$ into a hierarchy of stronger axiomatic set theories. 
 % Those are the three lines of thinking that we will find are in fact different facets of the same gem, especially in the section devoted to Inaccessible and Mahlo cardinals.
 % viz Shapiro, Stewart. 1987. “Principles of Reflection and Second-order Logic”. Journal of Philosophical Logic 16 (3). Springer: 309–33. http://www.jstor.org/stable/30227043.
-% Reflections on Replacement and Reflection: The axioms in a~structuralist setting (Geoffrey Hellman)
+% Reflections on \emph{Replacement} and Reflection: The axioms in a~structuralist setting (Geoffrey Hellman)
 %TODO neco o tom, ze kdyz je reflexe formule, da se sama reflektovat?
 % The above should make a clear picture of why $\emph{Infinity}$ is a specific case of $\emph{Reflection}$.
 %TODO proc je Refl zaroven zobecneny replacement?
@@ -480,7 +475,7 @@ This is a small notational intermezzo. Reflection theorems asdasd Tarski Berkley
 
 This notation is used for example in \cite{KanamoriBook}.
 
-TODO def $\langle V_\kappa, \in, R  \rangle \models$ asdf
+TODO def $\langle V_\kappa, \in, R  \rangle \models$ asdf \emph{Replacement} 
 
 TODO $S \then ZM \then ZM' \then ZM''$, neco jako mahlovy kardinaly, presunout do dane kapitoly
 
@@ -492,9 +487,9 @@ TODO $S \then ZM \then ZM' \then ZM''$, neco jako mahlovy kardinaly, presunout d
 
 To see that there is a~way to transcend $\sf{ZFC}$, let us briefly show how a~model of $\sf{ZFC}$ can be obtained in $\sf{ZFC}_2 + \mbox{"second-order reflection"}$\footnote{$\sf{ZFC}_2$ is an axiomatization of $\sf{ZFC}$ in second-order formulas, to be more rigorously established later.}. This will be more closely examined in section \ref{section:inaccessibility}.
 
-We know that $\sf{ZFC}$ can not be finitely axiomatized in first-order formulas, however if Replacement and Comprehension schemes can be substituted by second-order formulas, $\sf{ZFC}$ becomes $\sf{ZFC}_2$, which is finitely axiomatizable in second-order logic. Therefore if we take second-order reflection into consideration, we can obtain a~set $M$ that is a~model of $\sf{ZFC}_2$. For now, we have left out the details of how exactly is first-order reflection generalised into stronger statements and how second-order axiomatization of $\sf{ZFC}$ looks like as we will examine those problems closely in the following pages. 
+We know that $\sf{ZFC}$ can not be finitely axiomatized in first-order formulas, however if \emph{Replacement} and \emph{Comprehension} schemes can be substituted by second-order formulas, $\sf{ZFC}$ becomes $\sf{ZFC}_2$, which is finitely axiomatizable in second-order logic. Therefore if we take second-order reflection into consideration, we can obtain a~set $M$ that is a~model of $\sf{ZFC}_2$. For now, we have left out the details of how exactly is first-order reflection generalised into stronger statements and how second-order axiomatization of $\sf{ZFC}$ looks like as we will examine those problems closely in the following pages. 
 
-% We also need to rigorously define $\sf{ZFC}_2$, the second-order axiomatization of $\sf{ZFC}$ we have already used in the previous section. Let's take advantage of second-order variables and replace Replacement and Specification schemes with a~single Replacement and a Specification axiom respectively. 
+% We also need to rigorously define $\sf{ZFC}_2$, the second-order axiomatization of $\sf{ZFC}$ we have already used in the previous section. Let's take advantage of second-order variables and replace \emph{Replacement} and Specification schemes with a~single \emph{Replacement} and a Specification axiom respectively. 
 
 Lower-case letters represent first-order variables and upper-case $P$ represents a~second-order variable. \cite{Shapiro87}
 \begin{definition}{(\emph{Replacement}\textsubscript{2})}\label{def:replacement_2}\\
@@ -656,7 +651,7 @@ Let us suppose for a~moment that $\kappa$ is singular. Therefore there is an ord
 \begin{equation}
 F(x)\ =\ y
 \end{equation}
-Then there is an instance of  Axiom Schema of Replacement that states the following:
+Then there is an instance of \emph{Replacement} that states the following:
 \begin{equation}
 \begin{gathered}
 (\forall x, y, z(\varphi(x, y) \& \varphi(x, z) \then y\ =\ z)) \then \\

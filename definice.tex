@@ -172,16 +172,6 @@ We call $\sf{ZF}$ a set theory that contains all the axioms of the theory $\sf{S
 $\sf{ZFC}$ is a theory that contains all the axioms of $\sf{ZF}$ plus \emph{Choice} (\ref{def:choice}).
 \end{definition}
 
-
-\subsubsection{Second-order set theory}
-\begin{definition}{$(\sf{ZFC\textsubscript{2}})$}\label{def:zfc_2}\\
-TODO ?
-\end{definition}
-
-TODO nenechat do patricne kapitoly? asi jo.\\
-TODO Reflection?\\
-TODO druhoradove splnovani?\\
-
 \
 
 \subsubsection{The transitive universe}
@@ -314,10 +304,10 @@ We say that an ordinal $\kappa$ is a \emph{strong limit cardinal} if it is a \em
 \end{equation}
 \end{definition}
 If \emph{GCH} holds (for example in Gödel's $L$, see chapter 3), the notions of a limit cardinal and a strong limit cardinal are equivalent.
+
 \
 
-\subsubsection{The Hierarchy of Formulas}
-
+\subsubsection{Relativisation} % and absoluteness?
 \begin{definition}{(Relativization)}\label{def:relativization}\\ %\cite[Definition 12.6]{JechBook} 
 Let $M$ be a class, $R$ a binary relation on $M$ and let $\varphi(p_1, \ldots, p_n)$ be a first-order formula with $n$ parameters. 
 The \emph{relativization of $\varphi$ to $M$ and $R$} is the formula, written as $\varphi^{M, R}(p_1, \ldots, p_n)$, defined in the following inductive manner:
@@ -330,8 +320,21 @@ The \emph{relativization of $\varphi$ to $M$ and $R$} is the formula, written as
 \ece
 \end{definition}
 
+\
+
+\subsubsection{Higher-Order Logic}
+Since we will utilise some basic tools of set theories formalized in second- and occassionally higher-order logic, we need to establish the basics here. This part is heavily inspired by Preliminaries from \cite{KanBook}.
+
+TODO viz kanamori p. 6
+
+TODO proc se neda formalizovat obecne splnovani ve vyssich radech? cite?
+
+While higher-order satisfaction relation for proper classes is unformalizable\footnote{TODO CITE KDE? Tarski nebo tak neco?},we can formalize satisfaction in a structure. For the rest of this chapter, let $D$ be a domain of such structure.
+
+TODO druhoradove splnovani?\\
+
 % todo lepsi slovo nez variables?
-For the following definition, we need variables and quantifiers of higher orders. Let \emph{type 1} variables be usual variables of first-order set theory. % spis logic?
+% For the following definition, we need variables and quantifiers of higher orders. Let \emph{type 1} variables be usual variables of first-order set theory. % spis logic?
 \begin{definition}{(Hierarchy of formulas)}\label{def:analytical_hierarchy}\\
 Let $\varphi$ be a formula. ((v logice radu $n$)) $\Pi^m_n$ und $\Sigma^m_n$
 
@@ -344,6 +347,12 @@ $\Delta_0$ formulas are absolute in transitive sets, in other words, let $\varph
 \end{equation}
 \end{lemma}
 
+
+\begin{definition}{$(\sf{ZFC\textsubscript{2}})$}\label{def:zfc_2}\\
+TODO ?
+\end{definition}
+
+TODO nenechat do patricne kapitoly? asi jo.
 
 \begin{definition}{(\emph{Reflection\textsubscript{1}})}\label{def:reflection_1}\\
 \begin{equation}
