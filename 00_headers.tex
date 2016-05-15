@@ -51,7 +51,7 @@ pdfhighlight=/O% ... (vzhled odkazu pri stisknuti)
 %pøedbìné nastavení hlavièky (balík fancyhdr)
 %\headheight 13.6pt %moná ji bude tøeba zvednout, fancyhdr si pak stìuje: \headheight
 % too small, make it at least Xpt
-\headheight 12.5pt %moná ji bude tøeba zvednout, fancyhdr si pak stìuje: \headheight too \fancyhead{}
+\headheight 14.5pt %moná ji bude tøeba zvednout, fancyhdr si pak stìuje: \headheight too \fancyhead{}
 \fancyhead[R]{\leftmark}
 \fancyfoot{}
 \fancyfoot[C]{\thepage}
@@ -116,6 +116,9 @@ pdfhighlight=/O% ... (vzhled odkazu pri stisknuti)
 \newcommand{\treq}{\trianglelefteq}
 \newcommand{\et}{\mathrel{\&}}
 
+\newcommand\defeq{\mathrel{\overset{\makebox[0pt]{\mbox{\normalfont\tiny\sffamily def}}}{=}}}
+
+
 
 \begin{document}
 %titulní stránka
@@ -162,7 +165,7 @@ Prohlašuji, že jsem bakalářkou práci vypracoval samostatně a~že jsem uved
 \tableofcontents
 \clearpage
 
-
+% podekovani firme co vyrabi club mate -- Loscher gmbh?
 \pagestyle{fancy} %detailní definice chování záhlaví
 \renewcommand{\sectionmark}[1]{\markboth{\slshape\thesection.\ #1}{}}
 

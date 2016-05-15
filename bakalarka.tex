@@ -1,5 +1,5 @@
 \documentclass[12pt,a4paper]{article}
-% \renewcommand{\baselinestretch}{1.2}   % in case of emergency .)
+%\renewcommand{\baselinestretch}{1.2}   % in case of emergency .)
 
 \input{00_headers.tex}
 
@@ -13,34 +13,20 @@ This section will try to present Lévy's proof of a~general reflection principle
 We will first introduce a~few axioms and definitions that were a~different in Lévy's paper\cite{Levy60a}, but are equivalent to today's terms. We will write them in contemporary notation, our aim is the result, not history of set theory notation. 
 
 Please note that Lévy's paper was written in a~period when Set theory was oriented towards semantics, which means that everything was done in a~model. 
-All proofs were a~model that of $\sf{ZFC}$ was $V_\kappa$ (notated as $R(\kappa)$ at the time) for some cardinal $\kappa$, which means that $\kappa$ is a~inaccessible cadinal.  % fakt? mozna ze my to proste delame ciste pres semanticky dusledek, ale jinak to vyslo nastejno.
+All proofs were a~model that of $\sf{ZF(C)}$ was $V_\kappa$ (notated as $R(\kappa)$ at the time) for some cardinal $\kappa$, which means that $\kappa$ is a~inaccessible cadinal.  % fakt? mozna ze my to proste delame ciste pres semanticky dusledek, ale jinak to vyslo nastejno.
 Please bear in mind that this is vastly different from saying that there is an inaccessible $\kappa$ inside the model. This $V_\kappa$ is also referred to as $Scm^{\sf{Q}}(u)$, which means that $u$ is a~standard complete model of an undisclosed axiomatic set theory $\sf{Q}$ formulated in the "non-simple applied first order functional calculus", which is second-order theory is today's terminology, we are allowed to quantify over functions and thus get rid of axiom schemes. (Note that Lévy always speaks of "the axiom of replacement"). Besides placeholder set theory $\sf{Q}$, and $\sf{ZF}$, which the reader should be familiar with, theories $\sf{Z}$, $\sf{S}$, and $\sf{SF}$ are used in the text. $\sf{Z}$ is $\sf{ZF}$ minus replacement, $\sf{S}$ is $\sf{ZF}$ minus replacement and infinity, and finally $\sf{SF}$ is $\sf{ZF}$ minus infinity. The axiom of \emph{Subsets} is an older name for the axiom scheme of specification (and it's not a~scheme since we are now working in second order logic). Also note that universal quantifier does not appear, $\forall x \varphi (x)$ would be written as $(x) \varphi (x)$, the symbol for negation is "$\sim$", we will use "$\neg$" the whole time.
 
-TODO nebudeme tady pouzivat $\sf{ZFC}$, ale jenom $\sf{ZF}$. (jenom v tehle kapitole)
+
 
 % TODO mozna neco o simple nebo non-simple logic, viz mathoverflow
 
 %\subsection{Preliminaries}
 \subsection{Lévy's Original Paper}\label{sec:Levy1960}
+This chapter uses $\sf{ZF}$ instead of the usual $\sf{ZFC}$, unless explicitly stated otherwise.
 
 The following are a few definitions that are used in Lévy's original article. \footnote{While some of them won't be of much use in this paper, they will provide extremely helpful when reading the original article as set theory notation and terminology has evolved in the last 50 years considerably.}
 
-\begin{definition}{(Relativization)}\label{def:relativization}\cite[Definition 12.6]{JechBook}\\ 
-Let $M$ be a class, $E$ a binary relation on $M$ and let $\varphi(x_1, \ldots, x_n)$ be a first-order formula with $n$ parameters. The relativization of $\varphi$ to $M$ and $E$ is the formula written as
-\begin{equation}
-\varphi^{M, E}(x_1, \ldots, x_n)
-\end{equation}
-Defined in the following inductive manner:
-\begin{equation}
-\begin{gathered}
-(x \in y)^{M,E} \iff x E x\\
-(x = y)^{M,E} \iff x = y\\
-(\neg \varphi)^{M,E} \iff \neg \varphi^{M,E}\\
-(\varphi\ \&\ \psi)^{M,E} \iff \varphi^{M,E}\ \&\ \psi^{M,E}\\
-(\exists x\varphi)^{M,E} \iff (\exists x \in M) \varphi^{M,E}
-\end{gathered}
-\end{equation}
-\end{definition}
+TODO relativizace -- notace u levy a u nas -- \ref{def:relativisation}
 
 Next two definitions are not used in contemporary set theory, but they illustrate 1960's set theory mind-set and they are used heavily in Lévy's text, so we will include and explain them for clarity. Generally in this chapter, $\sf{Q}$ stands for an undisclosed axiomatic set theory, $u$ is usually a model, counterpart of today's $V$\footnote{Which is of course not referred to as a model, but it is used in a similar fashion, in this case the term "model" was a metamathematical notion because it was not based on any underlying structure of theory. It can be easily formalized in any set theory, but it's not helpful for our case.}, $E$ is a relation that serves as $\in$ in the given model.
 % TODO to uz jsi rikal nahore
@@ -230,7 +216,7 @@ M = \bigcup_{i=0}^{\infty} M_i, \mbox{  }M^T = \bigcup_{i=0}^{\infty} M^T_i
 \
 
 We have yet to finish part $\bold{(iii)}$.
-Let's try to construct a~set $M'$ that satisfies the same conditions like $M$ but is kept as small as possible. Assuming the Axiom of Choice, we can modify the process so that cardinality of $M'$ is at most $|M_0| \cdot \aleph_0$. Note that the size of $M'$ is determined by the size of $M_0$ an, most importantly, by the size of $H_i(u_1, \ldots, u_{m-1})$ for any $i \leq n$ in individual levels of the construction. Since the lemma only states existence of some $x$ that satisfies $\varphi_i(u_1, \ldots, u_{m-1}, x)$ for any $i \leq n$, we only need to add one $x$ for every set of parameters but $H_i(u_1, \dots, u_{m-1})$ can be arbitrarily large. Since Axiom of Choice ensures that there is a~choice function, let $F$ be a~choice function on $\power(M')$. Also let $h_i(u_1, \ldots, u_{m-1}) = F(H_i(u_1, \ldots, u_{m-1}))$ for $i \leq n$, which means that $h$ is a~function that outputs an $x$ that satisfies $\varphi_i(u_1, \ldots, u_{m-1}, x)$ for $i \leq n$ and has minimal rank among all such witnesses. The induction step needs to be redefined to
+Let's try to construct a~set $M'$ that satisfies the same conditions like $M$ but is kept as small as possible. Assuming the Axiom of Choice, we can modify the process so that cardinality of $M'$ is at most $|M_0| \cdot \aleph_0$. Note that the size of $M'$ is determined by the size of $M_0$ an, most importantly, by the size of $H_i(u_1, \ldots, u_{m-1})$ for any $i \leq n$ in individual levels of the construction. Since the lemma only states existence of some $x$ that satisfies $\varphi_i(u_1, \ldots, u_{m-1}, x)$ for any $i \leq n$, we only need to add one $x$ for every set of parameters but $H_i(u_1, \dots, u_{m-1})$ can be arbitrarily large. Since Axiom of Choice ensures that there is a~choice function, let $F$ be a~choice function on $\power{M'}$. Also let $h_i(u_1, \ldots, u_{m-1}) = F(H_i(u_1, \ldots, u_{m-1}))$ for $i \leq n$, which means that $h$ is a~function that outputs an $x$ that satisfies $\varphi_i(u_1, \ldots, u_{m-1}, x)$ for $i \leq n$ and has minimal rank among all such witnesses. The induction step needs to be redefined to
 \begin{equation}
 M'_{i+1} = M'_i \cup \bigcup_{j=0}^n \{ H_j(u_1, \ldots, u_{m-1}): u_1, \ldots, u_{m-1} \in M'_i \}
 \end{equation}
@@ -492,7 +478,7 @@ TODO podle Levyho
 \subsection{A Model-Theoretic Intermezzo}
 This is a small notational intermezzo. Reflection theorems asdasd Tarski Berkley model-theoretic methods in set theory.
 
-This notation is used for example in \cite{KanBook}.
+This notation is used for example in \cite{KanamoriBook}.
 
 TODO def $\langle V_\kappa, \in, R  \rangle \models$ asdf
 
@@ -629,7 +615,7 @@ The argument for \emph{Foundation} is almost identical to the one for \emph{Exte
 \begin{equation}
 V_\kappa \models \forall x \exists y \forall z (z \subseteq x \then z \in y).
 \end{equation}
-If we take $x$, an element of $V_\kappa$, $\power(x)$ has to be an element of $V_\kappa$ to, because it is transitive and a strong limit cardinal.
+If we take $x$, an element of $V_\kappa$, $\power{x}$ has to be an element of $V_\kappa$ to, because it is transitive and a strong limit cardinal.
 
 \
 
@@ -1020,7 +1006,7 @@ We may also require that $\alpha < \beta$, where $\beta$ is an arbitrary ordinal
 %So far, we have considered individual formulas and examined what $V_\alpha$ is the first that 
 
 % TODO kanamori to dela s parametrem, asi to ma smysl
-% TODO ja zas vyse psal varphi vzdycky s x1...xn, ale TADY JE TO SENTENCE!
+% TODO ja zas vyse psal varphi vzdycky s x1...xn, ale TADY JE TO SENTENCE! !!!
 For the exact definition of $\Pi^m_n$ and $\Sigma^m_n$ see \ref{def:analytical_hierarchy}
 
 \begin{definition}{($\Pi^m_n$-indescribable cardinal)}\label{def:pi_mn_indescribable}
@@ -1088,7 +1074,7 @@ the following are equivalent:\\
 \ece
 \end{theorem}
 
-For a proof, see \cite{KanamoriBook, Theorem 6.4}
+For a proof, see \cite{KanamoriBook}[Theorem 6.4]
 
 
 TODO asi nekde bude meritelny kardinal
@@ -1258,7 +1244,7 @@ TODO
 
 \subsection{The Constructible Universe} % Reflection and the constructible universe
 
-% TODO reflektovat muzeme jenom kardinaly konzistentni s V=L, proc?
+% TODO reflektovat muzeme jenom kardinaly konzistentni s V=L, proc????
 
 % TODO Plagiat -- prepsat a~vysvetlit
 
@@ -1307,7 +1293,9 @@ L = \bigcup_{\alpha\in Ord} L_{\alpha}
 \ece
 \end{definition}
 
-Note that while $L$ bears very close resemblance to $V$, the difference is, that in every successor step of constructing $V$, we take every subset of $V_\alpha$ to be $V_{\alpha+1}$, whereas $L_{\alpha+1}$ consists only of definable subsets of $L_\alpha$. Also not that $L$ is transitive.
+Note that while $L$ bears very close resemblance to $V$, the difference is, that in every successor step of constructing $V$, we take every subset of $V_\alpha$ to be $V_{\alpha+1}$, whereas $L_{\alpha+1}$ consists only of definable subsets of $L_\alpha$. Also note that $L$ is transitive.
+
+In order to 
 
 TODO:
 \begin{lemma}\label{lemma:ord_in_l}
@@ -1327,7 +1315,7 @@ L \models \sf{ZFC}
 \end{theorem}
 
 \begin{proof}
-TODO !!! (strucne) vit \cite{JechBook, Theorem 13.3}
+TODO !!! (strucne) vit \cite{JechBook}[Theorem 13.3]
 \bce[(i)]
 \item \emph{Extensionality} (see \ref{def:extensionality}):\\
 \emph{Extensionality} holds in $L$ because $\Delta_0$ formulas are absolute in transitive classes by \ref{lemma:delta_0_absolute}, \emph{Extensionality} is $\Delta_0$ and $L$ is transitive.
@@ -1377,9 +1365,41 @@ The following is called the Generalised Continuum Hypothesis, abbreviated as \em
 \end{equation}
 \end{theorem}
 
-This is proven in cite\{neco\}
+This is proven in cite\{neco\} Gödel? Jech? Kunnen?
 
 
+% -------------------
+
+TODO L a velke kardinaly
+
+
+TODO def Con!
+\begin{theorem}
+\begin{equation}
+Con(L + \exists \kappa (\kappa \mbox{" is an Inaccessible Cardinal"}))  
+\end{equation}
+\end{theorem}
+
+\begin{theorem}
+\begin{equation}
+Con(L + \exists \kappa (\kappa \mbox{" is a Mahlo Cardinal"}))  
+\end{equation}
+\end{theorem}
+
+
+\begin{theorem}
+\begin{equation}
+Con(L + \exists \kappa (\kappa \mbox{" is a Weakly Inaccessible Cardinal Cardinal"}))  
+\end{equation}
+\end{theorem}
+
+\begin{theorem}
+\begin{equation}
+Con(L + \exists \kappa (\kappa \mbox{" is a Measurable Cardinal"}))  
+\end{equation}
+\end{theorem}
+
+TODO co velky pismena ve jmenech kardinalu?
 
 {\color{red}
 \begin{comment}
@@ -1405,7 +1425,7 @@ TODO neco jako ze meritelny kardinal je nepopsatelny vys nez je hierarchie vsech
 
 TODO refaktorizovat fle:
 \begin{definition}{(Ultrafilter)}\\
-Given a set $X$, we say $U \subset \power(X)$ is an \emph{ultrafilter} iff all of the following hold:
+Given a set $X$, we say $U \subset \power{X}$ is an \emph{ultrafilter} iff all of the following hold:
 \bce[(i)]
 \item $\emptyset \not\in U$
 \item $\forall a, b (\subset X\ \&\ a \subset b\ \&\ a \in U \then b \in U)$
@@ -1426,6 +1446,16 @@ TODO
 Let $\kappa$ be a caridnal. We say is a \emph{measurable cardinal} iff it is an uncountable cardinal with a $\kappa$-complete, non-principal ultrafilter.
 \end{definition}
 
+\begin{theorem}
+Let $\kappa$ be a cardinal. $\kappa$ is a measurable cardinal $iff$ it is a $\Pi^2_1$-indescribable cardinal.
+\end{theorem}
+
+TODO !!!
+
+
+TODO proc?
+
+TODO je 
 %\newpage
 % =====================================================================================================================================
 %\section{Higher-order reflection} % preformulovat

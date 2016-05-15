@@ -1,160 +1,348 @@
-\bce
-\item $\emph{Reflection}$ je obecne reflexe (jaka presne?)
-\item $\emph{Reflection}_1$ je reflexe prvoradovych formuli TODO presna formulace!
-\item etc...
-\ece
+\subsubsection{The Language of Set Theory}
+% TODO predpokladame splnovani a tak, z logiky? link na ucebnici kdyztak? 
+% 
 
+We are about to define basic set-theoretical terminology on which the rest of this thesis will be built. For Chapter 2, the underlying theory will be the \emph{Zermelo –Fraenkel} set theory with the Axiom of Choice ($\sf{ZFC}$), a first-order set theory in the language $\mathscr{L} = \{=, \in\}$, which will be sometimes referred to as \emph{the language of set theory}. In Chapter 3\footnote{TODO bude jich vic? Chapter 4 taky?}, we shall always make it clear whether we are in first-order $\sf{ZFC}$ or second-order $\sf{ZFC}_2$, which will be precisely defined later in this chapter. When in second-order theory, we will usually denote type 1 variables, which are elements of the domain of discourse\footnote{co je "domain of discourse"?} by lower-case letters, mostly $u, v, w, x, y, z, p_1, p_2, p_3,  \ldots$ while type 2 variables, which represent $n$-ary relations of the domain of discourse for any natural number $n$, are usually denoted by upper-case letters $A, B, C, X, Y, Z$. Note that those may be used both as relations and functions, see the definition of a function below.\footnote{TODO ref?}
+
+The informal notions of \emph{class} and \emph{property} will be used throughout this thesis. They both represent formulas with respect to the domain of discourse. If $\varphi(x, p_1, \ldots, p_n)$ is a formula in the language of set theory, we call 
+\begin{equation}
+A = \{x : \varphi(x, p_1, \ldots, p_n)\}
+\end{equation}
+a class of all sets satisfying $\varphi(x, p_1, \ldots, p_n)$ in a sense that 
+\begin{equation}
+x \in A \iff \varphi(x, p_1, \ldots, p_n)
+\end{equation}
+One can easily define for classes $A$, $B$ the operations like $A \cap B$, $A \cup B$, $A \setminus C$, $\bigcup A$, but it is elementary and we won't do it here, see the first part of \cite{JechBook} for technical details. The following axioms are the tools by which decide whether particular classes are in fact sets. A class that fails to be considered a set is called a \emph{proper class}.
+% taky diag -- class/property/formula je totez, formula je totiz trida n-tic ktere ji splnuji
 \
 
-$V$ a $V_\alpha$ odkazuji k Von Neumannove hierarchii (pro jistotu)
 
-\
+\subsubsection{The Axioms}
 
-zakladni definice
+\begin{definition}{(The existence of a set)}\label{def:existence_of_a_set}
+\begin{equation}
+\exists x (x = x)
+\end{equation}
+\end{definition}
+The above axiom is usually not used because it can be deduced from the axiom of \emph{Infinity} (see below), but since we will be using set theories that omit \emph{Infinity}, this will be useful.
 
-\begin{definition}{(Ord)}\\
-TODO Ord je trida vsech ordinalu
+\begin{definition}{(Extensionality)}\label{def:extensionality}
+\begin{equation}
+\forall x, y(\forall z (z \in x \iff z \in y) \iff x = y)
+\end{equation}
 \end{definition}
 
+\begin{definition}{(Specification)}\label{def:specification}\\
+The following is a schema for every first-order formula $\varphi(x, p_1, \ldots, p_n)$ with no free variables other than $x, p_1, \ldots, p_n$.
+\begin{equation}
+\forall x, p_1, \ldots, p_n \exists y \forall z ( z \in y \iff ( z \in x \et \varphi(z, p_1, \ldots, p_n)))
+\end{equation}
+\end{definition}
+
+We will now provide two definitions that are not axioms, but will be helpful in establishing some of the other axioms in a more intuitive way.
+\begin{definition}{($x \subseteq y$, $x \subset y$)}
+\begin{equation}
+x \subseteq y \iff \forall z(z \in x \then z \in y)
+\end{equation}
+\begin{equation}
+x \subset y \iff x \subseteq y \et x \neq y
+\end{equation}
+\end{definition}
+
+\begin{definition}{(Empty set)}\label{def:emptyset}
+\begin{equation}
+\emptyset \defeq \{x : x \neq x\}
+\end{equation}
+\end{definition}
+To make sure that $\emptyset$ is a set, note that there exists at least one set $y$ from \ref{def:existence_of_a_set}, then consider the following alternative definition.
+
+\begin{equation}
+\emptyset' \defeq \{x : \varphi(x) \et x \in y\}\mbox{ where $y$ $\varphi$ is the formula "$x \neq x$".}
+\end{equation}
+It should be clear that $\emptyset' = \emptyset$.\footnote{For details, see page 8 in \cite{JechBook}.}
+
+Now we can introduce more axioms.
+\begin{definition}{(Foundation)}\label{def:foundation}
+\begin{equation}
+\forall x (x \neq \emptyset \then \exists z (z \in x \et \forall u \neg (u \in z \et u \in x)))
+\end{equation}
+\end{definition}
+
+\begin{definition}{(Pairing)}\label{def:pairing}
+\begin{equation}
+\forall x, y \exists z \forall q (q \in z \iff q \in z \lor q \in y)
+\end{equation}
+\end{definition}
+
+\begin{definition}{(Union)}\label{def:union}
+\begin{equation}
+\forall x \exists y \forall z (z \in x \iff \exists q( z \in q \et q \in x))
+\end{equation}
+\end{definition}
+
+\begin{definition}{(Powerset)}\label{def:powerset}
+\begin{equation}
+\forall x \exists y \forall z (z \subseteq x \iff z \in y)
+\end{equation}
+\end{definition}
+
+\begin{definition}{(Infinity)}\label{def:infinity}
+\begin{equation}
+\exists x (\forall y \in x)(y\cup\{y\} \in x)
+\end{equation}
+\end{definition}
+
+Let us introduce a few more definitions that will make the two remaining axioms more comprehensible.
 \begin{definition}{(Function)}\label{def:function}\\
-We say that a first-order formula $\varphi(x, y, u_1, \ldots, u_n)$ with no free variable besides $x, y, u_1, \ldots, u_n$ is a \emph{function} iff
-\begin{equation}
-\forall x, y, z (\varphi(x, y, u_1, \ldots, u_n)\ \&\ \varphi(x, z, u_1, \ldots, u_n) \then y=z)
+Given arbitrary first-order formula $\varphi(x, y, p_1, \ldots, p_n)$, we say that $\varphi$ is a function iff
+\begin{equation}\label{def:function_formula}
+\forall x, y, z, p_1, \ldots, p_n (\varphi(x, y, p_1, \ldots, p_n) \et \varphi(x, z, p_1, \ldots, p_n) \then y = z)
 \end{equation}
 \end{definition}
-
-TODO kofinalita
-\begin{definition}{(Cofinality)}\label{def:extensionality}\\
-Let $\kappa$ be a cardinal. The {cofinality} of $\kappa$, written as $cf(\kappa)$ is defined as follows
+When a $\varphi(x, y)$ is a function, we also write the following:
 \begin{equation}
+f(x) = y \iff \varphi(x, y)
+\end{equation}
+Note that this $f$ is in fact  a formula 
+
+TODO $f = \{(x, y) : \varphi(x, y)\}$ !!! f muze byt mnozina i trida!
+\footnote{This can also be done for $\varphi$s with more than two free variables by either setting $f(x, p_1, \ldots p_n) = y \iff \varphi(x, y p_1, \ldots, p_n)$}
+
+\begin{definition}{(Dom(f))}\label{def:dom}\\
+Let $f$ be a function. We read the following as "Dom(f) is the domain of f".
+\begin{equation}
+Dom(f) \defeq \{x : \exists y (f(x) = y)\}
+\end{equation}
+\end{definition}
+We say "$f$ is a function on $A$", $A$ being a class, if $A = dom(f)$.
+
+\begin{definition}{(Rng(f))}\label{def:rng}\\
+Let $f$ be a function. We read the following as "Rng(f) is the range of f".
+\begin{equation}
+Rng(f) \defeq \{x : \exists y (f(x) = y)\}
+\end{equation}
+\end{definition}
+We say that $f$ is i function into $A$, $A$ being a class, if $rng(f) \subseteq A$.
+
+Note that \emph{Dom(f)} and \emph{Rng(f)} are not definitions in a strict sense, they are in fact definition schemas that yield definitions for every function $f$ given. Also note that they can be easily modified for $\varphi$ instead of $f$, with the only difference that then it is defined only for those $\varphi$s that are functions.
+
+\begin{definition}{(Powerset)}\\
 TODO
-\end{equation}
 \end{definition}
 
-\begin{definition}{(Limit ordinal)}\label{def:limit_ordinal}\\
-We say that an ordinal $\alpha$ is a \emph{limit ordinal} iff
+And now for the axioms.
+\begin{definition}{(Replacement)}\label{def:replacement}\\
+The following is a schema for every first-order formula $\varphi(x, p_1, \ldots, p_n)$ with no free variables other than $x, p_1, \ldots, p_n$.
 \begin{equation}
-\alpha \in Ord\ \&\ \exists x (x\in\alpha)\ \&\ \forall x(x \in \alpha \then x+1 \in \alpha)
+"\varphi\mbox{ is a function}"\then \forall x \exists y \forall z (z \in y \iff (\exists q \in x)(\varphi(x, y, p_1, \ldots, p_n))
 \end{equation}
 \end{definition}
 
-TODO def $\aleph_\alpha$ ?
+\begin{definition}{(Choice)}\label{def:choice}\\
+This is also a schema. For every $A$, a family of non-empty sets\footnote{We say a class $A$ is a "family of non-empty sets" iff there is $B$ such that $A \subseteq \power{B}$}, such that $\emptyset \not\in S$, there is a function $f$ such that for every $x \in A$
+\begin{equation}
+f(x) \in x
+\end{equation}
+\end{definition}
+
+We will refer the axioms by their name, written in italic type, e.g. \emph{Foundation} refers to the Axiom of Foundation. Now we need to define some basic set theories to be used in the article. There will be others introduce in Chapter 3, but those will usually be defined just by appending additional axioms or schemata to one of the following.
+
+\begin{definition}{$(\sf{S})$}\label{def:s}\\
+We call $\sf{S}$ a set theory with the following axioms:
+\bce[(i)]
+\item \emph{Existence of a set} (see \ref{def:existence_of_a_set})
+\item \emph{Extensionality} (see \ref{def:extensionality})
+\item \emph{Specification} (see \ref{def:specification})
+\item \emph{Foundation} (see \ref{def:foundation})
+\item \emph{Pairing} (see \ref{def:pairing})
+\item \emph{Union} (see \ref{def:union})
+\item \emph{Powerset} (see \ref{def:powerset})
+\ece
+\end{definition}
+
+\begin{definition}{$(\sf{ZF})$}\label{def:zf}\\
+We call $\sf{ZF}$ a set theory that contains all the axioms of the theory $\sf{S}$\footnote{With the exception of \emph{Existence of a set}} in addition to the following
+\bce[(i)]
+\item \emph{Replacement} schema (see \ref{def:replacement})
+\item \emph{Infinity} (see \ref{def:infinity})
+\ece
+\end{definition}
+
+\begin{definition}{$(\sf{ZFC})$}\label{def:zfc}\\
+$\sf{ZFC}$ is a theory that contains all the axioms of $\sf{ZF}$ plus \emph{Choice} (\ref{def:choice}).
+\end{definition}
+
+
+\subsubsection{Second-order set theory}
+\begin{definition}{$(\sf{ZFC\textsubscript{2}})$}\label{def:zfc_2}\\
+TODO ?
+\end{definition}
+
+TODO nenechat do patricne kapitoly? asi jo.\\
+TODO Reflection?\\
+TODO druhoradove splnovani?\\
+
+\
+
+\subsubsection{The transitive universe}
+% $V$ a $V_\alpha$ odkazuji k Von Neumannove hierarchii (pro jistotu)
+\begin{definition}{(Transitive class)}\label{def:transitivity}\\
+We say a class $A$ is \emph{transitive} iff
+\begin{equation}
+\forall x(x \in A \then x \subseteq A)
+\end{equation}
+\end{definition}
+
+\begin{definition}{Well Ordered Class}\label{def:well_ordering}
+A class $A$ is said to be \emph{well ordered by $\in$} iff the following hold:
+\bce[(i)]
+\item $(\forall x \in A)(x \not\in x)$ (Antireflexivity)
+\item $(\forall x, y, z \in A)(x \in y \et y \in z \then x \in z)$ (Transitivity)
+\item $(\forall x, y \in A)(x = y \lor x \in y \lor y \in x)$ (Linearity)
+\item $(\forall x)(x \subseteq A \et x \neq \emptyset \then (\exists y \in x)(\forall z \in x)(z = y \lor z \in y)))$ % (every nonempty subclass has a least element)
+\ece
+\end{definition}
+
+\begin{definition}{(Ordinal number)}\label{def:ordinal}\\
+A set $x$ is said to be an \emph{ordinal number}, also known as an \emph{ordinal}, if it is \emph{transitive} and \emph{well-ordered by $\in$}. 
+\end{definition}
+For the sake of brevity, we usually just say "$x$ is an \emph{ordinal}". 
+Note that "$x$ is an ordinal" is a well-defined formula, since \ref{def:transitivity} is a formula and \ref{def:well_ordering} is in fact a conjunction of four formulas.
+Ordinals will be usually denoted by lower case greek letters, starting from the beginning: $\alpha, \beta, \gamma, \ldots$.
+Given two different ordinals $\alpha, \beta$, we will write $\alpha < \beta$ for $\alpha \in \beta$, see \cite{JechBook}{Lemma 2.11} for technical details.
+
+\begin{definition}{(Successor Ordinal)}\label{def:successor_ordinal}\\
+Consider the following operation
+\begin{equation}
+\beta + 1 \defeq \beta \cup \{\beta\}
+\end{equation}
+An ordinal $\alpha$ is called a \emph{successor ordinal} iff there is an ordinal $\beta$, such that $\alpha = \beta+1$
+\end{definition}
+
+\begin{definition}{(Limit Ordinal)}\label{def:limit_ordinal}\\
+A non-zero ordinal $\alpha$\footnote{$\alpha \neq \emptyset$} is called a \emph{limit ordinal} iff it is not a successor ordinal.
+\end{definition}
+
+\begin{definition}{(Ord)}\label{def:ord}\\
+\emph{The class of all ordinal numbers}, which we will denote $Ord$\footnote{It is sometimes denoted $On$, but we will stick to the notation in \cite{JechBook}} be the following class:
+\begin{equation}
+Ord \defeq \{x : x\mbox{ is an ordinal}\}
+\end{equation}
+\end{definition}
+
+The following construction will be often referred to as the \emph{Von Neumann's Hierarchy}, sometimes also the \emph{Von Neumann's Universe}. %, the former referring more to the construction with the individual levels in mind, the latter referring more to the class $V$, but they can be interchanged with no confusion caused.
+
+\begin{definition}{(Von Neumann's Hierarchy)}\label{def:von_neumann}\\
+The \emph{Von Neumann's Hierarchy} is a collection of sets indexed by elements of $Ord$, defined recursively in the following way:
+\bce[(i)]
+\item 
+\begin{equation}
+V_0 = \emptyset
+\end{equation}
+\item 
+\begin{equation}
+V_{\alpha+1} = \power{V_\alpha}\mbox{ for any ordinal $\alpha$}
+\end{equation}
+\item
+\begin{equation} 
+V_\lambda = \bigcup_{\beta < \lambda} V_\beta \mbox{ for a limit ordinal $\lambda$}
+\end{equation}
+\ece
+\end{definition}
+% TODO mame union pro tridy? (asi cajk)
+
+\begin{definition}{(Rank)}\label{def:rank}\\
+Given a set $x$, we say that the rank of $x$ (written as $rank(x)$) is the least ordinal $\alpha$ such that
+\begin{equation}
+x \in V_{\alpha+1}
+\end{equation}
+\end{definition}
+Due to \emph{Regularity}, every set has a rank.\footnote{See chapter 6 of \cite{JechBook} for details.}
+% TODO abchc mozna prepsat na fli?
+
+\begin{definition}{($\omega$)}\\
+\begin{equation}
+\omega \defeq \bigcap\{x : x is a limit ordinal)\}
+\end{equation}
+\end{definition}
+
+\
+
+\subsubsection{Cardinal numbers}
+
+\begin{definition}{(Cardinality)}\\
+Given a set $x$, let the cardinality of $x$, written $|x|$, be defined as the smallest ordinal number such that there is an injective mapping from $x$ to $\alpha$.
+\end{definition}
+For formal details as well as why every set can be well-ordered assuming \emph{Choice}, see \cite{JechBook}.
+
+\begin{definition}{(Aleph function)}\label{def:aleph}\\
+Let $\omega$ be the set defined by \ref{def:omega}.
+We will recursively define the function $\aleph$ for all ordinals.
+\bce[(i)]
+\item $\aleph_0 = \omega$
+\item $\aleph_{\alpha+1}$ is the least cardinal larger than $\aleph_\alpha$\footnote{"The least cardinal larger than $\aleph_\alpha$" is sometimes notated as $\aleph_\alpha^{+}$}
+\item $\aleph_\lambda = \bigcup_{\beta < \lambda}\aleph_\beta$ for a limit ordinal $\lambda$
+\ece
+\end{definition}
+
+\begin{definition}{(Cardinal number)}\label{def:cardinal}\\
+We say a set $x$ is a \emph{cardinal number}, usually called a \emph{cardinal}, if either $x \in \omega$
+\end{definition}
+Cardinals will be notated by lower-case greek letters starting from $\kappa, \lambda, \mu, \ni, \ldots$\footnote{$\lambda$ is also sometimes used for limit ordinals, the distinction should be clear from the context.}.
+
+\begin{definition}{(Cofinality)}\label{def:cofinality}\\
+Let $\lambda$ be a limit ordinal. The \emph{cofinality} of $\lambda$, written $cf(\lambda)$, is the least limit ordinal $\alpha$ such that there is an increasing $\alpha$-sequence\footnote{TODO def $\alpha$-sequence} $\langle \lambda_\beta : \beta < \alpha \rangle$ with $lim_{\beta \then \alpha} \lambda_\beta = \lambda$.
+\end{definition}
 
 \begin{definition}{(Limit Cardinal)}\label{def:limit_ordinal}\\
-We say that a cardinal $\kappa$ is a \emph{limit cardinal} iff
+We say that a cardinal $\kappa$ is a \emph{limit cardinal} if
 \begin{equation}
-\exists \alpha (\alpha \in Ord\ \&\ \kappa = \aleph_\alpha)
+(\exists \alpha \in Ord)(\kappa = \aleph_\alpha)
 \end{equation}
 \end{definition}
 
 \begin{definition}{(Strong Limit Cardinal)}\label{def:limit_ordinal}\\
-We say that an ordinal $\kappa$ is a \emph{strong limit cardinal} iff it is a \emph{limit cardinal} and 
+We say that an ordinal $\kappa$ is a \emph{strong limit cardinal} if it is a \emph{limit cardinal} and 
 \begin{equation}
-\forall \alpha (\alpha \in \kappa \then \power(\alpha) \in \kappa)
+\forall \alpha (\alpha \in \kappa \then \power{\alpha} \in \kappa)
 \end{equation}
 \end{definition}
+
+\begin{definition}{(Generalised Continuum Hypothesis)}\\
+\begin{equation}
+\aleph_{\alpha+1}=2^{\aleph_\alpha}
+\end{equation}
+\end{definition}
+If \emph{GCH} holds (for example in Gödel's $L$, see chapter 3), the notions of a limit cardinal and a strong limit cardinal are equivalent.
 \
 
-Vypsat axiomy ZFC a jake formulace pouzivam\\
-\emph{Replacement}, $Replacement_2$ atd
-\emph{Subsets}
+\subsubsection{The Hierarchy of Formulas}
 
-\begin{definition}{(\emph{Extensionality})}\label{def:extensionality}\\
-\begin{equation}
-\emph{Extensionality} \iff \forall x, y(\forall z (z \in x \iff z \in y) \then x = y)
-\end{equation}
+\begin{definition}{(Relativization)}\label{def:relativization}\\ %\cite[Definition 12.6]{JechBook} 
+Let $M$ be a class, $R$ a binary relation on $M$ and let $\varphi(p_1, \ldots, p_n)$ be a first-order formula with $n$ parameters. 
+The \emph{relativization of $\varphi$ to $M$ and $R$} is the formula, written as $\varphi^{M, R}(p_1, \ldots, p_n)$, defined in the following inductive manner:
+\bce[(i)]
+\item $(x \in y)^{M,R} \iff R(x, y)$
+\item $(x = y)^{M,R} \iff x = y$
+\item $(\neg \varphi)^{M,R} \iff \neg \varphi^{M,R}$
+\item $(\varphi\ \&\ \psi)^{M,R} \iff \varphi^{M,R}\ \&\ \psi^{M,R}$
+\item $(\exists x \varphi)^{M,R} \iff (\exists x \in M) \varphi^{M,R}$
+\ece
 \end{definition}
 
-\begin{definition}{(\emph{Foundation})}\label{def:foundation}\\
-\begin{equation}
-\emph{Foundation} \iff \forall x (\exists z (z \in x) \then \exists z (z \in x\ \&\ \forall u \neg (u \in z\ \&\ u \in x)))
-\end{equation}
+% todo lepsi slovo nez variables?
+For the following definition, we need variables and quantifiers of higher orders. Let \emph{type 1} variables be usual variables of first-order set theory. % spis logic?
+\begin{definition}{(Hierarchy of formulas)}\label{def:analytical_hierarchy}\\
+Let $\varphi$ be a formula. ((v logice radu $n$)) $\Pi^m_n$ und $\Sigma^m_n$
+
 \end{definition}
-
-\begin{definition}{(\emph{Pairing})}\label{def:pairing}\\
-\begin{equation}
-\emph{Pairing} \iff \forall x, y \exists z (x \in z\ \&\ y \in z)
-\end{equation}
-\end{definition}
-
-\begin{definition}{(\emph{Union})}\label{def:union}\\
-\begin{equation}
-\emph{Union} \iff \forall x \,\exists y \, \forall z\, \forall w ((w \in z \land z \in x) \then w \in y)
-\end{equation}
-\end{definition}
-
-\begin{definition}{(\emph{Powerset})}\label{def:powerset}\\
-\begin{equation}
-\emph{Powerset} \iff \forall x \exists y \forall z (z \subseteq x \then z \in y)
-\end{equation}
-\end{definition}
-
-\begin{definition}{(\emph{Infinity})}\label{def:infinity}\\
-\begin{equation}
-\emph{Infinity} \iff \exists x (\exists y (y \in x)\ \&\ \forall y(y \in x \then y+1 \in x))
-\end{equation}
-\end{definition}
-
-\begin{definition}{(\emph{Specification})}\label{def:specification}\\
-The following is a schema for every first-order formula $\varphi$.
-\begin{equation}
-\emph{Specification} \iff \forall x \exists y \forall z \, ( z \in y \iff ( z \in x \& \varphi(z, x)))
-\end{equation}
-\end{definition}
-
-\begin{definition}{(\emph{Replacement})}\label{def:replacement}\\
-The following is a schema for every first-order formula $\varphi$.
-\begin{equation}
-\begin{gathered}
-\emph{Replacement} \iff\\
-\forall x, y, z (\varphi(x, y) \& \varphi(x, z) \then y\ =\ z) \then \\
-\then (\forall x \exists y \forall z (z \in y \iff \exists w \in x (\varphi(w, z))))
-\end{gathered}
-\end{equation}
-\end{definition}
-
-\begin{definition}{(\emph{Choice})}\label{def:choice}\\
-\begin{equation}
-\emph{Choice} \iff TODO
-\end{equation}
-\end{definition}
-
-\
-
-\begin{definition}{$(\sf{S})$}\label{def:s}\\
-TODO
-\end{definition}
-
-\begin{definition}{$(\sf{ZF})$}\label{def:zf}\\
-TODO
-\end{definition}
-
-\begin{definition}{$(\sf{ZFC})$}\label{def:zfc}\\
-TODO
-\end{definition}
-
-\begin{definition}{$(\sf{ZFC\textsubscript{2}})$}\label{def:zfc_2}\\
-TODO
-\end{definition}
-
-\
-
-TODO jak se vyrobi separation z replacementu?
-
-TODO definice druhoradoveho splnovani (nebo to vyhod)
 
 \begin{lemma}\label{lemma:delta_0_absolute}
-$\delta_0$ formulas are absolute in transitive sets, in other words, let $\varphi$ be a first-order $\delta_0$ formula and let $M$ be a transitive class.
+$\Delta_0$ formulas are absolute in transitive sets, in other words, let $\varphi$ be a first-order $\Delta_0$ formula and let $M$ be a transitive class.
 \begin{equation}
 \varphi \iff \varphi^M
 \end{equation}
 \end{lemma}
-
-\begin{definition}{(Analytical hierarchy of formulas)}\\
-\label{def:analytical_hierarchy}
-ASDF 
-$\Pi^m_n$ und $\Sigma^m_n$ 
-\end{definition}
 
 
 \begin{definition}{(\emph{Reflection\textsubscript{1}})}\label{def:reflection_1}\\
@@ -165,19 +353,6 @@ ASD
 
 \
 
-
-
-Asi vsechno budeme delat v ZFC, nic bychom neziskali, pokud ne.
-
-TODO mozna zminit Levyho "sentential reflection"? pouzivame to v indescribable
-
-\begin{comment}
-% ======================================================================================================
-
-Kanamori v reflexi rika, ze pro $\varphi$ a libovolny $\beta \in Ord$ existuje $\alpha$ ze $\varphi^{V_\alpha} \iff \varphi$ (s parametrama $x_1, \ldots, x_n \in V_\alpha$)
-
-
-Prepsat modelovy veci do "kanamoriho notace" $<V_\kappa, \in, R>$ kde $R$ je nejaka relace\\
-\prec !!
-% ======================================================================================================
-\end{comment}
+% TODO mozna zminit Levyho "sentential reflection"? pouzivame to v indescribable
+% Kanamori v reflexi rika, ze pro $\varphi$ a libovolny $\beta \in Ord$ existuje $\alpha$ ze $\varphi^{V_\alpha} \iff \varphi$ (s parametrama $x_1, \ldots, x_n \in V_\alpha$)
+% Prepsat modelovy veci do "kanamoriho notace" $\langle V_\kappa, \in, R \rangle$ kde $R$ je nejaka relace
