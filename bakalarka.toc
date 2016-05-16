@@ -11,16 +11,16 @@
 \contentsline {subsubsection}{\numberline {1.4.6}Higher-Order Logic}{15}
 \contentsline {section}{\numberline {2}Levy's first-order reflection}{17}
 \contentsline {subsection}{\numberline {2.1}L\IeC {\'e}vy's Original Paper}{17}
-\contentsline {subsection}{\numberline {2.2}$\sf {S} \models (N_0\ \leftrightarrow \ \emph {Replacement}\ \&\ \emph {Infinity})$}{18}
+\contentsline {subsection}{\numberline {2.2}$\sf {S} \models (N_0\ \leftrightarrow \ \emph {Replacement} \mathrel {\&}\emph {Infinity})$}{18}
 \contentsline {subsection}{\numberline {2.3}Contemporary restatement}{20}
-\contentsline {section}{\numberline {3}Reflection And Large Cardinals}{26}
-\contentsline {subsection}{\numberline {3.1}Regular Fixed-Point Axioms}{27}
-\contentsline {subsection}{\numberline {3.2}A Model-Theoretic Intermezzo}{29}
-\contentsline {subsection}{\numberline {3.3}Reflecting Second-order Formulas}{29}
-\contentsline {subsection}{\numberline {3.4}Inaccessibility}{30}
-\contentsline {subsection}{\numberline {3.5}Mahlo Cardinals}{34}
+\contentsline {section}{\numberline {3}Reflection And Large Cardinals}{27}
+\contentsline {subsection}{\numberline {3.1}Regular Fixed-Point Axioms}{28}
+\contentsline {subsection}{\numberline {3.2}A Model-Theoretic Intermezzo}{30}
+\contentsline {subsection}{\numberline {3.3}Reflecting Second-order Formulas}{30}
+\contentsline {subsection}{\numberline {3.4}Inaccessibility}{31}
+\contentsline {subsection}{\numberline {3.5}Mahlo Cardinals}{35}
 \contentsline {subsection}{\numberline {3.6}Indescribality}{37}
 \contentsline {subsection}{\numberline {3.7}Bernays\IeC {\textendash }G{\"o}del Set Theory}{39}
-\contentsline {subsection}{\numberline {3.8}The Constructible Universe}{40}
-\contentsline {subsection}{\numberline {3.9}Measurable Cardinal}{42}
-\contentsline {section}{\numberline {4}Conclusion}{44}
+\contentsline {subsection}{\numberline {3.8}The Constructible Universe}{41}
+\contentsline {subsection}{\numberline {3.9}Measurable Cardinal}{43}
+\contentsline {section}{\numberline {4}Conclusion}{45}

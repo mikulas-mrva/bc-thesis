@@ -4,6 +4,10 @@
 
 We are about to define basic set-theoretical terminology on which the rest of this thesis will be built. For Chapter 2, the underlying theory will be the \emph{Zermelo –Fraenkel} set theory with the Axiom of Choice ($\sf{ZFC}$), a first-order set theory in the language $\mathscr{L} = \{=, \in\}$, which will be sometimes referred to as \emph{the language of set theory}. In Chapter 3\footnote{TODO bude jich vic? Chapter 4 taky?}, we shall always make it clear whether we are in first-order $\sf{ZFC}$ or second-order $\sf{ZFC}_2$, which will be precisely defined later in this chapter. When in second-order theory, we will usually denote type 1 variables, which are elements of the domain of discourse\footnote{co je "domain of discourse"?} by lower-case letters, mostly $u, v, w, x, y, z, p_1, p_2, p_3,  \ldots$ while type 2 variables, which represent $n$-ary relations of the domain of discourse for any natural number $n$, are usually denoted by upper-case letters $A, B, C, X, Y, Z$. Note that those may be used both as relations and functions, see the definition of a function below.\footnote{TODO ref?}
 
+TODO uppercase $M$ is a set!
+
+TODO "$M$ is a limit ordinal" je ve skutecnosti formule, nekam to sem napis!
+
 The informal notions of \emph{class} and \emph{property} will be used throughout this thesis. They both represent formulas with respect to the domain of discourse. If $\varphi(x, p_1, \ldots, p_n)$ is a formula in the language of set theory, we call 
 \begin{equation}
 A = \{x : \varphi(x, p_1, \ldots, p_n)\}
@@ -64,7 +68,7 @@ It should be clear that $\emptyset' = \emptyset$.\footnote{For details, see page
 Now we can introduce more axioms.
 \begin{definition}{(Foundation)}\label{def:foundation}
 \begin{equation}
-\forall x (x \neq \emptyset \then \exists z (z \in x \et \forall u \neg (u \in z \et u \in x)))
+\forall x (x \neq \emptyset \then \exists (y \in x) (\forall z \neg (z \in y \et z \in x)))
 \end{equation}
 \end{definition}
 
