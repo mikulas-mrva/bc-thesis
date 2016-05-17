@@ -16,11 +16,10 @@
 \contentsline {subsection}{\numberline {2.3}Contemporary restatement}{20}
 \contentsline {section}{\numberline {3}Reflection And Large Cardinals}{26}
 \contentsline {subsection}{\numberline {3.1}Regular Fixed-Point Axioms}{28}
-\contentsline {subsection}{\numberline {3.2}A Model-Theoretic Intermezzo}{30}
-\contentsline {subsection}{\numberline {3.3}Reflecting Second-order Formulas}{30}
-\contentsline {subsection}{\numberline {3.4}Inaccessibility}{31}
-\contentsline {subsection}{\numberline {3.5}Mahlo Cardinals}{36}
-\contentsline {subsection}{\numberline {3.6}Indescribality}{38}
-\contentsline {subsection}{\numberline {3.7}Measurable Cardinal}{40}
-\contentsline {subsection}{\numberline {3.8}The Constructible Universe}{41}
+\contentsline {subsection}{\numberline {3.2}Reflecting Second-Order Formulas}{30}
+\contentsline {subsection}{\numberline {3.3}Inaccessibility}{31}
+\contentsline {subsection}{\numberline {3.4}Mahlo Cardinals}{36}
+\contentsline {subsection}{\numberline {3.5}Indescribality}{38}
+\contentsline {subsection}{\numberline {3.6}Measurable Cardinal}{40}
+\contentsline {subsection}{\numberline {3.7}The Constructible Universe}{41}
 \contentsline {section}{\numberline {4}Conclusion}{43}
