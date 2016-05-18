@@ -1,0 +1,376 @@
+\section{Levy's first-order reflection}\label{sec:first_order}
+
+\subsection{Lévy's Original Paper}\label{sec:levy1960}
+This section will try to present Lévy's proof of a~general reflection principle being equivalent to \emph{Replacement} and \emph{Infinity} under ZF minus \emph{Replacement} and \emph{Infinity} from his 1960 paper \emph{Axiom Schemata of Strong Infinity in Axiomatic Set Theory}\footnote{\cite{Levy60a}}.
+
+When reading said article, one should bear in mind that it was written in a~period when set theory was semantically oriented, so while there are many statements about a~model of $\sf{ZF}$, usually denoted $u$, this is equivalent to today's universal class $V$, so it doesn't necessarily mean that there is a set $u$ that is a model of $\sf{ZF}$. We will review the notion of a standard complete model used by Lévy throughout the paper in a moment. Let's first say that the set theory $\sf{ZF}$ was formulated in the "non-simple applied first order functional calculus", is 
+
+TODO viz A. Church nebo tak neco. % math.stackovrflow?
+
+The axioms are equivalent to those defined in \ref{def:zf}, except for the \emph{Axiom of Subsets}, which is just a different name for \emph{Specification}.
+Besides $\sf{ZF}$ and $\sf{S}$, defined in \ref{def:zf} and yref{def:s} respectively, the set theories theories $\sf{Z}$, and $\sf{SF}$ are used in the text. $\sf{Z}$ is $\sf{ZF}$ minus replacement, $\sf{SF}$ is $\sf{ZF}$ minus \emph{Infinity}. Also note that universal quantifier does not appear, $\forall x \varphi (x)$ would be written as $(x) \varphi (x)$. The symbol for negation is "$\sim$", implication is written as "$\supset$" and equivalence is "$\equiv$", we will use "$\neg$", "$\then$" and "$\iff$". % TODO neco o : a setreni zavorek?
+
+Next two definitions are not used in contemporary set theory, but they illustrate 1960's set theory mind-set and they are used heavily in Lévy's text, so we will include and explain them for clarity. Generally, in this chapter, $\sf{Q}$ stands for an arbitrary axiomatic set theory used for general definitions, $u$ is usually a model of $\sf{Q}$, counterpart of today's $V$.
+
+This subsection uses $\sf{ZF}$ instead of the usual $\sf{ZFC}$ as the underlying theory.
+
+% TODO je to relativizovany, jak rika shepherdson? % WATT?
+\begin{definition}{(Standard model of a set theory)}\label{def:sm_q}\\
+Let $\sf{Q}$ be a axiomatic set theory in first-order logic. We say the the a class $u$ is a standard model of $\sf{Q}$ with respect to a membership relation $E$, written as $Sm^{\sf{Q}}(u)$, iff both of the following hold
+\bce[(i)]
+\item $(x, y) \in E \iff y \in u \et x \in y$
+\item $y \in u \et x \in y \then x \in u$
+\ece
+\end{definition}
+\begin{definition}{Standard complete model of a set theory}\label{def:scm_q}\\
+Let $\sf{Q}$ and $E$ be like in \ref{def:sm_q}. We say that that $u$ is a standard complete model of $\sf{Q}$ with respect to a membership relation $E$ iff both of the following hold
+\bce[(i)]
+\item $u$ is a transitive set with respect to $\in$
+\item $\forall E ((x, y) \in E \iff (y \in u \et x \in y) \et Sm^{\sf{Q}}(u, E))$
+\ece
+this is written as $Scm^{\sf{Q}}(u)$.
+\end{definition}
+
+\begin{definition}{(Inaccessible cardinal with respect to $\sf{Q}$)}\label{def:levy_inaccessible_q}\\
+Let $\sf{Q}$ be an axiomatic first-order set theory. We say that a cardinal $\kappa$ is inaccessible with respect to $\sf{Q}$, we write $In^{\sf{Q}}(\kappa)$.
+\begin{equation}
+In^{\sf{Q}}(\kappa) \defeq Scm^{\sf{Q}}(V_\kappa).
+\end{equation}
+\end{definition}
+
+\begin{definition}{(Inaccessible cardinal with respect to $\sf{ZF}$)}\label{def:levy_inaccessible}\\
+When a cardinal $\kappa$ is inaccessible with respect to $\sf{ZF}$, we only say that it is inaccessible. We write $In(\kappa)$.
+\begin{equation}
+In(\kappa) \defeq In^{\sf{ZF}}(\kappa)
+\end{equation}
+\end{definition}
+The above definition of inaccessibles is used because it doesn't require \emph{Choice}.
+
+For the definition of relativization, see \ref{def:relativization}. The syntax used by Lévy is $Rel(u, \varphi)$, we will use $\varphi^{u}$, which is more usual these days.
+% TODO urcite $\defeq$ kdyz je to schema? :(
+\begin{definition}{($N$)}\label{def:levy_axiom_n}\\
+The following is an axiom schema of complete reflection over $\sf{ZF}$, denoted as $N$.
+\begin{equation}
+N \defeq \exists u (Scm^{\sf{ZF}}(u) \et \forall x_1, \ldots , x_n (x_1, \ldots , x_n \in u \then \varphi \iff \varphi^{u}))
+\end{equation}
+where $\varphi$ is a~formula which contains no free variables except for $x_1, \ldots , x_n$.
+\end{definition}
+
+\begin{definition}{($N_0$)}\label{def:levy_axiom_n0}\\
+With $\sf{S}$ instead of $\sf{ZF}$we obtain what will now be called $N_0$.
+\begin{equation}
+N_0 \defeq \exists u (Scm^{\sf{S}}(u) \et \forall x_1, \ldots , x_n (x_1, \ldots , x_n \in u \then \varphi \iff \varphi^{u}))
+\end{equation}
+where $\varphi$ is a~formula which contains no free variables except for $x_1, \ldots , x_n$.
+\end{definition}
+
+% Once we have established the definitions, it's time to prove something interesting.
+% Note that this by (\ref{def:levy_inaccessible}) equivalent to $\exists u (In^{\sf{ZF}}(u) \et \forall x_1, \ldots , x_n (x_1, \ldots , x_n \in u \then \varphi \iff \varphi^{u}))$, where $In(\alpha)$ is equivalent to the standard notion of inaccessibility.
+\subsection{$\sf{S} \models (N_0\ \iff\ \emph{Replacement} \et \emph{Infinity})$} 
+% nebyl by to lepsi nadpis bez S?
+
+Let $\sf{S}$ be a set theory defined in \ref{def:s}.
+\begin{lemma}\label{lemma:scm_s_is_limit}\
+The following holds for every $u$.
+\begin{equation}
+\mbox{"$u$ is a limit ordinal"} \iff Scm^{\sf{S}}(u)
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+TODO !
+
+----
+
+In order to prove that it is a~model of $\sf{S}$, we would need to verify all axioms of $\sf{S}$. We have already shown that $\omega$ is closed under the powerset operation. Foundation, extensionality and comprehension are clear from the fact that we work in $\sf{ZF}$\footnote{We only need to verify axioms that provide means of constructing larger sets from smaller to make sure they don't exceed $\omega$. Since $\omega$ is an initial segment of $ZF$, the axiom scheme of specification can't be broken, the same holds for foundation and extensionality.}, pairing is clear from the fact, that given two sets $x$, $y$, they have ranks $\alpha$, $\beta$, without loss of generality we can assume that $\alpha \leq \beta$, which means that $x \in V_\alpha \in V_\beta$, therefore $V_\beta$ is a~set that satisfies the paring axiom: it contains both $x$ and $B$.
+
+\end{proof}
+
+Let $N_0$ be defined as in \ref{def:levy_axiom_n0}, for \emph{Infinity} see \ref{def:infinity}.
+\begin{theorem}\
+In $\sf{S}$, the schema $N_0$ implies \emph{Infinity}.
+\end{theorem}
+
+\begin{proof}
+Lévy skips this proof because it seems too obvious to him, but let's do it here for plasticity.
+For an arbitrary $\varphi$, $N_0$ gives us $\exists u Scm^{\sf{S}}(u)$, but from lemma \ref{lemma:scm_s_is_limit}, we know that this $u$ is a limit ordinal. This $u$ already satisfies \emph{Infinity}.
+\end{proof}
+
+\
+
+Let $N_0$ be defined as in \ref{def:levy_axiom_n0}, for \emph{Replacement} see \ref{def:replacement}, $\sf{S}$ is again the set theory defined in $\ref{def:s}$.
+\begin{theorem}
+In $\sf{S}$, the schema $N_0$ implies \emph{Replacement}.
+\end{theorem}
+
+\begin{proof}
+Let $\varphi(x, y, p_1, \ldots, p_n)$ be a~formula with no free variables except $x, y, p_1, \ldots, p_n$ for an arbitrary natural number $n$.
+
+\begin{equation}
+\begin{gathered}
+\chi = \forall x, y, z(\varphi(x, y, p_1, \ldots, p_n) \et \varphi(x, z, p_1, \ldots, p_n) \then y = z) \\
+\then \forall x \exists y \forall z (z \in y \iff \exists q (q \in x \et \varphi(q, z, p_1, \ldots, p_n)))
+\end{gathered}
+\end{equation}
+Let $\chi$ be an instance of \emph{Replacement} schema for given $\varphi$. Let the following formulas be instances of the $N_0$ schema for formulas  $\varphi$, $\exists y \varphi$, $\chi$ and $\forall x, p_1, \ldots, p_n \chi$ respectively:
+
+% TODO pozor nazmatek ve jmenech promennych
+We can deduce the following from $N_0$: 
+\bce[(i)]
+\item $x, y, p_1, \ldots, p_n \in u \then (\varphi \iff \varphi^{u}) $
+\item $x, p_1, \ldots, p_n \in u \then (\exists y \varphi \iff (\exists y \varphi)^{u})$
+\item $x, p_1, \ldots, p_n \in u \then (\chi \iff \chi^{u})$
+\item $\forall x, p_1, \ldots, p_n (\chi \iff (\forall x, p_1, \ldots, p_n \chi)^{u})$
+\ece
+
+From relativization, we also know that $(\exists y \varphi)^{u}$ is equivalent to $(\exists y \in u) \varphi^{u}$.
+Therefore $\bold{(ii)}$ is equivalent to
+\begin{equation}
+x, p_1, \ldots, p_n \in u \then (\exists y \in u) \varphi^{u}. 
+\end{equation}
+
+If $\varphi$ is a~function\footnote{See definition \ref{def:function}}, then for every $x \in u$, which is also $x \subset u$ by the transitivity of $Scm^{\sf{S}}(u)$,
+it maps elements of $x$ onto $u$. From the axiom scheme of comprehension\footnote{Lévy uses its equivalent, axiom of subsets}, we can find $y$, a~set of all images of elements of $x$.
+That gives us $x, p_1, \ldots, p_n \in u \then \chi$. By $\bold{(iii)}$ we get $x, p_1, \ldots, p_n \in u \then \chi^{u}$, the universal closure of this formula is $(\forall x, p_1, \ldots, p_n \chi)^{u}$, 
+which together with $\bold{(iv)}$ yields $\forall x, p_1, \ldots, p_n \chi$. Via universal instantiation, we end up with $\chi$. We have inferred replacement for a given arbitrary formula. 
+\end{proof}
+
+What we have just proven is just a single theorem from the above mentioned article by Lévy, we will introduce other interesting propositions, mostly related to the existence of large cardinals, later in their appropriate context in chapter 3.
+
+% =====================================================================================================================================
+% \newpage
+\subsection{Contemporary restatement}
+We will now prove what is also Lévy's first-order reflection theorem, but rephrased with up to date set theory terminology. The main difference is, that while Lévy reflects $\varphi$ from $V$ to a set $u$ that is a "standard complete model of $\sf{S}$", we say that there is a $V_\alpha$ for a limit $\alpha$ that reflects $\varphi$. We will argue that those are equivalent.\footnote{TODO nekde na to bude lemma!}
+
+
+\begin{definition}{(Reflection\textsubscript{1})}\label{def:reflection_1}\\
+Let $\varphi(p_1, \ldots, p_n)$ be a first-order formula in the language of set theory. Than the following holds for any such $\varphi$.
+% \ref{equation:levy_theorem_i}
+\begin{equation}
+\forall M_0 \exists M (M_0 \subseteq M \et (\varphi^M(p_1, \ldots, p_n) \iff \varphi(p_1, \ldots, p_n)))
+\end{equation}
+\end{definition}
+Note that this is a restatement of both Lévy's $N$ and $N_0$ from the previous chapter, see definitions \ref{def:n}, \ref{def:n_0}. We prefer to call it \emph{Reflection\textsubscript{1}} so it complies with how other axioms and schemata are called. \footnote{We will not use the name $N_0$, because it might be confusing to work $N_0$ and $M_0$ where $M_0$ is a set and $N_0$ is an axiom schema.} Note that the subscript 1 refers to the fact that $\varphi(p_1, \ldots, p_n)$ is a first-order formula, and since we're using the work "reflection" in less strict meaning throughout this thesis, distinguishing between the two just by using italic font face for the schema might cause confusion.
+
+We will now prove the equivalence of \emph{Reflection\textsubscript{1}} with \emph{Replacement} and \emph{Infinity} in $\sf{S}$ in two parts. First, we will show that $N_0$ is a theorem of $\sf{ZFC}$, then we shall show that the second implication, which proves \emph{Infinity} and \emph{Replacement} from $N_0$, also holds.
+
+The following lemma is usually done in more parts, the first being for one formula, the other for $n$ formulas. We will only state and prove the more general version for $n$ formulas, knowing that setting $n=1$ turns it to a specific version.
+
+\begin{lemma}\label{lemma:reflection_lemma}\
+Let $\varphi_1, \ldots, \varphi_n$ be formulas with $m$ parameters\footnote{For formulas with a different number of parameters, take for $m$ the highest number of parameters among those formulas. Add spare parameters to every formula that has less than $m$ parameters in a way that preserves the last parameter, which we will denote $x$. E.g. let $\varphi'_i$ be the a~formula with $k$ parameters, $k < m$. Let us set $\varphi_i(p_1, \ldots, p_{m-1}, x) \defeq \varphi'_i(p_1, \ldots, p_{k-1}, x)$, notice that the parameters $p_k, \ldots, p_{m-1}$ are not used.}.
+\bce[(i)]
+\item For each set $M_0$ there is such set $M$ that $M_0 \subset M$ and the following holds for every $i$, $1 \leq i \leq n$:
+\begin{equation}\label{equation:refl_lemma_i}
+\exists x \varphi_i(p_1, \ldots, p_{m-1}, x) \then (\exists x \in M) \varphi_i(p_1, \ldots, p_{m-1}, x)
+\end{equation}
+for every $p_1, \ldots, p_{m-1} \in M$.
+
+\item Furthermore there is an ordinal $\alpha$ such that $M_0 \subset V_\alpha$ and the following holds for each $i$, $1 \leq i \leq n$:
+\begin{equation}\label{equation:refl_lemma_ii}
+\exists x \varphi_i(p_1, \ldots, p_{m-1}, x) \then (\exists x \in V_\alpha) \varphi_i(p_1, \ldots, p_{m-1}, x)
+\end{equation}
+for every $p_1, \ldots, p_{m-1} \in M$.
+
+\item Assuming \emph{Choice}, there is $M$, $M_0 \subset M$ such that \ref{equation:refl_lemma_i} holds for every $M,\ i \leq n$ and $|M| \leq |M_0| \cdot \aleph_0$.
+\ece
+\end{lemma}
+
+\begin{proof}
+We will simultaneously prove statements $\bold{(i)}$ and $\bold{(ii)}$, denoting $M^T$ the transitive set required by part $\bold{(ii)}$. Unless explicitly stated otherwise for specific steps, it is thought to be equivalent to $M$.
+
+Let us first define operation $H(p_1, \ldots, p_{m-1})$ that gives us the set of $x$'s with minimal rank\footnote{Rank is defined in \ref{def:rank}} satisfying $\varphi_i(p_1, \ldots, p_{m-1}, x)$ for given parameters $p_1, \ldots, p_{m-1}$ for every $i$ such that $1 \leq i \leq n$.
+
+\begin{equation}
+H_i(p_1, \ldots, p_n) = \{x \in C_i: (\forall z \in C)(rank(x) \leq rank(z))\}
+\end{equation}
+for each $1 \leq i \leq n$, where
+\begin{equation}
+C_i = \{x: \varphi_i(p_1, \ldots, p_{m-1}, x)\} \mbox{ for $1 \leq i \leq n$}
+\end{equation}
+
+\
+
+Next, let's construct $M$ from given $M_0$ by induction. 
+\begin{equation}
+M_{i+1} = M_i \cup \bigcup_{j=0}^{n} \bigcup \{H_j(p_1, \ldots, p_{m-1}): p_1, \ldots, p_{m-1} \in M_i\}
+\end{equation}
+In other words, in each step we add the elements satisfying $\varphi(p_1, \ldots, p_{m-1}, x)$ for all parameters that were either available earlier or were added in the previous step. 
+For statement $\bold{(ii)}$, this is the only part that differs from $\bold{(i)}$. Let us take for each step transitive closure of $M_{i+1}$ from $\bold{(i)}$. In other words, let $\gamma$ be the smallest ordinal such that 
+\begin{equation}
+(M^T_i \cup \bigcup_{j=0}^{n} \{\bigcup\{H_j(p_1, \ldots, p_{m-1}): p_1, \ldots, p_{m-1} \in M_i\}\}) \subset V_\gamma
+\end{equation}
+Then the incremetal step is like so:
+\begin{equation}
+M^T_{i+1} = V_\gamma
+\end{equation}
+The final $M$ is obtained by joining all the individual steps. 
+\begin{equation}
+M = \bigcup_{i=0}^{\infty} M_i, \mbox{  }M^T = \bigcup_{i=0}^{\infty} M^T_i = V_\alpha \mbox{ \footnote{TODO proc vime, ze existuje $\alpha$, ze to plati?}}
+\end{equation}
+
+\
+
+We have yet to finish part $\bold{(iii)}$.
+Let's try to construct a~set $M'$ that satisfies the same conditions like $M$ but is kept as small as possible. Assuming the Axiom of Choice, we can modify the process so that the cardinality of $M'$ is at most $|M_0| \cdot \aleph_0$. Note that the size of $M'$ is determined by the size of $M_0$ and, most importantly, by the size of $H_i(p_1, \ldots, p_{m-1})$ for any $i$, $1 \leq i \leq n$ in individual levels of the construction. Since the lemma only states existence of some $x$ that satisfies $\varphi_i(p_1, \ldots, p_{m-1}, x)$ for any $1 \leq i \leq n$, we only need to add one $x$ for every set of parameters but $H_i(u_1, \dots, u_{m-1})$ can be arbitrarily large. Since Axiom of Choice ensures that there is a~choice function, let $F$ be a~choice function on $\power{M'}$. Also let $h_i(p_1, \ldots, p_{m-1}) = F(H_i(p_1, \ldots, p_{m-1}))$ for $i$, where $1 \leq i \leq n$, which means that $h$ is a~function that outputs an $x$ that satisfies $\varphi_i(p_1, \ldots, p_{m-1}, x)$ for $i$ such that $1 \leq i \leq n$ and has minimal rank among all such witnesses. The induction step needs to be redefined to
+\begin{equation}
+M'_{i+1} = M'_i \cup \bigcup_{j=0}^n \{ H_j(p_1, \ldots, p_{m-1}): p_1, \ldots, p_{m-1} \in M'_i \}
+\end{equation}
+This way, the amount of elements added to $M'_{i+1}$ in each step of the construction is the same as the amount of sets of parameters that yielded elements not included in $M'_i$. It is easy to see that if $M_0$ is finite, $M'$ is countable because it was constructed as a countable union of finite sets. If $M_0$ is countable or larger, the cardinality of $M'$ is equal to the cardinality of $M_0$.\footnote{It can not be smaller because $|M'_{i+1}|  \geq |M'_i|$ for every $i$. It may not be significantly larger because the maximum of elements added is the number of $n$-tuples in $M'_i$, which is of the same cardinality is $M'_i$.}
+Therefore $|M'| \leq |M_0| \cdot \aleph_0$
+\end{proof}
+
+\begin{theorem}{(Lévy's first-order reflection theorem)}\label{theorem:first_order_reflection}\\
+Let $\varphi(p_1, \ldots, p_n)$ be a~first-order formula.
+\bce[(i)]
+\item For every set $M_0$ there exists $M$ such that $M_0 \subset M$ and the following holds:
+\begin{equation}
+\varphi^M(p_1, \ldots, p_n) \iff \varphi(p_1, \ldots, p_n)\label{equation:levy_theorem_i}
+\end{equation}
+for every $p_1, \ldots, p_n \in M$.
+
+\item For every set $M_0$  there is a~transitive set $M$, $M_0 \subset M$ such that the following holds:
+\begin{equation}
+\varphi^M(p_1, \ldots, p_n) \iff \varphi(p_1, \ldots, p_n)
+\end{equation}
+for every $p_1, \ldots, p_n \in M$.
+
+\item For every set $M_0$ there is $\alpha$ such that $M_0 \subset V_{\alpha}$ and the following holds:
+\begin{equation}
+\varphi^{V_{\alpha}}(p_1, \ldots, p_n) \iff \varphi(p_1, \ldots, p_n)
+\end{equation}
+for every $p_1, \ldots, p_n \in M$.
+
+\item Assuming \emph{Choice}, for every set $M_0$ there is $M$ such that $M_0 \subset M$ and $|M| \leq |M_0| \cdot \aleph_0$ and the following holds:
+\begin{equation}
+\varphi^M(p_1, \ldots, p_n) \iff \varphi(p_1, \ldots, p_n)
+\end{equation}
+for every $p_1, \ldots, p_n \in M$.
+\ece
+\end{theorem}
+
+\begin{proof}
+Before we start, note that the following holds for any set $M$ if $\varphi$ is an atomic formula, as a direct consequence of relativisation to $M, \in$\footnote{See \ref{def:relativisation}. Also note that this works for relativization to $M, \in$, not $M, E$ where $E$ is an arbitrary membership relation on $M$.}. 
+\begin{equation}
+\varphi \iff \varphi^M
+\end{equation}
+
+Let's now prove $\bold{(i)}$ for given $\varphi$ via induction by complexity. We can safely assume that $\varphi$ contains no quantifiers besides "$\exists$" and no logical connectives other than "$\neg$" and "$\et$".
+Let $\varphi_1, \ldots, \varphi_n$ be all subformulas of $\varphi$. Then there is a set $M$, obtained by the means of lemma \ref{lemma:reflection_lemma}, for all of the formulas $\varphi_1, \ldots, \varphi_n$. 
+
+We know that $\psi \iff \psi^M$ for atomic $\psi$, we need to verify that it won't fail in the inductive step.
+Let us consider $\psi = \neg \psi'$ along with the definition of relativization for those formulas in \ref{def:relativization}.
+\begin{equation}
+(\neg \psi')^M \iff \neg (\psi'^M)
+\end{equation}
+Because the induction hypothesis says that \ref{equation:levy_theorem_i} holds for every subformula of $\psi$, we can assume that $\psi'^M \iff \psi'$, therefore the following holds:
+\begin{equation}
+ (\neg \psi')^{M} \iff \neg (\psi'^M) \iff \neg \psi'
+\end{equation}
+
+The same holds for $\psi = \psi_1 \et \psi_2$. From the induction hypothesis, we know that $\psi_1^M \iff \psi_1$ and $\psi_2^M \iff \psi_2$, which together with relativization for formulas in the form of $\psi_1 \et \psi_2$ gives us
+\begin{equation}
+(\psi_1 \et \psi_2)^M \iff \psi_1^M \et \psi_2^M \iff \psi_1 \et \psi_2
+\end{equation}
+
+\
+
+Let's now examine the case when from the induction hypethesis, $M$ reflects $\psi'(p_1, \ldots, p_n, x)$ and we are interested in $\psi = \exists x \psi'(p_1, \ldots, p_n, x)$.
+The induction hypothesis tells us that 
+\begin{equation}
+\varphi'^M(p_1, \ldots, p_n, x) \iff \psi'(p_1, \ldots, p_n, x)
+\end{equation}
+so, together with above lemma \ref{lemma:reflection_lemma}, the following holds:
+\begin{equation}
+\begin{gathered}
+\psi(p_1, \ldots, p_n, x) \\
+\iff \exists x \psi'(p_1, \ldots, p_n, x) \\
+\iff (\exists x \in M) \psi'(p_1, \ldots, p_n, x) \\
+\iff (\exists x \in M) \psi'^M (p_1, \ldots, p_n, x) \\
+\iff (\exists x \psi'(p_1, \ldots, p_n, x))^M \\
+\iff \psi^M(p_1, \ldots, p_n, x)
+\end{gathered}
+\end{equation}
+Which is what we have needed to prove. \ref{equation:levy_theorem_i} holds for all subformulas $\varphi_1, \ldots, \varphi_n$ of a given formula $\varphi$.
+
+\
+
+So far we have proven part $\bold{(i)}$ of this theorem for one formula $\varphi$, we only need to verify that the same holds for any finite number of formulas. This has in fact been already done since lemma \ref{lemma:reflection_lemma} gives us $M$ for any (finite) amount of formulas, we can find a set $M$ for the union of all of their subformulas. We can than use the induction above  to verify that $M$ reflects each of the formulas individually iff it reflects all of its subformulas.
+
+\
+
+Since $V_\alpha$ is a~transitive set, by proving $\bold{(iii)}$ we also satisfy $\bold{(ii)}$. To do so, we only need to look at part $\bold{(ii)}$ of lemma \ref{lemma:reflection_lemma}. All of the above proof also holds for $M = V_\alpha$. 
+
+To finish part $\bold{(iv)}$, we take $M$ of size $\leq |M_0| \cdot \aleph_0$, which exists due to part $\bold{(iii)}$ of lemma \ref{lemma:reflection_lemma}, the rest being identical.
+\end{proof}
+
+\
+
+Let $\sf{S}$ be a set theory defined in \ref{def:s}, for $\sf{ZFC}$ see \ref{def:zfc}.
+
+\begin{lemma}\label{lemma:model_of_s}\
+Let $M$ be a set. Then the following holds: % TODO musi to byt v ZFC? % TODO maybe we dont need shit stuff but it's interestng
+\begin{equation}
+\sf{ZFC} \models (M \models \sf{S}) \iff \mbox{"$M$ is a limit cardinal"}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+For the left-to-right direction, we shall verify that if $M$ is a model of $\sf{S}$, it necessarily is a limit cardinal.
+From \emph{Powerset}\footnote{\ref{def:powerset}.}, we know that for any $x \in M$, $\power{x} \in M$. But that is already the definition of a strong limit cardinal\footnote{see \ref{def:strong_limit_cardinal}}.
+
+For the converse, we need to see that if there is a limit ordinal $\alpha$, such that $V_\alpha = M$, the axioms of $\sf{S}$ hold $M$.
+\bce[(i)]
+\item \emph{Existence of a set} (see \ref{def:existence_of_a_set})\\
+There obviously is a set $x \in M$
+\item \emph{Extensionality} (see \ref{def:extensionality})\\
+Since $Extensionality^M$ is a $\Delta_0$ formula, it holds in any transitive class by \ref{lemma:delta_0_absolute}.\item \emph{Specification} (see \ref{def:specification})\\
+TODO
+\item \emph{Foundation} (see \ref{def:foundation})\\
+$Foundation^M$ is also a $\Delta_0$ formula, so it holds by \ref{lemma:delta_0_absolute} since $M$ is transitive because it is a cardinal.\item \emph{Pairing} (see \ref{def:pairing})\\
+TODO
+\item \emph{Union} (see \ref{def:union}\\
+TODO
+\item \emph{Powerset} (see \ref{def:powerset})\\
+TODO
+\ece
+\end{proof}
+
+Let \emph{Infinity} and \emph{Replacement} be as defined in \ref{def:infinity} and \ref{def:replacement} respectively.
+
+\begin{theorem}\label{levy_equivalence_contemporary}
+\emph{Reflection}\textsubscript{1} is equivalent to \emph{Infinity} $ \et $ \emph{Replacement} under $\sf{S}$.
+\end{theorem}
+
+\begin{proof}
+Since \ref{theorem:first_order_reflection} already gives us one side of the implication, we are only interested in showing the converse which we shall do in two parts:
+
+TODO $N_0$ prepsat zpatky na \emph{Reflection}\textsubscript{1}
+
+$\bold{N_0 \then \emph{Infinity}}$
+From $N_0$ (\ref{def:n_0}), we know that for any first-order formula $\varphi$ and a set $M_0$, there is a $M$ such that $M_0 \subseteq M$ and $\varphi^M \iff \varphi$. Let's pick \emph{Powerset} for $\varphi$, then by $N_0$ there is a set that satisfies \emph{Powerset}, ergo there is a strong limit cardinal, which in turn satisfies \emph{Infinity}.
+
+\
+
+$\bold{\emph{Reflection} \then \emph{Replacement}}$
+
+Given a~formula $\varphi(x, y, p_1, \ldots, p_n)$, we can suppose that it is reflected in any $M$ \footnote{Which means that for $x, y, p_1, \ldots, p_n \in M$, $\varphi^M(x, y, p_1, \ldots, p_n) \iff \varphi(x, y, p_1, \ldots, p_n)$.}
+What we want to obtain is the following:
+\begin{equation}
+\begin{gathered}
+\forall x, y, z (\varphi(x, y, p_1, \ldots, p_n) \et \varphi(x, z, p_1, \ldots, p_n) \then y = z) \then
+\then \forall X \exists Y \forall y\ (y \in Y \iff \exists x (\varphi(x, y, p_1, \ldots, p_n) \et x \in X ))
+\end{gathered}
+\end{equation}
+
+We do also know that $x, y \in M$, in other words for every $X$, $Y = \{y\ |\ \varphi(x, y, p_1, \ldots, p_n)\}$ and we know that $X \subset M$ and $Y \subset M$, which, together with the comprehension schema implies that $Y$, the image of $X$ over $\varphi$, is a~set.
+% TODO ???
+\end{proof}
+
+\
+
+We have shown that $\emph{Reflection}$ for first-order formulas, $\emph{Reflection}_1$ is a~theorem of $\sf{ZF}$, which means that it won't yield us any large cardinals. We have also shown that it can be used instead of the \emph{Infinity} and \emph{Replacement} scheme, but $\sf{ZF}\ +\ \emph{Reflection}_1$ is a~conservative extension of $\sf{ZF}$. Besides being a~starting point for more general and powerful statements, it can be used to show that $\sf{ZF}$ is not finitely axiomatizable. That follows from the fact that $\emph{Reflection}$ gives a~model to any finite number of (consistent) formulas. So if $\varphi_1, \ldots, \varphi_n$ for any finite $n$ would be the axioms of $\sf{ZF}$, $\emph{Reflection}$ would always contain a~model of itself, which would in turn contradict the Second Gödel's Theorem\footnote{See chapter \ref{section:inaccessibility} for further details.}.
+Notice that, in a~way, reflection is complementary to compactness. Compactness argues that given a set of sentences, if every finite subset yields a~model, so does the whole set. Reflection, on the other hand, says that while the whole set has no model in the underlying theory, every finite subset does have one.
+
+Also, notice how reflection can be used in ways similar to upward Löwenheim–Skolem theorem. Since Reflection extends any set $M_0$ into a~model of given formulas $\varphi_1, \ldots, \varphi_n$, we can choose the lower bound of the size of $M$ by appropriately chocing $M_0$.
+
+In the next section, we will try to generalize \emph{Reflection} in a~way that transcends $\sf{ZF}$ and finally yields some large cardinals.
