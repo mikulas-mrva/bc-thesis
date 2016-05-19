@@ -222,6 +222,8 @@ TODO !!!!
 to spis ty pred tim zname z dukazu v S, viz contemporary restatement.
 
 udelat z toho lemma?
+
+co ten replacement?? druha implikace Levyho vety?
 \ece
 \
 
@@ -243,28 +245,28 @@ Then there is an instance of \emph{Replacement} that states the following:
 \end{equation}
 Which in turn means that there is a~set $y = F[\alpha]$ and $y \in V_\kappa$, which is the contradiction with $sup(y) = \kappa$ we are looking for.
 \end{proof}
+TODO vyhodit sup, pouzivat radis $\bigcup$
+
+% \
+
+% The same holds for $\sf{ZFC}_2$, the proof is very similar.
+% \begin{theorem}\label{theorem:inaccessible_models_zfc_2}
+% \begin{equation}
+% V_\kappa \models \sf{ZFC}_2 \iff \mbox{$\kappa$ is inaccessible}
+% \end{equation}
+% \end{theorem}
+% \begin{proof}
+% $\kappa$ is a~strong limit cardinal because from $\sf{ZFC}_2$ and \emph{Powerset} we know that for every $\lambda\ <\ \kappa$, we know that $2^{\lambda} < \kappa$.
+
+% $\kappa$ is also regular, because otherwise there would be an ordinal $\alpha$ and a~function $F:\ \alpha \then \kappa$ with a~range unbounded in $\kappa$. 
+% $\emph{Replacement}^2$ gives us a~set $y\ =\ F[\alpha]$, so $y\ \in\ V_\kappa$, which contradicts the fact that $sup(y) = kappa$. It can not be the case that $\kappa \in V_\kappa$.
 % TODO vyhodit sup, pouzivat radis $\bigcup$
+% \
 
-\
+% The other direction is exactly like the first part of above theorem \ref{theorem:inaccessible_models_zfc}.
+% \end{proof}
 
-The same holds for $\sf{ZFC}_2$, the proof is very similar.
-\begin{theorem}\label{theorem:inaccessible_models_zfc_2}
-\begin{equation}
-V_\kappa \models \sf{ZFC}_2 \iff \mbox{$\kappa$ is inaccessible}
-\end{equation}
-\end{theorem}
-\begin{proof}
-$\kappa$ is a~strong limit cardinal because from $\sf{ZFC}_2$ and \emph{Powerset} we know that for every $\lambda\ <\ \kappa$, we know that $2^{\lambda} < \kappa$.
-
-$\kappa$ is also regular, because otherwise there would be an ordinal $\alpha$ and a~function $F:\ \alpha \then \kappa$ with a~range unbounded in $\kappa$. 
-$\emph{Replacement}^2$ gives us a~set $y\ =\ F[\alpha]$, so $y\ \in\ V_\kappa$, which contradicts the fact that $sup(y) = kappa$. It can not be the case that $\kappa \in V_\kappa$.
-% TODO vyhodit sup, pouzivat radis $\bigcup$
-\
-
-The other direction is exactly like the first part of above theorem \ref{theorem:inaccessible_models_zfc}.
-\end{proof}
-
-\
+% \
 
 %The above makes clear that while the existence of inaccessibles is unprovable in $\sf{ZFC}$ or $\sf{ZFC}_2$, we now know that at least the smallest inaccessible cardinal exists in $\sf{ZF+(Refl^2)}$ because there is a~set that models $\sf{ZFC}$. But how exactly can we reach there with second-order reflection?
 
@@ -436,8 +438,9 @@ We will use lowercase latin letters for type 1 variables for backwards compatibi
 % todo lepsi slovo nez variables?
 % For the following definition, we need variables and quantifiers of higher orders. Let \emph{type 1} variables be usual variables of first-order set theory. % spis logic?
 
-\begin{definition}{(Prenex normal form)}\label{def:pnf}\\
-We say a formula is in the \emph{prenex normal form} if it is written as a block of quantifiers followed by a formula with no quantifiers inside.
+\begin{definition}{(Full prenex normal form)}\label{def:pnf}\\
+We say a formula is in the \emph{prenex normal form} if it is written as a block of quantifiers followed by a quantifier-free part.\\
+We say a formula is in the \emph{Full prenex normal form} if it is written in \emph{prenex normal form} and if there are type $n+1$ quantifiers, they are written before type $n$ quantifiers.
 \end{definition}
 It is an elementary that every formula is equivalent to a formula in the prenex normal form.
 
@@ -448,13 +451,14 @@ Let $\varphi$ be a formula in the prenex formal form.
 \bce[(i)]
 \item We say $\varphi$ is a $\Delta^0_0$-formula if it contains only bounded quantifiers.
 \item We say $\varphi$ is a $\Sigma^0_0$-formula or a $\Pi^0_0$-formula if it is a $\Delta^0_0$-formula.
-\item We say $\varphi$ is a $\Pi^{m+1}_0$-formula if it is a $\Pi^m_n$-formula or a $\Sigma^m_n$-formula for any $n \in \omega$.
+\item We say $\varphi$ is a $\Pi^{m+1}_0$-formula if it is a $\Pi^m_n$- or $\Sigma^m_n$-formula for any $n \in \omega$ or if it is a $\Pi^m_n$- or $\Sigma^m_n$-formula with additional free variables of type $m+1$.
 \item We say $\varphi$ is a $\Sigma^m_0$-formula if it is a $\Pi^m_0$-formula.
 \item We say $\varphi$ is a $\Sigma^m_n+1$-formula if it is of a form $\exists P_1, \ldots, P_i \psi$ for any non-zero $i$, where $\psi$ is a $\Pi^m_n$-formula and $P_1, \ldots, P_i$ are type $m+1$ variables.
 \item We say $\varphi$ is a $\Pi^m_n+1$-formula if it is of a form $\forall P_1, \ldots, P_i \psi$ for any non-zero $i$, where $\psi$ is a $\Sigma^m_n$-formula and $P_1, \ldots, P_i$ are type $m+1$ variables.
 \ece
 \end{definition}
 
+$\Delta^{WTF}_0$ formulas ??? TODO asi vyhodil, podivat se jestli nemuzu ty modely ZFC udelat jinak (poradne) nez pres delta 0 fle.
 \begin{lemma}\label{lemma:delta_0_absolute}
 $\Delta_0$ formulas are absolute in transitive sets, in other words, let $\varphi$ be a first-order $\Delta_0$ formula and let $M$ be a transitive class.
 \begin{equation}
@@ -462,17 +466,35 @@ $\Delta_0$ formulas are absolute in transitive sets, in other words, let $\varph
 \end{equation}
 \end{lemma}
 
-%So far, we have considered individual formulas and examined what $V_\alpha$ is the first that 
+Since this section talks about indescribability, this is how an ordinal is described according to Drake \cite[Chapter 9]{DrakeBook}.
+\begin{definition}\
+We say an ordinal $\alpha$ is described by a formula $\varphi(P_1, \ldots, P_n)$ with type 2 parameters $P_1, \ldots, P_n$ given iff
+\begin{equation}
+\langle V_\alpha, \in \rangle \models \langle \varphi(P_1, \ldots, P_n)
+\end{equation}
+but for every $\beta < \alpha$
+\begin{equation}
+\langle V_\beta, \in \rangle \not\models \varphi \varphi(P_1 \cap V_\beta, \ldots, P_n \cap V_\beta)
+\end{equation}
+\end{definition}
 
-% TODO kanamori to dela s parametrem, asi to ma smysl
-% TODO ja zas vyse psal varphi vzdycky s x1...xn, ale TADY JE TO SENTENCE! !!!
-For the exact definition of $\Pi^m_n$ and $\Sigma^m_n$ see \ref{def:analytical_hierarchy}
+Drake then notes that the same notion can be established for sentences if the corresponding type 2 parameters are added to the language. Since the this approach is used by Kanamori in \cite{KanamoriBook}, we will stick to that too.\footnote{The first definition is included because the author of this thesis finds it more intuitive.}
+\begin{definition}{Describability}\label{def:describability}\\
+We say an ordinal $\alpha$ is described by a sentence $\varphi$ in the language $\mathscr{L}$ with relation symbols $P_1, \ldots, P_n$ given iff
+\begin{equation}
+\langle V_\alpha, \in, P_1, \ldots, P_n \rangle \models \varphi
+\end{equation}
+but for every $\beta < \alpha$
+\begin{equation}
+\langle V_\beta, \in, P_1 \cap V_\beta, \ldots, P_n \cap V_\beta \rangle \not\models \varphi
+\end{equation}
+\end{definition}
 
 \begin{definition}{($\Pi^m_n$-indescribable cardinal)}\label{def:pi_mn_indescribable}
-We say that $\kappa$ is $\Pi^m_n$-indescribable iff for any $\Pi^m_n$ sentence $\varphi$ such that $V_\kappa \models \varphi$ there is an $\alpha < \kappa$ such that $V_\alpha \models \varphi$
+We say that $\kappa$ is $\Pi^m_n$-indescribable iff it is not described by any $\Pi^m_n$-formula.
 \end{definition}
 \begin{definition}{($\Sigma^m_n$-indescribable cardinal)}\label{def:sigma_mn_indescribable}
-We say that $\kappa$ is $\Sigma^m_n$-indescribable iff for any $\Sigma^m_n$ sentence $\varphi$ such that $V_\kappa \models \varphi$ there is an $\alpha < \kappa$ such that $V_\alpha \models \varphi$
+We say that $\kappa$ is $\Sigma^m_n$-indescribable iff it is not described by any $\Sigma^m_n$-formula.
 \end{definition}
 
 \begin{lemma}
@@ -480,13 +502,39 @@ Let $\kappa$ be a cardinal, the following holds for any $n \in \omega$. $\kappa$
 \end{lemma}
 
 \begin{proof}
-The forward direction is obvious, we can always add a spare quantifier over a type 2 variable to turn a $\Pi^1_n$ formula $\varphi$ into a $\exists P \varphi$ which is thus a $\Sigma^1_n+1$ formula.\footnote{Note that unlike in previous sections, $\varphi$ is now a sentence so we don't have to worry whether $P$ is free in $\varphi$.}
+The forward direction is obvious, we can always add a spare quantifier over a type 2 variable to turn a $\Pi^1_n$ formula $\varphi$ into a $\exists P \varphi$ which is obviously a $\Sigma^1_n+1$ formula.\footnote{Note that unlike in previous sections, it is worth noting that $\varphi$ is now a sentence so we don't have to worry whether $P$ is free in $\varphi$.}
 
 To prove the opposite direction, suppose that $V_\kappa \models \exists X \varphi(X)$ where $X$ is a type 2 variable and $\varphi$ is a $\Pi^1_n$ formula with one free variable of type 2. This means that there is a set $S \subseteq V_\kappa$ that is a witness of $\exists X \varphi(X)$, in other words, $\varphi(S)$ holds. We can replace every occurence of $X$ in $\varphi$ by a new predicate symbol $S$, this allows us to say that $\kappa$ is $\Pi^1_n$-indescribable (with respect to $\langle V_\kappa, \in, R, S \rangle$).
 \footnote{A different yet interesting approach is taken by Tate in \ref{Tait_constructingcardinals}. He states that for $n\geq 0$, a formula of order $\leq n$ is called a $\Pi^n_0$ and a $\Sigma^n_0$ formula. Then a $\Pi^n_{m+1}$ is a formula of form $\forall Y \psi(Y)$ where $\psi$ is a $\Sigma^n_m$ formula and $Y$ is a variable of type $n$. Finally, a $\Sigma^n_{m+1}$ is the negation of a $\Pi^n_m$ formula. So the above holds ad definitio.}
 \end{proof}
 
-The above lemma tells us that we as long as we stay in the realm of type 1 and type 2 variables, we only need to classify indescribable cardinals with respect to $\Pi^1_n$-indescribability.
+The above lemma makes it clear that we can suppose that all formulas with no higher than type 2 variables are $\Pi^1_n$-formulas, $n \in \omega$, without the loss of generality.
+
+\begin{lemma}\
+If $\kappa$ is an inaccessible cardinal and given $R \subseteq V_\kappa$, then the following is a club set in $\kappa$:
+\begin{equation}
+\{\alpha : \alpha < \kappa \et \langle V_\alpha, \in, R \cap V_\alpha \rangle \prec \langle V_\kappa, \in, R \rangle \}\label{eq:inacc_lemma_set}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+To see that \ref{eq:inacc_lemma_set} is closed, TODO !!! 
+
+TODO zopakuj definici el. substruktury
+
+We want to verify that it is unbounded, we will use a recursively defined sequence $\alpha_0, \alpha_1, \ldots$
+to build an elementary substructure of $\langle V_\kappa, \in, R \rangle$ that is built above an arbitrary $\alpha_0 <\kappa$ .
+Let us fix an arbitrary $\alpha_0 < \kappa$. Given $\alpha_n$, $\alpha_n+1$ is defined as the least $\beta$, $\alpha_n \leq \beta$ that satisfies 
+the following for any formula $\varphi$, $p_1, \ldots, p_m \in V_{\alpha_{n}}, m \in \omega$
+\begin{equation}
+\begin{gathered}
+\mbox{If }\langle V_\kappa, \in, R \rangle \models \exists x \varphi(p_1, \ldots, p_n)\mbox{,}\
+\mbox{then }\langle V_\kappa, \in, R \rangle \models \varphi(x, p_1, \ldots, p_n)
+\end{gathered}
+\end{equation}
+
+Let $\alpha = \bigcup_{n < \omega} \alpha_n$
+\end{proof}
 
 \begin{theorem}
 Let $\kappa$ be an ordinal. The following are equivalent.
@@ -496,10 +544,14 @@ Let $\kappa$ be an ordinal. The following are equivalent.
 \ece
 \end{theorem}
 
-Note that $\Pi^1_0$ formulas are those that contain zero unbound quantifiers over type-2 variables, they are in fact first-order formulas. We have already shown in \ref{theorem:inaccessible_models_zfc} that there is no way to reach an inaccesible cardinal via first-order formulas in $\sf{ZFC}$. We will now prove it again in for formal clarity.
+%Note that $\Pi^1_0$ formulas are those that contain zero unbound quantifiers over type-2 variables, they are in fact first-order formulas, only with additional free type 2 variables allowed. For an example of a formula with type 1 quantifiers and a type 2 free variable, the axiom schemas used in previous parts, e.g. \emph{Replacement\textsubscript{1}}.
+
 
 \begin{proof}
-TODO asi pridat alternativni definici nedosazitelnosti podle kan. 6.2?
+Since $\Pi^1_0$-sentences are first-order sentences, we want to prove that $\kappa$ is an inaccessible cardinal iff whenever a first-order tries to describe $\kappa$ in the sense of definition \ref{def:describability}, the formula fails to do so and describes a initial segment thereof instead.
+We have already shown in \ref{theorem:inaccessible_models_zfc} that there is no way to reach an inaccesible cardinal via first-order formulas in $\sf{ZFC}$. We will now prove it again in for formal clarity.
+
+For $\bold{(i) \then (ii)}$, suppose that $\kappa$ is inaccessible.
 \end{proof}
 
 TODO nejaka veta ze kdyz jsou $\Pi^1_0$-indescribable, jsou i $\Pi^m_n$-indescribable pro $m \leq 1, n \leq 0$? Drake? Obracene! $\Pi^m_n$-indescribable jsou zaroven $\Pi^a_b$-indescribable pro $a < m, b < n$.
@@ -722,7 +774,6 @@ The following is called the Generalised Continuum Hypothesis, abbreviated as \em
 
 This is proven in cite\{neco\} Gödel? Jech? Kunnen?
 
-
 % -------------------
 
 TODO L a velke kardinaly
@@ -730,9 +781,10 @@ TODO L a velke kardinaly
 
 TODO def Con!
 \begin{theorem}
-\begin{equation}
-Con(L + \exists \kappa (\kappa \mbox{" is an Inaccessible Cardinal"}))  
-\end{equation}
+The existence of the inaccessible cardinal is compatible with 
+%\begin{equation}
+%Con(L + \exists \kappa (\kappa \mbox{" is an Inaccessible Cardinal"}))  
+%\end{equation}
 \end{theorem}
 
 \begin{theorem}
@@ -754,6 +806,8 @@ Con(L + \exists \kappa (\kappa \mbox{" is a Measurable Cardinal"}))
 \end{equation}
 \end{theorem}
 
+TODO vyska / sirka univerza
+
 TODO co velky pismena ve jmenech kardinalu?
 
 {\color{red}
@@ -774,14 +828,3 @@ TODO zduvodneni
 TODO kratka diskuse jestli refl implikuje transcendenci na L - polemika, nazor - V=L a~slaba kompaktnost a~dalsi
 
 \
-
-%\newpage
-% =====================================================================================================================================
-%\section{Higher-order reflection} % preformulovat
-%TODO rict ze to je zobecneni a~nejaky dalsi uvodni veci
-
-%\subsection{Sharp}
-%TODO je tohle higher-order vec?
-
-%\subsection{Welek: Global Reflection Principles}
-%TODO ma to vubec cenu?

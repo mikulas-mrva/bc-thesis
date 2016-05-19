@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.12.2)  18 MAY 2016 21:53
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.12.2)  19 MAY 2016 19:41
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -130,4 +130,359 @@ Package: lineno 2005/11/02 line numbers on paragraphs v4.41
 \output=\toks22
 \linenoprevgraf=\count105
 \linenumbersep=\dimen113
-\linenumberwidth=\dimen11
+\linenumberwidth=\dimen114
+\c@linenumber=\count106
+\c@pagewiselinenumber=\count107
+\c@LN@truepage=\count108
+\c@internallinenumber=\count109
+\c@internallinenumbers=\count110
+\quotelinenumbersep=\dimen115
+\bframerule=\dimen116
+\bframesep=\dimen117
+\bframebox=\box32
+LaTeX Info: Redefining \\ on input line 3056.
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/tools/verbatim.sty
+Package: verbatim 2014/10/28 v1.5q LaTeX2e package for verbatim enhancements
+\every@verbatim=\toks23
+\verbatim@line=\toks24
+\verbatim@in@stream=\read1
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/color.sty
+Package: color 2014/10/28 v1.1a Standard LaTeX Color (DPC)
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/latexconfig/color.cfg
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package color Info: Driver file: pdftex.def on input line 142.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count111
+))
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2015/03/17 v1.2c Input encoding file
+\inpenc@prehook=\toks25
+\inpenc@posthook=\toks26
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/ucs/utf8x.def
+File: utf8x.def 2004/10/17 UCS: Input encoding UTF-8
+))
+(/usr/local/texlive/2015/texmf-dist/tex/latex/ucs/ucs.sty
+Package: ucs 2013/05/11 v2.2 UCS: Unicode input support
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/ucs/data/uni-global.def
+File: uni-global.def 2013/05/13 UCS: Unicode global data
+)
+\uc@secondtry=\count112
+\uc@combtoks=\toks27
+\uc@combtoksb=\toks28
+\uc@temptokena=\toks29
+)
+(./fancyhdr.sty
+\fancy@headwidth=\skip54
+\f@ncyO@elh=\skip55
+\f@ncyO@erh=\skip56
+\f@ncyO@olh=\skip57
+\f@ncyO@orh=\skip58
+\f@ncyO@elf=\skip59
+\f@ncyO@erf=\skip60
+\f@ncyO@olf=\skip61
+\f@ncyO@orf=\skip62
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/csquotes/csquotes.sty
+Package: csquotes 2015/04/15 v5.1e context-sensitive quotations (JAW)
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2015/05/04 v2.2 e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count113
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks30
+)
+\csq@reset=\count114
+\csq@gtype=\count115
+\csq@glevel=\count116
+\csq@qlevel=\count117
+\csq@maxlvl=\count118
+\csq@tshold=\count119
+\csq@ltx@everypar=\toks31
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/csquotes/csquotes.def
+File: csquotes.def 2015/04/15 v5.1e csquotes generic definitions (JAW)
+)
+Package csquotes Info: Trying to load configuration file 'csquotes.cfg'...
+Package csquotes Info: ... configuration file loaded successfully.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/csquotes/csquotes.cfg
+File: csquotes.cfg 
+))
+\c@theorem=\count120
+Package csquotes Info: Checking for multilingual support...
+Package csquotes Info: ... none found.
+
+(./bakalarka.aux
+
+LaTeX Warning: Label `def:limit_ordinal' multiply defined.
+
+
+LaTeX Warning: Label `def:limit_ordinal' multiply defined.
+
+)
+\openout1 = `bakalarka.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 121.
+LaTeX Font Info:    ... okay on input line 121.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 121.
+LaTeX Font Info:    ... okay on input line 121.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 121.
+LaTeX Font Info:    ... okay on input line 121.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 121.
+LaTeX Font Info:    ... okay on input line 121.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 121.
+LaTeX Font Info:    ... okay on input line 121.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 121.
+LaTeX Font Info:    ... okay on input line 121.
+ (/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count121
+\scratchdimen=\dimen118
+\scratchbox=\box33
+\nofMPsegments=\count122
+\nofMParguments=\count123
+\everyMPshowfont=\toks32
+\MPscratchCnt=\count124
+\MPscratchDim=\dimen119
+\MPnumerator=\count125
+\makeMPintoPDFobject=\count126
+\everyMPtoPDFconversion=\toks33
+) (/usr/local/texlive/2015/texmf-dist/tex/latex/ucs/ucsencs.def
+File: ucsencs.def 2011/01/21 Fixes to fontencodings LGR, T3
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/ucs/data/uni-0.def
+File: uni-0.def 2013/05/13 UCS: Unicode data U+0000..U+00FF
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/ucs/data/uni-1.def
+File: uni-1.def 2013/05/13 UCS: Unicode data U+0100..U+01FF
+) [1
+
+{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [1] [2
+
+]
+(./bakalarka.toc
+LaTeX Font Info:    Try loading font information for U+rsfs on input line 2.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/jknapltx/ursfs.fd
+File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
+)
+LaTeX Font Info:    Try loading font information for U+msa on input line 2.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 2.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+))
+\tf@toc=\write3
+\openout3 = `bakalarka.toc'.
+
+ [3
+
+])
+(./01a_introduction.tex
+(/usr/local/texlive/2015/texmf-dist/tex/latex/ucs/data/uni-32.def
+File: uni-32.def 2013/05/13 UCS: Unicode data U+2000..U+20FF
+)
+Overfull \hbox (3.88898pt too wide) in paragraph at lines 29--30
+[]\OT1/cmr/m/n/12 If God can end-lessly add a cu-bic foot to a stone{which He c
+an{then
+ []
+
+[4
+
+] [5] [6] [7]) (./01b_definice.tex [8] [9] [10] [11] [12]
+Underfull \hbox (badness 10000) in paragraph at lines 258--259
+
+ []
+
+[13]
+
+LaTeX Warning: Reference `def:omega' on page 14 undefined on input line 274.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 306--307
+
+ []
+
+[14] [15]) [16] (./02_levy.tex [17] [18]
+
+Package amsfonts Warning: Obsolete command \bold; \mathbf should be used instea
+d on input line 127.
+
+[19]
+Overfull \hbox (0.97511pt too wide) in paragraph at lines 138--139
+\OT1/cmr/m/n/12 tioned ar-ti-cle by L^^Sevy, we will in-tro-duce other in-ter-e
+st-ing propo-si-tions, mostly
+ []
+
+
+LaTeX Warning: Reference `def:n' on page 20 undefined on input line 153.
+
+
+LaTeX Warning: Reference `def:n_0' on page 20 undefined on input line 153.
+
+[20] [21] [22]
+
+LaTeX Warning: Reference `def:relativisation' on page 23 undefined on input lin
+e 252.
+
+[23] [24]
+
+LaTeX Warning: Reference `def:strong_limit_cardinal' on page 25 undefined on in
+put line 319.
+
+[25]
+
+LaTeX Warning: Reference `def:n_0' on page 26 undefined on input line 352.
+
+
+Overfull \hbox (194.84273pt too wide) detected at line 365
+[] []
+ []
+
+
+Overfull \hbox (53.58429pt too wide) in paragraph at lines 376--377
+[]\OT1/cmr/m/n/12 Also, no-tice how re-flec-tion can be used in ways sim-i-lar 
+to up-ward L^^?owenheim{Skolem
+ []
+
+[26]) [27] (./03_large_cardinals.tex [28] [29]
+
+LaTeX Warning: Reference `def:closed_class' on page 30 undefined on input line 
+67.
+
+
+LaTeX Warning: Reference `def:unbounded class' on page 30 undefined on input li
+ne 67.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 74--76
+
+ []
+
+[30]
+Overfull \hbox (8.30212pt too wide) in paragraph at lines 120--121
+[]\OT1/cmr/m/n/12 Let's now prove that in $[]$, the above \OT1/cmr/m/it/12 Ax-i
+om M \OT1/cmr/m/n/12 is equiv-a-lent to \OT1/cmr/m/it/12 Reflection$[]$
+ []
+
+[31] [32] [33] [34]
+Overfull \hbox (11.38196pt too wide) in paragraph at lines 300--301
+[]\OT1/cmr/m/n/12 Because $\OML/cmm/m/it/12 ^^T$ \OT1/cmr/m/n/12 is in-ac-ces-s
+i-ble and there-fore reg-u-lar, the num-ber of $\OML/cmm/m/it/12 ^^L$\OT1/cmr/m
+/n/12 -inaccessibles
+ []
+
+[35] [36] [37]
+Overfull \hbox (4.61575pt too wide) in paragraph at lines 470--472
+[] \OT1/cmr/m/it/12 We say an or-di-nal $\OML/cmm/m/it/12 $ \OT1/cmr/m/it/12 i
+s de-scribed by a for-mula $\OML/cmm/m/it/12 '\OT1/cmr/m/n/12 (\OML/cmm/m/it/12
+ P[]; [] ; P[]\OT1/cmr/m/n/12 )$
+ []
+
+
+Overfull \hbox (14.3742pt too wide) in paragraph at lines 493--495
+[]\OT1/cmr/m/it/12 ($\OT1/cmr/m/n/12 ^^E[]$\OT1/cmr/m/it/12 -indescribable car-
+di-nal)[] We say that $\OML/cmm/m/it/12 ^^T$ \OT1/cmr/m/it/12 is $\OT1/cmr/m/n/
+12 ^^E[]$\OT1/cmr/m/it/12 -indescribable
+ []
+
+
+Overfull \hbox (13.72977pt too wide) in paragraph at lines 496--498
+[]\OT1/cmr/m/it/12 ($\OT1/cmr/m/n/12 ^^F[]$\OT1/cmr/m/it/12 -indescribable car-
+di-nal)[] We say that $\OML/cmm/m/it/12 ^^T$ \OT1/cmr/m/it/12 is $\OT1/cmr/m/n/
+12 ^^F[]$\OT1/cmr/m/it/12 -indescribable
+ []
+
+[38]
+
+LaTeX Warning: Reference `Tait_constructingcardinals' on page 39 undefined on i
+nput line 508.
+
+[39]
+Underfull \hbox (badness 10000) in paragraph at lines 577--579
+
+ []
+
+[40] [41] [42]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 771.
+
+ (/usr/local/texlive/2015/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 771.
+
+[43]) [44] [45] (./bakalarka.bbl) [46] (./bakalarka.aux)
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 5212 strings out of 493089
+ 66224 string characters out of 6134842
+ 135855 words of memory out of 5000000
+ 8605 multiletter control sequences out of 15000+600000
+ 22704 words of font info for 84 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 36i,16n,43p,1426b,591s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
+></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
+</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></
+usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><
+/usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><
+/usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></
+usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></u
+sr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></us
+r/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/
+local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/lo
+cal/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/loca
+l/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/
+texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/te
+xlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texl
+ive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive
+/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/20
+15/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2015/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmsl12.pfb></usr/local/texlive/2015/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/local/texlive/2015/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/local/texlive/2015/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/local/texlive/2015/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2015/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2015/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2015/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2015/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2015/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2015/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmti8.pfb></usr/local/texlive/2015/texmf-dist/fonts
+/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2015/texmf-dist/f
+onts/type1/public/rsfs/rsfs10.pfb>
+Output written on bakalarka.pdf (47 pages, 467278 bytes).
+PDF statistics:
+ 277 PDF objects out of 1000 (max. 8388607)
+ 196 compressed objects within 2 object streams
+ 0 named destinations out of 1000 (max. 500000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+
