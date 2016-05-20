@@ -365,6 +365,8 @@ Then $\langle$
 
 \subsection{Mahlo Cardinals}
 
+TODO axiomy?
+
 While the previous chapter introduced us to a notion of inaccessibility and the possibility of iterating it ad libitum in new theories, there is an even faster way to travel upwards in the cumulative hierarchy, that was proposed by Paul Mahlo in his articles (see \cite{Mahlo11}, \cite{Mahlo12} and \cite{Mahlo13}) at the very beginning of the 20th century, and which can be easily reformulated using reflection.
 
 \begin{theorem}\label{club_intersection} 
@@ -402,6 +404,8 @@ TODO proc se vys nedostaneme pevnyma bodama?
 
 TODO explicitni reflexe? reflektuji reflexi nedosazitelnosti?
 
+TODO Drake p.121!!
+
 % TODO $\kappa$ is hyper-Mahlo iff $\kappa$ is inaccessible and the set $\{\lambda < \kappa : \lambda\mbox{ is Mahlo}\}$ is stationary in $\kappa$. to je to samy jako $\alpha$-Mahlo, ne?
 
 % TODO viz https://en.wikipedia.org/wiki/Mahlo_cardinal#Mahlo_cardinals_and_reflection_principles
@@ -415,26 +419,17 @@ TODO explicitni reflexe? reflektuji reflexi nedosazitelnosti?
 %sjednotil \then a~\implies
 % =====================================================================================================================================
 % \newpage
-\subsection{Indescribality} % Indescribality and Weakly Compact Cardinals
+\subsection{Second-order Reflection} % Indescribality and Weakly Compact Cardinals 
+Let's try a different approach in formalizing reflection. We have seen that reflecting individual first-order formulas doesn't even transcend $\sf{ZFC}$, we have examined what can be done with axiom schemas. The aim of this chapter is to examine second-order formulas as possible axioms. Note that second-order variables (which will be established as type 2 variables later in the text) are subcollections of the universal class, but so are functions and relations. So first-order axiom schemata can also be interpreted as formulas with free second-order variables, which quantify over first-order variables only, we only need to customize the underlying theory accordingly. For example, the satisfaction relation was so far defined for first-order formulas only, but we will deal with that in a moment. Also note that by rewriting \emph{replacement} and \emph{comprehension} to single axioms, $\sf{ZFC}$ becomes finitely axiomatizable, which in turn means that the reflection theorem as stated in section \label{sec:first_order} does not hold for higher-order theories because of Gödel's second incompleteness theorem. We will explore stronger axioms of reflection instead.
 
-% $\alpha$-Mahlo cardinals are the extreme of regular fixed-point axioms, they are about as high as we can get via normal functions and stationary sets. % preformulovat
+TODO nemam nekam napsat ze u vsech velkych karidnalu je to "existujou pokud .. "?
 
-%Let's try a different strategy. Remember how we said that (Regular, Limit and) various Large cardinals are in a way all determined by being unreachable by a specific process of creating bigger cardinals from already available ones? 
-%TODO neco jako reflecting reflection (uz u Mahlovejch teda)
-
-Let's try a different approach in formalizing reflection. We have seen that reflecting individual first-order formulas doesn't even transcend $\sf{ZFC}$. 
-TODO pak druhoradovy veci a tak
-
-TODO indescribable -- reflecting indescribability -- we can't reach $V$ by a $\Sigma_1^1$ formula, so there's some initial segment $V_\alpha$ that is also unreachable (we say indescribable) by the means of a ... formula
-
-
-
-Let us establish a formal background first. We will now introduce higher-order formulas. Note that one must pay more attention when talking the satisfaction of higher-order formulas. Because establishing a general satisfaction relation for higher-order formulas in a class is proved to be impossible\footnote{TODO zdroj -- viz kanamori str. 6}, we will only talk about satisfaction in a set.
+Let us establish a formal background first. We will now introduce higher-order formulas.
 
 \begin{definition}{(Higher-order variables)}\label{def:higher_order_variables}\\
 Let $M$ be a structure and $D$ it's domain. In first-order logic, variables range over individuals, that is, over elements of $D$. We shall call those \emph{type 1 variables} for the purposes of higher-order logic. Type 2 variables then range over collections, that is, the elements of $\power{D}$. Generally, type $n$ variables are defined for any $n \in \omega$ such that they range over $\mathscr{P}^{n-1}(D)$.
 \end{definition}
-We will use lowercase latin letters for type 1 variables for backwards compatibility with first-order logic, higher order variables, if explicitly written, will be represented by uppercase latin letters.
+We will use lowercase latin letters for type 1 variables for backwards compatibility with first-order logic, type 2 variables will be represented by upper-case letters, mostly $P, X, Y, Z$. If we ever stumble upon type 3 variables in this text, they shall be represented as $\mathscr{X}, \mathscr{Y}, \mathscr{Z}$ or in a similar font.
 % todo lepsi slovo nez variables?
 % For the following definition, we need variables and quantifiers of higher orders. Let \emph{type 1} variables be usual variables of first-order set theory. % spis logic?
 
@@ -443,7 +438,6 @@ We say a formula is in the \emph{prenex normal form} if it is written as a block
 We say a formula is in the \emph{Full prenex normal form} if it is written in \emph{prenex normal form} and if there are type $n+1$ quantifiers, they are written before type $n$ quantifiers.
 \end{definition}
 It is an elementary that every formula is equivalent to a formula in the prenex normal form.
-
 
 
 \begin{definition}{(Hierarchy of formulas)}\label{def:analytical_hierarchy}\\
@@ -458,13 +452,24 @@ Let $\varphi$ be a formula in the prenex formal form.
 \ece
 \end{definition}
 
-$\Delta^{WTF}_0$ formulas ??? TODO asi vyhodil, podivat se jestli nemuzu ty modely ZFC udelat jinak (poradne) nez pres delta 0 fle.
-\begin{lemma}\label{lemma:delta_0_absolute}
-$\Delta_0$ formulas are absolute in transitive sets, in other words, let $\varphi$ be a first-order $\Delta_0$ formula and let $M$ be a transitive class.
+Because we have extended the underlying logic to higher types of variables, in order to make some meaningful statements in it, we will now define the satisfaction relation for structures.\footnote{Note that it is formally undefinable even in first order logic due to Tarski's result, see \cite[Theorem 12.7]{JechBook} for details.}
+\begin{definition}{(Satisfaction)}\label{def:satifsfaction}\\
+
+\end{definition}
+
+\begin{definition}{(Reflection)}\label{def:reflection_2}\\
+Let $\varphi(P)$ be a $\Pi^n_m$-formula with one free variable of type type 2 denoted $P$. We say $\varphi(P)$ reflects in $V_\kappa$ if for every $P \sub V_\kappa$ there is an ordinal $\alpha<\kappa$ such that the following holds:
 \begin{equation}
-\varphi \iff \varphi^M
+\begin{gathered}
+\mbox{If }(V_\kappa,\in, R)\models \varphi(R),\\
+\mbox{ then }(V_\alpha,\in, R\cap V_\alpha) \models \varphi(R\cap V_\alpha).
+\end{gathered}
 \end{equation}
-\end{lemma}
+\end{definition}
+
+This formalization of the notion of reflection allows us to describe Inaccessible and Mahlo cardinals more easily, which we will do in the following section.
+
+\subsection{Indescribality}
 
 Since this section talks about indescribability, this is how an ordinal is described according to Drake \cite[Chapter 9]{DrakeBook}.
 \begin{definition}\
@@ -490,12 +495,18 @@ but for every $\beta < \alpha$
 \end{equation}
 \end{definition}
 
+% $\alpha$-Mahlo cardinals are the extreme of regular fixed-point axioms, they are about as high as we can get via normal functions and stationary sets. % preformulovat
+
+%TODO indescribable -- reflecting indescribability -- we can't reach $V$ by a $\Sigma_1^1$ formula, so there's some initial segment $V_\alpha$ that is also unreachable (we say indescribable) by the means of a ... formula
+
 \begin{definition}{($\Pi^m_n$-indescribable cardinal)}\label{def:pi_mn_indescribable}
 We say that $\kappa$ is $\Pi^m_n$-indescribable iff it is not described by any $\Pi^m_n$-formula.
 \end{definition}
 \begin{definition}{($\Sigma^m_n$-indescribable cardinal)}\label{def:sigma_mn_indescribable}
 We say that $\kappa$ is $\Sigma^m_n$-indescribable iff it is not described by any $\Sigma^m_n$-formula.
 \end{definition}
+
+To see that this notion is based in reflection, note that for $\Pi^m_n$-formulas\footnote{This holds for $\Sigma^m_n$-formulas alike.}, a cardinal $\kappa$ is $\Pi^m_n$-indescribable iff every $\Pi^m_n$-formula reflects in $\kappa$ in the sense of definition \ref{def:reflection_2}.
 
 \begin{lemma}
 Let $\kappa$ be a cardinal, the following holds for any $n \in \omega$. $\kappa$ is $\Pi^1_n$-indescribable iff $\kappa$ is $\Sigma^1_n+1$-indescribable
@@ -616,6 +627,8 @@ which implies that $\alpha$ is inaccessible.
 To be finished, we need to verify that $\alpha \in C$. Since $\kappa = V_\kappa$ for inaccessible $\kappa$\footnote{TODO link -------- ?}, $C \cap V_\alpha = C \cap \alpha$, from unboundedness of $C \cap \alpha$ in $\alpha$, $\bigcup(C \cap \alpha) = \alpha$, which, together with the fact that $C$ is a club set in $\kappa$ and therefore closed in $\kappa$, yields that $\alpha \in C$.
 \end{proof}
 
+TODO asi jako Drake, pozn ze to jde i pro hyper-Mahlovy?
+
 \begin{definition}{(Extension property)}
 We say that a cardinal $\kappa$ has the \emph{extension property} iff for any $R \subseteq V_\kappa$ there is a~transitive set 
 $X \neq V_\kappa$ and an $S \subseteq X$ such that 
@@ -663,7 +676,6 @@ TODO % WATT??
 \end{comment}
 }
 
-% Godel Bernays kdyztak Jech str. 70 \cite{JechBook}, ale asi spis nic
 \subsection{Measurable Cardinal}
 
 TODO refaktorizovat fle:
@@ -842,22 +854,24 @@ The existence of the inaccessible cardinal is compatible with
 
 \begin{theorem}
 \begin{equation}
-Con(L + \exists \kappa (\kappa \mbox{" is a Mahlo Cardinal"}))  
+Con(L + \exists \kappa (\kappa \mbox{" is a Mahlo Cardinal"})) then Con(L)
 \end{equation}
 \end{theorem}
-
-
-\begin{theorem}
-\begin{equation}
-Con(L + \exists \kappa (\kappa \mbox{" is a Weakly Inaccessible Cardinal Cardinal"}))  
-\end{equation}
-\end{theorem}
+http://math.stackexchange.com/questions/1791631/reference-mahlo-cardinals-remain-mahlo-in-l/1792486#1792486
+TODO citace webu?
 
 \begin{theorem}
 \begin{equation}
-Con(L + \exists \kappa (\kappa \mbox{" is a Measurable Cardinal"}))  
+Con(L + \exists \kappa (\kappa \mbox{" is a Weakly Inaccessible Cardinal Cardinal"})) then Con(L)
 \end{equation}
 \end{theorem}
+
+\begin{theorem}
+\begin{equation}
+Con(L) -> Con(L + \exists \kappa (\kappa \mbox{" is a Measurable Cardinal"})) then Con(L)
+\end{equation}
+\end{theorem}
+Ktera vera?
 
 TODO vyska / sirka univerza
 
