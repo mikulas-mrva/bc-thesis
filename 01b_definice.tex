@@ -1,4 +1,4 @@
-\subsection{Notation and terminology}
+\subsection{Notation and Terminology}
 \subsubsection{The Language of Set Theory}
 % TODO predpokladame splnovani a tak, z logiky? link na ucebnici kdyztak? 
 % 
@@ -179,7 +179,7 @@ $\sf{ZFC}$ is a theory that contains all the axioms of $\sf{ZF}$ plus \emph{Choi
 
 \
 
-\subsubsection{The transitive universe}
+\subsubsection{The Transitive Universe}
 % $V$ a $V_\alpha$ odkazuji k Von Neumannove hierarchii (pro jistotu)
 \begin{definition}{(Transitive class)}\label{def:transitivity}\\
 We say a class $A$ is \emph{transitive} iff
@@ -263,7 +263,7 @@ Due to \emph{Regularity}, every set has a rank.\footnote{See chapter 6 of \cite{
 
 \
 
-\subsubsection{Cardinal numbers}
+\subsubsection{Cardinal Numbers}
 
 \begin{definition}{(Cardinality)}\\
 Given a set $x$, let the cardinality of $x$, written $|x|$, be defined as the smallest ordinal number such that there is an injective mapping from $x$ to $\alpha$.
@@ -352,38 +352,54 @@ A function $f: Ord \then Ord$ is said to be \emph{continuous} iff
 A function $f: Ord \then Ord$ is said to be \emph{normal} if it is \emph{strictly increasing} and \emph{continuous}.
 \end{definition}
 
-\begin{definition}{Fixed point}\\
+\begin{definition}{Fixed point}\label{def:fixed_point}\\
 We say $\alpha$ is a fixed point of ordinal function $f$ if $\alpha=f(\alpha)$.
 \end{definition}
 
-\begin{definition}{(Unbounded class)}\\
-We say a class $A$ is unbounded if for an arbitrary set $x$, there is a set $y \in A$ such that $x < y$.
+\begin{definition}{(Unbounded class)}\label{def:unbounded_class}\\
+We say a class $A$ is unbounded if 
+\begin{equation}
+\forall x (\exists y \in A) (x < y)
+\end{equation}
 \end{definition}
 
-\begin{definition}{(Unbounded set)}
+\begin{definition}{(Class Unbounded in $\alpha$)}\label{def:unbounded_in_alpha}\\
 Let $\alpha$ be a limit ordinal. We say that $x \subset \alpha$ is \emph{unbounded in $\alpha$} iff
 \begin{equation}
 \forall \beta \in Ord (\beta < \alpha \then \exists \gamma (\gamma \in x (\beta \leq \gamma < \alpha)))
 \end{equation} % TODO WTF?
 \end{definition}
 
-TODO pozor tady na to
-
-\begin{definition}{(Closed class)}\\
-A class $A$ is closed in iff for every limit ordinal $\beta < \alpha$, if $C \cap \beta$ is unbounded in $\beta$ then $\beta \in C$.
+\begin{definition}{(Closed class)}\label{def:closed_class}\\
+For a limit ordinal $A \subseteq \lambda$, we say that $A$ is closed in $\lambda$ iff for every non-zero ordinal $\alpha < \lambda$: if $A \cap \alpha$ is unbounded in $\alpha$ then $\alpha \in A$.
 \end{definition}
 
-TODO vyhodit club set a rict jenom ze closed unbounded? 
-\begin{definition}{(Club set)}\\
+\begin{definition}{(Club set)}\label{def:club_set}\\
 For a regular uncountable cardinal $\kappa$, a set $x\ \subset\ \kappa$ is a \emph{closed unbounded} subset, abbreviated as a \emph{club set}, iff $x$ is both closed and unbounded in $\kappa$.
-% which means that for every $\beta$ < $\kappa$ there is a $\beta'\ \in \alpha$ such that $\beta\ <\ \beta'\ <\ \kappa$.
 \end{definition}
 
-\begin{definition}{(Stationary set)}\\
+\begin{definition}{(Stationary set)}\label{def:stationary_set}\\
 For a regular uncountable cardinal $\kappa$, we say a set $A\ \subset\ \kappa$ is stationary in $\kappa$ iff it intersects every club subset of $\kappa$.
 \end{definition}
 
-\
+\subsubsection{Structure, Substructure and Embedding}
+
+Structures will be denoted $\langle M, \in, R \rangle$ where $M$ is a domain, $\in$ stands for the standard membership relation, it is assumed to be restricted to the domain\footnote{To be totally correct, we should write $\langle M, \in \cap M \times M, R \rangle$}, $R \subseteq M$ is a relation on the domain. When $R$ is not needed, we may as well only write $M$ instead of $\langle M, \in \rangle$.
+
+\begin{definition}{(Elementary Embedding)}\label{def:elementary_embedding}\\
+Given the structures $\langle M_1, \in, R \rangle$, $\langle M_2, \in, R \rangle$ and a one-to-one function $j: M_1 \then M_2$, we say $j$ is an \emph{elementary embedding} of $M_1$ into $M_2$, we write $j: M_1 \prec M_2$, when the following holds for every formula $\varphi(p_1, \ldots, p_n)$ and every $p_1, \ldots, p_n \in M_1$:
+\begin{equation}
+\langle M_1, \in, R \rangle \models \varphi(p_1, \ldots, p_n) \iff \langle M_2, \in, R \rangle  \models \varphi(j(p_1), \ldots, j(p_n))
+\end{equation}
+\end{definition}
+
+
+\begin{definition}{(Elementary Substructure)}\label{def:elementary_substructure}\\
+Given the structures $\langle M_1, \in, R \rangle$, $\langle M_2, \in, R \rangle$ and a one-to-one function $j: M_1 \then M_2$ such that $j: M_1 \prec M_2$, we say that $M_1$ is an \emph{elementary substructure} of $M_2$, denoted as $M_1 \prec M_2$, iff $j$ is an identity on $M_1$. In other words
+\begin{equation}
+\langle M_1, \in, R \rangle \models \varphi(p_1, \ldots, p_n) \iff \langle M_2, \in, R \rangle  \models \varphi(p_1, \ldots, p_n)
+\end{equation}
+\end{definition}
 
 % While higher-order satisfaction relation for proper classes is unformalizable\footnote{TODO CITE KDE? Tarski nebo tak neco?},we can formalize satisfaction in a structure. For the rest of this chapter, let $D$ be a domain of such structure.
 

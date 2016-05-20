@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.12.2)  19 MAY 2016 19:41
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.12.2)  20 MAY 2016 03:30
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -368,10 +368,6 @@ to up-ward L^^?owenheim{Skolem
 
 [26]) [27] (./03_large_cardinals.tex [28] [29]
 
-LaTeX Warning: Reference `def:closed_class' on page 30 undefined on input line 
-67.
-
-
 LaTeX Warning: Reference `def:unbounded class' on page 30 undefined on input li
 ne 67.
 
@@ -419,21 +415,26 @@ di-nal)[] We say that $\OML/cmm/m/it/12 ^^T$ \OT1/cmr/m/it/12 is $\OT1/cmr/m/n/
 LaTeX Warning: Reference `Tait_constructingcardinals' on page 39 undefined on i
 nput line 508.
 
-[39]
-Underfull \hbox (badness 10000) in paragraph at lines 577--579
+[39] [40]
+Overfull \hbox (40.74068pt too wide) detected at line 597
+[] []
+ []
+
+[41]
+Underfull \hbox (badness 10000) in paragraph at lines 639--641
 
  []
 
-[40] [41] [42]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 771.
+[42] [43] [44]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 833.
 
  (/usr/local/texlive/2015/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 771.
-
-[43]) [44] [45] (./bakalarka.bbl) [46] (./bakalarka.aux)
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 833.
+)
+[45] [46] (./bakalarka.bbl) [47] (./bakalarka.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -442,10 +443,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 5212 strings out of 493089
- 66224 string characters out of 6134842
- 135855 words of memory out of 5000000
- 8605 multiletter control sequences out of 15000+600000
+ 5221 strings out of 493089
+ 66412 string characters out of 6134842
+ 135975 words of memory out of 5000000
+ 8614 multiletter control sequences out of 15000+600000
  22704 words of font info for 84 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  36i,16n,43p,1426b,591s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -472,17 +473,18 @@ xmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/local/texlive/2015/tex
 mf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/local/texlive/2015/texmf
 -dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2015/texmf-
 dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2015/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2015/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2015/texmf-dist/f
-onts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2015/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2015/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmti8.pfb></usr/local/texlive/2015/texmf-dist/fonts
-/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2015/texmf-dist/f
-onts/type1/public/rsfs/rsfs10.pfb>
-Output written on bakalarka.pdf (47 pages, 467278 bytes).
+st/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2015/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2015/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2015/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2015/texmf-dist/font
+s/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2015/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmti8.pfb></usr/local/texlive/2015/texmf-dist/fonts/t
+ype1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2015/texmf-dist/fon
+ts/type1/public/rsfs/rsfs10.pfb>
+Output written on bakalarka.pdf (48 pages, 483795 bytes).
 PDF statistics:
- 277 PDF objects out of 1000 (max. 8388607)
- 196 compressed objects within 2 object streams
+ 285 PDF objects out of 1000 (max. 8388607)
+ 201 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
