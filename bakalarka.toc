@@ -19,7 +19,7 @@
 \contentsline {subsection}{\numberline {3.2}Inaccessibility}{32}
 \contentsline {subsection}{\numberline {3.3}Mahlo Cardinals}{36}
 \contentsline {subsection}{\numberline {3.4}Second-order Reflection}{37}
-\contentsline {subsection}{\numberline {3.5}Indescribality}{38}
-\contentsline {subsection}{\numberline {3.6}Measurable Cardinal}{42}
-\contentsline {subsection}{\numberline {3.7}The Constructible Universe}{43}
-\contentsline {section}{\numberline {4}Conclusion}{47}
+\contentsline {subsection}{\numberline {3.5}Indescribality}{39}
+\contentsline {subsection}{\numberline {3.6}Measurable Cardinal}{43}
+\contentsline {subsection}{\numberline {3.7}The Constructible Universe}{44}
+\contentsline {section}{\numberline {4}Conclusion}{48}

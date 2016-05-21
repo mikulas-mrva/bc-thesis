@@ -117,7 +117,7 @@ We will call $\sf{ZMC}$ a set theory that contains all axioms and schemas of $\s
 We have decided to call it $\sf{ZMC}$, because Lévy uses $\sf{ZM}$, derived from $\sf{ZF}$, which is more intuitive, but we also need the axiom of choice, thus, $\sf{ZMC}$.
 
 
-Let's now prove that in $\sf{ZFC}$, the above \emph{Axiom M} is equivalent to \emph{Reflection\textsubscript{1}} as defined in \ref{def:reflection_1}. This is proven in \cite{Levy60a} as \emph{Theorem 3}. % TODO tohle by bylo fajn dokazat, protoze tam je ten Montague :(
+Let's now prove that in $\sf{ZFC}$, the above \emph{Axiom M} is equivalent to \emph{Reflection\textsubscript{1}} as defined in \ref{def:reflection_1}. This is proven in \cite{Levy60a} as \emph{Theorem 3}. % TODO tohle by bylo fajn dokazat, protoze tam je ten Montague
 \begin{theorem}\label{theorem:levy_m_iff_reflection}
 \begin{equation}
 \sf{ZFC} \models \mbox{\emph{Axiom M}} \iff \mbox{\emph{Reflection\textsubscript{1}}}
@@ -452,13 +452,18 @@ Let $\varphi$ be a formula in the prenex formal form.
 \ece
 \end{definition}
 
-Because we have extended the underlying logic to higher types of variables, in order to make some meaningful statements in it, we will now define the satisfaction relation for structures.\footnote{Note that it is formally undefinable even in first order logic due to Tarski's result, see \cite[Theorem 12.7]{JechBook} for details.}
-\begin{definition}{(Satisfaction)}\label{def:satifsfaction}\\
+Now that we have introduced higher types of quantifiers, we will use it to formulate reflection. But first, let's make it clear how relativization works for higher-order quantifiers and type 2 parameters. Let $\alpha, \kappa$ be ordinals such that $\alpha < \kappa$, $R \subseteq V_\kappa$.
+\begin{equation}
+R^{V_\alpha} \defeq R \cap V_\alpha
+\end{equation}
+And let $\exists^{m}$ be a quantifier that ranges over type $m$ variables, let $P$ represent a type $m$ variable, let $\varphi$ be a type $m$ formula with the only free variable $P$.
+\begin{equation}
+(\exists P \varphi(P))^{V_\alpha} \defeq (\exists \power^(m-1){V_\alpha})\varphi^{V_\alpha}(P))
+\end{equation}
 
-\end{definition}
 
 \begin{definition}{(Reflection)}\label{def:reflection_2}\\
-Let $\varphi(P)$ be a $\Pi^n_m$-formula with one free variable of type type 2 denoted $P$. We say $\varphi(P)$ reflects in $V_\kappa$ if for every $P \sub V_\kappa$ there is an ordinal $\alpha<\kappa$ such that the following holds:
+Let $\varphi(R)$ be a $\Pi^n_m$-formula with one free variable of type type 2 denoted $P$. We say $\varphi(R)$ reflects in $V_\kappa$ if for every $R \sub V_\kappa$ there is an ordinal $\alpha<\kappa$ such that the following holds:
 \begin{equation}
 \begin{gathered}
 \mbox{If }(V_\kappa,\in, R)\models \varphi(R),\\
@@ -467,8 +472,18 @@ Let $\varphi(P)$ be a $\Pi^n_m$-formula with one free variable of type type 2 de
 \end{equation}
 \end{definition}
 
-This formalization of the notion of reflection allows us to describe Inaccessible and Mahlo cardinals more easily, which we will do in the following section.
+This formalization of the notion of reflection allows us to describe Inaccessible and Mahlo cardinals more easily, which we will do in the following section. 
 
+It is important to see, that while we can now reflect $\Pi^m_n$-formulas for arbitrary $m, n \in \omega$, they can only have type 2 free variables. 
+This formalization of reflection can not be extended to higher-order parameters as is. This will be briefly reviewed in the next paragraph.
+
+In order to extend reflection as a stated above in \ref{def:reflection_2}, we need to make sure that given the domain of the structure, $V_\kappa$, we know what relativization to $V_\alpha$, $\alpha < \kappa$, means.
+Since a type 3 parameters are collections of subcollections of $V_\kappa$ and we can already relativize subcollections of $V_\kappa$, this seems to be a reasonable way to extend relativization to type 3 parameters:
+\begin{equation}
+\mathscr{R}^{V_\alpha} = \{R^{V_\alpha} : R \in \mathscr{R} \}
+\end{equation}
+Where $R^{V_\alpha}$ is type 2 relativization, which is $R \cap V_\alpha$.
+% ========================================================
 \subsection{Indescribality}
 
 Since this section talks about indescribability, this is how an ordinal is described according to Drake \cite[Chapter 9]{DrakeBook}.
@@ -683,9 +698,9 @@ TODO refaktorizovat fle:
 Given a set $X$, we say $U \subset \power{X}$ is an \emph{ultrafilter} iff all of the following hold:
 \bce[(i)]
 \item $\emptyset \not\in U$
-\item $\forall a, b (\subset X \et a \subset b \et a \in U \then b \in U)$
-\item $\forall a, b \in U (a \cap b) \in U$
-\item $\forall a (a \subset X \then (a \in U \lor (X \setminus a) \in U))$
+\item $\forall x, y (\subset X \et x \subset y \et x \in U \then y \in U)$
+\item $\forall x, y \in U (x \cap y) \in U$
+\item $\forall x (x \subset X \then (x \in U \lor (X \setminus x) \in U))$
 \ece
 \end{definition}
 
@@ -706,10 +721,8 @@ Let $\kappa$ be a cardinal. If $\kappa$ is a measurable cardinal then it is $\P
 \end{theorem}
 
 \begin{theorem}
-Pod kazdym meritelnym kardinalem existuje ultrafiltr totalne nepopsatelnych, ktere tim padem nejsou sestrojitelne. VIZ VETA Z KANAMORIHO.
+TODO Pod kazdym meritelnym kardinalem existuje ultrafiltr totalne nepopsatelnych, ktere tim padem nejsou sestrojitelne. VIZ VETA Z KANAMORIHO.
 \end{theorem}
-
-asi nedokazovat?
 
 %\newpage
 % =====================================================================================================================================
@@ -730,20 +743,20 @@ X = \{x: x \in M \et \langle M, \in \rangle \models \varphi(x, p_1, \ldots, p_n)
 \end{equation}
 \end{definition}
 
-\begin{definition}{(Sets definable in $M$)}\\
+\begin{definition}{(The set of definable subsets)}\\
 The following is a set of all definable subsets of a given set $M$, denoted Def($M$).
 \begin{equation}
 \begin{gathered}
-Def($M$) = \{\{y : x \in M \land \langle M, \in \rangle \models \varphi(y, u_1, \ldots, i_n) \} |\\
+Def(M) = \{\{y : x \in M \land \langle M, \in \rangle \models \varphi(y, u_1, \ldots, i_n) \} |\\
 \mbox{ $\varphi$ is a~first-order formula, }p_1, \ldots, p_n \in M \}
 \end{gathered}
 \end{equation}
 \end{definition}
 
-% Note that fle?
+We will use $Def(M)$ in the following construction in the way the powerset operation is used when constructing the usual Von Neumann's hierarchy of sets\footnote{For that reason, some authors use $\power^{\*}{M}$ instead of $Def(M)$, see section 11 of \cite{PinterBook} for one such example.}
 
 Now we can recursively build $L$.
-\begin{definition}{(The Constructible universe)}\label{def:constructible_universe}
+\begin{definition}{(The Constructible universe)}\label{def:constructible_universe}\\
 \bce[(i)]
 \item
 \begin{equation}
@@ -769,102 +782,103 @@ Note that while $L$ bears very close resemblance to $V$, the difference is, that
 
 In order to 
 
-TODO:
-\begin{lemma}\label{lemma:ord_in_l}
-$Ord \in L$
-\end{lemma}
-
-\begin{lemma}\label{lemma:l_wo}
-$L$ is well-ordered.\\
-TODO !!
-\end{lemma}
-
 \begin{theorem}
 Let $L$ be as in \ref{def:constructible_universe}.
 \begin{equation}
 L \models \sf{ZFC}
 \end{equation}
 \end{theorem}
+For details, refer to Jech: \cite{JechBook}[Theorem 13.3].
 
-\begin{proof}
-TODO !!! (strucne) vit \cite{JechBook}[Theorem 13.3]
-\bce[(i)]
-\item \emph{Extensionality} (see \ref{def:extensionality}):\\
-\emph{Extensionality} holds in $L$ because $\Delta_0$ formulas are absolute in transitive classes by \ref{lemma:delta_0_absolute}, \emph{Extensionality} is $\Delta_0$ and $L$ is transitive.
-
-\item \emph{Foundation} (see \ref{def:foundation})\\
-Take a non-empty set $X$. Let $x \in X$ be a set such that $X \cap x = \emptyset$. $x$ is therefore defined by the formula $\varphi(x, y) = (x \cap y = \emptyset)$, so $x \in L$. $\varphi$ is $\Delta_0$ and therefore holds in $L$ by \ref{lemma:delta_0_absolute}.
-
-\item \emph{Pairing} (see \ref{def:pairing})\\
-Since \emph{Pairin} is also $\Delta_0$, it holds in $L$ by the same argument as \emph{Extensionality} does by \ref{lemma:delta_0_absolute}.
-
-\item \emph{Union} (see \ref{def:union})\\
-\emph{Union} is also $\Delta_0$, see \emph{Extensionality} and \ref{lemma:delta_0_absolute}.
-
-\item \emph{Power Set} (see \ref{def:powerset})\\
-\emph{Power Set} also holds by \ref{lemma:delta_0_absolute}.
-
-\item \emph{Infinity} (see \ref{def:infinity})\\
-$\omega \in L$ by \ref{lemma:ord_in_l} % neni to trochu kruh?
-
-\item \emph{Specification} (see \ref{def:specification})\\
-.
-
-\item \emph{Replacement} (see \ref{def:replacement})\\
-.
-\item \emph{Choice} (see \ref{def:replacement})\\
-.
-
-\ece
-\end{proof}
-
-\begin{definition}{Constructibility}\\
-$L = V$
+\begin{definition}{(Constructibility)}\\
+The axiom of constructibility say that every set is constructible. It is usually denoted as $L = V$.
 \end{definition}
 
-The following are a few interesting results that we won't prove but refer interested reader to appropriate resources instead.
+Without providing a proof, we will introduce two important results established by Gödel in TODO citace!
 
-\begin{definition}{(GCH)}\\
-The following is called the Generalised Continuum Hypothesis, abbreviated as \emph{GCH}. It is an independent statement in $\sf{ZFC}$.
+\begin{theorem}{(Constructibility $\then$ Choice)}
 \begin{equation}
-\mbox{\emph{GCH} iff }\aleph_{\alpha+1}=2^{\aleph_\alpha} \mbox{ for every ordinal }\alpha
-\end{equation}
-\end{definition}
-
-\begin{theorem}
-\begin{equation}
-(L = V) \then GCH
+\sf{ZF} \models \mbox{\emph{Constructibility}} \then \mbox{\emph{Choice}} 
 \end{equation}
 \end{theorem}
 
-This is proven in cite\{neco\} Gödel? Jech? Kunnen?
+\begin{definition}{(GCH)}\label{def:gch}\\
+\emph{Generalized Continuum Hypothesis}, usually denoted \emph{GCH} for brevity, refers to the following statement:
+\begin{equation}
+\aleph_{n+1} = \power{\aleph_n}
+\end{equation}
+\end{definition}
+
+\begin{theorem}{(Constructibility $\then$ Continuum Hypothesis)}
+\begin{equation}
+\sf{ZF} \models \mbox{\emph{Constructibility}} \then \mbox{\emph{GCH}} 
+\end{equation}
+\end{theorem}
+It is worth mentioning that Gödel's proof of \emph{Construcibility} $\then$ \emph{GCH} featured the first formal use of a reflection principle. 
+For the actual proofs, see for example TODO citace!! Kunen?
+
+Since \emph{GCH} implies that $\kappa$ is a limit cardinal iff $\kappa$ is a strong limit cardinal for every $\kappa$, the distinctions between inaccessible and weakly inaccessible cardinals as well as between Mahlo and weakly Mahlo cardinals vanish.
 
 % -------------------
 
-TODO L a velke kardinaly
+TODO bez Con?
+
+Pokud $\kappa$ je nejaky kardinal ve $V$, je takovy i v $L$?
+
+TODO zachovavani epsilon = delta = pi 0 formuli v tranzitivnich strukturach!!!!!!
+
+TODO lemma: ord jsou ord v L (kunen?)
+
+TODO lemma: card jsou card v L
+
+\begin{theorem}{(Inaccessibility in $\sf{L}$)}\label{theorem:inaccessible_in_l}\\
+Let $\kappa$ be an inaccessible cardinal. Then $L \models \mbox{"$\kappa$ is inaccessible"}$.
+\end{theorem}
+\begin{proof}
+TODO prepsat: !!!!!!
+
+Indeed, if $L \models \mbox{"$\kappa$ is not a cardinal"}$, there is some $\mu < \kappa$ and some $f \in L$ such that $L\models f:\mu\then\kappa is surjective$. 
+
+However, this is a $\Sigma_0$ property and hence, in V, $f:\mu\then\kappa$ is surjective. 
+
+Contradiction. Since $\kappa>\omega$ (as an ordinal), this also yields that $L\models\mbox{"$\kappa$ is uncountable"}$.
+
+Repeating this argument with cofinal $f:\mu\then\kappa$ yields that $L\models\mbox{"$\kappa$ is regular"}$.
+
+Since $L\models GCH$ by ref TODO, it now suffices to prove that $L\models\mbox{"$\kappa$ is a limit cardinal"}$.
+This is trivial, because for any ordinal $\gamma<\kappa$, we have that $(\gamma+)V<\kappa$ and since cardinals in $V$ are cardinals in $L$, this proves
+\begin{equation}
+L \models\forall\gamma<\kappa\exists \gamma<\mu<\kappa:\mbox{"$\mu$ is a cardinal."}
+\end{equation}
+\end{proof}
+
+\begin{theorem}{(Mahloness in $\sf{L}$)}\label{theorem:mahlo_in_l}\\
+Let $\kappa$ be a Mahlo cardinal. Then $L \models \mbox{"$\kappa$ is Mahlo"}$.
+\end{theorem}
+% http://math.stackexchange.com/questions/1791631/reference-mahlo-cardinals-remain-mahlo-in-l/1792486#1792486
+% TODO citace webu?
+
+\begin{proof}
+Assume that there is a Mahlo cardinal and let's denote it $\kappa$. From the definition of Mahloness in \ref{def:mahlo_cardinal}, the set 
+\begin{equation}
+\{\alpha : \alpha \in \kappa \et \mbox{"$\alpha$ is inaccessible"}\}
+\end{equation}
+is stationary in $\kappa$ and $\kappa$ is also inaccessible.
+
+We want
+
+%Now let T:={α∈\kappa∣L\modelsα is regular}T:={α∈\kappa∣L\modelsα is regular}. By the argument given above, any αα that is regular in VV is regular in LL and hence S⊆TS⊆T. Suppose that L\models\kappa is not MahloL\models\kappa is not Mahlo. Then there is some C⊆\kappaC⊆\kappa such that L\modelsC is club in \kappa and C∩T=∅L\modelsC is club in \kappa and C∩T=∅. Being club is a $\Sigma_0$$\Sigma_0$, property and hence C⊆\kappaC⊆\kappa is club in \kappa\kappa. Since S⊆TS⊆T, we have that C∩S=∅C∩S=∅ and hence SS is not stationary in VV. This is a contradiction and we therefore must have that L\modelsT is stationaryL\modelsT is stationary.
+
+Thus, $\kappa$ remains Mahlo in $L$.
 
 
-TODO def Con!
-\begin{theorem}
-The existence of the inaccessible cardinal is compatible with 
+\end{proof}
+
+%\begin{theorem}
 %\begin{equation}
-%Con(L + \exists \kappa (\kappa \mbox{" is an Inaccessible Cardinal"}))  
+%Con(L + \exists \kappa (\kappa \mbox{" is a Weakly Inaccessible Cardinal Cardinal"})) then Con(L)
 %\end{equation}
-\end{theorem}
-
-\begin{theorem}
-\begin{equation}
-Con(L + \exists \kappa (\kappa \mbox{" is a Mahlo Cardinal"})) then Con(L)
-\end{equation}
-\end{theorem}
-http://math.stackexchange.com/questions/1791631/reference-mahlo-cardinals-remain-mahlo-in-l/1792486#1792486
-TODO citace webu?
-
-\begin{theorem}
-\begin{equation}
-Con(L + \exists \kappa (\kappa \mbox{" is a Weakly Inaccessible Cardinal Cardinal"})) then Con(L)
-\end{equation}
-\end{theorem}
+%\end{theorem}
 
 \begin{theorem}
 \begin{equation}
