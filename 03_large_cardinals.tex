@@ -760,19 +760,19 @@ Now we can recursively build $L$.
 \bce[(i)]
 \item
 \begin{equation}
-L_0 := \emptyset
+L_0 \defeq  \emptyset
 \end{equation}
 
 \item
 \begin{equation}
-L_{\alpha+1} := Def(L_{\alpha})
+L_{\alpha+1} \defeq  Def(L_{\alpha})
 \end{equation}
 \item
 \begin{equation}
 L_{\lambda} = \bigcup_{\alpha < \lambda} L_{\alpha}\mbox{ If }\lambda\mbox{ is a~limit ordinal }
 \end{equation}
 \item
-\begin{equation}
+\begin{equation}\label{eq:def_l}
 L = \bigcup_{\alpha\in Ord} L_{\alpha}
 \end{equation}
 \ece
@@ -809,7 +809,7 @@ Without providing a proof, we will introduce two important results established b
 \end{equation}
 \end{definition}
 
-\begin{theorem}{(Constructibility $\then$ Continuum Hypothesis)}
+\begin{theorem}{(Constructibility $\then$ Continuum Hypothesis)}\label{theorem:l_then_gch}
 \begin{equation}
 \sf{ZF} \models \mbox{\emph{Constructibility}} \then \mbox{\emph{GCH}} 
 \end{equation}
@@ -821,38 +821,40 @@ Since \emph{GCH} implies that $\kappa$ is a limit cardinal iff $\kappa$ is a str
 
 % -------------------
 
-TODO bez Con?
-
 Pokud $\kappa$ je nejaky kardinal ve $V$, je takovy i v $L$?
 
-TODO zachovavani epsilon = delta = pi 0 formuli v tranzitivnich strukturach!!!!!!
-
-TODO lemma: ord jsou ord v L (kunen?)
+% TODO lemma: ord jsou ord v L (kunen?) "x is an ordinal" je delta_0
 
 TODO lemma: card jsou card v L
 
-\begin{theorem}{(Inaccessibility in $\sf{L}$)}\label{theorem:inaccessible_in_l}\\
+\begin{theorem}{(Inaccessibility in $L$)}\label{theorem:inaccessible_in_l}\\
 Let $\kappa$ be an inaccessible cardinal. Then $L \models \mbox{"$\kappa$ is inaccessible"}$.
 \end{theorem}
 \begin{proof}
-TODO prepsat: !!!!!!
+We want to show that the following are all true for an inaccessible cardinal $\kappa$:
+\bce[(i)] 
+\item $L \models \mbox{"$\kappa$ is a cardinal"}$
+\item $L \models \omega < \kappa$
+\item $L \models \mbox{"$\kappa$ is regular"}$
+\item $L \models \mbox{"$\kappa$ is limit"}$ . While inaccessible cardinals are strong limit cardinals, since \emph{GCH} holds in $L$, $L \models \mbox{"$\kappa$ is limit"}$ implies $L \models \mbox{"$\kappa$ is strong limit"}$.
+\ece
 
-Indeed, if $L \models \mbox{"$\kappa$ is not a cardinal"}$, there is some $\mu < \kappa$ and some $f \in L$ such that $L\models f:\mu\then\kappa is surjective$. 
+Suppose $L \models \mbox{"$\kappa$ is not a cardinal"}$ holds, then there is a caridnal $\mu$, $\mu < \kappa$ and a function $f:\mu\then\kappa$, $f \in L$, such that $L\models \mbox{"$f:\mu\then\kappa$ is onto"}$. But since "$f$ is onto" is a $\Delta_0$ formula and $\Delta_0$ formulas are are absolute in transitive structures\footnote{see lemma \ref{def:delta_0_absoluteness}} and $L$ is a transitive class, $\mbox{"$f$ is onto"}^M \iff \mbox{"$f$ is onto"}$, this contradicts the fact that $\kappa$ is a cardinal.
 
-However, this is a $\Sigma_0$ property and hence, in V, $f:\mu\then\kappa$ is surjective. 
+Similarly, $\omega < \kappa$ is absolute in $L$.
+% Since $\kappa>\omega$ (as an ordinal), this also yields that $L\models\mbox{"$\kappa$ is uncountable"}$.
 
-Contradiction. Since $\kappa>\omega$ (as an ordinal), this also yields that $L\models\mbox{"$\kappa$ is uncountable"}$.
+%Regularity can be verified in a similar manner: since $\kappa$ is regular, every unbounded subset of $\kappa$ is cofinal, given one such set $y$, there is a function $f: Ord \then \kappa$ that is onto, let $x$ be the set of all . Since "$f$ is onto" is absolute, $L \models \mbox{"$rng(f)$ is unbounded in $\kappa$"}$. So $\kappa$ is regular 
+TODO regularity!
 
-Repeating this argument with cofinal $f:\mu\then\kappa$ yields that $L\models\mbox{"$\kappa$ is regular"}$.
+Since $L\models GCH$ by \ref{theorem:l_then_gch}, it now suffices to show that $L\models\mbox{"$\kappa$ is a limit cardinal"}$. Since $\kappa$ is a limit cardinal, there is a limit ordinal $\lambda$ such that $\kappa = \aleph_\lambda$\footnote{In fact $\lambda = \kappa$ from inaccessibility, but we don't need right now for limitness.}.
+Consider an ordinal $\alpha$ such that $\alpha<\lambda$. We know that ordinals are also "ordinals in $L$", so $\alpha \in \lambda$, thus $(\alpha \in \lambda)^L$, but also given an ordinal $\beta$ such that $\alpha < \beta < \lambda$, $(\alpha < \beta < \kappa)^L$. We have 
+L \models (\forall\alpha<\lambda)(\exists \alpha<\beta<\lambda):\mbox{"$\mu$ is an ordinal."}
 
-Since $L\models GCH$ by ref TODO, it now suffices to prove that $L\models\mbox{"$\kappa$ is a limit cardinal"}$.
-This is trivial, because for any ordinal $\gamma<\kappa$, we have that $(\gamma+)V<\kappa$ and since cardinals in $V$ are cardinals in $L$, this proves
-\begin{equation}
-L \models\forall\gamma<\kappa\exists \gamma<\mu<\kappa:\mbox{"$\mu$ is a cardinal."}
-\end{equation}
+TODO JAK JE TO S ALEPHEM?
 \end{proof}
 
-\begin{theorem}{(Mahloness in $\sf{L}$)}\label{theorem:mahlo_in_l}\\
+\begin{theorem}{(Mahloness in $L$)}\label{theorem:mahlo_in_l}\\
 Let $\kappa$ be a Mahlo cardinal. Then $L \models \mbox{"$\kappa$ is Mahlo"}$.
 \end{theorem}
 % http://math.stackexchange.com/questions/1791631/reference-mahlo-cardinals-remain-mahlo-in-l/1792486#1792486
@@ -865,9 +867,7 @@ Assume that there is a Mahlo cardinal and let's denote it $\kappa$. From the def
 \end{equation}
 is stationary in $\kappa$ and $\kappa$ is also inaccessible.
 
-We want
-
-%Now let T:={α∈\kappa∣L\modelsα is regular}T:={α∈\kappa∣L\modelsα is regular}. By the argument given above, any αα that is regular in VV is regular in LL and hence S⊆TS⊆T. Suppose that L\models\kappa is not MahloL\models\kappa is not Mahlo. Then there is some C⊆\kappaC⊆\kappa such that L\modelsC is club in \kappa and C∩T=∅L\modelsC is club in \kappa and C∩T=∅. Being club is a $\Sigma_0$$\Sigma_0$, property and hence C⊆\kappaC⊆\kappa is club in \kappa\kappa. Since S⊆TS⊆T, we have that C∩S=∅C∩S=∅ and hence SS is not stationary in VV. This is a contradiction and we therefore must have that L\modelsT is stationaryL\modelsT is stationary.
+Now let $T\defeq \{\alpha \in \kappa : L\models\mbox{"$\alpha$ is regular"}\}$. By the argument given above, any $\alpha$ that is regular in $V$is regular in $L$and hence $S\subseteq T$. Suppose that $L \models \mbox{"$\kappa$ is not Mahlo"}$. Then there is some $C\subseteq \kappa$ such that $L\models C$ is club in $\kappa$ and $C\cap T=\emptyset L\models$ C is club in $\kappa$ and $C\cap T=\emptyset$ . Being club is a $\Sigma_0$, property and hence $C\subseteq \kappa$ is club in $\kappa$. Since $S \subseteq T$, we have that $C\cap S=\emptyset$ and hence $S$ is not stationary in $V$. This is a contradiction and we therefore must have that $L \models \mbox{$T$ is stationary}$.
 
 Thus, $\kappa$ remains Mahlo in $L$.
 

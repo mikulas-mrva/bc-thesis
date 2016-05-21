@@ -281,12 +281,20 @@ We will recursively define the function $\aleph$ for all ordinals.
 \end{definition}
 
 \begin{definition}{(Cardinal number)}\label{def:cardinal}\\
-We say a set $x$ is a \emph{cardinal number}, usually called a \emph{cardinal}, if either $x \in \omega$
+We say a set $x$ is a \emph{cardinal number}, usually called a \emph{cardinal}, if either $x \in \omega$, it is then called a \emph{finite cardinal}, 
+there is an ordinal $\alpha$ such that $\aleph_\alpha = x$, then we call 
 \end{definition}
-Cardinals will be notated by lower-case greek letters starting from $\kappa, \lambda, \mu, \ni, \ldots$\footnote{$\lambda$ is also sometimes used for limit ordinals, the distinction should be clear from the context.}.
+Infinite cardinals will be notated by lower-case greek letters from the middle if the alphabet, e.g. $\kappa, \mu, \ni, \ldots$.\footnote{$\lambda$ is preferably used for limit ordinals, if it is ever used to denote an infinite cardinal, that should be contextually clear.}
 
-\begin{definition}{(Cofinality)}\label{def:cofinality}\\
-Let $\lambda$ be a limit ordinal. The \emph{cofinality} of $\lambda$, written $cf(\lambda)$, is the least limit ordinal $\alpha$ such that there is an increasing $\alpha$-sequence\footnote{TODO def $\alpha$-sequence} $\langle \lambda_\beta : \beta < \alpha \rangle$ with $lim_{\beta \then \alpha} \lambda_\beta = \lambda$.
+\begin{definition}{(Cofinality of an ordinal)}\label{def:cofinality}\\
+Let $\lambda$ be a limit ordinal. The \emph{cofinality} of $\lambda$, written $cf(\lambda)$, is the smallest limit ordinal $\alpha$, $\alpha \leq \lambda$, such that 
+\begin{equation}
+(\forall x \in \lambda)(\exists y \in \alpha)(x < y)
+\end{equation}
+\end{definition}\footnote{Cofinality is usually defined for arbitrary sets, but we won't use that in this thesis and the above definition is very convenient.}
+
+\begin{definition}{(Regular Cardinal)}\label{def:regular_cardinal}\\
+We say a cardinal $\kappa$ is regular iff $cf(\kappa) = \kappa$
 \end{definition}
 
 \begin{definition}{(Limit Cardinal)}\label{def:limit_ordinal}\\
@@ -305,25 +313,65 @@ We say that an ordinal $\kappa$ is a \emph{strong limit cardinal} if it is a \em
 
 \begin{definition}{(Generalised Continuum Hypothesis)}\\
 \begin{equation}
-\aleph_{\alpha+1}=2^{\aleph_\alpha}
+\aleph_{\alpha+1}=\power{\aleph_\alpha}
 \end{equation}
 \end{definition}
 If \emph{GCH} holds (for example in Gödel's $L$, see chapter 3), the notions of a limit cardinal and a strong limit cardinal are equivalent.
 
 \
 
-\subsubsection{Relativisation} % and absoluteness?
+\subsubsection{Relativisation and Absoluteness} % and absoluteness?
 \begin{definition}{(Relativization)}\label{def:relativization}\\ %\cite[Definition 12.6]{JechBook} 
-Let $M$ be a class, $R$ a binary relation on $M$ and let $\varphi(p_1, \ldots, p_n)$ be a first-order formula with $n$ parameters. 
+Let $M$ be a class, $R \subseteq M\times M$ and let $\varphi(p_1, \ldots, p_n)$ be a first-order formula with no free variables besides $p_1, \ldots, _n$. 
 The \emph{relativization of $\varphi$ to $M$ and $R$} is the formula, written as $\varphi^{M, R}(p_1, \ldots, p_n)$, defined in the following inductive manner:
 \bce[(i)]
 \item $(x \in y)^{M,R} \iff R(x, y)$
 \item $(x = y)^{M,R} \iff x = y$
 \item $(\neg \varphi)^{M,R} \iff \neg \varphi^{M,R}$
-\item $(\varphi\ \&\ \psi)^{M,R} \iff \varphi^{M,R}\ \&\ \psi^{M,R}$
-\item $(\exists x \varphi)^{M,R} \iff (\exists x \in M) \varphi^{M,R}$
+\item $(\varphi \et \psi)^{M,R} \iff \varphi^{M,R} \et \psi^{M,R}$
+\item $(\varphi \lor \psi)^{M,R} \iff \varphi^{M,R} \lor \psi^{M,R}$
+\item $(\varphi \then \psi)^{M,R} \iff \varphi^{M,R} \then \psi^{M,R}$
+\item $(\exists x \varphi(x))^{M,R} \iff (\exists x \in M) \varphi^{M,R}(x)$
+\item $(\forall x \varphi(x))^{M,R} \iff (\forall x \in M) \varphi^{M,R}(x)$
 \ece
 \end{definition}
+When $R=\in\cap(M \times M)$, we usually write $\varphi^M$ instead of $\varphi^{M, R}$
+
+\begin{definition}{(Absoluteness)}
+Given a transitive class $M$, we say a formula $\varphi$ is \emph{absolute in $M$} if for all $p_1, \ldots, p_n \in M$
+\begin{equation}
+\varphi^M(p_1, \ldots, p_n) \iff \varphi(p_1, \ldots, p_n)
+\end{equation}
+\end{definition}
+
+\begin{definition}{(Hierarchy of first-order formulas)}\\
+\bce[(I)]
+A first-order formula $\varphi$ is $\Delta_0$ iff it is logically equivalent to a first-order formula $\varphi'$ satisfying any of the following:
+\bce[(i)]
+\item $\varphi'$ contains no quantifiers
+\item $y$ is a set, $\psi$ is a $\Delta_0$ formula, and $\varphi'$ is either $(\exists x \in y)\psi(y)$ or $(\forall x \in y)\psi(y)$.
+\item $\psi_1, \psi_2$ are $\Delta_0$ formulas and $\varphi'$ is any of the following: $\psi_1 \lor \psi_2$, $\psi_1 \et \psi_2$, $\psi_1 \then \psi_2$, $\neg \psi_2$, 
+\ece
+\item If a formula is $\Delta_0$ it is also $\Sigma_0$ and $\Pi_0$
+\item A formula $\varphi$ is $\Pi_n+1$ if it is logically equivalent to a formula $\varphi'$ such that $\varphi' = \foreach x \psi$ where $\psi$ is a $\Sigma_n$-formula for any $n < \omega$.
+\item A formula $\varphi$ is $\Sigma_n+1$ if it is logically equivalent to a formula $\varphi'$ such that $\varphi' = \foreach x \psi$ where $\psi$ is a $\Pi_n$-formula for any $n < \omega$.
+\ece
+\end{definition}
+Note that we can use the pairing function so that for $\forall p_1, \ldots, p_n \psi(p_1, \ldots, p_n)$, there a logically equivalent formula of the form $\forall x \psi'(x)$.
+
+\begin{lemma}{($\Delta_0$ absoluteness)}\label{lemma:delta_0_abssoluteness}
+Let $\varphi$ be a $\Delta_0$ formula, then $\varphi$ is absolute in any transitive class $M$.
+\end{lemma}
+
+\begin{proof}
+This will be proven by induction over the complexity of a given $\Delta_0$ formula $\vaphi$. Let $M$ be an arbitrary transitive class. Suppose, that 
+
+Atomic formulas are always absolute by the definition of relativisation, see \ref{def:relativization}.
+Suppose that $\Delta_0$ formulas $\psi_1$ and $\psi_2$ are absolute in $M$. Then from relativization, $(\psi_1 \et \psi_2)^M \iff \psi_1^M \et \psi_2^M$, which is, from the induction hypothesis, equivalent to $\psi_1 \et \psi_2$. The same holds for $\lor, \then, \neg$.
+
+Suppose that a $\Delta_0$ formula $\psi$ is absolute in $M$. Let $y$ be a set and let $\varphi = (\exists x \in y) \psi(x)$. 
+From relativization, $(\exists x \psi(x))^M \iff (\exists x \in M) \psi^M(x)$. Since the hypotheses makes it clear that $\psi^M \iff \psi$, we get $((\exists x \in y) \psi(x))^M \iff (\exists x \in y\cap M) \psi(x)$, which is the equivalent of $\varphi^M \iff \varphi$. The same applies to $\varphi = (\forall x \in y) \psi(x)$.
+\end{proof}
 
 \subsubsection{More functions}
 
@@ -361,13 +409,6 @@ We say a class $A$ is unbounded if
 \begin{equation}
 \forall x (\exists y \in A) (x < y)
 \end{equation}
-\end{definition}
-
-\begin{definition}{(Class Unbounded in $\alpha$)}\label{def:unbounded_in_alpha}\\
-Let $\alpha$ be a limit ordinal. We say that $x \subset \alpha$ is \emph{unbounded in $\alpha$} iff
-\begin{equation}
-\forall \beta \in Ord (\beta < \alpha \then \exists \gamma (\gamma \in x (\beta \leq \gamma < \alpha)))
-\end{equation} % TODO WTF?
 \end{definition}
 
 \begin{definition}{(Closed class)}\label{def:closed_class}\\
