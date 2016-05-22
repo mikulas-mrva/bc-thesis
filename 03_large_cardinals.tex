@@ -625,7 +625,7 @@ Let $\kappa$ be a cardinal. If $\kappa$ is a measurable cardinal then the follo
 \item $\kappa$ is $\Pi^2_1$-indescribable.
 \item Given $U$, a normal ultrafilter over $\kappa$, a relation $R \subseteq V_\kappa$ and a $\Pi^2_1$-formula $\varphi$ such that $\langle V_\kappa, \in, R \rangle \models \varphi$, then
 \begin{equation}
-\{ \alpha < \kappa : \langle V_\alpha, \in, R \cap \V_\alpha \ragle \models \varphi \} \in U
+\{ \alpha < \kappa : \langle V_\alpha, \in, R \cap V_\alpha \rangle \models \varphi \} \in U
 \end{equation}
 \ece
 \end{theorem}
@@ -756,7 +756,7 @@ Suppose $\mbox{"$\kappa$ is not a cardinal"}^L$ holds, then there is a cardinal 
 
 $(\omega < \kappa)^L$ holds because $\omega \in \kappa$ and because ordinals remain ordinals in $L$, so $(\omega \in \kappa)^L$.
 
-In order to see that $\mbox{"$\kappa$ is regular"}^L$, we can repeat the argument by contradiction used to show that $\kappa$ is a cardinal in $L$. If $\kappa$ was singular, there is a $\mu < \kappa$ together with a function $f: \mu \then \kappa$ that is onto, but since "$f$ is onto" implies $\mbox{"$\f$ is onto"^L}$, we have reacher contradiction with the fact that $\kappa$ is regular, but singular in $L$.
+In order to see that $\mbox{"$\kappa$ is regular"}^L$, we can repeat the argument by contradiction used to show that $\kappa$ is a cardinal in $L$. If $\kappa$ was singular, there is a $\mu < \kappa$ together with a function $f: \mu \then \kappa$ that is onto, but since "$f$ is onto" implies $\mbox{"$f$ is onto"}^L$, we have reached a contradiction with the fact that $\kappa$ is regular, but singular in $L$.
 
 It now suffices to show that $\mbox{"$\kappa$ is a limit cardinal"}^L$. That means, that for any given $\lambda<\kappa$, we need to find an ordinal $\mu$ such that $\lambda < \mu < \kappa$ that is also a cardinal in $L$. But since cardinals remain cardinals in $L$ by an argument with surjective functions just like above, we are done.
 
@@ -792,12 +792,6 @@ But because $\mbox{"$C$ is a club set in $\kappa$"}$ is equivalent to a $\Delta_
 
 $\kappa$ remains Mahlo in $L$.
 \end{proof}
-
-\begin{theorem}
-Let $\kappa$ be a weakly inaccessible cardinal. Then $\mbox{"$\kappa$ is weakly inaccessible cardinal"}^L$.
-\end{theorem}
-This is proven in \cite{JechBook}[Theorem 17.22]
-
 
 %\begin{theorem}
 %Con(L) -> Con(L + \exists \kappa (\kappa \mbox{" is a Measurable Cardinal"})) then Con(L)

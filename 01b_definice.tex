@@ -393,7 +393,7 @@ Let $\varphi$ be a $\Pi_1$ formula and $M$ a transitive class. Then the followin
 Since $\varphi(p_1, \ldots, p_n)$ is $\Pi_1$, there is a $\Delta_0$ formula $\psi(p_1, \ldots, p_n, x)$ such that $\varphi = \forall x \psi(p_1, \ldots, p_n, x)$. From relativization and lemma \ref{lemma:delta_0_abssoluteness}, $\varphi^M(p_1, \ldots, p_n) \iff (\forall x \in M)\psi(p_1, \ldots, p_n, x)$.
 
 Assume that for $p_1, \ldots, p_n \in M$ fixed, that $\forall x \psi(p_1, \ldots, p_n, x)$ holds, but $(\forall x \in M)\psi(p_1, \ldots, p_n, x)$ does not. 
-Therefore $\exists x \neg \psi(p_1, \ldots, p_n, x)$, which contradicts \forall x \psi(p_1, \ldots, p_n, x).
+Therefore $\exists x \neg \psi(p_1, \ldots, p_n, x)$, which contradicts $\forall x \psi(p_1, \ldots, p_n, x)$.
 \end{proof}
 
 
@@ -404,7 +404,7 @@ Let $\varphi$ be a $\Sigma_1$ formula and $M$ a transitive class. Then the follo
 \end{equation}
 \end{lemma}
 \begin{proof}
-Since $\varphi(p_1, \ldots, p_n)$ is $\Sigma_1$, there is a $\Delta_0$ formula $\psi(p_1, \ldots, p_n, x)$ such that $\varphi = \exist x \psi(p_1, \ldots, p_n, x)$. From relativization and lemma \ref{lemma:delta_0_abssoluteness}, $\varphi^M(p_1, \ldots, p_n) \iff (\exists x \in M)\psi(p_1, \ldots, p_n, x)$.
+Since $\varphi(p_1, \ldots, p_n)$ is $\Sigma_1$, there is a $\Delta_0$ formula $\psi(p_1, \ldots, p_n, x)$ such that $\varphi = \exists x \psi(p_1, \ldots, p_n, x)$. From relativization and lemma \ref{lemma:delta_0_abssoluteness}, $\varphi^M(p_1, \ldots, p_n) \iff (\exists x \in M)\psi(p_1, \ldots, p_n, x)$.
 
 Assume that for $p_1, \ldots, p_n \in M$ fixed, that $(\exists x \in M)\psi(p_1, \ldots, p_n, x)$ holds, but $\exists x \psi(p_1, \ldots, p_n, x)$ does not. This is an obvious contradiction.
 \end{proof}
