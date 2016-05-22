@@ -1,19 +1,18 @@
 \section{Reflection And Large Cardinals}
 
-In this chapter we aim to examine stronger reflection properties in order to reach cardinals unavailable in $\sf{ZFC}$. Like we said in the first chapter, % [TODO odkaz na uvod]
-the variety of reflection principles comes from the fact that there are many way to formalize "properties of the universal class". It is not always obvious what properties hold for $V$ because, (TODO Tarski)
-%unlike Lévy's approach, not much attention is paid to what exactly is this $V$, and, more importantly, there are many ways to formalize the notion of property. 
-We have shown that reflecting properties as first-order formulas doesn't allow us to leave $\sf{ZFC}$. We will broaden the class of admissible properties to be reflected and see whether there is a~natural limit in the height or width on the reflected universe and also see that no matter how far we go, the universal class is still as elusive as it is when seen from $\sf{S}$. That is because for every process for obtaining larger sets such as for example the powerset operation in $\sf{ZFC}$, this process can't reach $V$ and thus, from reflection, there is an initial segment of $V$ that can't be reached via said process.
+In this chapter we aim to examine stronger reflection properties in order to reach cardinals unavailable in $\sf{ZFC}$. Like we said in the first chapter, 
+the variety of reflection principles comes from the fact that there are many way to formalize "properties of the universal class". It is not always obvious what properties hold for $V$ because, as Tarski
+has shown, there is no way to formalize satisfaction for proper classes. We have shown that reflecting properties as first-order formulas doesn't allow us to leave $\sf{ZFC}$. We will broaden the class of admissible properties to be reflected and see whether there is a~natural limit in the height or width on the reflected universe and also see that no matter how far we go, the universal class is still as elusive as it is when seen from $\sf{S}$. That is because for every process for obtaining larger sets such as for example the powerset operation in $\sf{ZFC}$, this process can't reach $V$ and thus, from reflection, there is an initial segment of $V$ that can't be reached via said process.
 
 To see why this is important, let's dedicate a few lines to the intuition behind the notions of limitness, regularity and inaccessibility in a manner strongly influenced by \cite{Infinity_in_mind}. To see why limit and strongly limit cardinals are worth mentioning, note that they are "limit" not only in a sense of being a supremum of an ordinal sequence, they also show that a certain way of obtaining larger sets from smaller ones is limited. We will see that all of the alternatives offered in this thesis are in a sense limited. 
-$\aleph_\lambda$ is a limit cardinal iff there is no $\alpha$ such that $\aleph_{\alpha+1}=\aleph_\lambda$. Strongly limit cardinals point to the limits of the powerset operation. It has been too obvious so far, so let's look at the regular cardinals in this manner. Regular cardinals are those that cannot be\footnote{Assuming $\emph{Choice}$.}, expressed as a supremum of smaller amount of smaller objects\footnote{Just like $\omega$ can not be expressed as a supremum of a finite set consisting solely of finite numbers.}. More precisely, $\kappa$ is regular if there is no way to define it as a union of less than $\kappa$ ordinals, all smaller than $\kappa$. So unless there already is a set of size $\kappa$, \emph{Replacement} is useless in determining whether $\kappa$ is really a set. Note that assuming \emph{Choice}, successor cardinals are always regular, so most\footnote{All provable to exist in $\sf{ZFC}$} limit cardinals are singular cardinals. So if one is traversing the class of all cardinals upwards, successor steps are still sets thanks to the powerset axiom while singular limits cardinal are not proper classes because they are suprema of images of smaller sets via \emph{Replacement}. Regular cardinals are, in a way, limits of how far can we get by taking limits of increasing sequences of ordinals obtained via $\emph{Replacement}$.
+$\aleph_\lambda$ is a limit cardinal if there is no $\alpha$ such that $\aleph_{\alpha+1}=\aleph_\lambda$. Strongly limit cardinals point to the limits of the powerset operation. It has been too obvious so far, so let's look at the regular cardinals in this manner. Regular cardinals are those that cannot be\footnote{Assuming $\emph{Choice}$.}, expressed as a supremum of smaller amount of smaller objects\footnote{Just like $\omega$ can not be expressed as a supremum of a finite set consisting solely of finite numbers.}. More precisely, $\kappa$ is regular if there is no way to define it as a union of less than $\kappa$ ordinals, all smaller than $\kappa$. So unless there already is a set of size $\kappa$, \emph{Replacement} is useless in determining whether $\kappa$ is really a set. Note that assuming \emph{Choice}, successor cardinals are always regular, so most\footnote{All provable to exist in $\sf{ZFC}$} limit cardinals are singular cardinals. So if one is traversing the class of all cardinals upwards, successor steps are still sets thanks to the powerset axiom while singular limit cardinals are not proper classes because they are suprema of images of smaller sets via \emph{Replacement}. Regular cardinals are, in a way, limits of how far can we get by taking limits of increasing sequences of ordinals obtained via $\emph{Replacement}$. 
 
-TODO prepsat -- regularita a replacement, proc reflexe dava silnejsi veci
+In order to reach an inaccessible cardinal of size $\kappa$, one has to pass at least $\kappa$ limit ordinals. Them, to get to a Mahlo cardinal of size $\kappa$, one has to move past $\kappa$ inaccessible cardinals. This concept is then iterable for hyper-Mahlo cardinals, as we will see later in this section.
 
-That all being said, it is easy to see that no cardinals in $\sf{ZFC}$ are both strongly limit and regular because there is no way to ensure they are sets and not proper classes in $\sf{ZFC}$. The only exception to this rule is $\aleph_0$ which needs \emph{Infinity} to exist. % nase otazka je: proc omega a ne jine kardinaly?
-It should now be obvious why the fact that $\kappa$ is inaccessible implies that $\kappa = aleph_\kappa$.\footnote{This doesn't work backwards, the least fixed point of the $\aleph$ function is the limit of $\{\aleph_0,\ \aleph_{\aleph_0},\ \aleph_{\aleph_{\aleph_0}},\ \ldots \}$, it is singular since the sequence has countably many elements.}
+% That all being said, it is easy to see that no cardinals in $\sf{ZFC}$ are both strongly limit and regular because there is no way to ensure they are sets and not proper classes in $\sf{ZFC}$. The only exception to this rule is $\aleph_0$ which needs \emph{Infinity} to exist. % nase otazka je: proc omega a ne jine kardinaly?
+% It should now be obvious why the fact that $\kappa$ is inaccessible implies that $\kappa = aleph_\kappa$.\footnote{This doesn't work backwards, the least fixed point of the $\aleph$ function is the limit of $\{\aleph_0,\ \aleph_{\aleph_0},\ \aleph_{\aleph_{\aleph_0}},\ \ldots \}$, it is singular since the sequence has countably many elements.}
 
-We will also examine the connection between reflection principles and (regular) fixed points of ordinal functions in a manner proposed by Lévy in \cite{Levy60a}. We will also see that, like Lévy has proposed in the same paper, there is a meaningful way to extend the relation between $\sf{S}$ and $\sf{ZFC}$ into a hierarchy of stronger axiomatic set theories. 
+We will first examine the connection between reflection principles and (regular) fixed points of ordinal functions in a manner proposed by Lévy in \cite{Levy60a}. %We will also see that, like Lévy has proposed in the same paper, there is a meaningful way to extend the relation between $\sf{S}$ and $\sf{ZFC}$ into a hierarchy of stronger axiomatic set theories. 
 % Those are the three lines of thinking that we will find are in fact different facets of the same gem, especially in the section devoted to Inaccessible and Mahlo cardinals.
 % viz Shapiro, Stewart. 1987. “Principles of Reflection and Second-order Logic”. Journal of Philosophical Logic 16 (3). Springer: 309–33. http://www.jstor.org/stable/30227043.
 % Reflections on \emph{Replacement} and Reflection: The axioms in a~structuralist setting (Geoffrey Hellman)
@@ -34,7 +33,7 @@ Lévy's article mentions various schemata that are not instances of reflection p
 \end{definition}
 Lévy uses "$M$" to refer to this axiom but since we also use "$M$" for sets and models, for example in \ref{def:reflection_1}, we will call the above axiom "\emph{Axiom $M$\textsubscript{1}}" to avoid confusion.
 
-Now we will express \emph{Axiom $M$\textsubscript{1}} to formula to make it clear that it is an axiom scheme and the same can be done with \emph{Axiom $M'$\textsubscript{1}} as well as \emph{Axiom $M''$\textsubscript{1}} introduced immediately afterwards. Since it is an axiom schema and we will later dive into second-order logic, we may also want to refer to \emph{Axiom $M$\textsubscript{2}} as opposed \emph{Axiom $M$\textsubscript{1}}, the former being a single second-order sentence obtained by the obvious modification of \emph{Axiom $M$\textsubscript{1}}.\footnote{Second-order set theory will be introduced in the next subsection.}
+Now we will express \emph{Axiom $M$\textsubscript{1}} to formula to make it clear that it is an axiom scheme and the same can be done with \emph{Axiom $M'$\textsubscript{1}} as well as \emph{Axiom Schema $M$} introduced immediately afterwards. Since it is an axiom schema and we will later dive into second-order logic, we may also want to refer to \emph{Axiom $M$\textsubscript{2}} as opposed \emph{Axiom $M$\textsubscript{1}}, the former being a single second-order sentence obtained by the obvious modification of \emph{Axiom $M$\textsubscript{1}}.\footnote{Second-order set theory will be introduced in the next subsection.}
 
 Let $\varphi(x, y, p_1, \ldots, p_n)$ be a first-order formula with no free variables besides $x, y, p_1, \ldots, p_n$. The following is equivalent to \emph{Axiom $M$\textsubscript{1}}.
 \begin{equation}
@@ -121,7 +120,7 @@ The fact, that in $\sf{ZFC}$, the above \emph{Axiom M} is equivalent to \emph{Re
 \end{theorem}
 
 % -----------------------------------------------
-TODO nedosazitelne kardinaly -- reflektuj presne formule, schemata
+%TODO nedosazitelne kardinaly -- reflektuj presne formule, schemata
 
 \subsection{Inaccessibility}\label{section:inaccessibility}
 %The inaccessible cardinal is the smallest of large cardinals\footnote{citation needed.}
@@ -133,9 +132,7 @@ $\kappa$ is a~\emph{limit cardinal} iff it is $\aleph_\alpha$ for some limit ord
 $\kappa$ is a~\emph{strong limit cardinal} iff it is a limit cardinal and for every $\lambda < \kappa$, $2^\lambda < \kappa$
 \end{definition}
 
-The two above definition become equivalent if we assume $GCH$\footnote{}.
-
-TODO smazat GCH viz nize u L, odkazat do sec. 1
+The two above definition become equivalent if we assume $GCH$\footnote{See ref{def:gch}}.
 
 \begin{definition}{(weak inaccessibility)}\label{def:weakly_inaccessible}
 An uncountable cardinal $\kappa$ is \emph{weakly inaccessible} iff it is \emph{regular} and \emph{limit}.
@@ -187,7 +184,7 @@ Which in turn means that there is a~set $y = F[\alpha]$ and $y \in V_\kappa$, wh
 
 We have transcended $\sf{ZFC}$, but that is just a~start. Naturally, we could go on and consider the next inaccessible cardinal, which is inaccessible with respect to the theory $\sf{ZFC} + \exists \kappa (\kappa \models \sf{ZFC})$. But let's try to find a faster way up, informally at first. 
 
-Since we can find an inaccessible set larger than any chosen set $M_0$, it is clear that there are arbitrarily large inaccessible cardinals in $V$, they are "unbounded"\footnote{The notion is formaly defined for sets, but the meaning should be obvious.} in $V$. If $V$ were a cardinal, we could say that there are $V$ inaccesible cardinals less than $V$, but this statement of course makes no sense in set theory as is because $V$ is not a set. But being more careful, we could find a property that can be formalized in second-order logic and reflect it to an initial segment of $V$. That would allow us to construct large cardinals more efficiently than by adding inaccessibles one by one. The property we are looking for ought to look like something like this:
+Since we can find an inaccessible set larger than any chosen set $M_0$, it is clear that there are arbitrarily large inaccessible cardinals in $V$, they are "unbounded"\footnote{The notion is formaly defined for sets, but the meaning should be obvious.} in $V$. If $V$ were a cardinal, we could say that there are $V$ inaccesible cardinals less than $V$, but this statement of course makes no sense in set theory as is because $V$ is not a set. But being more careful, we could find a property that can be formalized in second-order logic and reflect it to an initial segment of $V$. That would allow us to construct large cardinals more efficiently than by adding inaccessibles one by one. The property we are looking for ought to look like something like this (the following statement is not a mathematical  statement in a strict sense):
 \begin{equation}
 \begin{gathered}
 \kappa \mbox{ is an inaccessible cardinal and}\\
@@ -196,19 +193,14 @@ Since we can find an inaccessible set larger than any chosen set $M_0$, it is cl
 \end{equation}
 This is in fact a fixed-point type of statement. We shall call those cardinals hyper-inaccessible. Now consider the following definition.
 
-\
-
 \begin{definition}{$0$-inaccessible cardinal}\\
 A cardinal $\kappa$ is $0$-inaccessible if it is inaccessible.
 \end{definition}
 We can define \emph{$\alpha$-weakly-inaccessible} cardinals analogously with the only difference that those are limit, not strongly limit.
-\
 
 \begin{definition}{$\alpha$-hyper-inaccessible cardinal}\label{def:alpha_inaccessible}\\
 For any ordinal $\alpha$, $\kappa$ is called $\alpha$-inaccessible, if $\kappa$ is inaccessible and for each $\beta$ < $\alpha$, the set of $\beta$-inaccessible cardinals less than $\kappa$ is unbounded in $\kappa$.
 \end{definition}
-
-\
 
 Because $\kappa$ is inaccessible and therefore regular, the number of $\beta$-inaccessibles below $\kappa$ is equal to $\kappa$. We have therefore successfully formalized the above vague notion of hyper-inaccessible cardinal into a hierarchy of $\alpha$-inaccessibles.
 
@@ -216,19 +208,13 @@ Because $\kappa$ is inaccessible and therefore regular, the number of $\beta$-in
 
 Let's now consider iterating this process over again. Since, informally, $V$ would be $\alpha$-inaccessible for any $\alpha$, this property of the universal class could possibly be reflected to an initial segment, the smallest of those will be the first hyper-inaccessible cardinal. Such $\kappa$ is larger than any $\alpha$-inaccessible since from regularity of $\kappa$, for given $\alpha\ <\ \kappa$, $\kappa$ is $\kappa$-th $\alpha$-hyper-inaccessible cardinal. It is in fact "inaccessible" via $\alpha$-inaccessibility.
 
-\
-
 \begin{definition}{Hyper-inaccessible cardinal}\\
 $\kappa$ is called the hyper-inaccessible, also $0$-hyper-inaccessible, cardinal if it is $\alpha$-inaccessible for every $\alpha\ <\ \kappa$.
 \end{definition}
 
-\
-
 \begin{definition}{$\alpha$-hyper-inaccessible cardinal}\\
 For any ordinal $\alpha$, $\kappa$ is called $\alpha$-hyper-inaccessible cardinal if for each ordinal $\beta\ <\ \alpha$, the set of $\beta$-hyper-inaccessible cardinals less the $\kappa$ is inbounded in $\kappa$.
 \end{definition}
-
-\
 
 Obviously we could go on and iterate it ad libitum, yielding $\alpha$-hyper-$\ldots$-hyper-inaccessibles, but the nomenclature would be increasingly confusing. A smarter way to accomplish the same goal is carried out in the following section.
 
@@ -293,6 +279,8 @@ $\kappa$ is a \emph{Mahlo Cardinal} iff it is an inaccessible cardinal and the s
 \end{definition}
 % It is interesting to note, that weakly-Mahlo cardinals are fixed points of $\alpha$-weakly inaccessible cardinals, so if $\kappa$ is weakly mahlo,  .. viz Kanamori Proposition 1.1
 
+It should be clear that a cardinal $\kappa$ is Mahlo iff $V_\kappa$ is a models of $\sf{ZFC} + \mbox{\emph{Axiom Schema $M$}}$.
+
 Analogously, 
 \begin{definition}{$\alpha$-Mahlo Cardinal}\label{def:alpha_mahlo_cardinal}\\
 $\kappa$ is a \emph{$\alpha$-Mahlo Cardinal} iff it is an $\alpha$-inaccessible cardinal and the set of all $\alpha$-inaccessible ordinals less then $\kappa$ is stationary in $\kappa$.
@@ -303,6 +291,8 @@ In other words, $\kappa$ is a (weakly-)Mahlo cardinal if it is (weakly-)inacces
 %Thus a~Mahlo cardinal $\kappa$ is not only inaccessible, but also has $\kappa$ inaccessibles below it.
 
 %\cite{DrakeBook}
+
+
 
 In a fashion similar to hyper-inaccessible cardinals, one can define hyper-Mahlo cardinals as well as hyper-hyper-Mahlo cardinals and so on.
 
@@ -720,14 +710,8 @@ Without providing a proof, we will introduce two important results established b
 \end{equation}
 \end{theorem}
 
-\begin{definition}{(GCH)}\label{def:gch}\\
-\emph{Generalized Continuum Hypothesis}, usually denoted \emph{GCH} for brevity, refers to the following statement:
-\begin{equation}
-\aleph_{n+1} = \power{\aleph_n}
-\end{equation}
-\end{definition}
-
-\begin{theorem}{(Constructibility $\then$ Continuum Hypothesis)}\label{theorem:l_then_gch}
+The $GCH$ refers to the \emph{Generalised Continuum Hypothesis}, see \ref{def:gch}.
+\begin{theorem}{(Constructibility $\then$ Generalised Continuum Hypothesis)}\label{theorem:l_then_gch}
 \begin{equation}
 \sf{ZF} \models \mbox{\emph{Constructibility}} \then \mbox{\emph{GCH}} 
 \end{equation}
@@ -793,10 +777,7 @@ But because $\mbox{"$C$ is a club set in $\kappa$"}$ is equivalent to a $\Delta_
 $\kappa$ remains Mahlo in $L$.
 \end{proof}
 
-%\begin{theorem}
-%Con(L) -> Con(L + \exists \kappa (\kappa \mbox{" is a Measurable Cardinal"})) then Con(L)
-%\end{theorem}
-%Ktera vera?
+TODO Measurables?
 
 TODO vyska / sirka univerza
 
