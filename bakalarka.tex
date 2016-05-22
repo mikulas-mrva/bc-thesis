@@ -1,13 +1,1787 @@
 \documentclass[12pt,a4paper]{article}
-% \renewcommand{\baselinestretch}{1.1}   % in case of emergency .) % spis ne 
 
-\input{00_headers.tex}
-\input{01a_introduction.tex}
-\input{01b_definice.tex}
+\usepackage{mathrsfs}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{longtable}
+\usepackage{paralist}
+\usepackage{lineno}
+\usepackage{verbatim}
+% \linenumbers
+
+% \include{00_headers.tex}
+\usepackage{color} %pro barevné odkazy, příp. nadpisy
+\definecolor{odkazy}{rgb}{0.21,0.27,0.53} %tmavì modrá
+\definecolor{nadpisy}{rgb}{0.5812,0.0665,0.0659} %cihlová
+%
+% Parametry prevodu do pdf
+\providecommand{\hypersetup}[1]{}%
+\hypersetup{%
+unicode,% ? Pravdepodobne bezvyznamne
+pdfauthor={Mikuláš Mrva},
+pdftitle={Reflection principles and large cardinals},
+pdfsubject={Reflection principles and large cardinals},
+pdfkeywords={set theory, large cardinals, reflection principle, ZFC, Azriel Lévy},
+pdffitwindow=false,% Inicialni umisteni textu v okne Readeru
+bookmarksopen=true,% Panel zalozek inicialne zobrazen
+% Je-li tohle nastaveno jinak, nektere odkazy nekdy nefunguji
+hypertexnames=false,
+plainpages=false,
+%pdfpagelabels,
+%
+breaklinks=true,% Radkovy lom smi prijit do klikatelneho odkazu
+linkcolor=odkazy,% Graficka podoba odkazu
+citecolor=odkazy,% ...
+colorlinks=true,% ...
+pdfhighlight=/O% ... (vzhled odkazu pri stisknuti)
+}%
+% Inputenc je asi zbytecne.
+% Option 'split' ovlivnuje deleni slov obsahujicich v sobe rozdelovnik
+\usepackage[utf8x]{inputenc} % UTF-8 ?
+%\usepackage[czech]{babel} %dnes u je vak hotová integrace èetiny do babelu
+%\usepackage[split]{czech} %dnes u je vak hotová integrace èetiny do babelu
+%
+%\usepackage{logdp} %uiteèné drobnosti
+%\usepackage{amsthm} %lepší práce s větami
+%\usepackage{amsmath} %nová prostøedí pro matematiku a vylepení tìch stávajících
+%\usepackage{latexsym,amsfonts,amssymb} % nová písmenka
+\usepackage{fancyhdr} % zápatí a záhlaví
+%\usepackage[nottoc]{tocbibind} % přidá do obsahu položky Literatura a Rejstřík
+\usepackage{csquotes}
+\pagestyle{plain}
+%pøedbìné nastavení hlavièky (balík fancyhdr)
+%\headheight 13.6pt %moná ji bude tøeba zvednout, fancyhdr si pak stìuje: \headheight
+% too small, make it at least Xpt
+\headheight 14.5pt %moná ji bude tøeba zvednout, fancyhdr si pak stìuje: \headheight too \fancyhead{}
+\fancyhead[R]{\leftmark}
+\fancyfoot{}
+\fancyfoot[C]{\thepage}
+
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{Claim}[theorem]{Claim}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{Cor}[theorem]{Corollary}
+\newtheorem{Fact}[theorem]{Fact}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{sublemma}[theorem]{Sublemma}
+\newtheorem{ex}[theorem]{Example}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{obs}[theorem]{Observation}
+\newtheorem{que}[theorem]{Question}
+\newtheorem{conjecture}[theorem]{Conjecture}
+
+\renewcommand{\theequation}{\thesection.\arabic{equation}}
+
+\newenvironment{proof}
+{\noindent \textit{Proof.}}
+{\hspace*{\fill} $\Box$}
+
+\newcommand{\toch}{\fbox{\small {\bf ??}}}
+\newcommand{\bt}[1]{{\underset{\widetilde{}}{#1}}}
+\newcommand{\trcl}[1]{\ensuremath{\mathrm{trcl}(\{#1\})}}
+\newcommand{\cf}[1]{\ensuremath{\mathrm{cf}(#1)}}
+\newcommand{\cl}[1]{\ensuremath{\mathrm{cl}}(#1)}
+\newcommand{\ord}[1]{\ensuremath{\mathrm{ORD}}(#1)}
+\newcommand{\dom}[1]{\ensuremath{\mathrm{dom}}(#1)}
+\newcommand{\rng}[1]{\ensuremath{\mathrm{rng}}(#1)}
+\newcommand{\power}[1]{\ensuremath{\mathscr{P}} (#1)}
+\newcommand{\set}[2]{\ensuremath{\{#1 \,|\, #2 \}}}
+\newcommand{\seq}[2]{\ensuremath{\langle #1 \,|\, #2 \rangle}}
+\newcommand{\singl}[1]{\ensuremath{\{#1\}}}
+\newcommand{\pair}[2]{\ensuremath{\{ #1, #2 \}}}
+\newcommand{\restr}[2]{\ensuremath{#1 \! \upharpoonright \! #2}}
+\renewcommand{\iff}{\leftrightarrow}
+\newcommand{\Iff}{\Leftrightarrow}
+\newcommand{\el}{\prec}
+\newcommand{\iso}{\cong}
+\newcommand{\sub}{\subseteq}
+\newcommand{\super}{\supseteq}
+\newcommand{\la}{\langle}
+\newcommand{\ra}{\rangle}
+\newcommand{\embed}{\rightarrow}
+\newcommand{\mc}{\mathcal}
+\newcommand{\supr}[1]{\mathrm{sup}\,#1}
+\newcommand{\then}{\rightarrow}
+\newcommand{\conc}{^{\smallfrown}}
+\newcommand{\bb}{\mathbb}
+\newcommand{\supp}[1]{\mathrm{supp}(#1)}
+\newcommand{\beq}{\begin{equation}}
+\newcommand{\eeq}{\end{equation}}
+\newcommand{\brm}{\begin{remark}\begin{rm}}
+\newcommand{\erm}{\end{rm}\end{remark}}
+\newcommand{\mx}{\mathrm}
+\newcommand{\bce}{\begin{compactenum}}
+\newcommand{\ece}{\end{compactenum}}
+\newcommand{\op}[2]{\la #1, #2 \ra}
+\newcommand{\treq}{\trianglelefteq}
+\newcommand{\et}{\mathrel{\&}}
+
+\newcommand\defeq{\mathrel{\overset{\makebox[0pt]{\mbox{\normalfont\tiny\sffamily def}}}{=}}}
+
+\begin{document}
+%titulní stránka
+\begin{titlepage}
+%\fontsize{16.16pt}{25pt}\selectfont
+\Large
+\begin{center}
+Univerzita Karlova v~Praze, Filozofick{\/á} fakulta\\
+Katedra logiky
+
+\vspace{8.5em}
+\textsc{Mikluáš Mrva}\\[1.4em]
+{REFLECTION PRINCIPLES AND LARGE CARDINALS}\\
+Bakalářská práce\\[6.8em]
+Vedoucí práce: Mgr. Radek Honzík, Ph.D.\\[6.8em]
+2016
+\end{center}
+\end{titlepage}\
+
+
+
+
+
+\vspace{\fill}
+\noindent 
+Prohlašuji, že jsem bakalářkou práci vypracoval samostatně a~že jsem uvedl všechny použité prameny a~literaturu.
+
+\bigskip
+\noindent V~Praze 22.~května 2016\\[3em]
+\hspace*{\fill}Mikuláš Mrva\hspace*{3em}
+\clearpage
+
+\begin{abstract}
+\noindent Práce zkoumá vztah tzv. principů reflexe a velkých kardinálů. Lévy ukázal, že v ZFC platí tzv. věta o reflexi~a dokonce, že věta o reflexi je ekvivalentní schématu nahrazení a~axiomu nekonečna nad teorií ZFC bez axiomu nekonečna a~schématu nahrazení. Tedy lze na větu o~reflexi pohlížet jako na svého druhu axiom nekonečna. Práce zkoumá do jaké míry a~jakým způsobem lze větu o reflexi zobecnit a~jaký to má vliv na existenci tzv. velkých kardinálů. Práce definuje nedosažitelné, Mahlovy a nepopsatelné kardinály a ukáže, jak je lze zavést pomocí reflexe. Přirozenou limitou kardinálů získaných reflexí jsou kardinály nekonzistentní s L. Práce nabídne intuitivní zdůvodněn, proč tomu tak je.
+
+\end{abstract}
+\bigskip
+\renewcommand{\abstractname}{Abstract}
+\begin{abstract}
+\noindent This thesis aims to examine relations between so called "Reflection Principles" and Large cardinals. Lévy has shown that Reflection Theorem is a sound theorem of ZFC and it is equivalent to Replacement Scheme and the Axiom of Infinity. From this point of view, Reflection theorem can be seen a~specific version of an Axiom of Infinity. This paper aims to examine the Reflection Principle and its generalisations with respect to existence of Large Cardinals. This thesis will establish Inaccessible, Mahlo and Indescribable cardinals and their definition via reflection. A natural limit of Large Cardinals obtained via reflection are cardinals inconsistent with L. The thesis will offer an intuitive explanation of why this is the case.
+\end{abstract}
+\clearpage
+
+\tableofcontents
+\clearpage
+
+% podekovani firme co vyrabi club mate -- Loscher gmbh?
+\pagestyle{fancy} %detailní definice chování záhlaví
+\renewcommand{\sectionmark}[1]{\markboth{\slshape\thesection.\ #1}{}}
+
+% =============================================================
+\section{Introduction}\label{sec:introduction}
+
+%Reflection principle is a kind of a theorem scheme stating the following:
+% taky debilni formulace, ale co uz
+\subsection{Motivation and Origin}
+\begin{displayquote}
+The Universe of sets cannot be uniquely characterised (i. e. distinguished from all its initial elements) by any internal structural property of the membership relation in it, which is expressible in any logic of finite of transfinite type, including infinitary logics of any cardinal order.
+\end{displayquote}
+\rightline{{\rm --- Kurt Gödel \cite{GodelWang}}}
+
+To understand why do need reflection in the first place, let's think about infinity for a moment. In the intuitive sense, infinity is an upper limit of all numbers. But for centuries, this was merely a philosophical concept of limitlessness, the probably best-known classic problems involving infinity are the famous Zeno's paradoxes. In response to those, Aristotle introduced the distinction between actual and potential infinity\footnote{See Aristotle’s Physics, Book III}. By potential infinity we understand that concept of a process does in unbounded in a sense that it could continue for an arbitrary amount of time, but is also never complete. Imagine trying to count all natural numbers. Actual infinity, is, on the other hand, the concept of infinity contained in a bounded space, just like the number of fractions between 0 and 1. This distinction was established by Aristotle who argued, that the potential infinity is (in today's words) well defined, as opposed to the actual infinity, which he considered a vague incoherent concept. He didn't think it's possible for infinite amount of entities to inhabit a bounded place in space or time, rejecting Zeno's thought experiments as a whole. But it's not our aim to get into much detail. 
+
+The aspect of infinity that is relevant to our interests is the human inability to directly experience limitlessness in contrast to how easily can one talk about infinity and limitlessness in the natural language. The short trip into history hopefully served as an example of the fact that certain statements can easily be considered either meaningful or meaningless. 
+But while infinity of any kind can't be experienced directly through senses, much effort has been made by philosophers to find a way to meaningfully talk about infinite. 
+To see how this leads to reflection, let's think about what Aquinas wrote in his Summa Theologica \footnote{Part I, Question 7, Article 3, Reply to Objection 1}:
+\begin{displayquote}
+A geometrician does not need to assume a~line actually infinite, but takes some actually finite line, from which he subtracts whatever he finds necessary; which line he calls infinite.
+\end{displayquote}
+He seems to acknowledge, that infinity can not be reached directly, but for practical purposes it is enough to take a limited part of the whole. One can that act as if it was the whole because the part has all the properties needed at the moment. This, as we shall see in a moment, is in fact an instance of reflection, even though the term itself was introduced centuries later.
+
+To illustrate this elusiveness of infinity, let us remember the early days of set theory. When Cantor proved that there are at least two distinct infinite quantities, this effectively turned what previously was an abstract, unreachable absolute, into a mathematical object, a set. But just as one infinity was seemingly tamed, about 10 years later, Russell's paradox uncovered the fact that there is another absolute, the paradoxical collection of all sets. Mathematicians have decided to focus on axiomatic set theories so that the paradoxical collection was kept out of sets, being considered a class instead \footnote{When we use the words "class" and "property" in this section, "property" refers to statement in natural or formal language that can be meaningfully stated for sets, the notion of class then refers to the collection of all sets holding that particular property. For all practical purposes, the two are synonyms. They will be later properly redefined for use in formal context.}
+This is where reflection comes in again. 
+
+The original idea behind reflection principles probably comes from what could be informally called \textquote{universality of the universe}.
+If we try to express the universe as a~set $\{x  |  x = x\}$, we either decide to make such statement on a meta-level, or directly in a theory that formalizes the concept of class\footnote{like the Bernays–Gödel set theory, for example.}. But since it is practical to consider sets formed by a property, we must carefully formalize the notion of property of that we stay within the formal framework of a given theory. Reflection can be see as taking reverting this approach. Even thought we have, in a sense, included infinity into the set theory, in the form of $\omega$, the set of all natural numbers, as well as the while hierarchy of larger infinite sets constructed from $\omega$, there is still an unreachable absolute. Since we have weakened the notion of property so that it only yields sets, the is obviously no way to directly describe the whole universe, every attempt to describe the universe inevitably fails.
+
+If one was was to hold a platonistic view on the philosophy of mathematics, assuming that the sets themselves objectively exist, reflection, the fact that every description of the universe collapses to a bounded within the universe, can be percieved as the imperfection of formal systems. Similarly, while Gödel's second theorem implies that no formal system\emph{* no formal system of sufficient strength to formalize arithmerics, see Gödel's results for details.} proves everything, one might argue that the unprovable statements objectively hold, but the system is not strong enough to verify the fact. Speaking of Gödel, it is worth noting that reflection made its first in set-theoretical appearance in G{\"o}del's proof of the Generalised Continuum Hypothesis in the constructible universe L, but it was around even earlier as a~concept. G{\"o}del himself regarded it as very close to Russell's reducibility axiom (an earlier equivalent of the axiom schema of separation proposed by Zermelo). Richard Montague then studied reflection properties as a~tool for verifying that Replacement is not finitely axiomatizable. a~few years later Lévy proved in \cite{Levy60a} the equivalence of reflection with Axiom of infinity together with Replacement in proof we shall examine closely in chaper 2.
+
+From this point of view, we can argue that $\omega$ was established as an object satisfying a property attributed informally to the universe of all sets. That is, the property of "being the collection of all natural numbers". But since there was no was to reach it from below, it had to be explicitly brought into existence\footnote{Existence as in "the theory knows that $\omega$ exists"} by the axiom of infinity. 
+
+\
+
+The purpose of the previous paragraphs were formulated from a naive platonistic view, which makes it easy to talk about the universe of all sets, even though the formulations are very informal. Now it should be made clear, that one does not need to informally talk about the universe of all sets or any other ideal objects as if they inhabited an ideal world. We will look at the theory from a structuralist point of view, inspired by Hilbert, Shapiro and Geoffrey Hellman. This allows us to dismiss questions about objective existence of objects beyond mathematical theories. Instead, we can consider objects  meaningful if and only if there is a consistent\footnote{Thanks to Gödel, we only need to care whether it's consitent relatively to the axiomatic set theory of Zermelo and Fraenkel.} formal system which admits the existence of such objects. Starting with $\omega$, a set of all finite ordinals\footnote{See the next section for the exact definition. Until then, finite ordinals are synonymous to natural numbers.}, which is then extended to the Von Neumann's hierarchy $V$, we will examine axioms that can consistently be added to the Zermelo–Fraenkel theory so that the hierarchy is extended to a larger model that contains the previous one as an initial segment. To see why this is also reflection, one should bear in mind that we will create models that reflect certain properties.
+
+Later we will see that large cardinals discussed in this paper are natural extension of this process. We can informally obtain the inaccessible cardinal by arguing the the axioms of the Zermelo–Fraenkel set theory hold in the universe and establishing an object, let's call it $\kappa_I$ for now, that satisfies this property. But then this either leads to a stronger set theory exnteded in order to be able to talk about $\kappa_I$. But this process iterates for the new set theory to yield Mahlo cardinals, but it is also clear that even by arbitrary iterations of this principle, the universe still can't be reached. On the final pages of this thesis, we will argue, that while this iterative process seems to lead to a very large object, it is in fact not strong enough to be incosistent with Gödel's L, which was designed to be the minimal model of set the Zermelo–Fraenkel set theory in terms of width\footnote{The model minimal in terms if height of the universe is the inaccessible cardinal.}. Present day set theory is able to consider many large cardinals far above the hierarchy introduced here. Even though those are beyong the scope of this work, we will briefly mention the measurable cardinal later on.
+% =============================================================
+\subsection{Notation and Terminology}
+\subsubsection{The Language of Set Theory}
+% TODO predpokladame splnovani a tak, z logiky? link na ucebnici kdyztak? 
+This text assumes the knowledge of basic terminology and some results from first-order predicate logic.
+
+We are about to define basic set-theoretical terminology on which the rest of this thesis will be built. For Chapter 2, the underlying theory will be the \emph{Zermelo –Fraenkel} set theory with the Axiom of Choice ($\sf{ZFC}$), a first-order set theory in the language $\mathscr{L} = \{=, \in\}$, which will be sometimes referred to as \emph{the language of set theory}. In Chapter 3, we shall always make it clear whether we are in first-order $\sf{ZFC}$ or second-order $\sf{ZFC}_2$, which will be precisely defined later in this chapter. When in second-order theory, we will usually denote type 1 variables, which are elements of the domain of discourse\footnote{co je "domain of discourse"?} by lower-case letters, mostly $u, v, w, x, y, z, p_1, p_2, p_3,  \ldots$ while type 2 variables, which represent $n$-ary relations of the domain of discourse for any natural number $n$, are usually denoted by upper-case letters $A, B, C, X, Y, Z$. Those may be used both for relations and functions, see the definition of a function below. Note that there are exception to convention rules as $f$ usually denotes a function, which is in fact a type 2 variable. On the other hand, $M$ often stands for a set.
+
+
+The informal notions of \emph{class} and \emph{property} will be used throughout this thesis. They both represent formulas with respect to the domain of discourse. If $\varphi(x, p_1, \ldots, p_n)$ is a formula in the language of set theory, we call 
+\begin{equation}
+A = \{x : \varphi(x)\}
+\end{equation}
+a class of all sets satisfying $\varphi(x)$ in a sense that 
+\begin{equation}
+x \in A \iff \varphi(x)
+\end{equation}
+One can easily define for classes $A$, $B$ the operations like $A \cap B$, $A \cup B$, $A \setminus C$, $\bigcup A$, but it is elementary and we won't do it here, see the first part of \cite{JechBook} for technical details. The following axioms are the tools by which decide whether particular classes are in fact sets. A class that fails to be considered a set is called a \emph{proper class}.
+
+Speaking of formulas, we will often use syntax like "$M$ is a limit ordinal", it should be clear that this can be rewritten as a formula that was introuced earlier in the text.
+
+\
+
+
+\subsubsection{The Axioms}
+
+\begin{definition}{(The Existence of a Set)}\label{def:existence_of_a_set}
+\begin{equation}
+\exists x (x = x)
+\end{equation}
+\end{definition}
+The above axiom is usually not used because it can be deduced from the axiom of \emph{Infinity} (see below), but since we will be using set theories that omit \emph{Infinity}, this will be useful.
+
+\begin{definition}{(Extensionality)}\label{def:extensionality}
+\begin{equation}
+\forall x, y, z ((z \in x \iff z \in y) \iff x = y)
+\end{equation}
+\end{definition}
+
+\begin{definition}{(Specification)}\label{def:specification}\\
+The following is a schema for every first-order formula $\varphi(x, p_1, \ldots, p_n)$ with no free variables other than $x, p_1, \ldots, p_n$.
+\begin{equation}
+\forall x, p_1, \ldots, p_n \exists y \forall z ( z \in y \iff ( z \in x \et \varphi(z, p_1, \ldots, p_n)))
+\end{equation}
+\end{definition}
+
+We will now provide two definitions that are not axioms, but will be helpful in establishing some of the other axioms in a more intuitive way.
+\begin{definition}{($x \subseteq y$, $x \subset y$)}
+\begin{equation}
+x \subseteq y \iff \forall z(z \in x \then z \in y)
+\end{equation}
+\begin{equation}
+x \subset y \iff x \subseteq y \et x \neq y
+\end{equation}
+\end{definition}
+
+\begin{definition}{(Empty Set)}\label{def:emptyset}
+Let $\varphi = \neg(x = x)$, $y$ is an arbitrary set, we there exists at least one set $y$ from \ref{def:existence_of_a_set} or \emph{infinity}
+\begin{equation}
+\emptyset \defeq \{x : x \in y\ \et \varphi(x)\}
+\end{equation}
+We know that $\emptyset$ is a set from \emph{specification} and it is the same set for every $y$ given from \emph{extensionality}.
+\end{definition}
+
+Now we can introduce more axioms.
+\begin{definition}{(Foundation)}\label{def:foundation}
+\begin{equation}
+\forall x (x \neq \emptyset \then \exists (y \in x) (\forall z \neg (z \in y \et z \in x)))
+\end{equation}
+\end{definition}
+
+\begin{definition}{(Pairing)}\label{def:pairing}
+\begin{equation}
+\forall x, y \exists z \forall q (q \in z \iff q \in z \lor q \in y)
+\end{equation}
+\end{definition}
+
+\begin{definition}{(Union)}\label{def:union}
+\begin{equation}
+\forall x \exists y \forall z (z \in y \iff \exists q( z \in q \et q \in x))
+\end{equation}
+\end{definition}
+
+\begin{definition}{(Powerset)}\label{def:powerset}
+\begin{equation}
+\forall x \exists y \forall z (z \subseteq x \iff z \in y)
+\end{equation}
+\end{definition}
+
+\begin{definition}{(Infinity)}\label{def:infinity}
+\begin{equation}
+\exists x (\forall y \in x)(y\cup\{y\} \in x)
+\end{equation}
+\end{definition}
+
+Let us introduce a few more definitions that will make the two remaining axioms more comprehensible.
+\begin{definition}{(Function)}\label{def:function}\\
+Given arbitrary first-order formula $\varphi(x, y, p_1, \ldots, p_n)$, we say that $\varphi$ is a function iff
+\begin{equation}\label{def:function_formula}
+\forall x, y, z, p_1, \ldots, p_n (\varphi(x, y, p_1, \ldots, p_n) \et \varphi(x, z, p_1, \ldots, p_n) \then y = z)
+\end{equation}
+\end{definition}
+When a $\varphi(x, y)$ is a function, we also write the following:
+\begin{equation}
+f(x) = y \iff \varphi(x, y)
+\end{equation}
+\footnote{This can also be done for $\varphi$s with more than two free variables by either setting $f(x, p_1, \ldots p_n) = y \iff \varphi(x, y p_1, \ldots, p_n)$ or saying that $\varphi$ codes more functions, determined by the various parameters, so given $t_1, \ldots, t_n$, $f(x) = y \iff \varphi(x, y, t_1, \ldots, t_n)$.}
+Alternatively, $f = \{\langle x, y \rangle : \varphi(x, y)\}$ is a class.
+
+
+\begin{definition}{(Dom(f))}\label{def:dom}\\
+Let $f$ be a function. We read the following as "Dom(f) is the domain of f".
+\begin{equation}
+Dom(f) \defeq \{x : \exists y (f(x) = y)\}
+\end{equation}
+\end{definition}
+We say "$f$ is a function on $A$", $A$ being a class, if $A = dom(f)$.
+
+\begin{definition}{(Rng(f))}\label{def:rng}\\
+Let $f$ be a function. We read the following as "Rng(f) is the range of f".
+\begin{equation}
+Rng(f) \defeq \{x : \exists y (f(x) = y)\}
+\end{equation}
+\end{definition}
+We say that $f$ is \emph{a function into $A$}, $A$ being a class, if $rng(f) \subseteq A$.
+We say that $f$ is \emph{a function onto $A$} if $rng(f) = A$, in other words,
+\begin{equation}
+(\forall y \in A)(\exists x \in dom(f))(f(x) = y)
+\end{equation}
+We say a function $f$ is a \emph{one to one function}, iff
+\begin{equation}
+(\forall x_1, x_2 \in dom(f))(f(x_1) = f(x_2) \then x_1 = x_2)
+\end{equation}
+$f$ is a bijection iff it is a one to one function that is onto.
+
+Note that \emph{Dom(f)} and \emph{Rng(f)} are not definitions in a strict sense, they are in fact definition schemas that yield definitions for every function $f$ given. Also note that they can be easily modified for $\varphi$ instead of $f$, with the only difference being the fact that it is then defined only for those $\varphi$s that are functions, which must be taken into account. This is worth noting as we will sometimes interchange the notions of \emph{function} and \emph{formula}.
+
+\begin{definition}{(Function Defined For All Ordinals)}\label{def:function_dfao}\\
+We say a function $f$ is \emph{defined for all ordinals}, this is sometimes written $f: Ord \then A$ for any class $A$, if $Dom(f) = Ord$.\
+Alternatively,
+\begin{equation}
+(\forall \alpha \in Ord)(\exists y \in A)(f(\alpha) = y))
+\end{equation}
+\end{definition}
+
+\begin{definition}{(Powerset function)}\\
+Given a set $x$, the \emph{powerset of $x$}, denoted $\power{x}$ and satisfying \ref{def:powerset}, is defined as follows:
+\begin{equation}
+\power{x} \defeq \{y: y \subseteq x\}
+\end{equation}
+\end{definition}
+
+And now for the axioms.
+
+\begin{definition}{(Replacement)}\label{def:replacement}\\
+The following is a schema for every first-order formula $\varphi(x, p_1, \ldots, p_n)$ with no free variables other than $x, p_1, \ldots, p_n$.
+\begin{equation}
+"\varphi\mbox{ is a function}"\then \forall x \exists y \forall z (z \in y \iff (\exists q \in x)(\varphi(x, y, p_1, \ldots, p_n))
+\end{equation}
+\end{definition}
+
+\begin{definition}{(Choice)}\label{def:choice}\\
+This is also a schema. For every $A$, a family of non-empty sets\footnote{We say a class $A$ is a "family of non-empty sets" iff there is $B$ such that $A \subseteq \power{B}$}, such that $\emptyset \not\in S$, there is a function $f$ such that for every $x \in A$
+\begin{equation}
+f(x) \in x
+\end{equation}
+\end{definition}
+
+We will refer the axioms by their name, written in italic type, e.g. \emph{Foundation} refers to the Axiom of Foundation. Now we need to define some basic set theories to be used in the article. There will be others introduce in Chapter 3, but those will usually be defined just by appending additional axioms or schemata to one of the following.
+
+\begin{definition}{$(\sf{S})$}\label{def:s}\\
+We call $\sf{S}$ a set theory with the following axioms:
+\bce[(i)]
+\item \emph{Existence of a set} (see \ref{def:existence_of_a_set})
+\item \emph{Extensionality} (see \ref{def:extensionality})
+\item \emph{Specification} (see \ref{def:specification})
+\item \emph{Foundation} (see \ref{def:foundation})
+\item \emph{Pairing} (see \ref{def:pairing})
+\item \emph{Union} (see \ref{def:union})
+\item \emph{Powerset} (see \ref{def:powerset})
+\ece
+\end{definition}
+
+\begin{definition}{$(\sf{ZF})$}\label{def:zf}\\
+We call $\sf{ZF}$ a set theory that contains all the axioms of the theory $\sf{S}$\footnote{With the exception of \emph{Existence of a set}} in addition to the following
+\bce[(i)]
+\item \emph{Replacement} schema (see \ref{def:replacement})
+\item \emph{Infinity} (see \ref{def:infinity})
+\ece
+\end{definition}
+
+\begin{definition}{$(\sf{ZFC})$}\label{def:zfc}\\
+$\sf{ZFC}$ is a theory that contains all the axioms of $\sf{ZF}$ plus \emph{Choice} (\ref{def:choice}).
+\end{definition}
+
+\
+
+\subsubsection{The Transitive Universe}
+\begin{definition}{(Transitive Class)}\label{def:transitivity}\\
+We say a class $A$ is \emph{transitive} iff
+\begin{equation}
+(\forall x \in A)(x \subseteq A)
+\end{equation}
+\end{definition}
+
+\begin{definition}{(Well Ordered Class)}\label{def:well_ordering}
+A class $A$ is said to be \emph{well ordered by $\in$} iff the following hold:
+\bce[(i)]
+\item $(\forall x \in A)(x \not\in x)$ (Antireflexivity)
+\item $(\forall x, y, z \in A)(x \in y \et y \in z \then x \in z)$ (Transitivity)
+\item $(\forall x, y \in A)(x = y \lor x \in y \lor y \in x)$ (Linearity)
+\item $(\forall x)(x \subseteq A \et x \neq \emptyset \then (\exists y \in x)(\forall z \in x)(z = y \lor z \in y)))$ (Existence of the least element)
+\ece
+\end{definition}
+
+\begin{definition}{(Ordinal Number)}\label{def:ordinal}\\
+A set $x$ is said to be an \emph{ordinal number}, also known as an \emph{ordinal}, if it is \emph{transitive} and \emph{well-ordered by $\in$}. 
+\end{definition}
+For the sake of brevity, we usually just say "$x$ is an \emph{ordinal}". 
+Note that "$x$ is an ordinal" is a well-defined formula, since \ref{def:transitivity} is a formula and \ref{def:well_ordering} is in fact a conjunction of four formulas.
+Ordinals will be usually denoted by lower case greek letters, starting from the beginning: $\alpha, \beta, \gamma, \ldots$.
+Given two different ordinals $\alpha, \beta$, we will write $\alpha < \beta$ for $\alpha \in \beta$, see \cite{JechBook}{Lemma 2.11} for technical details.
+
+\begin{definition}{(Non-Zero Ordinal)}
+We say an ordinal $\alpha$ is \emph{non-zero} iff $\alpha \neq \emptyset$.
+\end{definition}
+
+\begin{definition}{(Successor Ordinal)}\label{def:successor_ordinal}\\
+Consider the following operation
+\begin{equation}
+\beta + 1 \defeq \beta \cup \{\beta\}
+\end{equation}
+An ordinal $\alpha$ is called \emph{a successor ordinal} iff there is an ordinal $\beta$, such that $\alpha = \beta+1$
+\end{definition}
+
+\begin{definition}{(Limit Ordinal)}\label{def:limit_ordinal}\\
+A non-zero ordinal $\alpha$ is called a \emph{limit ordinal} iff it is not a successor ordinal.
+\end{definition}
+
+\begin{definition}{(Ord)}\label{def:ord}\\
+\emph{The class of all ordinal numbers}, which we will denote $Ord$\footnote{It is sometimes denoted $On$, but we will stick to the notation in \cite{JechBook}} be the following class:
+\begin{equation}
+Ord \defeq \{x : x\mbox{ is an ordinal}\}
+\end{equation}
+\end{definition}
+
+The following construction will be often referred to as the \emph{Von Neumann's Hierarchy}, sometimes also the \emph{Von Neumann's Universe}. %, the former referring more to the construction with the individual levels in mind, the latter referring more to the class $V$, but they can be interchanged with no confusion caused.
+
+\begin{definition}{(Von Neumann's Hierarchy)}\label{def:von_neumann}\\
+The \emph{Von Neumann's Hierarchy} is a collection of sets indexed by elements of $Ord$, defined recursively in the following way:
+\bce[(i)]
+\item 
+\begin{equation}
+V_0 = \emptyset
+\end{equation}
+\item 
+\begin{equation}
+V_{\alpha+1} = \power{V_\alpha}\mbox{ for any ordinal $\alpha$}
+\end{equation}
+\item
+\begin{equation} 
+V_\lambda = \bigcup_{\beta < \lambda} V_\beta \mbox{ for a limit ordinal $\lambda$}
+\end{equation}
+\ece
+\end{definition}
+
+\begin{definition}{(Rank)}\label{def:rank}\\
+Given a set $x$, we say that the rank of $x$ (written as $rank(x)$) is the least ordinal $\alpha$ such that
+\begin{equation}
+x \in V_{\alpha+1}
+\end{equation}
+\end{definition}
+Due to \emph{Regularity}, every set has a rank.\footnote{See chapter 6 of \cite{JechBook} for details.}
+
+\begin{definition}{($\omega$)}\label{def:omega}\\
+\begin{equation}
+\omega \defeq \bigcap\{x : \mbox{"$x$ is a limit ordinal"})\}
+\end{equation}
+\end{definition}
+$\omega$ is non-empty if \emph{infinity} or any equivalent holds.
+
+\
+
+\subsubsection{Cardinal Numbers}
+
+\begin{definition}{(Cardinality)}\\
+Given a set $x$, let the cardinality of $x$, written $|x|$, be defined as the smallest ordinal number such that there is a one to one mapping from $x$ to $\alpha$.
+\end{definition}
+For formal details as well as why every set can be well-ordered assuming \emph{Choice}, see \cite{JechBook}.
+
+\begin{definition}{(Aleph function)}\label{def:aleph}\\
+Let $\omega$ be the set defined by \ref{def:omega}.
+We will recursively define the function $\aleph$ for all ordinals.
+\bce[(i)]
+\item $\aleph_0 = \omega$
+\item $\aleph_{\alpha+1}$ is the least cardinal larger than $\aleph_\alpha$\footnote{"The least cardinal larger than $\aleph_\alpha$" is sometimes notated as $\aleph_\alpha^{+}$}
+\item $\aleph_\lambda = \bigcup_{\beta < \lambda}\aleph_\beta$ for a limit ordinal $\lambda$
+\ece
+\end{definition}
+
+\begin{definition}{(Cardinal number)}\label{def:cardinal}\\
+We say a set $x$ is a \emph{cardinal number}, usually shortened to \emph{a cardinal}, if either $x \in \omega$, it is then called a \emph{finite cardinal}, 
+there is an ordinal $\alpha$ such that $\aleph_\alpha = x$, then we call it \emph{an infinite cardinal}
+\end{definition}
+We say $\kappa$ is in uncountable cardinal if it is an infinite ordinal and $\aleph_0 > \kappa$.
+Infinite cardinals will be notated by lower-case greek letters from the middle if the alphabet, e.g. $\kappa, \mu, \ni, \ldots$.\footnote{$\lambda$ is preferably used for limit ordinals, if it is ever used to denote an infinite cardinal, that should be contextually clear.}
+
+\begin{definition}{(Cofinality of an Ordinal)}\label{def:cofinality}\\ % a co https://math.berkeley.edu/~jhicks/links/SOTS/cskipper112613.pdf?
+Let $\lambda$ be a limit ordinal. The \emph{cofinality} of $\lambda$, written $cf(\lambda)$, is the smallest limit ordinal $\alpha$, $\alpha \leq \lambda$, such that 
+\begin{equation}
+(\forall x \in \lambda)(\exists y \in \alpha)(x < y)
+\end{equation}
+\end{definition}
+
+\begin{definition}{(Regular Cardinal)}\label{def:regular_cardinal}\\
+We say a cardinal $\kappa$ is regular iff $cf(\kappa) = \kappa$
+\end{definition}
+
+\begin{definition}{(Limit Cardinal)}\label{def:limit_cardinal}\\
+We say that a cardinal $\kappa$ is a \emph{limit cardinal} if
+\begin{equation}
+(\exists \alpha \in Ord)(\kappa = \aleph_\alpha)
+\end{equation}
+\end{definition}
+
+\begin{definition}{(Strong Limit Cardinal)}\label{def:strong_limit_cardinal}\\
+We say that an ordinal $\kappa$ is a \emph{strong limit cardinal} if it is a \emph{limit cardinal} and 
+\begin{equation}
+\forall \alpha (\alpha \in \kappa \then \power{\alpha} \in \kappa)
+\end{equation}
+\end{definition}
+
+\begin{definition}{(Generalised Continuum Hypothesis)}\label{def:gch}\\
+\begin{equation}
+\aleph_{\alpha+1}=\power{\aleph_\alpha}
+\end{equation}
+\end{definition}
+If \emph{GCH} holds (for example in Gödel's $L$, see chapter 3), the notions of a limit cardinal and a strong limit cardinal are equivalent.
+
+\
+
+\subsubsection{Relativisation and Absoluteness}
+\begin{definition}{(Relativization)}\label{def:relativization}\\
+Let $M$ be a class, $R \subseteq M\times M$ and let $\varphi(p_1, \ldots, p_n)$ be a first-order formula with no free variables besides $p_1, \ldots, _n$. 
+The \emph{relativization of $\varphi$ to $M$ and $R$} is the formula, written as $\varphi^{M, R}(p_1, \ldots, p_n)$, defined in the following inductive manner:
+\bce[(i)]
+\item $(x \in y)^{M,R} \iff R(x, y)$
+\item $(x = y)^{M,R} \iff x = y$
+\item $(\neg \varphi)^{M,R} \iff \neg \varphi^{M,R}$
+\item $(\varphi \et \psi)^{M,R} \iff \varphi^{M,R} \et \psi^{M,R}$
+\item $(\varphi \lor \psi)^{M,R} \iff \varphi^{M,R} \lor \psi^{M,R}$
+\item $(\varphi \then \psi)^{M,R} \iff \varphi^{M,R} \then \psi^{M,R}$
+\item $(\exists x \varphi(x))^{M,R} \iff (\exists x \in M) \varphi^{M,R}(x)$
+\item $(\forall x \varphi(x))^{M,R} \iff (\forall x \in M) \varphi^{M,R}(x)$
+\ece
+\end{definition}
+When $R=\in\cap(M \times M)$, we usually write $\varphi^M$ instead of $\varphi^{M, R}$. When we talk about $\varphi^M(p_1, \ldots, p_n)$, it is understood that $p_1, \ldots, p_n \in M$.
+We will also use $M \models \varphi(p_1, \ldots, p_n)$ and $\varphi^M(p_1, \ldots, p_n)$ interchangably.
+
+\begin{definition}{(Absoluteness)}
+Given a transitive class $M$, we say a formula $\varphi$ is \emph{absolute in $M$} if for all $p_1, \ldots, p_n \in M$
+\begin{equation}
+\varphi^M(p_1, \ldots, p_n) \iff \varphi(p_1, \ldots, p_n)
+\end{equation}
+\end{definition}
+
+\begin{definition}{(Hierarchy of First-Order Formulas)}\\
+\bce[(I)]
+A first-order formula $\varphi$ is $\Delta_0$ iff it is logically equivalent to a first-order formula $\varphi'$ satisfying any of the following:
+\bce[(i)]
+\item $\varphi'$ contains no quantifiers
+\item $y$ is a set, $\psi$ is a $\Delta_0$ formula, and $\varphi'$ is either $(\exists x \in y)\psi(y)$ or $(\forall x \in y)\psi(y)$.
+\item $\psi_1, \psi_2$ are $\Delta_0$ formulas and $\varphi'$ is any of the following: $\psi_1 \lor \psi_2$, $\psi_1 \et \psi_2$, $\psi_1 \then \psi_2$, $\neg \psi_2$, 
+\ece
+\item If a formula is $\Delta_0$ it is also $\Sigma_0$ and $\Pi_0$
+\item A formula $\varphi$ is $\Pi_n+1$ if it is logically equivalent to a formula $\varphi'$ such that $\varphi' = \forall x \psi$ where $\psi$ is a $\Sigma_n$-formula for any $n < \omega$.
+\item A formula $\varphi$ is $\Sigma_n+1$ if it is logically equivalent to a formula $\varphi'$ such that $\varphi' = \forall x \psi$ where $\psi$ is a $\Pi_n$-formula for any $n < \omega$.
+\ece
+\end{definition}
+Note that we can use the pairing function so that for $\forall p_1, \ldots, p_n \psi(p_1, \ldots, p_n)$, there a logically equivalent formula of the form $\forall x \psi'(x)$.
+
+\begin{lemma}{($\Delta_0$ absoluteness)}\label{lemma:delta_0_absoluteness}
+Let $\varphi$ be a $\Delta_0$ formula, then $\varphi$ is absolute in any transitive class $M$.
+\end{lemma}
+
+\begin{proof}
+This will be proven by induction over the complexity of a given $\Delta_0$ formula $\varphi$. Let $M$ be an arbitrary transitive class. Suppose, that 
+
+Atomic formulas are always absolute by the definition of relativisation, see \ref{def:relativization}.
+Suppose that $\Delta_0$ formulas $\psi_1$ and $\psi_2$ are absolute in $M$. Then from relativization, $(\psi_1 \et \psi_2)^M \iff \psi_1^M \et \psi_2^M$, which is, from the induction hypothesis, equivalent to $\psi_1 \et \psi_2$. The same holds for $\lor, \then, \neg$.
+
+Suppose that a $\Delta_0$ formula $\psi$ is absolute in $M$. Let $y$ be a set and let $\varphi = (\exists x \in y) \psi(x)$. 
+From relativization, $(\exists x \psi(x))^M \iff (\exists x \in M) \psi^M(x)$. Since the hypotheses makes it clear that $\psi^M \iff \psi$, we get $((\exists x \in y) \psi(x))^M \iff (\exists x \in y\cap M) \psi(x)$, which is the equivalent of $\varphi^M \iff \varphi$. The same applies to $\varphi = (\forall x \in y) \psi(x)$.
+\end{proof}
+
+% todo co Devlin -- p.27 -- downward a upward absoluteness?
+\begin{lemma}{(Downward Absoluteness)}\label{lemma:downward_absoluteness}\\
+Let $\varphi$ be a $\Pi_1$ formula and $M$ a transitive class. Then the following holds:
+\begin{equation}
+(\forall p_1, \ldots, p_n \in M)(\varphi(p_1, \ldots, p_n) \then \varphi(p_1, \ldots, p_n)^M)
+\end{equation}
+\end{lemma}
+\begin{proof}
+Since $\varphi(p_1, \ldots, p_n)$ is $\Pi_1$, there is a $\Delta_0$ formula $\psi(p_1, \ldots, p_n, x)$ such that $\varphi = \forall x \psi(p_1, \ldots, p_n, x)$. From relativization and lemma \ref{lemma:delta_0_absoluteness}, $\varphi^M(p_1, \ldots, p_n) \iff (\forall x \in M)\psi(p_1, \ldots, p_n, x)$.
+
+Assume that for $p_1, \ldots, p_n \in M$ fixed, that $\forall x \psi(p_1, \ldots, p_n, x)$ holds, but $(\forall x \in M)\psi(p_1, \ldots, p_n, x)$ does not. 
+Therefore $\exists x \neg \psi(p_1, \ldots, p_n, x)$, which contradicts $\forall x \psi(p_1, \ldots, p_n, x)$.
+\end{proof}
+
+
+\begin{lemma}{(Upward Absoluteness)}\label{lemma:upward_absoluteness}\\
+Let $\varphi$ be a $\Sigma_1$ formula and $M$ a transitive class. Then the following holds:
+\begin{equation}
+(\forall p_1, \ldots, p_n \in M)(\varphi^M(p_1, \ldots, p_n) \then \varphi(p_1, \ldots, p_n))
+\end{equation}
+\end{lemma}
+\begin{proof}
+Since $\varphi(p_1, \ldots, p_n)$ is $\Sigma_1$, there is a $\Delta_0$ formula $\psi(p_1, \ldots, p_n, x)$ such that $\varphi = \exists x \psi(p_1, \ldots, p_n, x)$. From relativization and lemma \ref{lemma:delta_0_absoluteness}, $\varphi^M(p_1, \ldots, p_n) \iff (\exists x \in M)\psi(p_1, \ldots, p_n, x)$.
+
+Assume that for $p_1, \ldots, p_n \in M$ fixed, that $(\exists x \in M)\psi(p_1, \ldots, p_n, x)$ holds, but $\exists x \psi(p_1, \ldots, p_n, x)$ does not. This is an obvious contradiction.
+\end{proof}
+
+
+\subsubsection{More Functions}
+
+\begin{definition}{(Strictly Increasing Function)}\label{def:increasing_function}\\
+A function $f: Ord \then Ord$ is said to be \emph{strictly increasing} iff
+\begin{equation}
+\forall \alpha, \beta \in Ord (\alpha < \beta \then f(\alpha) < f(\beta)).
+\end{equation}
+\end{definition}
+
+\begin{definition}{(Continuous Function)}\label{def:continuous_function}\\
+A function $f: Ord \then Ord$ is said to be \emph{continuous} iff
+\begin{equation}
+\alpha\mbox{ is limit} \then f(\lambda) = \bigcup_{\alpha < \lambda} f(\alpha).
+\end{equation}
+\end{definition}
+
+\begin{definition}{(Normal Function)}\label{def:normal_function}\\
+A function $f: Ord \then Ord$ is said to be \emph{normal} if it is \emph{strictly increasing} and \emph{continuous}.
+\end{definition}
+
+\begin{definition}{(Fixed Point)}\label{def:fixed_point}\\
+We say $x$ is a fixed point of a function $f$ iff $x=f(x)$.
+\end{definition}
+
+\begin{definition}{(Unbounded Class)}\label{def:unbounded_class}\\
+We say a class $A$ is unbounded if 
+\begin{equation}
+\forall x (\exists y \in A) (x < y)
+\end{equation}
+\end{definition}
+
+\begin{definition}{(Limit Point)}\label{def:limit_point}\\
+Given a class $x \subseteq On$, we say that $\alpha \neq \emptyset$ is a limit point of $x$ iff 
+\begin{equation}
+\alpha = \bigcup(x \cap \alpha)
+\end{equation}
+\end{definition}
+
+\begin{definition}{(Closed Class)}\label{def:closed_class}\\
+We say a class $A \subseteq Ord$ is closed iff it contains all of its limit points.
+\end{definition}
+
+\begin{definition}{(Club set)}\label{def:club_set}\\
+For a regular uncountable cardinal $\kappa$, a set $x\ \subset\ \kappa$ is a \emph{closed unbounded} subset, abbreviated as a \emph{club set}, iff $x$ is both closed and unbounded in $\kappa$.
+\end{definition}
+
+\begin{definition}{(Stationary set)}\label{def:stationary_set}\\
+For a regular uncountable cardinal $\kappa$, we say a set $A\ \subset\ \kappa$ is stationary in $\kappa$ iff it intersects every club subset of $\kappa$.
+\end{definition}
+
+\subsubsection{Structure, Substructure and Embedding}
+
+Structures will be denoted $\langle M, \in, R \rangle$ where $M$ is a domain, $\in$ stands for the standard membership relation, it is assumed to be restricted to the domain\footnote{To be totally correct, we should write $\langle M, \in \cap M \times M, R \rangle$}, $R \subseteq M$ is a relation on the domain. When $R$ is not needed, we may as well only write $M$ instead of $\langle M, \in \rangle$.
+
+\begin{definition}{(Elementary Embedding)}\label{def:elementary_embedding}\\
+Given the structures $\langle M_0, \in, R \rangle$, $\langle M_1, \in, R \rangle$ and a one-to-one function $j: M_0 \then M_1$, we say $j$ is an \emph{elementary embedding} of $M_0$ into $M_1$, we write $j: M_0 \prec M_1$, when the following holds for every formula $\varphi(p_1, \ldots, p_n)$ and every $p_1, \ldots, p_n \in M_0$:
+\begin{equation}
+\langle M_0, \in, R \rangle \models \varphi(p_1, \ldots, p_n) \iff \langle M_1, \in, R \rangle  \models \varphi(j(p_1), \ldots, j(p_n))
+\end{equation}
+\end{definition}
+
+
+\begin{definition}{(Elementary Substructure)}\label{def:elementary_substructure}\\
+Given the structures $\langle M_0, \in, R \rangle$, $\langle M_1, \in, R \rangle$ and a one-to-one function $j: M_0 \then M_1$ such that $j: M_0 \prec M_1$, we say that $M_0$ is an \emph{elementary substructure} of $M_1$, denoted as $M_0 \prec M_1$, iff $j$ is an identity on $M_0$. In other words
+\begin{equation}
+\langle M_0, \in, R \rangle \models \varphi(p_1, \ldots, p_n) \iff \langle M_1, \in, R \rangle  \models \varphi(p_1, \ldots, p_n)
+\end{equation}
+for $p_1, \ldots, p_n \in M_0$
+\end{definition}
+
+% While higher-order satisfaction relation for proper classes is unformalizable\footnote{TODO CITE KDE? Tarski nebo tak neco?},we can formalize satisfaction in a structure. For the rest of this chapter, let $D$ be a domain of such structure.
+
 \newpage
-\input{02_levy.tex}
+% =============================================================
+\section{Levy's First-Order Reflection}\label{sec:first_order}
+
+\subsection{Lévy's Original Paper}\label{sec:levy1960}
+This section will try to present Lévy's proof of a~general reflection principle being equivalent to \emph{Replacement} and \emph{Infinity} under ZF minus \emph{Replacement} and \emph{Infinity} from his 1960 paper \emph{Axiom Schemata of Strong Infinity in Axiomatic Set Theory}\footnote{\cite{Levy60a}}.
+
+When reading said article, one should bear in mind that it was written in a~period when set theory was semantically oriented, so while there are many statements about a~model of $\sf{ZF}$, usually denoted $u$, this is equivalent to today's universal class $V$, so it doesn't necessarily mean that there is a set $u$ that is a model of $\sf{ZF}$. We will review the notion of a standard complete model used by Lévy throughout the paper in a moment.
+The axioms used in what Lévy calls $\sf{ZF}$ are equivalent to those defined in \ref{def:zf}, except for the \emph{Axiom of Subsets}, which is just a different name for \emph{Specification}.
+Besides $\sf{ZF}$ and $\sf{S}$, defined in \ref{def:zf} and yref{def:s} respectively, the set theories theories $\sf{Z}$, and $\sf{SF}$ are used in the text. $\sf{Z}$ is $\sf{ZF}$ minus replacement, $\sf{SF}$ is $\sf{ZF}$ minus \emph{Infinity}. Also note that universal quantifier does not appear, $\forall x \varphi (x)$ would be written as $(x) \varphi (x)$. The symbol for negation is "$\sim$", implication is written as "$\supset$" and equivalence is "$\equiv$", we will use "$\neg$", "$\then$" and "$\iff$".
+
+Next two definitions are not used in contemporary set theory, but they illustrate 1960's set theory mind-set and they are used heavily in Lévy's text, so we will include and explain them for clarity. Generally, in this chapter, $\sf{Q}$ stands for an arbitrary axiomatic set theory used for general definitions, $u$ is usually a model of $\sf{Q}$, counterpart of today's $V$.
+
+This subsection uses $\sf{ZF}$ instead of the usual $\sf{ZFC}$ as the underlying theory.
+
+\begin{definition}{(Standard Model of a Set Theory)}\label{def:sm_q}\\
+Let $\sf{Q}$ be a axiomatic set theory in first-order logic. We say the the a class $u$ is a standard model of $\sf{Q}$ with respect to a membership relation $E$, written as $Sm^{\sf{Q}}(u)$, iff both of the following hold
+\bce[(i)]
+\item $(x, y) \in E \iff y \in u \et x \in y$
+\item $y \in u \et x \in y \then x \in u$
+\ece
+\end{definition}
+\begin{definition}{(Standard Complete Model of a Set Theory)}\label{def:scm_q}\\
+Let $\sf{Q}$ and $E$ be like in \ref{def:sm_q}. We say that that $u$ is a standard complete model of $\sf{Q}$ with respect to a membership relation $E$ iff both of the following hold
+\bce[(i)]
+\item $u$ is a transitive set with respect to $\in$
+\item $\forall E ((x, y) \in E \iff (y \in u \et x \in y) \et Sm^{\sf{Q}}(u, E))$
+\ece
+this is written as $Scm^{\sf{Q}}(u)$.
+\end{definition}
+
+\begin{definition}{(Inaccessible Cardinal With Respect to $\sf{Q}$)}\label{def:levy_inaccessible_q}\\
+Let $\sf{Q}$ be an axiomatic first-order set theory. We say that a cardinal $\kappa$ is inaccessible with respect to $\sf{Q}$, we write $In^{\sf{Q}}(\kappa)$.
+\begin{equation}
+In^{\sf{Q}}(\kappa) \defeq Scm^{\sf{Q}}(V_\kappa).
+\end{equation}
+\end{definition}
+
+\begin{definition}{(Inaccessible Cardinal With Respect to $\sf{ZF}$)}\label{def:levy_inaccessible}\\
+When a cardinal $\kappa$ is inaccessible with respect to $\sf{ZF}$, we only say that it is inaccessible. We write $In(\kappa)$.
+\begin{equation}
+In(\kappa) \defeq In^{\sf{ZF}}(\kappa)
+\end{equation}
+\end{definition}
+The above definition of inaccessibles is used because it doesn't require \emph{Choice}.
+
+For the definition of relativization, see \ref{def:relativization}. The syntax used by Lévy is $Rel(u, \varphi)$, we will use $\varphi^{u}$, which is more usual these days.
+\begin{definition}{($N$)}\label{def:levy_axiom_n}\\
+The following is an axiom schema of complete reflection over $\sf{ZF}$, denoted as $N$:
+\begin{equation}
+\exists u (Scm^{\sf{ZF}}(u) \et \forall x_1, \ldots , x_n (x_1, \ldots , x_n \in u \then \varphi \iff \varphi^{u}))
+\end{equation}
+where $\varphi$ is a~formula which contains no free variables except for $x_1, \ldots , x_n$.
+\end{definition}
+
+\begin{definition}{($N_0$)}\label{def:levy_axiom_n0}\\
+With $\sf{S}$ instead of $\sf{ZF}$we obtain what will now be called $N_0$:
+\begin{equation}
+\exists u (Scm^{\sf{S}}(u) \et \forall x_1, \ldots , x_n (x_1, \ldots , x_n \in u \then \varphi \iff \varphi^{u}))
+\end{equation}
+where $\varphi$ is a~formula which contains no free variables except for $x_1, \ldots , x_n$.
+\end{definition}
+
+Now that we have established the basic terminology, we can review Lévy's proof that in a theory $\sf{S}$, which is defined in \ref{def:s}, $N_0$ can be used to prove both \emph{replacement} and \emph{infinity}.
+
+\subsection{$\sf{S} \vdash (N_0\ \iff\ \emph{Replacement} \et \emph{Infinity})$} 
+
+Let $\sf{S}$ be a set theory as defined in \ref{def:s}. We will first prove a lemma to show what's mentioned as obvious in \cite{Levy60a} and that is a fact, that any set $u$ such that $Scm^{\sf{S}}(u)$ is a limit ordinal.
+\begin{lemma}\label{lemma:scm_s_is_limit}\
+The following holds for every $u$.
+\begin{equation}
+\mbox{"$u$ is a limit ordinal"} \iff Scm^{\sf{S}}(u)
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Let $u$ be a standard complete model of $\sf{S}$. We know that $u$ is transitive from the definition of a standard complete model. 
+To see that $u$ is an ordinal, note that it is transitive and $\emptyset \in u$ from \emph{the existence of a set} (see \ref{def:existence_of_a_set}). To see that $u$ is limit, consider that if $u$ was a successor ordinal, there would be a set $x \in u$ such that $x \cup \{x\} = u$, but then $u \subset \power{x}$, which contradicts the fact that $(\forall x\in u)(\exists y \in u)(\power{x} = y)$ implied by \emph{powerset} and it's not empty as stated earlier.
+
+We will now verify that all axioms of $\sf{S}$ are satisfied in a limit ordinal demoted $u$.
+
+\bce[(i)]
+\item \emph{The existence of a set} comes from the fact that $u$ is a non-empty set.
+
+\item \emph{Extensionality}: \\(see \ref{def:extensionality})
+\begin{equation}
+\forall x, y, z ((z \in x \iff z \in y) \then x = y)
+\end{equation}
+The formula $\varphi(x, y) = (\forall z \in u)((z \in x \iff z \in y) \then x = y)$ is in fact the membership relation on $u$. Because it is a $\Pi_1$ formula, it holds in transitive $u$ by \ref{lemma:downward_absoluteness}.
+
+\item \emph{Foundation}: \\(see \ref{def:foundation})
+\begin{equation}
+\forall x (x \neq \emptyset \then \exists (y \in x) (\forall z \neg (z \in y \et z \in x)))
+\end{equation}
+The formula $wf(x) = x \neq \emptyset \then \exists (y \in x) (\forall z \neg (z \in y \et z \in x))$\footnote{"wf" stands for well-founded.} is $\Delta_0$, \ref{lemma:delta_0_absoluteness}.
+
+\item \emph{Powerset}: \\(see \ref{def:powerset})
+\begin{equation}
+\forall x \exists y \forall z (z \subseteq x \then z \in y).
+\end{equation}
+\emph{Powerset} holds from limitness of $u$ by the argument used in the other implication of this lemma.
+
+\item \emph{Union}:\\
+(see \ref{def:union})
+\begin{equation}
+\forall x \exists y \forall z (z \in y \iff \exists q( z \in q \et q \in x)).
+\end{equation}
+\emph{Union} Holds because for $x \in u$ and $\alpha$ is an ordinal such that $rank(x) = \alpha$, every element of $x$ is also an element of $\alpha$. So, from transitivity, $(\bigcup x) \subseteq \alpha$, so $(\bigcup x) \in \power{\alpha}$.
+
+\item \emph{Pairing}:\\
+(see \ref{def:pairing})
+\begin{equation}
+(\forall x, y \exists z (x \in z \et y \in z))
+\end{equation}
+\emph{Pairing} also from limitness of $u$ together with \emph{powerset}. Since $u$ is transitive, then for any $x, y \in u$, there are the least ordinals $\alpha, \beta$ such that $\alpha = rank(x)$, $\beta = rank(x)$, then either $\alpha = \beta$ or, without a loss of generality, $\alpha \in \beta$, but then, in both cases, $\{x, \{y\}\} \in \power{\beta}$ and thus $\{x, \{y\}\}$ is a set of $u$.
+
+
+\item \emph{Specification}: \\
+Given a set $x$, for any $\varphi$, all the elements of $x$ satisfying $\varphi$ form a subset of $x$, which is an element of $\power{x}$ and thus also a set if $u$ by \emph{powerset}.
+\ece
+\end{proof}
+
+Let $N_0$ be defined as in \ref{def:levy_axiom_n0}, for \emph{Infinity} see \ref{def:infinity}.
+\begin{theorem}\
+In $\sf{S}$, the schema $N_0$ implies \emph{Infinity}.
+\end{theorem}
+
+\begin{proof}
+Lévy skips this proof because it seems too obvious to him, but we will do it here for plasticity.
+For an arbitrary $\varphi$, $N_0$ gives us $\exists u Scm^{\sf{S}}(u)$, but from lemma \ref{lemma:scm_s_is_limit}, we know that this $u$ is a limit ordinal. This $u$ already satisfies \emph{Infinity}.
+\end{proof}
+
+\
+
+Let $N_0$ be defined as in \ref{def:levy_axiom_n0}, for \emph{Replacement} see \ref{def:replacement}, $\sf{S}$ is again the set theory defined in $\ref{def:s}$.
+\begin{theorem}
+In $\sf{S}$, the schema $N_0$ implies \emph{Replacement}.
+\end{theorem}
+
+\begin{proof}
+Let $\varphi(x, y, p_1, \ldots, p_n)$ be a~formula with no free variables except $x, y, p_1, \ldots, p_n$ for an arbitrary natural number $n$.
+
+\begin{equation}
+\begin{gathered}
+\chi = \forall x, y, z(\varphi(x, y, p_1, \ldots, p_n) \et \varphi(x, z, p_1, \ldots, p_n) \then y = z) \\
+\then \forall x \exists y \forall z (z \in y \iff \exists q (q \in x \et \varphi(q, z, p_1, \ldots, p_n)))
+\end{gathered}
+\end{equation}
+Let $\chi$ be an instance of \emph{Replacement} schema for given $\varphi$. Let the following formulas be instances of the $N_0$ schema for formulas  $\varphi$, $\exists y \varphi$, $\chi$ and $\forall x, p_1, \ldots, p_n \chi$ respectively:
+
+We can deduce the following from $N_0$: 
+\bce[(i)]
+\item $x, y, p_1, \ldots, p_n \in u \then (\varphi \iff \varphi^{u}) $
+\item $x, p_1, \ldots, p_n \in u \then (\exists y \varphi \iff (\exists y \varphi)^{u})$
+\item $x, p_1, \ldots, p_n \in u \then (\chi \iff \chi^{u})$
+\item $\forall x, p_1, \ldots, p_n (\chi \iff (\forall x, p_1, \ldots, p_n \chi)^{u})$
+\ece
+
+From relativization, we also know that $(\exists y \varphi)^{u}$ is equivalent to $(\exists y \in u) \varphi^{u}$.
+Therefore $\bold{(ii)}$ is equivalent to
+\begin{equation}
+x, p_1, \ldots, p_n \in u \then (\exists y \in u) \varphi^{u}. 
+\end{equation}
+
+If $\varphi$ is a~function\footnote{See definition \ref{def:function}}, then for every $x \in u$, which is also $x \subset u$ by the transitivity of $Scm^{\sf{S}}(u)$,
+it maps elements of $x$ onto $u$. From the axiom scheme of comprehension\footnote{Lévy uses its equivalent, axiom of subsets}, we can find $y$, a~set of all images of elements of $x$.
+That gives us $x, p_1, \ldots, p_n \in u \then \chi$. By $\bold{(iii)}$ we get $x, p_1, \ldots, p_n \in u \then \chi^{u}$, the universal closure of this formula is $(\forall x, p_1, \ldots, p_n \chi)^{u}$, 
+which together with $\bold{(iv)}$ yields $\forall x, p_1, \ldots, p_n \chi$. Via universal instantiation, we end up with $\chi$. We have inferred replacement for a given arbitrary formula. 
+\end{proof}
+
+What we have just proven is just a single theorem from the above mentioned article by Lévy, we will introduce other interesting propositions, mostly related to the existence of large cardinals, later in their appropriate context in chapter 3.
+
+% =====================================================================================================================================
+
+\subsection{Contemporary Restatement}
+We will now prove what is also Lévy's first-order reflection theorem, but rephrased with up to date set theory terminology. The main difference is, that while Lévy reflects $\varphi$ from $V$ to a set $u$ that is a "standard complete model of $\sf{S}$", we say that there is a $V_\alpha$ for a limit $\alpha$ that reflects $\varphi$, which is equivalent due to lemma \ref{lemma:scm_s_is_limit} introduced in the previous part.
+
+\begin{definition}{(Reflection\textsubscript{1})}\label{def:reflection_1}\\
+Let $\varphi(p_1, \ldots, p_n)$ be a first-order formula in the language of set theory. Than the following holds for any such $\varphi$.
+\begin{equation}
+\forall M_0 \exists M (M_0 \subseteq M \et (\varphi^M(p_1, \ldots, p_n) \iff \varphi(p_1, \ldots, p_n)))
+\end{equation}
+\end{definition}
+Note that this is a restatement of both Lévy's $N$ and $N_0$ from the previous chapter, see definitions \ref{def:levy_axiom_n}, \ref{def:levy_axiom_n0}. We prefer to call it \emph{Reflection\textsubscript{1}} so it complies with how other axioms and schemata are called. \footnote{We will not use the name $N_0$, because it might be confusing to work $N_0$ and $M_0$ where $M_0$ is a set and $N_0$ is an axiom schema.} Note that the subscript 1 refers to the fact that $\varphi(p_1, \ldots, p_n)$ is a first-order formula, and since we're using the work "reflection" in less strict meaning throughout this thesis, distinguishing between the two just by using italic font face for the schema might cause confusion.
+
+We will now prove the equivalence of \emph{Reflection\textsubscript{1}} with \emph{Replacement} and \emph{Infinity} in $\sf{S}$ in two parts. First, we will show that \emph{Reflection\textsubscript{1}} is a theorem of $\sf{ZFC}$, then we shall show that the second implication, which proves \emph{Infinity} and \emph{Replacement} from \emph{Reflection\textsubscript{1}}, also holds.
+
+The following lemma is usually done in more parts, the first being for one formula, the other for $n$ formulas. We will only state and prove the more general version for $n$ formulas, knowing that setting $n=1$ turns it to a specific version.
+
+\begin{lemma}\label{lemma:reflection_lemma}\
+Let $\varphi_1, \ldots, \varphi_n$ be formulas with $m$ parameters\footnote{For formulas with a different number of parameters, take for $m$ the highest number of parameters among those formulas. Add spare parameters to every formula that has less than $m$ parameters in a way that preserves the last parameter, which we will denote $x$. E.g. let $\varphi'_i$ be the a~formula with $k$ parameters, $k < m$. Let us set $\varphi_i(p_1, \ldots, p_{m-1}, x) \defeq \varphi'_i(p_1, \ldots, p_{k-1}, x)$, notice that the parameters $p_k, \ldots, p_{m-1}$ are not used.}.
+\bce[(i)]
+\item For each set $M_0$ there is such set $M$ that $M_0 \subset M$ and the following holds for every $i$, $1 \leq i \leq n$:
+\begin{equation}\label{equation:refl_lemma_i}
+\exists x \varphi_i(p_1, \ldots, p_{m-1}, x) \then (\exists x \in M) \varphi_i(p_1, \ldots, p_{m-1}, x)
+\end{equation}
+for every $p_1, \ldots, p_{m-1} \in M$.
+
+\item Furthermore there is an ordinal $\alpha$ such that $M_0 \subset V_\alpha$ and the following holds for each $i$, $1 \leq i \leq n$:
+\begin{equation}\label{equation:refl_lemma_ii}
+\exists x \varphi_i(p_1, \ldots, p_{m-1}, x) \then (\exists x \in V_\alpha) \varphi_i(p_1, \ldots, p_{m-1}, x)
+\end{equation}
+for every $p_1, \ldots, p_{m-1} \in M$.
+
+\item Assuming \emph{Choice}, there is $M$, $M_0 \subset M$ such that \ref{equation:refl_lemma_i} holds for every $M,\ i \leq n$ and $|M| \leq |M_0| \cdot \aleph_0$.
+\ece
+\end{lemma}
+
+\begin{proof}
+We will simultaneously prove statements $\bold{(i)}$ and $\bold{(ii)}$, denoting $M^T$ the transitive set required by part $\bold{(ii)}$. Unless explicitly stated otherwise for specific steps, it is thought to be equivalent to $M$.
+
+Let us first define operation $H(p_1, \ldots, p_{m-1})$ that gives us the set of $x$'s with minimal rank\footnote{Rank is defined in \ref{def:rank}} satisfying $\varphi_i(p_1, \ldots, p_{m-1}, x)$ for given parameters $p_1, \ldots, p_{m-1}$ for every $i$ such that $1 \leq i \leq n$.
+
+\begin{equation}
+H_i(p_1, \ldots, p_n) = \{x \in C_i: (\forall z \in C)(rank(x) \leq rank(z))\}
+\end{equation}
+for each $1 \leq i \leq n$, where
+\begin{equation}
+C_i = \{x: \varphi_i(p_1, \ldots, p_{m-1}, x)\} \mbox{ for $1 \leq i \leq n$}
+\end{equation}
+
+\
+
+Next, let's construct $M$ from given $M_0$ by induction. 
+\begin{equation}
+M_{i+1} = M_i \cup \bigcup_{j=0}^{n} \bigcup \{H_j(p_1, \ldots, p_{m-1}): p_1, \ldots, p_{m-1} \in M_i\}
+\end{equation}
+In other words, in each step we add the elements satisfying $\varphi(p_1, \ldots, p_{m-1}, x)$ for all parameters that were either available earlier or were added in the previous step. 
+For statement $\bold{(ii)}$, this is the only part that differs from $\bold{(i)}$. Let us take for each step transitive closure of $M_{i+1}$ from $\bold{(i)}$. In other words, let $\gamma$ be the smallest ordinal such that 
+\begin{equation}
+(M^T_i \cup \bigcup_{j=0}^{n} \{\bigcup\{H_j(p_1, \ldots, p_{m-1}): p_1, \ldots, p_{m-1} \in M_i\}\}) \subset V_\gamma
+\end{equation}
+Then the incremetal step is like so:
+\begin{equation}
+M^T_{i+1} = V_\gamma
+\end{equation}
+The final $M$ is obtained by joining all the individual steps. 
+\begin{equation}
+M = \bigcup_{i=0}^{\infty} M_i, \mbox{  }M^T = \bigcup_{i=0}^{\infty} M^T_i = V_\alpha
+\end{equation}
+
+\
+
+We have yet to finish part $\bold{(iii)}$.
+Let's try to construct a~set $M'$ that satisfies the same conditions like $M$ but is kept as small as possible. Assuming the Axiom of Choice, we can modify the process so that the cardinality of $M'$ is at most $|M_0| \cdot \aleph_0$. Note that the size of $M'$ is determined by the size of $M_0$ and, most importantly, by the size of $H_i(p_1, \ldots, p_{m-1})$ for any $i$, $1 \leq i \leq n$ in individual levels of the construction. Since the lemma only states existence of some $x$ that satisfies $\varphi_i(p_1, \ldots, p_{m-1}, x)$ for any $1 \leq i \leq n$, we only need to add one $x$ for every set of parameters but $H_i(u_1, \dots, u_{m-1})$ can be arbitrarily large. Since Axiom of Choice ensures that there is a~choice function, let $F$ be a~choice function on $\power{M'}$. Also let $h_i(p_1, \ldots, p_{m-1}) = F(H_i(p_1, \ldots, p_{m-1}))$ for $i$, where $1 \leq i \leq n$, which means that $h$ is a~function that outputs an $x$ that satisfies $\varphi_i(p_1, \ldots, p_{m-1}, x)$ for $i$ such that $1 \leq i \leq n$ and has minimal rank among all such witnesses. The induction step needs to be redefined to
+\begin{equation}
+M'_{i+1} = M'_i \cup \bigcup_{j=0}^n \{ H_j(p_1, \ldots, p_{m-1}): p_1, \ldots, p_{m-1} \in M'_i \}
+\end{equation}
+This way, the amount of elements added to $M'_{i+1}$ in each step of the construction is the same as the amount of sets of parameters that yielded elements not included in $M'_i$. It is easy to see that if $M_0$ is finite, $M'$ is countable because it was constructed as a countable union of finite sets. If $M_0$ is countable or larger, the cardinality of $M'$ is equal to the cardinality of $M_0$.\footnote{It can not be smaller because $|M'_{i+1}|  \geq |M'_i|$ for every $i$. It may not be significantly larger because the maximum of elements added is the number of $n$-tuples in $M'_i$, which is of the same cardinality is $M'_i$.}
+Therefore $|M'| \leq |M_0| \cdot \aleph_0$
+\end{proof}
+
+\begin{theorem}{(Lévy's first-order reflection theorem)}\label{theorem:first_order_reflection}\\
+Let $\varphi(p_1, \ldots, p_n)$ be a~first-order formula.
+\bce[(i)]
+\item For every set $M_0$ there exists $M$ such that $M_0 \subset M$ and the following holds:
+\begin{equation}
+\varphi^M(p_1, \ldots, p_n) \iff \varphi(p_1, \ldots, p_n)\label{equation:levy_theorem_i}
+\end{equation}
+for every $p_1, \ldots, p_n \in M$.
+
+\item For every set $M_0$  there is a~transitive set $M$, $M_0 \subset M$ such that the following holds:
+\begin{equation}
+\varphi^M(p_1, \ldots, p_n) \iff \varphi(p_1, \ldots, p_n)
+\end{equation}
+for every $p_1, \ldots, p_n \in M$.
+
+\item For every set $M_0$ there is $\alpha$ such that $M_0 \subset V_{\alpha}$ and the following holds:
+\begin{equation}
+\varphi^{V_{\alpha}}(p_1, \ldots, p_n) \iff \varphi(p_1, \ldots, p_n)
+\end{equation}
+for every $p_1, \ldots, p_n \in M$.
+
+\item Assuming \emph{Choice}, for every set $M_0$ there is $M$ such that $M_0 \subset M$ and $|M| \leq |M_0| \cdot \aleph_0$ and the following holds:
+\begin{equation}
+\varphi^M(p_1, \ldots, p_n) \iff \varphi(p_1, \ldots, p_n)
+\end{equation}
+for every $p_1, \ldots, p_n \in M$.
+\ece
+\end{theorem}
+
+\begin{proof}
+Before we start, note that the following holds for any set $M$ if $\varphi$ is an atomic formula, as a direct consequence of relativisation to $M, \in$\footnote{See \ref{def:relativization}. Also note that this works for relativization to $M, \in$, not $M, E$ where $E$ is an arbitrary membership relation on $M$.}. 
+\begin{equation}
+\varphi \iff \varphi^M
+\end{equation}
+
+Let's now prove $\bold{(i)}$ for given $\varphi$ via induction by complexity. We can safely assume that $\varphi$ contains no quantifiers besides "$\exists$" and no logical connectives other than "$\neg$" and "$\et$".
+Let $\varphi_1, \ldots, \varphi_n$ be all subformulas of $\varphi$. Then there is a set $M$, obtained by the means of lemma \ref{lemma:reflection_lemma}, for all of the formulas $\varphi_1, \ldots, \varphi_n$. 
+
+We know that $\psi \iff \psi^M$ for atomic $\psi$, we need to verify that it won't fail in the inductive step.
+Let us consider $\psi = \neg \psi'$ along with the definition of relativization for those formulas in \ref{def:relativization}.
+\begin{equation}
+(\neg \psi')^M \iff \neg (\psi'^M)
+\end{equation}
+Because the induction hypothesis says that \ref{equation:levy_theorem_i} holds for every subformula of $\psi$, we can assume that $\psi'^M \iff \psi'$, therefore the following holds:
+\begin{equation}
+ (\neg \psi')^{M} \iff \neg (\psi'^M) \iff \neg \psi'
+\end{equation}
+
+The same holds for $\psi = \psi_1 \et \psi_2$. From the induction hypothesis, we know that $\psi_1^M \iff \psi_1$ and $\psi_2^M \iff \psi_2$, which together with relativization for formulas in the form of $\psi_1 \et \psi_2$ gives us
+\begin{equation}
+(\psi_1 \et \psi_2)^M \iff \psi_1^M \et \psi_2^M \iff \psi_1 \et \psi_2
+\end{equation}
+
+\
+
+Let's now examine the case when from the induction hypethesis, $M$ reflects $\psi'(p_1, \ldots, p_n, x)$ and we are interested in $\psi = \exists x \psi'(p_1, \ldots, p_n, x)$.
+The induction hypothesis tells us that 
+\begin{equation}
+\varphi'^M(p_1, \ldots, p_n, x) \iff \psi'(p_1, \ldots, p_n, x)
+\end{equation}
+so, together with above lemma \ref{lemma:reflection_lemma}, the following holds:
+\begin{equation}
+\begin{gathered}
+\psi(p_1, \ldots, p_n, x) \\
+\iff \exists x \psi'(p_1, \ldots, p_n, x) \\
+\iff (\exists x \in M) \psi'(p_1, \ldots, p_n, x) \\
+\iff (\exists x \in M) \psi'^M (p_1, \ldots, p_n, x) \\
+\iff (\exists x \psi'(p_1, \ldots, p_n, x))^M \\
+\iff \psi^M(p_1, \ldots, p_n, x)
+\end{gathered}
+\end{equation}
+Which is what we have needed to prove. \ref{equation:levy_theorem_i} holds for all subformulas $\varphi_1, \ldots, \varphi_n$ of a given formula $\varphi$.
+
+\
+
+So far we have proven part $\bold{(i)}$ of this theorem for one formula $\varphi$, we only need to verify that the same holds for any finite number of formulas. This has in fact been already done since lemma \ref{lemma:reflection_lemma} gives us $M$ for any (finite) amount of formulas, we can find a set $M$ for the union of all of their subformulas. We can than use the induction above  to verify that $M$ reflects each of the formulas individually iff it reflects all of its subformulas.
+
+\
+
+Since $V_\alpha$ is a~transitive set, by proving $\bold{(iii)}$ we also satisfy $\bold{(ii)}$. To do so, we only need to look at part $\bold{(ii)}$ of lemma \ref{lemma:reflection_lemma}. All of the above proof also holds for $M = V_\alpha$. 
+
+To finish part $\bold{(iv)}$, we take $M$ of size $\leq |M_0| \cdot \aleph_0$, which exists due to part $\bold{(iii)}$ of lemma \ref{lemma:reflection_lemma}, the rest being identical.
+\end{proof}
+
+\
+
+Let $\sf{S}$ be a set theory defined in \ref{def:s}, for $\sf{ZFC}$ see \ref{def:zfc}.
+
+Let \emph{Infinity} and \emph{Replacement} be as defined in \ref{def:infinity} and \ref{def:replacement} respectively.
+
+\begin{theorem}\label{theorem:levy_equivalence_contemporary}
+\emph{Reflection}\textsubscript{1} is equivalent to \emph{Infinity} $ \et $ \emph{Replacement} under $\sf{S}$.
+\end{theorem}
+% lemma:model_of_s?
+\begin{proof}
+Since \ref{theorem:first_order_reflection} already gives us one side of the implication, we are only interested in showing the converse which we shall do in two parts:
+
+$\bold{\emph{Reflection\textsubscript{1}} \then \emph{Infinity}}$
+From \emph{Reflection\textsubscript{1}}, we know that for any first-order formula $\varphi$ and a set $M_0$, there is a $M$ such that $M_0 \subseteq M$ and $\varphi^M \iff \varphi$. Let's pick \emph{Powerset} for $\varphi$, then by \emph{Reflection\textsubscript{1}} there is a set that satisfies \emph{Powerset}, ergo there is a strong limit cardinal, which in turn satisfies \emph{Infinity}.
+
+\
+
+$\bold{\emph{Reflection} \then \emph{Replacement}}$
+
+Given a~formula $\varphi(x, y, p_1, \ldots, p_n)$, we can suppose that it is reflected in any $M$ \footnote{Which means that for $x, y, p_1, \ldots, p_n \in M$, $\varphi^M(x, y, p_1, \ldots, p_n) \iff \varphi(x, y, p_1, \ldots, p_n)$.}
+What we want to obtain is the following:
+\begin{equation}
+\begin{gathered}
+\forall x, y, z (\varphi(x, y, p_1, \ldots, p_n) \et \varphi(x, z, p_1, \ldots, p_n) \then y = z) \then
+\then \forall X \exists Y \forall y\ (y \in Y \iff \exists x (\varphi(x, y, p_1, \ldots, p_n) \et x \in X ))
+\end{gathered}
+\end{equation}
+
+We do also know that $x, y \in M$, in other words for every $X$, $Y = \{y\ |\ \varphi(x, y, p_1, \ldots, p_n)\}$ and we know that $X \subset M$ and $Y \subset M$, which, together with the specification schema implies that $Y$, the image of $X$ over $\varphi$, is a~set.
+\end{proof}
+
+\
+
+We have shown that $\emph{Reflection}$ for first-order formulas, $\emph{Reflection}_1$ is a~theorem of $\sf{ZF}$, which means that it won't yield us any large cardinals. We have also shown that it can be used instead of the \emph{Infinity} and \emph{Replacement} scheme, but $\sf{ZF}\ +\ \emph{Reflection}_1$ is a~conservative extension of $\sf{ZF}$. Besides being a~starting point for more general and powerful statements, it can be used to show that $\sf{ZF}$ is not finitely axiomatizable. That follows from the fact that $\emph{Reflection}$ gives a~model to any finite number of (consistent) formulas. So if $\varphi_1, \ldots, \varphi_n$ for any finite $n$ would be the axioms of $\sf{ZF}$, $\emph{Reflection}$ would always contain a~model of itself, which would in turn contradict the Second Gödel's Theorem\footnote{See chapter \ref{section:inaccessibility} for further details.}.
+Notice that, in a~way, reflection is complementary to compactness. Compactness argues that given a set of sentences, if every finite subset yields a~model, so does the whole set. Reflection, on the other hand, says that while the whole set has no model in the underlying theory, every finite subset does have one.
+
+Also, notice how reflection can be used in ways similar to upward Löwenheim–Skolem theorem. Since Reflection extends any set $M_0$ into a~model of given formulas $\varphi_1, \ldots, \varphi_n$, we can choose the lower bound of the size of $M$ by appropriately chocing $M_0$.
+
+In the next section, we will try to generalize \emph{Reflection} in a~way that transcends $\sf{ZF}$ and finally yields some large cardinals.
 \newpage
-\input{03_large_cardinals.tex}
+% =============================================================
+\section{Reflection And Large Cardinals}
+
+In this chapter we aim to examine stronger reflection properties in order to reach cardinals unavailable in $\sf{ZFC}$. Like we said in the first chapter, 
+the variety of reflection principles comes from the fact that there are many way to formalize "properties of the universal class". It is not always obvious what properties hold for $V$ because, as Tarski
+has shown, there is no way to formalize satisfaction for proper classes. We have shown that reflecting properties as first-order formulas doesn't allow us to leave $\sf{ZFC}$. We will broaden the class of admissible properties to be reflected and see whether there is a~natural limit in the height or width on the reflected universe and also see that no matter how far we go, the universal class is still as elusive as it is when seen from $\sf{S}$. That is because for every process for obtaining larger sets such as for example the powerset operation in $\sf{ZFC}$, this process can't reach $V$ and thus, from reflection, there is an initial segment of $V$ that can't be reached via said process.
+
+To see why this is important, let's dedicate a few lines to the intuition behind the notions of limitness, regularity and inaccessibility in a manner strongly influenced by \cite{Infinity_in_mind}. To see why limit and strongly limit cardinals are worth mentioning, note that they are "limit" not only in a sense of being a supremum of an ordinal sequence, they also show that a certain way of obtaining larger sets from smaller ones is limited. We will see that all of the alternatives offered in this thesis are in a sense limited. 
+$\aleph_\lambda$ is a limit cardinal if there is no $\alpha$ such that $\aleph_{\alpha+1}=\aleph_\lambda$. Strongly limit cardinals point to the limits of the powerset operation. It has been too obvious so far, so let's look at the regular cardinals in this manner. Regular cardinals are those that cannot be\footnote{Assuming $\emph{Choice}$.}, expressed as a supremum of smaller amount of smaller objects\footnote{Just like $\omega$ can not be expressed as a supremum of a finite set consisting solely of finite numbers.}. More precisely, $\kappa$ is regular if there is no way to define it as a union of less than $\kappa$ ordinals, all smaller than $\kappa$. So unless there already is a set of size $\kappa$, \emph{Replacement} is useless in determining whether $\kappa$ is really a set. Note that assuming \emph{Choice}, successor cardinals are always regular, so most\footnote{All provable to exist in $\sf{ZFC}$} limit cardinals are singular cardinals. So if one is traversing the class of all cardinals upwards, successor steps are still sets thanks to the powerset axiom while singular limit cardinals are not proper classes because they are suprema of images of smaller sets via \emph{Replacement}. Regular cardinals are, in a way, limits of how far can we get by taking limits of increasing sequences of ordinals obtained via $\emph{Replacement}$. 
+
+In order to reach an inaccessible cardinal of size $\kappa$, one has to pass at least $\kappa$ limit ordinals. Them, to get to a Mahlo cardinal of size $\kappa$, one has to move past $\kappa$ inaccessible cardinals. This concept is then iterable for hyper-Mahlo cardinals, as we will see later in this section.
+
+% That all being said, it is easy to see that no cardinals in $\sf{ZFC}$ are both strongly limit and regular because there is no way to ensure they are sets and not proper classes in $\sf{ZFC}$. The only exception to this rule is $\aleph_0$ which needs \emph{Infinity} to exist. % nase otazka je: proc omega a ne jine kardinaly?
+% It should now be obvious why the fact that $\kappa$ is inaccessible implies that $\kappa = aleph_\kappa$.\footnote{This doesn't work backwards, the least fixed point of the $\aleph$ function is the limit of $\{\aleph_0,\ \aleph_{\aleph_0},\ \aleph_{\aleph_{\aleph_0}},\ \ldots \}$, it is singular since the sequence has countably many elements.}
+
+We will first examine the connection between reflection principles and (regular) fixed points of ordinal functions in a manner proposed by Lévy in \cite{Levy60a}. %We will also see that, like Lévy has proposed in the same paper, there is a meaningful way to extend the relation between $\sf{S}$ and $\sf{ZFC}$ into a hierarchy of stronger axiomatic set theories. 
+% Those are the three lines of thinking that we will find are in fact different facets of the same gem, especially in the section devoted to Inaccessible and Mahlo cardinals.
+% viz Shapiro, Stewart. 1987. “Principles of Reflection and Second-order Logic”. Journal of Philosophical Logic 16 (3). Springer: 309–33. http://www.jstor.org/stable/30227043.
+% Reflections on \emph{Replacement} and Reflection: The axioms in a~structuralist setting (Geoffrey Hellman)
+%TODO neco o tom, ze kdyz je reflexe formule, da se sama reflektovat?
+% The above should make a clear picture of why $\emph{Infinity}$ is a specific case of $\emph{Reflection}$.
+%TODO proc je Refl zaroven zobecneny replacement?
+
+% TODO ze "uplne totalni" reflexe se zacykli a rozbije? nebo ne?
+
+\subsection{Regular Fixed-Point Axioms}\label{sec:regular_fixed_points}
+% This small chapter is dedicated to 
+
+Lévy's article mentions various schemata that are not instances of reflection per se. We will mention them because they are equivalent to \emph{Reflection\textsubscript{1}}\footnote{For definition, see \ref{def:reflection_1}}.
+
+% Lévy proposes in \cite{Levy60a} those axioms as equivalent to \emph{Reflection\textsubscript{1}}.
+\begin{definition}{(\emph{Axiom $M$\textsubscript{1}})}\label{def:levy_m}\\
+"Every normal function defined for all ordinals has at least one inaccessible number in its range."
+\end{definition}
+Lévy uses "$M$" to refer to this axiom but since we also use "$M$" for sets and models, for example in \ref{def:reflection_1}, we will call the above axiom "\emph{Axiom $M$\textsubscript{1}}" to avoid confusion.
+
+Now we will express \emph{Axiom $M$\textsubscript{1}} to formula to make it clear that it is an axiom scheme and the same can be done with \emph{Axiom $M'$\textsubscript{1}} as well as \emph{Axiom Schema $M$} introduced immediately afterwards. Since it is an axiom schema and we will later dive into second-order logic, we may also want to refer to \emph{Axiom $M$\textsubscript{2}} as opposed \emph{Axiom $M$\textsubscript{1}}, the former being a single second-order sentence obtained by the obvious modification of \emph{Axiom $M$\textsubscript{1}}.\footnote{Second-order set theory will be introduced in the next subsection.}
+
+Let $\varphi(x, y, p_1, \ldots, p_n)$ be a first-order formula with no free variables besides $x, y, p_1, \ldots, p_n$. The following is equivalent to \emph{Axiom $M$\textsubscript{1}}.
+\begin{equation}
+\begin{gathered}
+\mbox{"$\varphi$ is a normal function"} \et \forall x (x \in Ord \then \exists y(\varphi(x, y, p_1, \ldots, p_n))) \then\\
+\then \exists y (\exists x \varphi(x, y, p_1, \ldots, p_n) \et cf(y) = y \et (\forall x \in \kappa)(\exists y \in \kappa)(x > y))
+\end{gathered}
+\end{equation}\footnote{"$\varphi$ is a normal function" is equivalent to the following first-order formula: }
+
+\begin{definition}{(Axiom $M'$\textsubscript{1})}\\
+Every normal function defined for all ordinals has at least one fixed point which is inaccessible.
+\end{definition}
+
+\begin{definition}{(Axiom $M''$\textsubscript{1})}\\
+"Every normal function defined for all ordinals has arbitrarily great fixed points which are inaccessible."
+\end{definition}
+
+Similar axiom is proposed in \cite{DrakeBook}.
+
+\begin{lemma}{(Fixed-point lemma for normal functions)}\label{lemma:normal_fixed_point}\\
+Let $f$ be a normal function defined for all ordinals. The all of the following hold
+\bce[(i)]
+\item $\forall \lambda(\mbox{"$\lambda$ is a limit ordinal"} \then \mbox{"f($\lambda$) is a limit ordinal"})$
+\item $\forall \alpha (\alpha \leq f(\alpha))$
+\item $\forall \alpha \exists \beta (\alpha < \beta \et f(\beta) = \beta) \mbox{($f$ has arbitrarily large fixed points.)}$
+\item The fixed points of $f$ form a closed unbounded class.\footnote{See \ref{def:closed_class} for the definition of closed class, \ref{def:unbounded_class} for the definition of unboundedness.}
+\ece
+\end{lemma}
+
+\begin{proof}
+Let $f$ be a normal function defined for all ordinals.
+\bce[(i)]
+\item Proof of $\bold{(i)}$:\\
+Suppose $\lambda$ is a limit ordinal. For an arbitrary ordinal $\alpha < \lambda$, the fact that $f$ is strictly increasing means that $f(\alpha) < f(\lambda)$ and for an ordinal $\beta$, $\beta < \alpha$, $f(\alpha) < f(\beta)$. Because $f$ is continuous and $\lambda$ is limit, $f(\lambda) = \bigcup_{\alpha < \lambda} f(\alpha)$ and since $\beta < \lambda$, $f(\beta) < f(\lambda)$. So we have found $f(\beta)$ such that $f(\alpha) < f(\beta) < f(\lambda)$, therefore $f(\lambda)$ is a limit ordinal.\\
+
+\item This step will be proven using the transfinite induction.
+Since $f$ is defined for all ordinals, there is an ordinal $\alpha$ such that $f(\emptyset) = \alpha$ and because $\emptyset$ is the least ordinal, $\bold{(ii)}$ holds for $\emptyset$.
+
+Suppose $\bold{(ii)}$ holds for some $\beta$ form the induction hypothesis. It the holds for $\beta+1$ because $f$ is strictly increasing. 
+
+For a limit ordinal $\lambda$, suppose $\bold{(ii)}$ holds for every $\alpha < \lambda$. $\bold{(i)}$ implies that $f(\lambda)$ is also limit, 
+so there is a strictly increasing $\kappa$-sequence $\langle \alpha_0, \alpha_1, \ldots \rangle$ for some $\kappa$ such that $\lambda = \bigcup_{i<\kappa} \alpha_i$. Because $f$ is stricly increasing, the $\kappa$-sequence $\langle f(\alpha_0), f(\alpha_1), \ldots$ is also strictly increasing, the induction hypothesis implies that $\alpha_i \leq f(\alpha_i)$ for each $i \leq \kappa$. Thus, $\lambda \leq f(\lambda)$.
+
+\item 
+For a given $\alpha$, let there be a $\omega$-sequence $\langle \alpha_0, \alpha_1, \ldots \rangle$, such that $\alpha_0 = \alpha$ and $\alpha_{i+1} = f(\alpha_i)$ for each $i < \omega$.
+This sequence is stricly increasing because so is $f$. Now, there's a limit ordinal $\beta = \bigcup_{i < \omega} \alpha_i$, we want to show that this is the fixed point. So  $f(\beta) = f(\bigcup_{i < \omega} \alpha_i) = \bigcup_{i < \omega} f(\alpha)$ because $f$ is continuous. We have defined the above sequence so that $\beta$, $\bigcup_{i < \omega} f(\alpha) = \bigcup_{i < \omega} \alpha_{i+1}$, which means we are done, since $\bigcup_{i < \omega} \alpha_{i+1} = \bigcup_{i < \omega} \alpha_{i}  = \beta$.
+
+\item The class of fixed points of $f$ is obviously unbounded by $\bold{(iii)}$.
+It remains to show that it is closed.
+Whenever there's a sequence $S = \langle \alpha_1, \alpha_2, \ldots \rangle$ of fixed points of $f$ that has a limit point $\lambda$, since $f(\alpha_i) = \alpha_i$, $S$ is also a sequence of ordinals and it is equivalent to the sequence $S' = \langle f(\alpha_1), f(\alpha_2), \ldots \rangle$. Therefore, $\lambda$ is a also an ordinal\footnote{This follows from \ref{def:limit_point}}, then there is some $\lambda'$ such that $\lambda' = f(\lambda)$. It should be clear that $\lambda'$ is a limit point of $S'$, but since $S = S'$, $\lambda' = f(\lambda) = \lambda$, so the class of fixed points of $f$ is closed.
+
+\ece
+\end{proof}
+
+\begin{theorem}
+\begin{equation}
+\emph{Axiom $M$\textsubscript{1}} \iff \emph{Axiom $M'$\textsubscript{1}} \iff \emph{Axiom $M''$\textsubscript{1}}
+\end{equation}
+\end{theorem}
+
+This is \emph{Theorem 1} in \cite{Levy60a}.
+\begin{proof}
+It is clear that \emph{Axiom $M''$\textsubscript{1}} is a stronger version of \emph{Axiom $M'$\textsubscript{1}}, which is in turn a stronger version of both \emph{Axiom $M$\textsubscript{1}} and \emph{Axiom $F$\textsubscript{1}}, so the implication \emph{Axiom $M''$\textsubscript{1}} $\then$ \emph{Axiom $M'$\textsubscript{1}} $\then$ \emph{Axiom $M$\textsubscript{1}} is satisfied and \emph{Axiom $M'$\textsubscript{1}} $\then$ \emph{Axiom $F$\textsubscript{1}} holds too.
+
+We will now make sure that  \emph{Axiom $M$\textsubscript{1}} $\then$  \emph{Axiom $M''$\textsubscript{1}} also holds. 
+Let $f$ be a normal function defined for all ordinals. % such that there is $\varphi$, $f(x) = y \iff \varphi$ that satisfies \emph{Axiom $M$\textsubscript{1}}.
+Let $g$ be a normal function that counts the fixed points of $f$. Lemma \ref{lemma:normal_fixed_point} implies that there arbitrarily many fixed points of $f$, therefore $g$ is defined for all ordinals. Let there be another family of functions, $h_\alpha(\beta) = g(\alpha+\beta)$, obviously $h_\alpha$ is defined for all ordinals for every $\alpha \in Ord$ because so is $g$. Given an arbitrary ordinal $\gamma$, from \emph{Axiom $M$\textsubscript{1}} we can assume that there is an ordinal $\delta$ such that such that $h_\alpha(\delta) = \kappa$, where $\kappa$ is inaccessible. 
+But since $\kappa = g(\alpha+\delta)$, $\kappa$ is a fixed point of $f$. To show that there are arbitrarily many fixed points of $f$, notice that $\gamma$ is arbitrary and $h_\gamma$ is a normal function, so, by lemma \ref{lemma:normal_fixed_point}, $(\forall \alpha \in Ord)(\alpha \leq f(\alpha)$, therefore $\gamma \leq \gamma + \alpha \leq \kappa$, in other words, there is $\kappa$ above an arbitrary ordinal $\gamma$.
+
+\end{proof}
+
+\begin{definition}{$\sf{ZMC}$}\\
+We will call $\sf{ZMC}$ a set theory that contains all axioms and schemas of $\sf{ZFC}$ together with the schema \emph{Axiom $M$\textsubscript{1}}.
+\end{definition}
+We have decided to call it $\sf{ZMC}$, because Lévy uses $\sf{ZM}$, derived from $\sf{ZF}$, which is more intuitive, but we also need the axiom of choice, thus, $\sf{ZMC}$.
+
+
+The fact, that in $\sf{ZFC}$, the above \emph{Axiom M} is equivalent to \emph{Reflection\textsubscript{1}} as defined in \ref{def:reflection_1} is proven in \cite{Levy60a}[Theorem 3].
+
+\begin{theorem}\label{theorem:levy_m_iff_reflection}
+\begin{equation}
+\sf{ZFC} \models \mbox{\emph{Axiom M}} \iff \mbox{\emph{Reflection\textsubscript{1}}}
+\end{equation}
+\end{theorem}
+
+\subsection{Inaccessibility}\label{section:inaccessibility}
+
+\begin{definition}{(Weak Inaccessibility)}\label{def:weakly_inaccessible}
+An uncountable cardinal $\kappa$ is \emph{weakly inaccessible} iff it is \emph{regular} and \emph{limit}.
+\end{definition}
+\begin{definition}(Inaccessibility)\label{def:inaccessible}
+An uncountable cardinal $\kappa$ is \emph{inaccessible} iff it is \emph{regular} and \emph{strongly limit}.
+\end{definition}
+
+\
+
+We will now show that the above notion is equivalent to the definition Lévy uses in \cite{Levy60a}, which is, in more contemporary notation, the following:
+\begin{theorem}\label{theorem:inaccessible_models_zfc}
+The following are equivalent:
+\bce
+\item $\kappa$ in inaccessible
+\item $\langle V_\kappa, \in \rangle \models \sf{ZFC}$
+\ece
+\end{theorem}
+
+\begin{proof}
+We know that all the axioms except for \emph{replacement} and \emph{infinity} are satisfied in $V_\lambda$ for any limit ordinal $\lambda$ from lemma \ref{lemma:scm_s_is_limit}.
+
+Obviously \emph{infinity} holds in $V_\kappa$, since $\omega < \kappa$, so $V_\omega \in V_\kappa$.
+
+To see how for a given formula $\varphi$, an instance replacement is obtained from an instance of reflection, refer to the appropriate part of theorem \ref{theorem:levy_equivalence_contemporary}.
+
+\
+
+We will now show that if a~set is a~model of $\sf{ZFC}$, it is in fact an inaccessible cardinal. So let $V_\kappa$ be a~model of $\sf{ZFC}$ which means that it is closed under the powerset operation, in other words:
+\begin{equation}
+\forall \lambda (\lambda < \kappa \then 2^{\lambda} < \kappa)
+\end{equation}
+which is exactly the definition of strong limitness. $\kappa$ is regular from the following argument by contradiction:\\
+Let us suppose for a~moment that $\kappa$ is singular. Therefore there is an ordinal $\alpha < \kappa$ and a~function $F:\ \alpha \then \kappa$ such that the range of $F$ in unbounded in $\kappa$, in other words, $F[\alpha] \subseteq V_\kappa$ and $sup(F[\alpha]) = kappa$. In order to achieve the desired contradiction, we need to see that it is the case that $F[\alpha] \in V_\kappa$. Let $\varphi(x, y)$ be the following first-order formula:
+\begin{equation}
+F(x)\ =\ y
+\end{equation}
+Then there is an instance of \emph{Replacement} that states the following:
+\begin{equation}
+\begin{gathered}
+(\forall x, y, z(\varphi(x, y) \et \varphi(x, z) \then y\ =\ z)) \then \\
+\then (\forall x \exists y \forall z (z \in y \iff \exists w (\varphi(w, z))))
+\end{gathered}
+\end{equation}
+Which in turn means that there is a~set $y = F[\alpha]$ and $y \in V_\kappa$, which is the contradiction with $sup(y) = \kappa$ we are looking for.
+\end{proof}
+
+We have transcended $\sf{ZFC}$, but that is just a~start. Naturally, we could go on and consider the next inaccessible cardinal, which is inaccessible with respect to the theory $\sf{ZFC} + \exists \kappa (\kappa \models \sf{ZFC})$. But let's try to find a faster way up, informally at first. 
+
+Since we can find an inaccessible set larger than any chosen set $M_0$, it is clear that there are arbitrarily large inaccessible cardinals in $V$, they are "unbounded"\footnote{The notion is formaly defined for sets, but the meaning should be obvious.} in $V$. If $V$ were a cardinal, we could say that there are $V$ inaccesible cardinals less than $V$, but this statement of course makes no sense in set theory as is because $V$ is not a set. But being more careful, we could find a property that can be formalized in second-order logic and reflect it to an initial segment of $V$. That would allow us to construct large cardinals more efficiently than by adding inaccessibles one by one. The property we are looking for ought to look like something like this (the following statement is not a mathematical  statement in a strict sense):
+\begin{equation}
+\begin{gathered}
+\kappa \mbox{ is an inaccessible cardinal and}\\
+\mbox{there are }\kappa\mbox{ inaccessible cardinals }\mu\ <\ \kappa
+\end{gathered}
+\end{equation}
+This is in fact a fixed-point type of statement. We shall call those cardinals hyper-inaccessible. Now consider the following definition.
+
+\begin{definition}{$0$-inaccessible Cardinal}\\
+A cardinal $\kappa$ is $0$-inaccessible if it is inaccessible.
+\end{definition}
+We can define \emph{$\alpha$-weakly-inaccessible} cardinals analogously with the only difference that those are limit, not strongly limit.
+
+\begin{definition}{$\alpha$-Inaccessible Cardinal}\label{def:alpha_inaccessible}\\
+For any ordinal $\alpha$, $\kappa$ is called $\alpha$-inaccessible, if $\kappa$ is inaccessible and for each $\beta$ < $\alpha$, the set of $\beta$-inaccessible cardinals less than $\kappa$ is unbounded in $\kappa$.
+\end{definition}
+
+Because $\kappa$ is inaccessible and therefore regular, the number of $\beta$-inaccessibles below $\kappa$ is equal to $\kappa$. We have therefore successfully formalized the above vague notion of hyper-inaccessible cardinal into a hierarchy of $\alpha$-inaccessibles.
+
+\
+
+Let's now consider iterating this process over again. Since, informally, $V$ would be $\alpha$-inaccessible for any $\alpha$, this property of the universal class could possibly be reflected to an initial segment, the smallest of those will be the first hyper-inaccessible cardinal. Such $\kappa$ is larger than any $\alpha$-inaccessible since from regularity of $\kappa$, for given $\alpha\ <\ \kappa$, $\kappa$ is $\kappa$-th $\alpha$-hyper-inaccessible cardinal. It is in fact "inaccessible" via $\alpha$-inaccessibility.
+
+\begin{definition}{Hyper-Inaccessible Cardinal}\\
+$\kappa$ is called the hyper-inaccessible, also $0$-hyper-inaccessible, cardinal if it is $\alpha$-inaccessible for every $\alpha\ <\ \kappa$.
+\end{definition}
+
+\begin{definition}{$\alpha$-Hyper-Inaccessible Cardinal}\\
+For any ordinal $\alpha$, $\kappa$ is called $\alpha$-hyper-inaccessible cardinal if for each ordinal $\beta\ <\ \alpha$, the set of $\beta$-hyper-inaccessible cardinals less the $\kappa$ is inbounded in $\kappa$.
+\end{definition}
+
+Obviously we could go on and iterate it ad libitum, yielding $\alpha$-hyper-$\ldots$-hyper-inaccessibles, but the nomenclature would be increasingly confusing. A smarter way to accomplish the same goal is carried out in the following section.
+
+% =====================================================================================================================================
+
+\subsection{Mahlo Cardinals}
+
+While the previous chapter introduced us to a notion of inaccessibility and the possibility of iterating it ad libitum in new theories, there is an even faster way to travel upwards in the cumulative hierarchy, that was proposed by Paul Mahlo in his articles (see \cite{Mahlo11}, \cite{Mahlo12} and \cite{Mahlo13}) at the very beginning of the 20th century, and which can be easily reformulated using reflection.
+
+\begin{theorem}\label{club_intersection} 
+Let $\kappa$ be a regular uncountable cardinal. The intersection of fewer than $\kappa$ club subsets of $\kappa$ is a club set.
+\end{theorem}
+For the proof, see \cite[Theorem 8.3]{JechBook}
+
+\begin{definition}{Weakly Mahlo Cardinal}\label{def:weakly_mahlo}\\
+$\kappa$ is \emph{weakly Mahlo} $\iff$ it is a~weakly-inaccessible ordinal and the set of all regular ordinals less then $\kappa$ is stationary in $\kappa$
+\end{definition}
+
+\begin{definition}{Mahlo Cardinal}\label{def:mahlo_cardinal}\\
+$\kappa$ is a \emph{Mahlo Cardinal} iff it is an inaccessible cardinal and the set of all inaccessible ordinals less then $\kappa$ is stationary in $\kappa$.
+\end{definition}
+% It is interesting to note, that weakly-Mahlo cardinals are fixed points of $\alpha$-weakly inaccessible cardinals, so if $\kappa$ is weakly mahlo,  .. viz Kanamori Proposition 1.1
+
+It should be clear that a cardinal $\kappa$ is Mahlo iff $V_\kappa$ is a models of $\sf{ZFC} + \mbox{\emph{Axiom Schema $M$}}$.
+
+Analogously, 
+\begin{definition}{$\alpha$-Mahlo Cardinal}\label{def:alpha_mahlo_cardinal}\\
+$\kappa$ is a \emph{$\alpha$-Mahlo Cardinal} iff it is an $\alpha$-inaccessible cardinal and the set of all $\alpha$-inaccessible ordinals less then $\kappa$ is stationary in $\kappa$.
+\end{definition}
+
+In other words, $\kappa$ is a (weakly-)Mahlo cardinal if it is (weakly-)inaccessible and every club set in $\kappa$ contains an (weakly-)inaccessible cardinal. Alternatively, a cardinal is (weakly-)Mahlo if it is (weakly-)inaccesible and there are $\kappa$ (weakly-)inaccessibles below $\kappa$.
+% viz http://euclid.colorado.edu/~monkd/m6730/gradsets12.pdf
+%Thus a~Mahlo cardinal $\kappa$ is not only inaccessible, but also has $\kappa$ inaccessibles below it.
+
+%\cite{DrakeBook}
+
+
+
+In a fashion similar to hyper-inaccessible cardinals, one can define hyper-Mahlo cardinals as well as hyper-hyper-Mahlo cardinals and so on.
+
+To se why we need to mention Mahlo Cardinals, notice that while an inaccessible cardinal reflects any first-order formula, a Mahlo cardinal reflects inaccessibility, so it, in a sense, reflects reflection. Hyper-Mahlo cardinals then stand for reflecting reflecting reflection and so on.
+
+Mahlo cardinals are also interesting from a different point of view. If we wanted to reach large cardinal from below via fixed-point argument, we don't get any higher.
+% TODO proc se vys nedostaneme pevnyma bodama?
+%TODO co s nima edla Jech?
+% TODO Drake p.121!!
+
+% TODO $\kappa$ is hyper-Mahlo iff $\kappa$ is inaccessible and the set $\{\lambda < \kappa : \lambda\mbox{ is Mahlo}\}$ is stationary in $\kappa$. to je to samy jako $\alpha$-Mahlo, ne?
+
+% TODO viz https://en.wikipedia.org/wiki/Mahlo_cardinal#Mahlo_cardinals_and_reflection_principles
+
+% Note that Mahlo cardinals were first described in 1911, almost 50 years before Lévy's reflection, which was heavily inspired by them.
+
+% " We also state the appropriate generalization for greatly Mahlo cardinals." % viz http://arxiv.org/abs/math/9204218
+
+%TODO veta na zaver, shrnuti
+
+%sjednotil \then a~\implies
+% =====================================================================================================================================
+% \newpage
+\subsection{Second-Order Reflection}
+Let's try a different approach in formalizing reflection. We have seen that reflecting individual first-order formulas doesn't even transcend $\sf{ZFC}$, we have examined what can be done with axiom schemas. The aim of this chapter is to examine second-order formulas as possible axioms. Note that second-order variables (which will be established as type 2 variables later in the text) are subcollections of the universal class, but so are functions and relations. So first-order axiom schemata can also be interpreted as formulas with free second-order variables, which quantify over first-order variables only, we only need to customize the underlying theory accordingly. For example, the satisfaction relation was so far defined for first-order formulas only, but we will deal with that in a moment. Also note that by rewriting \emph{replacement} and \emph{comprehension} to single axioms, $\sf{ZFC}$ becomes finitely axiomatizable, which in turn means that the reflection theorem as stated in section \ref{sec:first_order} does not hold for higher-order theories because of Gödel's second incompleteness theorem. We will explore stronger axioms of reflection instead.
+
+Let us establish a formal background first. We will now introduce higher-order formulas.
+
+\begin{definition}{(Higher-Order Variables)}\label{def:higher_order_variables}\\
+Let $M$ be a structure and $D$ it's domain. In first-order logic, variables range over individuals, that is, over elements of $D$. We shall call those \emph{type 1 variables} for the purposes of higher-order logic. Type 2 variables then range over collections, that is, the elements of $\power{D}$. Generally, type $n$ variables are defined for any $n \in \omega$ such that they range over $\mathscr{P}^{n-1}(D)$.
+\end{definition}
+We will use lowercase latin letters for type 1 variables for backwards compatibility with first-order logic, type 2 variables will be represented by upper-case letters, mostly $P, X, Y, Z$. If we ever stumble upon type 3 variables in this text, they shall be represented as $\mathscr{X}, \mathscr{Y}, \mathscr{Z}$ or in a similar font.
+
+\begin{definition}{(Full Prenex Normal Form)}\label{def:pnf}\\
+We say a formula is in the \emph{prenex normal form} if it is written as a block of quantifiers followed by a quantifier-free part.\\
+We say a formula is in the \emph{full prenex normal form} if it is written in \emph{prenex normal form} and if there are type $n+1$ quantifiers, they are written before type $n$ quantifiers.
+\end{definition}
+It is an elementary that every formula is equivalent to a formula in the prenex normal form.
+
+
+\begin{definition}{(Hierarchy of Formulas)}\label{def:analytical_hierarchy}\\
+Let $\varphi$ be a formula in the prenex formal form.
+\bce[(i)]
+\item We say $\varphi$ is a $\Delta^0_0$-formula if it contains only bounded quantifiers.
+\item We say $\varphi$ is a $\Sigma^0_0$-formula or a $\Pi^0_0$-formula if it is a $\Delta^0_0$-formula.
+\item We say $\varphi$ is a $\Pi^{m+1}_0$-formula if it is a $\Pi^m_n$- or $\Sigma^m_n$-formula for any $n \in \omega$ or if it is a $\Pi^m_n$- or $\Sigma^m_n$-formula with additional free variables of type $m+1$.
+\item We say $\varphi$ is a $\Sigma^m_0$-formula if it is a $\Pi^m_0$-formula.
+\item We say $\varphi$ is a $\Sigma^m_n+1$-formula if it is of a form $\exists P_1, \ldots, P_i \psi$ for any non-zero $i$, where $\psi$ is a $\Pi^m_n$-formula and $P_1, \ldots, P_i$ are type $m+1$ variables.
+\item We say $\varphi$ is a $\Pi^m_n+1$-formula if it is of a form $\forall P_1, \ldots, P_i \psi$ for any non-zero $i$, where $\psi$ is a $\Sigma^m_n$-formula and $P_1, \ldots, P_i$ are type $m+1$ variables.
+\ece
+\end{definition}
+
+Now that we have introduced higher types of quantifiers, we will use it to formulate reflection. But first, let's make it clear how relativization works for higher-order quantifiers and type 2 parameters. Let $\alpha, \kappa$ be ordinals such that $\alpha < \kappa$, $R \subseteq V_\kappa$.
+\begin{equation}
+R^{V_\alpha} \defeq R \cap V_\alpha
+\end{equation}
+And let $\exists^{m}$ be a quantifier that ranges over type $m$ variables, let $P$ represent a type $m$ variable, let $\varphi$ be a type $m$ formula with the only free variable $P$.
+\begin{equation}
+(\exists P \varphi(P))^{V_\alpha} \defeq (\exists \power^(m-1){V_\alpha})\varphi^{V_\alpha}(P))
+\end{equation}
+
+
+\begin{definition}{(Reflection)}\label{def:reflection_2}\\
+Let $\varphi(R)$ be a $\Pi^n_m$-formula with one free variable of type type 2 denoted $P$. We say $\varphi(R)$ reflects in $V_\kappa$ if for every $R \sub V_\kappa$ there is an ordinal $\alpha<\kappa$ such that the following holds:
+\begin{equation}
+\begin{gathered}
+\mbox{If }(V_\kappa,\in, R)\models \varphi(R),\\
+\mbox{ then }(V_\alpha,\in, R\cap V_\alpha) \models \varphi(R\cap V_\alpha).
+\end{gathered}
+\end{equation}
+\end{definition}
+
+This formalization of the notion of reflection allows us to describe Inaccessible and Mahlo cardinals more easily, which we will do in the following section. 
+
+It is important to see, that while we can now reflect $\Pi^m_n$-formulas for arbitrary $m, n \in \omega$, they can only have type 2 free variables. 
+This formalization of reflection can not be extended to higher-order parameters as is. This will be briefly reviewed in the next paragraph.
+
+In order to extend reflection as a stated above in \ref{def:reflection_2}, we need to make sure that given the domain of the structure, $V_\kappa$, we know what relativization to $V_\alpha$, $\alpha < \kappa$, means.
+Since a type 3 parameters are collections of subcollections of $V_\kappa$ and we can already relativize subcollections of $V_\kappa$, this seems to be a reasonable way to extend relativization to type 3 parameters:
+\begin{equation}
+\mathscr{R}^{V_\alpha} = \{R^{V_\alpha} : R \in \mathscr{R} \}
+\end{equation}
+Where $R^{V_\alpha}$ is type 2 relativization, which is $R \cap V_\alpha$.
+
+For an infinite ordinal $\kappa$, let
+\begin{equation}
+\mathscr{S} \defeq \{\{x \in \kappa : x \in \alpha \}:\alpha < \kappa \}
+\end{equation}
+then consider the following formula $\varphi(\mathscr{R})$ with one type 3 parameter $\mathscr{R}$:
+\begin{equation}
+\varphi(\mathscr{R}) = (\forall R \in \mathscr{R})(\mbox{"$R$ is unbounded in $\kappa$"})
+\end{equation}
+
+Even though $V_\kappa \models \varphi(\mathscr{S})$ holds, there's no $\alpha < \kappa$ for which $V_{\alpha} \models \varphi(\mathscr{S})$.
+
+We will therefore stick to formulas with type 2 parameters. While there are ways to extend reflection for higher orders, it is beyond the scope of this thesis.
+% ========================================================
+\subsection{Indescribality}
+
+Since this section talks about indescribability, this is how an ordinal is described according to Drake \cite[Chapter 9]{DrakeBook}.
+\begin{definition}\
+We say an ordinal $\alpha$ is described by a formula $\varphi(P_1, \ldots, P_n)$ with type 2 parameters $P_1, \ldots, P_n$ given iff
+\begin{equation}
+\langle V_\alpha, \in \rangle \models \langle \varphi(P_1, \ldots, P_n)
+\end{equation}
+but for every $\beta < \alpha$
+\begin{equation}
+\langle V_\beta, \in \rangle \not\models \varphi(P_1 \cap V_\beta, \ldots, P_n \cap V_\beta)
+\end{equation}
+\end{definition}
+
+Drake then notes that the same notion can be established for sentences if the corresponding type 2 parameters are added to the language. Since the this approach is used by Kanamori in \cite{KanamoriBook}, we will stick to that too.\footnote{The first definition is included because the author of this thesis finds it more intuitive.}
+\begin{definition}{(Describability)}\label{def:describability}\\
+We say an ordinal $\alpha$ is described by a sentence $\varphi$ in the language $\mathscr{L}$ with relation symbols $P_1, \ldots, P_n$ given iff
+\begin{equation}
+\langle V_\alpha, \in, P_1, \ldots, P_n \rangle \models \varphi
+\end{equation}
+but for every $\beta < \alpha$
+\begin{equation}
+\langle V_\beta, \in, P_1 \cap V_\beta, \ldots, P_n \cap V_\beta \rangle \not\models \varphi
+\end{equation}
+\end{definition}
+
+\begin{definition}{($\Pi^m_n$-Indescribable Cardinal)}\label{def:pi_mn_indescribable}
+We say that $\kappa$ is $\Pi^m_n$-indescribable iff it is not described by any $\Pi^m_n$-formula.
+\end{definition}
+\begin{definition}{($\Sigma^m_n$-Indescribable Cardinal)}\label{def:sigma_mn_indescribable}
+We say that $\kappa$ is $\Sigma^m_n$-indescribable iff it is not described by any $\Sigma^m_n$-formula.
+\end{definition}
+
+To see that this notion is based in reflection, note that for $\Pi^m_n$-formulas\footnote{This holds for $\Sigma^m_n$-formulas alike.}, a cardinal $\kappa$ is $\Pi^m_n$-indescribable iff every $\Pi^m_n$-formula reflects in $\kappa$ in the sense of definition \ref{def:reflection_2}. Informally, can also view indescribability as a property held by the universe $V$, in the sense that every formula aiming to describe it in fact describes an initial segment, which is similar to a reflection principle, albeit stated informally.\footnote{Formally, we have to be once again careful with "properties of $V$" for the reasons mentioned in the introduction of this thesis. That's why this chapter only reflects sentences to models with additional relations.}
+
+\
+
+Since we are interested accessing cardinals from below via fixed points of normal functions, we will limit ourselves to $\Pi^1_n$-formulas, with the exception of measurable cardinal, that is included for context.
+
+\
+
+\begin{lemma}
+Let $\kappa$ be a cardinal, the following holds for any $n \in \omega$. $\kappa$ is $\Pi^1_n$-indescribable iff $\kappa$ is $\Sigma^1_n+1$-indescribable
+\end{lemma}
+
+\begin{proof}
+The forward direction is obvious, we can always add a spare quantifier over a type 2 variable to turn a $\Pi^1_n$ formula $\varphi$ into a $\exists P \varphi$ which is obviously a $\Sigma^1_n+1$ formula.\footnote{Note that unlike in previous sections, it is worth noting that $\varphi$ is now a sentence so we don't have to worry whether $P$ is free in $\varphi$.}
+
+To prove the opposite direction, suppose that $V_\kappa \models \exists X \varphi(X)$ where $X$ is a type 2 variable and $\varphi$ is a $\Pi^1_n$ formula with one free variable of type 2. This means that there is a set $S \subseteq V_\kappa$ that is a witness of $\exists X \varphi(X)$, in other words, $\varphi(S)$ holds. We can replace every occurence of $X$ in $\varphi$ by a new predicate symbol $S$, this allows us to say that $\kappa$ is $\Pi^1_n$-indescribable (with respect to $\langle V_\kappa, \in, R, S \rangle$).
+\footnote{A different yet interesting approach is taken by Tate in \cite{Tait_constructingcardinals}. He states that for $n\geq 0$, a formula of order $\leq n$ is called a $\Pi^n_0$ and a $\Sigma^n_0$ formula. Then a $\Pi^n_{m+1}$ is a formula of form $\forall Y \psi(Y)$ where $\psi$ is a $\Sigma^n_m$ formula and $Y$ is a variable of type $n$. Finally, a $\Sigma^n_{m+1}$ is the negation of a $\Pi^n_m$ formula. So the above holds ad definitio.}
+\end{proof}
+
+The above lemma makes it clear that we can suppose that all formulas with no higher than type 2 variables are $\Pi^1_n$-formulas, $n \in \omega$, without the loss of generality.
+
+\begin{lemma}\label{lemma:inaccessible_clubset}\
+If $\kappa$ is an inaccessible cardinal and given $R \subseteq V_\kappa$, then the following is a club set in $\kappa$:
+\begin{equation}
+\{\alpha : \alpha < \kappa \et \langle V_\alpha, \in, R \cap V_\alpha \rangle \prec \langle V_\kappa, \in, R \rangle \}\label{eq:inacc_lemma_set}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+To see that \ref{eq:inacc_lemma_set} is closed, let us recall that a $A \subseteq \kappa$ is closed iff for every ordinal $\alpha < \lambda$, $\alpha \neq \emptyset$: if $A \cap \alpha$ is unbounded in $\alpha$ then $\alpha \in A$. Since $\kappa$ is an inaccessible cardinal, thus strong limit, it is closed under limits of sequences of ordinals lesser than $\kappa$.  
+
+%TODO neco s $V_\kappa$, ze je tranzitivni a tak jso vsechny $V_\alpha$ pro $\alpha<\kappa$ $V_\alpha \in V_\kappa$
+
+We want to verify that it is unbounded, we will use a recursively defined sequence $\alpha_0, \alpha_1, \ldots$
+to build an elementary substructure of $\langle V_\kappa, \in, R \rangle$ that is built above an arbitrary $\alpha_0 <\kappa$ .
+Let us fix an arbitrary $\alpha_0 < \kappa$. Given $\alpha_n$, $\alpha_n+1$ is defined as the least $\beta$, $\alpha_n \leq \beta$ that satisfies 
+the following for any formula $\varphi$, $p_1, \ldots, p_m \in V_{\alpha_{n}}, m \in \omega$:
+\begin{equation}
+\begin{gathered}
+\mbox{If }\langle V_\kappa, \in, R \rangle \models \exists x \varphi(p_1, \ldots, p_n)\mbox{,}\
+\mbox{then }\langle V_\kappa, \in, R \rangle \models \varphi(x, p_1, \ldots, p_n)
+\end{gathered}
+\end{equation}
+
+Let $\alpha = \bigcup_{n < \omega} \alpha_n$. 
+
+Then $\langle V_\alpha, \in, R \cap V_\alpha \rangle \prec \langle V_\kappa, \in, R \rangle$, in other words, for any $\varphi$ with given arbitrary parameters $p_1, \ldots, p_n \in V_\alpha$, it holds that
+\begin{equation}
+\langle V_\alpha, \in, R \cap V_\alpha \rangle \models \varphi(p_1, \ldots, p_n) \iff \langle V_\kappa, \in, R \rangle \models \varphi(p_1, \ldots, p_n)
+\end{equation}
+Which should be clear from the construction of $\alpha$
+\end{proof}
+
+\begin{theorem}
+Let $\kappa$ be an ordinal. The following are equivalent.
+\bce[(i)]
+\item $\kappa$ is inaccessible
+\item $\kappa$ is $\Pi^1_0$-indescribable.
+\ece
+\end{theorem}
+
+%Note that $\Pi^1_0$ formulas are those that contain zero unbound quantifiers over type-2 variables, they are in fact first-order formulas, only with additional free type 2 variables allowed. For an example of a formula with type 1 quantifiers and a type 2 free variable, the axiom schemas used in previous parts, e.g. \emph{Replacement\textsubscript{1}}.
+
+
+\begin{proof}
+Since $\Pi^1_0$-sentences are first-order sentences, we want to prove that $\kappa$ is an inaccessible cardinal iff whenever a first-order tries to describe $\kappa$ in the sense of definition \ref{def:describability}, the formula fails to do so and describes a initial segment thereof instead.
+We have already shown in \ref{theorem:inaccessible_models_zfc} that there is no way to reach an inaccesible cardinal via first-order formulas in $\sf{ZFC}$. We will now prove it again in for formal clarity.
+
+For $\bold{(i) \then (ii)}$, suppose that $\kappa$ is inaccessible.
+
+Then there is, by lemma \ref{lemma:inaccessible_clubset} a club set of ordinals $\alpha$ such that $V_\alpha$ is an elementary substructures of $V_\kappa$. For $\kappa$ to be $\Pi^1_0$inderscribable, we need to make sure that given an arbitrary first-order sentence $\varphi$ satisfied in the structure $\langle V_\kappa, \in, R \rangle$, there is an ordinal $\alpha < \kappa$, such that $\langle V_\alpha, \in, R \cap V_\alpha \rangle \models \varphi$. But this follows from the definition of elementary substructure.
+
+For $\bold{(ii) \then (i)}$, suppose $\kappa$ is not inaccessible, so it is either singular, or there is a cardinal $\nu < \kappa$ such that $\kappa \leq \power{\nu}$ or $\kappa=\omega$. 
+
+
+%For the successor case, there is some $\nu$ so that $\nu+1=\kappa$. 
+%Let's take $R = \{\nu\}$ and $\varphi = \exists x \psi(x)$ such that
+%\begin{eqaution}
+Suppose $\kappa$ is singular. Then there is a cardinal $\nu < \kappa$ and a function $f: \nu \then \kappa$ such that $rng(f)$ is cofinal in $\kappa$. Since $f \subseteq V_\kappa$, we can add $f$ as a relation to the language. We can do the same with $\{\nu\}$. That means $\langle V_\kappa, \in, P_1, P_1$ with $P_1 = f, P_2 = \{\nu\}$ is a structure, 
+let $\varphi = P_1 \neq \emptyset \et rng(P_1) = P_2$\footnote{$rng(x)=y$ is a first-order formula, see \ref{def:rng}.}. Since for every $\alpha < \nu$, $P_1 \cap V_\alpha = \emptyset$, $\varphi$ is false and therefore describes $\kappa$. That contradicts the fact that $\kappa$ was supposed to be $\Pi^1_0$-indescribable, but $\varphi$ is a first-order formula.
+
+Suppose there a cardinal $\nu$ satisfying $\kappa \leq \power{\nu}$. Let there be a function $f: \power{\nu} \then \kappa$ that is onto. Then, like in the previous paragraph, we can obtain a structure $\langle V_\kappa, \in, P_1, P_2 \rangle$, where $P_1 = f$ like before, but this time $P_2 = \power{\nu}$. Again, $\varphi = P_1 \neq \emptyset \et rng(P_1) = P_2$ describes $\kappa$.
+
+Finally, suppose $\kappa = \omega$, then the sentence $\varphi = \forall x \exists y (x \in y)$ describes $\kappa$, there is obviously no $\alpha < \omega$ such that $\langle V_\alpha, \in \rangle \models \varphi$.
+
+\end{proof}
+
+Generally, it should be clear that it a cardinal $\kappa$ is $\Pi^m_n$-indescribable, it is also $\Pi^{m'}_{n'}$-indescribable for every $m'<m, n'<n$. By the same line of thought, if a cardinal $\kappa$ satisfies property implied by $\Pi^m_n$-indescribability, it satisfies all properties implied by $\Pi^{m'}_{n'}$-indescribability for $m'<m, n'<n$, for example $\kappa$ is $\Pi^m_n$-indescribable for $m \geq 1, n \geq 0$, it is also an inaccessible cardinal.
+
+% TODO pozorovani ze kdyz je $\kappa$ $\Pi$
+
+\begin{theorem}\
+If a cardinal $\kappa$ is $\Pi^1_1$-indescribable, then it is a Mahlo cardinal.
+\end{theorem}
+
+% todo kappa a ne v-kappa?
+\begin{proof}
+Assuming that $\kappa$ is $\Pi^1_1$-indescribable, we want to prove that every club set in $\kappa$ contains an inaccessible cardinal. 
+
+Consider the following $\Pi^1_1$-sentence:
+\begin{equation}
+\begin{gathered}\label{eq:inac}
+\forall P (\mbox{"$P$ is a function"} \et \exists x(x = dom(P) \lor \power{x} = dom(P)) \then\
+\then \exists y(y = rng(P)))
+\end{gathered}
+\end{equation}
+where $P$ is a type 2 variable and $x, y$ are type 1 variables, $rng(P)$ is defined in \ref{def:rng}, $dom(P)$ in \ref{def:dom} and "$P$ is a function" is a first-order formula defined in \ref{def:function}.
+We will call this sentence \emph{Inac}, as in "inaccessible", because, given a cardinal $\mu$, the following holds if and only if $\mu$ is inaccessible:
+\begin{equation}
+\langle V_\mu, \in \rangle \models Inac
+\end{equation}
+
+So let's fix an arbitrary $C \subset \kappa$, club set in $\kappa$. We want to show that it contains an inaccessible cardinal. Since $C$ is a subset of $V_\kappa$, let's add it to the structure $\langle V_\kappa, \in \rangle$, turning it into $\langle V_\kappa, \in, C \rangle$. Then the following holds:
+\begin{equation}
+\langle V_\kappa, \in, C \rangle \models Inac \et \mbox{"$C$ in unbounded"}
+\end{equation}
+Note that this is correct, because, as we have noted just before introducing the statement now being proven, if $\kappa$ is $\Pi^1_1$-indescribable, it is also $\Pi^1_0$-indescribable. So $\kappa$ is itself inaccessible and therefore $\langle V_\kappa, \in, C \rangle \models Inac$. $C$ is obviously picked so that it is unbounded in $\kappa$\footnote{"$C$ in unbounded" is a first-order formula defined in \ref{def:unbounded_class}}.
+
+Now because we have assumed that $\kappa$ is $\Pi^1_1$-indescribable and $Inac$ is a $\Pi^1_1$-formula, so $Inac \et \mbox{"$C$ in unbounded"}$ is equivalent to a $\Pi^1_1$-formula, there must be an ordinal $\alpha$ that satisfies
+\begin{equation}
+\langle V_\alpha, \in, C \cap V_\alpha \rangle \models Inac \et \mbox{"$C$ in unbounded"}
+\end{equation}
+which implies that $\alpha$ is inaccessible. 
+
+To be finished, we need to verify that $\alpha \in C$. Since $\kappa = V_\kappa$ for inaccessible $\kappa$\footnote{TODO link -------- ?}, $C \cap V_\alpha = C \cap \alpha$, from unboundedness of $C \cap \alpha$ in $\alpha$, $\bigcup(C \cap \alpha) = \alpha$, which, together with the fact that $C$ is a club set in $\kappa$ and therefore closed in $\kappa$, yields that $\alpha \in C$.
+\end{proof}
+
+For a proof, see \cite{KanamoriBook}[Theorem 6.4]
+
+\begin{definition}{(Totally Indescribable Cardinal)}\label{def:totally_indescribable_cardinal}\\
+We say a cardinal $\kappa$ is a \emph{totally indescribable cardinal} iff it is $\Pi^m_n$-indescribable for every $m, n < \omega$.
+\end{definition}
+
+\subsection{Measurable Cardinal}
+
+\begin{definition}{(Ultrafilter)}\\
+Given a set $x$, we say $U \subset \power{x}$ is an \emph{ultrafilter} over $x$ iff all of the following hold:
+\bce[(i)]
+\item $\emptyset \not\in U$
+\item $\forall y, z (\subset x \et y \subset z \et y \in U \then z \in U)$
+\item $\forall y, z \in U (y \cap z) \in U$
+\item $\forall y (y \subset x \then (y \in U \lor (x \setminus y) \in U))$
+\ece
+\end{definition}
+
+\begin{definition}{($\kappa$-Complete Ultrafilter)}\\
+We say that an ultrafilter $U$ is $\kappa$-complete iff
+\end{definition}
+
+\begin{definition}{(Measurable Cardinal)}\\
+Let $\kappa$ be a caridnal. We say $\kappa$ is a \emph{measurable cardinal} iff there is a $\kappa$-complete ultrafilter over $\kappa$.
+\end{definition}
+
+\begin{theorem}
+Let $\kappa$ be a cardinal. If $\kappa$ is a measurable cardinal then the following hold:
+\bce[(i)]
+\item $\kappa$ is $\Pi^2_1$-indescribable.
+\item Given $U$, a normal ultrafilter over $\kappa$, a relation $R \subseteq V_\kappa$ and a $\Pi^2_1$-formula $\varphi$ such that $\langle V_\kappa, \in, R \rangle \models \varphi$, then
+\begin{equation}
+\{ \alpha < \kappa : \langle V_\alpha, \in, R \cap V_\alpha \rangle \models \varphi \} \in U
+\end{equation}
+\ece
+\end{theorem}
+For a proof, see \cite{KanamoriBook}[Proposition 6.5]
+
+\begin{theorem}
+If $\kappa$ is a measurable cardinal and $U$ is a normal ultrafilter over $\kappa$, the following holds:
+\begin{equation}
+\{ \alpha < \kappa: \mbox{"$\alpha$ is totally indescribable"}\} \in U
+\end{equation}
+\end{theorem}
+For a proof, see \cite{KanamoriBook}[Proposition 6.6].
+
+This is interesting because if shows, that while we have a hierarchy of sets and a hierarchy of formulas, their relation is more complex than it might seem on the first sight. 
+TODO trochu rozepsat.
+
+%\newpage
+% =====================================================================================================================================
+
+\subsection{The Constructible Universe}
+
+The constructible universe, denoted $L$, is a cumulative hierarchy of sets, presented by Kurt Gödel in his 1938 paper \emph{The Consistency of the Axiom of Choice and of the Generalised Continuum Hypothesis}. For a technical description, see below. Assertion of their equality, $V=L$, is called the \emph{axiom of constructibility}. The axiom implies GCH and therefore also AC and contradicts the existence of some of the large cardinals, our goal is to decide whether those introduced earlier are among them.
+
+On order to formally establish this class, we need to formalize the notion of definability first. 
+\begin{definition}{(Definability)}\label{def:definability}\\
+We say that a set $X$ is \emph{definable} over a model $\langle M, \in \rangle$ if there is a first-order formula $\varphi$ together with parameters $p_1, \ldots, p_n \in M$ such that
+\begin{equation}
+X = \{x: x \in M \et \langle M, \in \rangle \models \varphi(x, p_1, \ldots, p_n)\}
+\end{equation}
+\end{definition}
+
+\begin{definition}{(The Set of Definable Subsets)}\label{def:definable_powerset}\\
+The following is a set of all definable subsets of a given set $M$, denoted Def($M$).
+\begin{equation}
+\begin{gathered}
+Def(M) = \{\{y : x \in M \land \langle M, \in \rangle \models \varphi(y, u_1, \ldots, i_n) \} |\\
+\mbox{ $\varphi$ is a~first-order formula, }p_1, \ldots, p_n \in M \}
+\end{gathered}
+\end{equation}
+\end{definition}
+
+We will use $Def(M)$ in the following construction in the way the powerset operation is used when constructing the usual Von Neumann's hierarchy of sets\footnote{For that reason, some authors use $\power^{\*}{M}$ instead of $Def(M)$, see section 11 of \cite{PinterBook} for one such example.}.
+
+Now we can recursively build $L$.
+\begin{definition}{(The Constructible Universe)}\label{def:constructible_universe}\\
+\bce[(i)]
+\item
+\begin{equation}
+L_0 \defeq  \emptyset
+\end{equation}
+
+\item
+\begin{equation}
+L_{\alpha+1} \defeq  Def(L_{\alpha})
+\end{equation}
+\item
+\begin{equation}
+L_{\lambda} = \bigcup_{\alpha < \lambda} L_{\alpha}\mbox{ If }\lambda\mbox{ is a~limit ordinal }
+\end{equation}
+\item
+\begin{equation}\label{eq:def_l}
+L = \bigcup_{\alpha\in Ord} L_{\alpha}
+\end{equation}
+\ece
+\end{definition}
+
+Note that while $L$ bears very close resemblance to $V$, the difference is, that in every successor step of constructing $V$, we take every subset of $V_\alpha$ to be $V_{\alpha+1}$, whereas $L_{\alpha+1}$ consists only of definable subsets of $L_\alpha$. Also note that $L$ is transitive.
+
+In order to 
+
+\begin{theorem}
+Let $L$ be as in \ref{def:constructible_universe}.
+\begin{equation}
+L \models \sf{ZFC}
+\end{equation}
+\end{theorem}
+For details, refer to Jech: \cite{JechBook}[Theorem 13.3].
+
+\begin{definition}{(Constructibility)}\\
+The axiom of constructibility say that every set is constructible. It is usually denoted as $L = V$.
+\end{definition}
+
+Without providing a proof, we will introduce two important results established by Gödel in TODO citace!
+
+\begin{theorem}{(Constructibility $\then$ Choice)}
+\begin{equation}
+\sf{ZF} \models \mbox{\emph{Constructibility}} \then \mbox{\emph{Choice}} 
+\end{equation}
+\end{theorem}
+
+The $GCH$ refers to the \emph{Generalised Continuum Hypothesis}, see \ref{def:gch}.
+\begin{theorem}{(Constructibility $\then$ Generalised Continuum Hypothesis)}\label{theorem:l_then_gch}
+\begin{equation}
+\sf{ZF} \models \mbox{\emph{Constructibility}} \then \mbox{\emph{GCH}} 
+\end{equation}
+\end{theorem}
+It is worth mentioning that Gödel's proof of \emph{Construcibility} $\then$ \emph{GCH} featured the first formal use of a reflection principle. 
+For the actual proofs, see for example \cite{Kunen_independence},
+
+Since \emph{GCH} implies that $\kappa$ is a limit cardinal iff $\kappa$ is a strong limit cardinal for every $\kappa$, the distinctions between inaccessible and weakly inaccessible cardinals as well as between Mahlo and weakly Mahlo cardinals vanish.
+
+% -------------------
+
+\begin{theorem}{(Inaccessibility in $L$)}\label{theorem:inaccessible_in_l}\\
+Let $\kappa$ be an inaccessible cardinal. Then $\mbox{"$\kappa$ is inaccessible"}^L$.
+\end{theorem}
+\begin{proof}
+We want to show that the following are all true for an inaccessible cardinal $\kappa$:
+\bce[(i)] 
+\item $\mbox{"$\kappa$ is a cardinal"}^L$
+\item $(\omega < \kappa)^L$
+\item $\mbox{"$\kappa$ is regular"}^L$
+\item $\mbox{"$\kappa$ is limit"}^L$ .\footnote{While inaccessible cardinals are strong limit cardinals, since \emph{GCH} holds in $L$, $\mbox{"$\kappa$ is limit"}^L$ 
+implies $\mbox{"$\kappa$ is strong limit"}^L$.}
+\ece
+
+Suppose $\mbox{"$\kappa$ is not a cardinal"}^L$ holds, then there is a cardinal $\mu$, $\mu < \kappa$ and a function $f:\mu\then\kappa$, $f \in L$, such that $\mbox{"$f:\mu\then\kappa$ is onto"}^L$. But since "$f$ is onto" is a $\Delta_0$ formula and $\Delta_0$ formulas are are absolute in transitive structures\footnote{see lemma \ref{lemma:delta_0_absoluteness}} and $L$ is a transitive class, $\mbox{"$f$ is onto"}^M \iff \mbox{"$f$ is onto"}$, this contradicts the fact that $\kappa$ is a cardinal.
+
+$(\omega < \kappa)^L$ holds because $\omega \in \kappa$ and because ordinals remain ordinals in $L$, so $(\omega \in \kappa)^L$.
+
+In order to see that $\mbox{"$\kappa$ is regular"}^L$, we can repeat the argument by contradiction used to show that $\kappa$ is a cardinal in $L$. If $\kappa$ was singular, there is a $\mu < \kappa$ together with a function $f: \mu \then \kappa$ that is onto, but since "$f$ is onto" implies $\mbox{"$f$ is onto"}^L$, we have reached a contradiction with the fact that $\kappa$ is regular, but singular in $L$.
+
+It now suffices to show that $\mbox{"$\kappa$ is a limit cardinal"}^L$. That means, that for any given $\lambda<\kappa$, we need to find an ordinal $\mu$ such that $\lambda < \mu < \kappa$ that is also a cardinal in $L$. But since cardinals remain cardinals in $L$ by an argument with surjective functions just like above, we are done.
+
+\end{proof}
+
+\begin{theorem}{(Mahloness in $L$)}\label{theorem:mahlo_in_l}\\
+Let $\kappa$ be a Mahlo cardinal. Then $\mbox{"$\kappa$ is Mahlo"}^L$.
+\end{theorem}
+% http://math.stackexchange.com/questions/1791631/reference-mahlo-cardinals-remain-mahlo-in-l/1792486#1792486
+% TODO citace webu?
+
+\begin{proof}
+Let $\kappa$ be a Mahlo cardinal. From the definition of Mahloness in \ref{def:mahlo_cardinal}, it should be clear that we want prove that $\kappa$ is inaccessible in $L$ and 
+\begin{equation}
+\mbox{" the set }\{\alpha : \alpha \in \kappa \et \mbox{'$\alpha$ is inaccessible'}\}\mbox{ is stationary in $\kappa$"}^L
+\end{equation}
+
+Since we have shown that an inaccessible cardinals remain inaccessible in $L$ in the previous theorem, $L\mbox{"$\kappa$ is inaccessible"}^L$ holds.
+
+Now consider the two following sets:
+\bce[(i)]
+\item \begin{equation}
+S \defeq \{\alpha : \alpha \in \kappa \et \mbox{"$\alpha$ is inaccessible"}\}
+\end{equation}
+\item \begin{equation}
+T \defeq \{\alpha : \alpha \in \kappa \et \mbox{"$\alpha$ is inaccessible"}^L\}
+\end{equation} 
+\ece 
+Since inaccessible cardinals are inaccessible in $L$ from theorem \ref{theorem:inaccessible_in_l}, $S \subseteq T$.
+So if $T$ is stationary in $\kappa$, we are done. Suppose for contradiction that it is not the case. 
+Therefore there is a $C \subset \kappa$ satisfying $\mbox{"$C$ is a club set in $\kappa$"}^L$, but it is the case that $T \cap C = \emptyset$.
+But because $\mbox{"$C$ is a club set in $\kappa$"}$ is equivalent to a $\Delta_0$ formula, $\mbox{"$C$ is a club set in $\kappa$"}^M \iff \mbox{"$C$ is a club set in $\kappa$"}$, ergo $C$ is a club set in $\kappa$. But since it has o intersection with $T$, it can't have an intersection with a subset thereof, which contradicts the fact that $S$ is stationary in $\kappa$.
+
+$\kappa$ remains Mahlo in $L$.
+\end{proof}
+
+% uvaha o powersetu v L?
+
+It should be clear that the above process can be iterated over again. Since Mahlo cardinals are absolute in $L$, the same argument using stationary sets can be carried out for hyper-Mahlo cardinals and so on. It is clear that since a regular and an inaccessible cardinal in consistent with \emph{Constructibility}, so should be the higher properties acquired from assuring the existence of regular, inaccessible and Mahlo fixed points of normal functions.
+
+\
+
+Let's discuss the relation of $L$ and large cardinals on a more general level. One might ask: "Why should they interfere with each other?". This is an interesting question. It is easy to see, that the recursive definition of $L$ is very similar to the hierarchy $V$, the only difference being, that on successor steps, $V_{\alpha+1}$ includes every subset of $V_\alpha$, while $L_{\alpha+1}$ includes the definable subsets of $L_\alpha$. Therefore, each level of $L$, $L_\alpha$ is at most as large as $V_\alpha$. We can therefore say that $V = L$ is a statement about the width of the universe. Large cardinal axioms, on the other hand, talk about the height of the universe, the take the existing hierarchy $V$ and add steps that wouldn't have been possible without them, because all means of travelling upwards (that is \emph{Union}, \emph{Powerset}, and \emph{Replacement} when speaking of $\sf{ZFC}$) are already exhausted. 
+
+From a naive point of view, those two should be separate parameters of the universe. It turns out, due to a result by Dana Scott\footnote{Measurable cardinals and constructible sets % TOD CITE!!!
+}, that there are large cardinals that, if taken into consideration, conclude that the width of the universe containing them is bigger than $L$ can offer.
+
+\
+
+To see whether reflection per se implies transcendence over $L$, we need to return to the question stated at the very beginning. What is a "property"? From a structuralist point of view and considering tools for extending structures presented in this thesis, we can conclude that it's not the case. However, we have by no means exhausted possible formalizations of the reflection principles. There are ways to reflect higher-order formulas with higher-order parameters\footnote{See \cite{Welch12globalreflection}, for example.}. We can also leave the structuralist mindset and try to find % kdo rikal ze Omega je meritelna
+a way to justify the fact, that the universal class is measurable, then, also by a reflection, there would a measurable initial segment of $V$, contradicting \emph{Constructibility}.
+
+
+% =============================================================
 \newpage
 \section{Conclusion}
 After establishing an intuitive concept of reflection, we have reviewed Lévy's original proof of the equivalence of Replacement Schema and the Axiom of Infinity with his first-order reflection principle, we have then reformulated and proved the same result in contemporary terms. We have also shown that the same results can be obtained via axiom schemas stating the existence of regular fixed points on normal ordinal functions. After examining the concept of regular fixed points and seeing how it relates to stationary sets and Mahlo cardinals, we have introduced to notion of indescribable cardinal to see that Inaccessible, Mahlo and even Hyper-inaccessible cardinals are still significantly smaller than measurable cardinals, therefore concluding that this application of the reflection principle does not lead to transcendence over $L$.

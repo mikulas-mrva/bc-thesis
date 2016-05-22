@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.12.2)  22 MAY 2016 21:12
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.12.2)  22 MAY 2016 21:59
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -24,7 +24,6 @@ File: size12.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
 )
-(./00_headers.tex
 (/usr/local/texlive/2015/texmf-dist/tex/latex/jknapltx/mathrsfs.sty
 Package: mathrsfs 1996/01/01 Math RSFS package v1.0 (jk)
 \symrsfs=\mathgroup4
@@ -229,32 +228,23 @@ File: csquotes.cfg
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... none found.
 
-(./bakalarka.aux
-
-LaTeX Warning: Label `def:limit_ordinal' multiply defined.
-
-
-LaTeX Warning: Label `def:limit_ordinal' multiply defined.
-
-
-LaTeX Warning: Label `sec:first_order' multiply defined.
-
-)
+(./bakalarka.aux)
 \openout1 = `bakalarka.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 121.
-LaTeX Font Info:    ... okay on input line 121.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 121.
-LaTeX Font Info:    ... okay on input line 121.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 121.
-LaTeX Font Info:    ... okay on input line 121.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 121.
-LaTeX Font Info:    ... okay on input line 121.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 121.
-LaTeX Font Info:    ... okay on input line 121.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 121.
-LaTeX Font Info:    ... okay on input line 121.
- (/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 123.
+LaTeX Font Info:    ... okay on input line 123.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 123.
+LaTeX Font Info:    ... okay on input line 123.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 123.
+LaTeX Font Info:    ... okay on input line 123.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 123.
+LaTeX Font Info:    ... okay on input line 123.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 123.
+LaTeX Font Info:    ... okay on input line 123.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 123.
+LaTeX Font Info:    ... okay on input line 123.
+
+(/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count121
 \scratchdimen=\dimen118
@@ -301,33 +291,29 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
  [3
 
-])
-(./01a_introduction.tex
+]
 (/usr/local/texlive/2015/texmf-dist/tex/latex/ucs/data/uni-32.def
 File: uni-32.def 2013/05/13 UCS: Unicode data U+2000..U+20FF
 ) [4
 
-] [5])
-(./01b_definice.tex [6] [7] [8] [9] [10] [11] [12]
-Underfull \hbox (badness 10000) in paragraph at lines 275--276
+] [5]
+[6] [7] [8] [9] [10] [11] [12]
+Underfull \hbox (badness 10000) in paragraph at lines 483--484
 
  []
 
-
-LaTeX Warning: Reference `def:omega' on page 13 undefined on input line 292.
-
 [13]
-Underfull \hbox (badness 10000) in paragraph at lines 333--334
+Underfull \hbox (badness 10000) in paragraph at lines 541--542
 
  []
 
 [14]
-Underfull \hbox (badness 10000) in paragraph at lines 367--369
+Underfull \hbox (badness 10000) in paragraph at lines 575--577
 
  []
 
 [15]
-Overfull \hbox (31.75519pt too wide) in paragraph at lines 403--405
+Overfull \hbox (31.75519pt too wide) in paragraph at lines 611--613
 \OT1/cmr/m/n/12 that $\OML/cmm/m/it/12 ' \OT1/cmr/m/n/12 = \OMS/cmsy/m/n/12 8\O
 ML/cmm/m/it/12 x \OT1/cmr/m/n/12 (\OML/cmm/m/it/12 p[]; [] ; p[]; x\OT1/cmr/m/n
 /12 )$. From rel-a-tiviza-tion and lemma 1.42[], $\OML/cmm/m/it/12 '[]\OT1/cmr/
@@ -335,148 +321,98 @@ m/n/12 (\OML/cmm/m/it/12 p[]; [] ; p[]\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 $
  []
 
 
-Overfull \hbox (31.75519pt too wide) in paragraph at lines 417--419
+Overfull \hbox (31.75519pt too wide) in paragraph at lines 625--627
 \OT1/cmr/m/n/12 that $\OML/cmm/m/it/12 ' \OT1/cmr/m/n/12 = \OMS/cmsy/m/n/12 9\O
 ML/cmm/m/it/12 x \OT1/cmr/m/n/12 (\OML/cmm/m/it/12 p[]; [] ; p[]; x\OT1/cmr/m/n
 /12 )$. From rel-a-tiviza-tion and lemma 1.42[], $\OML/cmm/m/it/12 '[]\OT1/cmr/
 m/n/12 (\OML/cmm/m/it/12 p[]; [] ; p[]\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 $
  []
 
-[16] [17]) [18] (./02_levy.tex [19] [20] [21]
+[16] [17] [18] [19] [20] [21]
 
 Package amsfonts Warning: Obsolete command \bold; \mathbf should be used instea
-d on input line 159.
+d on input line 868.
 
 [22]
-Overfull \hbox (0.97511pt too wide) in paragraph at lines 170--171
+Overfull \hbox (0.97511pt too wide) in paragraph at lines 879--880
 \OT1/cmr/m/n/12 tioned ar-ti-cle by L^^Sevy, we will in-tro-duce other in-ter-e
 st-ing propo-si-tions, mostly
  []
 
-
-LaTeX Warning: Reference `def:n' on page 23 undefined on input line 183.
-
-
-LaTeX Warning: Reference `def:n_0' on page 23 undefined on input line 183.
-
-[23] [24] [25]
-
-LaTeX Warning: Reference `def:relativisation' on page 26 undefined on input lin
-e 282.
-
-[26] [27]
-Overfull \hbox (194.84273pt too wide) detected at line 363
+[23] [24] [25] [26] [27]
+Overfull \hbox (194.84273pt too wide) detected at line 1072
 [] []
  []
 
 
-Overfull \hbox (53.58429pt too wide) in paragraph at lines 373--374
+Overfull \hbox (53.58429pt too wide) in paragraph at lines 1082--1083
 []\OT1/cmr/m/n/12 Also, no-tice how re-flec-tion can be used in ways sim-i-lar 
 to up-ward L^^?owenheim{Skolem
  []
 
-[28]) [29] (./03_large_cardinals.tex [30] [31]
-
-LaTeX Warning: Reference `def:unbounded class' on page 32 undefined on input li
-ne 62.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 69--71
+[28] [29] [30] [31]
+Underfull \hbox (badness 10000) in paragraph at lines 1155--1157
 
  []
 
 [32] [33] [34]
-Overfull \hbox (11.38196pt too wide) in paragraph at lines 202--203
+Overfull \hbox (11.38196pt too wide) in paragraph at lines 1288--1289
 []\OT1/cmr/m/n/12 Because $\OML/cmm/m/it/12 ^^T$ \OT1/cmr/m/n/12 is in-ac-ces-s
 i-ble and there-fore reg-u-lar, the num-ber of $\OML/cmm/m/it/12 ^^L$\OT1/cmr/m
 /n/12 -inaccessibles
  []
 
 [35] [36] [37] [38] [39]
-Overfull \hbox (4.61575pt too wide) in paragraph at lines 352--354
+Overfull \hbox (4.61575pt too wide) in paragraph at lines 1438--1440
 [] \OT1/cmr/m/it/12 We say an or-di-nal $\OML/cmm/m/it/12 $ \OT1/cmr/m/it/12 i
 s de-scribed by a for-mula $\OML/cmm/m/it/12 '\OT1/cmr/m/n/12 (\OML/cmm/m/it/12
  P[]; [] ; P[]\OT1/cmr/m/n/12 )$
  []
 
 
-Overfull \hbox (14.3742pt too wide) in paragraph at lines 379--381
+Overfull \hbox (14.3742pt too wide) in paragraph at lines 1461--1463
 []\OT1/cmr/m/it/12 ($\OT1/cmr/m/n/12 ^^E[]$\OT1/cmr/m/it/12 -indescribable car-
 di-nal)[] We say that $\OML/cmm/m/it/12 ^^T$ \OT1/cmr/m/it/12 is $\OT1/cmr/m/n/
 12 ^^E[]$\OT1/cmr/m/it/12 -indescribable
  []
 
 
-Overfull \hbox (13.72977pt too wide) in paragraph at lines 382--384
+Overfull \hbox (13.72977pt too wide) in paragraph at lines 1464--1466
 []\OT1/cmr/m/it/12 ($\OT1/cmr/m/n/12 ^^F[]$\OT1/cmr/m/it/12 -indescribable car-
 di-nal)[] We say that $\OML/cmm/m/it/12 ^^T$ \OT1/cmr/m/it/12 is $\OT1/cmr/m/n/
 12 ^^F[]$\OT1/cmr/m/it/12 -indescribable
  []
 
-[40]
-
-LaTeX Warning: Reference `Tait_constructingcardinals' on page 41 undefined on i
-nput line 396.
-
-[41] [42]
-Overfull \hbox (40.74068pt too wide) detected at line 485
+[40] [41] [42]
+Overfull \hbox (40.74068pt too wide) detected at line 1573
 [] []
  []
 
 [43]
-Underfull \hbox (badness 10000) in paragraph at lines 528--530
-
- []
-
-
-Overfull \hbox (4.32454pt too wide) in paragraph at lines 537--539
+Overfull \hbox (4.32454pt too wide) in paragraph at lines 1597--1599
 \OT1/cmr/m/it/12 We say a car-di-nal $\OML/cmm/m/it/12 ^^T$ \OT1/cmr/m/it/12 is
  a \OT1/cmr/m/n/12 to-tally in-de-scrib-able car-di-nal \OT1/cmr/m/it/12 iff it
  is $\OT1/cmr/m/n/12 ^^E[]$\OT1/cmr/m/it/12 -indescribable
  []
 
 [44]
-
-LaTeX Warning: Citation `PinterBook' on page 45 undefined on input line 617.
-
-[45]
-Underfull \hbox (badness 10000) in paragraph at lines 620--622
+Underfull \hbox (badness 10000) in paragraph at lines 1680--1682
 
  []
 
-[46]
+[45] [46] [47] [48] [49] [50] (./bakalarka.bbl) [51] (./bakalarka.aux)
 
-LaTeX Warning: Reference `def:gch' on page 47 undefined on input line 666.
-
-
-LaTeX Warning: Citation `Kunen_independence' on page 47 undefined on input line
- 673.
-
-
-LaTeX Warning: Reference `def:delta_0_absoluteness' on page 47 undefined on inp
-ut line 692.
-
-[47] [48]
-
-LaTeX Warning: Citation `Welch12globalreflection' on page 49 undefined on input
- line 746.
-
-) [49] [50] (./bakalarka.bbl) [51] (./bakalarka.aux)
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: There were multiply-defined labels.
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  ) 
 Here is how much of TeX's memory you used:
- 5214 strings out of 493089
- 66355 string characters out of 6134842
- 134051 words of memory out of 5000000
- 8610 multiletter control sequences out of 15000+600000
+ 5194 strings out of 493089
+ 66038 string characters out of 6134842
+ 134029 words of memory out of 5000000
+ 8605 multiletter control sequences out of 15000+600000
  22704 words of font info for 84 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 35i,15n,43p,1466b,591s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 33i,15n,43p,1437b,591s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 </usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb
@@ -505,7 +441,7 @@ st/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2015/texmf-dis
 t/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/local/texlive/2015/texmf-dist/
 fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2015/texmf-d
 ist/fonts/type1/public/rsfs/rsfs10.pfb>
-Output written on bakalarka.pdf (52 pages, 469177 bytes).
+Output written on bakalarka.pdf (52 pages, 468805 bytes).
 PDF statistics:
  286 PDF objects out of 1000 (max. 8388607)
  201 compressed objects within 3 object streams
