@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.12.2)  22 MAY 2016 08:08
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.12.2)  22 MAY 2016 16:05
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -309,36 +309,37 @@ File: uni-32.def 2013/05/13 UCS: Unicode data U+2000..U+20FF
 
 ] [5])
 (./01b_definice.tex [6] [7] [8] [9] [10] [11]
-Underfull \hbox (badness 10000) in paragraph at lines 266--267
+Underfull \hbox (badness 10000) in paragraph at lines 275--276
 
  []
 
+[12]
 
-LaTeX Warning: Reference `def:omega' on page 12 undefined on input line 282.
+LaTeX Warning: Reference `def:omega' on page 13 undefined on input line 292.
 
-[12] [13]
-Underfull \hbox (badness 10000) in paragraph at lines 322--323
+
+Underfull \hbox (badness 10000) in paragraph at lines 333--334
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 356--358
+[13]
+Underfull \hbox (badness 10000) in paragraph at lines 367--369
 
  []
 
 [14]
-Overfull \hbox (31.75519pt too wide) in paragraph at lines 392--394
+Overfull \hbox (31.75519pt too wide) in paragraph at lines 403--405
 \OT1/cmr/m/n/12 that $\OML/cmm/m/it/12 ' \OT1/cmr/m/n/12 = \OMS/cmsy/m/n/12 8\O
 ML/cmm/m/it/12 x \OT1/cmr/m/n/12 (\OML/cmm/m/it/12 p[]; [] ; p[]; x\OT1/cmr/m/n
-/12 )$. From rel-a-tiviza-tion and lemma 1.41[], $\OML/cmm/m/it/12 '[]\OT1/cmr/
+/12 )$. From rel-a-tiviza-tion and lemma 1.42[], $\OML/cmm/m/it/12 '[]\OT1/cmr/
 m/n/12 (\OML/cmm/m/it/12 p[]; [] ; p[]\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 $
  []
 
 
-Overfull \hbox (31.75519pt too wide) in paragraph at lines 406--408
+Overfull \hbox (31.75519pt too wide) in paragraph at lines 417--419
 \OT1/cmr/m/n/12 that $\OML/cmm/m/it/12 ' \OT1/cmr/m/n/12 = \OMS/cmsy/m/n/12 9\O
 ML/cmm/m/it/12 x \OT1/cmr/m/n/12 (\OML/cmm/m/it/12 p[]; [] ; p[]; x\OT1/cmr/m/n
-/12 )$. From rel-a-tiviza-tion and lemma 1.41[], $\OML/cmm/m/it/12 '[]\OT1/cmr/
+/12 )$. From rel-a-tiviza-tion and lemma 1.42[], $\OML/cmm/m/it/12 '[]\OT1/cmr/
 m/n/12 (\OML/cmm/m/it/12 p[]; [] ; p[]\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 $
  []
 
@@ -447,6 +448,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 667--669
 
 [45]
 
+LaTeX Warning: Reference `def:gch' on page 46 undefined on input line 713.
+
+
 LaTeX Warning: Reference `def:delta_0_absoluteness' on page 46 undefined on inp
 ut line 739.
 
@@ -459,13 +463,13 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 5212 strings out of 493089
- 66297 string characters out of 6134842
- 137073 words of memory out of 5000000
- 8608 multiletter control sequences out of 15000+600000
+ 5211 strings out of 493089
+ 66284 string characters out of 6134842
+ 135039 words of memory out of 5000000
+ 8607 multiletter control sequences out of 15000+600000
  22704 words of font info for 84 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 36i,15n,43p,1425b,591s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 35i,15n,43p,1425b,591s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 </usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb
@@ -494,7 +498,7 @@ st/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2015/texmf-dis
 t/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/local/texlive/2015/texmf-dist/
 fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2015/texmf-d
 ist/fonts/type1/public/rsfs/rsfs10.pfb>
-Output written on bakalarka.pdf (51 pages, 474012 bytes).
+Output written on bakalarka.pdf (51 pages, 465299 bytes).
 PDF statistics:
  282 PDF objects out of 1000 (max. 8388607)
  199 compressed objects within 2 object streams

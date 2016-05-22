@@ -23,59 +23,10 @@ To illustrate this elusiveness of infinity, let us remember the early days of se
 This is where reflection comes in again. 
 
 The original idea behind reflection principles probably comes from what could be informally called \textquote{universality of the universe}.
-If we try to express the universe as a~set $\{x  |  x = x\}$, we either decide to make such statement on a meta-level, or directly in a theory that formalizes the concept of class, like the Bernays–Gödel set theory.
+If we try to express the universe as a~set $\{x  |  x = x\}$, we either decide to make such statement on a meta-level, or directly in a theory that formalizes the concept of class\footnote{like the Bernays–Gödel set theory, for example.}. But since it is practical to consider sets formed by a property, we must carefully formalize the notion of property of that we stay within the formal framework of a given theory. Reflection can be see as taking reverting this approach. Even thought we have, in a sense, included infinity into the set theory, in the form of $\omega$, the set of all natural numbers, as well as the while hierarchy of larger infinite sets constructed from $\omega$, there is still an unreachable absolute. Since we have weakened the notion of property so that it only yields sets, the is obviously no way to directly describe the whole universe, every attempt to describe the universe inevitably fails.
 
+If was was to hold a platonistic view on the philosophy of mathematics, assuming that the sets themselves objectively exist, reflection, the fact that every description of the universe collapses to a bounded within the universe, can be percieved as the imperfection of formal systems. Similarly, while Gödel's second theorem implies that no formal system\emph{* no formal system of sufficient strength to formalize arithmerics, see Gödel's results for details.} proves everything, one might argue that the unprovable statements objectively hold, but the system is not strong enough to verify the fact. Speaking of Gödel, it is worth noting that reflection made its first in set-theoretical appearance in G{\"o}del's proof of the Generalised Continuum Hypothesis in the constructible universe L, but it was around even earlier as a~concept. G{\"o}del himself regarded it as very close to Russell's reducibility axiom (an earlier equivalent of the axiom schema of separation proposed by Zermelo). Richard Montague then studied reflection properties as a~tool for verifying that Replacement is not finitely axiomatizable. a~few years later Lévy proved in \cite{Levy60a} the equivalence of reflection with Axiom of infinity together with Replacement in proof we shall examine closely in chaper 2.
 
-TODO 
-Another obstacle of constructing a~set of all sets comes from Georg Cantor, who proved that the set of all subsets of a~set (let $x$ be the set and $\power (x)$ its powerset) is strictly larger that $x$. That would turn every aspiration to finally establish an universal set into a~contradictory infinite regression.\footnote{An intuitive analogy of this \emph{reductio ad infinitum} is the status of $\omega$, which was originally thought to be an unreachable absolute, only to become starting point of Cantor's hierarchy of sets growing beyond all boundaries around the end of the $19^{th}$ century}. We will use $V$ to denote the class of all sets. %Riemann!
-%\newpage
-From previous thoughts we can easily argue, that it is impossible to construct a~property that holds for $V$ and no set and is neither paradoxical like $\{x  |  x = x\}$ nor trivial. Previous observation can be transposed to a~rather naive formulation of the reflection principle:
+% TODO structuralism?
 
-TODO
-
-Reflection made its first in set-theoretical appearance in G{\"o}del's proof of GCH in L  (citace Kanamori ? Lévy and set theory), but it was around even earlier as a~concept. G{\"o}del himself regarded it as very close to Russel's reducibility axiom (an earlier equivalent of the axiom schema of Zermelo's separation). Richard Montague then studied reflection properties as a~tool for verifying that Replacement is not finitely axiomatizable (citace?). a~few years later Lévy proved in \cite{Levy60a} the equivalence of reflection with Axiom of infinity together with Replacement in proof we shall examine closely in chaper 2.
-
-\
-
-$\emph{Reflection}$ Any property which holds in $V$ already holds in some initial segment of $V$. 
-
-\
-
-To avoid vagueness of the term "property", we could informally reformulate the above statement into a~schema: 
-
-\
-
-For every first-order formula\footnote{this also works for finite sets of formulas \cite[p.~168]{JechBook}} $\varphi$ holds in $V \iff \varphi$ holds in some initial segment of $V$.
-
-\
-
-Interested reader should note that this is a~theorem scheme rather than a~single theorem. \footnote{If there were a~single theorem stating "for any formula $\varphi$ that holds in $V$ there is an initial segment of $V$ where $\varphi$ also holds", we would obtain the following contradiction with the second G{\"o}del's theorem: In ZFC, any finite group of axioms of ZFC holds in some initial segment of the universe. If we take the largest of those initial segments it is still strictly smaller than the universe and thus we have, via compactness, constructed a~model of ZFC within ZFC. That is, of course a~harsh contradiction. This also leads to an elegant way to prove that ZFC is not finitely axiomatizable.}
-
-%Reflection is, among others, a~tool for constructing models of finitely axiomatizable theories within stronger frameworks of proving impossibility thereof. ?!
-
-%\subsection{A few historical remarks on reflection}\label{sec:History}  % mozna reflection itself?
-% co motivace? (jako treba ze kdyz existuje inaccessible cardinal tak je ZFC relativne konzistentni, protoze $V_\kappa$ je jeji model)
-% viz kanamori
-% jak to bylo s tim Godelem?
-% nejdriv Montague ukazal ze ZFC neni konecne axiomatizovatelna "in a~strong sense"
-%The first notion of reflection in our sense was formally stated and proved as a~theorem of ZF by Azriel L{\'e}vy in his 1960 article \emph{Axiomatic schemata of strong infinity in axiomatic set theory}\cite{Levy60a}. Only a~year later, this was followed by Richard Montague's \emph{Fraenkel's addition to the axioms of Zermelo}.
- %citace?
- % konecna axiomatizovatelnost? reflexe spolu se 2. Godelovou vetou, ~Montague
- 
- 
- % motivace ke kardinalum:
- % velke kardinaly vznikly v podstate reflektovanim zajimavych vlastnosti absolutniho nekonecna, mnoho z nich ma i omega
- % popis vyvoje axiomu nekonecna: zadny->nejaky->silnejsi??
-
-
-\
-
-\subsection{Reflection in Platonism and Structuralism}
-TODO cite "reflection in a structuralist setting"
-
-TODO veci o tom, ze reflexe je ok protoze reflektuje veci ktere objektivne plati, protoze plati pro V ...
-
-TODO souvislost s kompaktnosti, hranice formalich systemu nebo alespon ZFC
-
-
-
+From this point of view, we can argue that $\omega$ was established as an object satisfying a property attributed informally to the universe of all sets. That is, the property of "being the collection of all natural numbers". Later we will see that large cardinals discussed in this paper are natural extension of this process. We can informally obtain the inaccessible cardinal by arguing the the axioms of the Zermelo–Fraenkel set theory hold in the universe and establishing an object, let's call it $\kappa_I$ for now, that satisfies this property. But then this either leads to a stronger set theory exnteded in order to be able to talk about $\kappa_I$. But this process iterates for the new set theory to yield Mahlo cardinals, but it is also clear that even by arbitrary iterations of this principle, the universe still can't be reached. On the final pages of this thesis, we will argue, that while this iterative process seems to lead to a very large object, it is in fact not strong enough to be incosistent with Gödel's L, which was designed to be the minimal model of set the Zermelo–Fraenkel set theory in terms of width\footnote{The model minimal in terms if height of the universe is the inaccessible cardinal.}. Present day set theory is able to consider many large cardinals far above the hierarchy introduced here. Even though those are beyong the scope of this work, we will briefly mention the measurable cardinal later on.

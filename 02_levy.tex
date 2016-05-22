@@ -81,42 +81,41 @@ We will now verify that all axioms of $\sf{S}$ are satisfied in a limit ordinal
 \bce[(i)]
 \item \emph{The existence of a set} comes from the fact that $u$ is a non-empty set.
 
-\item \emph{Extensionality}: (see \ref{def:extensionality})
+\item \emph{Extensionality}: \\(see \ref{def:extensionality})
 \begin{equation}
 \forall x, y, z ((z \in x \iff z \in y) \then x = y)
 \end{equation}
 The formula $\varphi(x, y) = (\forall z \in u)((z \in x \iff z \in y) \then x = y)$ is in fact the membership relation on $u$. Because it is a $\Pi_1$ formula, it holds in transitive $u$ by \ref{lemma:downward_absoluteness}.
 
-\item \emph{Foundation}: (see \ref{def:foundation})
+\item \emph{Foundation}: \\(see \ref{def:foundation})
 \begin{equation}
 \forall x (x \neq \emptyset \then \exists (y \in x) (\forall z \neg (z \in y \et z \in x)))
 \end{equation}
 The formula $wf(x) = x \neq \emptyset \then \exists (y \in x) (\forall z \neg (z \in y \et z \in x))$\footnote{"wf" stands for well-founded.} is $\Delta_0$, \ref{lemma:delta_0_abssoluteness}.
 
-\item \emph{Powerset}: (see \ref{def:powerset})
+\item \emph{Powerset}: \\(see \ref{def:powerset})
 \begin{equation}
 \forall x \exists y \forall z (z \subseteq x \then z \in y).
 \end{equation}
 \emph{Powerset} holds from limitness of $u$ by the argument used in the other implication of this lemma.
-
-\item \emph{Pairing}:\\
-(see \ref{def:pairing})
-\begin{equation}
-(\forall x, y \exists z (x \in z \et y \in z))
-\end{equation}
-\emph{Pairing} also holds from limitness of $u$.
-
-\
 
 \item \emph{Union}:\\
 (see \ref{def:union})
 \begin{equation}
 \forall x \exists y \forall z (z \in y \iff \exists q( z \in q \et q \in x)).
 \end{equation}
-\emph{Union} holds from transitivity of $M$ together with powerset TODO!!!
+\emph{Union} Holds because for $x \in u$ and $\alpha$ is an ordinal such that $rank(x) = \alpha$, every element of $x$ is also an element of $\alpha$. So, from transitivity, $(\bigcup x) \subseteq \alpha$, so $(\bigcup x) \in \power{\alpha}$.
+
+\item \emph{Pairing}:\\
+(see \ref{def:pairing})
+\begin{equation}
+(\forall x, y \exists z (x \in z \et y \in z))
+\end{equation}
+\emph{Pairing} also from limitness of $u$ together with \emph{powerset}. Since $u$ is transitive, then for any $x, y \in u$, there are the least ordinals $\alpha, \beta$ such that $\alpha = rank(x)$, $\beta = rank(x)$, then either $\alpha = \beta$ or, without a loss of generality, $\alpha \in \beta$, but then, in both cases, $\{x, \{y\}\} \in \power{\beta}$ and thus $\{x, \{y\}\}$ is a set of $u$.
 
 
-\item \emph{Subset / specification}: TODO!!!
+\item \emph{Specification}: \\
+Given a set $x$, for any $\varphi$, all the elements of $x$ satisfying $\varphi$ form a subset of $x$, which is an element of $\powerset{x}$ and thus also a set if $u$ by \emph{powerset}.
 \ece
 \end{proof}
 
@@ -126,7 +125,7 @@ In $\sf{S}$, the schema $N_0$ implies \emph{Infinity}.
 \end{theorem}
 
 \begin{proof}
-Lévy skips this proof because it seems too obvious to him, but let's do it here for plasticity.
+Lévy skips this proof because it seems too obvious to him, but we will do it here for plasticity.
 For an arbitrary $\varphi$, $N_0$ gives us $\exists u Scm^{\sf{S}}(u)$, but from lemma \ref{lemma:scm_s_is_limit}, we know that this $u$ is a limit ordinal. This $u$ already satisfies \emph{Infinity}.
 \end{proof}
 
@@ -148,7 +147,6 @@ Let $\varphi(x, y, p_1, \ldots, p_n)$ be a~formula with no free variables except
 \end{equation}
 Let $\chi$ be an instance of \emph{Replacement} schema for given $\varphi$. Let the following formulas be instances of the $N_0$ schema for formulas  $\varphi$, $\exists y \varphi$, $\chi$ and $\forall x, p_1, \ldots, p_n \chi$ respectively:
 
-% TODO pozor na zmatek ve jmenech promennych
 We can deduce the following from $N_0$: 
 \bce[(i)]
 \item $x, y, p_1, \ldots, p_n \in u \then (\varphi \iff \varphi^{u}) $
@@ -237,7 +235,7 @@ M^T_{i+1} = V_\gamma
 \end{equation}
 The final $M$ is obtained by joining all the individual steps. 
 \begin{equation}
-M = \bigcup_{i=0}^{\infty} M_i, \mbox{  }M^T = \bigcup_{i=0}^{\infty} M^T_i = V_\alpha % \mbox{ \footnote{TODO proc vime, ze existuje $\alpha$, ze to plati?}}
+M = \bigcup_{i=0}^{\infty} M_i, \mbox{  }M^T = \bigcup_{i=0}^{\infty} M^T_i = V_\alpha
 \end{equation}
 
 \
@@ -364,8 +362,7 @@ What we want to obtain is the following:
 \end{gathered}
 \end{equation}
 
-We do also know that $x, y \in M$, in other words for every $X$, $Y = \{y\ |\ \varphi(x, y, p_1, \ldots, p_n)\}$ and we know that $X \subset M$ and $Y \subset M$, which, together with the comprehension schema implies that $Y$, the image of $X$ over $\varphi$, is a~set.
-% TODO ???
+We do also know that $x, y \in M$, in other words for every $X$, $Y = \{y\ |\ \varphi(x, y, p_1, \ldots, p_n)\}$ and we know that $X \subset M$ and $Y \subset M$, which, together with the specification schema implies that $Y$, the image of $X$ over $\varphi$, is a~set.
 \end{proof}
 
 \
