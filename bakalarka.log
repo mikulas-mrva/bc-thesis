@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.12.2)  22 MAY 2016 06:07
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.12.2)  22 MAY 2016 08:08
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -236,15 +236,10 @@ LaTeX Warning: Label `def:limit_ordinal' multiply defined.
 
 LaTeX Warning: Label `def:limit_ordinal' multiply defined.
 
+
+LaTeX Warning: Label `sec:first_order' multiply defined.
+
 )
-Runaway argument?
-{\contentsline {subsection}{\numberline {2.3}Contemporary restatement\ETC.
-./00_headers.tex:121: File ended while scanning use of \@writefile.
-<inserted text> 
-                \par 
-l.121 \begin{document}
-                      
-? 
 \openout1 = `bakalarka.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 121.
@@ -259,7 +254,7 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 121.
 LaTeX Font Info:    ... okay on input line 121.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 121.
 LaTeX Font Info:    ... okay on input line 121.
-(/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
+ (/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count121
 \scratchdimen=\dimen118
@@ -285,89 +280,53 @@ File: uni-1.def 2013/05/13 UCS: Unicode data U+0100..U+01FF
 {/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [1] [2
 
 ]
-(./bakalarka.toc)
+(./bakalarka.toc
+LaTeX Font Info:    Try loading font information for U+rsfs on input line 2.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/jknapltx/ursfs.fd
+File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
+)
+LaTeX Font Info:    Try loading font information for U+msa on input line 2.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 2.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+))
 \tf@toc=\write3
 \openout3 = `bakalarka.toc'.
 
  [3
 
-]) (./01a_introduction.tex
-
-LaTeX Warning: Citation `GodelWang' on page 4 undefined on input line 9.
-
-LaTeX Font Info:    Try loading font information for U+rsfs on input line 22.
-(/usr/local/texlive/2015/texmf-dist/tex/latex/jknapltx/ursfs.fd
-File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
-)
-LaTeX Font Info:    Try loading font information for U+msa on input line 22.
-
-(/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Try loading font information for U+msb on input line 22.
-
-(/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
+])
+(./01a_introduction.tex
 (/usr/local/texlive/2015/texmf-dist/tex/latex/ucs/data/uni-32.def
 File: uni-32.def 2013/05/13 UCS: Unicode data U+2000..U+20FF
-)
-Overfull \hbox (3.88898pt too wide) in paragraph at lines 29--30
-[]\OT1/cmr/m/n/12 If God can end-lessly add a cu-bic foot to a stone{which He c
-an{then
- []
+) [4
 
-[4
-
-] [5] [6]
-
-LaTeX Warning: Citation `JechBook' on page 7 undefined on input line 109.
-
-
-LaTeX Warning: Citation `Levy60a' on page 7 undefined on input line 130.
-
-[7]) (./01b_definice.tex
-
-LaTeX Warning: Citation `JechBook' on page 8 undefined on input line 19.
-
-[8]
-
-LaTeX Warning: Citation `JechBook' on page 9 undefined on input line 66.
-
-[9] [10] [11]
-
-LaTeX Warning: Citation `JechBook' on page 12 undefined on input line 217.
-
-[12]
-
-LaTeX Warning: Citation `JechBook' on page 13 undefined on input line 232.
-
-
-LaTeX Warning: Citation `JechBook' on page 13 undefined on input line 264.
-
-
+] [5])
+(./01b_definice.tex [6] [7] [8] [9] [10] [11]
 Underfull \hbox (badness 10000) in paragraph at lines 266--267
 
  []
 
-[13]
 
-LaTeX Warning: Citation `JechBook' on page 14 undefined on input line 279.
+LaTeX Warning: Reference `def:omega' on page 12 undefined on input line 282.
 
-
-LaTeX Warning: Reference `def:omega' on page 14 undefined on input line 282.
-
-[14]
+[12] [13]
 Underfull \hbox (badness 10000) in paragraph at lines 322--323
 
  []
 
-[15]
+
 Underfull \hbox (badness 10000) in paragraph at lines 356--358
 
  []
 
-
+[14]
 Overfull \hbox (31.75519pt too wide) in paragraph at lines 392--394
 \OT1/cmr/m/n/12 that $\OML/cmm/m/it/12 ' \OT1/cmr/m/n/12 = \OMS/cmsy/m/n/12 8\O
 ML/cmm/m/it/12 x \OT1/cmr/m/n/12 (\OML/cmm/m/it/12 p[]; [] ; p[]; x\OT1/cmr/m/n
@@ -375,7 +334,7 @@ ML/cmm/m/it/12 x \OT1/cmr/m/n/12 (\OML/cmm/m/it/12 p[]; [] ; p[]; x\OT1/cmr/m/n
 m/n/12 (\OML/cmm/m/it/12 p[]; [] ; p[]\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 $
  []
 
-[16]
+
 Overfull \hbox (31.75519pt too wide) in paragraph at lines 406--408
 \OT1/cmr/m/n/12 that $\OML/cmm/m/it/12 ' \OT1/cmr/m/n/12 = \OMS/cmsy/m/n/12 9\O
 ML/cmm/m/it/12 x \OT1/cmr/m/n/12 (\OML/cmm/m/it/12 p[]; [] ; p[]; x\OT1/cmr/m/n
@@ -383,15 +342,7 @@ ML/cmm/m/it/12 x \OT1/cmr/m/n/12 (\OML/cmm/m/it/12 p[]; [] ; p[]; x\OT1/cmr/m/n
 m/n/12 (\OML/cmm/m/it/12 p[]; [] ; p[]\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 $
  []
 
-[17]) [18] (./02_levy.tex
-
-LaTeX Warning: Citation `Levy60a' on page 19 undefined on input line 4.
-
-[19]
-
-LaTeX Warning: Citation `Levy60a' on page 20 undefined on input line 66.
-
-[20] [21]
+[15] [16]) [17] (./02_levy.tex [18] [19] [20]
 
 Package amsfonts Warning: Obsolete command \bold; \mathbf should be used instea
 d on input line 161.
@@ -402,65 +353,22 @@ Overfull \hbox (0.97511pt too wide) in paragraph at lines 172--173
 st-ing propo-si-tions, mostly
  []
 
-[22]
+[21]
 
-LaTeX Warning: Reference `def:n' on page 23 undefined on input line 185.
+LaTeX Warning: Reference `def:n' on page 22 undefined on input line 185.
 
 
-LaTeX Warning: Reference `def:n_0' on page 23 undefined on input line 185.
+LaTeX Warning: Reference `def:n_0' on page 22 undefined on input line 185.
 
-[23]
+[22] [23] [24]
 
-LaTeX Warning: Reference `equation:refl_lemma_i' on page 24 undefined on input 
-line 206.
-
-[24] [25]
-
-LaTeX Warning: Reference `def:relativisation' on page 26 undefined on input lin
+LaTeX Warning: Reference `def:relativisation' on page 25 undefined on input lin
 e 284.
 
-
-LaTeX Warning: Reference `lemma:reflection_lemma' on page 26 undefined on input
- line 290.
-
-
-LaTeX Warning: Reference `equation:levy_theorem_i' on page 26 undefined on inpu
-t line 297.
-
-[26]
-
-LaTeX Warning: Reference `lemma:reflection_lemma' on page 27 undefined on input
- line 314.
-
-
-LaTeX Warning: Reference `equation:levy_theorem_i' on page 27 undefined on inpu
-t line 325.
-
-
-LaTeX Warning: Reference `lemma:reflection_lemma' on page 27 undefined on input
- line 329.
-
-
-LaTeX Warning: Reference `lemma:reflection_lemma' on page 27 undefined on input
- line 333.
-
-
-LaTeX Warning: Reference `lemma:reflection_lemma' on page 27 undefined on input
- line 335.
-
-[27]
-
-LaTeX Warning: Reference `theorem:first_order_reflection' on page 28 undefined 
-on input line 349.
-
-
+[25] [26]
 Overfull \hbox (194.84273pt too wide) detected at line 365
 [] []
  []
-
-
-LaTeX Warning: Reference `section:inaccessibility' on page 28 undefined on inpu
-t line 373.
 
 
 Overfull \hbox (53.58429pt too wide) in paragraph at lines 376--377
@@ -468,210 +376,81 @@ Overfull \hbox (53.58429pt too wide) in paragraph at lines 376--377
 to up-ward L^^?owenheim{Skolem
  []
 
-[28]) [29] (./03_large_cardinals.tex
+[27]) [28] (./03_large_cardinals.tex [29] [30]
 
-LaTeX Warning: Citation `Infinity_in_mind' on page 30 undefined on input line 8
-.
-
-[30]
-
-LaTeX Warning: Citation `Levy60a' on page 31 undefined on input line 16.
+LaTeX Warning: Reference `def:unbounded class' on page 31 undefined on input li
+ne 62.
 
 
-LaTeX Warning: Reference `def:reflection_1' on page 31 undefined on input line 
-29.
-
-
-LaTeX Warning: Reference `def:reflection_1' on page 31 undefined on input line 
-35.
-
-[31]
-
-LaTeX Warning: Citation `DrakeBook' on page 32 undefined on input line 55.
-
-
-LaTeX Warning: Reference `def:unbounded class' on page 32 undefined on input li
-ne 63.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 70--72
+Underfull \hbox (badness 10000) in paragraph at lines 69--71
 
  []
 
-[32]
-
-LaTeX Warning: Citation `Levy60a' on page 33 undefined on input line 98.
-
-
-LaTeX Warning: Reference `lemma:normal_fixed_point' on page 33 undefined on inp
-ut line 104.
-
-
-LaTeX Warning: Reference `lemma:normal_fixed_point' on page 33 undefined on inp
-ut line 105.
-
-
-LaTeX Warning: Reference `def:reflection_1' on page 33 undefined on input line 
-115.
-
-
-LaTeX Warning: Citation `Levy60a' on page 33 undefined on input line 115.
-
-[33]
-
-LaTeX Warning: Citation `Levy60a' on page 34 undefined on input line 151.
-
-
-LaTeX Warning: Reference `theorem:levy_equivalence_contemporary' on page 34 und
-efined on input line 165.
-
-[34] [35]
-Overfull \hbox (11.38196pt too wide) in paragraph at lines 213--214
+[31] [32] [33]
+Overfull \hbox (11.38196pt too wide) in paragraph at lines 205--206
 []\OT1/cmr/m/n/12 Because $\OML/cmm/m/it/12 ^^T$ \OT1/cmr/m/n/12 is in-ac-ces-s
 i-ble and there-fore reg-u-lar, the num-ber of $\OML/cmm/m/it/12 ^^L$\OT1/cmr/m
 /n/12 -inaccessibles
  []
 
-
-LaTeX Warning: Citation `Mahlo11' on page 36 undefined on input line 280.
-
-
-LaTeX Warning: Citation `Mahlo12' on page 36 undefined on input line 280.
-
-
-LaTeX Warning: Citation `Mahlo13' on page 36 undefined on input line 280.
-
-[36]
-
-LaTeX Warning: Citation `JechBook' on page 37 undefined on input line 285.
-
-[37] [38]
-
-LaTeX Warning: Reference `def:reflection_2' on page 39 undefined on input line 
-386.
-
-[39]
-
-LaTeX Warning: Citation `DrakeBook' on page 40 undefined on input line 408.
-
-
-Overfull \hbox (4.61575pt too wide) in paragraph at lines 409--411
+[34] [35] [36] [37] [38]
+Overfull \hbox (4.61575pt too wide) in paragraph at lines 399--401
 [] \OT1/cmr/m/it/12 We say an or-di-nal $\OML/cmm/m/it/12 $ \OT1/cmr/m/it/12 i
 s de-scribed by a for-mula $\OML/cmm/m/it/12 '\OT1/cmr/m/n/12 (\OML/cmm/m/it/12
  P[]; [] ; P[]\OT1/cmr/m/n/12 )$
  []
 
 
-LaTeX Warning: Citation `KanamoriBook' on page 40 undefined on input line 420.
-
-
-Overfull \hbox (14.3742pt too wide) in paragraph at lines 436--438
+Overfull \hbox (14.3742pt too wide) in paragraph at lines 426--428
 []\OT1/cmr/m/it/12 ($\OT1/cmr/m/n/12 ^^E[]$\OT1/cmr/m/it/12 -indescribable car-
 di-nal)[] We say that $\OML/cmm/m/it/12 ^^T$ \OT1/cmr/m/it/12 is $\OT1/cmr/m/n/
 12 ^^E[]$\OT1/cmr/m/it/12 -indescribable
  []
 
 
-Overfull \hbox (13.72977pt too wide) in paragraph at lines 439--441
+Overfull \hbox (13.72977pt too wide) in paragraph at lines 429--431
 []\OT1/cmr/m/it/12 ($\OT1/cmr/m/n/12 ^^F[]$\OT1/cmr/m/it/12 -indescribable car-
 di-nal)[] We say that $\OML/cmm/m/it/12 ^^T$ \OT1/cmr/m/it/12 is $\OT1/cmr/m/n/
 12 ^^F[]$\OT1/cmr/m/it/12 -indescribable
  []
 
-[40]
+[39]
 
-LaTeX Warning: Reference `def:reflection_2' on page 41 undefined on input line 
-443.
+LaTeX Warning: Reference `Tait_constructingcardinals' on page 40 undefined on i
+nput line 443.
 
-
-LaTeX Warning: Reference `Tait_constructingcardinals' on page 41 undefined on i
-nput line 453.
-
-
-LaTeX Warning: Reference `eq:inacc_lemma_set' on page 41 undefined on input lin
-e 466.
-
-[41]
-
-LaTeX Warning: Reference `def:describability' on page 42 undefined on input lin
-e 502.
-
-
-LaTeX Warning: Reference `theorem:inaccessible_models_zfc' on page 42 undefined
- on input line 503.
-
-
-LaTeX Warning: Reference `lemma:inaccessible_clubset' on page 42 undefined on i
-nput line 507.
-
-[42]
-Overfull \hbox (40.74068pt too wide) detected at line 542
+[40] [41]
+Overfull \hbox (40.74068pt too wide) detected at line 532
 [] []
  []
 
-[43]
-Underfull \hbox (badness 10000) in paragraph at lines 585--587
+[42]
+Underfull \hbox (badness 10000) in paragraph at lines 575--577
 
  []
 
 
-LaTeX Warning: Citation `KanamoriBook' on page 44 undefined on input line 592.
-
-
-Overfull \hbox (4.32454pt too wide) in paragraph at lines 594--596
+Overfull \hbox (4.32454pt too wide) in paragraph at lines 584--586
 \OT1/cmr/m/it/12 We say a car-di-nal $\OML/cmm/m/it/12 ^^T$ \OT1/cmr/m/it/12 is
  a \OT1/cmr/m/n/12 to-tally in-de-scrib-able car-di-nal \OT1/cmr/m/it/12 iff it
  is $\OT1/cmr/m/n/12 ^^E[]$\OT1/cmr/m/it/12 -indescribable
  []
 
-[44]
+[43] [44]
 
-LaTeX Warning: Citation `KanamoriBook' on page 45 undefined on input line 632.
+LaTeX Warning: Citation `PinterBook' on page 45 undefined on input line 664.
 
 
-LaTeX Warning: Citation `KanamoriBook' on page 45 undefined on input line 640.
+Underfull \hbox (badness 10000) in paragraph at lines 667--669
+
+ []
 
 [45]
 
-LaTeX Warning: Citation `PinterBook' on page 46 undefined on input line 674.
+LaTeX Warning: Reference `def:delta_0_absoluteness' on page 46 undefined on inp
+ut line 739.
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 677--679
-
- []
-
-[46]
-
-LaTeX Warning: Reference `def:constructible_universe' on page 47 undefined on i
-nput line 704.
-
-
-LaTeX Warning: Citation `JechBook' on page 47 undefined on input line 709.
-
-[47]
-
-LaTeX Warning: Reference `def:delta_0_absoluteness' on page 48 undefined on inp
-ut line 755.
-
-
-LaTeX Warning: Reference `def:mahlo_cardinal' on page 48 undefined on input lin
-e 772.
-
-[48]
-
-LaTeX Warning: Reference `theorem:inaccessible_in_l' on page 49 undefined on in
-put line 788.
-
-
-Overfull \hbox (108.4702pt too wide) in paragraph at lines 797--798
-[]\OT1/cmr/m/it/12 Let $\OML/cmm/m/it/12 ^^T$ \OT1/cmr/m/it/12 be a weakly in-a
-c-ces-si-ble car-di-nal. Then $[][]$. 
- []
-
-
-LaTeX Warning: Citation `JechBook' on page 49 undefined on input line 799.
-
-) [49] [50] (./bakalarka.bbl) [51] (./bakalarka.aux)
+[46] [47]) [48] [49] (./bakalarka.bbl) [50] (./bakalarka.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -682,11 +461,11 @@ LaTeX Warning: There were multiply-defined labels.
 Here is how much of TeX's memory you used:
  5212 strings out of 493089
  66297 string characters out of 6134842
- 136694 words of memory out of 5000000
+ 137073 words of memory out of 5000000
  8608 multiletter control sequences out of 15000+600000
  22704 words of font info for 84 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 36i,15n,43p,1426b,591s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 36i,15n,43p,1425b,591s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 </usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb
@@ -700,27 +479,25 @@ local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/lo
 cal/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/loca
 l/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/
 texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/te
-xlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texli
-ve/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/
-2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/201
-5/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl12.pfb></usr/local/texlive/2015
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/local/texlive/2015/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/local/texlive/2015/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/local/texlive/2015/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2015/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2015/texmf-
-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2015/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2015/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2015/texmf-dist/f
-onts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2015/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2015/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmti8.pfb></usr/local/texlive/2015/texmf-dist/fonts
-/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2015/texmf-dist/f
-onts/type1/public/rsfs/rsfs10.pfb>
-Output written on bakalarka.pdf (52 pages, 492781 bytes).
+xlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texli
+ve/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/
+2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl12.pfb></usr/local/texlive/2
+015/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/local/texlive/20
+15/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/local/texlive/201
+5/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/local/texlive/2015/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2015/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2015/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2015/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2015/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2015/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2015/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/local/texlive/2015/texmf-dist/
+fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2015/texmf-d
+ist/fonts/type1/public/rsfs/rsfs10.pfb>
+Output written on bakalarka.pdf (51 pages, 474012 bytes).
 PDF statistics:
- 294 PDF objects out of 1000 (max. 8388607)
- 207 compressed objects within 3 object streams
+ 282 PDF objects out of 1000 (max. 8388607)
+ 199 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
