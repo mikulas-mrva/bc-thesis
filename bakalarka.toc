@@ -1,24 +1,23 @@
 \contentsline {section}{\numberline {1}Introduction}{4}
 \contentsline {subsection}{\numberline {1.1}Motivation and Origin}{4}
-\contentsline {subsection}{\numberline {1.2}Reflection in Platonism and Structuralism}{6}
-\contentsline {subsection}{\numberline {1.3}Notation and Terminology}{6}
-\contentsline {subsubsection}{\numberline {1.3.1}The Language of Set Theory}{6}
-\contentsline {subsubsection}{\numberline {1.3.2}The Axioms}{7}
-\contentsline {subsubsection}{\numberline {1.3.3}The Transitive Universe}{11}
-\contentsline {subsubsection}{\numberline {1.3.4}Cardinal Numbers}{13}
-\contentsline {subsubsection}{\numberline {1.3.5}Relativisation and Absoluteness}{14}
-\contentsline {subsubsection}{\numberline {1.3.6}More Functions}{16}
-\contentsline {subsubsection}{\numberline {1.3.7}Structure, Substructure and Embedding}{17}
-\contentsline {section}{\numberline {2}Levy's first-order reflection}{18}
-\contentsline {subsection}{\numberline {2.1}L\IeC {\'e}vy's Original Paper}{18}
-\contentsline {subsection}{\numberline {2.2}$\sf {S} \vdash (N_0\ \leftrightarrow \ \emph {Replacement} \mathrel {\&}\emph {Infinity})$}{19}
-\contentsline {subsection}{\numberline {2.3}Contemporary restatement}{22}
-\contentsline {section}{\numberline {3}Reflection And Large Cardinals}{29}
-\contentsline {subsection}{\numberline {3.1}Regular Fixed-Point Axioms}{30}
-\contentsline {subsection}{\numberline {3.2}Inaccessibility}{33}
-\contentsline {subsection}{\numberline {3.3}Mahlo Cardinals}{35}
-\contentsline {subsection}{\numberline {3.4}Second-order Reflection}{36}
-\contentsline {subsection}{\numberline {3.5}Indescribality}{39}
-\contentsline {subsection}{\numberline {3.6}Measurable Cardinal}{43}
-\contentsline {subsection}{\numberline {3.7}The Constructible Universe}{44}
-\contentsline {section}{\numberline {4}Conclusion}{49}
+\contentsline {subsection}{\numberline {1.2}Notation and Terminology}{7}
+\contentsline {subsubsection}{\numberline {1.2.1}The Language of Set Theory}{7}
+\contentsline {subsubsection}{\numberline {1.2.2}The Axioms}{8}
+\contentsline {subsubsection}{\numberline {1.2.3}The Transitive Universe}{11}
+\contentsline {subsubsection}{\numberline {1.2.4}Cardinal Numbers}{13}
+\contentsline {subsubsection}{\numberline {1.2.5}Relativisation and Absoluteness}{15}
+\contentsline {subsubsection}{\numberline {1.2.6}More Functions}{16}
+\contentsline {subsubsection}{\numberline {1.2.7}Structure, Substructure and Embedding}{17}
+\contentsline {section}{\numberline {2}Levy's first-order reflection}{19}
+\contentsline {subsection}{\numberline {2.1}L\IeC {\'e}vy's Original Paper}{19}
+\contentsline {subsection}{\numberline {2.2}$\sf {S} \vdash (N_0\ \leftrightarrow \ \emph {Replacement} \mathrel {\&}\emph {Infinity})$}{20}
+\contentsline {subsection}{\numberline {2.3}Contemporary restatement}{23}
+\contentsline {section}{\numberline {3}Reflection And Large Cardinals}{30}
+\contentsline {subsection}{\numberline {3.1}Regular Fixed-Point Axioms}{31}
+\contentsline {subsection}{\numberline {3.2}Inaccessibility}{34}
+\contentsline {subsection}{\numberline {3.3}Mahlo Cardinals}{36}
+\contentsline {subsection}{\numberline {3.4}Second-order Reflection}{37}
+\contentsline {subsection}{\numberline {3.5}Indescribality}{40}
+\contentsline {subsection}{\numberline {3.6}Measurable Cardinal}{44}
+\contentsline {subsection}{\numberline {3.7}The Constructible Universe}{45}
+\contentsline {section}{\numberline {4}Conclusion}{50}

@@ -22,7 +22,7 @@ We will first examine the connection between reflection principles and (regular)
 
 % TODO ze "uplne totalni" reflexe se zacykli a rozbije? nebo ne?
 
-\subsection{Regular Fixed-Point Axioms}
+\subsection{Regular Fixed-Point Axioms}\label{sec:regular_fixed_points}
 % This small chapter is dedicated to 
 
 Lévy's article mentions various schemata that are not instances of reflection per se. We will mention them because they are equivalent to \emph{Reflection\textsubscript{1}}\footnote{For definition, see \ref{def:reflection_1}}.
@@ -120,7 +120,6 @@ The fact, that in $\sf{ZFC}$, the above \emph{Axiom M} is equivalent to \emph{Re
 \end{theorem}
 
 % -----------------------------------------------
-%TODO nedosazitelne kardinaly -- reflektuj presne formule, schemata
 
 \subsection{Inaccessibility}\label{section:inaccessibility}
 %The inaccessible cardinal is the smallest of large cardinals\footnote{citation needed.}
@@ -142,8 +141,6 @@ An uncountable cardinal $\kappa$ is \emph{inaccessible} iff it is \emph{regular}
 \end{definition}
 
 \
-
-TODO neni tohle cely hotovy v Contemporary restatement??? porovnat ktera je lepsi a sjednotit!!!
 
 We will now show that the above notion is equivalent to the definition Lévy uses in \cite{Levy60a}, which is, in more contemporary notation, the following:
 \begin{theorem}\label{theorem:inaccessible_models_zfc}
@@ -218,50 +215,9 @@ For any ordinal $\alpha$, $\kappa$ is called $\alpha$-hyper-inaccessible cardina
 
 Obviously we could go on and iterate it ad libitum, yielding $\alpha$-hyper-$\ldots$-hyper-inaccessibles, but the nomenclature would be increasingly confusing. A smarter way to accomplish the same goal is carried out in the following section.
 
-% dukaz viz Kan book 6.1, 6.2 ?
-
-\begin{comment}
-
-% !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-TODO tohle znamena, ze prvoradovou formuli nerozlisime $V$ od (prvniho) nedosazitelneho $\kappa$
-
-\begin{theorem}\label{th:refl_inaccessible}[Lévy] The following are equivalent:
-\bce[(i)]
-\item $\kappa$ is inaccessible.
-\item For every $R \sub V_\kappa$ and every first-order formula $\varphi(R)$, $\varphi(R)$ reflects in $V_\kappa$.
-\item For every $R \sub V_\kappa$, the set $C = \set{\alpha<\kappa}{\langle V_\alpha,\in,R \cap V_\alpha\rangle \el \langle V_\kappa,\in,R \rangle}$ is closed unbounded.
-\ece
-\end{theorem}
-\begin{proof}
-Let's start with $\bold{(i)} \then \bold{(iii)}$ in a~way similar to \cite{KanamoriBook}.\newline
-The set $\set{\alpha<\kappa}{\langle V_\alpha,\in,R \cap V_\alpha \rangle \el \langle V_\kappa,\in,R\rangle}$ is clearly closed, it remains to show that it is also unbounded.
-To do so, let $\alpha<\kappa$ be arbitrary. Define $\alpha_n < \kappa$ for $n\in\omega$ by recursion as follows:\newline
-Set $\alpha_0=\alpha$. Given $\alpha_n < \kappa$ define $\alpha_{n+1}$ to be the least $\beta \geq \alpha_n$ such as 
-whenever $y_1,\ldots,y_k \in V_{\alpha_n}$ and
-$\langle V_{\kappa}, \in, R \rangle \models \exists v_0 \varphi [v_0, y_1, \ldots, y_k ]$
-for some formula $\varphi$, there is an $x \in V_{\beta}$ such that $\langle V_{\kappa}, \in, R\rangle \models \varphi [x, y_1, \ldots, y_k]$.
-\newline
-Since $\kappa$ is inaccessible, $|V_{\alpha_n}| < \kappa$ and so $\alpha_{n+1} < \kappa$.\newline
-Finally, set $\alpha = sup({\alpha_n | n \in \omega})$.  % TODO vyhodit sup, pouzivat radis $\bigcup$
-Then $\langle$
- $V_ \alpha, \in, R  \cap V_\alpha \rangle \prec \langle V_{\kappa}, \in, R\rangle$ by the usual (Tarski) criterion for elementary substructure.
- \newline\newline
- The next part, proving $\bold{(iii)} \then \bold{(ii)}$, should be elementary since $C$ is closed unbounded, which means that it contains at least countably many elements but we need only one such $\alpha$ to satisfy (\ref{def:reflection_2}).
- \newline
- Finally, we shall prove that $(ii) \then \bold{(i)}$. Since it obviously holds that $\kappa > \omega$, we have yet to prove that $\kappa$ is regular and a~strong limit. Let's argue by contradiction that it is regular. 
- If it wasn't, there would be a~$\beta < \kappa$ and a~function $F: \beta \implies \kappa$ with range unbounded in $\kappa$. Set $R = \{\beta\} \cup F$. By hypothesis there is an $\alpha < \kappa$ such that $\langle V_\alpha, \in, R \cap V_\alpha \rangle \prec \langle V_\kappa, \in, R \rangle$. Since $\beta$ is the single ordinal in R, $\beta \in V_\alpha$ by elementarity. This yields the desired contradiction since the domain if $F \cap V_\alpha$ cannot be all of $\beta$.
- \newline\newline
- Next, let's see whether $\kappa$ is indeed a~strong limit, again by contradiction. If not, there would be a~$\lambda < \kappa$ such that $2^\lambda \geq \kappa$. Let $G: \power{\lambda} \implies \kappa$ be surjective and set $R = \{\lambda + 1\} \cup G$. By hypothesis, there is an $\alpha < \kappa$ such that $\langle V_\alpha, \in, R \cap V_\alpha \rangle \prec \langle V_\kappa, \in, R \rangle$. $\lambda + 1 \in V_\alpha$ and so $\power{\lambda} \in V_\alpha$, but this is again a~contradiction.
-\end{proof}
-\
-\end{comment}
-
 % =====================================================================================================================================
 
 \subsection{Mahlo Cardinals}
-
-% TODO axiomy?
 
 While the previous chapter introduced us to a notion of inaccessibility and the possibility of iterating it ad libitum in new theories, there is an even faster way to travel upwards in the cumulative hierarchy, that was proposed by Paul Mahlo in his articles (see \cite{Mahlo11}, \cite{Mahlo12} and \cite{Mahlo13}) at the very beginning of the 20th century, and which can be easily reformulated using reflection.
 
@@ -299,12 +255,9 @@ In a fashion similar to hyper-inaccessible cardinals, one can define hyper-Mahlo
 To se why we need to mention Mahlo Cardinals, notice that while an inaccessible cardinal reflects any first-order formula, a Mahlo cardinal reflects inaccessibility, so it, in a sense, reflects reflection. Hyper-Mahlo cardinals then stand for reflecting reflecting reflection and so on.
 
 Mahlo cardinals are also interesting from a different point of view. If we wanted to reach large cardinal from below via fixed-point argument, we don't get any higher.
-TODO proc se vys nedostaneme pevnyma bodama?
-
-
-TODO co s nima edla Jech?
-
-TODO Drake p.121!!
+% TODO proc se vys nedostaneme pevnyma bodama?
+%TODO co s nima edla Jech?
+% TODO Drake p.121!!
 
 % TODO $\kappa$ is hyper-Mahlo iff $\kappa$ is inaccessible and the set $\{\lambda < \kappa : \lambda\mbox{ is Mahlo}\}$ is stationary in $\kappa$. to je to samy jako $\alpha$-Mahlo, ne?
 
@@ -319,7 +272,7 @@ TODO Drake p.121!!
 %sjednotil \then a~\implies
 % =====================================================================================================================================
 % \newpage
-\subsection{Second-order Reflection} % Indescribality and Weakly Compact Cardinals 
+\subsection{Second-order Reflection}
 Let's try a different approach in formalizing reflection. We have seen that reflecting individual first-order formulas doesn't even transcend $\sf{ZFC}$, we have examined what can be done with axiom schemas. The aim of this chapter is to examine second-order formulas as possible axioms. Note that second-order variables (which will be established as type 2 variables later in the text) are subcollections of the universal class, but so are functions and relations. So first-order axiom schemata can also be interpreted as formulas with free second-order variables, which quantify over first-order variables only, we only need to customize the underlying theory accordingly. For example, the satisfaction relation was so far defined for first-order formulas only, but we will deal with that in a moment. Also note that by rewriting \emph{replacement} and \emph{comprehension} to single axioms, $\sf{ZFC}$ becomes finitely axiomatizable, which in turn means that the reflection theorem as stated in section \label{sec:first_order} does not hold for higher-order theories because of Gödel's second incompleteness theorem. We will explore stronger axioms of reflection instead.
 
 Let us establish a formal background first. We will now introduce higher-order formulas.
@@ -419,10 +372,6 @@ but for every $\beta < \alpha$
 \end{equation}
 \end{definition}
 
-% $\alpha$-Mahlo cardinals are the extreme of regular fixed-point axioms, they are about as high as we can get via normal functions and stationary sets. % preformulovat
-
-%TODO indescribable -- reflecting indescribability -- we can't reach $V$ by a $\Sigma_1^1$ formula, so there's some initial segment $V_\alpha$ that is also unreachable (we say indescribable) by the means of a ... formula
-
 \begin{definition}{($\Pi^m_n$-indescribable cardinal)}\label{def:pi_mn_indescribable}
 We say that $\kappa$ is $\Pi^m_n$-indescribable iff it is not described by any $\Pi^m_n$-formula.
 \end{definition}
@@ -431,6 +380,12 @@ We say that $\kappa$ is $\Sigma^m_n$-indescribable iff it is not described by an
 \end{definition}
 
 To see that this notion is based in reflection, note that for $\Pi^m_n$-formulas\footnote{This holds for $\Sigma^m_n$-formulas alike.}, a cardinal $\kappa$ is $\Pi^m_n$-indescribable iff every $\Pi^m_n$-formula reflects in $\kappa$ in the sense of definition \ref{def:reflection_2}. Informally, can also view indescribability as a property held by the universe $V$, in the sense that every formula aiming to describe it in fact describes an initial segment, which is similar to a reflection principle, albeit stated informally.\footnote{Formally, we have to be once again careful with "properties of $V$" for the reasons mentioned in the introduction of this thesis. That's why this chapter only reflects sentences to models with additional relations.}
+
+\
+
+Since we are interested accessing cardinals from below via fixed points of normal functions, we will limit ourselves to $\Pi^1_n$-formulas, with the exception of measurable cardinal, that is included for context.
+
+\
 
 \begin{lemma}
 Let $\kappa$ be a cardinal, the following holds for any $n \in \omega$. $\kappa$ is $\Pi^1_n$-indescribable iff $\kappa$ is $\Sigma^1_n+1$-indescribable
@@ -455,7 +410,7 @@ If $\kappa$ is an inaccessible cardinal and given $R \subseteq V_\kappa$, then 
 \begin{proof}
 To see that \ref{eq:inacc_lemma_set} is closed, let us recall that a $A \subseteq \kappa$ is closed iff for every ordinal $\alpha < \lambda$, $\alpha \neq \emptyset$: if $A \cap \alpha$ is unbounded in $\alpha$ then $\alpha \in A$. Since $\kappa$ is an inaccessible cardinal, thus strong limit, it is closed under limits of sequences of ordinals lesser than $\kappa$.  
 
-TODO neco s $V_\kappa$, ze je tranzitivni a tak jso vsechny $V_\alpha$ pro $\alpha<\kappa$ $V_\alpha \in V_\kappa$
+%TODO neco s $V_\kappa$, ze je tranzitivni a tak jso vsechny $V_\alpha$ pro $\alpha<\kappa$ $V_\alpha \in V_\kappa$
 
 We want to verify that it is unbounded, we will use a recursively defined sequence $\alpha_0, \alpha_1, \ldots$
 to build an elementary substructure of $\langle V_\kappa, \in, R \rangle$ that is built above an arbitrary $\alpha_0 <\kappa$ .
@@ -550,34 +505,6 @@ which implies that $\alpha$ is inaccessible.
 
 To be finished, we need to verify that $\alpha \in C$. Since $\kappa = V_\kappa$ for inaccessible $\kappa$\footnote{TODO link -------- ?}, $C \cap V_\alpha = C \cap \alpha$, from unboundedness of $C \cap \alpha$ in $\alpha$, $\bigcup(C \cap \alpha) = \alpha$, which, together with the fact that $C$ is a club set in $\kappa$ and therefore closed in $\kappa$, yields that $\alpha \in C$.
 \end{proof}
-
-TODO asi jako Drake, pozn ze to jde i pro hyper-Mahlovy?
-
-\begin{definition}{(Extension property)}
-We say that a cardinal $\kappa$ has the \emph{extension property} iff for any $R \subseteq V_\kappa$ there is a~transitive set 
-$X \neq V_\kappa$ and an $S \subseteq X$ such that 
-$\langle V_\kappa, \in, R \rangle \prec \langle X, \in, S \rangle$
-\end{definition}
-
-%TODO co to znamena?
-
-\begin{definition}{(Weakly compact cardinal)}\label{def:weakly_compact_extension}\\
-We say that a cardinal $\kappa$ is \emph{weakly compact} iff it has the extension property.
-\end{definition}
-
-%\begin{definition}{(Weakly compact cardinal)}\label{def:weakly_compact_indescribable}
-%We say that a cardinal $\kappa$ is \emph{weakly compact} iff it is $\Pi^1_1$-indescribable.
-%\end{definition}
-
-The above definitions are equivalent
-
-\begin{theorem}
-the following are equivalent:\\
-\bce[(i)]
-\item $\kappa$ is \emph{Weakly compact}.
-\item $\kappa$ is $\Pi^1_1$-indescribable.
-\ece
-\end{theorem}
 
 For a proof, see \cite{KanamoriBook}[Theorem 6.4]
 
@@ -717,7 +644,7 @@ The $GCH$ refers to the \emph{Generalised Continuum Hypothesis}, see \ref{def:gc
 \end{equation}
 \end{theorem}
 It is worth mentioning that Gödel's proof of \emph{Construcibility} $\then$ \emph{GCH} featured the first formal use of a reflection principle. 
-For the actual proofs, see for example TODO citace!! Kunen?
+For the actual proofs, see for example \cite{Kunen_independence},
 
 Since \emph{GCH} implies that $\kappa$ is a limit cardinal iff $\kappa$ is a strong limit cardinal for every $\kappa$, the distinctions between inaccessible and weakly inaccessible cardinals as well as between Mahlo and weakly Mahlo cardinals vanish.
 
@@ -777,14 +704,19 @@ But because $\mbox{"$C$ is a club set in $\kappa$"}$ is equivalent to a $\Delta_
 $\kappa$ remains Mahlo in $L$.
 \end{proof}
 
-TODO Measurables?
+% uvaha o powersetu v L?
 
-TODO vyska / sirka univerza
-
-TODO zduvodneni
+It should be clear that the above process can be iterated over again. Since Mahlo cardinals are absolute in $L$, the same argument using stationary sets can be carried out for hyper-Mahlo cardinals and so on. It is clear that since a regular and an inaccessible cardinal in consistent with \emph{Constructibility}, so should be the higher properties acquired from assuring the existence of regular, inaccessible and Mahlo fixed points of normal functions.
 
 \
 
-TODO kratka diskuse jestli refl implikuje transcendenci na L - polemika, nazor - V=L a~slaba kompaktnost a~dalsi
+Let's discuss the relation of $L$ and large cardinals on a more general level. One might ask: "Why should they interfere with each other?". This is an interesting question. It is easy to see, that the recursive definition of $L$ is very similar to the hierarchy $V$, the only difference being, that on successor steps, $V_{\alpha+1}$ includes every subset of $V_\alpha$, while $L_{\alpha+1}$ includes the definable subsets of $L_\alpha$. Therefore, each level of $L$, $L_\alpha$ is at most as large as $V_\alpha$. We can therefore say that $V = L$ is a statement about the width of the universe. Large cardinal axioms, on the other hand, talk about the height of the universe, the take the existing hierarchy $V$ and add steps that wouldn't have been possible without them, because all means of travelling upwards (that is \emph{Union}, \emph{Powerset}, and \emph{Replacement} when speaking of $\sf{ZFC}$) are already exhausted. 
+
+From a naive point of view, those two should be separate parameters of the universe. It turns out, due to a result by Dana Scott\footnote{Measurable cardinals and constructible sets % TOD CITE!!!
+}, that there are large cardinals that, if taken into consideration, conclude that the width of the universe containing them is bigger than $L$ can offer.
 
 \
+
+To see whether reflection per se implies transcendence over $L$, we need to return to the question stated at the very beginning. What is a "property"? From a structuralist point of view and considering tools for extending structures presented in this thesis, we can conclude that it's not the case. However, we have by no means exhausted possible formalizations of the reflection principles. There are ways to reflect higher-order formulas with higher-order parameters\footnote{See \cite{Welch12globalreflection}, for example.}. We can also leave the structuralist mindset and try to find % kdo rikal ze Omega je meritelna
+a way to justify the fact, that the universal class is measurable, then, also by a reflection, there would a measurable initial segment of $V$, contradicting \emph{Constructibility}.
+
