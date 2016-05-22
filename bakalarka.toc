@@ -8,18 +8,18 @@
 \contentsline {subsubsection}{\numberline {1.4.3}The Transitive Universe}{12}
 \contentsline {subsubsection}{\numberline {1.4.4}Cardinal Numbers}{14}
 \contentsline {subsubsection}{\numberline {1.4.5}Relativisation and Absoluteness}{15}
-\contentsline {subsubsection}{\numberline {1.4.6}More functions}{15}
-\contentsline {subsubsection}{\numberline {1.4.7}Structure, Substructure and Embedding}{16}
-\contentsline {section}{\numberline {2}Levy's first-order reflection}{18}
-\contentsline {subsection}{\numberline {2.1}L\IeC {\'e}vy's Original Paper}{18}
-\contentsline {subsection}{\numberline {2.2}$\sf {S} \models (N_0\ \leftrightarrow \ \emph {Replacement} \mathrel {\&}\emph {Infinity})$}{19}
-\contentsline {subsection}{\numberline {2.3}Contemporary restatement}{21}
-\contentsline {section}{\numberline {3}Reflection And Large Cardinals}{29}
-\contentsline {subsection}{\numberline {3.1}Regular Fixed-Point Axioms}{30}
-\contentsline {subsection}{\numberline {3.2}Inaccessibility}{33}
-\contentsline {subsection}{\numberline {3.3}Mahlo Cardinals}{37}
-\contentsline {subsection}{\numberline {3.4}Second-order Reflection}{38}
-\contentsline {subsection}{\numberline {3.5}Indescribality}{40}
-\contentsline {subsection}{\numberline {3.6}Measurable Cardinal}{44}
-\contentsline {subsection}{\numberline {3.7}The Constructible Universe}{45}
-\contentsline {section}{\numberline {4}Conclusion}{49}
+\contentsline {subsubsection}{\numberline {1.4.6}More functions}{17}
+\contentsline {subsubsection}{\numberline {1.4.7}Structure, Substructure and Embedding}{18}
+\contentsline {section}{\numberline {2}Levy's first-order reflection}{19}
+\contentsline {subsection}{\numberline {2.1}L\IeC {\'e}vy's Original Paper}{19}
+\contentsline {subsection}{\numberline {2.2}$\sf {S} \models (N_0\ \leftrightarrow \ \emph {Replacement} \mathrel {\&}\emph {Infinity})$}{20}
+\contentsline {subsection}{\numberline {2.3}Contemporary restatement}{22}
+\contentsline {section}{\numberline {3}Reflection And Large Cardinals}{30}
+\contentsline {subsection}{\numberline {3.1}Regular Fixed-Point Axioms}{31}
+\contentsline {subsection}{\numberline {3.2}Inaccessibility}{34}
+\contentsline {subsection}{\numberline {3.3}Mahlo Cardinals}{38}
+\contentsline {subsection}{\numberline {3.4}Second-order Reflection}{39}
+\contentsline {subsection}{\numberline {3.5}Indescribality}{41}
+\contentsline {subsection}{\numberline {3.6}Measurable Cardinal}{46}
+\contentsline {subsection}{\numberline {3.7}The Constructible Universe}{47}
+\contentsline {section}{\numberline {4}Conclusion}{51}

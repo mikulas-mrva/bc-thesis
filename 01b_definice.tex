@@ -1,7 +1,6 @@
 \subsection{Notation and Terminology}
 \subsubsection{The Language of Set Theory}
 % TODO predpokladame splnovani a tak, z logiky? link na ucebnici kdyztak? 
-% 
 
 We are about to define basic set-theoretical terminology on which the rest of this thesis will be built. For Chapter 2, the underlying theory will be the \emph{Zermelo –Fraenkel} set theory with the Axiom of Choice ($\sf{ZFC}$), a first-order set theory in the language $\mathscr{L} = \{=, \in\}$, which will be sometimes referred to as \emph{the language of set theory}. In Chapter 3\footnote{TODO bude jich vic? Chapter 4 taky?}, we shall always make it clear whether we are in first-order $\sf{ZFC}$ or second-order $\sf{ZFC}_2$, which will be precisely defined later in this chapter. When in second-order theory, we will usually denote type 1 variables, which are elements of the domain of discourse\footnote{co je "domain of discourse"?} by lower-case letters, mostly $u, v, w, x, y, z, p_1, p_2, p_3,  \ldots$ while type 2 variables, which represent $n$-ary relations of the domain of discourse for any natural number $n$, are usually denoted by upper-case letters $A, B, C, X, Y, Z$. Note that those may be used both as relations and functions, see the definition of a function below.\footnote{TODO ref?}
 
@@ -33,7 +32,7 @@ The above axiom is usually not used because it can be deduced from the axiom of 
 
 \begin{definition}{(Extensionality)}\label{def:extensionality}
 \begin{equation}
-\forall x, y(\forall z (z \in x \iff z \in y) \iff x = y)
+\forall x, y, z ((z \in x \iff z \in y) \iff x = y)
 \end{equation}
 \end{definition}
 
@@ -81,7 +80,7 @@ Now we can introduce more axioms.
 
 \begin{definition}{(Union)}\label{def:union}
 \begin{equation}
-\forall x \exists y \forall z (z \in x \iff \exists q( z \in q \et q \in x))
+\forall x \exists y \forall z (z \in y \iff \exists q( z \in q \et q \in x))
 \end{equation}
 \end{definition}
 
@@ -108,7 +107,7 @@ When a $\varphi(x, y)$ is a function, we also write the following:
 \begin{equation}
 f(x) = y \iff \varphi(x, y)
 \end{equation}
-Note that this $f$ is in fact  a formula 
+Note that this $f$ is in fact a formula TODO ???
 
 TODO $f = \{(x, y) : \varphi(x, y)\}$ !!! f muze byt mnozina i trida!
 \footnote{This can also be done for $\varphi$s with more than two free variables by either setting $f(x, p_1, \ldots p_n) = y \iff \varphi(x, y p_1, \ldots, p_n)$ or saying that $\varphi$ codes more functions, determined by the various parameters, so $f(x) = y \iff \varphi(x, y, t_1, \ldots, t_n)$ for given terms $t_1, \ldots, t_n$.}
@@ -129,10 +128,21 @@ Rng(f) \defeq \{x : \exists y (f(x) = y)\}
 \end{definition}
 We say that $f$ is i function into $A$, $A$ being a class, if $rng(f) \subseteq A$.
 
-Note that \emph{Dom(f)} and \emph{Rng(f)} are not definitions in a strict sense, they are in fact definition schemas that yield definitions for every function $f$ given. Also note that they can be easily modified for $\varphi$ instead of $f$, with the only difference that then it is defined only for those $\varphi$s that are functions.
+Note that \emph{Dom(f)} and \emph{Rng(f)} are not definitions in a strict sense, they are in fact definition schemas that yield definitions for every function $f$ given. Also note that they can be easily modified for $\varphi$ instead of $f$, with the only difference being the fact that it is then defined only for those $\varphi$s that are functions, which must be taken into account. This is worth noting as we will sometimes interchange the notions of \emph{function} and \emph{formula}.
+
+\begin{definition}{(Function Defined For All Ordinals)}\label{def:function_dfao}\\
+We say a function $f$ is \emph{defined for all ordinals}, this is sometimes written $f: Ord \then A$ for any class $A$, if $Dom(f) = Ord$.\
+Alternatively,
+\begin{equation}
+(\forall \alpha \in Ord)(\exists y \in A)(f(\alpha) = y))
+\end{equation}
+\end{definition}
 
 \begin{definition}{(Powerset)}\\
-TODO
+Given a set $x$, the \emph{powerset of $x$}, denoted $\power{x}$, is defined as follows:
+\begin{equation}
+\power{x} \defeq \{y: y \subseteq x\}
+\end{equation}
 \end{definition}
 
 And now for the axioms.
@@ -244,7 +254,6 @@ V_\lambda = \bigcup_{\beta < \lambda} V_\beta \mbox{ for a limit ordinal $\lambd
 \end{equation}
 \ece
 \end{definition}
-% TODO mame union pro tridy? (asi cajk)
 
 \begin{definition}{(Rank)}\label{def:rank}\\
 Given a set $x$, we say that the rank of $x$ (written as $rank(x)$) is the least ordinal $\alpha$ such that
@@ -253,11 +262,10 @@ x \in V_{\alpha+1}
 \end{equation}
 \end{definition}
 Due to \emph{Regularity}, every set has a rank.\footnote{See chapter 6 of \cite{JechBook} for details.}
-% TODO abchc mozna prepsat na fli?
 
 \begin{definition}{($\omega$)}\\
 \begin{equation}
-\omega \defeq \bigcap\{x : x is a limit ordinal)\}
+\omega \defeq \bigcap\{x : \mbox{"$x$ is a limit ordinal"})\}
 \end{equation}
 \end{definition}
 
@@ -286,7 +294,7 @@ there is an ordinal $\alpha$ such that $\aleph_\alpha = x$, then we call
 \end{definition}
 Infinite cardinals will be notated by lower-case greek letters from the middle if the alphabet, e.g. $\kappa, \mu, \ni, \ldots$.\footnote{$\lambda$ is preferably used for limit ordinals, if it is ever used to denote an infinite cardinal, that should be contextually clear.}
 
-\begin{definition}{(Cofinality of an ordinal)}\label{def:cofinality}\\
+\begin{definition}{(Cofinality of an ordinal)}\label{def:cofinality}\\ % a co https://math.berkeley.edu/~jhicks/links/SOTS/cskipper112613.pdf?
 Let $\lambda$ be a limit ordinal. The \emph{cofinality} of $\lambda$, written $cf(\lambda)$, is the smallest limit ordinal $\alpha$, $\alpha \leq \lambda$, such that 
 \begin{equation}
 (\forall x \in \lambda)(\exists y \in \alpha)(x < y)
@@ -320,8 +328,8 @@ If \emph{GCH} holds (for example in Gödel's $L$, see chapter 3), the notions of
 
 \
 
-\subsubsection{Relativisation and Absoluteness} % and absoluteness?
-\begin{definition}{(Relativization)}\label{def:relativization}\\ %\cite[Definition 12.6]{JechBook} 
+\subsubsection{Relativisation and Absoluteness}
+\begin{definition}{(Relativization)}\label{def:relativization}\\
 Let $M$ be a class, $R \subseteq M\times M$ and let $\varphi(p_1, \ldots, p_n)$ be a first-order formula with no free variables besides $p_1, \ldots, _n$. 
 The \emph{relativization of $\varphi$ to $M$ and $R$} is the formula, written as $\varphi^{M, R}(p_1, \ldots, p_n)$, defined in the following inductive manner:
 \bce[(i)]
@@ -335,7 +343,8 @@ The \emph{relativization of $\varphi$ to $M$ and $R$} is the formula, written as
 \item $(\forall x \varphi(x))^{M,R} \iff (\forall x \in M) \varphi^{M,R}(x)$
 \ece
 \end{definition}
-When $R=\in\cap(M \times M)$, we usually write $\varphi^M$ instead of $\varphi^{M, R}$
+When $R=\in\cap(M \times M)$, we usually write $\varphi^M$ instead of $\varphi^{M, R}$. When we talk about $\varphi^M(p_1, \ldots, p_n)$, it is understood that $p_1, \ldots, p_n \in M$.
+We will also use $M \models \varphi(p_1, \ldots, p_n)$ and $\varphi^M(p_1, \ldots, p_n)$ interchangably.
 
 \begin{definition}{(Absoluteness)}
 Given a transitive class $M$, we say a formula $\varphi$ is \emph{absolute in $M$} if for all $p_1, \ldots, p_n \in M$
@@ -353,8 +362,8 @@ A first-order formula $\varphi$ is $\Delta_0$ iff it is logically equivalent to 
 \item $\psi_1, \psi_2$ are $\Delta_0$ formulas and $\varphi'$ is any of the following: $\psi_1 \lor \psi_2$, $\psi_1 \et \psi_2$, $\psi_1 \then \psi_2$, $\neg \psi_2$, 
 \ece
 \item If a formula is $\Delta_0$ it is also $\Sigma_0$ and $\Pi_0$
-\item A formula $\varphi$ is $\Pi_n+1$ if it is logically equivalent to a formula $\varphi'$ such that $\varphi' = \foreach x \psi$ where $\psi$ is a $\Sigma_n$-formula for any $n < \omega$.
-\item A formula $\varphi$ is $\Sigma_n+1$ if it is logically equivalent to a formula $\varphi'$ such that $\varphi' = \foreach x \psi$ where $\psi$ is a $\Pi_n$-formula for any $n < \omega$.
+\item A formula $\varphi$ is $\Pi_n+1$ if it is logically equivalent to a formula $\varphi'$ such that $\varphi' = \forall x \psi$ where $\psi$ is a $\Sigma_n$-formula for any $n < \omega$.
+\item A formula $\varphi$ is $\Sigma_n+1$ if it is logically equivalent to a formula $\varphi'$ such that $\varphi' = \forall x \psi$ where $\psi$ is a $\Pi_n$-formula for any $n < \omega$.
 \ece
 \end{definition}
 Note that we can use the pairing function so that for $\forall p_1, \ldots, p_n \psi(p_1, \ldots, p_n)$, there a logically equivalent formula of the form $\forall x \psi'(x)$.
@@ -364,7 +373,7 @@ Let $\varphi$ be a $\Delta_0$ formula, then $\varphi$ is absolute in any transit
 \end{lemma}
 
 \begin{proof}
-This will be proven by induction over the complexity of a given $\Delta_0$ formula $\vaphi$. Let $M$ be an arbitrary transitive class. Suppose, that 
+This will be proven by induction over the complexity of a given $\Delta_0$ formula $\varphi$. Let $M$ be an arbitrary transitive class. Suppose, that 
 
 Atomic formulas are always absolute by the definition of relativisation, see \ref{def:relativization}.
 Suppose that $\Delta_0$ formulas $\psi_1$ and $\psi_2$ are absolute in $M$. Then from relativization, $(\psi_1 \et \psi_2)^M \iff \psi_1^M \et \psi_2^M$, which is, from the induction hypothesis, equivalent to $\psi_1 \et \psi_2$. The same holds for $\lor, \then, \neg$.
@@ -373,14 +382,40 @@ Suppose that a $\Delta_0$ formula $\psi$ is absolute in $M$. Let $y$ be a set an
 From relativization, $(\exists x \psi(x))^M \iff (\exists x \in M) \psi^M(x)$. Since the hypotheses makes it clear that $\psi^M \iff \psi$, we get $((\exists x \in y) \psi(x))^M \iff (\exists x \in y\cap M) \psi(x)$, which is the equivalent of $\varphi^M \iff \varphi$. The same applies to $\varphi = (\forall x \in y) \psi(x)$.
 \end{proof}
 
+% todo co Devlin -- p.27 -- downward a upward absoluteness?
+\begin{lemma}{(Downward Absoluteness)}\label{lemma:downward_absoluteness}\\
+Let $\varphi$ be a $\Pi_1$ formula and $M$ a transitive class. Then the following holds:
+\begin{equation}
+(\forall p_1, \ldots, p_n \in M)(\varphi(p_1, \ldots, p_n) \then \varphi(p_1, \ldots, p_n)^M
+\end{equation}
+\end{lemma}
+\begin{proof}
+Since $\varphi(p_1, \ldots, p_n)$ is $\Pi_1$, there is a $\Delta_0$ formula $\psi(p_1, \ldots, p_n, x)$ such that $\varphi = \forall x \psi(p_1, \ldots, p_n, x)$. From relativization and lemma \ref{lemma:delta_0_abssoluteness}, $\varphi^M(p_1, \ldots, p_n) \iff (\forall x \in M)\psi(p_1, \ldots, p_n, x)$.
+
+Assume that for $p_1, \ldots, p_n \in M$ fixed, that $\forall x \psi(p_1, \ldots, p_n, x)$ holds, but $(\forall x \in M)\psi(p_1, \ldots, p_n, x)$ does not. 
+Therefore $\exists x \neg \psi(p_1, \ldots, p_n, x)$, which contradicts \forall x \psi(p_1, \ldots, p_n, x).
+\end{proof}
+
+
+\begin{lemma}{(Upward Absoluteness)}\label{lemma:upward_absoluteness}\\
+Let $\varphi$ be a $\Sigma_1$ formula and $M$ a transitive class. Then the following holds:
+\begin{equation}
+(\forall p_1, \ldots, p_n \in M)(\varphi^M(p_1, \ldots, p_n) \then \varphi(p_1, \ldots, p_n)
+\end{equation}
+\end{lemma}
+\begin{proof}
+Since $\varphi(p_1, \ldots, p_n)$ is $\Sigma_1$, there is a $\Delta_0$ formula $\psi(p_1, \ldots, p_n, x)$ such that $\varphi = \exist x \psi(p_1, \ldots, p_n, x)$. From relativization and lemma \ref{lemma:delta_0_abssoluteness}, $\varphi^M(p_1, \ldots, p_n) \iff (\exists x \in M)\psi(p_1, \ldots, p_n, x)$.
+
+Assume that for $p_1, \ldots, p_n \in M$ fixed, that $(\exists x \in M)\psi(p_1, \ldots, p_n, x)$ holds, but $\exists x \psi(p_1, \ldots, p_n, x)$ does not. This is an obvious contradiction.
+\end{proof}
+
+
 \subsubsection{More functions}
 
 
 % \begin{definition}{(Function on a set)}
 % We say function is 
 % \end{definition}
-
-TODO def $f: Ord \then Ord$, asi u powersetu.
 
 \begin{definition}{(Strictly increasing function)}\label{def:increasing_function}\\
 A function $f: Ord \then Ord$ is said to be \emph{strictly increasing} iff
@@ -396,23 +431,30 @@ A function $f: Ord \then Ord$ is said to be \emph{continuous} iff
 \end{equation}
 \end{definition}
 
-\begin{definition}{(Normal function)}\label{def:normal_function}\\
+\begin{definition}{(Normal Function)}\label{def:normal_function}\\
 A function $f: Ord \then Ord$ is said to be \emph{normal} if it is \emph{strictly increasing} and \emph{continuous}.
 \end{definition}
 
-\begin{definition}{Fixed point}\label{def:fixed_point}\\
+\begin{definition}{Fixed Point}\label{def:fixed_point}\\
 We say $\alpha$ is a fixed point of ordinal function $f$ if $\alpha=f(\alpha)$.
 \end{definition}
 
-\begin{definition}{(Unbounded class)}\label{def:unbounded_class}\\
+\begin{definition}{(Unbounded Class)}\label{def:unbounded_class}\\
 We say a class $A$ is unbounded if 
 \begin{equation}
 \forall x (\exists y \in A) (x < y)
 \end{equation}
 \end{definition}
 
+\begin{definition}{(Limit Point)}\label{def:limit_point}\\
+Given a class $x \subseteq On$, we say that $\alpha \neq \emptyset$ is a limit point of $x$ iff 
+\begin{equation}
+\alpha = \bigcup(x \cap \alpha)
+\end{equation}
+\end{definition}
+
 \begin{definition}{(Closed class)}\label{def:closed_class}\\
-For a limit ordinal $A \subseteq \lambda$, we say that $A$ is closed in $\lambda$ iff for every non-zero ordinal $\alpha < \lambda$: if $A \cap \alpha$ is unbounded in $\alpha$ then $\alpha \in A$.
+We say a class $A \subseteq Ord$ is closed iff it contains all of its limit points.
 \end{definition}
 
 \begin{definition}{(Club set)}\label{def:club_set}\\
@@ -443,8 +485,3 @@ Given the structures $\langle M_1, \in, R \rangle$, $\langle M_2, \in, R \rangle
 \end{definition}
 
 % While higher-order satisfaction relation for proper classes is unformalizable\footnote{TODO CITE KDE? Tarski nebo tak neco?},we can formalize satisfaction in a structure. For the rest of this chapter, let $D$ be a domain of such structure.
-
-
-% TODO mozna zminit Levyho "sentential reflection"? pouzivame to v indescribable
-% Kanamori v reflexi rika, ze pro $\varphi$ a libovolny $\beta \in Ord$ existuje $\alpha$ ze $\varphi^{V_\alpha} \iff \varphi$ (s parametrama $x_1, \ldots, x_n \in V_\alpha$)
-% Prepsat modelovy veci do "kanamoriho notace" $\langle V_\kappa, \in, R \rangle$ kde $R$ je nejaka relace

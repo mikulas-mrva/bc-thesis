@@ -3,18 +3,14 @@
 \subsection{Lévy's Original Paper}\label{sec:levy1960}
 This section will try to present Lévy's proof of a~general reflection principle being equivalent to \emph{Replacement} and \emph{Infinity} under ZF minus \emph{Replacement} and \emph{Infinity} from his 1960 paper \emph{Axiom Schemata of Strong Infinity in Axiomatic Set Theory}\footnote{\cite{Levy60a}}.
 
-When reading said article, one should bear in mind that it was written in a~period when set theory was semantically oriented, so while there are many statements about a~model of $\sf{ZF}$, usually denoted $u$, this is equivalent to today's universal class $V$, so it doesn't necessarily mean that there is a set $u$ that is a model of $\sf{ZF}$. We will review the notion of a standard complete model used by Lévy throughout the paper in a moment. Let's first say that the set theory $\sf{ZF}$ was formulated in the "non-simple applied first order functional calculus", is 
-
-TODO viz A. Church nebo tak neco. % math.stackovrflow?
-
-The axioms are equivalent to those defined in \ref{def:zf}, except for the \emph{Axiom of Subsets}, which is just a different name for \emph{Specification}.
-Besides $\sf{ZF}$ and $\sf{S}$, defined in \ref{def:zf} and yref{def:s} respectively, the set theories theories $\sf{Z}$, and $\sf{SF}$ are used in the text. $\sf{Z}$ is $\sf{ZF}$ minus replacement, $\sf{SF}$ is $\sf{ZF}$ minus \emph{Infinity}. Also note that universal quantifier does not appear, $\forall x \varphi (x)$ would be written as $(x) \varphi (x)$. The symbol for negation is "$\sim$", implication is written as "$\supset$" and equivalence is "$\equiv$", we will use "$\neg$", "$\then$" and "$\iff$". % TODO neco o : a setreni zavorek?
+When reading said article, one should bear in mind that it was written in a~period when set theory was semantically oriented, so while there are many statements about a~model of $\sf{ZF}$, usually denoted $u$, this is equivalent to today's universal class $V$, so it doesn't necessarily mean that there is a set $u$ that is a model of $\sf{ZF}$. We will review the notion of a standard complete model used by Lévy throughout the paper in a moment.
+The axioms used in what Lévy calls $\sf{ZF}$ are equivalent to those defined in \ref{def:zf}, except for the \emph{Axiom of Subsets}, which is just a different name for \emph{Specification}.
+Besides $\sf{ZF}$ and $\sf{S}$, defined in \ref{def:zf} and yref{def:s} respectively, the set theories theories $\sf{Z}$, and $\sf{SF}$ are used in the text. $\sf{Z}$ is $\sf{ZF}$ minus replacement, $\sf{SF}$ is $\sf{ZF}$ minus \emph{Infinity}. Also note that universal quantifier does not appear, $\forall x \varphi (x)$ would be written as $(x) \varphi (x)$. The symbol for negation is "$\sim$", implication is written as "$\supset$" and equivalence is "$\equiv$", we will use "$\neg$", "$\then$" and "$\iff$".
 
 Next two definitions are not used in contemporary set theory, but they illustrate 1960's set theory mind-set and they are used heavily in Lévy's text, so we will include and explain them for clarity. Generally, in this chapter, $\sf{Q}$ stands for an arbitrary axiomatic set theory used for general definitions, $u$ is usually a model of $\sf{Q}$, counterpart of today's $V$.
 
 This subsection uses $\sf{ZF}$ instead of the usual $\sf{ZFC}$ as the underlying theory.
 
-% TODO je to relativizovany, jak rika shepherdson? % WATT?
 \begin{definition}{(Standard model of a set theory)}\label{def:sm_q}\\
 Let $\sf{Q}$ be a axiomatic set theory in first-order logic. We say the the a class $u$ is a standard model of $\sf{Q}$ with respect to a membership relation $E$, written as $Sm^{\sf{Q}}(u)$, iff both of the following hold
 \bce[(i)]
@@ -47,29 +43,27 @@ In(\kappa) \defeq In^{\sf{ZF}}(\kappa)
 The above definition of inaccessibles is used because it doesn't require \emph{Choice}.
 
 For the definition of relativization, see \ref{def:relativization}. The syntax used by Lévy is $Rel(u, \varphi)$, we will use $\varphi^{u}$, which is more usual these days.
-% TODO urcite $\defeq$ kdyz je to schema? :(
 \begin{definition}{($N$)}\label{def:levy_axiom_n}\\
-The following is an axiom schema of complete reflection over $\sf{ZF}$, denoted as $N$.
+The following is an axiom schema of complete reflection over $\sf{ZF}$, denoted as $N$:
 \begin{equation}
-N \defeq \exists u (Scm^{\sf{ZF}}(u) \et \forall x_1, \ldots , x_n (x_1, \ldots , x_n \in u \then \varphi \iff \varphi^{u}))
+\exists u (Scm^{\sf{ZF}}(u) \et \forall x_1, \ldots , x_n (x_1, \ldots , x_n \in u \then \varphi \iff \varphi^{u}))
 \end{equation}
 where $\varphi$ is a~formula which contains no free variables except for $x_1, \ldots , x_n$.
 \end{definition}
 
 \begin{definition}{($N_0$)}\label{def:levy_axiom_n0}\\
-With $\sf{S}$ instead of $\sf{ZF}$we obtain what will now be called $N_0$.
+With $\sf{S}$ instead of $\sf{ZF}$we obtain what will now be called $N_0$:
 \begin{equation}
-N_0 \defeq \exists u (Scm^{\sf{S}}(u) \et \forall x_1, \ldots , x_n (x_1, \ldots , x_n \in u \then \varphi \iff \varphi^{u}))
+\exists u (Scm^{\sf{S}}(u) \et \forall x_1, \ldots , x_n (x_1, \ldots , x_n \in u \then \varphi \iff \varphi^{u}))
 \end{equation}
 where $\varphi$ is a~formula which contains no free variables except for $x_1, \ldots , x_n$.
 \end{definition}
 
-% Once we have established the definitions, it's time to prove something interesting.
-% Note that this by (\ref{def:levy_inaccessible}) equivalent to $\exists u (In^{\sf{ZF}}(u) \et \forall x_1, \ldots , x_n (x_1, \ldots , x_n \in u \then \varphi \iff \varphi^{u}))$, where $In(\alpha)$ is equivalent to the standard notion of inaccessibility.
-\subsection{$\sf{S} \models (N_0\ \iff\ \emph{Replacement} \et \emph{Infinity})$} 
-% nebyl by to lepsi nadpis bez S?
+Now that we have established the basic terminology, we can review Lévy's proof that in a theory $\sf{S}$, which is defined in \ref{def:s}, $N_0$ can be used to prove both \emph{replacement} and \emph{infinity}.
 
-Let $\sf{S}$ be a set theory defined in \ref{def:s}.
+\subsection{$\sf{S} \proves (N_0\ \iff\ \emph{Replacement} \et \emph{Infinity})$} 
+
+Let $\sf{S}$ be a set theory as defined in \ref{def:s}. We will first prove a lemma to show what's mentioned as obvious in \cite{Levy60a} and that is a fact, that any set $u$ such that $Scm^{\sf{S}}(u)$ is a limit ordinal.
 \begin{lemma}\label{lemma:scm_s_is_limit}\
 The following holds for every $u$.
 \begin{equation}
@@ -78,11 +72,51 @@ The following holds for every $u$.
 \end{lemma}
 
 \begin{proof}
-TODO !
+Let $u$ be a standard complete model of $\sf{S}$. We know that $u$ is transitive from the definition of a standard complete model. 
+To see that $u$ is an ordinal, note that it is transitive and $\emptyset \in u$ from \emph{the existence of a set} (see \ref{def:existence_of_a_set}). To see that $u$ is limit, consider that if $u$ was a successor ordinal, there would be a set $x \in u$ such that $x \cup \{x\} = u$, but then $u \subset \power{x}$, which contradicts the fact that $(\forall x\in u)(\exists y \in u)(\power{x} = y)$ implied by \emph{powerset} and it's not empty as stated earlier.
 
-----
+We will now verify that all axioms of $\sf{S}$ are satisfied in a limit ordinal demoted $u$.
 
-In order to prove that it is a~model of $\sf{S}$, we would need to verify all axioms of $\sf{S}$. We have already shown that $\omega$ is closed under the powerset operation. Foundation, extensionality and comprehension are clear from the fact that we work in $\sf{ZF}$\footnote{We only need to verify axioms that provide means of constructing larger sets from smaller to make sure they don't exceed $\omega$. Since $\omega$ is an initial segment of $ZF$, the axiom scheme of specification can't be broken, the same holds for foundation and extensionality.}, pairing is clear from the fact, that given two sets $x$, $y$, they have ranks $\alpha$, $\beta$, without loss of generality we can assume that $\alpha \leq \beta$, which means that $x \in V_\alpha \in V_\beta$, therefore $V_\beta$ is a~set that satisfies the paring axiom: it contains both $x$ and $B$.
+%We will heavily rely on lemma \ref{lemma:delta_0_abssoluteness}, which says that $\Delta_0$ formulas are absolute in transitive structures, in the following steps.
+\bce[(i)]
+\item \emph{The existence of a set} comes from the fact that $u$ is a non-empty set.
+
+\item \emph{Extensionality}: (see \ref{def:extensionality})
+\begin{equation}
+\forall x, y, z ((z \in x \iff z \in y) \then x = y)
+\end{equation}
+The formula $\varphi(x, y) = (\forall z \in u)((z \in x \iff z \in y) \then x = y)$ is in fact the membership relation on $u$. Because it is a $\Pi_1$ formula, it holds in transitive $u$ by \ref{lemma:downward_absoluteness}.
+
+\item \emph{Foundation}: (see \ref{def:foundation})
+\begin{equation}
+\forall x (x \neq \emptyset \then \exists (y \in x) (\forall z \neg (z \in y \et z \in x)))
+\end{equation}
+The formula $wf(x) = x \neq \emptyset \then \exists (y \in x) (\forall z \neg (z \in y \et z \in x))$\footnote{"wf" stands for well-founded.} is $\Delta_0$, \ref{lemma:delta_0_abssoluteness}.
+
+\item \emph{Powerset}: (see \ref{def:powerset})
+\begin{equation}
+\forall x \exists y \forall z (z \subseteq x \then z \in y).
+\end{equation}
+\emph{Powerset} holds from limitness of $u$ by the argument used in the other implication of this lemma.
+
+\item \emph{Pairing}:\\
+(see \ref{def:pairing})
+\begin{equation}
+(\forall x, y \exists z (x \in z \et y \in z))
+\end{equation}
+\emph{Pairing} also holds from limitness of $u$.
+
+\
+
+\item \emph{Union}:\\
+(see \ref{def:union})
+\begin{equation}
+\forall x \exists y \forall z (z \in y \iff \exists q( z \in q \et q \in x)).
+\end{equation}
+\emph{Union} holds from transitivity of $M$ together with powerset TODO!!!
+
+
+\item \emph{Subset / specification}: TODO!!!
 
 \end{proof}
 
@@ -114,7 +148,7 @@ Let $\varphi(x, y, p_1, \ldots, p_n)$ be a~formula with no free variables except
 \end{equation}
 Let $\chi$ be an instance of \emph{Replacement} schema for given $\varphi$. Let the following formulas be instances of the $N_0$ schema for formulas  $\varphi$, $\exists y \varphi$, $\chi$ and $\forall x, p_1, \ldots, p_n \chi$ respectively:
 
-% TODO pozor nazmatek ve jmenech promennych
+% TODO pozor na zmatek ve jmenech promennych
 We can deduce the following from $N_0$: 
 \bce[(i)]
 \item $x, y, p_1, \ldots, p_n \in u \then (\varphi \iff \varphi^{u}) $
@@ -138,21 +172,19 @@ which together with $\bold{(iv)}$ yields $\forall x, p_1, \ldots, p_n \chi$. Via
 What we have just proven is just a single theorem from the above mentioned article by Lévy, we will introduce other interesting propositions, mostly related to the existence of large cardinals, later in their appropriate context in chapter 3.
 
 % =====================================================================================================================================
-% \newpage
-\subsection{Contemporary restatement}
-We will now prove what is also Lévy's first-order reflection theorem, but rephrased with up to date set theory terminology. The main difference is, that while Lévy reflects $\varphi$ from $V$ to a set $u$ that is a "standard complete model of $\sf{S}$", we say that there is a $V_\alpha$ for a limit $\alpha$ that reflects $\varphi$. We will argue that those are equivalent.\footnote{TODO nekde na to bude lemma!}
 
+\subsection{Contemporary restatement}
+We will now prove what is also Lévy's first-order reflection theorem, but rephrased with up to date set theory terminology. The main difference is, that while Lévy reflects $\varphi$ from $V$ to a set $u$ that is a "standard complete model of $\sf{S}$", we say that there is a $V_\alpha$ for a limit $\alpha$ that reflects $\varphi$, which is equivalent due to lemma \ref{lemma:scm_s_is_limit} introduced in the previous part.
 
 \begin{definition}{(Reflection\textsubscript{1})}\label{def:reflection_1}\\
 Let $\varphi(p_1, \ldots, p_n)$ be a first-order formula in the language of set theory. Than the following holds for any such $\varphi$.
-% \ref{equation:levy_theorem_i}
 \begin{equation}
 \forall M_0 \exists M (M_0 \subseteq M \et (\varphi^M(p_1, \ldots, p_n) \iff \varphi(p_1, \ldots, p_n)))
 \end{equation}
 \end{definition}
 Note that this is a restatement of both Lévy's $N$ and $N_0$ from the previous chapter, see definitions \ref{def:n}, \ref{def:n_0}. We prefer to call it \emph{Reflection\textsubscript{1}} so it complies with how other axioms and schemata are called. \footnote{We will not use the name $N_0$, because it might be confusing to work $N_0$ and $M_0$ where $M_0$ is a set and $N_0$ is an axiom schema.} Note that the subscript 1 refers to the fact that $\varphi(p_1, \ldots, p_n)$ is a first-order formula, and since we're using the work "reflection" in less strict meaning throughout this thesis, distinguishing between the two just by using italic font face for the schema might cause confusion.
 
-We will now prove the equivalence of \emph{Reflection\textsubscript{1}} with \emph{Replacement} and \emph{Infinity} in $\sf{S}$ in two parts. First, we will show that $N_0$ is a theorem of $\sf{ZFC}$, then we shall show that the second implication, which proves \emph{Infinity} and \emph{Replacement} from $N_0$, also holds.
+We will now prove the equivalence of \emph{Reflection\textsubscript{1}} with \emph{Replacement} and \emph{Infinity} in $\sf{S}$ in two parts. First, we will show that \emph{Reflection\textsubscript{1}} is a theorem of $\sf{ZFC}$, then we shall show that the second implication, which proves \emph{Infinity} and \emph{Replacement} from \emph{Reflection\textsubscript{1}}, also holds.
 
 The following lemma is usually done in more parts, the first being for one formula, the other for $n$ formulas. We will only state and prove the more general version for $n$ formulas, knowing that setting $n=1$ turns it to a specific version.
 
@@ -205,7 +237,7 @@ M^T_{i+1} = V_\gamma
 \end{equation}
 The final $M$ is obtained by joining all the individual steps. 
 \begin{equation}
-M = \bigcup_{i=0}^{\infty} M_i, \mbox{  }M^T = \bigcup_{i=0}^{\infty} M^T_i = V_\alpha \mbox{ \footnote{TODO proc vime, ze existuje $\alpha$, ze to plati?}}
+M = \bigcup_{i=0}^{\infty} M_i, \mbox{  }M^T = \bigcup_{i=0}^{\infty} M^T_i = V_\alpha % \mbox{ \footnote{TODO proc vime, ze existuje $\alpha$, ze to plati?}}
 \end{equation}
 
 \
@@ -307,47 +339,17 @@ To finish part $\bold{(iv)}$, we take $M$ of size $\leq |M_0| \cdot \aleph_0$, w
 
 Let $\sf{S}$ be a set theory defined in \ref{def:s}, for $\sf{ZFC}$ see \ref{def:zfc}.
 
-\begin{lemma}\label{lemma:model_of_s}\
-Let $M$ be a set. Then the following holds: % TODO musi to byt v ZFC? % TODO maybe we dont need shit stuff but it's interestng
-\begin{equation}
-\sf{ZFC} \models (M \models \sf{S}) \iff \mbox{"$M$ is a limit cardinal"}
-\end{equation}
-\end{lemma}
-
-\begin{proof}
-For the left-to-right direction, we shall verify that if $M$ is a model of $\sf{S}$, it necessarily is a limit cardinal.
-From \emph{Powerset}\footnote{\ref{def:powerset}.}, we know that for any $x \in M$, $\power{x} \in M$. But that is already the definition of a strong limit cardinal\footnote{see \ref{def:strong_limit_cardinal}}.
-
-For the converse, we need to see that if there is a limit ordinal $\alpha$, such that $V_\alpha = M$, the axioms of $\sf{S}$ hold $M$.
-\bce[(i)]
-\item \emph{Existence of a set} (see \ref{def:existence_of_a_set})\\
-There obviously is a set $x \in M$
-\item \emph{Extensionality} (see \ref{def:extensionality})\\
-Since $Extensionality^M$ is a $\Delta_0$ formula, it holds in any transitive class by \ref{lemma:delta_0_absolute}.\item \emph{Specification} (see \ref{def:specification})\\
-TODO
-\item \emph{Foundation} (see \ref{def:foundation})\\
-$Foundation^M$ is also a $\Delta_0$ formula, so it holds by \ref{lemma:delta_0_absolute} since $M$ is transitive because it is a cardinal.\item \emph{Pairing} (see \ref{def:pairing})\\
-TODO
-\item \emph{Union} (see \ref{def:union}\\
-TODO
-\item \emph{Powerset} (see \ref{def:powerset})\\
-TODO
-\ece
-\end{proof}
-
 Let \emph{Infinity} and \emph{Replacement} be as defined in \ref{def:infinity} and \ref{def:replacement} respectively.
 
-\begin{theorem}\label{levy_equivalence_contemporary}
+\begin{theorem}\label{theorem:levy_equivalence_contemporary}
 \emph{Reflection}\textsubscript{1} is equivalent to \emph{Infinity} $ \et $ \emph{Replacement} under $\sf{S}$.
 \end{theorem}
-
+% lemma:model_of_s?
 \begin{proof}
 Since \ref{theorem:first_order_reflection} already gives us one side of the implication, we are only interested in showing the converse which we shall do in two parts:
 
-TODO $N_0$ prepsat zpatky na \emph{Reflection}\textsubscript{1}
-
-$\bold{N_0 \then \emph{Infinity}}$
-From $N_0$ (\ref{def:n_0}), we know that for any first-order formula $\varphi$ and a set $M_0$, there is a $M$ such that $M_0 \subseteq M$ and $\varphi^M \iff \varphi$. Let's pick \emph{Powerset} for $\varphi$, then by $N_0$ there is a set that satisfies \emph{Powerset}, ergo there is a strong limit cardinal, which in turn satisfies \emph{Infinity}.
+$\bold{\emph{Reflection\textsubscript{1}} \then \emph{Infinity}}$
+From \emph{Reflection\textsubscript{1}}, we know that for any first-order formula $\varphi$ and a set $M_0$, there is a $M$ such that $M_0 \subseteq M$ and $\varphi^M \iff \varphi$. Let's pick \emph{Powerset} for $\varphi$, then by \emph{Reflection\textsubscript{1}} there is a set that satisfies \emph{Powerset}, ergo there is a strong limit cardinal, which in turn satisfies \emph{Infinity}.
 
 \
 
