@@ -8,16 +8,16 @@
 \contentsline {subsubsection}{\numberline {1.2.5}Relativisation and Absoluteness}{15}
 \contentsline {subsubsection}{\numberline {1.2.6}More Functions}{16}
 \contentsline {subsubsection}{\numberline {1.2.7}Structure, Substructure and Embedding}{17}
-\contentsline {section}{\numberline {2}Levy's first-order reflection}{19}
+\contentsline {section}{\numberline {2}Levy's First-Order Reflection}{19}
 \contentsline {subsection}{\numberline {2.1}L\IeC {\'e}vy's Original Paper}{19}
 \contentsline {subsection}{\numberline {2.2}$\sf {S} \vdash (N_0\ \leftrightarrow \ \emph {Replacement} \mathrel {\&}\emph {Infinity})$}{20}
-\contentsline {subsection}{\numberline {2.3}Contemporary restatement}{23}
+\contentsline {subsection}{\numberline {2.3}Contemporary Restatement}{23}
 \contentsline {section}{\numberline {3}Reflection And Large Cardinals}{30}
 \contentsline {subsection}{\numberline {3.1}Regular Fixed-Point Axioms}{31}
 \contentsline {subsection}{\numberline {3.2}Inaccessibility}{34}
 \contentsline {subsection}{\numberline {3.3}Mahlo Cardinals}{36}
-\contentsline {subsection}{\numberline {3.4}Second-order Reflection}{37}
-\contentsline {subsection}{\numberline {3.5}Indescribality}{40}
+\contentsline {subsection}{\numberline {3.4}Second-Order Reflection}{37}
+\contentsline {subsection}{\numberline {3.5}Indescribality}{39}
 \contentsline {subsection}{\numberline {3.6}Measurable Cardinal}{44}
-\contentsline {subsection}{\numberline {3.7}The Constructible Universe}{45}
-\contentsline {section}{\numberline {4}Conclusion}{50}
+\contentsline {subsection}{\numberline {3.7}The Constructible Universe}{44}
+\contentsline {section}{\numberline {4}Conclusion}{49}
