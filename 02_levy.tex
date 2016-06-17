@@ -79,42 +79,57 @@ We will now verify that all axioms of $\sf{S}$ are satisfied in a limit ordinal
 
 \bce[(i)]
 \item \emph{The existence of a set} comes from the fact that $u$ is a non-empty set.
+% Jech 12.10, 12.11
 
 \item \emph{Extensionality}: \\(see (\ref{def:extensionality}))
 \begin{equation}
-\forall x, y, z ((z \in x \iff z \in y) \then x = y)
+\forall x, y (x = y \iff \forall z (z \in x \iff z \in y))
 \end{equation}
-The formula $\varphi(x, y) = (\forall z \in u)((z \in x \iff z \in y) \then x = y)$ is in fact the membership relation on $u$. Because it is a $\Pi_1$ formula, it holds in transitive $u$ by (\ref{lemma:downward_absoluteness}).
+Note that given arbitrary sets $x, y$, consider the formula $\varphi$ defined as $\varphi(x, y) = ((\forall z \in x) z \in y \et (\forall q \in y) q \in x) \iff x = y$.
+Because $\varphi$ is $\Delta_0$, $\varphi \iff \varphi^u$ by $\Delta_0$-absolutness lemma (\ref{lemma:delta_0_absoluteness}).
 
 \item \emph{Foundation}: \\(see (\ref{def:foundation}))
 \begin{equation}
-\forall x (x \neq \emptyset \then \exists (y \in x) (\forall z \neg (z \in y \et z \in x)))
+\forall x (x \neq \emptyset \then (\exists y \in x) (x \cap z = \emptyset))
 \end{equation}
-The formula $wf(x) = x \neq \emptyset \then \exists (y \in x) (\forall z \neg (z \in y \et z \in x))$\footnote{"wf" stands for well-founded.} is $\Delta_0$, (\ref{lemma:delta_0_absoluteness}).
+The formula $\varphi(x) = x \neq \emptyset \then (\exists y \in x) (x \cap z = \emptyset)$ is $\Delta_0$, it is therefore absolute in $u$ by lemma (\ref{lemma:delta_0_absoluteness}).
 
-\item \emph{Powerset}: \\(see (\ref{def:powerset}))
+\item \emph{Powerset}: \\(see (\ref{def:powerset})) %fixme
 \begin{equation}
-\forall x \exists y \forall z (z \subseteq x \then z \in y).
+\forall x \exists y \forall z (z \subseteq x \iff z \in y)
 \end{equation}
-\emph{Powerset} holds from limitness of $u$ by the argument used in the other implication of this lemma.
+\emph{Powerset} holds from limitness of $u$ by the argument used in the other implication of this lemma. % TODO odflakly
 
 \item \emph{Union}:\\
 (see (\ref{def:union}))
 \begin{equation}
-\forall x \exists y \forall z (z \in y \iff \exists q( z \in q \et q \in x)).
+\forall x \exists y \forall z (z \in y \iff \exists q( z \in q \et q \in x))
 \end{equation}
-\emph{Union} Holds because for $x \in u$ and $\alpha$ is an ordinal such that $rank(x) = \alpha$, every element of $x$ is also an element of $\alpha$. So, from transitivity, $(\bigcup x) \subseteq \alpha$, so $(\bigcup x) \in \power{\alpha}$.
+Given any $x \in u$, we want verify that $y = \bigcup x$ is also in $u$. Note that $y = \bigcup x$ is also $\Delta_0$.
+\beq
+y = \bigcup x \iff (\forall z \in y)(\exists q \in x) z \in q \et (\forall z \in x)(\forall q \in z) q \in y
+\eeq
+So by lemma (\ref{lemma:delta_0_absoluteness})
+\beq
+y = \bigcup x \iff (y = \bigcup x)^u
+\eeq
 
 \item \emph{Pairing}:\\
 (see (\ref{def:pairing}))
 \begin{equation}
-(\forall x, y \exists z (x \in z \et y \in z)) % TODO BLBE
+\forall x, y \exists z \forall q (q \in z \iff q = x \lor q = y)
 \end{equation}
-\emph{Pairing} also from limitness of $u$ together with \emph{powerset}. Since $u$ is transitive, then for any $x, y \in u$, there are the least ordinals $\alpha, \beta$ such that $\alpha = rank(x)$, $\beta = rank(x)$, then either $\alpha = \beta$ or, without a loss of generality, $\alpha \in \beta$, but then, in both cases, $\{x, \{y\}\} \in \power{\beta}$ and thus $\{x, \{y\}\}$ is a set of $u$.
+Given two sets $x, y \in u$, we want to show that $z = \{x, y\}$ is also an element of $u$.
+\beq
+z = \{x, y\} \iff x \in z \et y \in z \et (\forall q \in z)(q = x \lor q = y)
+\eeq
+So $(z = \{x, y\})$ is $\Delta_0$, thus, by lemma (\ref{lemma:delta_0_absoluteness}).
+\beq
+$z = \{x, y\} \iff (z = \{x, y\})^u$
+\eeq
 
-
-\item \emph{Specification}: \\
-Given a set $x$, for any $\varphi$, all the elements of $x$ satisfying $\varphi$ form a subset of $x$, which is an element of $\power{x}$ and thus also a set if $u$ by \emph{powerset}.
+\item \emph{Specification}: \\ %fixme
+Given a set $x$, for any $\varphi$, all the elements of $x$ satisfying $\varphi$ form a subset of $x$, which is an element of $\power{x}$ and thus also a subset of $u$ by \emph{powerset} and transitivity of $u$.
 \ece
 \end{proof}
 

@@ -36,14 +36,14 @@ The above axiom is usually not used because it can be deduced from the axiom of 
 
 \begin{definition}{(Extensionality)}\label{def:extensionality}
 \begin{equation}
-\forall x, y (\forall z (z \in x \iff z \in y) \iff x = y)
+\forall x, y (x = y \iff \forall z (z \in x \iff z \in y)) %ok
 \end{equation}
 \end{definition}
 
 \begin{definition}{(Specification)}\label{def:specification}\\
 The following is a schema for every first-order formula $\varphi(x, p_1, \ldots, p_n)$ with no free variables other than $x, p_1, \ldots, p_n$.
 \begin{equation}
-\forall x, p_1, \ldots, p_n \exists y \forall z ( z \in y \iff z \in x \et \varphi(z, p_1, \ldots, p_n))
+\forall x, p_1, \ldots, p_n \exists y \forall z ( z \in y \iff z \in x \et \varphi(z, p_1, \ldots, p_n)) %ok
 \end{equation}
 \end{definition}
 
@@ -65,28 +65,40 @@ Let $\varphi = \neg(x = x)$, $y$ is an arbitrary set, we there exists at least o
 We know that $\emptyset$ is a set from \emph{specification} and it is the same set for every $y$ given from \emph{extensionality}.
 \end{definition}
 
+\begin{definition}{(Set Intersection)}\\
+\beq
+x \cap y = \{ z: z \in x \et z \in y \}
+\eeq
+\end{definition}
+
+\begin{definition}{(Set Union)}\\
+\beq
+x \cup y = \{ z: z \in x \lor z \in y \}
+\eeq
+\end{definition}
+
 Now we can introduce more axioms.
 \begin{definition}{(Foundation)}\label{def:foundation}
 \begin{equation}
-\forall x (x \neq \emptyset \then \exists (y \in x) (\forall z \neg (z \in y \et z \in x)))
+\forall x (x \neq \emptyset \then (\exists y \in x) (x \cap z = \emptyset)) %ok
 \end{equation}
 \end{definition}
 
 \begin{definition}{(Pairing)}\label{def:pairing}
 \begin{equation}
-\forall x, y \exists z \forall q (q \in z \iff q = x \lor q = y)
+\forall x, y \exists z \forall q (q \in z \iff q = x \lor q = y) %ok
 \end{equation}
 \end{definition}
 
 \begin{definition}{(Union)}\label{def:union}
 \begin{equation}
-\forall x \exists y \forall z (z \in y \iff \exists q( z \in q \et q \in x))
+\forall x \exists y \forall z (z \in y \iff \exists q( z \in q \et q \in x)) %ok
 \end{equation}
 \end{definition}
 
 \begin{definition}{(Powerset)}\label{def:powerset}
 \begin{equation}
-\forall x \exists y \forall z (z \subseteq x \iff z \in y)
+\forall x \exists y \forall z (z \subseteq x \iff z \in y) %ok
 \end{equation}
 \end{definition}
 
