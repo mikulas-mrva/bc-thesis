@@ -1,18 +1,21 @@
 \section{Levy's First-Order Reflection}\label{sec:first_order}
 
 \subsection{Lévy's Original Paper}\label{sec:levy1960}
-This section is base on Lévy's paper \emph{Axiom Schemata of Strong Infinity in Axiomatic Set Theory}\footnote{\cite{Levy60a}} from 1960. It presents Lévy's general reflection principle and it's equivalence to \emph{Replacement} and \emph{Infinity} under $\sf{S}$\footnote{see (\ref{def:s}).}.
+This section is base on Lévy's paper \emph{Axiom Schemata of Strong Infinity in Axiomatic Set Theory} \cite{Levy60a} from 1960. It presents Lévy's general reflection principle and its equivalence to \emph{Replacement} and \emph{Infinity} under $\sf{S}$\footnote{see (\ref{def:s}).}.
 
-When reading said article, one should bear in mind that while the author often speaks about a~model of $\sf{ZF}$, usually denoted $u$, this is equivalent to today's universal class $V$, so it doesn't necessarily mean that there is a set $u$ that is a model of $\sf{ZF}$\footnote{This is indeed impossible to prove in $\sf{ZF} due to Incompleteness.$}. We will review the notion of a standard complete model used by Lévy throughout the paper in a moment.
-The axioms used in what Lévy calls $\sf{ZF}$ are equivalent to those defined in (\ref{def:zf}), except for the \emph{Axiom of Subsets}, which is just a different name for \emph{Specification}.
-Besides $\sf{ZF}$ and $\sf{S}$, defined in (\ref{def:zf}) and (\ref{def:s}) respectively, the set theories theories $\sf{Z}$, and $\sf{SF}$ are used in the text. $\sf{Z}$ is $\sf{ZF}$ minus replacement, $\sf{SF}$ is $\sf{ZF}$ minus \emph{Infinity}. Also note that universal quantifier does not appear, $\forall x \varphi (x)$ would be written as $(x) \varphi (x)$. The symbol for negation is "$\sim$", implication is written as "$\supset$" and equivalence is "$\equiv$", we will use "$\neg$", "$\then$" and "$\iff$".
+When reading Lévy's article, one should bear in mind that while the author often speaks about a~model of $\sf{ZF}$, usually denoted $u$, this is equivalent to today's universal class $V$, so it doesn't necessarily mean that there is a set $u$ that is a model of $\sf{ZF}$\footnote{This is indeed impossible to prove in $\sf{ZF} due to Gödel's Incompleteness.$}. We will review the notion of a standard complete model used by Lévy throughout the paper in a moment.
+The axioms used in what Lévy calls $\sf{ZF}$ are identical to those defined in (\ref{def:zf}), except for the \emph{Axiom of Subsets},
+which is just a different but equivalent formulation of \emph{Specification}. % todo koukni do churche jak se to s tim ma
+Besides $\sf{ZF}$ and $\sf{S}$, defined in (\ref{def:zf}) and (\ref{def:s}) respectively, the set theories theories $\sf{Z}$, and $\sf{SF}$ are used in the text. $\sf{Z}$ is $\sf{ZF}$ minus replacement, $\sf{SF}$ is $\sf{ZF}$ minus \emph{Infinity}. Also note that the universal quantifier symbol does not appear, $\forall x \varphi (x)$ would be written as $(x) \varphi (x)$. The symbol for negation is "$\sim$", implication is written as "$\supset$" and equivalence is "$\equiv$", we will use standard notation with "$\neg$", "$\then$" and "$\iff$" when presenting Lévy's results.
 
-Next two definitions are not used in contemporary set theory, but they illustrate 1960's set theory mind-set and they are used heavily in Lévy's text, so we will include and explain them for clarity. Generally, in this chapter, $\sf{Q}$ stands for an arbitrary axiomatic set theory used for general definitions, $u$ is usually a model of $\sf{Q}$, counterpart of today's $V$.
+Next two definitions are not used in contemporary set theory, but they illustrate 1960's set theory mind-set and they are used heavily in Lévy's text, so we will include and explain them for clarity. Generally, in this chapter, $\sf{Q}$ stands for an arbitrary axiomatic set theory used for general definitions, $u$ is usually a model of $\sf{Q}$, counterpart of today's the universal class $V$.
 
 This subsection uses $\sf{ZF}$ instead of the usual $\sf{ZFC}$ as the underlying theory.
 
+% zkontrolovano az sem ==========================================================================================
+
 \begin{definition}{(Standard Model of a Set Theory)}\label{def:sm_q}\\
-Let $\sf{Q}$ be a axiomatic set theory in first-order logic. We say the the a class $u$ is a standard model of $\sf{Q}$ with respect to a membership relation $E$, written as $Sm^{\sf{Q}}(u)$, iff both of the following hold
+Let $\sf{Q}$ be an arbitrary axiomatic set theory in first-order logic. We say the the a class $u$ is a standard model of $\sf{Q}$ with respect to a membership relation $E$, written as $Sm^{\sf{Q}}(u)$, iff both of the following hold
 \bce[(i)]
 \item $(x, y) \in E \iff y \in u \et x \in y$
 \item $y \in u \et x \in y \then x \in u$
@@ -28,7 +31,7 @@ this is written as $Scm^{\sf{Q}}(u)$.
 \end{definition}
 
 \begin{definition}{(Inaccessible Cardinal With Respect to $\sf{Q}$)}\label{def:levy_inaccessible_q}\\
-Let $\sf{Q}$ be an axiomatic first-order set theory. We say that a cardinal $\kappa$ is inaccessible with respect to $\sf{Q}$, we write $In^{\sf{Q}}(\kappa)$.
+Let $\sf{Q}$ be an arbitrary axiomatic first-order set theory. We say that a cardinal $\kappa$ is inaccessible with respect to $\sf{Q}$, we write $In^{\sf{Q}}(\kappa)$.
 \begin{equation}
 In^{\sf{Q}}(\kappa) \defeq Scm^{\sf{Q}}(V_\kappa).
 \end{equation}
@@ -62,7 +65,7 @@ where $\varphi$ is a~formula which contains no free variables except for $x_1, \
 Now that we have established the basic terminology, we can review Lévy's proof that in a theory $\sf{S}$, which is defined in (\ref{def:s}), $N_0$ can be used to prove both \emph{Replacement} and \emph{Infinity}.
 
 \subsection{$\sf{S} \vdash (N_0\ \iff\ \emph{Replacement} \et \emph{Infinity})$} 
-
+% ==================================== odsud zkontrolovano ======================================================
 Let $\sf{S}$ be a set theory as defined in (\ref{def:s}). We will first prove a lemma to show what's mentioned as obvious in \cite{Levy60a} and that is a fact, that any set $u$ such that $Scm^{\sf{S}}(u)$ is a limit ordinal.
 \begin{lemma}\label{lemma:scm_s_is_limit}\
 The following holds for every $u$.
@@ -72,9 +75,10 @@ The following holds for every $u$.
 \end{lemma}
 
 \begin{proof}
+% TODODO je to ordinal nebo hladina? V_lambda !!!
 Let $u$ be a standard complete model of $\sf{S}$. We know that $u$ is transitive from the definition of a standard complete model. 
 To see that $u$ is an ordinal, note that it is transitive and $\emptyset \in u$ from \emph{the existence of a set} (see (\ref{def:existence_of_a_set})). To see that $u$ is limit, consider that if $u$ was a successor ordinal, there would be a set $x \in u$ such that $x \cup \{x\} = u$, but then $u \subset \power{x}$, which contradicts the fact that $(\forall x\in u)(\exists y \in u)(\power{x} = y)$ implied by \emph{powerset} and it's not empty as stated earlier.
-
+% z neceho je jasny ze to musi byt V_lambda!
 We will now verify that all axioms of $\sf{S}$ are satisfied in a limit ordinal demoted $u$.
 
 \bce[(i)]
@@ -94,11 +98,14 @@ Because $\varphi$ is $\Delta_0$, $\varphi \iff \varphi^u$ by $\Delta_0$-absolutn
 \end{equation}
 The formula $\varphi(x) = x \neq \emptyset \then (\exists y \in x) (x \cap z = \emptyset)$ is $\Delta_0$, it is therefore absolute in $u$ by lemma (\ref{lemma:delta_0_absoluteness}).
 
-\item \emph{Powerset}: \\(see (\ref{def:powerset})) %fixme
+\item \emph{Powerset}: \\(see (\ref{def:powerset}))
 \begin{equation}
 \forall x \exists y \forall z (z \subseteq x \iff z \in y)
 \end{equation}
-\emph{Powerset} holds from limitness of $u$ by the argument used in the other implication of this lemma. % TODO odflakly
+Given $x \in u$, we want to make sure that $\power{x} \in u$. Let $\varphi$ denote the formula $y \in \power{x} \iff y \subset x$.
+We know that $y \subset x$ is $\Delta_0$ according to definition (\ref{def:subset}). We also know that given $x$, $\varphi$ holds for every $y$ due to the definition of $\power{x}$.
+That means that $\varphi \iff \varphi^u$ and therefore we can conclude that $u \models \varphi$.
+
 
 \item \emph{Union}:\\
 (see (\ref{def:union}))
@@ -116,20 +123,24 @@ y = \bigcup x \iff (y = \bigcup x)^u
 
 \item \emph{Pairing}:\\
 (see (\ref{def:pairing}))
-\begin{equation}
+\beq
 \forall x, y \exists z \forall q (q \in z \iff q = x \lor q = y)
-\end{equation}
-Given two sets $x, y \in u$, we want to show that $z = \{x, y\}$ is also an element of $u$.
+\eeq
+Given two sets $x, y \in u$, we want to show that $z$, defined as $z = \{x, y\}$, is also an element of $u$.
 \beq
 z = \{x, y\} \iff x \in z \et y \in z \et (\forall q \in z)(q = x \lor q = y)
 \eeq
-So $(z = \{x, y\})$ is $\Delta_0$, thus, by lemma (\ref{lemma:delta_0_absoluteness}).
+So $(z = \{x, y\})$ is $ \Delta_0 $, and thus by lemma (\ref{lemma:delta_0_absoluteness}) it holds that
 \beq
-$z = \{x, y\} \iff (z = \{x, y\})^u$
+z = \{x, y\} \iff (z = \{x, y\})^u
 \eeq
 
 \item \emph{Specification}: \\ %fixme
-Given a set $x$, for any $\varphi$, all the elements of $x$ satisfying $\varphi$ form a subset of $x$, which is an element of $\power{x}$ and thus also a subset of $u$ by \emph{powerset} and transitivity of $u$.
+Given a first-order formula $\varphi$, we want to show the following
+\beq
+u \models 
+\eeq
+%Given a set $x$, for any $\varphi$, all the elements of $x$ satisfying $\varphi$ form a subset of $x$, which is an element of $\power{x}$ and thus also a subset of $u$ by \emph{powerset} and transitivity of $u$.
 \ece
 \end{proof}
 
@@ -142,7 +153,7 @@ In $\sf{S}$, the schema $N_0$ implies \emph{Infinity}.
 Lévy skips this proof because it seems too obvious to him, but we will do it here for plasticity.
 For an arbitrary $\varphi$, $N_0$ gives us $\exists u Scm^{\sf{S}}(u)$, but from lemma (\ref{lemma:scm_s_is_limit}), we know that this $u$ is a limit ordinal. This $u$ already satisfies \emph{Infinity}.
 \end{proof}
-
+% ==================================== POTUD zkontrolovano ======================================================
 \
 
 Let $N_0$ be defined as in (\ref{def:levy_axiom_n0}), for \emph{Replacement} see (\ref{def:replacement}), $\sf{S}$ is again the set theory defined in (\ref{def:s}).

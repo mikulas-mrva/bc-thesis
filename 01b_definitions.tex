@@ -48,9 +48,9 @@ The following is a schema for every first-order formula $\varphi(x, p_1, \ldots,
 \end{definition}
 
 We will now provide two definitions that are not axioms, but will be helpful in establishing some of the other axioms in a more intuitive way.
-\begin{definition}{($x \subseteq y$, $x \subset y$)}
+\begin{definition}{($x \subseteq y$, $x \subset y$)}\label{def:subset}
 \begin{equation}
-x \subseteq y \iff \forall z(z \in x \then z \in y)
+x \subseteq y \iff (\forall z \in x) z \in y
 \end{equation}
 \begin{equation}
 x \subset y \iff x \subseteq y \et x \neq y
