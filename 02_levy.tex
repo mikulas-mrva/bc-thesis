@@ -3,7 +3,7 @@
 \subsection{Lévy's Original Paper}\label{sec:levy1960}
 This section is base on Lévy's paper \emph{Axiom Schemata of Strong Infinity in Axiomatic Set Theory} \cite{Levy60a} from 1960. It presents Lévy's general reflection principle and its equivalence to \emph{Replacement} and \emph{Infinity} under $\sf{S}$\footnote{see (\ref{def:s}).}.
 
-When reading Lévy's article, one should bear in mind that while the author often speaks about a~model of $\sf{ZF}$, usually denoted $u$, this is equivalent to today's universal class $V$, so it doesn't necessarily mean that there is a set $u$ that is a model of $\sf{ZF}$\footnote{This is indeed impossible to prove in $\sf{ZF} due to Gödel's Incompleteness.$}. We will review the notion of a standard complete model used by Lévy throughout the paper in a moment.
+When reading Lévy's article, one should bear in mind that while the author often speaks about a~model of $\sf{ZF}$, usually denoted $u$, this is equivalent to today's universal class $V$, so it doesn't necessarily mean that there is a set $u$ that is a model of $\sf{ZF}$\footnote{This is indeed impossible to prove in $\sf{ZF}$ due to Gödel's Incompleteness.}. We will review the notion of a standard complete model used by Lévy throughout the paper in a moment.
 The axioms used in what Lévy calls $\sf{ZF}$ are identical to those defined in (\ref{def:zf}), except for the \emph{Axiom of Subsets},
 which is just a different but equivalent formulation of \emph{Specification}. % todo koukni do churche jak se to s tim ma
 Besides $\sf{ZF}$ and $\sf{S}$, defined in (\ref{def:zf}) and (\ref{def:s}) respectively, the set theories theories $\sf{Z}$, and $\sf{SF}$ are used in the text. $\sf{Z}$ is $\sf{ZF}$ minus replacement, $\sf{SF}$ is $\sf{ZF}$ minus \emph{Infinity}. Also note that the universal quantifier symbol does not appear, $\forall x \varphi (x)$ would be written as $(x) \varphi (x)$. The symbol for negation is "$\sim$", implication is written as "$\supset$" and equivalence is "$\equiv$", we will use standard notation with "$\neg$", "$\then$" and "$\iff$" when presenting Lévy's results.
@@ -13,7 +13,8 @@ Next two definitions are not used in contemporary set theory, but they illustrat
 This subsection uses $\sf{ZF}$ instead of the usual $\sf{ZFC}$ as the underlying theory.
 
 % zkontrolovano az sem ==========================================================================================
-
+% pojmy "non-simple applied first-order functional calculus" viz \cite{church1996introduction} str. 281 !
+% http://math.stackexchange.com/questions/1776765/what-is-non-simple-applied-first-order-functional-calculus-60s-set-theory
 \begin{definition}{(Standard Model of a Set Theory)}\label{def:sm_q}\\
 Let $\sf{Q}$ be an arbitrary axiomatic set theory in first-order logic. We say the the a class $u$ is a standard model of $\sf{Q}$ with respect to a membership relation $E$, written as $Sm^{\sf{Q}}(u)$, iff both of the following hold
 \bce[(i)]
@@ -66,11 +67,15 @@ Now that we have established the basic terminology, we can review Lévy's proof 
 
 \subsection{$\sf{S} \vdash (N_0\ \iff\ \emph{Replacement} \et \emph{Infinity})$} 
 % ==================================== odsud zkontrolovano ======================================================
+% ACHTUNG
+% Sm je definovany jako konjunkce vsech relativizovanych axiomu, takze to je kruh...
+% presunout do contemporary restatement?
+% viz Levy str. (224)
 Let $\sf{S}$ be a set theory as defined in (\ref{def:s}). We will first prove a lemma to show what's mentioned as obvious in \cite{Levy60a} and that is a fact, that any set $u$ such that $Scm^{\sf{S}}(u)$ is a limit ordinal.
 \begin{lemma}\label{lemma:scm_s_is_limit}\
 The following holds for every $u$.
 \begin{equation}
-\mbox{"$u$ is a limit ordinal"} \iff Scm^{\sf{S}}(u)
+\mbox{"$u$ is a limit ordinal"} \then Scm^{\sf{S}}(u) % spatne!!
 \end{equation}
 \end{lemma}
 
@@ -135,12 +140,12 @@ So $(z = \{x, y\})$ is $ \Delta_0 $, and thus by lemma (\ref{lemma:delta_0_absol
 z = \{x, y\} \iff (z = \{x, y\})^u
 \eeq
 
-\item \emph{Specification}: \\ %fixme
+\item \emph{Specification}: \\ %zkontrolovat
 Given a first-order formula $\varphi$, we want to show the following
 \beq
-u \models 
+u \models \forall x \forall p_1, \ldots, p_n, \exists y \forall z (z \in y \iff z \in x \et \varphi(z, p_1, \ldots, p_n))
 \eeq
-%Given a set $x$, for any $\varphi$, all the elements of $x$ satisfying $\varphi$ form a subset of $x$, which is an element of $\power{x}$ and thus also a subset of $u$ by \emph{powerset} and transitivity of $u$.
+Given any $x$ along wiht parameters $p_1, \ldots, p_n$, we set $y = \{z \in y : \varphi^u(z, p_1, \ldots, p_n) \}$. From transitivity of $u$ and the fact that $y \subset x$ and $x \in u$, we can conclude that $y \in u$, so $u \models \forall z (z \in y \iff z \in x \et \varphi(z, p_1, \dots, p_n))$.
 \ece
 \end{proof}
 
