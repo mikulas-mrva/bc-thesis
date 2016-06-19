@@ -15,13 +15,18 @@ This subsection uses $\sf{ZF}$ instead of the usual $\sf{ZFC}$ as the underlying
 % zkontrolovano az sem ==========================================================================================
 % pojmy "non-simple applied first-order functional calculus" viz \cite{church1996introduction} str. 281 !
 % http://math.stackexchange.com/questions/1776765/what-is-non-simple-applied-first-order-functional-calculus-60s-set-theory
+
+For the follwoing definition, let us add that Lévy didn't consider the axiom of subsets a schema, it was formulated as $\forall x \exists y \forall z (z \in y \iff z \in x \et p(z))$. A substitution rule included in the logic so that the $p(z)$ function in the axiom can be substituted for any formula. 
 \begin{definition}{(Standard Model of a Set Theory)}\label{def:sm_q}\\
-Let $\sf{Q}$ be an arbitrary axiomatic set theory in first-order logic. We say the the a class $u$ is a standard model of $\sf{Q}$ with respect to a membership relation $E$, written as $Sm^{\sf{Q}}(u)$, iff both of the following hold
-\bce[(i)]
-\item $(x, y) \in E \iff y \in u \et x \in y$
-\item $y \in u \et x \in y \then x \in u$
-\ece
-\end{definition}
+Let $\sf{Q}$ be an arbitrary axiomatic set theory in first-order logic. 
+
+% TODO konjunkce atomu
+%We say the the a class $u$ is a standard model of $\sf{Q}$ with respect to a membership relation $e$, written as $Sm^{\sf{Q}}(u, e)$.
+% \bce[(i)]
+%\item $(x, y) \in E \iff y \in u \et x \in y$
+%\item $y \in u \et x \in y \then x \in u$
+%\ece
+\end{definition} % TODO 
 \begin{definition}{(Standard Complete Model of a Set Theory)}\label{def:scm_q}\\
 Let $\sf{Q}$ and $E$ be like in (\ref{def:sm_q}). We say that that $u$ is a standard complete model of $\sf{Q}$ with respect to a membership relation $E$ iff both of the following hold
 \bce[(i)]
@@ -66,99 +71,7 @@ where $\varphi$ is a~formula which contains no free variables except for $x_1, \
 Now that we have established the basic terminology, we can review Lévy's proof that in a theory $\sf{S}$, which is defined in (\ref{def:s}), $N_0$ can be used to prove both \emph{Replacement} and \emph{Infinity}.
 
 \subsection{$\sf{S} \vdash (N_0\ \iff\ \emph{Replacement} \et \emph{Infinity})$} 
-% ==================================== odsud zkontrolovano ======================================================
-% ACHTUNG
-% Sm je definovany jako konjunkce vsech relativizovanych axiomu, takze to je kruh...
-% presunout do contemporary restatement?
-% viz Levy str. (224)
-Let $\sf{S}$ be a set theory as defined in (\ref{def:s}). We will first prove a lemma to show what's mentioned as obvious in \cite{Levy60a} and that is a fact, that any set $u$ such that $Scm^{\sf{S}}(u)$ is a limit ordinal.
-\begin{lemma}\label{lemma:scm_s_is_limit}\
-The following holds for every $u$.
-\begin{equation}
-\mbox{"$u$ is a limit ordinal"} \then Scm^{\sf{S}}(u) % spatne!!
-\end{equation}
-\end{lemma}
-
-\begin{proof}
-% TODODO je to ordinal nebo hladina? V_lambda !!!
-Let $u$ be a standard complete model of $\sf{S}$. We know that $u$ is transitive from the definition of a standard complete model. 
-To see that $u$ is an ordinal, note that it is transitive and $\emptyset \in u$ from \emph{the existence of a set} (see (\ref{def:existence_of_a_set})). To see that $u$ is limit, consider that if $u$ was a successor ordinal, there would be a set $x \in u$ such that $x \cup \{x\} = u$, but then $u \subset \power{x}$, which contradicts the fact that $(\forall x\in u)(\exists y \in u)(\power{x} = y)$ implied by \emph{powerset} and it's not empty as stated earlier.
-% z neceho je jasny ze to musi byt V_lambda!
-We will now verify that all axioms of $\sf{S}$ are satisfied in a limit ordinal demoted $u$.
-
-\bce[(i)]
-\item \emph{The existence of a set} comes from the fact that $u$ is a non-empty set.
-% Jech 12.10, 12.11
-
-\item \emph{Extensionality}: \\(see (\ref{def:extensionality}))
-\begin{equation}
-\forall x, y (x = y \iff \forall z (z \in x \iff z \in y))
-\end{equation}
-Note that given arbitrary sets $x, y$, consider the formula $\varphi$ defined as $\varphi(x, y) = ((\forall z \in x) z \in y \et (\forall q \in y) q \in x) \iff x = y$.
-Because $\varphi$ is $\Delta_0$, $\varphi \iff \varphi^u$ by $\Delta_0$-absolutness lemma (\ref{lemma:delta_0_absoluteness}).
-
-\item \emph{Foundation}: \\(see (\ref{def:foundation}))
-\begin{equation}
-\forall x (x \neq \emptyset \then (\exists y \in x) (x \cap z = \emptyset))
-\end{equation}
-The formula $\varphi(x) = x \neq \emptyset \then (\exists y \in x) (x \cap z = \emptyset)$ is $\Delta_0$, it is therefore absolute in $u$ by lemma (\ref{lemma:delta_0_absoluteness}).
-
-\item \emph{Powerset}: \\(see (\ref{def:powerset}))
-\begin{equation}
-\forall x \exists y \forall z (z \subseteq x \iff z \in y)
-\end{equation}
-Given $x \in u$, we want to make sure that $\power{x} \in u$. Let $\varphi$ denote the formula $y \in \power{x} \iff y \subset x$.
-We know that $y \subset x$ is $\Delta_0$ according to definition (\ref{def:subset}). We also know that given $x$, $\varphi$ holds for every $y$ due to the definition of $\power{x}$.
-That means that $\varphi \iff \varphi^u$ and therefore we can conclude that $u \models \varphi$.
-
-
-\item \emph{Union}:\\
-(see (\ref{def:union}))
-\begin{equation}
-\forall x \exists y \forall z (z \in y \iff \exists q( z \in q \et q \in x))
-\end{equation}
-Given any $x \in u$, we want verify that $y = \bigcup x$ is also in $u$. Note that $y = \bigcup x$ is also $\Delta_0$.
-\beq
-y = \bigcup x \iff (\forall z \in y)(\exists q \in x) z \in q \et (\forall z \in x)(\forall q \in z) q \in y
-\eeq
-So by lemma (\ref{lemma:delta_0_absoluteness})
-\beq
-y = \bigcup x \iff (y = \bigcup x)^u
-\eeq
-
-\item \emph{Pairing}:\\
-(see (\ref{def:pairing}))
-\beq
-\forall x, y \exists z \forall q (q \in z \iff q = x \lor q = y)
-\eeq
-Given two sets $x, y \in u$, we want to show that $z$, defined as $z = \{x, y\}$, is also an element of $u$.
-\beq
-z = \{x, y\} \iff x \in z \et y \in z \et (\forall q \in z)(q = x \lor q = y)
-\eeq
-So $(z = \{x, y\})$ is $ \Delta_0 $, and thus by lemma (\ref{lemma:delta_0_absoluteness}) it holds that
-\beq
-z = \{x, y\} \iff (z = \{x, y\})^u
-\eeq
-
-\item \emph{Specification}: \\ %zkontrolovat
-Given a first-order formula $\varphi$, we want to show the following
-\beq
-u \models \forall x \forall p_1, \ldots, p_n, \exists y \forall z (z \in y \iff z \in x \et \varphi(z, p_1, \ldots, p_n))
-\eeq
-Given any $x$ along wiht parameters $p_1, \ldots, p_n$, we set $y = \{z \in y : \varphi^u(z, p_1, \ldots, p_n) \}$. From transitivity of $u$ and the fact that $y \subset x$ and $x \in u$, we can conclude that $y \in u$, so $u \models \forall z (z \in y \iff z \in x \et \varphi(z, p_1, \dots, p_n))$.
-\ece
-\end{proof}
-
-Let $N_0$ be defined as in (\ref{def:levy_axiom_n0}), for \emph{Infinity} see (\ref{def:infinity}).
-\begin{theorem}\
-In $\sf{S}$, the schema $N_0$ implies \emph{Infinity}.
-\end{theorem}
-
-\begin{proof}
-Lévy skips this proof because it seems too obvious to him, but we will do it here for plasticity.
-For an arbitrary $\varphi$, $N_0$ gives us $\exists u Scm^{\sf{S}}(u)$, but from lemma (\ref{lemma:scm_s_is_limit}), we know that this $u$ is a limit ordinal. This $u$ already satisfies \emph{Infinity}.
-\end{proof}
-% ==================================== POTUD zkontrolovano ======================================================
+% TODO lemma o tom, ze V_limitni ordinal je model S, bylo presunuto do contemporary restatement
 \
 
 Let $N_0$ be defined as in (\ref{def:levy_axiom_n0}), for \emph{Replacement} see (\ref{def:replacement}), $\sf{S}$ is again the set theory defined in (\ref{def:s}).
@@ -369,6 +282,101 @@ To finish part $\bold{(iv)}$, we take $M$ of size $\leq |M_0| \cdot \aleph_0$, w
 \
 
 Let $\sf{S}$ be a set theory defined in \ref{def:s}, for $\sf{ZFC}$ see \ref{def:zfc}.
+
+% ==================================== odsud zkontrolovano ======================================================
+% ACHTUNG
+% Sm je definovany jako konjunkce vsech relativizovanych axiomu, takze to je kruh...
+% presunout do contemporary restatement?
+% viz Levy str. (224)
+% todo s/u/V_lambda
+Let $\sf{S}$ be a set theory as defined in (\ref{def:s}). We will first prove a lemma to show what's mentioned as obvious in \cite{Levy60a} and that is a fact, that any set $u$ such that $Scm^{\sf{S}}(u)$ is a limit ordinal.
+\begin{lemma}\label{lemma:scm_s_is_limit}\
+The following holds for every $u$.
+\begin{equation}
+\mbox{"$u$ is a limit ordinal"} \then Scm^{\sf{S}}(u) % spatne!!
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+% TODODO je to ordinal nebo hladina? V_lambda !!!
+Let $u$ be a standard complete model of $\sf{S}$. We know that $u$ is transitive from the definition of a standard complete model. 
+To see that $u$ is an ordinal, note that it is transitive and $\emptyset \in u$ from \emph{the existence of a set} (see (\ref{def:existence_of_a_set})). To see that $u$ is limit, consider that if $u$ was a successor ordinal, there would be a set $x \in u$ such that $x \cup \{x\} = u$, but then $u \subset \power{x}$, which contradicts the fact that $(\forall x\in u)(\exists y \in u)(\power{x} = y)$ implied by \emph{powerset} and it's not empty as stated earlier.
+% z neceho je jasny ze to musi byt V_lambda!
+We will now verify that all axioms of $\sf{S}$ are satisfied in a limit ordinal demoted $u$.
+
+\bce[(i)]
+\item \emph{The existence of a set} comes from the fact that $u$ is a non-empty set.
+% Jech 12.10, 12.11
+
+\item \emph{Extensionality}: \\(see (\ref{def:extensionality}))
+\begin{equation}
+\forall x, y (x = y \iff \forall z (z \in x \iff z \in y))
+\end{equation}
+Note that given arbitrary sets $x, y$, consider the formula $\varphi$ defined as $\varphi(x, y) = ((\forall z \in x) z \in y \et (\forall q \in y) q \in x) \iff x = y$.
+Because $\varphi$ is $\Delta_0$, $\varphi \iff \varphi^u$ by $\Delta_0$-absolutness lemma (\ref{lemma:delta_0_absoluteness}).
+
+\item \emph{Foundation}: \\(see (\ref{def:foundation}))
+\begin{equation}
+\forall x (x \neq \emptyset \then (\exists y \in x) (x \cap z = \emptyset))
+\end{equation}
+The formula $\varphi(x) = x \neq \emptyset \then (\exists y \in x) (x \cap z = \emptyset)$ is $\Delta_0$, it is therefore absolute in $u$ by lemma (\ref{lemma:delta_0_absoluteness}).
+
+\item \emph{Powerset}: \\(see (\ref{def:powerset}))
+\begin{equation}
+\forall x \exists y \forall z (z \subseteq x \iff z \in y)
+\end{equation}
+Given $x \in u$, we want to make sure that $\power{x} \in u$. Let $\varphi$ denote the formula $y \in \power{x} \iff y \subset x$.
+We know that $y \subset x$ is $\Delta_0$ according to definition (\ref{def:subset}). We also know that given $x$, $\varphi$ holds for every $y$ due to the definition of $\power{x}$.
+That means that $\varphi \iff \varphi^u$ and therefore we can conclude that $u \models \varphi$.
+
+
+\item \emph{Union}:\\
+(see (\ref{def:union}))
+\begin{equation}
+\forall x \exists y \forall z (z \in y \iff \exists q( z \in q \et q \in x))
+\end{equation}
+Given any $x \in u$, we want verify that $y = \bigcup x$ is also in $u$. Note that $y = \bigcup x$ is also $\Delta_0$.
+\beq
+y = \bigcup x \iff (\forall z \in y)(\exists q \in x) z \in q \et (\forall z \in x)(\forall q \in z) q \in y
+\eeq
+So by lemma (\ref{lemma:delta_0_absoluteness})
+\beq
+y = \bigcup x \iff (y = \bigcup x)^u
+\eeq
+
+\item \emph{Pairing}:\\
+(see (\ref{def:pairing}))
+\beq
+\forall x, y \exists z \forall q (q \in z \iff q = x \lor q = y)
+\eeq
+Given two sets $x, y \in u$, we want to show that $z$, defined as $z = \{x, y\}$, is also an element of $u$.
+\beq
+z = \{x, y\} \iff x \in z \et y \in z \et (\forall q \in z)(q = x \lor q = y)
+\eeq
+So $(z = \{x, y\})$ is $ \Delta_0 $, and thus by lemma (\ref{lemma:delta_0_absoluteness}) it holds that
+\beq
+z = \{x, y\} \iff (z = \{x, y\})^u
+\eeq
+
+\item \emph{Specification}: \\ %zkontrolovat
+Given a first-order formula $\varphi$, we want to show the following
+\beq
+u \models \forall x \forall p_1, \ldots, p_n, \exists y \forall z (z \in y \iff z \in x \et \varphi(z, p_1, \ldots, p_n))
+\eeq
+Given any $x$ along wiht parameters $p_1, \ldots, p_n$, we set $y = \{z \in y : \varphi^u(z, p_1, \ldots, p_n) \}$. From transitivity of $u$ and the fact that $y \subset x$ and $x \in u$, we can conclude that $y \in u$, so $u \models \forall z (z \in y \iff z \in x \et \varphi(z, p_1, \dots, p_n))$.
+\ece
+\end{proof}
+
+Let $N_0$ be defined as in (\ref{def:levy_axiom_n0}), for \emph{Infinity} see (\ref{def:infinity}).
+\begin{theorem}\
+In $\sf{S}$, the schema $N_0$ implies \emph{Infinity}.
+\end{theorem}
+
+\begin{proof}
+Lévy skips this proof because it seems too obvious to him, but we will do it here for plasticity.
+For an arbitrary $\varphi$, $N_0$ gives us $\exists u Scm^{\sf{S}}(u)$, but from lemma (\ref{lemma:scm_s_is_limit}), we know that this $u$ is a limit ordinal. This $u$ already satisfies \emph{Infinity}.
+\end{proof}
+% ==================================== POTUD zkontrolovano ======================================================
 
 Let \emph{Infinity} and \emph{Replacement} be as defined in \ref{def:infinity} and \ref{def:replacement} respectively.
 
