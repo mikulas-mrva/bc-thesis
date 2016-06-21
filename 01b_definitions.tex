@@ -65,6 +65,18 @@ Let $\varphi = \neg(x = x)$, $y$ is an arbitrary set, we there exists at least o
 We know that $\emptyset$ is a set from \emph{specification} and it is the same set for every $y$ given from \emph{extensionality}.
 \end{definition}
 
+\begin{definition}{(Pairing)}\label{def:pairing}
+\begin{equation}
+\forall x, y \exists z \forall q (q \in z \iff q = x \lor q = y) %ok
+\end{equation}
+\end{definition}
+
+\begin{definition}{(Union)}\label{def:union}
+\begin{equation}
+\forall x \exists y \forall z (z \in y \iff \exists q( z \in q \et q \in x)) %ok
+\end{equation}
+\end{definition}
+
 \begin{definition}{(Set Intersection)}\\
 \beq
 x \cap y = \{ z: z \in x \et z \in y \}
@@ -84,25 +96,13 @@ Now we can introduce more axioms.
 \end{equation}
 \end{definition}
 
-\begin{definition}{(Pairing)}\label{def:pairing}
-\begin{equation}
-\forall x, y \exists z \forall q (q \in z \iff q = x \lor q = y) %ok
-\end{equation}
-\end{definition}
-
-\begin{definition}{(Union)}\label{def:union}
-\begin{equation}
-\forall x \exists y \forall z (z \in y \iff \exists q( z \in q \et q \in x)) %ok
-\end{equation}
-\end{definition}
-
 \begin{definition}{(Powerset)}\label{def:powerset}
 \begin{equation}
 \forall x \exists y \forall z (z \subseteq x \iff z \in y) %ok
 \end{equation}
 \end{definition}
 
-\begin{definition}{(Infinity)}\label{def:infinity}
+\begin{definition}{(Infinity)}\label{def:infinity} %?
 \begin{equation}
 \exists x (\emptyset \in x \et (\forall y \in x)(y\cup\{y\} \in x))
 \end{equation}

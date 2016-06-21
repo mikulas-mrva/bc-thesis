@@ -5,33 +5,24 @@ This section is base on Lévy's paper \emph{Axiom Schemata of Strong Infinity in
 
 When reading Lévy's article, one should bear in mind that while the author often speaks about a~model of $\sf{ZF}$, usually denoted $u$, this is equivalent to today's universal class $V$, so it doesn't necessarily mean that there is a set $u$ that is a model of $\sf{ZF}$\footnote{This is indeed impossible to prove in $\sf{ZF}$ due to Gödel's Incompleteness.}. We will review the notion of a standard complete model used by Lévy throughout the paper in a moment.
 The axioms used in what Lévy calls $\sf{ZF}$ are identical to those defined in (\ref{def:zf}), except for the \emph{Axiom of Subsets},
-which is just a different but equivalent formulation of \emph{Specification}. % todo koukni do churche jak se to s tim ma
+which is just a different but equivalent formulation of \emph{Specification}.
+One might be confused by the fact that Lévy treats the \emph{Axiom of Subsets} as a single axiom rather than a schema, this comes from the fact that the underlying logic used is different. Lévy works with set theories formulated in the \emph{non-simple applied first order functional calculus}, see Chapter IV in \cite{church1996introduction} for details. Now, we only need to know that the calculus contains a substitution rule for functional variables. This way, the \emph{Axiom of Subsets} acts as a schema even though it is formulated as a single formula.
+% todo koukni do churche jak se to s tim ma
 Besides $\sf{ZF}$ and $\sf{S}$, defined in (\ref{def:zf}) and (\ref{def:s}) respectively, the set theories theories $\sf{Z}$, and $\sf{SF}$ are used in the text. $\sf{Z}$ is $\sf{ZF}$ minus replacement, $\sf{SF}$ is $\sf{ZF}$ minus \emph{Infinity}. Also note that the universal quantifier symbol does not appear, $\forall x \varphi (x)$ would be written as $(x) \varphi (x)$. The symbol for negation is "$\sim$", implication is written as "$\supset$" and equivalence is "$\equiv$", we will use standard notation with "$\neg$", "$\then$" and "$\iff$" when presenting Lévy's results.
 
-Next two definitions are not used in contemporary set theory, but they illustrate 1960's set theory mind-set and they are used heavily in Lévy's text, so we will include and explain them for clarity. Generally, in this chapter, $\sf{Q}$ stands for an arbitrary axiomatic set theory used for general definitions, $u$ is usually a model of $\sf{Q}$, counterpart of today's the universal class $V$.
+The following definitions are not used in contemporary set theory, but they illustrate 1960's set theory mind-set and they are used heavily in Lévy's text, so we will include and explain them for clarity. Generally in this chapter, $\sf{Q}$ stands for an arbitrary axiomatic set theory. % used for general definitions, $u$ is usually a model of $\sf{Q}$, counterpart of today's the universal class $V$.
 
-This subsection uses $\sf{ZF}$ instead of the usual $\sf{ZFC}$ as the underlying theory.
 
-% zkontrolovano az sem ==========================================================================================
-% pojmy "non-simple applied first-order functional calculus" viz \cite{church1996introduction} str. 281 !
-% http://math.stackexchange.com/questions/1776765/what-is-non-simple-applied-first-order-functional-calculus-60s-set-theory
+This subsection uses $\sf{ZF}$ instead of the usual $\sf{ZFC}$ as the underlying theory. % neni to zbytecny?
 
 For the follwoing definition, let us add that Lévy didn't consider the axiom of subsets a schema, it was formulated as $\forall x \exists y \forall z (z \in y \iff z \in x \et p(z))$. A substitution rule included in the logic so that the $p(z)$ function in the axiom can be substituted for any formula. 
-\begin{definition}{(Standard Model of a Set Theory)}\label{def:sm_q}\\
-Let $\sf{Q}$ be an arbitrary axiomatic set theory in first-order logic. 
 
-% TODO konjunkce atomu
-%We say the the a class $u$ is a standard model of $\sf{Q}$ with respect to a membership relation $e$, written as $Sm^{\sf{Q}}(u, e)$.
-% \bce[(i)]
-%\item $(x, y) \in E \iff y \in u \et x \in y$
-%\item $y \in u \et x \in y \then x \in u$
-%\ece
-\end{definition} % TODO 
 \begin{definition}{(Standard Complete Model of a Set Theory)}\label{def:scm_q}\\
 Let $\sf{Q}$ and $E$ be like in (\ref{def:sm_q}). We say that that $u$ is a standard complete model of $\sf{Q}$ with respect to a membership relation $E$ iff both of the following hold
 \bce[(i)]
-\item $u$ is a transitive set with respect to $\in$
-\item $\forall E ((x, y) \in E \iff (y \in u \et x \in y) \et Sm^{\sf{Q}}(u, E))$
+\item $(\forall \sigma \in \sf{Q})(u \models \sigma)$
+\item $\forall y (y \in u \then y \subset u) $
+\item $\forall e \langle x, y \rangle \in e \iff (y \in u \et x \in y)$
 \ece
 this is written as $Scm^{\sf{Q}}(u)$.
 \end{definition}
@@ -51,7 +42,7 @@ In(\kappa) \defeq In^{\sf{ZF}}(\kappa)
 \end{definition}
 The above definition of inaccessibles is used because it doesn't require \emph{Choice}.
 
-For the definition of relativization, see (\ref{def:relativization}). The syntax used by Lévy is $Rel(u, \varphi)$, we will use $\varphi^{u}$, which is more usual these days.
+For the definition of relativization, see (\ref{def:relativization}). The notation used by Lévy is "$Rel(u, \varphi)$", we will stick to "$\varphi^{u}$".
 \begin{definition}{($N$)}\label{def:levy_axiom_n}\\
 The following is an axiom schema of complete reflection over $\sf{ZF}$, denoted as $N$:
 \begin{equation}
@@ -61,20 +52,29 @@ where $\varphi$ is a~formula which contains no free variables except for $x_1, \
 \end{definition}
 
 \begin{definition}{($N_0$)}\label{def:levy_axiom_n0}\\
-With $\sf{S}$ instead of $\sf{ZF}$we obtain what will now be called $N_0$:
+The following is almost identical to axiom schema $N$, but with $\sf{S}$ instead of $\sf{ZF}$. We will call it $N_0$:
 \begin{equation}
 \exists u (Scm^{\sf{S}}(u) \et \forall x_1, \ldots , x_n (x_1, \ldots , x_n \in u \then \varphi \iff \varphi^{u}))
 \end{equation}
 where $\varphi$ is a~formula which contains no free variables except for $x_1, \ldots , x_n$.
 \end{definition}
 
-Now that we have established the basic terminology, we can review Lévy's proof that in a theory $\sf{S}$, which is defined in (\ref{def:s}), $N_0$ can be used to prove both \emph{Replacement} and \emph{Infinity}.
+Let $\sf{S}$ be an axiomatic set theory defined in (\ref{def:s}). We will now show that in $\sf{S}$, $N_0$ implies both \emph{Replacement} and \emph{Infinity}.
 
-\subsection{$\sf{S} \vdash (N_0\ \iff\ \emph{Replacement} \et \emph{Infinity})$} 
-% TODO lemma o tom, ze V_limitni ordinal je model S, bylo presunuto do contemporary restatement
 \
 
-Let $N_0$ be defined as in (\ref{def:levy_axiom_n0}), for \emph{Replacement} see (\ref{def:replacement}), $\sf{S}$ is again the set theory defined in (\ref{def:s}).
+Let $N_0$ be defined as in (\ref{def:levy_axiom_n0}), for \emph{Infinity} see (\ref{def:infinity}).
+\begin{theorem}\
+In $\sf{S}$, the schema $N_0$ implies \emph{Infinity}.
+\end{theorem}
+
+\begin{proof}
+Let $\varphi = \forall x \exists y (y = x \cup \{x\})$. This clearly holds in $\sf{S}$ because given any set $x$, we can always obtain the set $x \cup \{x\}$ via \emph{Powerset} and \emph{Specification}.
+From $N_0$, there then exists a set $u$ such that $\varphi^{u}$ holds. This $u$ satisfies the conditions required by \emph{Infinity}, so we're done.
+\end{proof}
+
+% ==============================================================================================================================
+
 \begin{theorem}
 In $\sf{S}$, the schema $N_0$ implies \emph{Replacement}.
 \end{theorem}
@@ -289,39 +289,40 @@ Let $\sf{S}$ be a set theory defined in \ref{def:s}, for $\sf{ZFC}$ see \ref{def
 % presunout do contemporary restatement?
 % viz Levy str. (224)
 % todo s/u/V_lambda
-Let $\sf{S}$ be a set theory as defined in (\ref{def:s}). We will first prove a lemma to show what's mentioned as obvious in \cite{Levy60a} and that is a fact, that any set $u$ such that $Scm^{\sf{S}}(u)$ is a limit ordinal.
+Let $\sf{S}$ be a set theory as defined in (\ref{def:s}). %We will first prove a lemma to show what's mentioned as obvious in \cite{Levy60a} and that is a fact, that any set $u$ such that $Scm^{\sf{S}}(u)$ is a limit ordinal.
 \begin{lemma}\label{lemma:scm_s_is_limit}\
-The following holds for every $u$.
+The following holds for every $\lambda$.
 \begin{equation}
-\mbox{"$u$ is a limit ordinal"} \then Scm^{\sf{S}}(u) % spatne!!
+\mbox{"$\lambda$ is a limit ordinal"} \then V_\lambda \models \sf{S}
 \end{equation}
 \end{lemma}
 
 \begin{proof}
+cely blbe: % !!!!!!!!!!!!
 % TODODO je to ordinal nebo hladina? V_lambda !!!
-Let $u$ be a standard complete model of $\sf{S}$. We know that $u$ is transitive from the definition of a standard complete model. 
-To see that $u$ is an ordinal, note that it is transitive and $\emptyset \in u$ from \emph{the existence of a set} (see (\ref{def:existence_of_a_set})). To see that $u$ is limit, consider that if $u$ was a successor ordinal, there would be a set $x \in u$ such that $x \cup \{x\} = u$, but then $u \subset \power{x}$, which contradicts the fact that $(\forall x\in u)(\exists y \in u)(\power{x} = y)$ implied by \emph{powerset} and it's not empty as stated earlier.
+%Let $\M$ be a model of $\sf{S}$. We know that $u$ is transitive from the definition of a standard complete model. 
+%To see that $u$ is an ordinal, note that it is transitive and $\emptyset \in u$ from \emph{the existence of a set} (see (\ref{def:existence_of_a_set})). To see that $u$ is limit, consider that if $u$ was a successor ordinal, there would be a set $x \in u$ such that $x \cup \{x\} = u$, but then $u \subset \power{x}$, which contradicts the fact that $(\forall x\in u)(\exists y \in u)(\power{x} = y)$ implied by \emph{powerset} and it's not empty as stated earlier.
 % z neceho je jasny ze to musi byt V_lambda!
-We will now verify that all axioms of $\sf{S}$ are satisfied in a limit ordinal demoted $u$.
+We will now verify that all axioms of $\sf{S}$ are satisfied in a $V_\lambda$ for any $\lambda$.
 
 \bce[(i)]
 \item \emph{The existence of a set} comes from the fact that $u$ is a non-empty set.
 % Jech 12.10, 12.11
 
-\item \emph{Extensionality}: \\(see (\ref{def:extensionality}))
+\item \emph{Extensionality}: \\ (see (\ref{def:extensionality} ))
 \begin{equation}
 \forall x, y (x = y \iff \forall z (z \in x \iff z \in y))
 \end{equation}
 Note that given arbitrary sets $x, y$, consider the formula $\varphi$ defined as $\varphi(x, y) = ((\forall z \in x) z \in y \et (\forall q \in y) q \in x) \iff x = y$.
 Because $\varphi$ is $\Delta_0$, $\varphi \iff \varphi^u$ by $\Delta_0$-absolutness lemma (\ref{lemma:delta_0_absoluteness}).
 
-\item \emph{Foundation}: \\(see (\ref{def:foundation}))
+\item \emph{Foundation}: \\ (see (\ref{def:foundation}))
 \begin{equation}
 \forall x (x \neq \emptyset \then (\exists y \in x) (x \cap z = \emptyset))
 \end{equation}
 The formula $\varphi(x) = x \neq \emptyset \then (\exists y \in x) (x \cap z = \emptyset)$ is $\Delta_0$, it is therefore absolute in $u$ by lemma (\ref{lemma:delta_0_absoluteness}).
 
-\item \emph{Powerset}: \\(see (\ref{def:powerset}))
+\item \emph{Powerset}: \\ (see (\ref{def:powerset}))
 \begin{equation}
 \forall x \exists y \forall z (z \subseteq x \iff z \in y)
 \end{equation}
@@ -367,15 +368,6 @@ Given any $x$ along wiht parameters $p_1, \ldots, p_n$, we set $y = \{z \in y : 
 \ece
 \end{proof}
 
-Let $N_0$ be defined as in (\ref{def:levy_axiom_n0}), for \emph{Infinity} see (\ref{def:infinity}).
-\begin{theorem}\
-In $\sf{S}$, the schema $N_0$ implies \emph{Infinity}.
-\end{theorem}
-
-\begin{proof}
-Lévy skips this proof because it seems too obvious to him, but we will do it here for plasticity.
-For an arbitrary $\varphi$, $N_0$ gives us $\exists u Scm^{\sf{S}}(u)$, but from lemma (\ref{lemma:scm_s_is_limit}), we know that this $u$ is a limit ordinal. This $u$ already satisfies \emph{Infinity}.
-\end{proof}
 % ==================================== POTUD zkontrolovano ======================================================
 
 Let \emph{Infinity} and \emph{Replacement} be as defined in \ref{def:infinity} and \ref{def:replacement} respectively.
