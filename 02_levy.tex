@@ -1,30 +1,32 @@
 \section{Levy's First-Order Reflection}\label{sec:first_order}
 
 \subsection{Lévy's Original Paper}\label{sec:levy1960}
-This section is base on Lévy's paper \emph{Axiom Schemata of Strong Infinity in Axiomatic Set Theory} \cite{Levy60a} from 1960. It presents Lévy's general reflection principle and its equivalence to \emph{Replacement} and \emph{Infinity} under $\sf{S}$\footnote{see (\ref{def:s}).}.
+This section is based on Lévy's paper \emph{Axiom Schemata of Strong Infinity in Axiomatic Set Theory} \cite{Levy60a} % hnusna citace!
+from 1960. It presents Lévy's general reflection principle and its equivalence to \emph{Replacement} and \emph{Infinity} under $\sf{S}$\footnote{See definition (\ref{def:s}).}.
 
-When reading Lévy's article, one should bear in mind that while the author often speaks about a~model of $\sf{ZF}$, usually denoted $u$, this is equivalent to today's universal class $V$, so it doesn't necessarily mean that there is a set $u$ that is a model of $\sf{ZF}$\footnote{This is indeed impossible to prove in $\sf{ZF}$ due to Gödel's Incompleteness.}. We will review the notion of a standard complete model used by Lévy throughout the paper in a moment.
-The axioms used in what Lévy calls $\sf{ZF}$ are identical to those defined in (\ref{def:zf}), except for the \emph{Axiom of Subsets},
-which is just a different but equivalent formulation of \emph{Specification}.
-One might be confused by the fact that Lévy treats the \emph{Axiom of Subsets} as a single axiom rather than a schema, this comes from the fact that the underlying logic used is different. Lévy works with set theories formulated in the \emph{non-simple applied first order functional calculus}, see Chapter IV in \cite{church1996introduction} for details. Now, we only need to know that the calculus contains a substitution rule for functional variables. This way, the \emph{Axiom of Subsets} acts as a schema even though it is formulated as a single formula.
+First, we should point out that set theory has changed over the last 66 years, we will now point out a few notable differences. When reading Lévy's article, one should bear in mind that while the author often speaks about a~model of $\sf{ZF}$, usually denoted $u$, it doesn't necessarily mean that there is a set $u$ that is a model of $\sf{ZF}$\footnote{This is indeed impossible to prove in $\sf{ZF}$ due to Gödel's Incompleteness.}, nowadays we are used to using the notion of universal class $V$ in similar sense, albeit independently of a particular axiomatic theory. We will review the exact meaning of the notion of a standard complete model in a moment.
+The theory $\sf{ZF}$ is almost identical to the theory we have established in (\ref{def:zf}).
+One might be confused by the fact that Lévy treats the \emph{Subsets} axiom, which is in fact \emph{Specification} as a single axiom rather than a schema. He even takes the conjunction of all axioms of $\sf{ZF}$ and treats it like a formula.  This is possible because the underlying logic calculus is different. Lévy works with set theories formulated in the \emph{non-simple applied first order functional calculus}, see Chapter IV in \cite{church1996introduction} for details. For now, we only need to know that the calculus contains a substitution rule for functional variables. This way, \emph{Subsets} is de facto a schema even though it sometimes treated as a single formula.
 % todo koukni do churche jak se to s tim ma
-Besides $\sf{ZF}$ and $\sf{S}$, defined in (\ref{def:zf}) and (\ref{def:s}) respectively, the set theories theories $\sf{Z}$, and $\sf{SF}$ are used in the text. $\sf{Z}$ is $\sf{ZF}$ minus replacement, $\sf{SF}$ is $\sf{ZF}$ minus \emph{Infinity}. Also note that the universal quantifier symbol does not appear, $\forall x \varphi (x)$ would be written as $(x) \varphi (x)$. The symbol for negation is "$\sim$", implication is written as "$\supset$" and equivalence is "$\equiv$", we will use standard notation with "$\neg$", "$\then$" and "$\iff$" when presenting Lévy's results.
+It should also be noted that the logical conectives look difference. The usual symbol for universal quantifier does not appear, $\forall x \varphi (x)$ would be written as $(x) \varphi (x)$. The symbol for negation is "$\sim$", implication is written as "$\supset$" and equivalence is "$\equiv$". We will use standard notation with "$\neg$", "$\then$" and "$\iff$" respectively when presenting Lévy's results.
 
-The following definitions are not used in contemporary set theory, but they illustrate 1960's set theory mind-set and they are used heavily in Lévy's text, so we will include and explain them for clarity. Generally in this chapter, $\sf{Q}$ stands for an arbitrary axiomatic set theory. % used for general definitions, $u$ is usually a model of $\sf{Q}$, counterpart of today's the universal class $V$.
+%The following definitions are not used in contemporary set theory, but they illustrate 1960's set theory mind-set and they are used heavily in Lévy's text, so we will include and explain them for clarity. 
+%Generally in this chapter, $\sf{Q}$ stands for an arbitrary axiomatic set theory. % used for general definitions, $u$ is usually a model of $\sf{Q}$, counterpart of today's the universal class $V$.
 
+\
 
 This subsection uses $\sf{ZF}$ instead of the usual $\sf{ZFC}$ as the underlying theory. % neni to zbytecny?
 
-For the follwoing definition, let us add that Lévy didn't consider the axiom of subsets a schema, it was formulated as $\forall x \exists y \forall z (z \in y \iff z \in x \et p(z))$. A substitution rule included in the logic so that the $p(z)$ function in the axiom can be substituted for any formula. 
+%For the following definition, let us add that Lévy didn't consider the axiom of subsets a schema, it was formulated as $\forall x \exists y \forall z (z \in y \iff z \in x \et p(z))$. A substitution rule included in the logic so that the $p(z)$ function in the axiom can be substituted for any formula. 
 
 \begin{definition}{(Standard Complete Model of a Set Theory)}\label{def:scm_q}\\
-Let $\sf{Q}$ and $E$ be like in (\ref{def:sm_q}). We say that that $u$ is a standard complete model of $\sf{Q}$ with respect to a membership relation $E$ iff both of the following hold
+Let $\sf{Q}$ be an arbitrary set theory given. % and let $e$ be a binary relation on u. 
+We say that that $u$ is a standard complete model of $\sf{Q}$, which is usually written as $Scm^{\sf{Q}}(u)$, iff
 \bce[(i)]
 \item $(\forall \sigma \in \sf{Q})(u \models \sigma)$
-\item $\forall y (y \in u \then y \subset u) $
-\item $\forall e \langle x, y \rangle \in e \iff (y \in u \et x \in y)$
-\ece
-this is written as $Scm^{\sf{Q}}(u)$.
+\item $\forall y (y \in u \then y \subset u)$
+% \item $\forall e \langle x, y \rangle \in e \iff (y \in u \et x \in y)$ % co je $e$? omg je to jinak, je to model vsech axiomu pro vsechny $e$!!! relatiizace do u, e?
+\ece 
 \end{definition}
 
 \begin{definition}{(Inaccessible Cardinal With Respect to $\sf{Q}$)}\label{def:levy_inaccessible_q}\\
@@ -73,9 +75,7 @@ Let $\varphi = \forall x \exists y (y = x \cup \{x\})$. This clearly holds in $\
 From $N_0$, there then exists a set $u$ such that $\varphi^{u}$ holds. This $u$ satisfies the conditions required by \emph{Infinity}, so we're done.
 \end{proof}
 
-% ==============================================================================================================================
-
-\begin{theorem}
+\begin{theorem} % todo zkontrolovat
 In $\sf{S}$, the schema $N_0$ implies \emph{Replacement}.
 \end{theorem}
 
@@ -88,9 +88,7 @@ Let $\varphi(x, y, p_1, \ldots, p_n)$ be a~formula with no free variables except
 \then \forall x \exists y \forall z (z \in y \iff \exists q (q \in x \et \varphi(q, z, p_1, \ldots, p_n)))
 \end{gathered}
 \end{equation}
-Let $\chi$ be an instance of \emph{Replacement} schema for given $\varphi$. Let the following formulas be instances of the $N_0$ schema for formulas  $\varphi$, $\exists y \varphi$, $\chi$ and $\forall x, p_1, \ldots, p_n \chi$ respectively:
-
-We can deduce the following from $N_0$: 
+Let $\chi$ be an instance of \emph{Replacement} schema for the above $\varphi$. Let the following formulas be instances of the $N_0$ schema for formulas  $\varphi$, $\exists y \varphi$, $\chi$ and $\forall x, p_1, \ldots, p_n \chi$ respectively:
 \bce[(i)]
 \item $x, y, p_1, \ldots, p_n \in u \then (\varphi \iff \varphi^{u}) $
 \item $x, p_1, \ldots, p_n \in u \then (\exists y \varphi \iff (\exists y \varphi)^{u})$
@@ -99,7 +97,7 @@ We can deduce the following from $N_0$:
 \ece
 
 From relativization, we also know that $(\exists y \varphi)^{u}$ is equivalent to $(\exists y \in u) \varphi^{u}$.
-Therefore $\bold{(ii)}$ is equivalent to
+Therefore $(ii)$ is equivalent to
 \begin{equation}
 x, p_1, \ldots, p_n \in u \then (\exists y \in u) \varphi^{u}. 
 \end{equation}
