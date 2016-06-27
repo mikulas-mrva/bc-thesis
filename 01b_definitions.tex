@@ -177,11 +177,6 @@ The following is a schema for every first-order formula $\varphi(x, p_1, \ldots,
 
 % TODO mas to blbe :(
 \begin{definition}{(Choice)}\label{def:choice}\\
-This is also a schema. For every $A$, a family of non-empty sets\footnote{We say a class $A$ is a "family of non-empty sets" iff there is $B$ such that $A \subseteq \power{B}$}, such that $\emptyset \not\in S$, there is a function $f$ such that for every $x \in A$
-\begin{equation}
-f(x) \in x
-\end{equation}
-Alternativne: % neni to druhoradovy?
 \begin{equation}
 \begin{gathered}
 \forall x \exists f ((f \mbox{ is a choice function with } dom(f) = x \setminus \{\emptyset\})\\
@@ -193,7 +188,7 @@ Alternativne: % neni to druhoradovy?
 We will refer the axioms by their name, written in italic type, e.g. \emph{Foundation} refers to the Axiom of Foundation. Now we need to define some basic set theories to be used in the article. 
 % todo neni to blbost? ^
 
-\begin{definition}{$(\sf{S})$}\label{def:s}\\
+\begin{definition}{$(\sf{S})$}\label{def:s}\\ %ok
 We call $\sf{S}$ an axiomatic theory in the language $\mathscr{L} = \{=, \in\}$ with exactly the following axioms:
 \bce[(i)]
 \item \emph{Existence of a set} (see \ref{def:existence_of_a_set})
@@ -206,71 +201,72 @@ We call $\sf{S}$ an axiomatic theory in the language $\mathscr{L} = \{=, \in\}$ 
 \ece
 \end{definition}
 
-\begin{definition}{$(\sf{ZF})$}\label{def:zf}\\
+\begin{definition}{$(\sf{ZF})$}\label{def:zf}\\ %ok
 We call $\sf{ZF}$ an axiomatic theory in the language $\mathscr{L} = \{=, \in\}$ that contains all the axioms of $\sf{S}$ in addition to the following
 \bce[(i)]
 \item \emph{Replacement} schema (see \ref{def:replacement})
 \item \emph{Infinity} (see \ref{def:infinity})
 \ece
-\emph{Existence of a set} is usually left out because it is implied by \emph{infinity}.
+\emph{Existence of a set} is usually left out because it is a consequence of \emph{infinity}.
 \end{definition}
 
-\begin{definition}{$(\sf{ZFC})$}\label{def:zfc}\\
+\begin{definition}{$(\sf{ZFC})$}\label{def:zfc}\\ % ok
 $\sf{ZFC}$ is an axiomatic theory in the language $\mathscr{L} = \{=, \in\}$ that contains all the axioms of $\sf{ZF}$ plus \emph{Choice} (\ref{def:choice}).
 \end{definition}
 
 \
 
 \subsubsection{The Transitive Universe}
-\begin{definition}{(Transitive Class)}\label{def:transitivity}\\
+\begin{definition}{(Transitive Class)}\label{def:transitivity}\\ % ok
 We say a class $A$ is \emph{transitive} iff
 \begin{equation}
 (\forall x \in A)(x \subseteq A)
 \end{equation}
 \end{definition}
 
-\begin{definition}{(Well Ordered Class)}\label{def:well_ordering}
+\begin{definition}{(Well Ordered Class)}\label{def:well_ordering} % ok
 A class $A$ is said to be \emph{well ordered by $\in$} iff the following hold:
 \bce[(i)]
 \item $(\forall x \in A)(x \not\in x)$ (Antireflexivity)
 \item $(\forall x, y, z \in A)(x \in y \et y \in z \then x \in z)$ (Transitivity)
 \item $(\forall x, y \in A)(x = y \lor x \in y \lor y \in x)$ (Linearity)
-\item $(\forall x)(x \subseteq A \et x \neq \emptyset \then (\exists y \in x)(\forall z \in x)(z = y \lor z \in y)))$ (Existence of the least element)
+\item $(\forall x \subseteq A)(x \neq \emptyset \then (\exists y \in x)(\forall z \in x)(z = y \lor z \in y)))$ (Existence of the least element)
 \ece
 \end{definition}
 
-\begin{definition}{(Ordinal Number)}\label{def:ordinal}\\
-A set $x$ is said to be an \emph{ordinal number}, also known as an \emph{ordinal}, if it is \emph{transitive} and \emph{well-ordered by $\in$}. 
+\begin{definition}{(Ordinal Number)}\label{def:ordinal}\\ % ok
+A set $x$ is said to be an \emph{ordinal number} if it is \emph{transitive} and \emph{well-ordered by $\in$}. 
 \end{definition}
 For the sake of brevity, we usually just say "$x$ is an \emph{ordinal}". 
-Note that "$x$ is an ordinal" is a well-defined formula, since \ref{def:transitivity} is a formula and \ref{def:well_ordering} is in fact a conjunction of four formulas.
+Note that "$x$ is an ordinal" is a well-defined formula in the language of set theory, since \ref{def:transitivity} is a first-order formula and \ref{def:well_ordering} is in fact a conjunction of four first-order formulas.
 Ordinals will be usually denoted by lower case greek letters, starting from the beginning: $\alpha, \beta, \gamma, \ldots$.
 Given two different ordinals $\alpha, \beta$, we will write $\alpha < \beta$ for $\alpha \in \beta$, see \cite{JechBook}{Lemma 2.11} for technical details.
 
-\begin{definition}{(Non-Zero Ordinal)}
+\begin{definition}{(Non-Zero Ordinal)} % ok 
 We say an ordinal $\alpha$ is \emph{non-zero} iff $\alpha \neq \emptyset$.
 \end{definition}
 
-\begin{definition}{(Successor Ordinal)}\label{def:successor_ordinal}\\
-Consider the following operation
+\begin{definition}{(Successor Ordinal)}\label{def:successor_ordinal}\\ % ok 
+Consider the following operation, let $\beta$ be an ordinal.
 \begin{equation}
-\beta + 1 \defeq \beta \cup \{\beta\}
+S(\beta) = \beta \cup \{\beta\}
 \end{equation}
-An ordinal $\alpha$ is called \emph{a successor ordinal} iff there is an ordinal $\beta$, such that $\alpha = \beta+1$
+An ordinal $\alpha$ is called \emph{a successor ordinal} iff there is an ordinal $\beta$, such that $\alpha = S(\beta)$. We will sometimes also write $\alpha = \beta+1$.
 \end{definition}
 
-\begin{definition}{(Limit Ordinal)}\label{def:limit_ordinal}\\
+\begin{definition}{(Limit Ordinal)}\label{def:limit_ordinal}\\ % ok
 A non-zero ordinal $\alpha$ is called a \emph{limit ordinal} iff it is not a successor ordinal.
 \end{definition}
 
-\begin{definition}{(Ord)}\label{def:ord}\\
-\emph{The class of all ordinal numbers}, which we will denote $Ord$\footnote{It is sometimes denoted $On$, but we will stick to the notation in \cite{JechBook}} be the following class:
+\begin{definition}{(Ord)}\label{def:ord}\\  % ok
+\emph{The class of all ordinal numbers}, which we will denote $Ord$\footnote{It is sometimes denoted $On$, but we will stick to the notation used in \cite{JechBook}} is the proper class defined as follows.
 \begin{equation}
-Ord \defeq \{x : x\mbox{ is an ordinal}\}
+Ord = \{x : x\mbox{ is an ordinal}\}
 \end{equation}
 \end{definition}
 
-The following construction will be often referred to as the \emph{Von Neumann's Hierarchy}, sometimes also the \emph{Von Neumann's Universe}. %, the former referring more to the construction with the individual levels in mind, the latter referring more to the class $V$, but they can be interchanged with no confusion caused.
+The following construction will be often referred to as the \emph{Von Neumann's Hierarchy}, sometimes also the \emph{Von Neumann's Universe}. 
+%, the former referring more to the construction with the individual levels in mind, the latter referring more to the class $V$, but they can be interchanged with no confusion caused.
 
 \begin{definition}{(Von Neumann's Hierarchy)}\label{def:von_neumann}\\
 The \emph{Von Neumann's Hierarchy} is a collection of sets indexed by elements of $Ord$, defined recursively in the following way:
