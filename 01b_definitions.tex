@@ -265,10 +265,10 @@ Ord = \{x : x\mbox{ is an ordinal}\}
 \end{equation}
 \end{definition}
 
-The following construction will be often referred to as the \emph{Von Neumann's Hierarchy}, sometimes also the \emph{Von Neumann's Universe}. 
+%The following construction will be often referred to as the \emph{Von Neumann's Hierarchy}, sometimes also the \emph{Von Neumann's Universe}. 
 %, the former referring more to the construction with the individual levels in mind, the latter referring more to the class $V$, but they can be interchanged with no confusion caused.
 
-\begin{definition}{(Von Neumann's Hierarchy)}\label{def:von_neumann}\\
+\begin{definition}{(Von Neumann's Hierarchy)}\label{def:von_neumann}\\ % ok 
 The \emph{Von Neumann's Hierarchy} is a collection of sets indexed by elements of $Ord$, defined recursively in the following way:
 \bce[(i)]
 \item 
@@ -284,9 +284,10 @@ V_{\alpha+1} = \power{V_\alpha}\mbox{ for any ordinal $\alpha$}
 V_\lambda = \bigcup_{\beta < \lambda} V_\beta \mbox{ for a limit ordinal $\lambda$}
 \end{equation}
 \ece
+We will also refer to the \emph{Von Neumann's Hierarchy} as \emph{Von Neumann's Universe} or the \emph{Cumulative Hierarchy}. % velky nebo maly c?
 \end{definition}
 
-\begin{definition}{(Rank)}\label{def:rank}\\
+\begin{definition}{(Rank)}\label{def:rank}\\ % ok
 Given a set $x$, we say that the rank of $x$ (written as $rank(x)$) is the least ordinal $\alpha$ such that
 \begin{equation}
 x \in V_{\alpha+1}
@@ -294,7 +295,7 @@ x \in V_{\alpha+1}
 \end{definition}
 Due to \emph{Regularity}, every set has a rank.\footnote{See chapter 6 of \cite{JechBook} for details.}
 
-\begin{definition}{($\omega$)}\label{def:omega}\\
+\begin{definition}{($\omega$)}\label{def:omega}\\ % ???? bacha na to
 \begin{equation}
 \omega \defeq \bigcap\{x : \mbox{"$x$ is a limit ordinal"})\}
 \end{equation}
@@ -305,10 +306,10 @@ $\omega$ is non-empty if \emph{Infinity} or any equivalent holds.
 
 \subsubsection{Cardinal Numbers}
 
+% todo def one.to-one mapping?
 \begin{definition}{(Cardinality)}\\
 Given a set $x$, let the cardinality of $x$, written $|x|$, be defined as the smallest ordinal number such that there is a one to one mapping from $x$ to $\alpha$.
 \end{definition}
-For formal details as well as why every set can be well-ordered assuming \emph{Choice}, see \cite{JechBook}.
 
 \begin{definition}{(Aleph function)}\label{def:aleph}\\
 Let $\omega$ be the set defined by \ref{def:omega}.
@@ -318,20 +319,32 @@ We will recursively define the function $\aleph$ for all ordinals.
 \item $\aleph_{\alpha+1}$ is the least cardinal larger than $\aleph_\alpha$\footnote{"The least cardinal larger than $\aleph_\alpha$" is sometimes notated as $\aleph_\alpha^{+}$}
 \item $\aleph_\lambda = \bigcup_{\beta < \lambda}\aleph_\beta$ for a limit ordinal $\lambda$
 \ece
-\end{definition}
+If $\kappa = \aleph_\alpha$ and $\alpha$ is a succesor ordinal, we call $\kappa$ a \emph{succesor cardinal}. If $\alpha$ is a limit ordinal, we call $\kappa$ a \emph{limit cardinal}.
+\end{definition} % mam def. succ ordinaly?
 
 \begin{definition}{(Cardinal number)}\label{def:cardinal}\\
-We say a set $x$ is a \emph{cardinal number}, usually shortened to \emph{a cardinal}, if either $x \in \omega$, it is then called a \emph{finite cardinal}, 
-there is an ordinal $\alpha$ such that $\aleph_\alpha = x$, then we call it \emph{an infinite cardinal}
+\bce[(i)]
+\item A set $x$ is called a \emph{finite cardinal} iff $x \in \omega$.
+\item A set is called an \emph{infinite cardinal} iff there is an ordinal $\alpha$ such that $\aleph_\alpha = x$
+\item A set is called a \emph{cardinal} iff it is either a \emph{finite cardinal} or an \emph{infinite cardinal}.
+\ece
 \end{definition}
-We say $\kappa$ is in uncountable cardinal if it is an infinite ordinal and $\aleph_0 > \kappa$.
-Infinite cardinals will be notated by lowercase greek letters from the middle if the alphabet, e.g. $\kappa, \mu, \nu, \ldots$.\footnote{$\lambda$ is preferably used for limit ordinals, if it is ever used to denote an infinite cardinal, that should be contextually clear.}
+We say $\kappa$ is an uncountable cardinal if it is an infinite ordinal and $\aleph_0 > \kappa$.
+Infinite cardinals will be notated by lowercase greek letters from the middle if the alphabet, e.g. $\kappa, \mu, \nu, \ldots$.\footnote{Except $\lambda$ which is preferably used for limit ordinals.}
 
-\begin{definition}{(Cofinality of an Ordinal)}\label{def:cofinality}\\ % a co https://math.berkeley.edu/~jhicks/links/SOTS/cskipper112613.pdf?
-Let $\lambda$ be a limit ordinal. The \emph{cofinality} of $\lambda$, written $cf(\lambda)$, is the smallest limit ordinal $\alpha$, $\alpha \leq \lambda$, such that 
+For formal details as well as why every set can be well-ordered assuming \emph{Choice}, and therefore has a cardinaliy, see \cite{JechBook}. % proc je to tady?
+
+% todo mame def sequence?
+% todo mame def "cofinal"?
+% TODO fix it!!
+% todo pozor na supremum, upravit! (ikdyz pro limitni je to stejny)
+\begin{definition}{(Cofinality of a Limit Ordinal)}\label{def:cofinality}\\ % a co https://math.berkeley.edu/~jhicks/links/SOTS/cskipper112613.pdf? 
+Let $\lambda$ be a limit ordinal. We say that the \emph{cofinality} of $\lambda$ is $\alpha$ iff $\alpha$ is the smallest limit ordinal, such that there is an $\alpha$-sequence $\langle \beta_\xi : \xi < \alpha \rangle$, such that  % todo co funkce z alpha do A?
 \begin{equation}
-(\forall x \in \lambda)(\exists y \in \alpha)(x < y)
+%(\forall x \in \lambda)(\exists y \in \alpha)(x < y) % !!!!!!!!!
+sup(\beta_\xi: \xi < \alpha) = \lambda
 \end{equation}
+We writte $cf(\lambda) = \alpha$.
 \end{definition}
 
 \begin{definition}{(Regular Cardinal)}\label{def:regular_cardinal}\\
@@ -341,14 +354,14 @@ We say a cardinal $\kappa$ is regular iff $cf(\kappa) = \kappa$
 \begin{definition}{(Limit Cardinal)}\label{def:limit_cardinal}\\
 We say that a cardinal $\kappa$ is a \emph{limit cardinal} if
 \begin{equation}
-(\exists \alpha \in Ord)(\kappa = \aleph_\alpha)
+(\exists \alpha \in Ord)(\kappa = \aleph_\alpha) % neni in ord redundantni, protoze je V_x def jenom pro ordinalni x?
 \end{equation}
 \end{definition}
 
 \begin{definition}{(Strong Limit Cardinal)}\label{def:strong_limit_cardinal}\\
 We say that an ordinal $\kappa$ is a \emph{strong limit cardinal} if it is a \emph{limit cardinal} and 
 \begin{equation}
-\forall \alpha (\alpha \in \kappa \then \power{\alpha} \in \kappa)
+(\forall \alpha \in \kappa)(\power{\alpha} \in \kappa)
 \end{equation}
 \end{definition}
 
