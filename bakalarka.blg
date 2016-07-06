@@ -1,46 +1,46 @@
 This is BibTeX, Version 0.99d (TeX Live 2015)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: bakalarka.aux
-The style file: plain.bst
+The style file: apalike.bst
 Database file #1: bc_biblio.bib
-You've used 14 entries,
-            2118 wiz_defined-function locations,
-            584 strings with 5806 characters,
-and the built_in function-call counts, 3072 in all, are:
-= -- 301
-> -- 98
-< -- 0
-+ -- 44
-- -- 28
-* -- 115
-:= -- 545
-add.period$ -- 47
-call.type$ -- 14
-change.case$ -- 52
-chr.to.int$ -- 0
-cite$ -- 14
-duplicate$ -- 136
-empty$ -- 304
-format.name$ -- 28
-if$ -- 668
-int.to.chr$ -- 0
-int.to.str$ -- 14
-missing$ -- 15
-newline$ -- 72
-num.names$ -- 28
-pop$ -- 92
+You've used 5 entries,
+            1935 wiz_defined-function locations,
+            506 strings with 4351 characters,
+and the built_in function-call counts, 1435 in all, are:
+= -- 141
+> -- 35
+< -- 5
++ -- 10
+- -- 10
+* -- 91
+:= -- 274
+add.period$ -- 18
+call.type$ -- 5
+change.case$ -- 27
+chr.to.int$ -- 5
+cite$ -- 5
+duplicate$ -- 69
+empty$ -- 113
+format.name$ -- 15
+if$ -- 283
+int.to.chr$ -- 1
+int.to.str$ -- 0
+missing$ -- 9
+newline$ -- 28
+num.names$ -- 15
+pop$ -- 28
 preamble$ -- 1
-purify$ -- 42
+purify$ -- 30
 quote$ -- 0
-skip$ -- 92
+skip$ -- 53
 stack$ -- 0
-substring$ -- 72
-swap$ -- 14
+substring$ -- 60
+swap$ -- 5
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 42
+type$ -- 22
 warning$ -- 0
-while$ -- 28
-width$ -- 16
-write$ -- 150
+while$ -- 10
+width$ -- 0
+write$ -- 67

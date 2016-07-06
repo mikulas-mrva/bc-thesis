@@ -1,80 +1,29 @@
-\begin{thebibliography}{10}
+\begin{thebibliography}{}
 
-\bibitem{KanamoriBook}
-Akihiro~Kanamori (auth.).
-\newblock {\em The higher infinite: Large cardinals in set theory from their
-  beginnings}.
-\newblock Springer Monographs in Mathematics. Springer-Verlag Berlin
-  Heidelberg, 2 edition, 2003.
+\bibitem[Church, 1996]{church1996introduction}
+Church, A. (1996).
+\newblock {\em Introduction to Mathematical Logic}.
+\newblock Annals of Mathematics Studies. Princeton University Press.
 
-\bibitem{Levy60a}
-Lévy Azriel.
-\newblock Axiom schemata of strong infinity in axiomatic set theory.
-\newblock {\em Pacific Journal of Mathematics}, 10, 1960.
-
-\bibitem{DrakeBook}
-Drake F.
+\bibitem[{Drake}, 1974]{DrakeBook}
+{Drake}, F. (1974).
 \newblock {\em Set theory. An introduction to large cardinals}.
-\newblock Studies in Logic and the Foundations of Mathematics, Volume 76. NH,
-  1974.
+\newblock Studies in Logic and the Foundations of Mathematics, Volume 76. NH.
 
-\bibitem{JechBook}
-Thomas Jech.
+\bibitem[Jech, 2006]{JechBook}
+Jech, T. (2006).
 \newblock {\em Set theory}.
 \newblock Springer monographs in mathematics. Springer, the 3rd millennium ed.,
-  rev. and expanded edition, 2006.
+  rev. and expanded edition.
 
-\bibitem{Kunen_independence}
-Kenneth Kunen.
-\newblock {\em Set Theory An Introduction To Independence Proofs}.
-\newblock Studies in Logic and the Foundations of Mathematics. North Holland,
-  1983.
+\bibitem[Lévy, 1960]{Levy60a}
+Lévy, A. (1960).
+\newblock Axiom schemata of strong infinity in axiomatic set theory.
+\newblock {\em Pacific Journal of Mathematics}, 10.
 
-\bibitem{Mahlo11}
-P.~{Mahlo}.
-\newblock {\"Uber lineare transfinite Mengen.}
-\newblock {Leipz. Ber. 63, 187-225 (1911).}, 1911.
-
-\bibitem{Mahlo12}
-P.~{Mahlo}.
-\newblock {\"Uber lineare transfinite Mengen.}
-\newblock {Leipz. Ber. 63, 187-225 (1911).}, 1911.
-
-\bibitem{Mahlo13}
-P.~{Mahlo}.
-\newblock {Zur Theorie und Anwendung der $\varrho_v$-Zahlen. II.}
-\newblock {Leipz. Ber. 65, 268-282 (1913).}, 1913.
-
-\bibitem{PinterBook}
-Charles~C Pinter.
-\newblock {\em A Book of Set Theory}.
-\newblock Dover Books on Mathematics. Dover Publications, 2014.
-
-\bibitem{Infinity_in_mind}
-Rudy von~Bitter Rucker.
-\newblock {\em Infinity and the mind : the science and philosophy of the
-  infinite}.
-\newblock Princeton science library. Princeton University Press, 2005 ed
-  edition, 2005.
-
-\bibitem{Scott_Measurable}
-Dana {Scott}.
-\newblock Measurable cardinals and constructible sets.
-\newblock BAPS 9, 521–524. XVII, 44, 49, 1961.
-
-\bibitem{Tait_constructingcardinals}
-W.~W. Tait.
-\newblock Constructing cardinals from below.
-\newblock The Provenance of Pure Reason: Essays in the Philosophy of
-  Mathematics and Its History, 133-154, 2005.
-
-\bibitem{GodelWang}
-Hao Wang.
+\bibitem[Wang, 1997]{GodelWang}
+Wang, H. (1997).
 \newblock {\em "A Logical Journey: From Gödel to Philosophy"}.
-\newblock A Bradford Book, 1997.
-
-\bibitem{Welch12globalreflection}
-P.~D. Welch.
-\newblock Global reflection principles, 2012.
+\newblock A Bradford Book.
 
 \end{thebibliography}
