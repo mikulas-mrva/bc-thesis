@@ -79,8 +79,8 @@ From $N_0$, there then exists a set $u$ such that $\varphi^{u}$ holds. This $u$ 
 In $\sf{S}$, the schema $N_0$ implies \emph{Replacement}.\\
 TODO jedno nebo druhe % nebo treti
 \beq
-\sf{S} + N_0 \vdash \mbox{\emph{Replacement}}
-\eeq % nebo S \proves N_0 \then Replacement % (veta o dedukci?)
+\sf{S} \vdash N_0 \then \mbox{\emph{Replacement}}
+\eeq % nebo S \vdash N_0 \then Replacement % (veta o dedukci?) nebo \sf{S} + N_0 \vdash Repl
 \end{theorem}
 
 \begin{proof}
@@ -350,11 +350,10 @@ Given an arbitrary $x \in M$ such that $x \neq \emptyset$, we want to prove
 M \models (\exists y \in x) (x \cap y = \emptyset)
 \eeq
 
-Because $M$ is transitive, every element of $x$ is an element of $M$. Take for $y$ the element of $x$ with the lowest rank. It should be clear that there is no $z \in y$ such that $z \in x$, because then $rank(z) < rank(y)$, which is a contradiction.
-TODO is rank defined? % TODO !!!!!!!
+Because $M$ is transitive, every element of $x$ is an element of $M$. Take for $y$ the element of $x$ with the lowest rank\footnote{Rank is defined in (\ref{def:rank}).}. It should be clear that there is no $z \in y$ such that $z \in x$, because then $rank(z) < rank(y)$, which is a contradiction.
 \end{proof}
 
-Let $\sf{S}$ be a set theory as defined in (\ref{def:s}). %We will first prove a lemma to show what's mentioned as obvious in \cite{Levy60a} and that is a fact, that any set $u$ such that $Scm^{\sf{S}}(u)$ is a limit ordinal.
+Let $\sf{S}$ be a set theory as defined in (\ref{def:s}). 
 \begin{lemma}\label{lemma:scm_s_is_limit}\
 The following holds for every $\lambda$.
 \begin{equation}
@@ -368,15 +367,13 @@ Given an arbitrary limit ordinal $\lambda$, we will verify the axioms of \sf{S} 
 \item \emph{The existence of a set} comes from the fact that $V_\lambda$ is a non-empty set because limit ordinal is non-zero.
 % Jech 12.10, 12.11
 
-% Drake ch.3, par.1.2 ! "extensionalita a foundation plati v kazde tranzitivni mnozine" -- mozna jako lemma? odkaz na draka?
 \item \emph{Extensionality} holds from \ref{lemma:extensionality_in_transitive}
 
 \item \emph{Foundation} holds from \ref{lemma:foundation_in_transitive}
 
-% ==================================== POTUD zkontrolovano ======================================================
 
-\item \emph{Union}:\\ % TODO kontrola % separatni lemma, ze plati v kazdem V_\alpha?
-(see (\ref{def:union}))
+\item \emph{Union}:% \\ % TODO kontrola % separatni lemma, ze plati v kazdem V_\alpha?
+% (see (\ref{def:union}))
 \begin{equation}
 \forall x \exists y \forall z (z \in y \iff \exists q( z \in q \et q \in x))
 \end{equation}
@@ -386,12 +383,13 @@ y = \bigcup x \iff (\forall z \in y)(\exists q \in x) z \in q \et (\forall z \in
 \eeq
 So by lemma (\ref{lemma:delta_0_absoluteness})
 \beq
-y = \bigcup x \iff (y = \bigcup x)^{V_\lambda}
+% y = \bigcup x \iff (y = \bigcup x)^{V_\lambda}
+y = \bigcup x \iff V_\lambda \models y = \bigcup x
 \eeq
 % asi ok ^
 
-\item \emph{Pairing}:\\ % TODO kontrola
-(see (\ref{def:pairing}))
+\item \emph{Pairing}:% \\ % TODO kontrola
+% (see (\ref{def:pairing}))
 \beq
 \forall x, y \exists z \forall q (q \in z \iff q = x \lor q = y)
 \eeq
@@ -401,33 +399,39 @@ z = \{x, y\} \iff x \in z \et y \in z \et (\forall q \in z)(q = x \lor q = y)
 \eeq
 So $z = \{x, y\}$ is a $\Delta_0$-formula, and thus by lemma (\ref{lemma:delta_0_absoluteness}) it holds that
 \beq
-z = \{x, y\} \iff (z = \{x, y\})^{V_\lambda}
+%z = \{x, y\} \iff (z = \{x, y\})^{V_\lambda}
+z = \{x, y\} \iff V_\lambda \models z = \{x, y\}
 \eeq
 % asi ok ^
 
 
-\item \emph{Powerset}: \\ (see (\ref{def:powerset})) % TODO kontrola
+\item \emph{Powerset}:
 \begin{equation}
 \forall x \exists y \forall z (z \subseteq x \iff z \in y)
 \end{equation}
-Given $x \in u$, we want to make sure that $\power{x} \in u$. Let $\varphi$ denote the formula $y \in \power{x} \iff y \subset x$.
-We know that $y \subset x$ is $\Delta_0$ according to definition (\ref{def:subset}). We also know that given $x$, $\varphi$ holds for every $y$ due to the definition of $\power{x}$.
-That means that $\varphi \iff \varphi^u$ and therefore we can conclude that $u \models \varphi$.
+Given any $x \in V_\lambda$, we want to make sure that $\power{x} \in V_\lambda$. Let $\varphi(y)$ denote the formula $y \in \power{x} \iff y \subset x$.
+according to definition of subset (\ref{def:subset}), $y \subset x$ is $\Delta_0$, so for any given $x, y \in V_\lambda$, $y = \power{x} \iff V_\lambda \models y = \power{x}$.
+Because $\lambda$ is limit and $rank(\power{x}) = rank(x)+1$, if $\power{x} \in V_\lambda$ for every $x \in V_\lambda$.
+% cajk
 
-\item \emph{Specification}: \\ %zkontrolovat, podle Draka
+\item \emph{Specification}:% \\ %zkontrolovat, podle Draka, pripadne Jech 12.11
 Given a first-order formula $\varphi$, we want to show the following
 \beq
 V_\lambda \models \forall x, p_1, \ldots, p_n, \exists y \forall z (z \in y \iff z \in x \et \varphi(z, p_1, \ldots, p_n))
 \eeq
-Given any $x$ along with parameters $p_1, \ldots, p_n$, we set $y = \{z \in y : \varphi^{V_\lambda}(z, p_1, \ldots, p_n) \}$. From transitivity of $V_\lambda$ and the fact that $y \subset x$ and $x \in V_\lambda$, we can conclude that $y \in V_\lambda$, so $V_\lambda \models \forall z (z \in y \iff z \in x \et \varphi(z, p_1, \dots, p_n))$.
+Given any $x$ along with parameters $p_1, \ldots, p_n$ in $V_\lambda$ , we set $y = \{z \in x : \varphi^{V_\lambda}(z, p_1, \ldots, p_n) \}$. From transitivity of $V_\lambda$ and the fact that $y \subset x$ and $x \in V_\lambda$, we know that $y \in V_\lambda$, so $V_\lambda \models \forall z (z \in y \iff z \in x \et \varphi(z, p_1, \dots, p_n))$.
 \ece
 \end{proof}
+
+% The lemma we've just proven shows how important are the axioms of \emph{Infinity} and \emph{Replacement} for \sf{ZFC}. If we only add \emph{Infinity}, we don't get above $V_{\omega+\omega}$\footnote{TODO citation needed!}, so replacements if needed to 
+
+% ==================================== POTUD zkontrolovano ======================================================
 
 Let \emph{Infinity} and \emph{Replacement} be as defined in \ref{def:infinity} and \ref{def:replacement} respectively.
 
 %TODO citace! http://ozark.hendrix.edu/~yorgey/settheory/13-SI.pdf
 % http://ozark.hendrix.edu/~yorgey/settheory/12-relative-consistency-2.pdf 
-%-- jako konzistence ZF-reg -- ukazeme ze V jakozto sjednoveni V_alpha je model?
+% -- jako konzistence ZF-reg -- ukazeme ze V jakozto sjednoveni V_alpha je model?
 
 % TODO v kanamorim? co dukaz?
 \begin{definition}{(First-Order Reflection Schema)}\\ % wtf, pro jedu nebo kolik formuli?
@@ -439,7 +443,6 @@ For each set $M_0$ there is such set $M$ that $M_0 \subset M$ and the following 
 for every $p_1, \ldots, p_{m-1} \in M$.
 \end{definition}
 % elegantnejsi by bylo formulovat to pro jednu formuli a pak ukazat, ze se to totez.
-
 
 
 \begin{theorem}\label{theorem:levy_equivalence_contemporary}

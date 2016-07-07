@@ -47,7 +47,7 @@ The following is a schema for every first-order formula $\varphi(x, p_1, \ldots,
 \end{equation}
 \end{definition}
 
-We will now provide two definitions that are not axioms, but will be helpful in establishing some of the other axioms in a more intuitive way.
+We will now provide two definitions that are not axioms, but will be helpful in establishing some axioms in a more comprehensible way.
 \begin{definition}{($x \subseteq y$, $x \subset y$)}\label{def:subset}
 \begin{equation}
 x \subseteq y \iff (\forall z \in x) z \in y
@@ -55,6 +55,7 @@ x \subseteq y \iff (\forall z \in x) z \in y
 \begin{equation}
 x \subset y \iff x \subseteq y \et x \neq y
 \end{equation}
+We read $x \subseteq y$ as \emph{x is a subset of y} and $x \subset y$ as \emph{x is a proper subset of y}.
 \end{definition}
 
 \begin{definition}{(Empty Set)}\label{def:emptyset}
@@ -69,18 +70,18 @@ For an arbitrary set $x$, the empty set, written as $\emptyset$, is defined by t
 \beq
 (\forall y \in x)(y \in \emptyset \iff \neg(y = y))
 \eeq
-We know that $\emptyset$ is a set from \emph{specification}. While it could also be defined by "$\forall y (y \in \empty \iff \neg(y = y))$", we have decided to use the bounded version because it's $\Delta_0$, which we will find useful later on. The two definitions yield the same set for every $x$ given thanks to \emph{extensionality}.
+$\emptyset$ is a set due to \emph{Specification}. While the empty set could also be defined by the formula $\forall y (y \in \empty \iff \neg(y = y))$, the former version is $\Delta_0$, which we will find useful later on. The two definitions yield the same set for every $x$ given thanks to \emph{extensionality}.
 \end{definition}
 
 \begin{definition}{(Pairing)}\label{def:pairing}
 \begin{equation}
-\forall x, y \exists z \forall q (q \in z \iff q = x \lor q = y) %ok
+\forall x, y \exists z \forall q (q \in z \iff q = x \lor q = y) % ok
 \end{equation}
 \end{definition}
 
 \begin{definition}{(Union)}\label{def:union}
 \begin{equation}
-\forall x \exists y \forall z (z \in y \iff \exists q( z \in q \et q \in x)) %ok
+\forall x \exists y \forall z (z \in y \iff \exists q( z \in q \et q \in x)) % ok
 \end{equation}
 \end{definition}
 
