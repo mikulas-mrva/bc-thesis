@@ -375,8 +375,8 @@ Given an arbitrary limit ordinal $\lambda$, we will verify the axioms of \sf{S} 
 
 % ==================================== POTUD zkontrolovano ======================================================
 
-\item \emph{Union}:\\ % TODO kontrola % separatni lemma, ze plati v kazdem V_\alpha?
-(see (\ref{def:union}))
+\item \emph{Union}: %\\ % TODO kontrola % separatni lemma, ze plati v kazdem V_\alpha?
+% (see (\ref{def:union}))
 \begin{equation}
 \forall x \exists y \forall z (z \in y \iff \exists q( z \in q \et q \in x))
 \end{equation}
@@ -390,8 +390,8 @@ y = \bigcup x \iff (y = \bigcup x)^{V_\lambda}
 \eeq
 % asi ok ^
 
-\item \emph{Pairing}:\\ % TODO kontrola
-(see (\ref{def:pairing}))
+\item \emph{Pairing}: % TODO kontrola
+% (see (\ref{def:pairing}))
 \beq
 \forall x, y \exists z \forall q (q \in z \iff q = x \lor q = y)
 \eeq
@@ -406,13 +406,21 @@ z = \{x, y\} \iff (z = \{x, y\})^{V_\lambda}
 % asi ok ^
 
 
-\item \emph{Powerset}: \\ (see (\ref{def:powerset})) % TODO kontrola
-\begin{equation}
-\forall x \exists y \forall z (z \subseteq x \iff z \in y)
-\end{equation}
-Given $x \in u$, we want to make sure that $\power{x} \in u$. Let $\varphi$ denote the formula $y \in \power{x} \iff y \subset x$.
-We know that $y \subset x$ is $\Delta_0$ according to definition (\ref{def:subset}). We also know that given $x$, $\varphi$ holds for every $y$ due to the definition of $\power{x}$.
-That means that $\varphi \iff \varphi^u$ and therefore we can conclude that $u \models \varphi$.
+\item \emph{Powerset}:% \\ (see (\ref{def:powerset})) % TODO kontrola
+We can define a power set by a $\Pi_1$-formula\footnote{$z \subseteq x$ is a $\Delta_0$-formula.}, which is then downward absolute by lemma (\ref{lemma:downward_absoluteness}).
+\beq
+% \forall x \exists y \forall z (z \subseteq x \iff z \in y)
+% \foreach z (y \in \powerset{x} \iff 
+% TODO \Pi_1-definice \powerset{x} !
+\forall z (z \subseteq x \iff z \in y)
+\eeq
+It is easy to see that since \emph{Powerset} holds in $V$, it also holds in $V_\lambda$. Note that limitness of $\lambda$ is needed here because $rank(\powerset{x}) = rank(x)+1$.
+
+
+TODO !!!!
+%Let $\varphi$ denote the formula $y \in \power{x} \iff y \subset x$.
+%We know that $y \subset x$ is $\Delta_0$ according to definition (\ref{def:subset}). We also know that given $x$, $\varphi$ holds for every $y$ due to the definition of $\power{x}$.
+%That means that $\varphi \iff \varphi^u$ and therefore we can conclude that $u \models \varphi$.
 
 \item \emph{Specification}: \\ %zkontrolovat, podle Draka
 Given a first-order formula $\varphi$, we want to show the following
