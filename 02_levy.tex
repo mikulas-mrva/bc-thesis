@@ -4,11 +4,11 @@
 This section is based on Lévy's paper \emph{Axiom Schemata of Strong Infinity in Axiomatic Set Theory} \cite{Levy60a} % hnusna citace!
 from 1960. It presents Lévy's general reflection principle and its equivalence to \emph{Replacement} and \emph{Infinity} under $\sf{S}$\footnote{See definition (\ref{def:s}).}.
 
-First, we should point out that set theory has changed over the last 66 years, we will now point out a few notable differences. When reading Lévy's article, one should bear in mind that while the author often speaks about a~model of $\sf{ZF}$, usually denoted $u$, it doesn't necessarily mean that there is a set $u$ that is a model of $\sf{ZF}$\footnote{This is indeed impossible to prove in $\sf{ZF}$ due to Gödel's Incompleteness.}, nowadays we are used to using the notion of universal class $V$ in similar sense, albeit independently of a particular axiomatic theory. We will review the exact meaning of the notion of a standard complete model in a moment.
-The theory $\sf{ZF}$ is almost identical to the theory we have established in (\ref{def:zf}).
-One might be confused by the fact that Lévy treats the \emph{Subsets} axiom, which is in fact \emph{Specification} as a single axiom rather than a schema. He even takes the conjunction of all axioms of $\sf{ZF}$ and treats it like a formula.  This is possible because the underlying logic calculus is different. Lévy works with set theories formulated in the \emph{non-simple applied first order functional calculus}, see Chapter IV in \cite{church1996introduction} for details. For now, we only need to know that the calculus contains a substitution rule for functional variables. This way, \emph{Subsets} is de facto a schema even though it sometimes treated as a single formula.
+First, we should point out that set theory has changed over the last 66 years and show a few notable differences. Firstly, when reading Lévy's article, one should bear in mind that while the author often speaks about a~model of $\sf{ZF}$, usually denoted $u$, it doesn't necessarily mean that there is a set $u$ that is a model of $\sf{ZF}$\footnote{This is indeed impossible to prove in $\sf{ZF}$ due to Gödel's Incompleteness.}, we are nowadays used to using the notion of universal class $V$ in similar sense, albeit independently from a particular axiomatic set theory. %We will review the exact meaning of the notion of a standard complete model in a moment.
+The theory $\sf{ZF}$ is practically identical to the theory we have established in (\ref{def:zf}), the differences are only formal.
+One might be confused by the fact that Lévy treats the \emph{Subsets} axiom, which is in fact \emph{Specification}, as a single axiom rather than a schema. He even takes the conjunction of all axioms of $\sf{ZF}$ and treats it like a formula.  This is possible because the underlying logic calculus is different. Lévy works with set theories formulated in the \emph{non-simple applied first order functional calculus}, see Chapter IV in \cite{church1996introduction} for details. For now, we only need to know that the calculus contains a substitution rule for functional variables. This way, \emph{Subsets} is de facto a schema even though it sometimes treated as a single formula\footnote{This way, the conjunction of all axiom is in fact a schema.}.
 % todo koukni do churche jak se to s tim ma
-It should also be noted that the logical connectives look different. The usual symbol for universal quantifier does not appear, $\forall x \varphi (x)$ would be written as $(x) \varphi (x)$. The symbol for negation is "$\sim$", implication is written as "$\supset$" and equivalence is "$\equiv$". We will use standard notation with "$\neg$", "$\then$" and "$\iff$" respectively when presenting Lévy's results.
+It should also be noted that the logical connectives look different. The now usual symbol for an universal quantifier does not appear, $\forall x \varphi (x)$ would be written as $(x) \varphi (x)$. The symbol for negation is "$\sim$", implication is written as "$\supset$" and equivalence is "$\equiv$". We will use standard notation with "$\neg$", "$\then$" and "$\iff$" respectively when presenting Lévy's results.
 
 %The following definitions are not used in contemporary set theory, but they illustrate 1960's set theory mind-set and they are used heavily in Lévy's text, so we will include and explain them for clarity. 
 %Generally in this chapter, $\sf{Q}$ stands for an arbitrary axiomatic set theory. % used for general definitions, $u$ is usually a model of $\sf{Q}$, counterpart of today's the universal class $V$.
@@ -17,51 +17,53 @@ It should also be noted that the logical connectives look different. The usual s
 
 This subsection uses $\sf{ZF}$ instead of the usual $\sf{ZFC}$ as the underlying theory. % neni to zbytecny?
 
-%For the following definition, let us add that Lévy didn't consider the axiom of subsets a schema, it was formulated as $\forall x \exists y \forall z (z \in y \iff z \in x \et p(z))$. A substitution rule included in the logic so that the $p(z)$ function in the axiom can be substituted for any formula. 
-
 \begin{definition}{(Standard Complete Model of a Set Theory)}\label{def:scm_q}\\
-Let $\sf{Q}$ be an arbitrary set theory given. % and let $e$ be a binary relation on u. 
-We say that that $u$ is a standard complete model of $\sf{Q}$, which is usually written as $Scm^{\sf{Q}}(u)$, iff
+Let $\sf{Q}$ be an arbitrary axiomatic set theory.
+We say that $u$ is a standard complete model of $\sf{Q}$ iff
 \bce[(i)]
 \item $(\forall \sigma \in \sf{Q})(u \models \sigma)$
 \item $\forall y (y \in u \then y \subset u)$
 % \item $\forall e \langle x, y \rangle \in e \iff (y \in u \et x \in y)$ % co je $e$? omg je to jinak, je to model vsech axiomu pro vsechny $e$!!! relatiizace do u, e?
 \ece 
+We write $Scm^{\sf{Q}}(u)$.
 \end{definition}
 
-\begin{definition}{(Inaccessible Cardinal With Respect to $\sf{Q}$)}\label{def:levy_inaccessible_q}\\
-Let $\sf{Q}$ be an arbitrary axiomatic first-order set theory. We say that a cardinal $\kappa$ is inaccessible with respect to $\sf{Q}$, we write $In^{\sf{Q}}(\kappa)$.
+\begin{definition}{(Cardinals Inaccessible With Respect to $\sf{Q}$)}\label{def:levy_inaccessible_q}\\
+Let $\sf{Q}$ be an arbitrary axiomatic set theory. We say that a cardinal $\kappa$ is inaccessible with respect to theory $\sf{Q}$ iff
 \begin{equation}
-In^{\sf{Q}}(\kappa) \defeq Scm^{\sf{Q}}(V_\kappa).
+Scm^{\sf{Q}}(V_\kappa)
 \end{equation}
+We write $In^{\sf{Q}}(\kappa)$
 \end{definition}
 
 \begin{definition}{(Inaccessible Cardinal With Respect to $\sf{ZF}$)}\label{def:levy_inaccessible}\\
 When a cardinal $\kappa$ is inaccessible with respect to $\sf{ZF}$, we only say that it is inaccessible. We write $In(\kappa)$.
 \begin{equation}
-In(\kappa) \defeq In^{\sf{ZF}}(\kappa)
+In(\kappa) \iff In^{\sf{ZF}}(\kappa)
 \end{equation}
 \end{definition}
 The above definition of inaccessibles is used because it doesn't require \emph{Choice}.
 
 For the definition of relativization, see (\ref{def:relativization}). The notation used by Lévy is "$Rel(u, \varphi)$", we will stick to "$\varphi^{u}$".
 \begin{definition}{($N$)}\label{def:levy_axiom_n}\\
-The following is an axiom schema of complete reflection over $\sf{ZF}$, denoted as $N$:
+The following is an axiom schema of complete reflection over $\sf{ZF}$, denoted as $N$. For every first-order formula $\varphi$ in the language of set theory with no free variables except for $x_1, \ldots , x_n$, the following is an instance of schema $N$.
 \begin{equation}
 \exists u (Scm^{\sf{ZF}}(u) \et \forall x_1, \ldots , x_n (x_1, \ldots , x_n \in u \then \varphi \iff \varphi^{u}))
 \end{equation}
-where $\varphi$ is a~formula which contains no free variables except for $x_1, \ldots , x_n$.
+%where $\varphi$ is a~formula which contains no free variables except for $x_1, \ldots , x_n$.
 \end{definition}
 
+Let $\sf{S}$ be an axiomatic set theory defined in (\ref{def:s}). 
+
 \begin{definition}{($N_0$)}\label{def:levy_axiom_n0}\\
-The following is almost identical to axiom schema $N$, but with $\sf{S}$ instead of $\sf{ZF}$. We will call it $N_0$:
+Axiom schema $N_0$ is similar to $N$ defined above, but with $\sf{S}$ instead of $\sf{ZF}$. For every $\varphi$, a first-order fomula in the language of set theory with no free variables except $x_1, \ldots , x_n$, the following is an instance of $N_0$.
 \begin{equation}
 \exists u (Scm^{\sf{S}}(u) \et \forall x_1, \ldots , x_n (x_1, \ldots , x_n \in u \then \varphi \iff \varphi^{u}))
 \end{equation}
-where $\varphi$ is a~formula which contains no free variables except for $x_1, \ldots , x_n$.
+%where $\varphi$ is a~formula which contains no free variables except for $x_1, \ldots , x_n$.
 \end{definition}
 
-Let $\sf{S}$ be an axiomatic set theory defined in (\ref{def:s}). We will now show that in $\sf{S}$, $N_0$ implies both \emph{Replacement} and \emph{Infinity}.
+We will now show that in $\sf{S}$, $N_0$ implies both \emph{Replacement} and \emph{Infinity}.
 
 \
 
@@ -72,8 +74,8 @@ In $\sf{S}$, the schema $N_0$ implies \emph{Infinity}.
 
 \begin{proof}
 
-Let $\varphi = \forall x \exists y (y = x \cup \{x\})$. This clearly holds in $\sf{S}$ because given any set $x$, we can always obtain the set $x \cup \{x\}$ via \emph{Powerset} and \emph{Specification}.
-From $N_0$, there then exists a set $u$ such that $\varphi^{u}$ holds. This $u$ satisfies the conditions required by \emph{Infinity}, so we're done.
+Let $\varphi = \forall x \exists y (y = x \cup \{x\})$. This clearly holds in $\sf{S}$ because given any set $x$, we always have $x \cup \{x\}$ via \emph{Powerset} and \emph{Specification}.
+From $N_0$, there is a set $u$ such that $\varphi^{u}$ holds. This $u$ satisfies the conditions required by \emph{Infinity}.
 \end{proof}
 
 \begin{theorem} % todo zkontrolovat ==========================================================================================
