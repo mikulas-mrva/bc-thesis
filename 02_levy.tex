@@ -1,10 +1,9 @@
 \section{Levy's First-Order Reflection}\label{sec:first_order}
 
 \subsection{Lévy's Original Paper}\label{sec:levy1960}
-This section is based on Lévy's paper \emph{Axiom Schemata of Strong Infinity in Axiomatic Set Theory} \cite{Levy60a} % hnusna citace!
-from 1960. It presents Lévy's general reflection principle and its equivalence to \emph{Replacement} and \emph{Infinity} under $\sf{S}$\footnote{See definition (\ref{def:s}).}.
+This section is based on Lévy's paper \emph{Axiom Schemata of Strong Infinity in Axiomatic Set Theory}, \cite{Levy60a}. It presents Lévy's general reflection principle and its equivalence to \emph{Replacement} and \emph{Infinity} under $\sf{S}$\footnote{See definition (\ref{def:s}).}.
 
-First, we should point out that set theory has changed over the last 66 years and show a few notable differences. Firstly, when reading Lévy's article, one should bear in mind that while the author often speaks about a~model of $\sf{ZF}$, usually denoted $u$, it doesn't necessarily mean that there is a set $u$ that is a model of $\sf{ZF}$\footnote{This is indeed impossible to prove in $\sf{ZF}$ due to Gödel's Incompleteness.}, we are nowadays used to using the notion of universal class $V$ in similar sense, albeit independently from a particular axiomatic set theory. %We will review the exact meaning of the notion of a standard complete model in a moment.
+First, we should point out that set theory has changed over the last 66 years and show a few notable, albeit only formal, differences. Firstly, when reading Lévy's article, one should bear in mind that while the author often speaks about a~model of $\sf{ZF}$, usually denoted $u$, it doesn't necessarily mean that there is a set $u$ that is a model of $\sf{ZF}$\footnote{This is indeed impossible to prove in $\sf{ZF}$ due to Gödel's Incompleteness.}, we are nowadays used to using the notion of universal class $V$ in similar sense, albeit independently from a particular axiomatic set theory. %We will review the exact meaning of the notion of a standard complete model in a moment.
 The theory $\sf{ZF}$ is practically identical to the theory we have established in (\ref{def:zf}), the differences are only formal.
 One might be confused by the fact that Lévy treats the \emph{Subsets} axiom, which is in fact \emph{Specification}, as a single axiom rather than a schema. He even takes the conjunction of all axioms of $\sf{ZF}$ and treats it like a formula.  This is possible because the underlying logic calculus is different. Lévy works with set theories formulated in the \emph{non-simple applied first order functional calculus}, see Chapter IV in \cite{church1996introduction} for details. For now, we only need to know that the calculus contains a substitution rule for functional variables. This way, \emph{Subsets} is de facto a schema even though it sometimes treated as a single formula\footnote{This way, the conjunction of all axiom is in fact a schema.}.
 % todo koukni do churche jak se to s tim ma
@@ -46,21 +45,21 @@ The above definition of inaccessibles is used because it doesn't require \emph{C
 
 For the definition of relativization, see (\ref{def:relativization}). The notation used by Lévy is "$Rel(u, \varphi)$", we will stick to "$\varphi^{u}$".
 \begin{definition}{($N$)}\label{def:levy_axiom_n}\\
-The following is an axiom schema of complete reflection over $\sf{ZF}$, denoted as $N$. For every first-order formula $\varphi$ in the language of set theory with no free variables except for $x_1, \ldots , x_n$, the following is an instance of schema $N$.
+The following is an axiom schema of complete reflection over $\sf{ZF}$, denoted as $N$. For every first-order formula $\varphi$ in the language of set theory with no free variables except for $p_1, \ldots , p_n$, the following is an instance of schema $N$.
 \begin{equation}
-\exists u (Scm^{\sf{ZF}}(u) \et \forall x_1, \ldots , x_n (x_1, \ldots , x_n \in u \then \varphi \iff \varphi^{u}))
+\exists u (Scm^{\sf{ZF}}(u) \et \forall p_1, \ldots , p_n (p_1, \ldots , p_n \in u \then \varphi \iff \varphi^{u}))
 \end{equation}
-%where $\varphi$ is a~formula which contains no free variables except for $x_1, \ldots , x_n$.
+%where $\varphi$ is a~formula which contains no free variables except for $p_1, \ldots , p_n$.
 \end{definition}
 
 Let $\sf{S}$ be an axiomatic set theory defined in (\ref{def:s}). 
 
 \begin{definition}{($N_0$)}\label{def:levy_axiom_n0}\\
-Axiom schema $N_0$ is similar to $N$ defined above, but with $\sf{S}$ instead of $\sf{ZF}$. For every $\varphi$, a first-order fomula in the language of set theory with no free variables except $x_1, \ldots , x_n$, the following is an instance of $N_0$.
+Axiom schema $N_0$ is similar to $N$ defined above, but with $\sf{S}$ instead of $\sf{ZF}$. For every $\varphi$, a first-order fomula in the language of set theory with no free variables except $p_1, \ldots , p_n$, the following is an instance of $N_0$.
 \begin{equation}
-\exists u (Scm^{\sf{S}}(u) \et \forall x_1, \ldots , x_n (x_1, \ldots , x_n \in u \then \varphi \iff \varphi^{u}))
+\exists u (Scm^{\sf{S}}(u) \et \forall p_1, \ldots , p_n (p_1, \ldots , p_n \in u \then \varphi \iff \varphi^{u}))
 \end{equation}
-%where $\varphi$ is a~formula which contains no free variables except for $x_1, \ldots , x_n$.
+%where $\varphi$ is a~formula which contains no free variables except for $p_1, \ldots , p_n$.
 \end{definition}
 
 We will now show that in $\sf{S}$, $N_0$ implies both \emph{Replacement} and \emph{Infinity}.
@@ -72,55 +71,69 @@ Let $N_0$ be defined as in (\ref{def:levy_axiom_n0}), for \emph{Infinity} see (\
 In $\sf{S}$, the schema $N_0$ implies \emph{Infinity}.
 \end{theorem}
 
-\begin{proof}
-
-Let $\varphi = \forall x \exists y (y = x \cup \{x\})$. This clearly holds in $\sf{S}$ because given any set $x$, we always have $x \cup \{x\}$ via \emph{Powerset} and \emph{Specification}.
+\begin{proof} % Levy to bere pres V_\lambda \models 
+Let $\varphi = \forall x \exists y (y = x \cup \{x\})$. 
+This clearly holds in $\sf{S}$ because given a set $x$, there is a set $y = x \cup \{x\}$ obtained via \emph{Pairing} and \emph{Union}. %\emph{Powerset} and \emph{Specification}.
 From $N_0$, there is a set $u$ such that $\varphi^{u}$ holds. This $u$ satisfies the conditions required by \emph{Infinity}.
 \end{proof}
+Lévy proves even more swiftly. He says that for an arbitrary formula $\varphi$, $N_0$ gives us $\exists u Scm^{\sf{S}}(u)$ and this $u$ already satisfies \emph{Infinity}. To do this, we would need to prove (\ref{lemma:scm_s_is_limit}), which will happen later in this chapter, but we don't know that yet. % mozna taky trochu preformulovat
 
-\begin{theorem} % todo zkontrolovat ==========================================================================================
-In $\sf{S}$, the schema $N_0$ implies \emph{Replacement}.\\
-TODO jedno nebo druhe % nebo treti
-\beq
-\sf{S} \vdash N_0 \then \mbox{\emph{Replacement}}
-\eeq % nebo S \vdash N_0 \then Replacement % (veta o dedukci?) nebo \sf{S} + N_0 \vdash Repl
+\
+
+Let $\sf{S}$ be a set theory defined in (\ref{def:s}), $N_0$ a schema defined in (\ref{def:levy_axiom_n0}) and \emph{Replacement} a schema defined in (\ref{def:replacement}).
+\begin{theorem} 
+%In $\sf{S}$ with $N_0$ implies \emph{Replacement}.\\
+%TODO jedno nebo druhe % nebo treti
+In $\sf{S}$, the schema $N_0$ implies \emph{Replacement}.
+%\beq
+%\sf{S}, N_0 \vdash \mbox{\emph{Replacement}}
+%\sf{S} \vdash N_0 \then \mbox{\emph{Replacement}}
+%\eeq % nebo S \vdash N_0 \then Replacement % (veta o dedukci?) nebo \sf{S} + N_0 \vdash Repl
 \end{theorem}
-
+% todo zkontrolovat ==========================================================================================
 \begin{proof}
-Let $\varphi(x, y, p_1, \ldots, p_n)$ be a~formula with no free variables except $x, y, p_1, \ldots, p_n$ for an arbitrary natural number $n$.
-
+Let $\varphi(x, y, p_1, \ldots, p_n)$ be a~formula with no free variables except $x, y, p_1, \ldots, p_n$.
+%Out goal is to prove
+%\beq
+%"\varphi\mbox{ is a function}"\then \forall x \exists y \forall z (z \in y \iff (\exists q \in x)(\varphi(x, y, p_1, \ldots, p_n)))
+%\eeq
+Let $\chi$ be an instance of \emph{Replacement} schema for the above $\varphi$.
 \begin{equation}
 \begin{gathered}
 \chi = \forall x, y, z(\varphi(x, y, p_1, \ldots, p_n) \et \varphi(x, z, p_1, \ldots, p_n) \then y = z) \\
-\then \forall x \exists y \forall z (z \in y \iff \exists q (q \in x \et \varphi(q, z, p_1, \ldots, p_n)))
+\then \forall x \exists y \forall z (z \in y \iff (\exists q \in x)(\varphi(x, y, p_1, \ldots, p_n)))
 \end{gathered}
 \end{equation}
-Let $\chi$ be an instance of \emph{Replacement} schema for the above $\varphi$. Let the following formulas be instances of the $N_0$ schema for formulas  $\varphi$, $\exists y \varphi$, $\chi$ and $\forall x, p_1, \ldots, p_n \chi$ respectively:
+
+Consider the following formulas. % and $\forall x, p_1, \ldots, p_n \chi$ respectively: 
+% TODO CO JE TO POSLEDNI? UZAVER?
 \bce[(i)]
 \item $x, y, p_1, \ldots, p_n \in u \then (\varphi \iff \varphi^{u}) $
 \item $x, p_1, \ldots, p_n \in u \then (\exists y \varphi \iff (\exists y \varphi)^{u})$
 \item $x, p_1, \ldots, p_n \in u \then (\chi \iff \chi^{u})$
-\item $\forall x, p_1, \ldots, p_n (\chi \iff (\forall x, p_1, \ldots, p_n \chi)^{u})$
+\item $\forall x, p_1, \ldots, p_n (\chi \iff (\forall x, p_1, \ldots, p_n \chi)^{u})$ % co ho pridat pozdeji?
 \ece
+The first three formulas are instances of the $N_0$ schema for formulas $\varphi$, $\exists y \varphi$ and $\chi$ respectively, the last is universal closure of (iii).
+By $N_0$, there exists a set $u$ where all four formulas hold.
 
-From relativization, we also know that $(\exists y \varphi)^{u}$ is equivalent to $(\exists y \in u) \varphi^{u}$.
-Therefore $(ii)$ is equivalent to
+From relativization, $(\exists y \varphi)^{u}$ is equivalent to $(\exists y \in u) \varphi^{u}$, together with (i) and (ii), we get
 \begin{equation}
-x, p_1, \ldots, p_n \in u \then (\exists y \in u) \varphi^{u}. 
+x, p_1, \ldots, p_n \in u \then ((\exists y \in u) \varphi \iff \exists y \varphi)
 \end{equation}
 
-If $\varphi$ is a~function\footnote{See definition (\ref{def:function})}, then for every $x \in u$, which is also $x \subset u$ by the transitivity of $Scm^{\sf{S}}(u)$,
-it maps elements of $x$ onto $u$. From the axiom scheme of comprehension\footnote{Lévy uses its equivalent, axiom of subsets}, we can find $y$, a~set of all images of elements of $x$.
-That gives us $x, p_1, \ldots, p_n \in u \then \chi$. By $\bold{(iii)}$ we get $x, p_1, \ldots, p_n \in u \then \chi^{u}$, the universal closure of this formula is $(\forall x, p_1, \ldots, p_n \chi)^{u}$, 
-which together with $\bold{(iv)}$ yields $\forall x, p_1, \ldots, p_n \chi$. Via universal instantiation, we end up with $\chi$. We have inferred replacement for a given arbitrary formula. 
+If $\varphi$ is a~function, then for every $x \in u$, which is also $x \subset u$ by the transitivity of $Scm^{\sf{S}}(u)$,
+it maps elements of $x$ into $u$. From the axiom scheme of comprehension%\footnote{Lévy uses its equivalent, axiom of subsets},
+we can find $y$, a~set of all images of the elements of $x$.
+That gives us $x, p_1, \ldots, p_n \in u \then \chi$. By (iii) we get $x, p_1, \ldots, p_n \in u \then \chi^{u}$, the universal closure of this formula is $(\forall x, p_1, \ldots, p_n \chi)^{u}$, 
+which together with (iv) yields $\forall x, p_1, \ldots, p_n \chi$. Via universal instantiation, we end up with $\chi$, which is an instance of \emph{Replacement} for an arbitrary formula $\varphi$ given.
 \end{proof}
 
-What we have just proven is just a single theorem from the above mentioned article by Lévy, we will introduce other interesting propositions, mostly related to the existence of large cardinals, later in their appropriate context in chapter 3.
+What we have just proven is only a single theorem from Lévy's aforementioned article, we will introduce other interesting propositions, mostly related to Mahlo and inaccessible cardinals, later in their appropriate context in chapter 3. % porad trochu kostrbaty?
 
 % =====================================================================================================================================
 
 \subsection{Contemporary Restatement}
-We will now a theorem that is referred to as Lévy's Reflection in contemporary set theory. The only difference is that while Lévy reflects $\varphi$ from $V$ to a set $u$ which is a \emph{standard complete model of $\sf{S}$}, we say that there is a $V_\alpha$ for a limit $\alpha$ that reflects $\varphi$. Those two conditions are equivalent due to lemma (\ref{lemma:scm_s_is_limit}).
+We will now introduce and prove a theorem that is called Lévy's Reflection in contemporary set theory. The only difference is that while Lévy originally reflects a formula $\varphi$ from $V$ to a set $u$ which is a \emph{standard complete model of $\sf{S}$}, we say that there is a $V_\alpha$ for a limit $\alpha$ that reflects $\varphi$. Those two conditions are equivalent due to lemma (\ref{lemma:scm_s_is_limit}).
 
 %\begin{definition}{(Reflection\textsubscript{1})}\label{def:reflection_1}\\  % co spis Levy's reflection principle?
 %Let $\varphi(p_1, \ldots, p_n)$ be a first-order formula in the language of set theory. Than the following holds for any such $\varphi$.
@@ -468,7 +481,7 @@ Let \emph{Infinity} and \emph{Replacement} be as defined in \ref{def:infinity} a
 Since \ref{theorem:first_order_reflection} already gives us one side of the implication, we are only interested in showing the converse which we shall do in two parts:
 
 $\bold{\emph{First-order reflection} \then \emph{Infinity}}$
-This is done exactly like (\ref{theorem:n0_implies_infinity}). We pick for $\varphi$ the formula $(\forall y \in x)(y \cup \{y\} \in x))$, $M_0 = \{\emptyset\}$. From (\ref{def:first_order_reflection}), there is a set $M$ that satisfies $\varphi$, so there is an inductive set. We have picked $M_0$ so that $\emptyset \in M$ obviously holds and $M$ is the witness for 
+This is done exactly like (\ref{theorem:n0_implies_infinity}). We pick for $\varphi$ the formula $(\forall y \in x)(y \cup \{y\} \in x)$, $M_0 = \{\emptyset\}$. From (\ref{def:first_order_reflection}), there is a set $M$ that satisfies $\varphi$, so there is an inductive set. We have picked $M_0$ so that $\emptyset \in M$ obviously holds and $M$ is the witness for 
 \beq
 \exists x(\emptyset \in x \et (\forall y \in x)(y \cup \{y\} \in x))
 \eeq
