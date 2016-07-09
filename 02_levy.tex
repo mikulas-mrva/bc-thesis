@@ -47,7 +47,7 @@ For the definition of relativization, see (\ref{def:relativization}). The notati
 \begin{definition}{($N$)}\label{def:levy_axiom_n}\\
 The following is an axiom schema of complete reflection over $\sf{ZF}$, denoted as $N$. For every first-order formula $\varphi$ in the language of set theory with no free variables except for $p_1, \ldots , p_n$, the following is an instance of schema $N$.
 \begin{equation}
-\exists u (Scm^{\sf{ZF}}(u) \et \forall p_1, \ldots , p_n (p_1, \ldots , p_n \in u \then \varphi \iff \varphi^{u}))
+\exists u (Scm^{\sf{ZF}}(u) \et (\forall p_1, \ldots, p_n \in u)(\varphi \iff \varphi^{u}))
 \end{equation}
 %where $\varphi$ is a~formula which contains no free variables except for $p_1, \ldots , p_n$.
 \end{definition}
@@ -57,7 +57,7 @@ Let $\sf{S}$ be an axiomatic set theory defined in (\ref{def:s}).
 \begin{definition}{($N_0$)}\label{def:levy_axiom_n0}\\
 Axiom schema $N_0$ is similar to $N$ defined above, but with $\sf{S}$ instead of $\sf{ZF}$. For every $\varphi$, a first-order fomula in the language of set theory with no free variables except $p_1, \ldots , p_n$, the following is an instance of $N_0$.
 \begin{equation}
-\exists u (Scm^{\sf{S}}(u) \et \forall p_1, \ldots , p_n (p_1, \ldots , p_n \in u \then \varphi \iff \varphi^{u}))
+\exists u (Scm^{\sf{S}}(u) \et (\forall p_1, \ldots , p_n \in u)(\varphi \iff \varphi^{u}))
 \end{equation}
 %where $\varphi$ is a~formula which contains no free variables except for $p_1, \ldots , p_n$.
 \end{definition}
@@ -76,7 +76,8 @@ Let $\varphi = \forall x \exists y (y = x \cup \{x\})$.
 This clearly holds in $\sf{S}$ because given a set $x$, there is a set $y = x \cup \{x\}$ obtained via \emph{Pairing} and \emph{Union}. %\emph{Powerset} and \emph{Specification}.
 From $N_0$, there is a set $u$ such that $\varphi^{u}$ holds. This $u$ satisfies the conditions required by \emph{Infinity}.
 \end{proof}
-Lévy proves even more swiftly. He says that for an arbitrary formula $\varphi$, $N_0$ gives us $\exists u Scm^{\sf{S}}(u)$ and this $u$ already satisfies \emph{Infinity}. To do this, we would need to prove (\ref{lemma:scm_s_is_limit}), which will happen later in this chapter, but we don't know that yet. % mozna taky trochu preformulovat
+
+Lévy proves the above even more swiftly. He says that for an arbitrary formula $\varphi$, $N_0$ gives us $\exists u Scm^{\sf{S}}(u)$ and this $u$ already satisfies \emph{Infinity}. To do this, we would need to prove (\ref{lemma:scm_s_is_limit}), which will happen later in this chapter, but we don't know that yet. % mozna taky trochu preformulovat
 
 \
 
@@ -97,7 +98,7 @@ Let $\varphi(x, y, p_1, \ldots, p_n)$ be a~formula with no free variables except
 %\beq
 %"\varphi\mbox{ is a function}"\then \forall x \exists y \forall z (z \in y \iff (\exists q \in x)(\varphi(x, y, p_1, \ldots, p_n)))
 %\eeq
-Let $\chi$ be an instance of \emph{Replacement} schema for the above $\varphi$.
+Let $\chi$ be an instance of \emph{Replacement} schema for the above $\varphi$, which we want to hold in $\sf{S}, N_0$.
 \begin{equation}
 \begin{gathered}
 \chi = \forall x, y, z(\varphi(x, y, p_1, \ldots, p_n) \et \varphi(x, z, p_1, \ldots, p_n) \then y = z) \\
@@ -105,27 +106,25 @@ Let $\chi$ be an instance of \emph{Replacement} schema for the above $\varphi$.
 \end{gathered}
 \end{equation}
 
-Consider the following formulas. % and $\forall x, p_1, \ldots, p_n \chi$ respectively: 
+Now consider the following formulas. % and $\forall x, p_1, \ldots, p_n \chi$ respectively: 
 % TODO CO JE TO POSLEDNI? UZAVER?
 \bce[(i)]
-\item $x, y, p_1, \ldots, p_n \in u \then (\varphi \iff \varphi^{u}) $
-\item $x, p_1, \ldots, p_n \in u \then (\exists y \varphi \iff (\exists y \varphi)^{u})$
-\item $x, p_1, \ldots, p_n \in u \then (\chi \iff \chi^{u})$
-\item $\forall x, p_1, \ldots, p_n (\chi \iff (\forall x, p_1, \ldots, p_n \chi)^{u})$ % co ho pridat pozdeji?
+\item $(x, y, p_1, \ldots, p_n \in u)(\varphi \iff \varphi^{u})$
+\item $(x, p_1, \ldots, p_n \in u)(\exists y \varphi \iff (\exists y \varphi)^{u})$
+\item $(x, p_1, \ldots, p_n \in u)(\chi \iff \chi^{u})$
+\item $\forall x, p_1, \ldots, p_n \chi \iff (\forall x, p_1, \ldots, p_n \chi)^{u}$ % co ho pridat pozdeji?
 \ece
-The first three formulas are instances of the $N_0$ schema for formulas $\varphi$, $\exists y \varphi$ and $\chi$ respectively, the last is universal closure of (iii).
-By $N_0$, there exists a set $u$ where all four formulas hold.
-
+The above formulas are instances of the $N_0$ schema for $\varphi$, $\exists y \varphi$, $\chi$ and the universal closure of $\chi$ respectively.
+By $N_0$, there exists a set $u$ where all four formulas hold.\footnote{Even though $N_0$ is defined for one formula but we have just used it for four at once. To make this formally possible, we can either prove that $N_0$ is equivalent to a more general version for any finite number of formulas or we can reflect their conjunction and argue that if $u \models \varphi_1 \et \ldots \et \varphi_n$, then $(u \models \varphi_1), \ldots, (u \models \varphi_n)$.}
 From relativization, $(\exists y \varphi)^{u}$ is equivalent to $(\exists y \in u) \varphi^{u}$, together with (i) and (ii), we get
 \begin{equation}
-x, p_1, \ldots, p_n \in u \then ((\exists y \in u) \varphi \iff \exists y \varphi)
+(\forall x, p_1, \ldots, p_n \in u)((\exists y \in u)\varphi \iff \exists y \varphi)
 \end{equation}
 
-If $\varphi$ is a~function, then for every $x \in u$, which is also $x \subset u$ by the transitivity of $Scm^{\sf{S}}(u)$,
-it maps elements of $x$ into $u$. From the axiom scheme of comprehension%\footnote{Lévy uses its equivalent, axiom of subsets},
-we can find $y$, a~set of all images of the elements of $x$.
-That gives us $x, p_1, \ldots, p_n \in u \then \chi$. By (iii) we get $x, p_1, \ldots, p_n \in u \then \chi^{u}$, the universal closure of this formula is $(\forall x, p_1, \ldots, p_n \chi)^{u}$, 
-which together with (iv) yields $\forall x, p_1, \ldots, p_n \chi$. Via universal instantiation, we end up with $\chi$, which is an instance of \emph{Replacement} for an arbitrary formula $\varphi$ given.
+If $\varphi$ is a~function, then for every $x \in u$, which is also $x \subset u$ since $Scm^{\sf{S}}(u)$ and therefore $u$ is transitive,
+it maps elements of $x$ into $u$. From the axiom scheme of comprehension, we can find $y$, a~set of all images of the elements of $x$.
+That gives us $x, p_1, \ldots, p_n \in u \then \chi$. By (iii) we get that $x, p_1, \ldots, p_n \in u \then \chi^{u}$ holds. The universal closure of this formula is $\forall x, p_1, \ldots, p_n (x, p_1, \ldots, p_n \in u \then \chi^{u})$ which is equivalent to $(\forall x, p_1, \ldots, p_n \in u)(\chi)^{u}$, which is exactly $(\forall x, p_1, \ldots, p_n \chi)^{u}$. 
+From (iv), $\forall x, p_1, \ldots, p_n \chi$ holds. % Via universal instantiation, we end up with $\chi$, which is an instance of \emph{Replacement} for an arbitrary formula $\varphi$ given.
 \end{proof}
 
 What we have just proven is only a single theorem from Lévy's aforementioned article, we will introduce other interesting propositions, mostly related to Mahlo and inaccessible cardinals, later in their appropriate context in chapter 3. % porad trochu kostrbaty?
@@ -493,20 +492,21 @@ From \emph{First-order reflection}, we know that for any first-order formula $\v
 
 $\bold{\emph{Reflection} \then \emph{Replacement}}$
 
-Given a~formula $\varphi(x, y, p_1, \ldots, p_n)$, we can suppose that given if it holds for given $x, y, p_1, \ldots, p_n$, it is reflected in a set $M$ \footnote{Which means that for $x, y, p_1, \ldots, p_n \in M$, $\varphi^M(x, y, p_1, \ldots, p_n) \iff \varphi(x, y, p_1, \ldots, p_n)$.}
-What we want to obtain is the following:
-\begin{equation}
-\begin{gathered}
-\forall x, y, z (\varphi(x, y, p_1, \ldots, p_n) \et \varphi(x, z, p_1, \ldots, p_n) \then y = z) \then\\
-\then \forall X \exists Y \forall y\ (y \in Y \iff \exists x (\varphi(x, y, p_1, \ldots, p_n) \et x \in X ))
-\end{gathered}
-\end{equation}
+Given a~formula $\varphi(x, y, p_1, \ldots, p_n)$, we can suppose that if it holds for given $x, y, p_1, \ldots, p_n$, it is reflected in a set $M$ \footnote{Which means that for $x, y, p_1, \ldots, p_n \in M$, $\varphi^M(x, y, p_1, \ldots, p_n) \iff \varphi(x, y, p_1, \ldots, p_n)$.}
+%What we want to obtain is the following:
+%\begin{equation}
+%\begin{gathered}
+%\forall x, y, z (\varphi(x, y, p_1, \ldots, p_n) \et \varphi(x, z, p_1, \ldots, p_n) \then y = z) \then\\
+%\then \forall X \exists Y \forall y\ (y \in Y \iff \exists x (\varphi(x, y, p_1, \ldots, p_n) \et x \in X ))
+%\end{gathered}
+%\end{equation}
 
-We do also know that $x, y \in M$, in other words for every $X$, $Y = \{y\ |\ \varphi(x, y, p_1, \ldots, p_n)\}$ and we know that $X \subset M$ and $Y \subset M$, which, together with the specification schema implies that $Y$, the image of $X$ over $\varphi$, is a~set.
+TODO OMG FIX! Drake nebo jech nebo Kanamori!
+
+We also know that $x, y \in M$, in other words for every $X$, $Y = \{y\ |\ \varphi(x, y, p_1, \ldots, p_n)\}$ and we know that $X \subset M$ and $Y \subset M$, which, together with the specification schema implies that $Y$, the image of $X$ over $\varphi$, is a~set.
 \end{proof}
 
-\
-
+% \
 
 % Stronger reflection: 
 % a) any number of formulas
