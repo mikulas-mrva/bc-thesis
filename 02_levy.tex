@@ -7,7 +7,7 @@ First, we should point out that set theory has changed over the last 66 years an
 The theory $\sf{ZF}$ is practically identical to the theory we have established in (\ref{def:zf}), the differences are only formal.
 One might be confused by the fact that Lévy treats the \emph{Subsets} axiom, which is in fact \emph{Specification}, as a single axiom rather than a schema. He even takes the conjunction of all axioms of $\sf{ZF}$ and treats it like a formula.  This is possible because the underlying logic calculus is different. Lévy works with set theories formulated in the \emph{non-simple applied first order functional calculus}, see Chapter IV in \cite{church1996introduction} for details. For now, we only need to know that the calculus contains a substitution rule for functional variables. This way, \emph{Subsets} is de facto a schema even though it sometimes treated as a single formula\footnote{This way, the conjunction of all axiom is in fact a schema.}.
 % todo koukni do churche jak se to s tim ma
-It should also be noted that the logical connectives look different. The now usual symbol for an universal quantifier does not appear, $\forall x \varphi (x)$ would be written as $(x) \varphi (x)$. The symbol for negation is "$\sim$", implication is written as "$\supset$" and equivalence is "$\equiv$". We will use standard notation with "$\neg$", "$\then$" and "$\iff$" respectively when presenting Lévy's results.
+It should also be noted that the logical connectives look different. The now usual symbol for an universal quantifier does not appear, $\forall x \varphi (x)$ would be written as $(x) \varphi (x)$. The symbol for negation is ``$\sim$'', implication is written as ``$\supset$'' and equivalence is ``$\equiv$''. We will use standard notation with ``$\neg$'', ``$\then$'' and ``$\iff$'' respectively when presenting Lévy's results.
 
 %The following definitions are not used in contemporary set theory, but they illustrate 1960's set theory mind-set and they are used heavily in Lévy's text, so we will include and explain them for clarity. 
 %Generally in this chapter, $\sf{Q}$ stands for an arbitrary axiomatic set theory. % used for general definitions, $u$ is usually a model of $\sf{Q}$, counterpart of today's the universal class $V$.
@@ -43,7 +43,7 @@ In(\kappa) \iff In^{\sf{ZF}}(\kappa)
 \end{definition}
 The above definition of inaccessibles is used because it doesn't require \emph{Choice}.
 
-For the definition of relativization, see (\ref{def:relativization}). The notation used by Lévy is "$Rel(u, \varphi)$", we will stick to "$\varphi^{u}$".
+For the definition of relativization, see (\ref{def:relativization}). The notation used by Lévy is ``$Rel(u, \varphi)$'', we will stick to ``$\varphi^{u}$''.
 \begin{definition}{($N$)}\label{def:levy_axiom_n}\\
 The following is an axiom schema of complete reflection over $\sf{ZF}$, denoted as $N$. For every first-order formula $\varphi$ in the language of set theory with no free variables except for $p_1, \ldots , p_n$, the following is an instance of schema $N$.
 \begin{equation}
@@ -96,7 +96,7 @@ In $\sf{S}$, the schema $N_0$ implies \emph{Replacement}.
 Let $\varphi(x, y, p_1, \ldots, p_n)$ be a~formula with no free variables except $x, y, p_1, \ldots, p_n$.
 %Out goal is to prove
 %\beq
-%"\varphi\mbox{ is a function}"\then \forall x \exists y \forall z (z \in y \iff (\exists q \in x)(\varphi(x, y, p_1, \ldots, p_n)))
+%``\varphi\mbox{ is a function}''\then \forall x \exists y \forall z (z \in y \iff (\exists q \in x)(\varphi(x, y, p_1, \ldots, p_n)))
 %\eeq
 Let $\chi$ be an instance of \emph{Replacement} schema for the above $\varphi$, which we want to hold in $\sf{S}, N_0$.
 \begin{equation}
@@ -142,7 +142,7 @@ We will now introduce and prove a theorem that is called Lévy's Reflection in c
 %\end{definition}
 
 % Note that this is a restatement of both Lévy's $N$ and $N_0$ from the previous chapter\footnote{see (\ref{def:levy_axiom_n}) and (\ref{def:levy_axiom_n0}}). We prefer to call it \emph{First-order reflection} so it complies with how other axioms and schemata are named. \footnote{We will not use the name $N_0$, because it might be confusing to work $N_0$ and $M_0$ where $M_0$ is a set and $N_0$ is an axiom schema.} 
-% Note that the subscript 1 refers to the fact that $\varphi(p_1, \ldots, p_n)$ is a first-order formula, and since we're using the word "reflection" in less strict meaning throughout this thesis, distinguishing between the two just by using italic font face for the schema might cause confusion.
+% Note that the subscript 1 refers to the fact that $\varphi(p_1, \ldots, p_n)$ is a first-order formula, and since we're using the word ``reflection'' in less strict meaning throughout this thesis, distinguishing between the two just by using italic font face for the schema might cause confusion.
 
 % We will now prove the equivalence of \emph{First-order reflection} with \emph{Replacement} and \emph{Infinity} in $\sf{S}$ in two parts. First, we will show that \emph{First-order reflection} is a theorem of $\sf{ZFC}$, then we shall show that the second implication, which proves \emph{Infinity} and \emph{Replacement} from \emph{First-order reflection}, also holds.
 
@@ -248,7 +248,7 @@ for every $p_1, \ldots, p_n \in M$.
 %\varphi \iff \varphi^M
 %\end{equation}
 
-Let's now prove \emph{(i)} for given $\varphi$ via induction by complexity. We can safely assume that $\varphi$ contains no quantifiers besides "$\exists$" and no logical connectives other than "$\neg$" and "$\et$".
+Let's now prove \emph{(i)} for given $\varphi$ via induction by complexity. We can safely assume that $\varphi$ contains no quantifiers besides ``$\exists$'' and no logical connectives other than ``$\neg$'' and ``$\et$''.
 Let $\varphi_1, \ldots, \varphi_n$ be all subformulas of $\varphi$. Then there is a set $M$, obtained by the means of lemma \ref{lemma:reflection_lemma}, for all of the formulas $\varphi_1, \ldots, \varphi_n$. 
 
 Let's first consider atomic formulas in the form of either $x_1 = x_2$ or $x_1 \in x_2$. % preformulovat trochu
@@ -372,7 +372,7 @@ Let $\sf{S}$ be a set theory as defined in (\ref{def:s}).
 \begin{lemma}\label{lemma:scm_s_is_limit}\
 The following holds for every $\lambda$.
 \begin{equation}
-\mbox{"$\lambda$ is a limit ordinal"} \then V_\lambda \models \sf{S} % proc ne?
+\mbox{``$\lambda$ is a limit ordinal''} \then V_\lambda \models \sf{S} % proc ne?
 \end{equation}
 \end{lemma}
 

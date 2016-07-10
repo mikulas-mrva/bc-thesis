@@ -20,7 +20,7 @@ x \in A \iff \varphi(x)
 Given classes $A$, $B$, one can easily define the elementary set operations such as $A \cap B$, $A \cup B$, $A \setminus C$, $\bigcup A$, see the first part of \cite{JechBook} for details. 
 The following axioms are the tools by which decide whether particular classes are in fact sets. A class that fails to be considered a set is called a \emph{proper class}.
 
-Speaking of formulas, we will often use syntax like "$M$ is a limit ordinal". It should be clear that this statement can be rewritten as a formula that was introduced earlier in the text.
+Speaking of formulas, we will often use syntax like ``$M$ is a limit ordinal'', It should be clear that this statement can be rewritten as a formula that was introduced earlier in the text.
 
 \
 
@@ -65,7 +65,7 @@ We read $x \subseteq y$ as \emph{x is a subset of y} and $x \subset y$ as \emph{
 %\end{equation}
 %We know that $\emptyset$ is a set from \emph{specification} and it is the same set for every $y$ given from \emph{extensionality}.
 %TODO
-%co radsi "for an arbitrary $x$"
+%co radsi ``for an arbitrary $x$''
 For an arbitrary set $x$, the empty set, written as $\emptyset$, is defined by the following formula
 \beq
 (\forall y \in x)(y \in \emptyset \iff \neg(y = y))
@@ -139,15 +139,15 @@ Alternatively, $f = \{\langle x, y \rangle : \varphi(x, y)\}$ is a class.
 
 
 \begin{definition}{(Dom(f))}\label{def:dom}\\
-Let $f$ be a function. We read the following as "Dom(f) is the domain of f".
+Let $f$ be a function. We read the following as ``$Dom(f)$ is the domain of $f$''.
 \begin{equation}
 Dom(f) \defeq \{x : \exists y (f(x) = y)\}
 \end{equation}
 \end{definition}
-We say "$f$ is a function on $A$", $A$ being a class, if $A = dom(f)$.
+We say ``$f$ is a function on $A$'', $A$ being a class, if $A = dom(f)$.
 
 \begin{definition}{(Rng(f))}\label{def:rng}\\
-Let $f$ be a function. We read the following as "Rng(f) is the range of f".
+Let $f$ be a function. We read the following as ``$Rng(f)$ is the range of $f$''.
 \begin{equation}
 Rng(f) \defeq \{x : \exists y (f(x) = y)\}
 \end{equation}
@@ -178,7 +178,7 @@ And now for the axioms.
 \begin{definition}{(Replacement)}\label{def:replacement}\\
 The following is a schema for every first-order formula $\varphi(x, p_1, \ldots, p_n)$ with no free variables other than $x, p_1, \ldots, p_n$.
 \begin{equation}
-"\varphi\mbox{ is a function}"\then \forall x \exists y \forall z (z \in y \iff (\exists q \in x)(\varphi(x, y, p_1, \ldots, p_n)))
+``\varphi\mbox{ is a function}''\then \forall x \exists y \forall z (z \in y \iff (\exists q \in x)(\varphi(x, y, p_1, \ldots, p_n)))
 \end{equation}
 \end{definition}
 
@@ -245,8 +245,8 @@ A class $A$ is said to be \emph{well ordered by $\in$} iff the following hold:
 \begin{definition}{(Ordinal Number)}\label{def:ordinal}\\ % ok
 A set $x$ is said to be an \emph{ordinal number} if it is \emph{transitive} and \emph{well-ordered by $\in$}. 
 \end{definition}
-For the sake of brevity, we usually just say "$x$ is an \emph{ordinal}". 
-Note that "$x$ is an ordinal" is a well-defined formula in the language of set theory, since \ref{def:transitivity} is a first-order formula and \ref{def:well_ordering} is in fact a conjunction of four first-order formulas.
+For the sake of brevity, we usually just say ``$x$ is an \emph{ordinal}''. 
+Note that ``$x$ is an ordinal'' is a well-defined formula in the language of set theory, since \ref{def:transitivity} is a first-order formula and \ref{def:well_ordering} is in fact a conjunction of four first-order formulas.
 Ordinals will be usually denoted by lower case greek letters, starting from the beginning: $\alpha, \beta, \gamma, \ldots$.
 Given two different ordinals $\alpha, \beta$, we will write $\alpha < \beta$ for $\alpha \in \beta$, see \cite{JechBook}{Lemma 2.11} for technical details.
 
@@ -305,7 +305,7 @@ Due to \emph{Regularity}, every set has a rank.\footnote{See chapter 6 of \cite{
 
 \begin{definition}{($\omega$)}\label{def:omega}\\ % ???? bacha na to
 \begin{equation}
-\omega \defeq \bigcap\{x : \mbox{"$x$ is a limit ordinal"})\}
+\omega \defeq \bigcap\{x : \mbox{``$x$ is a limit ordinal''})\}
 \end{equation}
 \end{definition}
 $\omega$ is non-empty if \emph{Infinity} or any equivalent holds.
@@ -329,7 +329,7 @@ Let $\omega$ be the set defined by \ref{def:omega}.
 We will recursively define the function $\aleph$ for all ordinals.
 \bce[(i)]
 \item $\aleph_0 = \omega$
-\item $\aleph_{\alpha+1}$ is the least cardinal larger than $\aleph_\alpha$\footnote{"The least cardinal larger than $\aleph_\alpha$" is sometimes notated as $\aleph_\alpha^{+}$}
+\item $\aleph_{\alpha+1}$ is the least cardinal larger than $\aleph_\alpha$\footnote{``The least cardinal larger than $\aleph_\alpha$'' is sometimes notated as $\aleph_\alpha^{+}$}
 \item $\aleph_\lambda = \bigcup_{\beta < \lambda}\aleph_\beta$ for a limit ordinal $\lambda$
 \ece
 If $\kappa = \aleph_\alpha$ and $\alpha$ is a succesor ordinal, we call $\kappa$ a \emph{succesor cardinal}. If $\alpha$ is a limit ordinal, we call $\kappa$ a \emph{limit cardinal}.
@@ -348,7 +348,7 @@ Infinite cardinals will be notated by lowercase greek letters from the middle if
 For formal details as well as why every set can be well-ordered assuming \emph{Choice}, and therefore has a cardinaliy, see \cite{JechBook}. % proc je to tady?
 
 % todo mame def sequence?
-% todo mame def "cofinal"?
+% todo mame def ``cofinal''?
 % TODO fix it!!
 % todo pozor na supremum, upravit! (ikdyz pro limitni je to stejny)
 \begin{definition}{(Cofinality of a Limit Ordinal)}\label{def:cofinality}\\ % a co https://math.berkeley.edu/~jhicks/links/SOTS/cskipper112613.pdf? 
