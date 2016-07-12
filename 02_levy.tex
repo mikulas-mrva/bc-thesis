@@ -449,7 +449,7 @@ so $V_\lambda \models \forall z (z \in y \iff z \in x \et \varphi(z, p_1, \dots,
 % and a set $M_0$ there is such set $M$ that $M_0 \subseteq M$ and the following holds for every $p_1, \ldots, p_n \in M$:
 For every first-order formula $\varphi$, the following is an axiom:
 \begin{equation}
-\forall M_0 \exists M (M_0 \subseteq M \et \varphi(p_1, \ldots, p_n) \then \varphi(p_1, \ldots, p_n)^M) % drive M \models \varphi, ale to vypada divne
+\forall M_0 \exists M (M_0 \subseteq M \et (\varphi(p_1, \ldots, p_n) \iff \varphi(p_1, \ldots, p_n)^M)) % drive M \models \varphi, ale to vypada divne
 \end{equation}
 We will refer to this axiom schema as \emph{First-order reflection}.
 \end{definition}
@@ -487,12 +487,12 @@ $\bold{\emph{First-order reflection} \then \emph{Replacement}}$
 %\end{equation}
 
 %TODO OMG FIX! Drake nebo jech nebo Kanamori!
-Given a function $\varphi(x, y)$ and an arbitrary $M_0$, we know from \emph{First-order reflection} that there is a set $M$ such that $M_0 \subseteq M$ and
+Given a function $\varphi(x, y)$, we know from \emph{First-order reflection} that for every $M_0$, there is a set $M$ such that $M_0 \subseteq M$ and
 $(\forall x,y \in M)(\varphi(x, y) \iff \varphi^M(x, y))$ and $(\forall x, y \in M)(\exists y \varphi(x, y) \iff (\exists y \varphi(x, y))^M)$, 
 the latter being equivalent to $(\forall x, y \in M)(\exists y \varphi(x, y) \iff (\exists y \in M) \varphi^M(x, y))$. Therefore $(\forall x, y \in M)(\exists y \varphi(x, y) \iff (\exists y \in M) \varphi(x, y))$.
 That means that we have a set $M$ such that for every $x \in M$, if $\varphi$ is defined for $x$, $(\exists y \in M) \varphi(x, y)$. 
 
-To show that \emph{Replacement} holds for this particular $\varphi$, we need to verify that given a set, let's call it $M_0$, if we make sure that $\{ y : (\exists x \in M_0) \varphi(x, y)\}$ is a set. But since $M_0 \subseteq M$ and because given any $x \in M$, there is $y \in M$ satisfying $\varphi(x, y)$, $\{ y : (\exists x \in M_0) \varphi(x, y)\} = \{ y \in M : (\exists x \in M_0) \varphi(x, y)\}$, which is a set due to \emph{Specification}.
+To show that \emph{Replacement} holds for this particular $\varphi$, we need to verify that given a set $M_0$, $\{ y : (\exists x \in M_0) \varphi(x, y)\}$ is also a set. But since $M_0 \subseteq M$ and because given any $x \in M$, there is $y \in M$ satisfying $\varphi(x, y)$, $\{ y : (\exists x \in M_0) \varphi(x, y)\} = \{ y \in M : (\exists x \in M_0) \varphi(x, y)\}$, which is a set due to \emph{Specification}.
 
 % tranzitivita? V_\lambda?
 
