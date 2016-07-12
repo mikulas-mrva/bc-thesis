@@ -454,6 +454,8 @@ For every first-order formula $\varphi$, the following is an axiom:
 We will refer to this axiom schema as \emph{First-order reflection}.
 \end{definition}
 
+% TODO lemma, obecnejsi reflexe pro vic formuli?
+
 % pozor na to, ze jsme dokazali zdanlive silnejsi tvrzeni pro n formuli a ted predpokladame jenom jednu.
 % zkontroluj ze to tak je a napis ze silnejsi vysledek a slabsi predpoklad jsou cool, jsou ve skutecnostni ekvivalentni
 
@@ -487,13 +489,34 @@ $\bold{\emph{First-order reflection} \then \emph{Replacement}}$
 %\end{equation}
 
 %TODO OMG FIX! Drake nebo jech nebo Kanamori!
-Given a function $\varphi(x, y)$, we know from \emph{First-order reflection} that for every $M_0$, there is a set $M$ such that $M_0 \subseteq M$ and
-$(\forall x,y \in M)(\varphi(x, y) \iff \varphi^M(x, y))$ and $(\forall x, y \in M)(\exists y \varphi(x, y) \iff (\exists y \varphi(x, y))^M)$, 
-the latter being equivalent to $(\forall x, y \in M)(\exists y \varphi(x, y) \iff (\exists y \in M) \varphi^M(x, y))$. Therefore $(\forall x, y \in M)(\exists y \varphi(x, y) \iff (\exists y \in M) \varphi(x, y))$.
+Let's first point out that while \emph{First-order reflection} gives us a set for one formula, we can generalize it to hold for any finite number of formulas. We will show how is it done for two formulas, which is what we will use in this proof. Given two first-order formulas $\varphi, \psi$, we can suppose that there are formulas $\varphi'$ and $\psi'$ that are equivalent to $\varphi$ and $\psi$ respectively, but their free variables are different \footnote{This is plausible since we can for example substitute all free variables in $\varphi'$ for $x_0, x_2, x_4, \ldots$ and use $x_1, x_3, x_5, \ldots$ for free variables in $\psi'$, the resulting formulas will be equivalent.}. Let $\xi = \varphi \et \psi$, given any $M_0$, we can find a $M$ such that $\xi \iff \xi^M$. It is easy to see that from relativisation, the following holds:
+\beq
+\varphi \et \psi \iff \varphi' \et \psi' \iff \xi \iff \xi^M \iff (\varphi' \et \psi')^M \iff \varphi'^M \et \psi'^M \iff \varphi^M \et \psi^M
+\eeq
+
+Now given a function $\varphi(x, y)$, we know from \emph{First-order reflection} that for every $M_0$, there is a set $M$ such that $M_0 \subseteq M$ and both
+\beq
+(\forall x,y \in M)(\varphi(x, y) \iff \varphi^M(x, y))
+\eeq 
+and
+\beq
+(\forall x, y \in M)(\exists y \varphi(x, y) \iff (\exists y \varphi(x, y))^M)
+\eeq 
+hold, the latter being equivalent to 
+\beq
+(\forall x, y \in M)(\exists y \varphi(x, y) \iff (\exists y \in M) \varphi^M(x, y))
+\eeq
+Therefore 
+\beq
+(\forall x, y \in M)(\exists y \varphi(x, y) \iff (\exists y \in M) \varphi(x, y))
+\eeq
+holds too.
 That means that we have a set $M$ such that for every $x \in M$, if $\varphi$ is defined for $x$, $(\exists y \in M) \varphi(x, y)$. 
 
-To show that \emph{Replacement} holds for this particular $\varphi$, we need to verify that given a set $M_0$, $\{ y : (\exists x \in M_0) \varphi(x, y)\}$ is also a set. But since $M_0 \subseteq M$ and because given any $x \in M$, there is $y \in M$ satisfying $\varphi(x, y)$, $\{ y : (\exists x \in M_0) \varphi(x, y)\} = \{ y \in M : (\exists x \in M_0) \varphi(x, y)\}$, which is a set due to \emph{Specification}.
-
+To show that \emph{Replacement} holds for this particular $\varphi$, we need to verify that given a set $M_0$, $M'_0 = \{ y : (\exists x \in M_0) \varphi(x, y)\}$ is also a set. But since $M_0 \subseteq M$ and because given any $x \in M$, there is $y \in M$ satisfying $\varphi(x, y)$, the following is a set due to \emph{Specification}:
+\beq
+M'_0 = \{ y : (\exists x \in M_0) \varphi(x, y)\} = \{ y \in M : (\exists x \in M_0) \varphi(x, y)\}
+\eeq
 % tranzitivita? V_\lambda?
 
 %We also know that $x, y \in M$, in other words for every $X$, $Y = \{y : \varphi(x, y, p_1, \ldots, p_n)\}$ and we know that $X \subset M$ and $Y \subset M$, which, together with the specification schema implies that $Y$, the image of $X$ over $\varphi$, is a~set.
