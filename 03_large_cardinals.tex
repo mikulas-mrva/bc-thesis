@@ -1,18 +1,18 @@
 \section{Reflection And Large Cardinals}
-
+\begin{comment} % ======================================================================== //
 In this chapter we aim to examine stronger reflection properties in order to reach cardinals unavailable in $\sf{ZFC}$. Like we said in the first chapter, 
 the variety of reflection principles comes from the fact that there are many way to formalize ``properties of the universal class''. It is not always obvious what properties hold for $V$ because, as Tarski
 has shown, there is no way to formalize satisfaction for proper classes. We have shown that reflecting properties as first-order formulas doesn't allow us to leave $\sf{ZFC}$. We will broaden the class of admissible properties to be reflected and see whether there is a~natural limit in the height or width on the reflected universe and also see that no matter how far we go, the universal class is still as elusive as it is when seen from $\sf{S}$. That is because for every process for obtaining larger sets such as for example the powerset operation in $\sf{ZFC}$, this process can't reach $V$ and thus, from reflection, there is an initial segment of $V$ that can't be reached via said process.
 
 To see why this is important, let's dedicate a few lines to the intuition behind the notions of limitness, regularity and inaccessibility in a manner strongly influenced by \cite{Infinity_in_mind}. To see why limit and strongly limit cardinals are worth mentioning, note that they are ``limit'' not only in a sense of being a supremum of an ordinal sequence, they also show that a certain way of obtaining larger sets from smaller ones is limited. We will see that all of the alternatives offered in this thesis are in a sense limited. 
-$\aleph_\lambda$ is a limit cardinal if there is no $\alpha$ such that $\aleph_{\alpha+1}=\aleph_\lambda$. Strongly limit cardinals point to the limits of the powerset operation. It has been too obvious so far, so let's look at the regular cardinals in this manner. Regular cardinals are those that cannot be\footnote{Assuming $\emph{Choice}$.}, expressed as a supremum of smaller amount of smaller objects\footnote{Just like $\omega$ can not be expressed as a supremum of a finite set consisting solely of finite numbers.}. More precisely, $\kappa$ is regular if there is no way to define it as a union of less than $\kappa$ ordinals, all smaller than $\kappa$. So unless there already is a set of size $\kappa$, \emph{Replacement} is useless in determining whether $\kappa$ is really a set. Note that assuming \emph{Choice}, successor cardinals are always regular, so most\footnote{All provable to exist in $\sf{ZFC}$} limit cardinals are singular cardinals. So if one is traversing the class of all cardinals upwards, successor steps are still sets thanks to the powerset axiom while singular limit cardinals are not proper classes because they are suprema of images of smaller sets via \emph{Replacement}. Regular cardinals are, in a way, limits of how far can we get by taking limits of increasing sequences of ordinals obtained via $\emph{Replacement}$. 
+$\aleph_\lambda$ is a limit cardinal if there is no $\alpha$ such that $\aleph_{\alpha+1}=\aleph_\lambda$. Strongly limit cardinals point to the limits of the powerset operation. It has been too obvious so far, so let's look at the regular cardinals in this manner. Regular cardinals are those that cannot be\footnote{Assuming $\emph{Choice}$.}, expressed as a supremum of smaller amount of smaller objects\footnote{Just like $\omega$ can not be expressed as a supremum of a finite set consisting solely of finite numbers.}. More precisely, $\kappa$ is regular if there is no way to define it as a union of less than $\kappa$ ordinals, all smaller than $\kappa$. So unless there already is a set of size $\kappa$, \emph{Replacement} is useless in determining whether $\kappa$ is really a set. Note that assuming \emph{Choice}, successor cardinals are always regular, so most\footnote{All provable to exist in $\sf{ZFC}$.} limit cardinals are singular cardinals. So if one is traversing the class of all cardinals upwards, successor steps are still sets thanks to the powerset axiom while singular limit cardinals are not proper classes because they are suprema of images of smaller sets via \emph{Replacement}. Regular cardinals are, in a way, limits of how far can we get by taking limits of increasing sequences of ordinals obtained via $\emph{Replacement}$. 
 
 In order to reach an inaccessible cardinal of size $\kappa$, one has to pass at least $\kappa$ limit ordinals. Them, to get to a Mahlo cardinal of size $\kappa$, one has to move past $\kappa$ inaccessible cardinals. This concept is then iterable for hyper-Mahlo cardinals, as we will see later in this section.
 
 % That all being said, it is easy to see that no cardinals in $\sf{ZFC}$ are both strongly limit and regular because there is no way to ensure they are sets and not proper classes in $\sf{ZFC}$. The only exception to this rule is $\aleph_0$ which needs \emph{Infinity} to exist. % nase otazka je: proc omega a ne jine kardinaly?
 % It should now be obvious why the fact that $\kappa$ is inaccessible implies that $\kappa = aleph_\kappa$.\footnote{This doesn't work backwards, the least fixed point of the $\aleph$ function is the limit of $\{\aleph_0,\ \aleph_{\aleph_0},\ \aleph_{\aleph_{\aleph_0}},\ \ldots \}$, it is singular since the sequence has countably many elements.}
 
-We will first examine the connection between reflection principles and (regular) fixed points of ordinal functions in a manner proposed by Lévy in \cite{Levy60a}. %We will also see that, like Lévy has proposed in the same paper, there is a meaningful way to extend the relation between $\sf{S}$ and $\sf{ZFC}$ into a hierarchy of stronger axiomatic set theories. 
+% We will first examine the connection between reflection principles and (regular) fixed points of ordinal functions in a manner proposed by Lévy in \cite{Levy60a}. %We will also see that, like Lévy has proposed in the same paper, there is a meaningful way to extend the relation between $\sf{S}$ and $\sf{ZFC}$ into a hierarchy of stronger axiomatic set theories. 
 % Those are the three lines of thinking that we will find are in fact different facets of the same gem, especially in the section devoted to Inaccessible and Mahlo cardinals.
 % viz Shapiro, Stewart. 1987. “Principles of Reflection and Second-order Logic”. Journal of Philosophical Logic 16 (3). Springer: 309–33. http://www.jstor.org/stable/30227043.
 % Reflections on \emph{Replacement} and Reflection: The axioms in a~structuralist setting (Geoffrey Hellman)
@@ -22,18 +22,71 @@ We will first examine the connection between reflection principles and (regular)
 
 % TODO ze ``uplne totalni'' reflexe se zacykli a rozbije? nebo ne?
 
-\subsection{Regular Fixed-Point Axioms}\label{sec:regular_fixed_points}
-% This small chapter is dedicated to 
 
-Lévy's article mentions various schemata that are not instances of reflection per se. We will mention them because they are equivalent to \emph{Reflection\textsubscript{1}}\footnote{For definition, see \ref{def:reflection_1}}.
+\end{comment} % ======================================================================== //
+
+\subsection{Regular Fixed-Point Axioms}\label{sec:regular_fixed_points}
+Lévy's article mentions various schemata that are not instances of reflection per se, but deal with fixed points of normal ordinal functions. We will introduce them and show that they are equivalent to \emph{First-Order Reflection}\footnote{For definition, see (\ref{def:first_order_reflection}).}.
+
+% 
+%
+% This small chapter is dedicated to ?
+%
+% TODO regularni pevny body
+
+\begin{lemma}{(Fixed-point lemma for normal functions)}\label{lemma:normal_fixed_point}\\
+Let $f$ be a normal function defined for all ordinals\footnote{For the definition of normal function, see (\ref{def:normal_function}).}. Then all of the following hold:
+\bce[(i)]
+\item $\forall \lambda(\mbox{``$\lambda$ is a limit ordinal''} \then \mbox{``f($\lambda$) is a limit ordinal''})$
+\item $\forall \alpha (\alpha \leq f(\alpha))$
+\item $\forall \alpha \exists \beta (\alpha < \beta \et f(\beta) = \beta) \mbox{($f$ has arbitrarily large fixed points.)}$
+\item The fixed points of $f$ form a closed unbounded class.\footnote{See (\ref{def:closed_class}.% TODO spis club class?
+) for the definition of closed class, (\ref{def:unbounded_class}) for the definition of unboundedness.}
+\ece
+\end{lemma}
+
+\begin{proof}
+Let $f$ be a normal function defined for all ordinals.
+\bce[(i)]
+\item % Proof of (i)):\\
+Suppose $\lambda$ is a limit ordinal. 
+For an arbitrary ordinal $\alpha < \lambda$, the fact that $f$ is strictly increasing means that $f(\alpha) < f(\lambda)$ and for any ordinal $\beta$, 
+satisfying $\alpha < \beta < \lambda$, $f(\alpha) < f(\beta) < f(\lambda)$. 
+We know that there is such $\beta$ from limitness of $\lambda$.
+Because $f$ is continuous and $\lambda$ is limit, $f(\lambda) = \bigcup_{\gamma < \lambda} f(\gamma)$.% and since $\beta < \lambda$, $f(\beta) < f(\lambda)$. 
+That means that if $\lambda$ is limit, so is $f(\lambda)$.
+%So we have found $f(\beta)$ such that $f(\alpha) < f(\beta) < f(\lambda)$, therefore $f(\lambda)$ is a limit ordinal.\\
+
+\item This step will be proven using the transfinite induction.
+Since $f$ is defined for all ordinals, there is an ordinal $\alpha$ such that $f(\emptyset) = \alpha$ and because $\emptyset$ is the least ordinal, (ii) holds for $\emptyset$.
+
+Suppose (ii) holds for some $\beta$ form the induction hypothesis. It the holds for $\beta+1$ because $f$ is strictly increasing. 
+
+For a limit ordinal $\lambda$, suppose (ii) holds for every $\alpha < \lambda$. (i) implies that $f(\lambda)$ is also limit, 
+so there is a strictly increasing $\kappa$-sequence $\langle \alpha_0, \alpha_1, \ldots \rangle$ for some $\kappa$ such that $\lambda = \bigcup_{i<\kappa} \alpha_i$. Because $f$ is stricly increasing, the $\kappa$-sequence $\langle f(\alpha_0), f(\alpha_1), \ldots$ is also strictly increasing, the induction hypothesis implies that $\alpha_i \leq f(\alpha_i)$ for each $i \leq \kappa$. Thus, $\lambda \leq f(\lambda)$.
+
+\item For a given ordinal $\alpha$, let there be an $\omega$-sequence $\langle \alpha_0, \alpha_1, \ldots \rangle$, 
+such that $\alpha_0 = \alpha$ and $\alpha_{i+1} = f(\alpha_i)$ for each $i < \omega$.
+This sequence is stricly increasing because so is $f$. 
+Now, there's a limit ordinal $\beta = \bigcup_{i < \omega} \alpha_i$, we want to show that this is the fixed point. 
+So $f(\beta) = f(\bigcup_{i < \omega} \alpha_i) = \bigcup_{i < \omega} f(\alpha)$ because $f$ is continuous. 
+We have defined the above sequence so that $\beta$, $\bigcup_{i < \omega} f(\alpha) = \bigcup_{i < \omega} \alpha_{i+1}$, 
+which means we are done, since $\bigcup_{i < \omega} \alpha_{i+1} = \bigcup_{i < \omega} \alpha_{i}  = \beta$.
+
+\item The class of fixed points of $f$ is obviously unbounded by (iii).
+It remains to show that it is closed.
+Whenever there's a sequence $S = \langle \alpha_1, \alpha_2, \ldots \rangle$ of fixed points of $f$ that has a limit point $\lambda$, since $f(\alpha_i) = \alpha_i$, $S$ is also a sequence of ordinals and it is equivalent to the sequence $S' = \langle f(\alpha_1), f(\alpha_2), \ldots \rangle$. Therefore, $\lambda$ is a also an ordinal\footnote{This follows from (\ref{def:limit_point})}, then there is some $\lambda'$ such that $\lambda' = f(\lambda)$. It should be clear that $\lambda'$ is a limit point of $S'$, but since $S = S'$, $\lambda' = f(\lambda) = \lambda$, so the class of fixed points of $f$ is closed.
+
+\ece
+\end{proof}
 
 % Lévy proposes in \cite{Levy60a} those axioms as equivalent to \emph{Reflection\textsubscript{1}}.
 \begin{definition}{(\emph{Axiom $M$\textsubscript{1}})}\label{def:levy_m}\\
 ``Every normal function defined for all ordinals has at least one inaccessible number in its range.''
 \end{definition}
-Lévy uses ``$M$'' to refer to this axiom but since we also use ``$M$'' for sets and models, for example in \ref{def:reflection_1}, we will call the above axiom ``\emph{Axiom $M$\textsubscript{1}}'' to avoid confusion.
+Lévy uses ``$M$'' to refer to this axiom but since we also use ``$M$'' for sets and models, for example in (\ref{def:first_order_reflection}), we will call the above axiom ``\emph{Axiom $M$\textsubscript{1}}'' to avoid confusion even thought it's in fact an axiom schema.
 
-Now we will express \emph{Axiom $M$\textsubscript{1}} to formula to make it clear that it is an axiom scheme and the same can be done with \emph{Axiom $M'$\textsubscript{1}} as well as \emph{Axiom Schema $M$} introduced immediately afterwards. Since it is an axiom schema and we will later dive into second-order logic, we may also want to refer to \emph{Axiom $M$\textsubscript{2}} as opposed \emph{Axiom $M$\textsubscript{1}}, the former being a single second-order sentence obtained by the obvious modification of \emph{Axiom $M$\textsubscript{1}}.\footnote{Second-order set theory will be introduced in the next subsection.}
+Now we will express \emph{Axiom $M$\textsubscript{1}} to formula to make it clear that it is an axiom scheme and the same can be done with \emph{Axiom $M$\textsubscript{2}} as well as \emph{Axiom Schema $M$} introduced immediately afterwards. Since it is an axiom schema and we will later dive into second-order logic, we may also want to refer to \emph{Axiom $M$\textsubscript{2}} as opposed \emph{Axiom $M$\textsubscript{1}}, the former being a single second-order sentence obtained by the obvious modification of \emph{Axiom $M$\textsubscript{1}}.\footnote{Second-order set theory will be introduced in the next subsection.}
 
 Let $\varphi(x, y, p_1, \ldots, p_n)$ be a first-order formula with no free variables besides $x, y, p_1, \ldots, p_n$. The following is equivalent to \emph{Axiom $M$\textsubscript{1}}.
 \begin{equation}
@@ -43,75 +96,42 @@ Let $\varphi(x, y, p_1, \ldots, p_n)$ be a first-order formula with no free var
 \end{gathered}
 \end{equation}
 
-\begin{definition}{(Axiom $M'$\textsubscript{1})}\\
+\begin{definition}{(Axiom $M$\textsubscript{2})}\\
 Every normal function defined for all ordinals has at least one fixed point which is inaccessible.
 \end{definition}
 
-\begin{definition}{(Axiom $M''$\textsubscript{1})}\\
+\begin{definition}{(Axiom $M$\textsubscript{3})}\\
 ``Every normal function defined for all ordinals has arbitrarily great fixed points which are inaccessible.''
 \end{definition}
 
 Similar axiom is proposed in \cite{DrakeBook}.
 
-\begin{lemma}{(Fixed-point lemma for normal functions)}\label{lemma:normal_fixed_point}\\
-Let $f$ be a normal function defined for all ordinals. The all of the following hold
-\bce[(i)]
-\item $\forall \lambda(\mbox{``$\lambda$ is a limit ordinal''} \then \mbox{``f($\lambda$) is a limit ordinal''})$
-\item $\forall \alpha (\alpha \leq f(\alpha))$
-\item $\forall \alpha \exists \beta (\alpha < \beta \et f(\beta) = \beta) \mbox{($f$ has arbitrarily large fixed points.)}$
-\item The fixed points of $f$ form a closed unbounded class.\footnote{See \ref{def:closed_class} for the definition of closed class, \ref{def:unbounded_class} for the definition of unboundedness.}
-\ece
-\end{lemma}
-
-\begin{proof}
-Let $f$ be a normal function defined for all ordinals.
-\bce[(i)]
-\item Proof of $\bold{(i)}$:\\
-Suppose $\lambda$ is a limit ordinal. For an arbitrary ordinal $\alpha < \lambda$, the fact that $f$ is strictly increasing means that $f(\alpha) < f(\lambda)$ and for an ordinal $\beta$, $\beta < \alpha$, $f(\alpha) < f(\beta)$. Because $f$ is continuous and $\lambda$ is limit, $f(\lambda) = \bigcup_{\alpha < \lambda} f(\alpha)$ and since $\beta < \lambda$, $f(\beta) < f(\lambda)$. So we have found $f(\beta)$ such that $f(\alpha) < f(\beta) < f(\lambda)$, therefore $f(\lambda)$ is a limit ordinal.\\
-
-\item This step will be proven using the transfinite induction.
-Since $f$ is defined for all ordinals, there is an ordinal $\alpha$ such that $f(\emptyset) = \alpha$ and because $\emptyset$ is the least ordinal, $\bold{(ii)}$ holds for $\emptyset$.
-
-Suppose $\bold{(ii)}$ holds for some $\beta$ form the induction hypothesis. It the holds for $\beta+1$ because $f$ is strictly increasing. 
-
-For a limit ordinal $\lambda$, suppose $\bold{(ii)}$ holds for every $\alpha < \lambda$. $\bold{(i)}$ implies that $f(\lambda)$ is also limit, 
-so there is a strictly increasing $\kappa$-sequence $\langle \alpha_0, \alpha_1, \ldots \rangle$ for some $\kappa$ such that $\lambda = \bigcup_{i<\kappa} \alpha_i$. Because $f$ is stricly increasing, the $\kappa$-sequence $\langle f(\alpha_0), f(\alpha_1), \ldots$ is also strictly increasing, the induction hypothesis implies that $\alpha_i \leq f(\alpha_i)$ for each $i \leq \kappa$. Thus, $\lambda \leq f(\lambda)$.
-
-\item 
-For a given $\alpha$, let there be a $\omega$-sequence $\langle \alpha_0, \alpha_1, \ldots \rangle$, such that $\alpha_0 = \alpha$ and $\alpha_{i+1} = f(\alpha_i)$ for each $i < \omega$.
-This sequence is stricly increasing because so is $f$. Now, there's a limit ordinal $\beta = \bigcup_{i < \omega} \alpha_i$, we want to show that this is the fixed point. So  $f(\beta) = f(\bigcup_{i < \omega} \alpha_i) = \bigcup_{i < \omega} f(\alpha)$ because $f$ is continuous. We have defined the above sequence so that $\beta$, $\bigcup_{i < \omega} f(\alpha) = \bigcup_{i < \omega} \alpha_{i+1}$, which means we are done, since $\bigcup_{i < \omega} \alpha_{i+1} = \bigcup_{i < \omega} \alpha_{i}  = \beta$.
-
-\item The class of fixed points of $f$ is obviously unbounded by $\bold{(iii)}$.
-It remains to show that it is closed.
-Whenever there's a sequence $S = \langle \alpha_1, \alpha_2, \ldots \rangle$ of fixed points of $f$ that has a limit point $\lambda$, since $f(\alpha_i) = \alpha_i$, $S$ is also a sequence of ordinals and it is equivalent to the sequence $S' = \langle f(\alpha_1), f(\alpha_2), \ldots \rangle$. Therefore, $\lambda$ is a also an ordinal\footnote{This follows from \ref{def:limit_point}}, then there is some $\lambda'$ such that $\lambda' = f(\lambda)$. It should be clear that $\lambda'$ is a limit point of $S'$, but since $S = S'$, $\lambda' = f(\lambda) = \lambda$, so the class of fixed points of $f$ is closed.
-
-\ece
-\end{proof}
-
 \begin{theorem}
 \begin{equation}
-\emph{Axiom $M$\textsubscript{1}} \iff \emph{Axiom $M'$\textsubscript{1}} \iff \emph{Axiom $M''$\textsubscript{1}}
+\emph{Axiom $M$\textsubscript{1}} \iff \emph{Axiom $M$\textsubscript{2}} \iff \emph{Axiom $M$\textsubscript{3}}
 \end{equation}
 \end{theorem}
 \
 This is \emph{Theorem 1} in \cite{Levy60a}.\\
 \begin{proof}
-It is clear that \emph{Axiom $M''$\textsubscript{1}} is a stronger version of \emph{Axiom $M'$\textsubscript{1}}, which is in turn a stronger version of both \emph{Axiom $M$\textsubscript{1}} and \emph{Axiom $F$\textsubscript{1}}, so the implication \emph{Axiom $M''$\textsubscript{1}} $\then$ \emph{Axiom $M'$\textsubscript{1}} $\then$ \emph{Axiom $M$\textsubscript{1}} is satisfied and \emph{Axiom $M'$\textsubscript{1}} $\then$ \emph{Axiom $F$\textsubscript{1}} holds too.
+It is clear that \emph{Axiom $M$\textsubscript{3}} is a stronger version of \emph{Axiom $M$\textsubscript{2}}, which is in turn a stronger version of both \emph{Axiom $M$\textsubscript{1}} and \emph{Axiom $F$\textsubscript{1}}, so the implication \emph{Axiom $M$\textsubscript{3}} $\then$ \emph{Axiom $M$\textsubscript{2}} $\then$ \emph{Axiom $M$\textsubscript{1}} is satisfied and \emph{Axiom $M$\textsubscript{2}} $\then$ \emph{Axiom $F$\textsubscript{1}} holds too.
 
-We will now make sure that  \emph{Axiom $M$\textsubscript{1}} $\then$  \emph{Axiom $M''$\textsubscript{1}} also holds. 
+We will now make sure that  \emph{Axiom $M$\textsubscript{1}} $\then$  \emph{Axiom $M$\textsubscript{3}} also holds. 
 Let $f$ be a normal function defined for all ordinals. % such that there is $\varphi$, $f(x) = y \iff \varphi$ that satisfies \emph{Axiom $M$\textsubscript{1}}.
-Let $g$ be a normal function that counts the fixed points of $f$. Lemma \ref{lemma:normal_fixed_point} implies that there arbitrarily many fixed points of $f$, therefore $g$ is defined for all ordinals. Let there be another family of functions, $h_\alpha(\beta) = g(\alpha+\beta)$, obviously $h_\alpha$ is defined for all ordinals for every $\alpha \in Ord$ because so is $g$. Given an arbitrary ordinal $\gamma$, from \emph{Axiom $M$\textsubscript{1}} we can assume that there is an ordinal $\delta$ such that such that $h_\alpha(\delta) = \kappa$, where $\kappa$ is inaccessible. 
-But since $\kappa = g(\alpha+\delta)$, $\kappa$ is a fixed point of $f$. To show that there are arbitrarily many fixed points of $f$, notice that $\gamma$ is arbitrary and $h_\gamma$ is a normal function, so, by lemma \ref{lemma:normal_fixed_point}, $(\forall \alpha \in Ord)(\alpha \leq f(\alpha)$, therefore $\gamma \leq \gamma + \alpha \leq \kappa$, in other words, there is $\kappa$ above an arbitrary ordinal $\gamma$.
+Let $g$ be a normal function that counts the fixed points of $f$. Lemma (\ref{lemma:normal_fixed_point}) implies that there arbitrarily many fixed points of $f$, therefore $g$ is defined for all ordinals. Let there be another family of functions, $h_\alpha(\beta) = g(\alpha+\beta)$, obviously $h_\alpha$ is defined for all ordinals for every $\alpha \in Ord$ because so is $g$. Given an arbitrary ordinal $\gamma$, from \emph{Axiom $M$\textsubscript{1}} we can assume that there is an ordinal $\delta$ such that such that $h_\alpha(\delta) = \kappa$, where $\kappa$ is inaccessible. 
+But since $\kappa = g(\alpha+\delta)$, $\kappa$ is a fixed point of $f$. To show that there are arbitrarily many fixed points of $f$, notice that $\gamma$ is arbitrary and $h_\gamma$ is a normal function, so, by lemma (\ref{lemma:normal_fixed_point}), $(\forall \alpha \in Ord)(\alpha \leq f(\alpha)$, therefore $\gamma \leq \gamma + \alpha \leq \kappa$, in other words, there is $\kappa$ above an arbitrary ordinal $\gamma$.
 
 \end{proof}
 
-\begin{definition}{$\sf{ZMC}$}\\
-We will call $\sf{ZMC}$ a set theory that contains all axioms and schemas of $\sf{ZFC}$ together with the schema \emph{Axiom $M$\textsubscript{1}}.
+\begin{comment} % ============================================================
+
+\begin{definition}{($\sf{ZMC}$)}\\
+We will call $\sf{ZMC}$ an axiomatic set theory that contains all axioms and schemas of $\sf{ZFC}$ together with the schema \emph{Axiom $M$\textsubscript{1}}.
 \end{definition}
 We have decided to call it $\sf{ZMC}$, because Lévy uses $\sf{ZM}$, derived from $\sf{ZF}$, which is more intuitive, but we also need the axiom of choice, thus, $\sf{ZMC}$.
 
 
-The fact, that in $\sf{ZFC}$, the above \emph{Axiom M} is equivalent to \emph{Reflection\textsubscript{1}} as defined in \ref{def:reflection_1} is proven in \cite{Levy60a}[Theorem 3].
+The fact, that in $\sf{ZFC}$, the above \emph{Axiom M} is equivalent to \emph{Reflection\textsubscript{1}} as defined in (\ref{def:first_order_reflection}) is proven in \cite{Levy60a}[Theorem 3].
 
 \begin{theorem}\label{theorem:levy_m_iff_reflection}
 \begin{equation}
@@ -142,11 +162,11 @@ The following are equivalent:
 % 
 
 \begin{proof}
-We know that all the axioms except for \emph{Replacement} and \emph{Infinity} are satisfied in $V_\lambda$ for any limit ordinal $\lambda$ from lemma \ref{lemma:scm_s_is_limit}.
+We know that all the axioms except for \emph{Replacement} and \emph{Infinity} are satisfied in $V_\lambda$ for any limit ordinal $\lambda$ from lemma (\ref{lemma:scm_s_is_limit}).
 
 Obviously, \emph{Infinity} holds in $V_\kappa$, since $\omega < \kappa$, so $V_\omega \in V_\kappa$.
 
-To see how for a given formula $\varphi$, an instance replacement is obtained from an instance of reflection, refer to the appropriate part of theorem \ref{theorem:levy_equivalence_contemporary}.
+To see how for a given formula $\varphi$, an instance replacement is obtained from an instance of reflection, refer to the appropriate part of theorem (\ref{theorem:levy_equivalence_contemporary}).
 
 \
 
@@ -267,7 +287,7 @@ Mahlo cardinals are also interesting from a different point of view. If we wante
 % =====================================================================================================================================
 % \newpage
 \subsection{Second-Order Reflection}
-Let's try a different approach in formalizing reflection. We have seen that reflecting individual first-order formulas doesn't even transcend $\sf{ZFC}$, we have examined what can be done with axiom schemas. The aim of this chapter is to examine second-order formulas as possible axioms. Note that second-order variables (which will be established as type 2 variables later in the text) are subcollections of the universal class, but so are functions and relations. So first-order axiom schemata can also be interpreted as formulas with free second-order variables, which quantify over first-order variables only, we only need to customize the underlying theory accordingly. For example, the satisfaction relation was so far defined for first-order formulas only, but we will deal with that in a moment. Also note that by rewriting \emph{\emph{Replacement}} and \emph{Specification} to single axioms, $\sf{ZFC}$ becomes finitely axiomatizable, which in turn means that the reflection theorem as stated in section \ref{sec:first_order} does not hold for higher-order theories because of Gödel's second incompleteness theorem. We will explore stronger axioms of reflection instead.
+Let's try a different approach in formalizing reflection. We have seen that reflecting individual first-order formulas doesn't even transcend $\sf{ZFC}$, we have examined what can be done with axiom schemas. The aim of this chapter is to examine second-order formulas as possible axioms. Note that second-order variables (which will be established as type 2 variables later in the text) are subcollections of the universal class, but so are functions and relations. So first-order axiom schemata can also be interpreted as formulas with free second-order variables, which quantify over first-order variables only, we only need to customize the underlying theory accordingly. For example, the satisfaction relation was so far defined for first-order formulas only, but we will deal with that in a moment. Also note that by rewriting \emph{\emph{Replacement}} and \emph{Specification} to single axioms, $\sf{ZFC}$ becomes finitely axiomatizable, which in turn means that the reflection theorem as stated in section (\ref{sec:first_order}) does not hold for higher-order theories because of Gödel's second incompleteness theorem. We will explore stronger axioms of reflection instead.
 
 Let us establish a formal background first. We will now introduce higher-order formulas.
 
@@ -320,7 +340,7 @@ This formalization of the notion of reflection allows us to describe Inaccessibl
 It is important to see, that while we can now reflect $\Pi^m_n$-formulas for arbitrary $m, n \in \omega$, they can only have type 2 free variables. 
 This formalization of reflection can not be extended to higher-order parameters as is. This will be briefly reviewed in the next paragraph.
 
-In order to extend reflection as a stated above in \ref{def:reflection_2}, we need to make sure that given the domain of the structure, $V_\kappa$, we know what relativization to $V_\alpha$, $\alpha < \kappa$, means.
+In order to extend reflection as a stated above in (\ref{def:reflection_2}), we need to make sure that given the domain of the structure, $V_\kappa$, we know what relativization to $V_\alpha$, $\alpha < \kappa$, means.
 Since a type 3 parameters are collections of subcollections of $V_\kappa$ and we can already relativize subcollections of $V_\kappa$, this seems to be a reasonable way to extend relativization to type 3 parameters:
 \begin{equation}
 \mathscr{R}^{V_\alpha} = \{R^{V_\alpha} : R \in \mathscr{R} \}
@@ -373,7 +393,7 @@ We say that $\kappa$ is $\Pi^m_n$-indescribable iff it is not described by any $
 We say that $\kappa$ is $\Sigma^m_n$-indescribable iff it is not described by any $\Sigma^m_n$-formula.
 \end{definition}
 
-To see that this notion is based in reflection, note that for $\Pi^m_n$-formulas\footnote{This holds for $\Sigma^m_n$-formulas alike.}, a cardinal $\kappa$ is $\Pi^m_n$-indescribable iff every $\Pi^m_n$-formula reflects in $\kappa$ in the sense of definition \ref{def:reflection_2}. Informally, can also view indescribability as a property held by the universe $V$, in the sense that every formula aiming to describe it in fact describes an initial segment, which is similar to a reflection principle, albeit stated informally.\footnote{Formally, we have to be once again careful with ``properties of $V$'' for the reasons mentioned in the introduction of this thesis. That's why this chapter only reflects sentences to models with additional relations.}
+To see that this notion is based in reflection, note that for $\Pi^m_n$-formulas\footnote{This holds for $\Sigma^m_n$-formulas alike.}, a cardinal $\kappa$ is $\Pi^m_n$-indescribable iff every $\Pi^m_n$-formula reflects in $\kappa$ in the sense of definition (\ref{def:reflection_2}). Informally, can also view indescribability as a property held by the universe $V$, in the sense that every formula aiming to describe it in fact describes an initial segment, which is similar to a reflection principle, albeit stated informally.\footnote{Formally, we have to be once again careful with ``properties of $V$'' for the reasons mentioned in the introduction of this thesis. That's why this chapter only reflects sentences to models with additional relations.}
 
 \
 
@@ -402,7 +422,7 @@ If $\kappa$ is an inaccessible cardinal and given $R \subseteq V_\kappa$, then 
 \end{lemma}
 
 \begin{proof}
-To see that \ref{eq:inacc_lemma_set} is closed, let us recall that a $A \subseteq \kappa$ is closed iff for every ordinal $\alpha < \lambda$, $\alpha \neq \emptyset$: if $A \cap \alpha$ is unbounded in $\alpha$ then $\alpha \in A$. Since $\kappa$ is an inaccessible cardinal, thus strong limit, it is closed under limits of sequences of ordinals lesser than $\kappa$.  
+To see that (\ref{eq:inacc_lemma_set}) is closed, let us recall that a $A \subseteq \kappa$ is closed iff for every ordinal $\alpha < \lambda$, $\alpha \neq \emptyset$: if $A \cap \alpha$ is unbounded in $\alpha$ then $\alpha \in A$. Since $\kappa$ is an inaccessible cardinal, thus strong limit, it is closed under limits of sequences of ordinals lesser than $\kappa$.  
 
 %TODO neco s $V_\kappa$, ze je tranzitivni a tak jso vsechny $V_\alpha$ pro $\alpha<\kappa$ $V_\alpha \in V_\kappa$
 
@@ -438,21 +458,21 @@ Let $\kappa$ be an ordinal. The following are equivalent.
 
 
 \begin{proof}
-Since $\Pi^1_0$-sentences are first-order sentences, we want to prove that $\kappa$ is an inaccessible cardinal iff whenever a first-order tries to describe $\kappa$ in the sense of definition \ref{def:describability}, the formula fails to do so and describes a initial segment thereof instead.
-We have already shown in \ref{theorem:inaccessible_models_zfc} that there is no way to reach an inaccesible cardinal via first-order formulas in $\sf{ZFC}$. We will now prove it again in for formal clarity.
+Since $\Pi^1_0$-sentences are first-order sentences, we want to prove that $\kappa$ is an inaccessible cardinal iff whenever a first-order tries to describe $\kappa$ in the sense of definition )(\ref{def:describability}), the formula fails to do so and describes a initial segment thereof instead.
+We have already shown in (\ref{theorem:inaccessible_models_zfc}) that there is no way to reach an inaccesible cardinal via first-order formulas in $\sf{ZFC}$. We will now prove it again in for formal clarity.
 
-For $\bold{(i) \then (ii)}$, suppose that $\kappa$ is inaccessible.
+For (i)$\then$(ii), suppose that $\kappa$ is inaccessible.
 
-Then there is, by lemma \ref{lemma:inaccessible_clubset} a club set of ordinals $\alpha$ such that $V_\alpha$ is an elementary substructures of $V_\kappa$. For $\kappa$ to be $\Pi^1_0$inderscribable, we need to make sure that given an arbitrary first-order sentence $\varphi$ satisfied in the structure $\langle V_\kappa, \in, R \rangle$, there is an ordinal $\alpha < \kappa$, such that $\langle V_\alpha, \in, R \cap V_\alpha \rangle \models \varphi$. But this follows from the definition of elementary substructure.
+Then there is, by lemma (\ref{lemma:inaccessible_clubset}) a club set of ordinals $\alpha$ such that $V_\alpha$ is an elementary substructures of $V_\kappa$. For $\kappa$ to be $\Pi^1_0$inderscribable, we need to make sure that given an arbitrary first-order sentence $\varphi$ satisfied in the structure $\langle V_\kappa, \in, R \rangle$, there is an ordinal $\alpha < \kappa$, such that $\langle V_\alpha, \in, R \cap V_\alpha \rangle \models \varphi$. But this follows from the definition of elementary substructure.
 
-For $\bold{(ii) \then (i)}$, suppose $\kappa$ is not inaccessible, so it is either singular, or there is a cardinal $\nu < \kappa$ such that $\kappa \leq \power{\nu}$ or $\kappa=\omega$. 
+For (ii)$\then$(i), suppose $\kappa$ is not inaccessible, so it is either singular, or there is a cardinal $\nu < \kappa$ such that $\kappa \leq \power{\nu}$ or $\kappa=\omega$. 
 
 
 %For the successor case, there is some $\nu$ so that $\nu+1=\kappa$. 
 %Let's take $R = \{\nu\}$ and $\varphi = \exists x \psi(x)$ such that
 %\begin{eqaution}
 Suppose $\kappa$ is singular. Then there is a cardinal $\nu < \kappa$ and a function $f: \nu \then \kappa$ such that $rng(f)$ is cofinal in $\kappa$. Since $f \subseteq V_\kappa$, we can add $f$ as a relation to the language. We can do the same with $\{\nu\}$. That means $\langle V_\kappa, \in, P_1, P_1$ with $P_1 = f, P_2 = \{\nu\}$ is a structure, 
-let $\varphi = P_1 \neq \emptyset \et rng(P_1) = P_2$\footnote{$rng(x)=y$ is a first-order formula, see \ref{def:rng}.}. Since for every $\alpha < \nu$, $P_1 \cap V_\alpha = \emptyset$, $\varphi$ is false and therefore describes $\kappa$. That contradicts the fact that $\kappa$ was supposed to be $\Pi^1_0$-indescribable, but $\varphi$ is a first-order formula.
+let $\varphi = P_1 \neq \emptyset \et rng(P_1) = P_2$\footnote{$rng(x)=y$ is a first-order formula, see (\ref{def:rng}).}. Since for every $\alpha < \nu$, $P_1 \cap V_\alpha = \emptyset$, $\varphi$ is false and therefore describes $\kappa$. That contradicts the fact that $\kappa$ was supposed to be $\Pi^1_0$-indescribable, but $\varphi$ is a first-order formula.
 
 Suppose there a cardinal $\nu$ satisfying $\kappa \leq \power{\nu}$. Let there be a function $f: \power{\nu} \then \kappa$ that is onto. Then, like in the previous paragraph, we can obtain a structure $\langle V_\kappa, \in, P_1, P_2 \rangle$, where $P_1 = f$ like before, but this time $P_2 = \power{\nu}$. Again, $\varphi = P_1 \neq \emptyset \et rng(P_1) = P_2$ describes $\kappa$.
 
@@ -479,7 +499,7 @@ Consider the following $\Pi^1_1$-sentence:
 \then \exists y(y = rng(P)))
 \end{gathered}
 \end{equation}
-where $P$ is a type 2 variable and $x, y$ are type 1 variables, $rng(P)$ is defined in \ref{def:rng}, $dom(P)$ in \ref{def:dom} and ``$P$ is a function'' is a first-order formula defined in \ref{def:function}.
+where $P$ is a type 2 variable and $x, y$ are type 1 variables, $rng(P)$ is defined in (\ref{def:rng}), $dom(P)$ in (\ref{def:dom}) and ``$P$ is a function'' is a first-order formula defined in (\ref{def:function}).
 We will call this sentence \emph{Inac}, as in ``inaccessible'', because, given a cardinal $\mu$, the following holds if and only if $\mu$ is inaccessible:
 \begin{equation}
 \langle V_\mu, \in \rangle \models Inac
@@ -489,7 +509,7 @@ So let's fix an arbitrary $C \subset \kappa$, club set in $\kappa$. We want to s
 \begin{equation}
 \langle V_\kappa, \in, C \rangle \models Inac \et \mbox{``$C$ in unbounded''}
 \end{equation}
-Note that this is correct, because, as we have noted just before introducing the statement now being proven, if $\kappa$ is $\Pi^1_1$-indescribable, it is also $\Pi^1_0$-indescribable. So $\kappa$ is itself inaccessible and therefore $\langle V_\kappa, \in, C \rangle \models Inac$. $C$ is obviously picked so that it is unbounded in $\kappa$\footnote{``$C$ in unbounded'' is a first-order formula defined in \ref{def:unbounded_class}}.
+Note that this is correct, because, as we have noted just before introducing the statement now being proven, if $\kappa$ is $\Pi^1_1$-indescribable, it is also $\Pi^1_0$-indescribable. So $\kappa$ is itself inaccessible and therefore $\langle V_\kappa, \in, C \rangle \models Inac$. $C$ is obviously picked so that it is unbounded in $\kappa$\footnote{``$C$ in unbounded'' is a first-order formula defined in (\ref{def:unbounded_class})}.
 
 Now because we have assumed that $\kappa$ is $\Pi^1_1$-indescribable and $Inac$ is a $\Pi^1_1$-formula, so $Inac \et \mbox{``$C$ in unbounded''}$ is equivalent to a $\Pi^1_1$-formula, there must be an ordinal $\alpha$ that satisfies
 \begin{equation}
@@ -604,7 +624,7 @@ Note that while $L$ bears very close resemblance to $V$, the difference is, that
 In order to 
 
 \begin{theorem}
-Let $L$ be as in \ref{def:constructible_universe}.
+Let $L$ be as in (\ref{def:constructible_universe}).
 \begin{equation}
 L \models \sf{ZFC}
 \end{equation}
@@ -623,7 +643,7 @@ Without providing a proof, we will introduce two important results established b
 \end{equation}
 \end{theorem}
 
-The $GCH$ refers to the \emph{Generalised Continuum Hypothesis}, see \ref{def:gch}.
+The $GCH$ refers to the \emph{Generalised Continuum Hypothesis}, see (\ref{def:gch}).
 \begin{theorem}{(Constructibility $\then$ Generalised Continuum Hypothesis)}\label{theorem:l_then_gch}
 \begin{equation}
 \sf{ZF} \models \mbox{\emph{Constructibility}} \then \mbox{\emph{GCH}} 
@@ -649,7 +669,7 @@ We want to show that the following are all true for an inaccessible cardinal $\k
 implies $\mbox{``$\kappa$ is strong limit''}^L$.}
 \ece
 
-Suppose $\mbox{``$\kappa$ is not a cardinal''}^L$ holds, then there is a cardinal $\mu$, $\mu < \kappa$ and a function $f:\mu\then\kappa$, $f \in L$, such that $\mbox{``$f:\mu\then\kappa$ is onto''}^L$. But since ``$f$ is onto'' is a $\Delta_0$ formula and $\Delta_0$ formulas are are absolute in transitive structures\footnote{see lemma \ref{lemma:delta_0_absoluteness}} and $L$ is a transitive class, $\mbox{``$f$ is onto''}^M \iff \mbox{``$f$ is onto''}$, this contradicts the fact that $\kappa$ is a cardinal.
+Suppose $\mbox{``$\kappa$ is not a cardinal''}^L$ holds, then there is a cardinal $\mu$, $\mu < \kappa$ and a function $f:\mu\then\kappa$, $f \in L$, such that $\mbox{``$f:\mu\then\kappa$ is onto''}^L$. But since ``$f$ is onto'' is a $\Delta_0$ formula and $\Delta_0$ formulas are are absolute in transitive structures\footnote{see lemma (\ref{lemma:delta_0_absoluteness})} and $L$ is a transitive class, $\mbox{``$f$ is onto''}^M \iff \mbox{``$f$ is onto''}$, this contradicts the fact that $\kappa$ is a cardinal.
 $(\omega < \kappa)^L$ holds because $\omega \in \kappa$ and because ordinals remain ordinals in $L$, so $(\omega \in \kappa)^L$.
 
 In order to see that $\mbox{``$\kappa$ is regular''}^L$, we can repeat the argument by contradiction used to show that $\kappa$ is a cardinal in $L$. If $\kappa$ was singular, there is a $\mu < \kappa$ together with a function $f: \mu \then \kappa$ that is onto, but since ``$f$ is onto'' implies $\mbox{``$f$ is onto''}^L$, we have reached a contradiction with the fact that $\kappa$ is regular, but singular in $L$.
@@ -663,7 +683,7 @@ Let $\kappa$ be a Mahlo cardinal. Then $\mbox{``$\kappa$ is Mahlo''}^L$.
 % TODO citace webu?
 
 \begin{proof}
-Let $\kappa$ be a Mahlo cardinal. From the definition of Mahloness in \ref{def:mahlo_cardinal}, it should be clear that we want prove that $\kappa$ is inaccessible in $L$ and 
+Let $\kappa$ be a Mahlo cardinal. From the definition of Mahloness in (\ref{def:mahlo_cardinal}), it should be clear that we want prove that $\kappa$ is inaccessible in $L$ and 
 \begin{equation}
 \mbox{``The set }\{\alpha : \alpha \in \kappa \et \mbox{'$\alpha$ is inaccessible'}\}\mbox{ is stationary in $\kappa$''}^L
 \end{equation}
@@ -679,7 +699,7 @@ S \defeq \{\alpha : \alpha \in \kappa \et \mbox{``$\alpha$ is inaccessible''}\}
 T \defeq \{\alpha : \alpha \in \kappa \et \mbox{``$\alpha$ is inaccessible''}^L\}
 \end{equation} 
 \ece 
-Since inaccessible cardinals are inaccessible in $L$ from theorem \ref{theorem:inaccessible_in_l}, $S \subseteq T$.
+Since inaccessible cardinals are inaccessible in $L$ from theorem (\ref{theorem:inaccessible_in_l}), $S \subseteq T$.
 So if $T$ is stationary in $\kappa$, we are done. Suppose for contradiction that it is not the case. 
 Therefore there is a $C \subset \kappa$ satisfying $\mbox{``$C$ is a club set in $\kappa$''}^L$, but it is the case that $T \cap C = \emptyset$.
 But because $\mbox{``$C$ is a club set in $\kappa$''}$ is equivalent to a $\Delta_0$ formula, $\mbox{``$C$ is a club set in $\kappa$''}^M \iff \mbox{``$C$ is a club set in $\kappa$''}$, ergo $C$ is a club set in $\kappa$. But since it has o intersection with $T$, it can't have an intersection with a subset thereof, which contradicts the fact that $S$ is stationary in $\kappa$.
@@ -701,5 +721,4 @@ that there are large cardinals that, if taken into consideration, conclude that 
 To see whether reflection per se implies transcendence over $L$, we need to return to the question stated at the very beginning. What is a ``property''? From a structuralist point of view and considering tools for extending structures presented in this thesis, we can conclude that it's not the case. However, we have by no means exhausted possible formalizations of the reflection principles. There are ways to reflect higher-order formulas with higher-order parameters\footnote{See \cite{Welch12globalreflection}, for example.}. We can also leave the structuralist mindset and try to find 
 a way to justify the fact, that the universal class is measurable, then, also by a reflection, there would a measurable initial segment of $V$, contradicting \emph{Constructibility}.
 % kdo rikal ze V je meritelne
-
-% =============================================================
+\end{comment} % =============================================================
