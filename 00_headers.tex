@@ -1,0 +1,166 @@
+\usepackage{mathrsfs}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{longtable}
+\usepackage{paralist}
+\usepackage{lineno}
+\usepackage{verbatim}
+\linenumbers
+
+% \include{00_headers.tex}
+\usepackage{color} %pro barevné odkazy, příp. nadpisy
+\definecolor{odkazy}{rgb}{0.21,0.27,0.53} %tmavì modrá
+\definecolor{nadpisy}{rgb}{0.5812,0.0665,0.0659} %cihlová
+%
+% Parametry prevodu do pdf
+\providecommand{\hypersetup}[1]{}%
+\hypersetup{%
+unicode,% ? Pravdepodobne bezvyznamne
+pdfauthor={Mikuláš Mrva},
+pdftitle={Reflection principles and large cardinals},
+pdfsubject={Reflection principles and large cardinals},
+pdfkeywords={set theory, large cardinals, reflection principle, ZFC, Azriel Lévy},
+pdffitwindow=false,% Inicialni umisteni textu v okne Readeru
+bookmarksopen=true,% Panel zalozek inicialne zobrazen
+% Je-li tohle nastaveno jinak, nektere odkazy nekdy nefunguji
+hypertexnames=false,
+plainpages=false,
+%pdfpagelabels,
+%
+breaklinks=true,% Radkovy lom smi prijit do klikatelneho odkazu
+linkcolor=odkazy,% Graficka podoba odkazu
+citecolor=odkazy,% ...
+colorlinks=true,% ...
+pdfhighlight=/O% ... (vzhled odkazu pri stisknuti)
+}%
+% Inputenc je asi zbytecne.
+% Option 'split' ovlivnuje deleni slov obsahujicich v sobe rozdelovnik
+\usepackage[utf8x]{inputenc} % UTF-8 ?
+%\usepackage[czech]{babel} %dnes u je vak hotová integrace èetiny do babelu
+%\usepackage[split]{czech} %dnes u je vak hotová integrace èetiny do babelu
+%
+%\usepackage{logdp} %uiteèné drobnosti
+%\usepackage{amsthm} %lepší práce s větami
+%\usepackage{amsmath} %nová prostøedí pro matematiku a vylepení tìch stávajících
+%\usepackage{latexsym,amsfonts,amssymb} % nová písmenka
+\usepackage{fancyhdr} % zápatí a záhlaví
+%\usepackage[nottoc]{tocbibind} % přidá do obsahu položky Literatura a Rejstřík
+\usepackage{csquotes}
+\pagestyle{plain}
+%pøedbìné nastavení hlavièky (balík fancyhdr)
+%\headheight 13.6pt %moná ji bude tøeba zvednout, fancyhdr si pak stìuje: \headheight
+% too small, make it at least Xpt
+\headheight 14.5pt %moná ji bude tøeba zvednout, fancyhdr si pak stìuje: \headheight too \fancyhead{}
+\fancyhead[R]{\leftmark}
+\fancyfoot{}
+\fancyfoot[C]{\thepage}
+
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{Claim}[theorem]{Claim}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{Cor}[theorem]{Corollary}
+\newtheorem{Fact}[theorem]{Fact}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{sublemma}[theorem]{Sublemma}
+\newtheorem{ex}[theorem]{Example}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{obs}[theorem]{Observation}
+\newtheorem{que}[theorem]{Question}
+\newtheorem{conjecture}[theorem]{Conjecture}
+
+\renewcommand{\theequation}{\thesection.\arabic{equation}}
+
+\newenvironment{proof}
+{\noindent \textit{Proof.}}
+{\hspace*{\fill} $\Box$}
+
+\newcommand{\toch}{\fbox{\small {\bf ??}}}
+\newcommand{\bt}[1]{{\underset{\widetilde{}}{#1}}}
+\newcommand{\trcl}[1]{\ensuremath{\mathrm{trcl}(\{#1\})}}
+\newcommand{\cf}[1]{\ensuremath{\mathrm{cf}(#1)}}
+\newcommand{\cl}[1]{\ensuremath{\mathrm{cl}}(#1)}
+\newcommand{\ord}[1]{\ensuremath{\mathrm{ORD}}(#1)}
+\newcommand{\dom}[1]{\ensuremath{\mathrm{dom}}(#1)}
+\newcommand{\rng}[1]{\ensuremath{\mathrm{rng}}(#1)}
+\newcommand{\power}[1]{\ensuremath{\mathscr{P}} (#1)}
+\newcommand{\set}[2]{\ensuremath{\{#1 \,|\, #2 \}}}
+\newcommand{\seq}[2]{\ensuremath{\langle #1 \,|\, #2 \rangle}}
+\newcommand{\singl}[1]{\ensuremath{\{#1\}}}
+\newcommand{\pair}[2]{\ensuremath{\{ #1, #2 \}}}
+\newcommand{\restr}[2]{\ensuremath{#1 \! \upharpoonright \! #2}}
+\renewcommand{\iff}{\leftrightarrow}
+\newcommand{\Iff}{\Leftrightarrow}
+\newcommand{\el}{\prec}
+\newcommand{\iso}{\cong}
+\newcommand{\sub}{\subseteq}
+\newcommand{\super}{\supseteq}
+\newcommand{\la}{\langle}
+\newcommand{\ra}{\rangle}
+\newcommand{\embed}{\rightarrow}
+\newcommand{\mc}{\mathcal}
+\newcommand{\supr}[1]{\mathrm{sup}\,#1}
+\newcommand{\then}{\rightarrow}
+\newcommand{\conc}{^{\smallfrown}}
+\newcommand{\bb}{\mathbb}
+\newcommand{\supp}[1]{\mathrm{supp}(#1)}
+\newcommand{\beq}{\begin{equation}}
+\newcommand{\eeq}{\end{equation}}
+\newcommand{\brm}{\begin{remark}\begin{rm}}
+\newcommand{\erm}{\end{rm}\end{remark}}
+\newcommand{\mx}{\mathrm}
+\newcommand{\bce}{\begin{compactenum}}
+\newcommand{\ece}{\end{compactenum}}
+\newcommand{\op}[2]{\la #1, #2 \ra}
+\newcommand{\treq}{\trianglelefteq}
+\newcommand{\et}{\mathrel{\&}}
+
+\newcommand\defeq{\mathrel{\overset{\makebox[0pt]{\mbox{\normalfont\tiny\sffamily def}}}{=}}}
+
+\begin{document}
+%titulní stránka
+\begin{titlepage}
+%\fontsize{16.16pt}{25pt}\selectfont
+\Large
+\begin{center}
+Univerzita Karlova v~Praze, Filozofick{\/á} fakulta\\
+Katedra logiky
+
+\vspace{8.5em}
+\textsc{Mikuláš Mrva}\\[1.4em]
+{REFLECTION PRINCIPLES AND LARGE CARDINALS}\\
+Bakalářská práce\\[6.8em]
+Vedoucí práce: Mgr. Radek Honzík, Ph.D.\\[6.8em]
+2016
+\end{center}
+\end{titlepage}\
+
+
+\vspace{\fill}
+\noindent 
+Prohlašuji, že jsem bakalářskou práci vypracoval samostatně a~že jsem uvedl všechny použité prameny a~literaturu.
+
+\bigskip
+\noindent V~Praze 22.~května 2016\\[3em]
+\hspace*{\fill}Mikuláš Mrva\hspace*{3em}
+\clearpage
+
+\begin{abstract}
+\noindent Práce zkoumá vztah tzv. principů reflexe a velkých kardinálů. Lévy ukázal, že v ZFC platí tzv. věta o reflexi~a dokonce, že věta o reflexi je ekvivalentní schématu nahrazení a~axiomu nekonečna nad teorií ZFC bez axiomu nekonečna a~schématu nahrazení. Tedy lze na větu o~reflexi pohlížet jako na svého druhu axiom nekonečna. Práce zkoumá do jaké míry a~jakým způsobem lze větu o reflexi zobecnit a~jaký to má vliv na existenci tzv. velkých kardinálů. Práce definuje nedosažitelné, Mahlovy a nepopsatelné kardinály a ukáže, jak je lze zavést pomocí reflexe. Přirozenou limitou kardinálů získaných reflexí jsou kardinály nekonzistentní s L. Práce nabídne intuitivní zdůvodněn, proč tomu tak je.
+
+\end{abstract}
+\bigskip
+\renewcommand{\abstractname}{Abstract}
+\begin{abstract}
+\noindent This thesis aims to examine relations between the so called Reflection Principles and Large cardinals. Lévy has shown that the Reflection Theorem is a sound theorem of ZF and it is equivalent to the Replacement Scheme and the Axiom of Infinity. From this point of view, Reflection theorem can be seen a~specific version of an Axiom of Infinity. This paper aims to examine the Reflection Principle and its generalisations with respect to the existence of Large Cardinals. This thesis will establish the Inaccessible, Mahlo and Indescribable cardinals and show how can those be defined via reflection. A natural limit of Large Cardinals obtained via reflection are cardinals inconsistent with L. This thesis will offer an intuitive explanation of why this holds.
+\end{abstract}
+\clearpage
+
+\tableofcontents
+\clearpage
+
+% podekovani firme co vyrabi club mate -- Loscher gmbh?
+\pagestyle{fancy} %detailní definice chování záhlaví
+\renewcommand{\sectionmark}[1]{\markboth{\slshape\thesection.\ #1}{}}
+
