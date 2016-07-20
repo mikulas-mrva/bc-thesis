@@ -39,7 +39,7 @@ Let $f$ be a normal function defined for all ordinals\footnote{For the definitio
 \bce[(i)]
 \item $\forall \lambda(\mbox{``$\lambda$ is a limit ordinal''} \then \mbox{``f($\lambda$) is a limit ordinal''})$
 \item $\forall \alpha (\alpha \leq f(\alpha))$
-\item $\forall \alpha \exists \beta (\alpha < \beta \et f(\beta) = \beta) \mbox{($f$ has arbitrarily large fixed points.)}$
+\item $\forall \alpha \exists \beta (\alpha < \beta \et f(\beta) = \beta)$
 \item The fixed points of $f$ form a closed unbounded class.\footnote{See (\ref{def:closed_class}.% TODO spis club class?
 ) for the definition of closed class, (\ref{def:unbounded_class}) for the definition of unboundedness.}
 \ece
@@ -73,20 +73,24 @@ So $f(\beta) = f(\bigcup_{i < \omega} \alpha_i) = \bigcup_{i < \omega} f(\alpha)
 We have defined the above sequence so that $\beta$, $\bigcup_{i < \omega} f(\alpha) = \bigcup_{i < \omega} \alpha_{i+1}$, 
 which means we are done, since $\bigcup_{i < \omega} \alpha_{i+1} = \bigcup_{i < \omega} \alpha_{i}  = \beta$.
 
+% Todo http://math.stackexchange.com/questions/1865519/when-is-the-union-of-a-set-of-ordinals-a-limit-ordinal/1865527#1865527
 \item The class of fixed points of $f$ is obviously unbounded by (iii).
-It remains to show that it is closed.
-Whenever there's a sequence $S = \langle \alpha_1, \alpha_2, \ldots \rangle$ of fixed points of $f$ that has a limit point $\lambda$, since $f(\alpha_i) = \alpha_i$, $S$ is also a sequence of ordinals and it is equivalent to the sequence $S' = \langle f(\alpha_1), f(\alpha_2), \ldots \rangle$. Therefore, $\lambda$ is a also an ordinal\footnote{This follows from (\ref{def:limit_point})}, then there is some $\lambda'$ such that $\lambda' = f(\lambda)$. It should be clear that $\lambda'$ is a limit point of $S'$, but since $S = S'$, $\lambda' = f(\lambda) = \lambda$, so the class of fixed points of $f$ is closed.
+It remains to show that it is closed, this is based on \cite{DrakeBook}, chapter 4. Let $Y$ be a non-empty set of fixed points of $f$ such that $\bigcup Y \not\in Y$. Since $f$ is defined on ordinals, $Y$ is a set of ordinals, so $\bigcup Y$ is an ordinal because a supremum of a set of ordinals is an ordinal%\footnote{TODO aspon dvema slovy?}
+. $\bigtcup Y$ is a limit ordinal. If it were a successor ordinal, suppose that $\alpha+1 = \bigcup Y$, then $\alpha \in \bigcup Y$, which means that there is some $x$ such that $\alpha \in x \in Y$. But the least such $x$ is $\alpha+1$, so $\bigcup Y \in Y$.
+%We will show that $\bigcup Y$ is a limit ordinal because $Y$ doesn't have a maximal element.
 
+Note that $\alpha < \bigcup Y iff \exists \xi \in Y (\alpha < \xi)$. Since $f$ is defined for all ordinals and $\bigcup Y$ is a limit ordinal, $f(\bigcup Y) = \bigcup_\alpha \in Y f(\alpha)$, but because $Y$ is a set of fixed points of $f$, $f(\bigcup Y) = \bigcup_\alpha \in Y f(\alpha) = \bigcup Y$, so $\bigcup Y$ is also a limit point of $Y$.
 \ece
 \end{proof}
 
 % Lévy proposes in \cite{Levy60a} those axioms as equivalent to \emph{Reflection\textsubscript{1}}.
-\begin{definition}{(\emph{Axiom $M$\textsubscript{1}})}\label{def:levy_m}\\
+
+\begin{definition}{(\emph{Axiom Schema $M$\textsubscript{1}})}\label{def:levy_m}\\
 ``Every normal function defined for all ordinals has at least one inaccessible number in its range.''
 \end{definition}
-Lévy uses ``$M$'' to refer to this axiom but since we also use ``$M$'' for sets and models, for example in (\ref{def:first_order_reflection}), we will call the above axiom ``\emph{Axiom $M$\textsubscript{1}}'' to avoid confusion even thought it's in fact an axiom schema.
+Lévy uses ``$M$'' to refer to this axiom but since we also use ``$M$'' for sets and models, for example in (\ref{def:first_order_reflection}), we will call the above axiom ``\emph{Axiom Schema $M$\textsubscript{1}}'' to avoid confusion.
 
-Now we will express \emph{Axiom $M$\textsubscript{1}} to formula to make it clear that it is an axiom scheme and the same can be done with \emph{Axiom $M$\textsubscript{2}} as well as \emph{Axiom Schema $M$} introduced immediately afterwards. Since it is an axiom schema and we will later dive into second-order logic, we may also want to refer to \emph{Axiom $M$\textsubscript{2}} as opposed \emph{Axiom $M$\textsubscript{1}}, the former being a single second-order sentence obtained by the obvious modification of \emph{Axiom $M$\textsubscript{1}}.\footnote{Second-order set theory will be introduced in the next subsection.}
+%Now we will express \emph{Axiom $M$\textsubscript{1}} as a formula to make it clear that it is an axiom scheme and the same can be done with \emph{Axiom $M$\textsubscript{2}} as well as \emph{Axiom Schema $M$} introduced immediately afterwards. Since it is an axiom schema and we will later dive into second-order logic, we may also want to refer to \emph{Axiom $M$\textsubscript{2}} as opposed \emph{Axiom $M$\textsubscript{1}}, the former being a single second-order sentence obtained by the obvious modification of \emph{Axiom $M$\textsubscript{1}}.\footnote{Second-order set theory will be introduced in the next subsection.}
 
 Let $\varphi(x, y, p_1, \ldots, p_n)$ be a first-order formula with no free variables besides $x, y, p_1, \ldots, p_n$. The following is equivalent to \emph{Axiom $M$\textsubscript{1}}.
 \begin{equation}
@@ -96,24 +100,27 @@ Let $\varphi(x, y, p_1, \ldots, p_n)$ be a first-order formula with no free var
 \end{gathered}
 \end{equation}
 
-\begin{definition}{(Axiom $M$\textsubscript{2})}\\
-Every normal function defined for all ordinals has at least one fixed point which is inaccessible.
+\begin{definition}{(Axiom Schema $M$\textsubscript{2})}\\
+``Every normal function defined for all ordinals has at least one fixed point which is inaccessible.''
 \end{definition}
 
-\begin{definition}{(Axiom $M$\textsubscript{3})}\\
+\begin{definition}{(Axiom Schema $M$\textsubscript{3})}\\
 ``Every normal function defined for all ordinals has arbitrarily great fixed points which are inaccessible.''
 \end{definition}
 
 Similar axiom is proposed in \cite{DrakeBook}.
+\begin{definition}{(Axiom Schema $F$)}\label{def:axiom_f}\\
+``Every normal function has a regular fixed point.''
+\end{definition}
 
 \begin{theorem}
 \begin{equation}
-\emph{Axiom $M$\textsubscript{1}} \iff \emph{Axiom $M$\textsubscript{2}} \iff \emph{Axiom $M$\textsubscript{3}}
+\emph{Axiom $M$\textsubscript{1}} \iff \emph{Axiom $M$\textsubscript{2}} \iff \emph{Axiom $M$\textsubscript{3}} \iff \emph{Axiom Schema $F$}
 \end{equation}
 \end{theorem}
 \
 This is \emph{Theorem 1} in \cite{Levy60a}.\\
-\begin{proof}
+\begin{proof} % TODO check!
 It is clear that \emph{Axiom $M$\textsubscript{3}} is a stronger version of \emph{Axiom $M$\textsubscript{2}}, which is in turn a stronger version of both \emph{Axiom $M$\textsubscript{1}} and \emph{Axiom $F$\textsubscript{1}}, so the implication \emph{Axiom $M$\textsubscript{3}} $\then$ \emph{Axiom $M$\textsubscript{2}} $\then$ \emph{Axiom $M$\textsubscript{1}} is satisfied and \emph{Axiom $M$\textsubscript{2}} $\then$ \emph{Axiom $F$\textsubscript{1}} holds too.
 
 We will now make sure that  \emph{Axiom $M$\textsubscript{1}} $\then$  \emph{Axiom $M$\textsubscript{3}} also holds. 
@@ -122,6 +129,26 @@ Let $g$ be a normal function that counts the fixed points of $f$. Lemma (\ref{le
 But since $\kappa = g(\alpha+\delta)$, $\kappa$ is a fixed point of $f$. To show that there are arbitrarily many fixed points of $f$, notice that $\gamma$ is arbitrary and $h_\gamma$ is a normal function, so, by lemma (\ref{lemma:normal_fixed_point}), $(\forall \alpha \in Ord)(\alpha \leq f(\alpha)$, therefore $\gamma \leq \gamma + \alpha \leq \kappa$, in other words, there is $\kappa$ above an arbitrary ordinal $\gamma$.
 
 \end{proof}
+
+But how do those schemata relate to reflection? Let's introduce a stronger version of \emph{First-order reflection schema} from the previous chapter.
+
+\begin{definition}{(Inaccessible Reflection Schema)}\label{def:inaccessible_reflection}\\ % Jednu
+For every first-order formula $\varphi$, the following is an axiom:
+\beq
+\forall M_0 \exists \kappa (M_0 \subseteq V_\kappa \et \mbox{``$\alpha$ is an inaccessible cardinal''}\et (\varphi(p_1, \ldots, p_n) \iff \varphi(p_1, \ldots, p_n)^{V_\kappa}))
+\eeq
+We will refer to this axiom schema as \emph{Inaccessible reflection schema}.
+\end{definition}
+
+We have added the requirement that $\alpha$ is inaccessible, which trivially means that there is an inaccessible cardinal. By taking appropriate $M_0$, it can be shown that in a theory that includes the \emph{Inaccessible reflection schema}, there is a closed unbounded class of inaccessible cardinals. Since we know that for an inaccessible $\kappa$, $V_\kappa$ is a model of \sf{ZFC}, \emph{Inaccessible reflection schema} is equivalent to
+\beq
+\forall M_0 \exists \kappa (M_0 \subseteq V_\kappa \et V_\kappa \models \sf{ZFC} \et (\varphi(p_1, \ldots, p_n) \iff \varphi(p_1, \ldots, p_n)^{V_\kappa}))
+\eeq
+because we have proven in the last section that for an unaccessible $\kappa$, $V_\kappa \models \sf{ZFC}$. % TODO ref
+
+
+
+% TODO ekvivalence s reflexi
 
 \begin{comment} % ============================================================
 

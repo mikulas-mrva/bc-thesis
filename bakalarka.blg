@@ -3,44 +3,44 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: bakalarka.aux
 The style file: apalike.bst
 Database file #1: bc_biblio.bib
-You've used 5 entries,
+You've used 6 entries,
             1935 wiz_defined-function locations,
-            506 strings with 4351 characters,
-and the built_in function-call counts, 1435 in all, are:
-= -- 141
-> -- 35
-< -- 5
-+ -- 10
-- -- 10
-* -- 91
-:= -- 274
-add.period$ -- 18
-call.type$ -- 5
-change.case$ -- 27
-chr.to.int$ -- 5
-cite$ -- 5
-duplicate$ -- 69
-empty$ -- 113
-format.name$ -- 15
-if$ -- 283
+            513 strings with 4534 characters,
+and the built_in function-call counts, 1734 in all, are:
+= -- 172
+> -- 42
+< -- 6
++ -- 14
+- -- 12
+* -- 111
+:= -- 329
+add.period$ -- 22
+call.type$ -- 6
+change.case$ -- 33
+chr.to.int$ -- 6
+cite$ -- 6
+duplicate$ -- 83
+empty$ -- 136
+format.name$ -- 18
+if$ -- 343
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 9
-newline$ -- 28
-num.names$ -- 15
-pop$ -- 28
+missing$ -- 11
+newline$ -- 33
+num.names$ -- 18
+pop$ -- 33
 preamble$ -- 1
-purify$ -- 30
+purify$ -- 36
 quote$ -- 0
-skip$ -- 53
+skip$ -- 63
 stack$ -- 0
-substring$ -- 60
-swap$ -- 5
+substring$ -- 74
+swap$ -- 6
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 22
+type$ -- 26
 warning$ -- 0
-while$ -- 10
+while$ -- 12
 width$ -- 0
-write$ -- 67
+write$ -- 81
