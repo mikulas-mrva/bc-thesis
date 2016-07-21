@@ -1,4 +1,4 @@
-# Reflectio Principles And Large Cardinals
+# Reflection Principles And Large Cardinals
 
 ## Mikuláš Mrva
 
