@@ -25,6 +25,8 @@ In order to reach an inaccessible cardinal of size $\kappa$, one has to pass at 
 
 \end{comment} % ======================================================================== //
 
+TODO inaccessible?
+
 \subsection{Regular Fixed-Point Axioms}\label{sec:regular_fixed_points}
 Lévy's article mentions various schemata that are not instances of reflection per se, but deal with fixed points of normal ordinal functions. We will introduce them and show that they are equivalent to \emph{First-Order Reflection}\footnote{For definition, see (\ref{def:first_order_reflection}).}.
 
@@ -121,16 +123,26 @@ Similar axiom is proposed in \cite{DrakeBook}.
 \
 This is \emph{Theorem 1} in \cite{Levy60a}.\\
 \begin{proof} % TODO check!
-It is clear that \emph{Axiom $M$\textsubscript{3}} is a stronger version of \emph{Axiom $M$\textsubscript{2}}, which is in turn a stronger version of both \emph{Axiom $M$\textsubscript{1}} and \emph{Axiom $F$\textsubscript{1}}, so the implication \emph{Axiom $M$\textsubscript{3}} $\then$ \emph{Axiom $M$\textsubscript{2}} $\then$ \emph{Axiom $M$\textsubscript{1}} is satisfied and \emph{Axiom $M$\textsubscript{2}} $\then$ \emph{Axiom $F$\textsubscript{1}} holds too.
+% It is clear that \emph{Axiom $M$\textsubscript{3}} is a stronger version of \emph{Axiom $M$\textsubscript{2}}, which is in turn a stronger version of both \emph{Axiom $M$\textsubscript{1}} and \emph{Axiom $F$\textsubscript{1}}, so the implication \emph{Axiom $M$\textsubscript{3}} $\then$ \emph{Axiom $M$\textsubscript{2}} $\then$ \emph{Axiom $M$\textsubscript{1}} is satisfied and \emph{Axiom $M$\textsubscript{2}} $\then$ \emph{Axiom $F$\textsubscript{1}} holds too.
 
-We will now make sure that  \emph{Axiom $M$\textsubscript{1}} $\then$  \emph{Axiom $M$\textsubscript{3}} also holds. 
-Let $f$ be a normal function defined for all ordinals. % such that there is $\varphi$, $f(x) = y \iff \varphi$ that satisfies \emph{Axiom $M$\textsubscript{1}}.
-Let $g$ be a normal function that counts the fixed points of $f$. Lemma (\ref{lemma:normal_fixed_point}) implies that there arbitrarily many fixed points of $f$, therefore $g$ is defined for all ordinals. Let there be another family of functions, $h_\alpha(\beta) = g(\alpha+\beta)$, obviously $h_\alpha$ is defined for all ordinals for every $\alpha \in Ord$ because so is $g$. Given an arbitrary ordinal $\gamma$, from \emph{Axiom $M$\textsubscript{1}} we can assume that there is an ordinal $\delta$ such that such that $h_\alpha(\delta) = \kappa$, where $\kappa$ is inaccessible. 
-But since $\kappa = g(\alpha+\delta)$, $\kappa$ is a fixed point of $f$. To show that there are arbitrarily many fixed points of $f$, notice that $\gamma$ is arbitrary and $h_\gamma$ is a normal function, so, by lemma (\ref{lemma:normal_fixed_point}), $(\forall \alpha \in Ord)(\alpha \leq f(\alpha)$, therefore $\gamma \leq \gamma + \alpha \leq \kappa$, in other words, there is $\kappa$ above an arbitrary ordinal $\gamma$.
-
+% We will now make sure that  \emph{Axiom $M$\textsubscript{1}} $\then$  \emph{Axiom $M$\textsubscript{3}} also holds. 
+%Let $f$ be a normal function defined for all ordinals. % such that there is $\varphi$, $f(x) = y \iff \varphi$ that satisfies \emph{Axiom $M$\textsubscript{1}}.
+% Let $g$ be a normal function that counts the fixed points of $f$. Lemma (\ref{lemma:normal_fixed_point}) implies that there arbitrarily many fixed points of $f$, therefore $g$ is defined for all ordinals. Let there be another family of functions, $h_\alpha(\beta) = g(\alpha+\beta)$, obviously $h_\alpha$ is defined for all ordinals for every $\alpha \in Ord$ because so is $g$. Given an arbitrary ordinal $\gamma$, from \emph{Axiom $M$\textsubscript{1}} we can assume that there is an ordinal $\delta$ such that such that $h_\alpha(\delta) = \kappa$, where $\kappa$ is inaccessible. 
+%But since $\kappa = g(\alpha+\delta)$, $\kappa$ is a fixed point of $f$. To show that there are arbitrarily many fixed points of $f$, notice that $\gamma$ is arbitrary and $h_\gamma$ is a normal function, so, by lemma (\ref{lemma:normal_fixed_point}), $(\forall \alpha \in Ord)(\alpha \leq f(\alpha)$, therefore $\gamma \leq \gamma + \alpha \leq \kappa)$, in other words, there is $\kappa$ above an arbitrary ordinal $\gamma$.
 \end{proof}
 
-But how do those schemata relate to reflection? Let's introduce a stronger version of \emph{First-order reflection schema} from the previous chapter.
+But how do those schemata relate to reflection? 
+Let's introduce a stronger version of \emph{First-order reflection schema} from the previous chapter to see it more clearly. % TODO ref na minuly refl schema
+But in order to do this, we must first establish the inaccessible cardinal.
+
+
+% TODO nevime co je inaccessible! 
+% zacit kapitolu tady?
+\subsection{Inaccessible Cardinal}\label{sec:inaccessible}
+\begin{definition}
+An uncountable cardinal $\kappa$ is \emph{inaccessible} iff it is \emph{regular} and \emph{strongly limit}.
+\end{definition}
+
 
 \begin{definition}{(Inaccessible Reflection Schema)}\label{def:inaccessible_reflection}\\ % Jednu
 For every first-order formula $\varphi$, the following is an axiom:
@@ -144,9 +156,30 @@ We have added the requirement that $\alpha$ is inaccessible, which trivially mea
 \beq
 \forall M_0 \exists \kappa (M_0 \subseteq V_\kappa \et V_\kappa \models \sf{ZFC} \et (\varphi(p_1, \ldots, p_n) \iff \varphi(p_1, \ldots, p_n)^{V_\kappa}))
 \eeq
-because we have proven in the last section that for an unaccessible $\kappa$, $V_\kappa \models \sf{ZFC}$. % TODO ref
+because we have proven in the last section that for an inaccessible $\kappa$, $V_\kappa \models \sf{ZFC}$. % TODO ref
+
+\begin{theorem}
+\emph{Inaccessible reflection schema} is equivalent to \emph{Axiom schema $F$}.
+\end{theorem}
+
+This is Theorem 4.1 in chapter four of \cite{DrakeBook}.
+\begin{proof}
+Let's start by showing that \emph{Inaccessible reflection schema} implies \emph{Axiom schema $F$}. 
+It should be clear that we can reflect two formulas to a single set, just form a new formula as a conjunction of universal closures of the two.
+
+Given a normal function $f$ defined for all ordinals, we want to show that it has a regular fixed point. 
+%Let $\varphi_1$ be the formula $f(\gamma) = \delta$ and let $\varphi_2$ be $\forall \gamma \exists \delta f(\gamma) = \delta$. 
+For any ordinal $\alpha$, there is an ordinal $\kappa$ such that 
+\beq
+\bce[(i)]
+\item \alpha < \kappa \et (\forall \gamma, \delta \in V_\kappa)(f(\gamma) = \delta \iff (f(\gamma) = \delta)^{V_\kappa})
+\item \alpha < \kappa \et \forall \gamma \exists \delta f(\gamma) = \delta \iff (\forall \gamma \exists \delta f(\gamma) = \delta)^{V_\kappa}
+\eec
+\eeq
+%Since $\alpha \in V_\alpha$ for any ordinal $\alpha$ NENENE
 
 
+\end{proof}
 
 % TODO ekvivalence s reflexi
 
@@ -485,7 +518,7 @@ Let $\kappa$ be an ordinal. The following are equivalent.
 
 
 \begin{proof}
-Since $\Pi^1_0$-sentences are first-order sentences, we want to prove that $\kappa$ is an inaccessible cardinal iff whenever a first-order tries to describe $\kappa$ in the sense of definition )(\ref{def:describability}), the formula fails to do so and describes a initial segment thereof instead.
+Since $\Pi^1_0$-sentences are first-order sentences, we want to prove that $\kappa$ is an inaccessible cardinal iff whenever a first-order tries to describe $\kappa$ in the sense of definition (\ref{def:describability}), the formula fails to do so and describes a initial segment thereof instead.
 We have already shown in (\ref{theorem:inaccessible_models_zfc}) that there is no way to reach an inaccesible cardinal via first-order formulas in $\sf{ZFC}$. We will now prove it again in for formal clarity.
 
 For (i)$\then$(ii), suppose that $\kappa$ is inaccessible.
