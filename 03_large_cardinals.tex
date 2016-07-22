@@ -25,8 +25,6 @@ In order to reach an inaccessible cardinal of size $\kappa$, one has to pass at 
 
 \end{comment} % ======================================================================== //
 
-TODO inaccessible?
-
 \subsection{Regular Fixed-Point Axioms}\label{sec:regular_fixed_points}
 Lévy's article mentions various schemata that are not instances of reflection per se, but deal with fixed points of normal ordinal functions. We will introduce them and show that they are equivalent to \emph{First-Order Reflection}\footnote{For definition, see (\ref{def:first_order_reflection}).}.
 
@@ -140,17 +138,35 @@ But in order to do this, we must first establish the inaccessible cardinal.
 % zacit kapitolu tady?
 \subsection{Inaccessible Cardinal}\label{sec:inaccessible}
 \begin{definition}
-An uncountable cardinal $\kappa$ is \emph{inaccessible} iff it is \emph{regular} and \emph{strongly limit}.
+An uncountable cardinal $\kappa$ is \emph{inaccessible} iff it is \emph{regular} and \emph{strongly limit}. We write $In(\kappa)$ to say that $\kappa$ is an inaccessible cardinal.
 \end{definition}
 
+An uncountable cardinal that is regular and limit is called a \emph{weakly limit cardinal}, we will only use the (strongly) inaccessible cardinal, but most of the results are similar, including higher types of ordinals that will be presented later in this chapter.
+
+\begin{theorem}
+Let $\kappa$ be an inaccessible cardinal.
+\beq
+V_\kappa \models \sf{ZFC}
+\eeq
+\end{theorem}
+
+We will prove this theorem in a way similar to \cite{KanamoriBook}.
+\begin{proof}
+Most of this is already done in lemma (\ref{lemma:scm_s_is_limit}), we only need to verify that \emph{Replacement} and \emph{Infinity} axioms hold in $V_\kappa$.
+
+\emph{Infinity} holds because $\kappa$ is uncountable, so $\omega \in V_\kappa$.
+
+To verify \emph{Replacement}, let $x$ be an element of $V_\kappa$ and $f$ a function from $x$ to $V_\kappa$. Let $y = \{z \in V_\kappa : (\exists q \in x) f(q) = z \}$, so $y \subset V_\kappa$, it remains to show that $y \in V_\kappa$. Because $f$ is a function, we know that $|y| \leq |x| \leq \kappa$. But since $\kappa$ is regular, $\{rank(z) : z \in y\} \subseteq \alpha$ for some $\alpha < \kappa$, and so $x \in V_{\alpha+1} \subseteq V_\kappa$. Therefore $y \in V_\kappa$.
+\end{proof}
 
 \begin{definition}{(Inaccessible Reflection Schema)}\label{def:inaccessible_reflection}\\ % Jednu
 For every first-order formula $\varphi$, the following is an axiom:
 \beq
-\forall M_0 \exists \kappa (M_0 \subseteq V_\kappa \et \mbox{``$\alpha$ is an inaccessible cardinal''}\et (\varphi(p_1, \ldots, p_n) \iff \varphi(p_1, \ldots, p_n)^{V_\kappa}))
+\forall M_0 \exists \kappa (M_0 \subseteq V_\kappa \et In(\kappa) \et (\varphi(p_1, \ldots, p_n) \iff \varphi(p_1, \ldots, p_n)^{V_\kappa}))
 \eeq
 We will refer to this axiom schema as \emph{Inaccessible reflection schema}.
 \end{definition}
+% Uvozovky?
 
 We have added the requirement that $\alpha$ is inaccessible, which trivially means that there is an inaccessible cardinal. By taking appropriate $M_0$, it can be shown that in a theory that includes the \emph{Inaccessible reflection schema}, there is a closed unbounded class of inaccessible cardinals. Since we know that for an inaccessible $\kappa$, $V_\kappa$ is a model of \sf{ZFC}, \emph{Inaccessible reflection schema} is equivalent to
 \beq
@@ -171,17 +187,27 @@ Given a normal function $f$ defined for all ordinals, we want to show that it ha
 %Let $\varphi_1$ be the formula $f(\gamma) = \delta$ and let $\varphi_2$ be $\forall \gamma \exists \delta f(\gamma) = \delta$. 
 For any ordinal $\alpha$, there is an ordinal $\kappa$ such that 
 \beq
-\bce[(i)]
-\item \alpha < \kappa \et (\forall \gamma, \delta \in V_\kappa)(f(\gamma) = \delta \iff (f(\gamma) = \delta)^{V_\kappa})
-\item \alpha < \kappa \et \forall \gamma \exists \delta f(\gamma) = \delta \iff (\forall \gamma \exists \delta f(\gamma) = \delta)^{V_\kappa}
-\eec
+\alpha < \kappa \et In(\kappa) \et (\forall \gamma, \delta \in V_\kappa)(f(\gamma) = \delta \iff (f(\gamma) = \delta)^{V_\kappa})
 \eeq
-%Since $\alpha \in V_\alpha$ for any ordinal $\alpha$ NENENE
+and
+\beq
+\alpha < \kappa \et In(\kappa) \et \forall \gamma \exists \delta (f(\gamma) = \delta) \iff (\forall \gamma \exists \delta f(\gamma) = \delta)^{V_\kappa}
+\eeq
+Since $V_\kappa$ is the set of all sets of rank less than $\kappa$ and since every ordinal is the rank of itself, there is an inaccessible ordinal $\kappa$ such that
+\beq
+\forall \gamma < \kappa \exists \delta < \kappa (f^{V_\kappa} (\gamma) = \delta)\label{eq:reflected_function}
+\eeq
+We also know that $f(\gamma) = \delta \iff (f(\gamma) = \delta)^{V_\kappa}$. 
+Now since $\kappa$ is a limit ordinal and $f$ is continuous we get
+\beq
+f(\kappa) = \bigcup_{\gamma < \kappa} f^{V_\kappa}(\gamma) = \bigcup_{\gamma < \kappa} f(\gamma)\mbox{.}
+\eeq
+From (\ref{eq:reflected_function}) and the fact that $f$ is increasing, we know that $\kappa \leq \bigcup_{\gamma < \kappa} f(\gamma) \leq \kappa$. Therefore $\kappa$ is an inaccessible fixed point of $f$.
 
-
+For the opposite direction, it is enough to show that since there is an inaccessible cardinal from \emph{Axiom schema $F$}, there is a set $V_\kappa$ for some inaccessible cardinal $\kappa$, which is thus a model of of \sf{ZFC}.  TODO
+% TODO  reflexe mi nepomuze, ma to platit prave ve V_\kappa. nebo staci vzit limitu, kdyz existuje club set takovych modelu?
 \end{proof}
 
-% TODO ekvivalence s reflexi
 
 \begin{comment} % ============================================================
 
