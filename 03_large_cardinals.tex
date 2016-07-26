@@ -83,6 +83,17 @@ Note that $\alpha < \bigcup Y iff \exists \xi \in Y (\alpha < \xi)$. Since $f$ 
 \ece
 \end{proof}
 
+\begin{lemma}\label{lemma:normal_enumerates_club}\\
+Let $\alpha$ be a limit ordinal. Then the following hold:
+\bce[(i)] % TODO pozor na club / "closed unbounded"
+\item If $C$ is a club set in $\alpha$, then there is an ordinal $\beta$ and a function $f: \beta \then \alpha$ such that $rng(f) = C$. We say that $f$ \emph{enumrates} $C$.
+\item If $\beta$ is an ordinal and $f$ is a normal function such that $f: \beta \then \alpha$ and $rng(f)$ is unbounded in $\alpha$, then $rng(f)$ is a closed unbouded set in alpha.
+\ece
+\end{lemma}
+% http://euclid.colorado.edu/~monkd/m6730/gradsets09.pdf
+
+TODO lemma ze limity tvori club?
+
 % Lévy proposes in \cite{Levy60a} those axioms as equivalent to \emph{Reflection\textsubscript{1}}.
 
 \begin{definition}{(\emph{Axiom Schema $M$\textsubscript{1}})}\label{def:levy_m}\\
@@ -204,7 +215,20 @@ f(\kappa) = \bigcup_{\gamma < \kappa} f^{V_\kappa}(\gamma) = \bigcup_{\gamma < \
 \eeq
 From (\ref{eq:reflected_function}) and the fact that $f$ is increasing, we know that $\kappa \leq \bigcup_{\gamma < \kappa} f(\gamma) \leq \kappa$. Therefore $\kappa$ is an inaccessible fixed point of $f$.
 
-For the opposite direction, it is enough to show that since there is an inaccessible cardinal from \emph{Axiom schema $F$}, there is a set $V_\kappa$ for some inaccessible cardinal $\kappa$, which is thus a model of of \sf{ZFC}.  TODO
+For the opposite direction, it suffices to show that since there is an inaccessible cardinal from \emph{Axiom schema $F$}, given a first-order formula $\varphi$, there is an arbitrarily large inaccessible cardinal $\kappa$ for which 
+\beq
+\varphi \iff V_\kappa \models \varphi\mbox{.}\label{eq:ch3_f_iff_m_1}
+\eeq
+Note that the arbitrary size of $\kappa$ means given an arbitrary ordinal $\alpha$, there is a $\kappa$ satisfying (\ref{eq:ch3_f_iff_m_1}).
+In the previous chapter, in theorem (\ref{theorem:first_order_reflection}), we have shown that we can easily obtain a limit ordinal satisfying (\ref{eq:ch3_f_iff_m_1}). Note that since for any set $M_0$, there is such $\alpha$ that $M_0 \subseteq V_\alpha$, there is a closed unbounded class of sets satisfying (\ref{eq:ch3_f_iff_m_1}), which are levels in the cumulative hierarchy, so there is a club sets of $\kappa$s satisfying (\ref{eq:ch3_f_iff_m_1}).
+
+Let $f$ be a normal function defined for all ordinals that enumerates this club class, there is such by lemma (\ref{lemma:normal_enumerates_club}). % TODO nemusi to byt v nejakem limitnim alpha?
+Let $g$ be the function that enumerates strong limit ordinals in $rng(f)$. % TODO proc existuje a proc je club fixed pointu?
+Then $g$ has a regular fixed point $\kappa$, which is also a regular fixed point of $f$, so (\ref{eq:ch3_f_iff_m_1}) holds for $\kappa$.
+
+% CAJK!!
+% 
+ %, there is a set $V_\kappa$ for some inaccessible cardinal $\kappa$, which is thus a model of of \sf{ZFC}.  TODO
 % TODO  reflexe mi nepomuze, ma to platit prave ve V_\kappa. nebo staci vzit limitu, kdyz existuje club set takovych modelu?
 \end{proof}
 
