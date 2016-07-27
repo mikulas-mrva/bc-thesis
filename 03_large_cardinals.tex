@@ -197,7 +197,7 @@ But in order to do this, we must establish the inaccessible cardinal first.
 An uncountable cardinal $\kappa$ is \emph{inaccessible} iff it is \emph{regular} and \emph{strongly limit}. We write $In(\kappa)$ to say that $\kappa$ is an inaccessible cardinal.
 \end{definition}
 
-An uncountable cardinal that is regular and limit is called a \emph{weakly limit cardinal}, we will only use the (strongly) inaccessible cardinal, but most of the results are similar, including higher types of ordinals that will be presented later in this chapter.
+An uncountable cardinal that is regular and limit is called a \emph{weakly inaccessible cardinal}, we will only use the (strongly) inaccessible cardinal, but most of the results are similar for weakly inaccessibles, including higher types of ordinals that will be presented later in this chapter.
 
 \begin{theorem}
 Let $\kappa$ be an inaccessible cardinal.
@@ -291,8 +291,26 @@ Let's shortly review what \emph{Axiom Schema $M$\textsubscript{1}} says. We have
 \end{displayquote}
 
 \begin{definition}{(Mahlo Cardinal)}\label{def:mahlo_cardinal}\\
-$\kappa$ is a \emph{Mahlo Cardinal} iff it is an inaccessible cardinal and the set of all inaccessible ordinals less then $\kappa$ is stationary in $\kappa$.
+We say that $\kappa$ is a \emph{Mahlo Cardinal} iff it is an inaccessible cardinal and the set $\{\lambda < \kappa : \lambda \mbox{ is inaccessible}\}$ is stationary in $\kappa$.
 \end{definition}
+
+Alternatively, $\kappa$ is Mahlo iff $V_\kappa \models \sf{ZMC}$ as shown above, this is also sometimes written as \emph{Ord is Mahlo}. There are also \emph{weakly Mahlo cardinals}, that are defined via weakly inaccessible cardinal below them, Mahlo cardinals are then also called \emph{strongly Mahlo} to highlight the difference, but we will only use the term \emph{Mahlo cardinal}.
+
+Mahlo cardinals are related to reflection principles in an interesting way. Note that given a formula $\varphi$, reflection gave us a club set of ordinals $\alpha$ such that $V_\alpha$ reflects $\varphi$, all below the first inaccessible cardinal. We have then used a different reflection schema to obtain arbitrarily high inaccessible cardinals. Now we have a cardinal in which this reflection schema holds, so we're in fact reflecting reflection. Beware that this is done rather informally, because \emph{Axiom Schema $M$\textsubscript{1}} is a countable set of axioms, which is too large to be reflected via the schemas introduced so far. One way to deal with this would be to extend reflection for second- and possibly higher-order formulas, but we would have to be very careful with the notion of satisfaction. For now, explore where can stationary sets take us because as we have shown, their connection to reflection is quite clear.
+
+What would happen if we strengthened \emph{Axiom Schema $M$\textsubscript{1}} to say that every normal function has a Mahlo cardinal in its range?
+
+\begin{definition}{(hyper-Mahlo cardinal)}\label{def:hyper_mahlo_cardinal}\\
+We say that $\kappa$ is a \emph{hyper-Mahlo cardinal} iff it is inaccessible and the set $\{\lambda < \kappa : \lambda \mbox{ is Mahlo}\}$ is stationary in $\kappa$.
+\end{definition}
+
+\begin{definition}{(hyper-hyper-Mahlo cardinal)}\label{def:hyper_hyper_mahlo_cardinal}\\
+We say that $\kappa$ is a \emph{hyper-hyper-Mahlo cardinal} iff it is inaccessible and the set $\{\lambda < \kappa : \lambda \mbox{ is hyper-Mahlo}\}$ is stationary in $\kappa$.
+\end{definition}
+
+It is clear that one can continue in this direction, but the nomenclature gets increasingly overwhelming even if we introduce \emph{hyper\textsuperscript{$\alpha$}-Mahlo cardinals}.
+
+TODO Mahlo operation
 
 \begin{comment} % ============================================================
 
@@ -369,7 +387,7 @@ In other words, $\kappa$ is a (weakly-)Mahlo cardinal if it is (weakly-)inacces
 
 In a fashion similar to hyper-inaccessible cardinals, one can define hyper-Mahlo cardinals as well as hyper-hyper-Mahlo cardinals and so on.
 
-To se why we need to mention Mahlo Cardinals, notice that while an inaccessible cardinal reflects any first-order formula, a Mahlo cardinal reflects inaccessibility, so it, in a sense, reflects reflection. Hyper-Mahlo cardinals then stand for reflecting reflecting reflection and so on.
+To see why we need to mention Mahlo Cardinals, notice that while an inaccessible cardinal reflects any first-order formula, a Mahlo cardinal reflects inaccessibility, so it, in a sense, reflects reflection. Hyper-Mahlo cardinals then stand for reflecting reflecting reflection and so on.
 
 Mahlo cardinals are also interesting from a different point of view. If we wanted to reach large cardinal from below via fixed-point argument, we don't get any higher.
 % TODO proc se vys nedostaneme pevnyma bodama?
