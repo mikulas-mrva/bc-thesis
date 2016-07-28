@@ -8,19 +8,19 @@ We will now shortly review the basic notions that allow us to define the \emph{Z
 % theory with the Axiom of Choice ($\sf{ZFC}$), a first-order set theory in the language $\mathscr{L} = \{=, \in\}$, which will be sometimes referred to as \emph{the language of set theory}. In Chapter 3, the Axiom of Choice is assumed. When tlaking about higher-order logic, we will usually denote type 1 variables, which are elements of the domain of discourse, by lowercase letters, mostly $u, v, w, x, y, z, p_1, p_2, p_3,  \ldots$ while type 2 variables, which represent $n$-ary relations of the domain of discourse for any natural number $n$, are usually denoted by uppercase letters $A, B, C, X, Y, Z$. Note that there are exception to convention rules as $f$ usually denotes a function, which is in fact a type 2 variable. On the other hand, $M$ stands for a set.
 
 
-When we talk about \emph{class}, we have the notion of definable class in mind. 
+When we talk about a \emph{class}, we have the notion of a definable class in mind. 
 If $\varphi(x, p_1, \ldots, p_n)$ is a formula in the language of set theory, we call 
 \begin{equation}
-A = \{x : \varphi(x)\}
+A = \{x : \varphi(x, p_1, \ldots, p_n)\}
 \end{equation}
-a class of all sets satisfying $\varphi(x)$ in a sense that 
+a class of all sets satisfying $\varphi(x, p_1, \ldots, p_n)$ in a sense that 
 \begin{equation}
-x \in A \iff \varphi(x)
+x \in A \iff \varphi(x, p_1, \ldots, p_n)
 \end{equation}
 Given classes $A$, $B$, one can easily define the elementary set operations such as $A \cap B$, $A \cup B$, $A \setminus B$, $\bigcup A$, see the first part of \cite{JechBook} for details.
 Axioms are the tools by which we can decide whether a particular class is ``small enough'' to be considered a set\footnote{``Small enough'' means that it doesn't introduce a paradox similar to Russell's.}. A class that fails to be considered a set is called a \emph{proper class}.
 
-We will often write ``$M$ is a limit ordinal'', it should always be clear that this can be rewritten as a formula that was introduced earlier.
+We will often write something like ``$M$ is a limit ordinal'', it should always be clear that this can be rewritten as a formula that was introduced earlier.
 
 \
 
@@ -59,7 +59,7 @@ We read $x \subseteq y$ as \emph{x is a subset of y} and $x \subset y$ as \emph{
 \end{definition}
 
 \begin{definition}{(Empty Set)}\label{def:emptyset}
-%Let $\varphi = \neg(x = x)$, $y$ is an arbitrary set, we there exists at least one set $y$ from \ref{def:existence_of_a_set} or \emph{Infinity}
+%Let $\varphi = \neg(x = x)$, $y$ is an arbitrary set, we there exists at least one set $y$ from (\ref{def:existence_of_a_set} or \emph{Infinity})
 %\begin{equation}
 %\emptyset \defeq \{x : x \in y\ \et \varphi(x)\}
 %\end{equation}
@@ -70,7 +70,8 @@ For an arbitrary set $x$, the empty set, represented by the symbol ``$\emptyset$
 \beq
 (\forall y \in x)(y \in \emptyset \iff \neg(y = y))
 \eeq
-$\emptyset$ is a set due to \emph{Specification}. While the empty set could also be defined by the formula $\forall y (y \in \empty \iff \neg(y = y))$, the version we use is $\Delta_0$, which we will find useful later. The two definitions yield the same set for every $x$ given because of \emph{Extensionality}.
+$\emptyset$ is a set due to \emph{Specification}. %While the empty set could also be defined by the formula $\forall y (y \in \emptyset \iff \neg(y = y))$, the version we use is $\Delta_0$, which we will find useful later. The two definitions yield the same set for every $x$ given because of \emph{Extensionality}.
+% TODO odkomentovat a pridat zduvodneni proc to neni vl. trida?
 \end{definition}
 
 \begin{definition}{(Axiom of Pairing)}\label{def:pairing}
@@ -117,14 +118,6 @@ Now we can introduce more axioms.
 The least set satisfying this is denoted ``$\omega$''.
 \end{definition}
 
-Let us introduce a few more definitions that will make the two remaining axioms more comprehensible.
-\begin{definition}{(Powerset Function)}\\
-Given a set $x$, the \emph{powerset of $x$}, denoted $\power{x}$ and satisfying \ref{def:powerset}, is defined as follows:
-\begin{equation}
-\power{x} \defeq \{y: y \subseteq x\}
-\end{equation}
-\end{definition}
-
 \begin{definition}{(Function)}\label{def:function}\\
 Given arbitrary first-order formula $\varphi(x, y, p_1, \ldots, p_n)$, we say that $\varphi$ is a function iff
 \begin{equation}\label{def:function_formula}
@@ -137,6 +130,14 @@ When a $\varphi(x, y)$ is a function, we also write the following:
 f(x) = y \iff \varphi(x, y)
 \end{equation}
 Alternatively, $f = \{\langle x, y \rangle : \varphi(x, y)\}$ is a class.
+
+Let us introduce a few more definitions that will make the two remaining axioms more comprehensible.
+\begin{definition}{(Powerset Function)}\\
+Given a set $x$, the \emph{powerset of $x$}, denoted $\power{x}$ and satisfying (\ref{def:powerset}), is defined as follows:
+\begin{equation}
+\power{x} \defeq \{y: y \subseteq x\}
+\end{equation}
+\end{definition}
 
 % TODO hezci formulace
 \begin{definition}{(Domain of a Function)}\label{def:dom}\\
@@ -154,8 +155,8 @@ Let $f$ be a function. We call the \emph{range of $f$} the set of all sets that 
 x \in Rng(f) \iff \exists y (f(y) = x)
 \end{equation}
 \end{definition}
-We say that $f$ is \emph{a function into $A$}, $A$ being a class, if $rng(f) \subseteq A$.
-We say that $f$ is \emph{a function onto $A$} if $rng(f) = A$%, in other words,
+We say that $f$ is \emph{a function into $A$}, $A$ being a class, iff $rng(f) \subseteq A$.
+We say that $f$ is \emph{a function onto $A$} iff $rng(f) = A$. %, in other words,
 %\begin{equation}
 %(\forall y \in A)(\exists x \in dom(f))(f(x) = y)
 %\end{equation}
@@ -186,10 +187,11 @@ The following is an axiom for every first-order formula $\varphi(x, p_1, \ldots,
 
 
 % TODO mas to blbe :(
+% radsi jeste
 \begin{definition}{(Choice)}\label{def:choice}\\
 \begin{equation}
 \begin{gathered}
-\forall x \exists f ((f \mbox{ is a choice function with } dom(f) = x \setminus \{\emptyset\})\\
+\forall x \exists f ((f \mbox{ is a function with } dom(f) = x \setminus \{\emptyset\})\\
 \et \forall y ((y \in y \et y \neq \emptyset) \then f(y) \in y))
 \end{gathered}
 \end{equation}
@@ -202,21 +204,21 @@ We will refer to the axioms by their name, written in italic type, e.g. \emph{Fo
 \begin{definition}{$(\sf{S})$}\label{def:s}\\ %ok
 We call $\sf{S}$ an axiomatic theory in the language $\mathscr{L} = \{=, \in\}$ with exactly the following axioms:
 \bce[(i)]
-\item \emph{Existence of a set} (see \ref{def:existence_of_a_set})
-\item \emph{Extensionality} (see \ref{def:extensionality})
-\item \emph{Specification} (see \ref{def:specification})
-\item \emph{Foundation} (see \ref{def:foundation})
-\item \emph{Pairing} (see \ref{def:pairing})
-\item \emph{Union} (see \ref{def:union})
-\item \emph{Powerset} (see \ref{def:powerset})
+\item \emph{Existence of a set} (see (\ref{def:existence_of_a_set}))
+\item \emph{Extensionality} (see (\ref{def:extensionality}))
+\item \emph{Specification} (see (\ref{def:specification}))
+\item \emph{Foundation} (see (\ref{def:foundation}))
+\item \emph{Pairing} (see (\ref{def:pairing}))
+\item \emph{Union} (see (\ref{def:union}))
+\item \emph{Powerset} (see (\ref{def:powerset}))
 \ece
 \end{definition}
 
 \begin{definition}{$(\sf{ZF})$}\label{def:zf}\\ %ok
 We call $\sf{ZF}$ an axiomatic theory in the language $\mathscr{L} = \{=, \in\}$ that contains all the axioms of $\sf{S}$ in addition to the following:
 \bce[(i)]
-\item \emph{Replacement} schema (see \ref{def:replacement})
-\item \emph{Infinity} (see \ref{def:infinity})
+\item \emph{Replacement} schema (see (\ref{def:replacement}))
+\item \emph{Infinity} (see (\ref{def:infinity}))
 \ece
 \emph{Existence of a set} is usually left out because it is a consequence of \emph{infinity}.
 \end{definition}
@@ -326,7 +328,7 @@ Given an arbitrary well-ordered set $x$, we say that an ordinal $\alpha$ is the 
 
 % todo def one.to-one mapping?
 \begin{definition}{(Cardinality)}\\
-Given a set $x$, let the cardinality of $x$, written $|x|$, be defined as the smallest ordinal number such that there is a one to one mapping from $x$ to $\alpha$.
+Given a set $x$, let the cardinality of $x$, written $|x|$, be defined as the smallest ordinal number such that there is a one to one mapping from $x$ onto $\alpha$.
 \end{definition}
 
 \begin{definition}{(Aleph function)}\label{def:aleph}\\
@@ -348,26 +350,26 @@ If $\kappa = \aleph_\alpha$ and $\alpha$ is a successor ordinal, we call $\kappa
 \ece
 \end{definition}
 We say $\kappa$ is an uncountable cardinal iff it is an infinite ordinal and $\aleph_0 < \kappa$.
-Infinite cardinals will be notated by lowercase greek letters from the middle of the alphabet, e.g. $\kappa, \mu, \nu, \ldots$.\footnote{Except $\lambda$ which is preferably used for limit ordinals.}
+Infinite cardinals will be notated by lowercase greek letters from the middle of the alphabet, e.g. $\kappa, \mu, \nu, \ldots$ with the exception of $\lambda$, which is next to $\kappa$ in the greek alphabet, but is also sometimes used for limit ordinal.
 
 For formal details as well as why every set can be well-ordered assuming \emph{Choice}, and therefore has a cardinality, see \cite{JechBook}. % proc je to tady?
 
-% todo mame def sequence? !! ================ !!!!
 % todo mame def ``cofinal''?
 % TODO fix it!!
 % todo pozor na supremum, upravit! (ikdyz pro limitni je to stejny)
 
 \begin{definition}{(Sequence)}\label{def:sequence}\\
-We say that a function $\varphi(x, y)$ is a \emph{sequence} iff there is an ordinal $\alpha$ such that $dom(\varphi) = \alpha$. In other words, a function is called a sequence if it is defined exactly for every ordinal from $0$ to some $\alpha$. We then say it is an $\alpha$-sequence. We usually write $\langle \beta_i : i \in \alpha \rangle$ or $\langle \beta_0, \beta_1, \ldots \rangle$ when referring to a sequence, $\xi_i$ denote the elements of $rng(\varphi)$ for every $i \in dom(\varphi)$.
+We say that a function $\varphi(x, y)$ is a \emph{sequence} iff there is an ordinal $\alpha$ such that $dom(\varphi) = \alpha$. In other words, a function is called a sequence if it is defined exactly for every ordinal from $0$ to some $\alpha$. We then say it is an $\alpha$-sequence. We usually write $\langle \beta_i : i \in \alpha \rangle$ or $\langle \beta_0, \beta_1, \ldots \rangle$ when referring to a sequence, $\beta_i$ then denotes the elements of $rng(\varphi)$ for every $i \in dom(\varphi)$.
 \end{definition}
 
 \begin{definition}{(Cofinal Subset)}\label{def:cofinal_subset}\\
-Given a class $A$, we say that $B \subseteq A$ is \emph{cofinal in $A$} iff
+Given a class $A$ of ordinals, we say that $B \subseteq A$ is \emph{cofinal in $A$} iff
 \beq
 (\forall x \in A)(\exists y \in B)(x \in y)
 \eeq
 \end{definition}
 
+% TODO mas to asi cely blbe :(
 \begin{definition}{(Cofinality of a Limit Ordinal)}\label{def:cofinality}\\ % a co https://math.berkeley.edu/~jhicks/links/SOTS/cskipper112613.pdf? 
 Let $\lambda$ be a limit ordinal. We say that the \emph{cofinality} of $\lambda$ is $\kappa$ iff $\kappa$ is the least cardinal, such that there is a cofinal $\kappa$-sequence $\langle \beta_\xi : \xi < \kappa \rangle$, such that
 \begin{equation}
@@ -375,9 +377,10 @@ sup(\{\beta_\xi: \xi < \kappa\}) = \lambda
 \end{equation}
 We write $cf(\lambda) = \kappa$.
 \end{definition}
+% TODO fixme
 
 \begin{definition}{(Regular Cardinal)}\label{def:regular_cardinal}\\
-We say a cardinal $\kappa$ is regular iff $cf(\kappa) = \kappa$
+We say a cardinal $\kappa$ is regular iff $cf(\kappa) = \kappa$. % TODO chyba podle honzika, watt?
 \end{definition}
 
 %\begin{definition}{(Limit Cardinal)}\label{def:limit_cardinal}\\
@@ -388,23 +391,23 @@ We say a cardinal $\kappa$ is regular iff $cf(\kappa) = \kappa$
 \begin{definition}{(Strong Limit Cardinal)}\label{def:strong_limit_cardinal}\\
 We say that an ordinal $\kappa$ is a \emph{strong limit cardinal} if it is a \emph{limit cardinal} and 
 \begin{equation}
-(\forall \alpha \in \kappa)(\power{\alpha} \in \kappa)
+(\forall \alpha \in \kappa)(|\power{\alpha}| \in \kappa)\mbox{.}
 \end{equation}
 \end{definition}
 
 \begin{definition}{(Generalised Continuum Hypothesis)}\label{def:gch}\\
 \begin{equation}
-\aleph_{\alpha+1}=\power{\aleph_\alpha}
+(\forall \alpha \in Ord) \aleph_{\alpha+1}=|\power{\aleph_\alpha}|
 \end{equation}
 \end{definition}
 If \emph{GCH} holds (for example in Gödel's $L$, see chapter 3), the notions of limit cardinal and strong limit cardinal are equivalent.
 
 \
 
-\subsubsection{Relativisation and Absoluteness}
+\subsubsection{Relativisation and Absoluteness} % TODO ujasni si co se deje s parametrama pri relativizaci. co na to Jech?
 \begin{definition}{(Relativization)}\label{def:relativization}\\
-Let $M$ be a class, $R \subseteq M\times M$ and let $\varphi(p_1, \ldots, p_n)$ be a first-order formula with no free variables besides $p_1, \ldots, _n$. 
-The \emph{relativization of $\varphi$ to $M$ and $R$} is the formula, written as $\varphi^{M, R}(p_1, \ldots, p_n)$, defined in the following inductive manner:
+Let $M$ be a class, $R \subseteq M\times M$ and let $\varphi(p_1, \ldots, p_n)$ be a first-order formula with no free variables besides $p_1, \ldots, p_n$. 
+The \emph{relativization of $\varphi$ to $M$ and $R$} is the formula, written as $\varphi^{M, R}$, defined in the following inductive manner:
 \bce[(i)]
 \item $(x \in y)^{M,R} \iff R(x, y)$
 \item $(x = y)^{M,R} \iff x = y$
@@ -417,7 +420,7 @@ The \emph{relativization of $\varphi$ to $M$ and $R$} is the formula, written as
 \ece
 \end{definition}
 When $R=\in\cap(M \times M)$, we usually write $\varphi^M$ instead of $\varphi^{M, R}$. When we talk about $\varphi^M(p_1, \ldots, p_n)$, it is understood that $p_1, \ldots, p_n \in M$.
-We will also use $M \models \varphi(p_1, \ldots, p_n)$ and $\varphi^M(p_1, \ldots, p_n)$ interchangably.
+We will also use $\langle M, R \rangle \models \varphi(p_1, \ldots, p_n)$ and $\varphi^M(p_1, \ldots, p_n)$ interchangably.
 % TODO definice splnovani!
 
 \begin{definition}{(Absoluteness)}
@@ -432,39 +435,40 @@ Given a transitive class $M$, we say a formula $\varphi$ is \emph{absolute in $M
 \item A first-order formula $\varphi$ is $\Delta_0$ iff it is logically equivalent to a first-order formula $\varphi'$ satisfying any of the following:
 \bce[(i)]
 \item $\varphi'$ contains no quantifiers
-\item $y$ is a set, $\psi$ is a $\Delta_0$ formula, and $\varphi'$ is either $(\exists x \in y)\psi(y)$ or $(\forall x \in y)\psi(y)$.
-\item $\psi_1, \psi_2$ are $\Delta_0$ formulas and $\varphi'$ is any of the following: $\psi_1 \lor \psi_2$, $\psi_1 \et \psi_2$, $\psi_1 \then \psi_2$, $\neg \psi_2$, 
+\item $y$ is a set, $\psi$ is a $\Delta_0$-formula, and $\varphi'$ is either $(\exists x \in y)\psi(y)$ or $(\forall x \in y)\psi(y)$.
+\item $\psi_1, \psi_2$ are $\Delta_0$-formulas and $\varphi'$ is any of the following: $\psi_1 \lor \psi_2$, $\psi_1 \et \psi_2$, $\psi_1 \then \psi_2$, $\neg \psi_2$, 
 \ece
 \item If a formula is $\Delta_0$ it is also $\Sigma_0$ and $\Pi_0$
 \item A formula $\varphi$ is $\Pi_n+1$ if it is logically equivalent to a formula $\varphi'$ such that $\varphi' = \forall x \psi$ where $\psi$ is a $\Sigma_n$-formula for any $n < \omega$.
 \item A formula $\varphi$ is $\Sigma_n+1$ if it is logically equivalent to a formula $\varphi'$ such that $\varphi' = \forall x \psi$ where $\psi$ is a $\Pi_n$-formula for any $n < \omega$.
 \ece
-\end{definition}
+\end{definition} % TODO kolem ty parovaci fce je neco blbe :(
 Note that we can use the pairing function so that for $\forall p_1, \ldots, p_n \psi(p_1, \ldots, p_n)$, there is a logically equivalent formula of the form $\forall x \psi'(x)$.
 
 \begin{lemma}{($\Delta_0$ absoluteness)}\label{lemma:delta_0_absoluteness}
-Let $\varphi$ be a $\Delta_0$ formula, then $\varphi$ is absolute in any transitive class $M$.
+Let $\varphi$ be a $\Delta_0$-formula, then $\varphi$ is absolute in any transitive class $M$.
 \end{lemma}
 
 \begin{proof}
-This will be proven by induction over the complexity of a given $\Delta_0$ formula $\varphi$. Let $M$ be an arbitrary transitive class. 
+This will be proven by induction over the complexity of a given $\Delta_0$-formula $\varphi$. Let $M$ be an arbitrary transitive class. 
 
-Atomic formulas are always absolute by the definition of relativisation, see \ref{def:relativization}.
-Suppose that $\Delta_0$ formulas $\psi_1$ and $\psi_2$ are absolute in $M$. Then from relativization, $(\psi_1 \et \psi_2)^M \iff \psi_1^M \et \psi_2^M$, which is, from the induction hypothesis, equivalent to $\psi_1 \et \psi_2$. The same holds for $\lor, \then, \neg$.
+Atomic formulas are always absolute by the definition of relativisation, see (\ref{def:relativization}).
+Suppose that $\Delta_0$-formulas $\psi_1$ and $\psi_2$ are absolute in $M$. Then from relativization, $(\psi_1 \et \psi_2)^M \iff \psi_1^M \et \psi_2^M$, which is, from the induction hypothesis, equivalent to $\psi_1 \et \psi_2$. The same holds for $\lor, \then, \neg$.
 
-Suppose that a $\Delta_0$ formula $\psi$ is absolute in $M$. Let $y$ be a set and let $\varphi = (\exists x \in y) \psi(x)$. 
+Suppose that a $\Delta_0$-formula $\psi$ is absolute in $M$. Let $y$ be a set and let $\varphi = (\exists x \in y) \psi(x)$. 
 From relativization, $(\exists x \psi(x))^M \iff (\exists x \in M) \psi^M(x)$. Since the hypotheses makes it clear that $\psi^M \iff \psi$, we get $((\exists x \in y) \psi(x))^M \iff (\exists x \in y\cap M) \psi(x)$, which is the equivalent of $\varphi^M \iff \varphi$. The same applies to $\varphi = (\forall x \in y) \psi(x)$.
 \end{proof}
 
 % todo co Devlin -- p.27 -- downward a upward absoluteness?
 \begin{lemma}{(Downward Absoluteness)}\label{lemma:downward_absoluteness}\\
-Let $\varphi$ be a $\Pi_1$ formula and $M$ a transitive class. Then the following holds:
+Let $\varphi$ be a $\Pi_1$-formula and $M$ a transitive class. Then the following holds:
 \begin{equation}
 (\forall p_1, \ldots, p_n \in M)(\varphi(p_1, \ldots, p_n) \then \varphi(p_1, \ldots, p_n)^M)
 \end{equation}
 \end{lemma}
 \begin{proof}
-Since $\varphi(p_1, \ldots, p_n)$ is $\Pi_1$, there is a $\Delta_0$ formula $\psi(p_1, \ldots, p_n, x)$ such that $\varphi = \forall x \psi(p_1, \ldots, p_n, x)$. From relativization and lemma \ref{lemma:delta_0_absoluteness}, $\varphi^M(p_1, \ldots, p_n) \iff (\forall x \in M)\psi(p_1, \ldots, p_n, x)$.
+Since $\varphi(p_1, \ldots, p_n)$ is $\Pi_1$, there is a $\Delta_0$-formula $\psi(p_1, \ldots, p_n, x)$ such that $\varphi = \forall x \psi(p_1, \ldots, p_n, x)$. 
+From relativization and lemma (\ref{lemma:delta_0_absoluteness}), $\varphi^M(p_1, \ldots, p_n) \iff (\forall x \in M)\psi(p_1, \ldots, p_n, x)$.
 
 Assume that for $p_1, \ldots, p_n \in M$ fixed, that $\forall x \psi(p_1, \ldots, p_n, x)$ holds, but $(\forall x \in M)\psi(p_1, \ldots, p_n, x)$ does not. 
 Therefore $\exists x \neg \psi(p_1, \ldots, p_n, x)$, which contradicts $\forall x \psi(p_1, \ldots, p_n, x)$.
@@ -472,13 +476,14 @@ Therefore $\exists x \neg \psi(p_1, \ldots, p_n, x)$, which contradicts $\forall
 
 
 \begin{lemma}{(Upward Absoluteness)}\label{lemma:upward_absoluteness}\\
-Let $\varphi$ be a $\Sigma_1$ formula and $M$ a transitive class. Then the following holds:
+Let $\varphi$ be a $\Sigma_1$-formula and $M$ a transitive class. Then the following holds:
 \begin{equation}
 (\forall p_1, \ldots, p_n \in M)(\varphi^M(p_1, \ldots, p_n) \then \varphi(p_1, \ldots, p_n))
 \end{equation}
 \end{lemma}
 \begin{proof}
-Since $\varphi(p_1, \ldots, p_n)$ is $\Sigma_1$, there is a $\Delta_0$ formula $\psi(p_1, \ldots, p_n, x)$ such that $\varphi = \exists x \psi(p_1, \ldots, p_n, x)$. From relativization and lemma \ref{lemma:delta_0_absoluteness}, $\varphi^M(p_1, \ldots, p_n) \iff (\exists x \in M)\psi(p_1, \ldots, p_n, x)$.
+Since $\varphi(p_1, \ldots, p_n)$ is $\Sigma_1$, there is a $\Delta_0$-formula $\psi(p_1, \ldots, p_n, x)$ such that $\varphi = \exists x \psi(p_1, \ldots, p_n, x)$. 
+From relativization and lemma (\ref{lemma:delta_0_absoluteness}), $\varphi^M(p_1, \ldots, p_n) \iff (\exists x \in M)\psi(p_1, \ldots, p_n, x)$.
 
 Assume that for $p_1, \ldots, p_n \in M$ fixed, that $(\exists x \in M)\psi(p_1, \ldots, p_n, x)$ holds, but $\exists x \psi(p_1, \ldots, p_n, x)$ does not. This is an obvious contradiction.
 \end{proof}
@@ -509,7 +514,7 @@ We say $x$ is a fixed point of a function $f$ iff $x=f(x)$.
 \end{definition}
 
 \begin{definition}{(Unbounded Class)}\label{def:unbounded_class}\\
-We say a class $A$ is unbounded iff
+We say a class $A$ of ordinals is unbounded iff
 \begin{equation}
 \forall x (\exists y \in A) (x < y)
 \end{equation}
