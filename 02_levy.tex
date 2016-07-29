@@ -7,7 +7,7 @@ First, we should point out that set theory has changed over the last 66 years an
 %When reading Lévy's article, one should bear in mind that while the author often speaks about a~model of $\sf{ZF}$, usually denoted $u$, it doesn't necessarily mean that there is a set $u$ that is a model of $\sf{ZF}$\footnote{This is indeed impossible to prove in $\sf{ZF}$ due to Gödel's Incompleteness.}, we are nowadays used to using the notion of universal class $V$ in similar sense, even though independently from a particular axiomatic set theory. %We will review the exact meaning of the notion of a standard complete model in a moment.
 %The theory $\sf{ZF}$ is practically identical to the theory we have established in (\ref{def:zf}), the differences are only formal.
 One might be confused by the fact that Lévy treats the \emph{Subsets} axiom, which we call \emph{Specification}, as a single axiom rather than a schema. He even takes the conjunction of all axioms of $\sf{ZF}$ and treats it like a formula. This is possible because the underlying logic calculus is different. Lévy works with set theories formulated in the \emph{non-simple applied first order functional calculus}, see beginning of \emph{Chapter IV} in \cite{church1996introduction} for details. For now, we only need to know that the calculus contains a substitution rule for functional variables. This way, \emph{Subsets} is de facto a schema even though it sometimes treated as a single formula\footnote{This way, the conjunction of all axioms is then in fact an axiom schema.} but the logic is still first-order since one can't quantify over functional variables. We will use the usual first-order axiomatization of \sf{ZFC} as seen on \cite{JechBook}.
-% todo koukni do churche jak se to s tim ma
+% todo koukni do churche jak se to s tim ma, p.219
 It should also be noted that the logical connectives look different. The now usual symbol for an universal quantifier does not appear, $\forall x \varphi (x)$ would be written as $(x) \varphi (x)$. The symbol for negation is ``$\sim$'', implication is written as ``$\supset$'' and equivalence is ``$\equiv$''. We will use standard notation with ``$\neg$'', ``$\then$'' and ``$\iff$'' respectively when presenting Lévy's results.
 
 %The following definitions are not used in contemporary set theory, but they illustrate 1960's set theory mind-set and they are used heavily in Lévy's text, so we will include and explain them for clarity. 
@@ -56,20 +56,58 @@ The following is an axiom schema of complete reflection over $\sf{ZF}$, denoted 
 \begin{definition}{(N')}\label{def:levy_axiom_n'}\\
 For any first-order formulas $\varphi_1, \ldots, \varphi_m$ in the language of set theory with no free variables except for $p_1, \ldots , p_n$, the following is an instance of schema $N'$.
 \begin{equation}
-\exists u (z \in u \eq Scm^{\sf{ZF}}(u) \et (\forall p_1, \ldots, p_m \in u)(\varphi_1 \iff \varphi_1^{u}) \et \ldots \et \varphi_m \iff \varphi_m^{u}))
+\exists u (z \in u \et Scm^{\sf{ZF}}(u) \et (\forall p_1, \ldots, p_n \in u)(\varphi_1 \iff \varphi_1^{u}) \et \ldots \et \varphi_m \iff \varphi_m^{u}))
 \end{equation}
 \end{definition}
 
+\begin{definition}{(N')}\label{def:levy_axiom_n'}\\
+For any first-order formulas $\varphi_1, \ldots, \varphi_m$ in the language of set theory with no free variables except for $p_1, \ldots , p_n$, the following is an instance of schema $N'$.
+\begin{equation}
+\exists u (Scm^{\sf{ZF}}(u) \et (\forall p_1, \ldots, p_n \in u)(\varphi_1 \iff \varphi_1^{u}) \et \ldots \et \varphi_m \iff \varphi_m^{u}))
+\end{equation}
+\end{definition}
 
 Let $\sf{S}$ be an axiomatic set theory defined in (\ref{def:s}). 
 
 This is \emph{Theorem 2} in \cite{Levy1960a}
-\begin{lemma}{($N \iff N'$)}\label{lemma:n_iff_n'}\\
-In schema $N$ is equivalent to schema $N'$.
+\begin{lemma}{($N \iff N'' \iff N'$)}\label{lemma:n_iff_n'}\\
+The schemas $N$, $N'$ and $N''$ are equivalent under \sf{S}.
 \end{lemma}
 
 \begin{proof}
+We will execute this proof in the theory \sf{ZF}, but the reader should note that we are neither using \emph{Replacement} nor \emph{Infinity}, 
+so for schemas similar to $N$, $N'$, $N''$ but with ``$Scm^{\sf{S}}(u)$'' instead of ``$Scm^{\sf{ZF}}(u)$'', the proof works equally well.
 
+Clearly, $N' \then N'' \then N$. 
+
+Now, assuming $N$ and given the formulas $\varphi_1, \ldots, \varphi_n$, we will prove $N''$. Consider the following formula:
+\beq
+\psi = \bigvee\limits_{i=1}^t t = i \et \varphi_i
+\eeq
+We will take advantage of the fact that natural numbers are defined by atomic formulas and therefore absolute in transitive structures. 
+From $N$, we get such $u$ that $Scm^{\sf{ZF}}(u) \et (\forall p_1, \ldots, p_n \in u)(\bigvee\limits_{i=1}^t t = i \et \varphi_i \iff \bigvee\limits_{i=1}^t t = i \et \varphi_i^{u})$.
+This already satisfies $N''$.
+
+In order to prove $N'$ from $N''$, let's add two more formulas. Given $p_1, \ldots, p_n$, we denote
+\beq
+\varphi_{m+1} = \exists u (z \in u \et Scm^{\sf{ZF}}(u) \et (\forall p_1, \ldots, p_n \in u)(\bigvee\limits_{i=1}^m \varphi_i = \varphi_i^u))
+\eeq
+\beq
+\varphi_{m+2}  = \forall z \varphi_{m+1}
+\eeq
+So, by $N''$, we have a set $u$ that satisfies $Scm^{\sf{ZF}}(u)$ as well as the following:
+\beq
+(\forall p_1, \ldots, p_n \in u)(\varphi_i \iff \varphi_i^u) \mbox{ for }1 \leq i \leq m \label{eq:levy_th_2_eq_3}
+\eeq
+\beq
+z \in u \then \varphi_{m+1} \iff \varphi_{m+1}^u\label{eq:levy_th_2_eq_4}
+\eeq
+\beq
+\varphi_{m+2} \iff \varphi_{m+2}^u\label{eq:levy_th_2_eq_5}
+\eeq
+By $Scm^{\sf{ZF}}(u)$ and (\ref{eq:levy_th_2_eq_3}), we get $(\forall z \in u) \varphi_{m+1}$, % watt? nemel bych reflektovat i $\varphi_{m+1}$ v eq:levy_th_2_eq_3 ?
+so together with (\ref{eq:levy_th_2_eq_4}, we get $(\forall z \in u) \varphi_{m+1}^$, exactly $\varphi_{m+2}^u$, so by (\ref{eq:levy_th_2_eq_5}) we get $\varphi_{m+2}$. 
+But $\varphi_{m+2}$ is exactly the instance of $N'$ we were looking for.
 \end{proof}
 
 
@@ -447,9 +485,6 @@ so $V_\lambda \models \forall z (z \in y \iff z \in x \et \varphi(z, p_1, \dots,
 
 % The lemma we've just proven shows how important are the axioms of \emph{Infinity} and \emph{Replacement} for \sf{ZFC}. If we only add \emph{Infinity}, we don't get above $V_{\omega+\omega}$\footnote{TODO citation needed!}, so replacements if needed to 
 
-% ==================================== POTUD zkontrolovano ======================================================
-
-
 %TODO citace! http://ozark.hendrix.edu/~yorgey/settheory/13-SI.pdf
 % http://ozark.hendrix.edu/~yorgey/settheory/12-relative-consistency-2.pdf 
 % -- jako konzistence ZF-reg -- ukazeme ze V jakozto sjednoveni V_alpha je model?
@@ -475,7 +510,6 @@ For every first-order formula $\varphi$, the following is an axiom:
 We will refer to this axiom schema as \emph{First-order reflection}.
 \end{definition}
 
-% TODO lemma, obecnejsi reflexe pro vic formuli?
 % TODO staci vzit uzaver obou fli a udelat konjunkci
 
 % pozor na to, ze jsme dokazali zdanlive silnejsi tvrzeni pro n formuli a ted predpokladame jenom jednu.
