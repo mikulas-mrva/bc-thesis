@@ -111,7 +111,7 @@ But $\varphi_{m+2}$ is exactly the instance of $N'$ we were looking for.
 \end{proof}
 
 
-% TODO mel bych dodat, ze toto u existuje kolem nejake mnoziny $z$, viz N', theorem 2
+% TODO mel bych dodat, ze toto u existuje kolem nejake mnoziny $z$, viz N', theorem 2 % asi hotovo
 \begin{definition}{($N_0$)}\label{def:levy_axiom_n0}\\
 Axiom schema $N_0$ is similar to $N$ defined above, but with $\sf{S}$ instead of $\sf{ZF}$. For every $\varphi$, a first-order fomula in the language of set theory with no free variables except $p_1, \ldots , p_n$, the following is an instance of $N_0$.
 \begin{equation}
@@ -132,7 +132,8 @@ In $\sf{S}$, the axiom schema $N_0$ implies \emph{Infinity}.
 \begin{proof} % Levy to bere pres V_\lambda \models 
 Let $\varphi = \forall x \exists y (y = x \cup \{x\})$. 
 This clearly holds in $\sf{S}$ because given a set $x$, there is a set $y = x \cup \{x\}$ obtained via \emph{Pairing} and \emph{Union}. %\emph{Powerset} and \emph{Specification}.
-From $N_0$, there is a set $u$ such that $\varphi^{u}$ holds. This $u$ satisfies the conditions required by \emph{Infinity}.
+From $N_0$, there is a set $u$ such that $\varphi^{u}$ holds. % TODO upresnit
+ This $u$ satisfies the conditions required by \emph{Infinity}.
 \end{proof}
 
 Lévy proves this theorem in a different way. He argues that for an arbitrary formula $\varphi$, $N_0$ gives us $\exists u Scm^{\sf{S}}(u)$ and this $u$ already satisfies \emph{Infinity}. 
@@ -151,7 +152,7 @@ In $\sf{S}$, the axiom schema $N_0$ implies \emph{Replacement}.
 %\sf{S} \vdash N_0 \then \mbox{\emph{Replacement}}
 %\eeq % nebo S \vdash N_0 \then Replacement % (veta o dedukci?) nebo \sf{S} + N_0 \vdash Repl
 \end{theorem}
-% todo zkontrolovat ==========================================================================================
+% todo zkontrolovat ========================================================================================== % TODO asi cely blbe? ...
 \begin{proof}
 Let $\varphi(x, y, p_1, \ldots, p_n)$ be a~formula with no free variables except $x, y, p_1, \ldots, p_n$.
 %Out goal is to prove
@@ -581,8 +582,8 @@ M'_0 = \{ y : (\exists x \in M_0) \varphi(x, y)\} = \{ y \in M : (\exists x \in 
 \
 
 % Stronger reflection: 
-% a) any number of formulas
-% b) there is a club set of $M$s.
+% a: any number of formulas
+% b: there is a club set of $M$s.
 % asi do dalsi kapitoly
 
 % co s tema $\emph{Reflection}$ / reflection / Reflection ??
