@@ -3,9 +3,10 @@
 \subsection{Lévy's Original Paper}\label{sec:levy1960}
 This section is based on Lévy's paper \emph{Axiom Schemata of Strong Infinity in Axiomatic Set Theory}, \cite{Levy60a}. It presents Lévy's general reflection principle and its equivalence to \emph{Replacement} and \emph{Infinity} under $\sf{S}$\footnote{See definition (\ref{def:s}).}.
 
-First, we should point out that set theory has changed over the last 66 years and show a few notable, albeit only formal, differences. Firstly, when reading Lévy's article, one should bear in mind that while the author often speaks about a~model of $\sf{ZF}$, usually denoted $u$, it doesn't necessarily mean that there is a set $u$ that is a model of $\sf{ZF}$\footnote{This is indeed impossible to prove in $\sf{ZF}$ due to Gödel's Incompleteness.}, we are nowadays used to using the notion of universal class $V$ in similar sense, even though independently from a particular axiomatic set theory. %We will review the exact meaning of the notion of a standard complete model in a moment.
-The theory $\sf{ZF}$ is practically identical to the theory we have established in (\ref{def:zf}), the differences are only formal.
-One might be confused by the fact that Lévy treats the \emph{Subsets} axiom, which we call \emph{Specification}, as a single axiom rather than a schema. He even takes the conjunction of all axioms of $\sf{ZF}$ and treats it like a formula. This is possible because the underlying logic calculus is different. Lévy works with set theories formulated in the \emph{non-simple applied first order functional calculus}, see Chapter IV in \cite{church1996introduction} for details. For now, we only need to know that the calculus contains a substitution rule for functional variables. This way, \emph{Subsets} is de facto a schema even though it sometimes treated as a single formula\footnote{This way, the conjunction of all axioms is then in fact an axiom schema.}.
+First, we should point out that set theory has changed over the last 66 years and show a few notable, albeit only formal, differences.
+%When reading Lévy's article, one should bear in mind that while the author often speaks about a~model of $\sf{ZF}$, usually denoted $u$, it doesn't necessarily mean that there is a set $u$ that is a model of $\sf{ZF}$\footnote{This is indeed impossible to prove in $\sf{ZF}$ due to Gödel's Incompleteness.}, we are nowadays used to using the notion of universal class $V$ in similar sense, even though independently from a particular axiomatic set theory. %We will review the exact meaning of the notion of a standard complete model in a moment.
+%The theory $\sf{ZF}$ is practically identical to the theory we have established in (\ref{def:zf}), the differences are only formal.
+One might be confused by the fact that Lévy treats the \emph{Subsets} axiom, which we call \emph{Specification}, as a single axiom rather than a schema. He even takes the conjunction of all axioms of $\sf{ZF}$ and treats it like a formula. This is possible because the underlying logic calculus is different. Lévy works with set theories formulated in the \emph{non-simple applied first order functional calculus}, see beginning of \emph{Chapter IV} in \cite{church1996introduction} for details. For now, we only need to know that the calculus contains a substitution rule for functional variables. This way, \emph{Subsets} is de facto a schema even though it sometimes treated as a single formula\footnote{This way, the conjunction of all axioms is then in fact an axiom schema.} but the logic is still first-order since one can't quantify over functional variables. We will use the usual first-order axiomatization of \sf{ZFC} as seen on \cite{JechBook}.
 % todo koukni do churche jak se to s tim ma
 It should also be noted that the logical connectives look different. The now usual symbol for an universal quantifier does not appear, $\forall x \varphi (x)$ would be written as $(x) \varphi (x)$. The symbol for negation is ``$\sim$'', implication is written as ``$\supset$'' and equivalence is ``$\equiv$''. We will use standard notation with ``$\neg$'', ``$\then$'' and ``$\iff$'' respectively when presenting Lévy's results.
 
@@ -20,8 +21,8 @@ This subsection uses $\sf{ZF}$ instead of the usual $\sf{ZFC}$ as the underlying
 Let $\sf{Q}$ be an arbitrary axiomatic set theory.
 We say that $u$ is a standard complete model of $\sf{Q}$ iff
 \bce[(i)]
-\item $(\forall \sigma \in \sf{Q})(u \models \sigma)$
-\item $\forall y (y \in u \then y \subset u)$
+\item $(\forall \sigma \in \sf{Q})(\langle u, \in \rangle \models \sigma)$
+\item $\forall y (y \in u \then y \subset u)$ ($u$ is transitive)
 % \item $\forall e \langle x, y \rangle \in e \iff (y \in u \et x \in y)$ % co je $e$? omg je to jinak, je to model vsech axiomu pro vsechny $e$!!! relatiizace do u, e?
 \ece 
 We write $Scm^{\sf{Q}}(u)$.
@@ -32,7 +33,7 @@ Let $\sf{Q}$ be an arbitrary axiomatic set theory. We say that a cardinal $\kapp
 \begin{equation}
 Scm^{\sf{Q}}(V_\kappa)
 \end{equation}
-We write $In^{\sf{Q}}(\kappa)$
+We write $In^{\sf{Q}}(\kappa)$.\footnote{To be able to define $V_\kappa$, we need to work in a logic that contains the \emph{Replacement Schema} or any of it's equivalents. It should be noted that we don't work in an arbitrary theory \sf{Q}, but in \sf{ZF}, which contains the \emph{Replacement Schema}. $Scm^{\sf{Q}}(V_\kappa)$ in fact says ``\sf{ZF} thinks that $V_\kappa$ is a transitive model of \sf{Q}''.}
 \end{definition}
 
 \begin{definition}{(Inaccessible Cardinal With Respect to $\sf{ZF}$)}\label{def:levy_inaccessible}\\
@@ -45,15 +46,34 @@ The above definition of inaccessibles is used because it doesn't require \emph{C
 
 For the definition of relativization, see (\ref{def:relativization}). The notation used by Lévy is ``$Rel(u, \varphi)$'', we will stick to ``$\varphi^{u}$''.
 \begin{definition}{($N$)}\label{def:levy_axiom_n}\\
-The following is an axiom schema of complete reflection over $\sf{ZF}$, denoted as $N$. For every first-order formula $\varphi$ in the language of set theory with no free variables except for $p_1, \ldots , p_n$, the following is an instance of schema $N$.
+The following is an axiom schema of complete reflection over $\sf{ZF}$, denoted $N$. For every first-order formula $\varphi$ in the language of set theory with no free variables except for $p_1, \ldots , p_n$, the following is an instance of schema $N$.
 \begin{equation}
 \exists u (Scm^{\sf{ZF}}(u) \et (\forall p_1, \ldots, p_n \in u)(\varphi \iff \varphi^{u}))
 \end{equation}
 %where $\varphi$ is a~formula which contains no free variables except for $p_1, \ldots , p_n$.
 \end{definition}
 
+\begin{definition}{(N')}\label{def:levy_axiom_n'}\\
+For any first-order formulas $\varphi_1, \ldots, \varphi_m$ in the language of set theory with no free variables except for $p_1, \ldots , p_n$, the following is an instance of schema $N'$.
+\begin{equation}
+\exists u (z \in u \eq Scm^{\sf{ZF}}(u) \et (\forall p_1, \ldots, p_m \in u)(\varphi_1 \iff \varphi_1^{u}) \et \ldots \et \varphi_m \iff \varphi_m^{u}))
+\end{equation}
+\end{definition}
+
+
 Let $\sf{S}$ be an axiomatic set theory defined in (\ref{def:s}). 
 
+This is \emph{Theorem 2} in \cite{Levy1960a}
+\begin{lemma}{($N \iff N'$)}\label{lemma:n_iff_n'}\\
+In schema $N$ is equivalent to schema $N'$.
+\end{lemma}
+
+\begin{proof}
+
+\end{proof}
+
+
+% TODO mel bych dodat, ze toto u existuje kolem nejake mnoziny $z$, viz N', theorem 2
 \begin{definition}{($N_0$)}\label{def:levy_axiom_n0}\\
 Axiom schema $N_0$ is similar to $N$ defined above, but with $\sf{S}$ instead of $\sf{ZF}$. For every $\varphi$, a first-order fomula in the language of set theory with no free variables except $p_1, \ldots , p_n$, the following is an instance of $N_0$.
 \begin{equation}
@@ -78,7 +98,7 @@ From $N_0$, there is a set $u$ such that $\varphi^{u}$ holds. This $u$ satisfies
 \end{proof}
 
 Lévy proves this theorem in a different way. He argues that for an arbitrary formula $\varphi$, $N_0$ gives us $\exists u Scm^{\sf{S}}(u)$ and this $u$ already satisfies \emph{Infinity}. 
-To do this, we would need to prove lemma (\ref{lemma:scm_s_is_limit}) now, which would make second half of this chapter quite confusing.
+To do this, we would need to prove lemma (\ref{lemma:scm_s_is_limit}) now.
 %We would need to prove (\ref{lemma:scm_s_is_limit}), which will happen later in this chapter, but we don't know that yet. % mozna taky trochu preformulovat
 
 \
@@ -87,7 +107,7 @@ Let $\sf{S}$ be a set theory defined in (\ref{def:s}), $N_0$ a schema defined in
 \begin{theorem} 
 %In $\sf{S}$ with $N_0$ implies \emph{Replacement}.\\
 %TODO jedno nebo druhe % nebo treti
-In $\sf{S}$, axiom the schema $N_0$ implies \emph{Replacement}.
+In $\sf{S}$, the axiom schema $N_0$ implies \emph{Replacement}.
 %\beq
 %\sf{S}, N_0 \vdash \mbox{\emph{Replacement}}
 %\sf{S} \vdash N_0 \then \mbox{\emph{Replacement}}
@@ -117,7 +137,7 @@ Now consider the following formulas. % and $\forall x, p_1, \ldots, p_n \chi$ re
 \item $\forall x, p_1, \ldots, p_n \chi \iff (\forall x, p_1, \ldots, p_n \chi)^{u}$ % co ho pridat pozdeji?
 \ece
 The above formulas are instances of the $N_0$ schema for $\varphi$, $\exists y \varphi$, $\chi$ and the universal closure of $\chi$ respectively.
-By $N_0$, there exists a set $u$ where all four formulas hold.\footnote{Despite the fact that $N_0$ is defined for one formula, we have just used it for four at once. To make this formally possible, we can either prove that $N_0$ is equivalent to a more general version for any finite number of formulas or we can reflect their conjunction and argue that if $u \models \varphi_1 \et \ldots \et \varphi_n$, then $(u \models \varphi_1), \ldots, (u \models \varphi_n)$.}
+By $N_0$, there exists a set $u$ where all four formulas hold.\footnote{Despite the fact that $N_0$ is defined for one formula, we have just used it for four at once. To make this formally possible, we can either prove that $N_0$ is equivalent to a more general version for any finite number of formulas or we can reflect their conjunction and argue that if $\langle u, \in \rangle \models \varphi_1 \et \ldots \et \varphi_n$, then $(\langle u, \in \rangle \models \varphi_1), \ldots, (\langle u, \in \rangle \models \varphi_n)$.}
 From relativization, $(\exists y \varphi)^{u}$ is equivalent to $(\exists y \in u) \varphi^{u}$, together with (i) and (ii), we get
 \begin{equation}
 (\forall x, p_1, \ldots, p_n \in u)((\exists y \in u)\varphi \iff \exists y \varphi)
@@ -319,33 +339,34 @@ Let $\sf{S}$ be a set theory defined in (\ref{def:s}), for $\sf{ZFC}$ see defini
 
 The two following lemmas are based on \cite{DrakeBook}[Chapter 3, Theorem 1.2].
 \begin{lemma}\label{lemma:extensionality_in_transitive} % Drake ch.3 Theorem 1.2
-If $M$ is a transitive set, then $M \models \mbox{\emph{Extensionality}}$.
+If $M$ is a transitive set, then $\langle M, \in \rangle \models \mbox{\emph{Extensionality}}$.
 \end{lemma}
 
 \begin{proof}
 Given a transitive set $M$, we want to show that the following holds.
 \beq
-M \models \forall x, y (x = y \iff \forall z (z \in x \iff z \in y))
+\langle M, \in \rangle \models \forall x, y (x = y \iff \forall z (z \in x \iff z \in y))
 \eeq % TODO pozor na definici splnovani!
 % From satisfaction, we get that for every $x$, $y$, the following holds % neni v definici splnovani, ze volny musej platit vsechny?
-Given arbitrary $x, y \in M$, we want to prove that $M \models (x = y \iff \forall z (z \in x \iff z \in y))$.
+Given arbitrary $x, y \in M$, we want to prove that $\langle M, \in \rangle \models (x = y \iff \forall z (z \in x \iff z \in y))$.
 This is equivalent to % ref na definici pravdy
-$M \models x = y \mbox{ iff } M \models \forall z(z \in x \iff z \in y)$, which is the same as $x = y \mbox{ iff } M \models \forall z(z \in x \iff z \in y)$.
+$\langle M, \in \rangle \models x = y \mbox{ iff } \langle M, \in \rangle \models \forall z(z \in x \iff z \in y)$, 
+which is the same as $x = y \mbox{ iff } \langle M, \in \rangle \models \forall z(z \in x \iff z \in y)$.
 
-So all elements of $x$ are also elements of $y$ in $M$, and vice versa. Because $M$ is transitive, all elements of $x$ and $y$ are in $M$, so $M \models \forall z(z \in x \iff z \in y)$ holds iff $x$ and $y$ contain the same elements and are therefore equal.
+So all elements of $x$ are also elements of $y$ in $M$, and vice versa. Because $M$ is transitive, all elements of $x$ and $y$ are in $M$, so $\langle M, \in \rangle \models \forall z(z \in x \iff z \in y)$ holds iff $x$ and $y$ contain the same elements and are therefore equal.
 \end{proof}
 
 \begin{lemma}\label{lemma:foundation_in_transitive}
-If $M$ is a transitive set, then $M \models \mbox{\emph{Foundation}}$.
+If $M$ is a transitive set, then $\langle M, \in \rangle \models \mbox{\emph{Foundation}}$.
 \end{lemma}
 
 \begin{proof}
 We want to prove the following:
 \beq
-M \models \forall x (x \neq \emptyset \then (\exists y \in x) (x \cap y = \emptyset))
+\langle M, \in \rangle \models \forall x (x \neq \emptyset \then (\exists y \in x) (x \cap y = \emptyset))
 \eeq
 
-Given an arbitrary non-empty $x \in M$ let's show that $M \models (\exists y \in x) (x \cap y = \emptyset)$.
+Given an arbitrary non-empty $x \in M$ let's show that $\langle M, \in \rangle \models (\exists y \in x) (x \cap y = \emptyset)$.
 
 Because $M$ is transitive, every element of $x$ is an element of $M$. Take for $y$ the element of $x$ with the lowest rank\footnote{Rank is defined in (\ref{def:rank}).}. It should be clear that there is no $z \in y$ such that $z \in x$, because then $rank(z) < rank(y)$, which would be a contradiction.
 \end{proof}
@@ -449,7 +470,7 @@ so $V_\lambda \models \forall z (z \in y \iff z \in x \et \varphi(z, p_1, \dots,
 % and a set $M_0$ there is such set $M$ that $M_0 \subseteq M$ and the following holds for every $p_1, \ldots, p_n \in M$:
 For every first-order formula $\varphi$, the following is an axiom:
 \begin{equation}
-\forall M_0 \exists M (M_0 \subseteq M \et (\varphi(p_1, \ldots, p_n) \iff \varphi(p_1, \ldots, p_n)^M)) % drive M \models \varphi, ale to vypada divne
+\forall M_0 \exists M (M_0 \subseteq M \et (\varphi(p_1, \ldots, p_n) \iff \varphi(p_1, \ldots, p_n)^M)) % drive \langle M, \in \rangle \models \varphi, ale to vypada divne
 \end{equation}
 We will refer to this axiom schema as \emph{First-order reflection}.
 \end{definition}

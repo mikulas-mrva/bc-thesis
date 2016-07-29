@@ -202,7 +202,7 @@ An uncountable cardinal that is regular and limit is called a \emph{weakly inacc
 \begin{theorem}
 Let $\kappa$ be an inaccessible cardinal.
 \beq
-V_\kappa \models \sf{ZFC}
+\langle V_\kappa, \in \rangle \models \sf{ZFC}
 \eeq
 \end{theorem}
 
@@ -226,9 +226,9 @@ We will refer to this axiom schema as \emph{Inaccessible reflection schema}.
 
 We have added the requirement that $\alpha$ is inaccessible, which trivially means that there is an inaccessible cardinal. By taking appropriate $M_0$, it can be shown that in a theory that includes the \emph{Inaccessible reflection schema}, there is a closed unbounded class of inaccessible cardinals. Since we know that for an inaccessible $\kappa$, $V_\kappa$ is a model of \sf{ZFC}, \emph{Inaccessible reflection schema} is equivalent to
 \beq
-\forall M_0 \exists \kappa (M_0 \subseteq V_\kappa \et V_\kappa \models \sf{ZFC} \et (\varphi(p_1, \ldots, p_n) \iff \varphi(p_1, \ldots, p_n)^{V_\kappa}))
+\forall M_0 \exists \kappa (M_0 \subseteq V_\kappa \et \langle V_\kappa, \in \rangle \models \sf{ZFC} \et (\varphi(p_1, \ldots, p_n) \iff \varphi(p_1, \ldots, p_n)^{V_\kappa}))
 \eeq
-because we have proven in the last section that for an inaccessible $\kappa$, $V_\kappa \models \sf{ZFC}$. % TODO ref
+because we have proven in the last section that for an inaccessible $\kappa$, $\langle V_\kappa, \in \rangle \models \sf{ZFC}$. % TODO ref
 
 \begin{theorem}
 \emph{Inaccessible reflection schema} is equivalent to \emph{Axiom schema $F$}.
@@ -262,7 +262,7 @@ From (\ref{eq:reflected_function}) and the fact that $f$ is increasing, we know 
 
 For the opposite direction, it suffices to show that since there is an inaccessible cardinal from \emph{Axiom schema $F$}, given a first-order formula $\varphi$, there is an arbitrarily large inaccessible cardinal $\kappa$ for which 
 \beq
-\varphi \iff V_\kappa \models \varphi\mbox{.}\label{eq:ch3_f_iff_m_1}
+\varphi \iff \langle V_\kappa, \in \rangle \models \varphi\mbox{.}\label{eq:ch3_f_iff_m_1}
 \eeq
 Note that the arbitrary size of $\kappa$ means given an arbitrary ordinal $\alpha$, there is a $\kappa$ satisfying (\ref{eq:ch3_f_iff_m_1}).
 In the previous chapter, in theorem (\ref{theorem:first_order_reflection}), we have shown that we can easily obtain a limit ordinal satisfying (\ref{eq:ch3_f_iff_m_1}). Note that since for any set $M_0$, there is such $\alpha$ that $M_0 \subseteq V_\alpha$, there is a closed unbounded class of sets satisfying (\ref{eq:ch3_f_iff_m_1}), which are levels in the cumulative hierarchy, so there is a club sets of $\kappa$s satisfying (\ref{eq:ch3_f_iff_m_1}).
@@ -294,7 +294,7 @@ Let's shortly review what \emph{Axiom Schema $M$\textsubscript{1}} says. We have
 We say that $\kappa$ is a \emph{Mahlo Cardinal} iff it is an inaccessible cardinal and the set $\{\lambda < \kappa : \lambda \mbox{ is inaccessible}\}$ is stationary in $\kappa$.
 \end{definition}
 
-Alternatively, $\kappa$ is Mahlo iff $V_\kappa \models \sf{ZMC}$ as shown above, this is also sometimes written as \emph{Ord is Mahlo}. There are also \emph{weakly Mahlo cardinals}, that are defined via weakly inaccessible cardinal below them, Mahlo cardinals are then also called \emph{strongly Mahlo} to highlight the difference, but we will only use the term \emph{Mahlo cardinal}.
+Alternatively, $\kappa$ is Mahlo iff $\langle V_\kappa, \in \rangle \models \sf{ZMC}$ as shown above, this is also sometimes written as \emph{Ord is Mahlo}. There are also \emph{weakly Mahlo cardinals}, that are defined via weakly inaccessible cardinal below them, Mahlo cardinals are then also called \emph{strongly Mahlo} to highlight the difference, but we will only use the term \emph{Mahlo cardinal}.
 
 Mahlo cardinals are related to reflection principles in an interesting way. Note that given a formula $\varphi$, reflection gave us a club set of ordinals $\alpha$ such that $V_\alpha$ reflects $\varphi$, all below the first inaccessible cardinal. We have then used a different reflection schema to obtain arbitrarily high inaccessible cardinals. Now we have a cardinal in which this reflection schema holds, so we're in fact reflecting reflection. Beware that this is done rather informally, because \emph{Axiom Schema $M$\textsubscript{1}} is a countable set of axioms, which is too large to be reflected via the schemas introduced so far. One way to deal with this would be to extend reflection for second- and possibly higher-order formulas, but we would have to be very careful with the notion of satisfaction. For now, explore where can stationary sets take us because as we have shown, their connection to reflection is quite clear.
 
@@ -314,7 +314,7 @@ TODO Mahlo operation
 
 \begin{comment} % ============================================================
 
-We have transcended $\sf{ZFC}$, but that is just a~start. Naturally, we could go on and consider the next inaccessible cardinal, which is inaccessible with respect to the theory $\sf{ZFC} + \exists \kappa (V_\kappa \models \sf{ZFC})$. But let's try to find a faster way up, informally at first. 
+We have transcended $\sf{ZFC}$, but that is just a~start. Naturally, we could go on and consider the next inaccessible cardinal, which is inaccessible with respect to the theory $\sf{ZFC} + \exists \kappa (\langle V_\kappa, \in \rangle \models \sf{ZFC})$. But let's try to find a faster way up, informally at first. 
 
 Since we can find an inaccessible set larger than any chosen set $M_0$, it is clear that there are arbitrarily large inaccessible cardinals in $V$, they are ``unbounded''\footnote{The notion is formally defined for sets, but the meaning should be obvious.} in $V$. If $V$ were a cardinal, we could say that there are $V$ inaccessible cardinals less than $V$, but this statement of course makes no sense in set theory as is because $V$ is not a set. But being more careful, we could find a property that can be formalized in second-order logic and reflect it to an initial segment of $V$. That would allow us to construct large cardinals more efficiently than by adding inaccessibles one by one. The property we are looking for ought to look like something like this (the following statement is not a mathematical  statement in a strict sense):
 \begin{equation}
@@ -477,7 +477,7 @@ then consider the following formula $\varphi(\mathscr{R})$ with one type 3 param
 \varphi(\mathscr{R}) = (\forall R \in \mathscr{R})(\mbox{``$R$ is unbounded in $\kappa$''})
 \end{equation}
 
-Even though $V_\kappa \models \varphi(\mathscr{S})$ holds, there's no $\alpha < \kappa$ for which $V_{\alpha} \models \varphi(\mathscr{S})$.
+Even though $\langle V_\kappa, \in \rangle \models \varphi(\mathscr{S})$ holds, there's no $\alpha < \kappa$ for which $V_{\alpha} \models \varphi(\mathscr{S})$.
 
 We will therefore stick to formulas with type 2 parameters. While there are ways to extend reflection for higher orders, it is beyond the scope of this thesis.
 % ========================================================
@@ -529,7 +529,7 @@ Let $\kappa$ be a cardinal, the following holds for any $n \in \omega$. $\kappa$
 \begin{proof}
 The forward direction is obvious, we can always add a spare quantifier over a type 2 variable to turn a $\Pi^1_n$ formula $\varphi$ into a $\exists P \varphi$ which is obviously a $\Sigma^1_n+1$ formula.\footnote{Note that unlike in previous sections, it is worth noting that $\varphi$ is now a sentence so we don't have to worry whether $P$ is free in $\varphi$.}
 
-To prove the opposite direction, suppose that $V_\kappa \models \exists X \varphi(X)$ where $X$ is a type 2 variable and $\varphi$ is a $\Pi^1_n$ formula with one free variable of type 2. This means that there is a set $S \subseteq V_\kappa$ that is a witness of $\exists X \varphi(X)$, in other words, $\varphi(S)$ holds. We can replace every occurence of $X$ in $\varphi$ by a new predicate symbol $S$, this allows us to say that $\kappa$ is $\Pi^1_n$-indescribable (with respect to $\langle V_\kappa, \in, R, S \rangle$).
+To prove the opposite direction, suppose that $\langle V_\kappa, \in \rangle \models \exists X \varphi(X)$ where $X$ is a type 2 variable and $\varphi$ is a $\Pi^1_n$ formula with one free variable of type 2. This means that there is a set $S \subseteq V_\kappa$ that is a witness of $\exists X \varphi(X)$, in other words, $\varphi(S)$ holds. We can replace every occurence of $X$ in $\varphi$ by a new predicate symbol $S$, this allows us to say that $\kappa$ is $\Pi^1_n$-indescribable (with respect to $\langle V_\kappa, \in, R, S \rangle$).
 \footnote{A different yet interesting approach is taken by Tate in \cite{Tait_constructingcardinals}. He states that for $n\geq 0$, a formula of order $\leq n$ is called a $\Pi^n_0$ and a $\Sigma^n_0$ formula. Then a $\Pi^n_{m+1}$ is a formula of form $\forall Y \psi(Y)$ where $\psi$ is a $\Sigma^n_m$ formula and $Y$ is a variable of type $n$. Finally, a $\Sigma^n_{m+1}$ is the negation of a $\Pi^n_m$ formula. So the above holds ad definitio.}
 \end{proof}
 
