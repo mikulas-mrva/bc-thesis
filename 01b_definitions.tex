@@ -3,7 +3,7 @@
 % TODO predpokladame splnovani a tak, z logiky? link na ucebnici kdyztak? 
 This text assumes the knowledge of basic terminology and some results from first-order predicate logic.\footnote{todo odkaz na pripadny zdroj? svejdar? neco en?} All proofs are based on \cite{JechBook} unless explicitly stated otherwise. Notable amount of material is also drawn from \cite{KanamoriBook} and \cite{DrakeBook}.
 
-We will now shortly review the basic notions that allow us to define the \emph{Zermelo–Fraenkel} set theory.
+We will now shortly review the basic notions that allow us to define the \emph{ZermeloâFraenkel} set theory.
 
 % theory with the Axiom of Choice ($\sf{ZFC}$), a first-order set theory in the language $\mathscr{L} = \{=, \in\}$, which will be sometimes referred to as \emph{the language of set theory}. In Chapter 3, the Axiom of Choice is assumed. When tlaking about higher-order logic, we will usually denote type 1 variables, which are elements of the domain of discourse, by lowercase letters, mostly $u, v, w, x, y, z, p_1, p_2, p_3,  \ldots$ while type 2 variables, which represent $n$-ary relations of the domain of discourse for any natural number $n$, are usually denoted by uppercase letters $A, B, C, X, Y, Z$. Note that there are exception to convention rules as $f$ usually denotes a function, which is in fact a type 2 variable. On the other hand, $M$ stands for a set.
 
@@ -64,13 +64,12 @@ We read $x \subseteq y$ as \emph{x is a subset of y} and $x \subset y$ as \emph{
 %\emptyset \defeq \{x : x \in y\ \et \varphi(x)\}
 %\end{equation}
 %We know that $\emptyset$ is a set from \emph{specification} and it is the same set for every $y$ given from \emph{extensionality}.
-%TODO
 %co radsi ``for an arbitrary $x$''
-For an arbitrary set $x$, the empty set, represented by the symbol ``$\emptyset$'', is defined by the following formula:
+For an arbitrary set $x$, the empty set, represented by the symbol ``$\emptyset$'', is the set defined by the following formula:
 \beq
 (\forall y \in x)(y \in \emptyset \iff \neg(y = y))
 \eeq
-$\emptyset$ is a set due to \emph{Specification}. %While the empty set could also be defined by the formula $\forall y (y \in \emptyset \iff \neg(y = y))$, the version we use is $\Delta_0$, which we will find useful later. The two definitions yield the same set for every $x$ given because of \emph{Extensionality}.
+$\emptyset$ is a set due to \emph{Specification}, there is only one such set due to \emph{Extensionality}. %While the empty set could also be defined by the formula $\forall y (y \in \emptyset \iff \neg(y = y))$, the version we use is $\Delta_0$, which we will find useful later. The two definitions yield the same set for every $x$ given because of \emph{Extensionality}.
 % TODO odkomentovat a pridat zduvodneni proc to neni vl. trida?
 \end{definition}
 
@@ -141,12 +140,13 @@ Given a set $x$, the \emph{powerset of $x$}, denoted $\power{x}$ and satisfying 
 
 % TODO hezci formulace
 \begin{definition}{(Domain of a Function)}\label{def:dom}\\
-Let $f$ be a function. We call the \emph{domain of $f$} the set of all sets for which $f$ yields a value. We use ``$Dom(f)$'' to refer to this set.
+Let $f$ be a function. We call the \emph{domain of $f$} the set of all sets for which $f$ is defined. We use ``$Dom(f)$'' to refer to this set.
 %We read the following as ``$Dom(f)$ is the domain of $f$''.
 \begin{equation}
 x \in Dom(f) \iff \exists y (f(x) = y)
 \end{equation}
 \end{definition}
+% TODO nedat tam univerzalni uzaver?
 We say ``$f$ is a function on $A$'', $A$ being a class, if $A = dom(f)$.
 
 \begin{definition}{(Range of a Function)}\label{def:rng}\\
@@ -186,8 +186,6 @@ The following is an axiom for every first-order formula $\varphi(x, p_1, \ldots,
 \end{definition}
 
 
-% TODO mas to blbe :(
-% radsi jeste
 \begin{definition}{(Choice)}\label{def:choice}\\
 \begin{equation}
 \begin{gathered}
@@ -196,7 +194,7 @@ The following is an axiom for every first-order formula $\varphi(x, p_1, \ldots,
 \end{gathered}
 \end{equation}
 \end{definition}
-% Choice!!!!
+We call such $f$ a \emph{choice function}. One might be unsettled by the fact that this definition quantifies over functions, which are generally classes, but in this particular case, since $dom(f) = x$ and $x$ is a set, $f$ is also a set because a function is in fact a class of tuples and there is an obvious 1-1 mapping between those and the elements of $dom(f)$.
 
 We will refer to the axioms by their name, written in italic type, e.g. \emph{Foundation} refers to the Axiom of Foundation. Now we need to define the set theories to be used in the article. 
 % Note that axiomatic set theory is a set of formulas.
@@ -253,10 +251,10 @@ A set $x$ is said to be an \emph{ordinal number} if it is \emph{transitive} and 
 For the sake of brevity, we usually just say ``$x$~is an \emph{ordinal}''. 
 Note that ``$x$~is an ordinal'' is a well-defined formula in the language of set theory, since \ref{def:transitivity} is a first-order formula and \ref{def:well_ordering} is in fact a conjunction of four first-order formulas.
 Ordinals will be usually denoted by lower case greek letters, starting from the beginning of the alphabet: $\alpha, \beta, \gamma, \ldots$.
-Given two different ordinals $\alpha, \beta$, we will write $\alpha < \beta$ for $\alpha \in \beta$, see Lemma 2.11 in \cite{JechBook} for technical details.
+Given two different ordinals $\alpha, \beta$, we will write $\alpha <Â \beta$ for $\alpha \in \beta$, see Lemma 2.11 in \cite{JechBook} for technical details.
 
 \begin{definition}{(Non-Zero Ordinal)} % ok 
-We say an ordinal $\alpha$ is \emph{non-zero} iff $\alpha \neq \emptyset$.
+We say an ordinal $\alpha$Â is \emph{non-zero} iff $\alpha \neq \emptyset$.
 \end{definition}
 
 \begin{definition}{(Successor Ordinal)}\label{def:successor_ordinal}\\ % ok 
@@ -268,7 +266,7 @@ An ordinal $\alpha$ is called a \emph{successor ordinal} iff there is an ordinal
 \end{definition}
 
 \begin{definition}{(Limit Ordinal)}\label{def:limit_ordinal}\\ % ok
-A non-zero ordinal $\alpha$ is called a \emph{limit ordinal} iff it is not a successor ordinal.
+A non-zero ordinal $\alpha$Â is called a \emph{limit ordinal} iff it is not a successor ordinal.
 \end{definition}
 
 \begin{definition}{(Ord)}\label{def:ord}\\  % ok
@@ -317,7 +315,7 @@ Given an arbitrary well-ordered set $x$, we say that an ordinal $\alpha$ is the 
 %\end{definition}
 %$\omega$ is non-empty if \emph{Infinity} or any equivalent holds.
 
-%\begin{definition}{(Lévy's Hierarchy)}\\
+%\begin{definition}{(LÃ©vy's Hierarchy)}\\
 %!!! pozor na konflikt s analytickou (vyres podle kanamoriho)
 %TODO (potrebujeme ji?)
 %\end{definition}
@@ -380,7 +378,7 @@ We write $cf(\lambda) = \kappa$.
 % TODO fixme
 
 \begin{definition}{(Regular Cardinal)}\label{def:regular_cardinal}\\
-We say a cardinal $\kappa$ is regular iff $cf(\kappa) = \kappa$. % TODO chyba podle honzika, watt?
+We say a cardinal $\kappa$ is \emph{regular} iff $cf(\kappa) = \kappa$. % TODO chyba podle honzika, watt?
 \end{definition}
 
 %\begin{definition}{(Limit Cardinal)}\label{def:limit_cardinal}\\
@@ -400,7 +398,7 @@ We say that an ordinal $\kappa$ is a \emph{strong limit cardinal} if it is a \em
 (\forall \alpha \in Ord) \aleph_{\alpha+1}=|\power{\aleph_\alpha}|
 \end{equation}
 \end{definition}
-If \emph{GCH} holds (for example in Gödel's $L$, see chapter 3), the notions of limit cardinal and strong limit cardinal are equivalent.
+If \emph{GCH} holds (for example in GÃ¶del's $L$, see chapter 3), the notions of limit cardinal and strong limit cardinal are equivalent.
 
 \
 
@@ -459,7 +457,7 @@ Suppose that a $\Delta_0$-formula $\psi$ is absolute in $M$. Let $y$ be a set an
 From relativization, $(\exists x \psi(x))^M \iff (\exists x \in M) \psi^M(x)$. Since the hypotheses makes it clear that $\psi^M \iff \psi$, we get $((\exists x \in y) \psi(x))^M \iff (\exists x \in y\cap M) \psi(x)$, which is the equivalent of $\varphi^M \iff \varphi$. The same applies to $\varphi = (\forall x \in y) \psi(x)$.
 \end{proof}
 
-% todo co Devlin -- p.27 -- downward a upward absoluteness?
+% todo co Devlin -- p.27 -- downward a upward absoluteness? % nepouzivame
 \begin{lemma}{(Downward Absoluteness)}\label{lemma:downward_absoluteness}\\
 Let $\varphi$ be a $\Pi_1$-formula and $M$ a transitive class. Then the following holds:
 \begin{equation}
@@ -560,4 +558,3 @@ for $p_1, \ldots, p_n \in M_0$
 \end{definition}
 
 % While higher-order satisfaction relation for proper classes is unformalizable\footnote{TODO CITE KDE? Tarski nebo tak neco?},we can formalize satisfaction in a structure. For the rest of this chapter, let $D$ be a domain of such structure.
-
