@@ -3,7 +3,7 @@
 % TODO predpokladame splnovani a tak, z logiky? link na ucebnici kdyztak? 
 This text assumes the knowledge of basic terminology and some results from first-order predicate logic.\footnote{todo odkaz na pripadny zdroj? svejdar? neco en?} All proofs are based on \cite{JechBook} unless explicitly stated otherwise. Notable amount of material is also drawn from \cite{KanamoriBook} and \cite{DrakeBook}.
 
-We will now shortly review the basic notions that allow us to define the \emph{ZermeloâFraenkel} set theory.
+We will now shortly review the basic notions that allow is to define the \emph{Zermelo-Fraenkel} set theory.
 
 % theory with the Axiom of Choice ($\sf{ZFC}$), a first-order set theory in the language $\mathscr{L} = \{=, \in\}$, which will be sometimes referred to as \emph{the language of set theory}. In Chapter 3, the Axiom of Choice is assumed. When tlaking about higher-order logic, we will usually denote type 1 variables, which are elements of the domain of discourse, by lowercase letters, mostly $u, v, w, x, y, z, p_1, p_2, p_3,  \ldots$ while type 2 variables, which represent $n$-ary relations of the domain of discourse for any natural number $n$, are usually denoted by uppercase letters $A, B, C, X, Y, Z$. Note that there are exception to convention rules as $f$ usually denotes a function, which is in fact a type 2 variable. On the other hand, $M$ stands for a set.
 
@@ -185,16 +185,24 @@ The following is an axiom for every first-order formula $\varphi(x, p_1, \ldots,
 \end{equation}
 \end{definition}
 
-
-\begin{definition}{(Choice)}\label{def:choice}\\
-\begin{equation}
-\begin{gathered}
-\forall x \exists f ((f \mbox{ is a function with } dom(f) = x \setminus \{\emptyset\})\\
-\et \forall y ((y \in y \et y \neq \emptyset) \then f(y) \in y))
-\end{gathered}
-\end{equation}
+\begin{definition}{(Choice function)}\label{def:choice_function}\\
+We say that a function $f$ is a \emph{choice function on $x$} iff
+\beq
+dom(f) = x \setminus \{\emptyset\}) \et (\forall y \in dom(f))(f(y) \in y)
+\eeq
 \end{definition}
-We call such $f$ a \emph{choice function}. One might be unsettled by the fact that this definition quantifies over functions, which are generally classes, but in this particular case, since $dom(f) = x$ and $x$ is a set, $f$ is also a set because a function is in fact a class of tuples and there is an obvious 1-1 mapping between those and the elements of $dom(f)$.
+
+
+\begin{definition}{(Axiom of Choice)}\label{def:choice}\\
+For every set $x$ there is a function $f$ that is a choice function on $x$.
+%\begin{equation}
+%\begin{gathered}
+%\forall x \exists f ((f \mbox{ is a function with } dom(f) = x \setminus \{\emptyset\})\\
+%\et \forall y ((y \in y \et y \neq \emptyset) \then f(y) \in y))
+%\end{gathered}
+%\end{equation}
+\end{definition}
+One might be unsettled by the fact that this definition quantifies over functions, which are generally classes, but in this particular case, since $dom(f) = x$ and $x$ is a set, $f$ is also a set due to \emph{Replacement}\footnote{If the underlying theory includes of implies \emph{Replacement}.}.% because a function is in fact a class of tuples and there is an obvious 1–1 mapping between those and the elements of $dom(f)$.
 
 We will refer to the axioms by their name, written in italic type, e.g. \emph{Foundation} refers to the Axiom of Foundation. Now we need to define the set theories to be used in the article. 
 % Note that axiomatic set theory is a set of formulas.
@@ -251,10 +259,10 @@ A set $x$ is said to be an \emph{ordinal number} if it is \emph{transitive} and 
 For the sake of brevity, we usually just say ``$x$~is an \emph{ordinal}''. 
 Note that ``$x$~is an ordinal'' is a well-defined formula in the language of set theory, since \ref{def:transitivity} is a first-order formula and \ref{def:well_ordering} is in fact a conjunction of four first-order formulas.
 Ordinals will be usually denoted by lower case greek letters, starting from the beginning of the alphabet: $\alpha, \beta, \gamma, \ldots$.
-Given two different ordinals $\alpha, \beta$, we will write $\alpha <Â \beta$ for $\alpha \in \beta$, see Lemma 2.11 in \cite{JechBook} for technical details.
+Given two different ordinals $\alpha, \beta$, we will write $\alpha < \beta$ for $\alpha \in \beta$, see Lemma 2.11 in \cite{JechBook} for technical details.
 
 \begin{definition}{(Non-Zero Ordinal)} % ok 
-We say an ordinal $\alpha$Â is \emph{non-zero} iff $\alpha \neq \emptyset$.
+We say an ordinal $\alpha$ is \emph{non-zero} iff $\alpha \neq \emptyset$.
 \end{definition}
 
 \begin{definition}{(Successor Ordinal)}\label{def:successor_ordinal}\\ % ok 
@@ -266,7 +274,7 @@ An ordinal $\alpha$ is called a \emph{successor ordinal} iff there is an ordinal
 \end{definition}
 
 \begin{definition}{(Limit Ordinal)}\label{def:limit_ordinal}\\ % ok
-A non-zero ordinal $\alpha$Â is called a \emph{limit ordinal} iff it is not a successor ordinal.
+A non-zero ordinal $\alpha$ is called a \emph{limit ordinal} iff it is not a successor ordinal.
 \end{definition}
 
 \begin{definition}{(Ord)}\label{def:ord}\\  % ok
@@ -296,12 +304,14 @@ V_\lambda = \bigcup_{\beta < \lambda} V_\beta \mbox{ for a limit ordinal $\lambd
 \end{equation}
 \ece
 We will also refer to the \emph{Von Neumann's Hierarchy} as \emph{Von Neumann's Universe} or the \emph{Cumulative Hierarchy}. % velky nebo maly c?
+This definition is only correct in a theory that contains or implies \emph{Replacement} because otherwise it's not clear that the successor step is a set. 
 \end{definition}
 
 \begin{definition}{(Rank)}\label{def:rank}\\ % ok
 Given a set $x$, we say that the rank of $x$ (written as $rank(x)$) is the least ordinal $\alpha$ such that $x \in V_{\alpha+1}$
 \end{definition}
-Due to \emph{Regularity}, every set has a rank.\footnote{See chapter 6 of \cite{JechBook} for details.}
+Due to \emph{Regularity}, every set has a rank.\footnote{See chapter 6 of \cite{JechBook} for details.} 
+The Von Neumann's hierarchy defined above can also be defined by the fact that every $V_\alpha$ is a set of all set with rank less than $\alpha$.
 
 \begin{definition}{(Order-type)}\label{def:order_type}\\ % TODO check
 Given an arbitrary well-ordered set $x$, we say that an ordinal $\alpha$ is the \emph{order-type} of $x$ iff $x$ and $\alpha$ are isomorphic. % TODO definovat izomorfismus?
@@ -366,19 +376,23 @@ Given a class $A$ of ordinals, we say that $B \subseteq A$ is \emph{cofinal in $
 (\forall x \in A)(\exists y \in B)(x \in y)
 \eeq
 \end{definition}
+In other words, $B$ is cofinal in $A$ iff it is unbounded in $A$. % todo fakt?
 
 % TODO mas to asi cely blbe :(
 \begin{definition}{(Cofinality of a Limit Ordinal)}\label{def:cofinality}\\ % a co https://math.berkeley.edu/~jhicks/links/SOTS/cskipper112613.pdf? 
-Let $\lambda$ be a limit ordinal. We say that the \emph{cofinality} of $\lambda$ is $\kappa$ iff $\kappa$ is the least cardinal, such that there is a cofinal $\kappa$-sequence $\langle \beta_\xi : \xi < \kappa \rangle$, such that
+Let $\lambda$ be a limit ordinal. 
+We say that the \emph{cofinality} of $\lambda$ is $\kappa$ iff $\kappa$ is the least ordinal, such that there is a cofinal $\kappa$-sequence $\langle \beta_\xi : \xi < \kappa \rangle$, such that
 \begin{equation}
 sup(\{\beta_\xi: \xi < \kappa\}) = \lambda
 \end{equation}
 We write $cf(\lambda) = \kappa$.
 \end{definition}
+Note that $cf(\alpha)$ is alway a cardinal\footnote{If $cf(\alpha)$ is not a cardinal, so $|cf(\alpha)| < cf(\alpha)$, then there is a mapping from $|cf(\alpha)|$ onto $cf(\alpha)$. But then the range of this mapping is a cofinal subset of $cf(\alpha)$ that is strictly smaller than $cf(\alpha)$.}.
 % TODO fixme
+% TODO asi staci rict ze existuje takovy limitni ordinal?
 
 \begin{definition}{(Regular Cardinal)}\label{def:regular_cardinal}\\
-We say a cardinal $\kappa$ is \emph{regular} iff $cf(\kappa) = \kappa$. % TODO chyba podle honzika, watt?
+We say an infinite cardinal $\kappa$ is \emph{regular} iff $cf(\kappa) = \kappa$. % TODO chyba podle honzika, watt?
 \end{definition}
 
 %\begin{definition}{(Limit Cardinal)}\label{def:limit_cardinal}\\
@@ -418,8 +432,17 @@ The \emph{relativization of $\varphi$ to $M$ and $R$} is the formula, written as
 \ece
 \end{definition}
 When $R=\in\cap(M \times M)$, we usually write $\varphi^M$ instead of $\varphi^{M, R}$. When we talk about $\varphi^M(p_1, \ldots, p_n)$, it is understood that $p_1, \ldots, p_n \in M$.
-We will also use $\langle M, R \rangle \models \varphi(p_1, \ldots, p_n)$ and $\varphi^M(p_1, \ldots, p_n)$ interchangably.
+
 % TODO definice splnovani!
+
+\begin{definition}{(Satisfaction in a Structure)}\label{def:satisfaction}\\
+Let $M$ be a set and $R$ a binary relation on $M$. We say that $\rangle M, R \langle$ is a structure for theory $T$ iff .. TODO
+
+
+% https://en.wikibooks.org/wiki/Formal_Logic/Predicate_Logic/Satisfactio
+% https://en.wikipedia.org/wiki/T-schema
+\end{definition}
+We will use $\langle M, R \rangle \models \varphi(p_1, \ldots, p_n)$ and $\varphi^M(p_1, \ldots, p_n)$ interchangably.
 
 \begin{definition}{(Absoluteness)}
 Given a transitive class $M$, we say a formula $\varphi$ is \emph{absolute in $M$} if for all $p_1, \ldots, p_n \in M$
