@@ -1,7 +1,10 @@
 \subsection{Notation and Terminology}
 \subsubsection{The Language of Set Theory}
 % TODO predpokladame splnovani a tak, z logiky? link na ucebnici kdyztak? 
-This text assumes the knowledge of basic terminology and some results from first-order predicate logic.\footnote{todo odkaz na pripadny zdroj? svejdar? neco en?} All proofs are based on \cite{JechBook} unless explicitly stated otherwise. Notable amount of material is also drawn from \cite{KanamoriBook} and \cite{DrakeBook}.
+This text assumes the knowledge of basic terminology and some results from first-order predicate logic, for example \cite{hamiltonBook}. We won't introduce the notions of \emph{language}, \emph{function symbol}, \emph{predicate}, \emph{term}, \emph{model} and \emph{interpretation} that are used in (\ref{def:satisfaction}).
+
+
+All proofs are based on \cite{JechBook} unless explicitly stated otherwise. Notable amount of inspiration is also drawn from \cite{KanamoriBook} and \cite{DrakeBook}.
 
 We will now shortly review the basic notions that allow is to define the \emph{Zermelo-Fraenkel} set theory.
 
@@ -412,7 +415,7 @@ We say that an ordinal $\kappa$ is a \emph{strong limit cardinal} if it is a \em
 (\forall \alpha \in Ord) \aleph_{\alpha+1}=|\power{\aleph_\alpha}|
 \end{equation}
 \end{definition}
-If \emph{GCH} holds (for example in GÃ¶del's $L$, see chapter 3), the notions of limit cardinal and strong limit cardinal are equivalent.
+If \emph{GCH} holds (for example in Gödel's $L$, see chapter 3), the notions of limit cardinal and strong limit cardinal are equivalent.
 
 \
 
@@ -436,12 +439,30 @@ When $R=\in\cap(M \times M)$, we usually write $\varphi^M$ instead of $\varphi^{
 % TODO definice splnovani!
 
 \begin{definition}{(Satisfaction in a Structure)}\label{def:satisfaction}\\
-Let $M$ be a set and $R$ a binary relation on $M$. We say that $\rangle M, R \langle$ is a structure for theory $T$ iff .. TODO
+Let $M$ be a set and $R$ a binary relation on $M$. Let $Terms$ be the set of all terms, let $e: Terms \then M$ any evaluation function. Let $\varphi$  be a first-order formula in the language of set theory.
 
+ iff any of the following hold 
 
+% neobratne, preformulovat, je to
+We say that $\varphi$ \emph{holds in $\langle M, R \rangle$ under the evaluation $e$}, we write $\langle M, R \rangle~\models~\varphi[e]$, iff any of the following hold
+\bce[(i)]
+\item $\varphi$ is the formula ``$s = t$'', $s, t$ are terms and $e(s) = e(t)$.
+\item $\varphi$ is the formula ``$s \in t$'', $s, t$ are terms and the pair $\rangle e(s), e(t) \langle$ is in $R$.
+\item $\varphi$ is the formula ``$\neg\psi$'' and not $\langle M, R \rangle~\models~\psi[e]$
+\item $\varphi$ is the formula ``$\psi_1 \et \psi_2$'' and both $\langle M, R \rangle~\models~\psi_1[e]$ and $\langle M, R \rangle~\models~\psi_2[e]$.
+\item $\varphi$ is the formula ``$\psi_1 \lor \psi_2$'' and either $\langle M, R \rangle~\models~\psi_1[e]$ or $\langle M, R \rangle~\models~\psi_2[e]$.
+\item $\varphi$ is the formula ``$\psi_1 \then \psi_2$'' and either not $\langle M, R \rangle~\models~\psi_1[e]$ or $\langle M, R \rangle~\models~\psi_2[e]$.
+\item $\varphi$ is the formula ``$\psi_1 \then \psi_2$'' and either not $\langle M, R \rangle~\models~\psi_1[e]$ or $\langle M, R \rangle~\models~\psi_2[e]$.
+\item $\varphi$ is the formula ``$\forall x_1 \psi$'' and $\langle M, R \rangle~\models~\psi[e']$ for every $e'$ that differs from $e$ only in the value of $x_1$.
+\item $\varphi$ is the formula ``$\forall x_1 \psi$'' and $\langle M, R \rangle~\models~\psi[e']$ for every $e'$ that differs from $e$ only in the value of $x_1$.
+\item $\varphi$ is the formula ``$\exists x_1 \psi$'' and $\langle M, R \rangle~\models~\psi[e']$ for some $e'$ that differs from $e$ only in the value of $x_1$.
+\ece
 % https://en.wikibooks.org/wiki/Formal_Logic/Predicate_Logic/Satisfactio
 % https://en.wikipedia.org/wiki/T-schema
+We also write $\langle M, R \rangle~\models~\varphi$, which 
 \end{definition}
+Note that we say that $M$ is a set. 
+
 We will use $\langle M, R \rangle \models \varphi(p_1, \ldots, p_n)$ and $\varphi^M(p_1, \ldots, p_n)$ interchangably.
 
 \begin{definition}{(Absoluteness)}
