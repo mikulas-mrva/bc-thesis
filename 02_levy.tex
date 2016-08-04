@@ -180,12 +180,21 @@ From relativization, $(\exists y \varphi)^{u}$ is equivalent to $(\exists y \in 
 \end{equation}
 
 If $\varphi$ is a~function, then for every $x \in u$, which is also $x \subset u$ since $u$ is transitive from $Scm^{\sf{S}}(u)$,
-it maps elements of $x$ into $u$. From \emph{Specification}, we can find $y$, a~set of all images of the elements of $x$ via $\varphi$.
-% zkontrolovano sem
-That gives us $x, p_1, \ldots, p_n \in u \then \chi$. By (iii) we get that $x, p_1, \ldots, p_n \in u \then \chi^{u}$ holds. The universal closure of this formula is $\forall x, p_1, \ldots, p_n (x, p_1, \ldots, p_n \in u \then \chi^{u})$ which is equivalent to $(\forall x, p_1, \ldots, p_n \in u)(\chi)^{u}$, which is exactly $(\forall x, p_1, \ldots, p_n \chi)^{u}$. 
+it maps elements of $x$ into $u$. From \emph{Specification}, we can find $y$, a~set of all images of the elements of $x$ via $\varphi$. That means that \emph{Replacement} holds in $u$, but we want more. So far, we have shown that 
+\beq
+(\forall x, p_1, \ldots, p_n \in u) \chi
+\eeq
+holds. By (iii) this is equivalent to 
+\beq
+(\forall x, p_1, \ldots, p_n \in u) \chi^{u}\mbox{.}
+\eeq 
+which is exactly 
+\beq
+(\forall x, p_1, \ldots, p_n \chi)^{u}\mbox{.}
+\eeq
 From (iv), $\forall x, p_1, \ldots, p_n \chi$ holds. 
 \end{proof}
-
+% ======================================================= % zkontrolovano sem!
 What we have just proven is only a single theorem from Lévy's aforementioned article, we will introduce other interesting results, mostly related to Mahlo and inaccessible cardinals, later in their appropriate context in chapter 3. % porad trochu kostrbaty?
 % ale fakt to pak udelej!
 
