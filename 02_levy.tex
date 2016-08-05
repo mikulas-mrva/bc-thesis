@@ -21,7 +21,7 @@ This subsection uses $\sf{ZF}$ instead of the usual $\sf{ZFC}$ as the underlying
 Let $\sf{Q}$ be an arbitrary axiomatic set theory.
 We say that $u$ is a standard complete model of $\sf{Q}$ iff
 \bce[(i)]
-\item $(\forall \sigma \in \sf{Q})(\langle u, \in \rangle \models \sigma)$
+\item $(\forall \sigma \in \sf{Q})(\langle u, \in \rangle~\models~\sigma)$
 \item $\forall y (y \in u \then y \subset u)$ ($u$ is transitive)
 % \item $\forall e \langle x, y \rangle \in e \iff (y \in u \et x \in y)$ % co je $e$? omg je to jinak, je to model vsech axiomu pro vsechny $e$!!! relatiizace do u, e?
 \ece 
@@ -129,7 +129,7 @@ In $\sf{S}$, the axiom schema $N_0$ implies \emph{Infinity}.
 
 \begin{proof} % Levy to bere pres V_\lambda \models 
 Let $\varphi = \forall x \exists y (y = x \cup \{x\})$. 
-This clearly holds in $\sf{S}$ because given a set $x$, there is a set $y = x \cup \{x\}$ obtained via \emph{Pairing} and \emph{Union}. %\emph{Powerset} and \emph{Specification}.
+This clearly holds in $\sf{S}$ because given a set~$x$, there is a set $y = x \cup \{x\}$ obtained via \emph{Pairing} and \emph{Union}. %\emph{Powerset} and \emph{Specification}.
 From $N_0$, there is a set $u$ such that $\varphi^{u}$ holds. % TODO upresnit
  This $u$ satisfies the conditions required by \emph{Infinity}.
 \end{proof}
@@ -157,7 +157,7 @@ Let $\varphi(x, y, p_1, \ldots, p_n)$ be a~formula with no free variables except
 %\beq
 %``\varphi\mbox{ is a function}''\then \forall x \exists y \forall z (z \in y \iff (\exists q \in x)(\varphi(x, y, p_1, \ldots, p_n)))
 %\eeq
-Let a set $x$ be given and let $\chi$ be an instance of the \emph{Replacement} schema for the $\varphi$ given.
+Let a set~$x$~be given and let $\chi$ be an instance of the \emph{Replacement} schema for the $\varphi$ given.
 We want to verify in $\sf{S}$ that given a formula $\varphi$, the instance of $N_0$ for $\varphi$ implies $\chi$.
 \begin{equation}
 \begin{gathered}
@@ -175,14 +175,14 @@ there is a set $u$ such that $Scm^{\sf{S}}(u)$, $x \in u$ and all of the followi
 % \item $\forall x, p_1, \ldots, p_n \chi \iff (\forall x, p_1, \ldots, p_n \chi)^{u}$.
 \ece
 %The above formulas are instances of the $N_0$ schema for $\varphi$, $\exists y \varphi$, $\chi$ and the universal closure of $\chi$ respectively.
-%By $N_0$, there exists a set $u$ where all four formulas hold.\footnote{Despite the fact that $N_0$ is defined for one formula, we have just used it for four at once. To make this formally possible, we can either prove that $N_0$ is equivalent to a more general version for any finite number of formulas or we can reflect their conjunction and argue that if $\langle u, \in \rangle \models \varphi_1 \et \ldots \et \varphi_n$, then $(\langle u, \in \rangle \models \varphi_1), \ldots, (\langle u, \in \rangle \models \varphi_n)$.}
+%By $N_0$, there exists a set $u$ where all four formulas hold.\footnote{Despite the fact that $N_0$ is defined for one formula, we have just used it for four at once. To make this formally possible, we can either prove that $N_0$ is equivalent to a more general version for any finite number of formulas or we can reflect their conjunction and argue that if $\langle u, \in \rangle~\models~\varphi_1 \et \ldots \et \varphi_n$, then $(\langle u, \in \rangle~\models~\varphi_1), \ldots, (\langle u, \in \rangle~\models~\varphi_n)$.}
 From relativization, $(\exists y \varphi)^{u}$ is equivalent to $(\exists y \in u) \varphi^{u}$, together with (i) and (ii), we get
 \begin{equation}
 (\exists y \in u)\varphi \iff \exists y \varphi
 \end{equation}
 
 If $\varphi$ is a~function, %then for every $x \in u$, which is also $x \subset u$ since $u$ is transitive from $Scm^{\sf{S}}(u)$,
-it maps the elements of $x$, which are also elements of $u$ due to transitivity of $u$, to elements $u$. From \emph{Specification}, we can find $y$, a~set of all images of the elements of $x$ via $\varphi$. That means the following is an instance of \emph{Replacement} for $\varphi$ and $x$ and it holds in $u$, so we get $\chi^{u}$, which means that $\chi$ holds by (iii).
+it maps the elements of~$x$, which are also elements of $u$ due to transitivity of $u$, to elements $u$. From \emph{Specification}, we can find $y$, a~set of all images of the elements of~$x$~via $\varphi$. That means the following is an instance of \emph{Replacement} for $\varphi$ and~$x$~and it holds in $u$, so we get $\chi^{u}$, which means that $\chi$ holds by (iii).
 % \beq
 % (\forall p_1, \ldots, p_n \in u) \chi\mbox{.}
 % \eeq
@@ -244,7 +244,7 @@ for every $p_1, \ldots, p_{m-1} \in M$.
 We will simultaneously prove statements (i) and (ii), denoting $M^T$ the transitive set required by part (ii).
 Steps in the construction of $M^T$ that are not explicitly included are equivalent to steps for $M$.
 
-Let us first define an operation $H_i(p_1, \ldots, p_{m-1})$ that yields the set of $x$'s with minimal rank\footnote{Rank is defined in (\ref{def:rank})} satisfying $\varphi_i(p_1, \ldots, p_{m-1}, x)$ for $p_1, \ldots, p_{m-1}$ and for every $i$, $1 \leq i \leq n$.
+Let us first define an operation $H_i(p_1, \ldots, p_{m-1})$ that yields the set of $x$'s with minimal rank\footnote{Rank is defined in (\ref{def:rank}).} satisfying $\varphi_i(p_1, \ldots, p_{m-1}, x)$ for $p_1, \ldots, p_{m-1}$ and for every $i$, $1 \leq i \leq n$.
 
 \begin{equation}
 H_i(p_1, \ldots, p_n) = \{x \in C_i: (\forall z \in C)(rank(x) \leq rank(z))\}
@@ -277,7 +277,7 @@ M = \bigcup_{i=0}^{\infty} M_i, \mbox{  }M^T = \bigcup_{i=0}^{\infty} M^T_i = V_
 \
 
 We have yet to finish part (iii).
-Let's try to construct a~set $M'$ that satisfies the same conditions like $M$ but is kept as small as possible. Assuming the Axiom of Choice, we can modify the construction so that the cardinality of $M'$ is at most $|M_0| \cdot \aleph_0$. Note that the size of $M$ in the previous construction is determined by the size of $M_0$ and, most importantly, by the size of $H_i(p_1, \ldots, p_{m-1})$ for every $i$, $1 \leq i \leq n$ in individual iterations of the construction. Since (i) only ensures the existence of an $x$ that satisfies $\varphi_i(p_1, \ldots, p_{m-1}, x)$ for any $i$, $1 \leq i \leq n$, we only need to add one $x$ for every set of parameters but $H_i(u_1, \dots, u_{m-1})$ can be arbitrarily large. Let $F$ be a~choice function on $\power{M'}$. Also let $h_i(p_1, \ldots, p_{m-1}) = F(H_i(p_1, \ldots, p_{m-1}))$ for $i$, where $1 \leq i \leq n$, which means that $h$ is a~function that outputs an $x$ that satisfies $\varphi_i(p_1, \ldots, p_{m-1}, x)$ for $i$ such that $1 \leq i \leq n$ and has minimal rank among all such sets. The induction step needs to be redefined to
+Let's try to construct a~set $M'$ that satisfies the same conditions like $M$ but is kept as small as possible. Assuming the Axiom of Choice, we can modify the construction so that the cardinality of $M'$ is at most $|M_0| \cdot \aleph_0$. Note that the size of $M$ in the previous construction is determined by the size of $M_0$ and, most importantly, by the size of $H_i(p_1, \ldots, p_{m-1})$ for every $i$, $1 \leq i \leq n$ in individual iterations of the construction. Since (i) only ensures the existence of an~$x$~that satisfies $\varphi_i(p_1, \ldots, p_{m-1}, x)$ for any $i$, $1 \leq i \leq n$, we only need to add one $x$ for every set of parameters but $H_i(u_1, \dots, u_{m-1})$ can be arbitrarily large. Let $F$ be a~choice function on $\power{M'}$. Also let $h_i(p_1, \ldots, p_{m-1}) = F(H_i(p_1, \ldots, p_{m-1}))$ for $i$, where $1 \leq i \leq n$, which means that $h$ is a~function that outputs an~$x$~that satisfies $\varphi_i(p_1, \ldots, p_{m-1}, x)$ for $i$ such that $1 \leq i \leq n$ and has minimal rank among all such sets. The induction step needs to be redefined to
 \begin{equation}
 M'_{i+1} = M'_i \cup \bigcup_{j=0}^n \{ h_j(p_1, \ldots, p_{m-1}): p_1, \ldots, p_{m-1} \in M'_i \}
 \end{equation}
@@ -324,7 +324,7 @@ Let's now prove (i) for given $\varphi$ via induction by complexity. We can safe
 Let $\varphi_1, \ldots, \varphi_n$ be all subformulas of $\varphi$. Then there is a set $M$, obtained by the means of lemma (\ref{lemma:reflection_lemma}), for all of the formulas $\varphi_1, \ldots, \varphi_n$. 
 
 Let's first consider atomic formulas in the form of either $x_1 = x_2$ or $x_1 \in x_2$. % preformulovat trochu
-It is clear from relativisation\footnote{See (\ref{def:relativization}). This only holds for relativization to $M, \in \cap M \times M$, not $M, R$ for an arbitrary $R$.} that (\ref{equation:levy_theorem_i}) holds for both cases, $(x_1 = x_2)^M \iff (x_1 = x_2)$ and $(x_1 \in x_2)^M \iff (x_1 \in x_2)$.
+It is clear from relativisation\footnote{See (\ref{def:relativization}.). This only holds for relativization to $M, \in \cap M \times M$, not $M, R$ for an arbitrary $R$.} that (\ref{equation:levy_theorem_i}) holds for both cases, $(x_1 = x_2)^M \iff (x_1 = x_2)$ and $(x_1 \in x_2)^M \iff (x_1 \in x_2)$.
 
 \
 
@@ -386,43 +386,45 @@ Let $\sf{S}$ be a set theory defined in (\ref{def:s}), for $\sf{ZFC}$ see defini
 
 The two following lemmas are based on \cite{DrakeBook}[Chapter 3, Theorem 1.2].
 \begin{lemma}\label{lemma:extensionality_in_transitive} % Drake ch.3 Theorem 1.2
-If $M$ is a transitive set, then $\langle M, \in \rangle \models \mbox{\emph{Extensionality}}$.
+If $M$ is a transitive set, then $\langle M, \in \rangle~\models~\mbox{\emph{Extensionality}}$.
 \end{lemma}
 
 \begin{proof}
 Given a transitive set $M$, we want to show that the following holds.
 \beq
-\langle M, \in \rangle \models \forall x, y (x = y \iff \forall z (z \in x \iff z \in y))
+\langle M, \in \rangle~\models~\forall x, y (x = y \iff \forall z (z \in x \iff z \in y))
 \eeq % TODO pozor na definici splnovani!
-% From satisfaction, we get that for every $x$, $y$, the following holds % neni v definici splnovani, ze volny musej platit vsechny?
-Given arbitrary $x, y \in M$, we want to prove that $\langle M, \in \rangle \models (x = y \iff \forall z (z \in x \iff z \in y))$.
+% From satisfaction, we get that for every~$x$, $y$, the following holds % neni v definici splnovani, ze volny musej platit vsechny?
+Given arbitrary $x, y \in M$, we want to prove that $\langle M, \in \rangle~\models~(x = y \iff \forall z (z \in x \iff z \in y))$.
 This is equivalent to % ref na definici pravdy
-$\langle M, \in \rangle \models x = y \mbox{ iff } \langle M, \in \rangle \models \forall z(z \in x \iff z \in y)$, 
-which is the same as $x = y \mbox{ iff } \langle M, \in \rangle \models \forall z(z \in x \iff z \in y)$.
+$\langle M, \in \rangle~\models~x = y \mbox{ iff } \langle M, \in \rangle~\models~\forall z(z \in x \iff z \in y)$, 
+which is the same as $x = y \mbox{ iff } \langle M, \in \rangle~\models~\forall z(z \in x \iff z \in y)$.
 
-So all elements of $x$ are also elements of $y$ in $M$, and vice versa. Because $M$ is transitive, all elements of $x$ and $y$ are in $M$, so $\langle M, \in \rangle \models \forall z(z \in x \iff z \in y)$ holds iff $x$ and $y$ contain the same elements and are therefore equal.
+So all elements of~$x$~are also elements of $y$ in $M$, and vice versa. 
+Because $M$ is transitive, all elements of~$x$~and $y$ are in $M$, 
+so $\langle M, \in \rangle~\models~\forall z(z \in x \iff z \in y)$ holds iff $x$ and $y$ contain the same elements and are therefore equal.
 \end{proof}
 
 \begin{lemma}\label{lemma:foundation_in_transitive}
-If $M$ is a transitive set, then $\langle M, \in \rangle \models \mbox{\emph{Foundation}}$.
+If $M$ is a transitive set, then $\langle M, \in \rangle~\models~\mbox{\emph{Foundation}}$.
 \end{lemma}
 
 \begin{proof}
 We want to prove the following:
 \beq
-\langle M, \in \rangle \models \forall x (x \neq \emptyset \then (\exists y \in x) (x \cap y = \emptyset))
+\langle M, \in \rangle~\models~\forall x (x \neq \emptyset \then (\exists y \in x) (x \cap y = \emptyset))
 \eeq
 
-Given an arbitrary non-empty $x \in M$ let's show that $\langle M, \in \rangle \models (\exists y \in x) (x \cap y = \emptyset)$.
+Given an arbitrary non-empty $x \in M$ let's show that $\langle M, \in \rangle~\models~(\exists y \in x) (x \cap y = \emptyset)$.
 
-Because $M$ is transitive, every element of $x$ is an element of $M$. Take for $y$ the element of $x$ with the lowest rank\footnote{Rank is defined in (\ref{def:rank}).}. It should be clear that there is no $z \in y$ such that $z \in x$, because then $rank(z) < rank(y)$, which would be a contradiction.
+Because $M$ is transitive, every element of~$x$~is an element of $M$. Take for $y$ the element of~$x$~with the lowest rank\footnote{Rank is defined in (\ref{def:rank}).}. It should be clear that there is no $z \in y$ such that $z \in x$, because then $rank(z) < rank(y)$, which would be a contradiction.
 \end{proof}
 
 Let $\sf{S}$ be a set theory as defined in (\ref{def:s}). 
 \begin{lemma}\label{lemma:scm_s_is_limit}\
 The following holds for every $\lambda$.
 \begin{equation}
-\mbox{``$\lambda$ is a limit ordinal''} \then V_\lambda \models \sf{S} % proc ne?
+\mbox{``$\lambda$ is a limit ordinal''} \then \langle V_\lambda, \in \rangle~\models~\sf{S} % proc ne?
 \end{equation}
 \end{lemma}
 
@@ -448,7 +450,7 @@ y = \bigcup x \iff (\forall z \in y)(\exists q \in x) z \in q \et (\forall z \in
 So by lemma (\ref{lemma:delta_0_absoluteness})
 \beq
 % y = \bigcup x \iff (y = \bigcup x)^{V_\lambda}
-y = \bigcup x \iff V_\lambda \models y = \bigcup x
+y = \bigcup x \iff \langle V_\lambda, \in \rangle~\models~y = \bigcup x
 \eeq
 % asi ok ^
 
@@ -464,7 +466,7 @@ z = \{x, y\} \iff x \in z \et y \in z \et (\forall q \in z)(q = x \lor q = y)
 So $z = \{x, y\}$ is a $\Delta_0$-formula, and thus by lemma (\ref{lemma:delta_0_absoluteness}) it holds that
 \beq
 %z = \{x, y\} \iff (z = \{x, y\})^{V_\lambda}
-z = \{x, y\} \iff V_\lambda \models z = \{x, y\}
+z = \{x, y\} \iff \langle V_\lambda, \in \rangle~\models~z = \{x, y\}
 \eeq
 % asi ok ^
 
@@ -474,21 +476,21 @@ z = \{x, y\} \iff V_\lambda \models z = \{x, y\}
 %\forall x \exists y \forall z (z \subseteq x \iff z \in y)
 %\end{equation}
 Given any $x \in V_\lambda$, we want to make sure that $\power{x} \in V_\lambda$. Let $\varphi(y)$ denote the formula $y \in \power{x} \iff y \subset x$.
-according to definition of subset (\ref{def:subset}), $y \subset x$ is $\Delta_0$, so for any given $x, y \in V_\lambda$, $y = \power{x} \iff V_\lambda \models y = \power{x}$.
+according to definition of subset (\ref{def:subset}), $y \subset x$ is $\Delta_0$, so for any given $x, y \in V_\lambda$, $y = \power{x} \iff \langle V_\lambda, \in \rangle~\models~y = \power{x}$.
 Because $\lambda$ is limit and $rank(\power{x}) = rank(x)+1$, if $\power{x} \in V_\lambda$ for every $x \in V_\lambda$.
 % cajk
 
 \item \emph{Specification}: \\ %zkontrolovat, podle Draka, pripadne Jech 12.11
 Given a first-order formula $\varphi$, we want to show the following:
 \beq
-V_\lambda \models \forall x, p_1, \ldots, p_n, \exists y \forall z (z \in y \iff z \in x \et \varphi(z, p_1, \ldots, p_n))
+\langle V_\lambda, \in \rangle~\models~\forall x, p_1, \ldots, p_n, \exists y \forall z (z \in y \iff z \in x \et \varphi(z, p_1, \ldots, p_n))
 \eeq
-Given any $x$ along with parameters $p_1, \ldots, p_n$ in $V_\lambda$, we set
+Given any~$x$~along with parameters $p_1, \ldots, p_n$ in $V_\lambda$, we set
 \beq
 y~=~\{z~\in~x~:~\varphi^{V_\lambda}(z, p_1, \ldots, p_n)\}
 \eeq
 From transitivity of $V_\lambda$ and the fact that $y \subset x$ and $x \in V_\lambda$, we know that $y \in V_\lambda$, 
-so $V_\lambda \models \forall z (z \in y \iff z \in x \et \varphi(z, p_1, \dots, p_n))$.
+so $\langle V_\lambda, \in \rangle~\models~\forall z (z \in y \iff z \in x \et \varphi(z, p_1, \dots, p_n))$.
 \ece
 \end{proof}
 
@@ -514,7 +516,7 @@ so $V_\lambda \models \forall z (z \in y \iff z \in x \et \varphi(z, p_1, \dots,
 % and a set $M_0$ there is such set $M$ that $M_0 \subseteq M$ and the following holds for every $p_1, \ldots, p_n \in M$:
 For every first-order formula $\varphi$, the following is an axiom:
 \begin{equation}
-\forall M_0 \exists M (M_0 \subseteq M \et (\varphi(p_1, \ldots, p_n) \iff \varphi(p_1, \ldots, p_n)^M)) % drive \langle M, \in \rangle \models \varphi, ale to vypada divne
+\forall M_0 \exists M (M_0 \subseteq M \et (\varphi(p_1, \ldots, p_n) \iff \varphi(p_1, \ldots, p_n)^M)) % drive \langle M, \in \rangle~\models~\varphi, ale to vypada divne
 \end{equation}
 We will refer to this axiom schema as \emph{First-order reflection}.
 \end{definition}
@@ -576,7 +578,7 @@ Therefore
 (\forall x, y \in M)(\exists y \varphi(x, y) \iff (\exists y \in M) \varphi(x, y))
 \eeq
 holds too.
-That means that we have a set $M$ such that for every $x \in M$, if $\varphi$ is defined for $x$, $(\exists y \in M) \varphi(x, y)$. 
+That means that we have a set $M$ such that for every $x \in M$, if $\varphi$ is defined for~$x$, $(\exists y \in M) \varphi(x, y)$. 
 
 To show that \emph{Replacement} holds for this particular $\varphi$, we need to verify that given a set $M_0$, $M'_0 = \{ y : (\exists x \in M_0) \varphi(x, y)\}$ is also a set. But since $M_0 \subseteq M$ and because given any $x \in M$, there is $y \in M$ satisfying $\varphi(x, y)$, the following is a set due to \emph{Specification}:
 \beq
@@ -584,7 +586,7 @@ M'_0 = \{ y : (\exists x \in M_0) \varphi(x, y)\} = \{ y \in M : (\exists x \in 
 \eeq
 % tranzitivita? V_\lambda?
 
-%We also know that $x, y \in M$, in other words for every $X$, $Y = \{y : \varphi(x, y, p_1, \ldots, p_n)\}$ and we know that $X \subset M$ and $Y \subset M$, which, together with the specification schema implies that $Y$, the image of $X$ over $\varphi$, is a~set.
+%We also know that $x, y \in M$, in other words for every $X$, $Y = \{y : \varphi(x, y, p_1, \ldots, p_n)\}$ and we know that $X \subset M$ and $Y \subset M$, which, together with the specification schema implies that $Y$, the image of~$x$~over $\varphi$, is a~set.
 \end{proof}
 
 \

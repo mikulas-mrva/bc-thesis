@@ -39,7 +39,7 @@ Let $f$ be a normal function defined for all ordinals\footnote{For the definitio
 \item $\forall \lambda(\mbox{``$\lambda$ is a limit ordinal''} \then \mbox{``f($\lambda$) is a limit ordinal''})$
 \item $\forall \alpha (\alpha \leq f(\alpha))$
 \item $\forall \alpha \exists \beta (\alpha < \beta \et f(\beta) = \beta)$
-\item The fixed points of $f$ form a closed unbounded class.\footnote{See (\ref{def:closed_class}.% TODO spis club class?
+\item The fixed points of $f$ form a closed unbounded class.\footnote{See (\ref{def:closed_class.}.% TODO spis club class?
 ) for the definition of closed class, (\ref{def:unbounded_class}) for the definition of unboundedness.}
 \ece
 \end{lemma}
@@ -75,7 +75,7 @@ which means we are done, since $\bigcup_{i < \omega} \alpha_{i+1} = \bigcup_{i <
 % Todo http://math.stackexchange.com/questions/1865519/when-is-the-union-of-a-set-of-ordinals-a-limit-ordinal/1865527#1865527
 \item The class of fixed points of $f$ is obviously unbounded by (iii).
 It remains to show that it is closed, this is based on \cite{DrakeBook}, chapter 4. Let $Y$ be a non-empty set of fixed points of $f$ such that $\bigcup Y \not\in Y$. Since $f$ is defined on ordinals, $Y$ is a set of ordinals, so $\bigcup Y$ is an ordinal because a supremum of a set of ordinals is an ordinal%\footnote{TODO aspon dvema slovy?}
-. $\bigcup Y$ is a limit ordinal. If it were a successor ordinal, suppose that $\alpha+1 = \bigcup Y$, then $\alpha \in \bigcup Y$, which means that there is some $x$ such that $\alpha \in x \in Y$. But the least such $x$ is $\alpha+1$, so $\bigcup Y \in Y$.
+. $\bigcup Y$ is a limit ordinal. If it were a successor ordinal, suppose that $\alpha+1 = \bigcup Y$, then $\alpha \in \bigcup Y$, which means that there is some~$x$~such that $\alpha \in x \in Y$. But the least such~$x$~is $\alpha+1$, so $\bigcup Y \in Y$.
 %We will show that $\bigcup Y$ is a limit ordinal because $Y$ doesn't have a maximal element.
 
 Note that $\alpha < \bigcup Y iff \exists \xi \in Y (\alpha < \xi)$. Since $f$ is defined for all ordinals and $\bigcup Y$ is a limit ordinal, $f(\bigcup Y) = \bigcup_\alpha \in Y f(\alpha)$, but because $Y$ is a set of fixed points of $f$, $f(\bigcup Y) = \bigcup_\alpha \in Y f(\alpha) = \bigcup Y$, so $\bigcup Y$ is also a limit point of $Y$.
@@ -202,7 +202,7 @@ An uncountable cardinal that is regular and limit is called a \emph{weakly inacc
 \begin{theorem}
 Let $\kappa$ be an inaccessible cardinal.
 \beq
-\langle V_\kappa, \in \rangle \models \sf{ZFC}
+\langle V_\kappa, \in \rangle~\models~\sf{ZFC}
 \eeq
 \end{theorem}
 
@@ -212,7 +212,7 @@ Most of this is already done in lemma (\ref{lemma:scm_s_is_limit}), we only need
 
 \emph{Infinity} holds because $\kappa$ is uncountable, so $\omega \in V_\kappa$.
 
-To verify \emph{Replacement}, let $x$ be an element of $V_\kappa$ and $f$ a function from $x$ to $V_\kappa$. Let $y = \{z \in V_\kappa : (\exists q \in x) f(q) = z \}$, so $y \subset V_\kappa$, it remains to show that $y \in V_\kappa$. Because $f$ is a function, we know that $|y| \leq |x| \leq \kappa$. But since $\kappa$ is regular, $\{rank(z) : z \in y\} \subseteq \alpha$ for some $\alpha < \kappa$, and so $x \in V_{\alpha+1} \subseteq V_\kappa$. Therefore $y \in V_\kappa$.
+To verify \emph{Replacement}, let~$x$~be an element of $V_\kappa$ and $f$ a function from~$x$~to $V_\kappa$. Let $y = \{z \in V_\kappa : (\exists q \in x) f(q) = z \}$, so $y \subset V_\kappa$, it remains to show that $y \in V_\kappa$. Because $f$ is a function, we know that $|y| \leq |x| \leq \kappa$. But since $\kappa$ is regular, $\{rank(z) : z \in y\} \subseteq \alpha$ for some $\alpha < \kappa$, and so $x \in V_{\alpha+1} \subseteq V_\kappa$. Therefore $y \in V_\kappa$.
 \end{proof}
 
 \begin{definition}{(Inaccessible Reflection Schema)}\label{def:inaccessible_reflection}\\ % Jednu
@@ -226,9 +226,9 @@ We will refer to this axiom schema as \emph{Inaccessible reflection schema}.
 
 We have added the requirement that $\alpha$ is inaccessible, which trivially means that there is an inaccessible cardinal. By taking appropriate $M_0$, it can be shown that in a theory that includes the \emph{Inaccessible reflection schema}, there is a closed unbounded class of inaccessible cardinals. Since we know that for an inaccessible $\kappa$, $V_\kappa$ is a model of \sf{ZFC}, \emph{Inaccessible reflection schema} is equivalent to
 \beq
-\forall M_0 \exists \kappa (M_0 \subseteq V_\kappa \et \langle V_\kappa, \in \rangle \models \sf{ZFC} \et (\varphi(p_1, \ldots, p_n) \iff \varphi(p_1, \ldots, p_n)^{V_\kappa}))
+\forall M_0 \exists \kappa (M_0 \subseteq V_\kappa \et \langle V_\kappa, \in \rangle~\models~\sf{ZFC} \et (\varphi(p_1, \ldots, p_n) \iff \varphi(p_1, \ldots, p_n)^{V_\kappa}))
 \eeq
-because we have proven in the last section that for an inaccessible $\kappa$, $\langle V_\kappa, \in \rangle \models \sf{ZFC}$. % TODO ref
+because we have proven in the last section that for an inaccessible $\kappa$, $\langle V_\kappa, \in \rangle~\models~\sf{ZFC}$. % TODO ref
 
 \begin{theorem}
 \emph{Inaccessible reflection schema} is equivalent to \emph{Axiom schema $F$}.
@@ -262,7 +262,7 @@ From (\ref{eq:reflected_function}) and the fact that $f$ is increasing, we know 
 
 For the opposite direction, it suffices to show that since there is an inaccessible cardinal from \emph{Axiom schema $F$}, given a first-order formula $\varphi$, there is an arbitrarily large inaccessible cardinal $\kappa$ for which 
 \beq
-\varphi \iff \langle V_\kappa, \in \rangle \models \varphi\mbox{.}\label{eq:ch3_f_iff_m_1}
+\varphi \iff \langle V_\kappa, \in \rangle~\models~\varphi\mbox{.}\label{eq:ch3_f_iff_m_1}
 \eeq
 Note that the arbitrary size of $\kappa$ means given an arbitrary ordinal $\alpha$, there is a $\kappa$ satisfying (\ref{eq:ch3_f_iff_m_1}).
 In the previous chapter, in theorem (\ref{theorem:first_order_reflection}), we have shown that we can easily obtain a limit ordinal satisfying (\ref{eq:ch3_f_iff_m_1}). Note that since for any set $M_0$, there is such $\alpha$ that $M_0 \subseteq V_\alpha$, there is a closed unbounded class of sets satisfying (\ref{eq:ch3_f_iff_m_1}), which are levels in the cumulative hierarchy, so there is a club sets of $\kappa$s satisfying (\ref{eq:ch3_f_iff_m_1}).
@@ -294,7 +294,7 @@ Let's shortly review what \emph{Axiom Schema $M$\textsubscript{1}} says. We have
 We say that $\kappa$ is a \emph{Mahlo Cardinal} iff it is an inaccessible cardinal and the set $\{\lambda < \kappa : \lambda \mbox{ is inaccessible}\}$ is stationary in $\kappa$.
 \end{definition}
 
-Alternatively, $\kappa$ is Mahlo iff $\langle V_\kappa, \in \rangle \models \sf{ZMC}$ as shown above, this is also sometimes written as \emph{Ord is Mahlo}. There are also \emph{weakly Mahlo cardinals}, that are defined via weakly inaccessible cardinal below them, Mahlo cardinals are then also called \emph{strongly Mahlo} to highlight the difference, but we will only use the term \emph{Mahlo cardinal}.
+Alternatively, $\kappa$ is Mahlo iff $\langle V_\kappa, \in \rangle~\models~\sf{ZMC}$ as shown above, this is also sometimes written as \emph{Ord is Mahlo}. There are also \emph{weakly Mahlo cardinals}, that are defined via weakly inaccessible cardinal below them, Mahlo cardinals are then also called \emph{strongly Mahlo} to highlight the difference, but we will only use the term \emph{Mahlo cardinal}.
 
 Mahlo cardinals are related to reflection principles in an interesting way. Note that given a formula $\varphi$, reflection gave us a club set of ordinals $\alpha$ such that $V_\alpha$ reflects $\varphi$, all below the first inaccessible cardinal. We have then used a different reflection schema to obtain arbitrarily high inaccessible cardinals. Now we have a cardinal in which this reflection schema holds, so we're in fact reflecting reflection. Beware that this is done rather informally, because \emph{Axiom Schema $M$\textsubscript{1}} is a countable set of axioms, which is too large to be reflected via the schemas introduced so far. One way to deal with this would be to extend reflection for second- and possibly higher-order formulas, but we would have to be very careful with the notion of satisfaction. For now, explore where can stationary sets take us because as we have shown, their connection to reflection is quite clear.
 
@@ -314,7 +314,7 @@ TODO Mahlo operation
 
 \begin{comment} % ============================================================
 
-We have transcended $\sf{ZFC}$, but that is just a~start. Naturally, we could go on and consider the next inaccessible cardinal, which is inaccessible with respect to the theory $\sf{ZFC} + \exists \kappa (\langle V_\kappa, \in \rangle \models \sf{ZFC})$. But let's try to find a faster way up, informally at first. 
+We have transcended $\sf{ZFC}$, but that is just a~start. Naturally, we could go on and consider the next inaccessible cardinal, which is inaccessible with respect to the theory $\sf{ZFC} + \exists \kappa (\langle V_\kappa, \in \rangle~\models~\sf{ZFC})$. But let's try to find a faster way up, informally at first. 
 
 Since we can find an inaccessible set larger than any chosen set $M_0$, it is clear that there are arbitrarily large inaccessible cardinals in $V$, they are ``unbounded''\footnote{The notion is formally defined for sets, but the meaning should be obvious.} in $V$. If $V$ were a cardinal, we could say that there are $V$ inaccessible cardinals less than $V$, but this statement of course makes no sense in set theory as is because $V$ is not a set. But being more careful, we could find a property that can be formalized in second-order logic and reflect it to an initial segment of $V$. That would allow us to construct large cardinals more efficiently than by adding inaccessibles one by one. The property we are looking for ought to look like something like this (the following statement is not a mathematical  statement in a strict sense):
 \begin{equation}
@@ -451,7 +451,7 @@ Let $\varphi(R)$ be a $\Pi^n_m$-formula with one free variable of type type 2 de
 \begin{equation}
 \begin{gathered}
 \mbox{If }(V_\kappa,\in, R)\models \varphi(R),\\
-\mbox{ then }(V_\alpha,\in, R\cap V_\alpha) \models \varphi(R\cap V_\alpha).
+\mbox{ then }(V_\alpha,\in, R\cap V_\alpha)~\models~\varphi(R\cap V_\alpha).
 \end{gathered}
 \end{equation}
 \end{definition}
@@ -477,7 +477,7 @@ then consider the following formula $\varphi(\mathscr{R})$ with one type 3 param
 \varphi(\mathscr{R}) = (\forall R \in \mathscr{R})(\mbox{``$R$ is unbounded in $\kappa$''})
 \end{equation}
 
-Even though $\langle V_\kappa, \in \rangle \models \varphi(\mathscr{S})$ holds, there's no $\alpha < \kappa$ for which $V_{\alpha} \models \varphi(\mathscr{S})$.
+Even though $\langle V_\kappa, \in \rangle~\models~\varphi(\mathscr{S})$ holds, there's no $\alpha < \kappa$ for which $\langle V_{\alpha}, \in \rangle~\models~\varphi(\mathscr{S})$.
 
 We will therefore stick to formulas with type 2 parameters. While there are ways to extend reflection for higher orders, it is beyond the scope of this thesis.
 % ========================================================
@@ -487,7 +487,7 @@ Since this section talks about indescribability, this is how an ordinal is descr
 \begin{definition}\
 We say an ordinal $\alpha$ is described by a formula $\varphi(P_1, \ldots, P_n)$ with type 2 parameters $P_1, \ldots, P_n$ given iff
 \begin{equation}
-\langle V_\alpha, \in \rangle \models \langle \varphi(P_1, \ldots, P_n)
+\langle V_\alpha, \in \rangle~\models~\langle \varphi(P_1, \ldots, P_n)
 \end{equation}
 but for every $\beta < \alpha$
 \begin{equation}
@@ -499,7 +499,7 @@ Drake then notes that the same notion can be established for sentences if the co
 \begin{definition}{(Describability)}\label{def:describability}\\
 We say an ordinal $\alpha$ is described by a sentence $\varphi$ in the language $\mathscr{L}$ with relation symbols $P_1, \ldots, P_n$ given iff
 \begin{equation}
-\langle V_\alpha, \in, P_1, \ldots, P_n \rangle \models \varphi
+\langle V_\alpha, \in, P_1, \ldots, P_n \rangle~\models~\varphi
 \end{equation}
 but for every $\beta < \alpha$
 \begin{equation}
@@ -529,7 +529,7 @@ Let $\kappa$ be a cardinal, the following holds for any $n \in \omega$. $\kappa$
 \begin{proof}
 The forward direction is obvious, we can always add a spare quantifier over a type 2 variable to turn a $\Pi^1_n$ formula $\varphi$ into a $\exists P \varphi$ which is obviously a $\Sigma^1_n+1$ formula.\footnote{Note that unlike in previous sections, it is worth noting that $\varphi$ is now a sentence so we don't have to worry whether $P$ is free in $\varphi$.}
 
-To prove the opposite direction, suppose that $\langle V_\kappa, \in \rangle \models \exists X \varphi(X)$ where $X$ is a type 2 variable and $\varphi$ is a $\Pi^1_n$ formula with one free variable of type 2. This means that there is a set $S \subseteq V_\kappa$ that is a witness of $\exists X \varphi(X)$, in other words, $\varphi(S)$ holds. We can replace every occurence of $X$ in $\varphi$ by a new predicate symbol $S$, this allows us to say that $\kappa$ is $\Pi^1_n$-indescribable (with respect to $\langle V_\kappa, \in, R, S \rangle$).
+To prove the opposite direction, suppose that $\langle V_\kappa, \in \rangle~\models~\exists X \varphi(X)$ where $X$ is a type 2 variable and $\varphi$ is a $\Pi^1_n$ formula with one free variable of type 2. This means that there is a set $S \subseteq V_\kappa$ that is a witness of $\exists X \varphi(X)$, in other words, $\varphi(S)$ holds. We can replace every occurence of $X$ in $\varphi$ by a new predicate symbol $S$, this allows us to say that $\kappa$ is $\Pi^1_n$-indescribable (with respect to $\langle V_\kappa, \in, R, S \rangle$).
 \footnote{A different yet interesting approach is taken by Tate in \cite{Tait_constructingcardinals}. He states that for $n\geq 0$, a formula of order $\leq n$ is called a $\Pi^n_0$ and a $\Sigma^n_0$ formula. Then a $\Pi^n_{m+1}$ is a formula of form $\forall Y \psi(Y)$ where $\psi$ is a $\Sigma^n_m$ formula and $Y$ is a variable of type $n$. Finally, a $\Sigma^n_{m+1}$ is the negation of a $\Pi^n_m$ formula. So the above holds ad definitio.}
 \end{proof}
 
@@ -553,8 +553,8 @@ Let us fix an arbitrary $\alpha_0 < \kappa$. Given $\alpha_n$, $\alpha_n+1$ is 
 the following for any formula $\varphi$, $p_1, \ldots, p_m \in V_{\alpha_{n}}, m \in \omega$:
 \begin{equation}
 \begin{gathered}
-\mbox{If }\langle V_\kappa, \in, R \rangle \models \exists x \varphi(p_1, \ldots, p_n)\mbox{,}\
-\mbox{then }\langle V_\kappa, \in, R \rangle \models \varphi(x, p_1, \ldots, p_n)
+\mbox{If }\langle V_\kappa, \in, R \rangle~\models~\exists x \varphi(p_1, \ldots, p_n)\mbox{,}\
+\mbox{then }\langle V_\kappa, \in, R \rangle~\models~\varphi(x, p_1, \ldots, p_n)
 \end{gathered}
 \end{equation}
 
@@ -562,7 +562,7 @@ Let $\alpha = \bigcup_{n < \omega} \alpha_n$.
 
 Then $\langle V_\alpha, \in, R \cap V_\alpha \rangle \prec \langle V_\kappa, \in, R \rangle$, in other words, for any $\varphi$ with given arbitrary parameters $p_1, \ldots, p_n \in V_\alpha$, it holds that
 \begin{equation}
-\langle V_\alpha, \in, R \cap V_\alpha \rangle \models \varphi(p_1, \ldots, p_n) \iff \langle V_\kappa, \in, R \rangle \models \varphi(p_1, \ldots, p_n)
+\langle V_\alpha, \in, R \cap V_\alpha \rangle~\models~\varphi(p_1, \ldots, p_n) \iff \langle V_\kappa, \in, R \rangle~\models~\varphi(p_1, \ldots, p_n)
 \end{equation}
 Which should be clear from the construction of $\alpha$
 \end{proof}
@@ -584,7 +584,7 @@ We have already shown in (\ref{theorem:inaccessible_models_zfc}) that there is n
 
 For (i)$\then$(ii), suppose that $\kappa$ is inaccessible.
 
-Then there is, by lemma (\ref{lemma:inaccessible_clubset}) a club set of ordinals $\alpha$ such that $V_\alpha$ is an elementary substructures of $V_\kappa$. For $\kappa$ to be $\Pi^1_0$inderscribable, we need to make sure that given an arbitrary first-order sentence $\varphi$ satisfied in the structure $\langle V_\kappa, \in, R \rangle$, there is an ordinal $\alpha < \kappa$, such that $\langle V_\alpha, \in, R \cap V_\alpha \rangle \models \varphi$. But this follows from the definition of elementary substructure.
+Then there is, by lemma (\ref{lemma:inaccessible_clubset}) a club set of ordinals $\alpha$ such that $V_\alpha$ is an elementary substructures of $V_\kappa$. For $\kappa$ to be $\Pi^1_0$inderscribable, we need to make sure that given an arbitrary first-order sentence $\varphi$ satisfied in the structure $\langle V_\kappa, \in, R \rangle$, there is an ordinal $\alpha < \kappa$, such that $\langle V_\alpha, \in, R \cap V_\alpha \rangle~\models~\varphi$. But this follows from the definition of elementary substructure.
 
 For (ii)$\then$(i), suppose $\kappa$ is not inaccessible, so it is either singular, or there is a cardinal $\nu < \kappa$ such that $\kappa \leq \power{\nu}$ or $\kappa=\omega$. 
 
@@ -597,7 +597,8 @@ let $\varphi = P_1 \neq \emptyset \et rng(P_1) = P_2$\footnote{$rng(x)=y$ is a f
 
 Suppose there a cardinal $\nu$ satisfying $\kappa \leq \power{\nu}$. Let there be a function $f: \power{\nu} \then \kappa$ that is onto. Then, like in the previous paragraph, we can obtain a structure $\langle V_\kappa, \in, P_1, P_2 \rangle$, where $P_1 = f$ like before, but this time $P_2 = \power{\nu}$. Again, $\varphi = P_1 \neq \emptyset \et rng(P_1) = P_2$ describes $\kappa$.
 
-Finally, suppose $\kappa = \omega$, then the sentence $\varphi = \forall x \exists y (x \in y)$ describes $\kappa$, there is obviously no $\alpha < \omega$ such that $\langle V_\alpha, \in \rangle \models \varphi$.
+Finally, suppose $\kappa = \omega$, then the sentence $\varphi = \forall x \exists y (x \in y)$ describes $\kappa$, 
+there is obviously no $\alpha < \omega$ such that $\langle V_\alpha, \in \rangle~\models~\varphi$.
 
 \end{proof}
 
@@ -623,18 +624,18 @@ Consider the following $\Pi^1_1$-sentence:
 where $P$ is a type 2 variable and $x, y$ are type 1 variables, $rng(P)$ is defined in (\ref{def:rng}), $dom(P)$ in (\ref{def:dom}) and ``$P$ is a function'' is a first-order formula defined in (\ref{def:function}).
 We will call this sentence \emph{Inac}, as in ``inaccessible'', because, given a cardinal $\mu$, the following holds if and only if $\mu$ is inaccessible:
 \begin{equation}
-\langle V_\mu, \in \rangle \models Inac
+\langle V_\mu, \in \rangle~\models~Inac % neni lepsi oznaceni?
 \end{equation}
 
 So let's fix an arbitrary $C \subset \kappa$, club set in $\kappa$. We want to show that it contains an inaccessible cardinal. Since $C$ is a subset of $V_\kappa$, let's add it to the structure $\langle V_\kappa, \in \rangle$, turning it into $\langle V_\kappa, \in, C \rangle$. Then the following holds:
 \begin{equation}
-\langle V_\kappa, \in, C \rangle \models Inac \et \mbox{``$C$ in unbounded''}
+\langle V_\kappa, \in, C \rangle~\models~Inac \et \mbox{``$C$ in unbounded''}
 \end{equation}
-Note that this is correct, because, as we have noted just before introducing the statement now being proven, if $\kappa$ is $\Pi^1_1$-indescribable, it is also $\Pi^1_0$-indescribable. So $\kappa$ is itself inaccessible and therefore $\langle V_\kappa, \in, C \rangle \models Inac$. $C$ is obviously picked so that it is unbounded in $\kappa$\footnote{``$C$ in unbounded'' is a first-order formula defined in (\ref{def:unbounded_class})}.
+Note that this is correct, because, as we have noted just before introducing the statement now being proven, if $\kappa$ is $\Pi^1_1$-indescribable, it is also $\Pi^1_0$-indescribable. So $\kappa$ is itself inaccessible and therefore $\langle V_\kappa, \in, C \rangle~\models~Inac$. $C$ is obviously picked so that it is unbounded in $\kappa$\footnote{``$C$ in unbounded'' is a first-order formula defined in (\ref{def:unbounded_class}).}.
 
 Now because we have assumed that $\kappa$ is $\Pi^1_1$-indescribable and $Inac$ is a $\Pi^1_1$-formula, so $Inac \et \mbox{``$C$ in unbounded''}$ is equivalent to a $\Pi^1_1$-formula, there must be an ordinal $\alpha$ that satisfies
 \begin{equation}
-\langle V_\alpha, \in, C \cap V_\alpha \rangle \models Inac \et \mbox{``$C$ in unbounded''}
+\langle V_\alpha, \in, C \cap V_\alpha \rangle~\models~Inac \et \mbox{``$C$ in unbounded''}
 \end{equation}
 which implies that $\alpha$ is inaccessible. 
 
@@ -650,7 +651,7 @@ We say a cardinal $\kappa$ is a \emph{totally indescribable cardinal} iff it is 
 \subsection{Measurable Cardinal}
 
 \begin{definition}{(Ultrafilter)}\\
-Given a set $x$, we say $U \subset \power{x}$ is an \emph{ultrafilter} over $x$ iff all of the following hold:
+Given a set $x$, we say $U \subset \power{x}$ is an \emph{ultrafilter} over~$x$~iff all of the following hold:
 \bce[(i)]
 \item $\emptyset \not\in U$
 \item $\forall y, z (\subset x \et y \subset z \et y \in U \then z \in U)$
@@ -671,9 +672,9 @@ Let $\kappa$ be a caridnal. We say $\kappa$ is a \emph{measurable cardinal} iff 
 Let $\kappa$ be a cardinal. If $\kappa$ is a measurable cardinal then the following hold:
 \bce[(i)]
 \item $\kappa$ is $\Pi^2_1$-indescribable.
-\item Given $U$, a normal ultrafilter over $\kappa$, a relation $R \subseteq V_\kappa$ and a $\Pi^2_1$-formula $\varphi$ such that $\langle V_\kappa, \in, R \rangle \models \varphi$, then
+\item Given $U$, a normal ultrafilter over $\kappa$, a relation $R \subseteq V_\kappa$ and a $\Pi^2_1$-formula $\varphi$ such that $\langle V_\kappa, \in, R \rangle~\models~\varphi$, then
 \begin{equation}
-\{ \alpha < \kappa : \langle V_\alpha, \in, R \cap V_\alpha \rangle \models \varphi \} \in U
+\{ \alpha < \kappa : \langle V_\alpha, \in, R \cap V_\alpha \rangle~\models~\varphi \} \in U
 \end{equation}
 \ece
 \end{theorem}
@@ -701,7 +702,7 @@ On order to formally establish this class, we need to formalize the notion of de
 \begin{definition}{(Definability)}\label{def:definability}\\
 We say that a set $X$ is \emph{definable} over a model $\langle M, \in \rangle$ if there is a first-order formula $\varphi$ together with parameters $p_1, \ldots, p_n \in M$ such that
 \begin{equation}
-X = \{x: x \in M \et \langle M, \in \rangle \models \varphi(x, p_1, \ldots, p_n)\}
+X = \{x: x \in M \et \langle M, \in \rangle~\models~\varphi(x, p_1, \ldots, p_n)\}
 \end{equation}
 \end{definition}
 
@@ -709,7 +710,7 @@ X = \{x: x \in M \et \langle M, \in \rangle \models \varphi(x, p_1, \ldots, p_n)
 The following is a set of all definable subsets of a given set $M$, denoted Def($M$).
 \begin{equation}
 \begin{gathered}
-Def(M) = \{\{y : x \in M \land \langle M, \in \rangle \models \varphi(y, u_1, \ldots, i_n) \} |\\
+Def(M) = \{\{y : x \in M \land \langle M, \in \rangle~\models~\varphi(y, u_1, \ldots, i_n) \} |\\
 \mbox{ $\varphi$ is a~first-order formula, }p_1, \ldots, p_n \in M \}
 \end{gathered}
 \end{equation}
@@ -790,7 +791,7 @@ We want to show that the following are all true for an inaccessible cardinal $\k
 implies $\mbox{``$\kappa$ is strong limit''}^L$.}
 \ece
 
-Suppose $\mbox{``$\kappa$ is not a cardinal''}^L$ holds, then there is a cardinal $\mu$, $\mu < \kappa$ and a function $f:\mu\then\kappa$, $f \in L$, such that $\mbox{``$f:\mu\then\kappa$ is onto''}^L$. But since ``$f$ is onto'' is a $\Delta_0$ formula and $\Delta_0$ formulas are are absolute in transitive structures\footnote{see lemma (\ref{lemma:delta_0_absoluteness})} and $L$ is a transitive class, $\mbox{``$f$ is onto''}^M \iff \mbox{``$f$ is onto''}$, this contradicts the fact that $\kappa$ is a cardinal.
+Suppose $\mbox{``$\kappa$ is not a cardinal''}^L$ holds, then there is a cardinal $\mu$, $\mu < \kappa$ and a function $f:\mu\then\kappa$, $f \in L$, such that $\mbox{``$f:\mu\then\kappa$ is onto''}^L$. But since ``$f$ is onto'' is a $\Delta_0$ formula and $\Delta_0$ formulas are are absolute in transitive structures\footnote{See lemma (\ref{lemma:delta_0_absoluteness}).} and $L$ is a transitive class, $\mbox{``$f$ is onto''}^M \iff \mbox{``$f$ is onto''}$, this contradicts the fact that $\kappa$ is a cardinal.
 $(\omega < \kappa)^L$ holds because $\omega \in \kappa$ and because ordinals remain ordinals in $L$, so $(\omega \in \kappa)^L$.
 
 In order to see that $\mbox{``$\kappa$ is regular''}^L$, we can repeat the argument by contradiction used to show that $\kappa$ is a cardinal in $L$. If $\kappa$ was singular, there is a $\mu < \kappa$ together with a function $f: \mu \then \kappa$ that is onto, but since ``$f$ is onto'' implies $\mbox{``$f$ is onto''}^L$, we have reached a contradiction with the fact that $\kappa$ is regular, but singular in $L$.

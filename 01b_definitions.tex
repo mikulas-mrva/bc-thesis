@@ -68,11 +68,11 @@ We read $x \subseteq y$ as \emph{x is a subset of y} and $x \subset y$ as \emph{
 %\end{equation}
 %We know that $\emptyset$ is a set from \emph{specification} and it is the same set for every $y$ given from \emph{extensionality}.
 %co radsi ``for an arbitrary $x$''
-For an arbitrary set $x$, the empty set, represented by the symbol ``$\emptyset$'', is the set defined by the following formula:
+For an arbitrary set~$x$, the empty set, represented by the symbol ``$\emptyset$'', is the set defined by the following formula:
 \beq
 (\forall y \in x)(y \in \emptyset \iff \neg(y = y))
 \eeq
-$\emptyset$ is a set due to \emph{Specification}, there is only one such set due to \emph{Extensionality}. %While the empty set could also be defined by the formula $\forall y (y \in \emptyset \iff \neg(y = y))$, the version we use is $\Delta_0$, which we will find useful later. The two definitions yield the same set for every $x$ given because of \emph{Extensionality}.
+$\emptyset$ is a set due to \emph{Specification}, there is only one such set due to \emph{Extensionality}. %While the empty set could also be defined by the formula $\forall y (y \in \emptyset \iff \neg(y = y))$, the version we use is $\Delta_0$, which we will find useful later. The two definitions yield the same set for every~$x$~given because of \emph{Extensionality}.
 % TODO odkomentovat a pridat zduvodneni proc to neni vl. trida?
 \end{definition}
 
@@ -135,7 +135,7 @@ Alternatively, $f = \{\langle x, y \rangle : \varphi(x, y)\}$ is a class.
 
 Let us introduce a few more definitions that will make the two remaining axioms more comprehensible.
 \begin{definition}{(Powerset Function)}\\
-Given a set $x$, the \emph{powerset of $x$}, denoted $\power{x}$ and satisfying (\ref{def:powerset}), is defined as follows:
+Given a set~$x$, the \emph{powerset of $x$}, denoted $\power{x}$ and satisfying (\ref{def:powerset}), is defined as follows:
 \begin{equation}
 \power{x} \defeq \{y: y \subseteq x\}
 \end{equation}
@@ -197,7 +197,7 @@ dom(f) = x \setminus \{\emptyset\}) \et (\forall y \in dom(f))(f(y) \in y)
 
 
 \begin{definition}{(Axiom of Choice)}\label{def:choice}\\
-For every set $x$ there is a function $f$ that is a choice function on $x$.
+For every set~$x$~there is a function $f$ that is a choice function on $x$.
 %\begin{equation}
 %\begin{gathered}
 %\forall x \exists f ((f \mbox{ is a function with } dom(f) = x \setminus \{\emptyset\})\\
@@ -205,7 +205,7 @@ For every set $x$ there is a function $f$ that is a choice function on $x$.
 %\end{gathered}
 %\end{equation}
 \end{definition}
-One might be unsettled by the fact that this definition quantifies over functions, which are generally classes, but in this particular case, since $dom(f) = x$ and $x$ is a set, $f$ is also a set due to \emph{Replacement}\footnote{If the underlying theory includes of implies \emph{Replacement}.}.% because a function is in fact a class of tuples and there is an obvious 1–1 mapping between those and the elements of $dom(f)$.
+One might be unsettled by the fact that this definition quantifies over functions, which are generally classes, but in this particular case, since $dom(f) = x$ and~$x$~is a set, $f$ is also a set due to \emph{Replacement}\footnote{If the underlying theory includes of implies \emph{Replacement}.}.% because a function is in fact a class of tuples and there is an obvious 1–1 mapping between those and the elements of $dom(f)$.
 
 We will refer to the axioms by their name, written in italic type, e.g. \emph{Foundation} refers to the Axiom of Foundation. Now we need to define the set theories to be used in the article. 
 % Note that axiomatic set theory is a set of formulas.
@@ -257,7 +257,7 @@ A class $A$ is said to be \emph{well ordered by $\in$} iff the following hold:
 \end{definition}
 
 \begin{definition}{(Ordinal Number)}\label{def:ordinal}\\ % ok
-A set $x$ is said to be an \emph{ordinal number} if it is \emph{transitive} and \emph{well-ordered by $\in$}. 
+A set~$x$~is said to be an \emph{ordinal number} if it is \emph{transitive} and \emph{well-ordered by $\in$}. 
 \end{definition}
 For the sake of brevity, we usually just say ``$x$~is an \emph{ordinal}''. 
 Note that ``$x$~is an ordinal'' is a well-defined formula in the language of set theory, since \ref{def:transitivity} is a first-order formula and \ref{def:well_ordering} is in fact a conjunction of four first-order formulas.
@@ -281,7 +281,7 @@ A non-zero ordinal $\alpha$ is called a \emph{limit ordinal} iff it is not a su
 \end{definition}
 
 \begin{definition}{(Ord)}\label{def:ord}\\  % ok
-\emph{The class of all ordinal numbers}, which we will denote ``$Ord$''\footnote{Other authors use ``$On$'', we will stick to the notation used in \cite{JechBook}} is the proper class defined as follows.
+\emph{The class of all ordinal numbers}, which we will denote ``$Ord$''\footnote{Other authors use ``$On$'', we will stick to the notation used in \cite{JechBook}.} is the proper class defined as follows.
 \begin{equation}
 x \in Ord \iff x\mbox{ is an ordinal}
 \end{equation}
@@ -311,13 +311,13 @@ This definition is only correct in a theory that contains or implies \emph{Repla
 \end{definition}
 
 \begin{definition}{(Rank)}\label{def:rank}\\ % ok
-Given a set $x$, we say that the rank of $x$ (written as $rank(x)$) is the least ordinal $\alpha$ such that $x \in V_{\alpha+1}$
+Given a set~$x$, we say that the rank of~$x$~(written as $rank(x)$) is the least ordinal $\alpha$ such that $x \in V_{\alpha+1}$
 \end{definition}
 Due to \emph{Regularity}, every set has a rank.\footnote{See chapter 6 of \cite{JechBook} for details.} 
 The Von Neumann's hierarchy defined above can also be defined by the fact that every $V_\alpha$ is a set of all set with rank less than $\alpha$.
 
 \begin{definition}{(Order-type)}\label{def:order_type}\\ % TODO check
-Given an arbitrary well-ordered set $x$, we say that an ordinal $\alpha$ is the \emph{order-type} of $x$ iff $x$ and $\alpha$ are isomorphic. % TODO definovat izomorfismus?
+Given an arbitrary well-ordered set~$x$, we say that an ordinal $\alpha$ is the \emph{order-type} of $x$ iff~$x$~and $\alpha$ are isomorphic. % TODO definovat izomorfismus?
 \end{definition}
 
 %\begin{definition}{($\omega$)}\label{def:omega}\\ % ???? bacha na to
@@ -339,7 +339,7 @@ Given an arbitrary well-ordered set $x$, we say that an ordinal $\alpha$ is the 
 
 % todo def one.to-one mapping?
 \begin{definition}{(Cardinality)}\\
-Given a set $x$, let the cardinality of $x$, written $|x|$, be defined as the smallest ordinal number such that there is a one to one mapping from $x$ onto $\alpha$.
+Given a set~$x$, let the cardinality of~$x$, written $|x|$, be defined as the smallest ordinal number such that there is a one to one mapping from~$x$~onto $\alpha$.
 \end{definition}
 
 \begin{definition}{(Aleph function)}\label{def:aleph}\\
@@ -347,7 +347,7 @@ Let $\omega$ be the set defined by \ref{def:omega}.
 We will recursively define the function $\aleph$ for all ordinals.
 \bce[(i)]
 \item $\aleph_0 = \omega$
-\item $\aleph_{\alpha+1}$ is the least cardinal larger than $\aleph_\alpha$\footnote{``The least cardinal larger than $\aleph_\alpha$'' is sometimes notated as $\aleph_\alpha^{+}$}
+\item $\aleph_{\alpha+1}$ is the least cardinal larger than $\aleph_\alpha$\footnote{``The least cardinal larger than $\aleph_\alpha$'' is sometimes notated as $\aleph_\alpha^{+}$.}
 \item $\aleph_\lambda = \bigcup_{\beta < \lambda}\aleph_\beta$ for a limit ordinal $\lambda$
 \ece
 If $\kappa = \aleph_\alpha$ and $\alpha$ is a successor ordinal, we call $\kappa$ a \emph{successor cardinal}. If $\alpha$ is a limit ordinal, we call $\kappa$ a \emph{limit cardinal}.
@@ -355,7 +355,7 @@ If $\kappa = \aleph_\alpha$ and $\alpha$ is a successor ordinal, we call $\kappa
 
 \begin{definition}{(Cardinal number)}\label{def:cardinal}\\
 \bce[(i)]
-\item A set $x$ is called a \emph{finite cardinal} iff $x \in \omega$.
+\item A set~$x$~is called a \emph{finite cardinal} iff $x \in \omega$.
 \item A set is called an \emph{infinite cardinal} iff there is an ordinal $\alpha$ such that $\aleph_\alpha = x$
 \item A set is called a \emph{cardinal} iff it is either a \emph{finite cardinal} or an \emph{infinite cardinal}.
 \ece
@@ -552,7 +552,7 @@ A function $f: Ord \then Ord$ is said to be \emph{normal} iff it is \emph{strict
 \end{definition}
 
 \begin{definition}{(Fixed Point)}\label{def:fixed_point}\\
-We say $x$ is a fixed point of a function $f$ iff $x=f(x)$.
+We say~$x$~is a fixed point of a function $f$ iff $x=f(x)$.
 \end{definition}
 
 \begin{definition}{(Unbounded Class)}\label{def:unbounded_class}\\
@@ -563,7 +563,7 @@ We say a class $A$ of ordinals is unbounded iff
 \end{definition}
 
 \begin{definition}{(Limit Point)}\label{def:limit_point}\\
-Given a class $x \subseteq Ord$, we say that $\alpha \neq \emptyset$ is a limit point of $x$ iff 
+Given a class $x \subseteq Ord$, we say that $\alpha \neq \emptyset$ is a limit point of~$x$~iff 
 \begin{equation}
 \alpha = \bigcup(x \cap \alpha)
 \end{equation}
@@ -574,7 +574,7 @@ We say a class $A \subseteq Ord$ is closed iff it contains all its limit points.
 \end{definition}
 
 \begin{definition}{(Club set)}\label{def:club_set}\\
-For a regular uncountable cardinal $\kappa$, a set $x \subset \kappa$ is a \emph{closed unbounded} subset, abbreviated as a \emph{club set}, iff $x$ is both closed and unbounded in $\kappa$.
+For a regular uncountable cardinal $\kappa$, a set $x \subset \kappa$ is a \emph{closed unbounded} subset, abbreviated as a \emph{club set}, iff~$x$~is both closed and unbounded in $\kappa$.
 \end{definition}
 
 \begin{definition}{(Stationary set)}\label{def:stationary_set}\\
@@ -583,7 +583,7 @@ For a regular uncountable cardinal $\kappa$, we say a set $A \subset \kappa$ is 
 
 \subsubsection{Structure, Substructure and Embedding}
 
-Structures will be denoted $\langle M, \in, R \rangle$ where $M$ is a domain, $\in$ stands for the standard membership relation, it is assumed to be restricted to the domain\footnote{To be totally explicit, we should write $\langle M, \in \cap M \times M, R \rangle$}, $R \subseteq M$ is a relation on the domain. When $R$ is not needed, we can as well only write $M$ instead of $\langle M, \in \rangle$.
+Structures will be denoted $\langle M, \in, R \rangle$ where $M$ is a domain, $\in$ stands for the standard membership relation, it is assumed to be restricted to the domain\footnote{To be totally explicit, we should write $\langle M, \in \cap M \times M, R \rangle$.}, $R \subseteq M$ is a relation on the domain. When $R$ is not needed, we can as well only write $M$ instead of $\langle M, \in \rangle$.
 
 \begin{definition}{(Elementary Embedding)}\label{def:elementary_embedding}\\
 Given the structures $\langle M_0, \in, R \rangle$, $\langle M_1, \in, R \rangle$ and a one-to-one function $j: M_0 \then M_1$, we say $j$ is an \emph{elementary embedding} of $M_0$ into $M_1$, we write $j: M_0 \prec M_1$, when the following holds for every formula $\varphi(p_1, \ldots, p_n)$ and every $p_1, \ldots, p_n \in M_0$:
