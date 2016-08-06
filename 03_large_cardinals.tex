@@ -234,7 +234,7 @@ because we have proven in the last section that for an inaccessible $\kappa$, $\
 \emph{Inaccessible reflection schema} is equivalent to \emph{Axiom schema $F$}.
 \end{theorem}
 
-This is \emph{Theorem 4.1} in chapter four of \cite{DrakeBook}, also equivalent to \emph{Theorerem 3} in \cite{Levy1960a}.
+This is \emph{Theorem 4.1} in chapter four of \cite{DrakeBook}, also equivalent to \emph{Theorerem 3} in \cite{Levy60a}.
 \begin{proof}
 Let's start by showing that \emph{Inaccessible reflection schema} implies \emph{Axiom schema $F$}. 
 It should be clear that we can reflect two formulas to a single set, just form a new formula as a conjunction of universal closures of the two.
@@ -309,193 +309,44 @@ We say that $\kappa$ is a \emph{hyper-hyper-Mahlo cardinal} iff it is inaccessib
 \end{definition}
 
 It is clear that one can continue in this direction, but the nomenclature gets increasingly overwhelming even if we introduce \emph{hyper\textsuperscript{$\alpha$}-Mahlo cardinals}.
+To see this, let's try to establish an operation that would exhaust all such cardinals in a more unified manner.
 
-TODO Mahlo operation
-
-\begin{comment} % ============================================================
-
-We have transcended $\sf{ZFC}$, but that is just a~start. Naturally, we could go on and consider the next inaccessible cardinal, which is inaccessible with respect to the theory $\sf{ZFC} + \exists \kappa (\langle V_\kappa, \in \rangle~\models~\sf{ZFC})$. But let's try to find a faster way up, informally at first. 
-
-Since we can find an inaccessible set larger than any chosen set $M_0$, it is clear that there are arbitrarily large inaccessible cardinals in $V$, they are ``unbounded''\footnote{The notion is formally defined for sets, but the meaning should be obvious.} in $V$. If $V$ were a cardinal, we could say that there are $V$ inaccessible cardinals less than $V$, but this statement of course makes no sense in set theory as is because $V$ is not a set. But being more careful, we could find a property that can be formalized in second-order logic and reflect it to an initial segment of $V$. That would allow us to construct large cardinals more efficiently than by adding inaccessibles one by one. The property we are looking for ought to look like something like this (the following statement is not a mathematical  statement in a strict sense):
-\begin{equation}
-\begin{gathered}
-\kappa \mbox{ is an inaccessible cardinal and}\\
-\mbox{there are }\kappa\mbox{ inaccessible cardinals }\mu\ <\ \kappa
-\end{gathered}
-\end{equation}
-This is in fact a fixed-point type of statement. We shall call those cardinals hyper-inaccessible. Now consider the following definition.
-
-\begin{definition}{$0$-inaccessible Cardinal}\\
-A cardinal $\kappa$ is $0$-inaccessible if it is inaccessible.
-\end{definition}
-We can define \emph{$\alpha$-weakly-inaccessible} cardinals analogously with the only difference that those are limit, not strongly limit.
-
-\begin{definition}{$\alpha$-Inaccessible Cardinal}\label{def:alpha_inaccessible}\\
-For any ordinal $\alpha$, $\kappa$ is called $\alpha$-inaccessible, if $\kappa$ is inaccessible and for each $\beta$ < $\alpha$, the set of $\beta$-inaccessible cardinals less than $\kappa$ is unbounded in $\kappa$.
+\begin{definition}{(Mahlo Operation)}\label{def:mahlo_operation}\\
+Let $A$ be a class of ordinals. Let
+\beq
+H(A) = \{\alpha \in A: A \cap \alpha \mbox{ is stationary in }\alpha\}\mbox{.}
+\eeq
+We call $H$ the \emph{Mahlo's operation}.
 \end{definition}
 
-Because $\kappa$ is inaccessible and therefore regular, the number of $\beta$-inaccessibles below $\kappa$ is equal to $\kappa$. We have therefore successfully formalized the above vague notion of hyper-inaccessible cardinal into a hierarchy of $\alpha$-inaccessibles.
+If we pick for $A$ the class of all inaccessible cardinals, $H(A)$ is the class of Mahlo cardinals.
+It is easy to see that is $A$ is the class of all $\alpha$-Mahlo cardinals, $H(A)$ is the class of $alpha+1$-Mahlo cardinals, $H(H(A))$ is the class of $\alpha+2$-Mahlo cardinals and so on.
 
-\
-
-Let's now consider iterating this process over again. Since, informally, $V$ would be $\alpha$-inaccessible for any $\alpha$, this property of the universal class could possibly be reflected to an initial segment, the smallest of those will be the first hyper-inaccessible cardinal. Such $\kappa$ is larger than any $\alpha$-inaccessible since from regularity of $\kappa$, for given $\alpha\ <\ \kappa$, $\kappa$ is $\kappa$-th $\alpha$-hyper-inaccessible cardinal. It is in fact ``inaccessible'' via $\alpha$-inaccessibility.
-
-\begin{definition}{Hyper-Inaccessible Cardinal}\\
-$\kappa$ is called the hyper-inaccessible, also $0$-hyper-inaccessible, cardinal if it is $\alpha$-inaccessible for every $\alpha\ <\ \kappa$.
-\end{definition}
-
-\begin{definition}{$\alpha$-Hyper-Inaccessible Cardinal}\\
-For any ordinal $\alpha$, $\kappa$ is called $\alpha$-hyper-inaccessible cardinal if for each ordinal $\beta\ <\ \alpha$, the set of $\beta$-hyper-inaccessible cardinals less the $\kappa$ is inbounded in $\kappa$.
-\end{definition}
-
-Obviously we could go on and iterate it ad libitum, yielding $\alpha$-hyper-$\ldots$-hyper-inaccessibles, but the nomenclature would be increasingly confusing. A smarter way to accomplish the same goal is carried out in the following section.
-
-% =====================================================================================================================================
-
-\subsection{Mahlo Cardinals}
-
-While the previous chapter introduced us to a notion of inaccessibility and the possibility of iterating it ad libitum in new theories, there is an even faster way to travel upwards in the cumulative hierarchy, that was proposed by Paul Mahlo in his articles (see \cite{Mahlo11}, \cite{Mahlo12} and \cite{Mahlo13}) at the very beginning of the 20th century, and which can be easily reformulated using reflection.
-
-\begin{theorem}\label{club_intersection} 
-Let $\kappa$ be a regular uncountable cardinal. The intersection of fewer than $\kappa$ club subsets of $\kappa$ is a club set.
-\end{theorem}
-For the proof, see \cite[Theorem 8.3]{JechBook}
-
-\begin{definition}{Weakly Mahlo Cardinal}\label{def:weakly_mahlo}\\
-$\kappa$ is \emph{weakly Mahlo} $\iff$ it is a~weakly-inaccessible ordinal and the set of all regular ordinals less then $\kappa$ is stationary in $\kappa$
-\end{definition}
-
-\begin{definition}{Mahlo Cardinal}\label{def:mahlo_cardinal}\\
-$\kappa$ is a \emph{Mahlo Cardinal} iff it is an inaccessible cardinal and the set of all inaccessible ordinals less then $\kappa$ is stationary in $\kappa$.
-\end{definition}
-% It is interesting to note, that weakly-Mahlo cardinals are fixed points of $\alpha$-weakly inaccessible cardinals, so if $\kappa$ is weakly mahlo,  .. viz Kanamori Proposition 1.1
-
-It should be clear that a cardinal $\kappa$ is Mahlo iff $V_\kappa$ is a models of $\sf{ZFC} + \mbox{\emph{Axiom Schema $M$}}$.
-
-Analogously, 
-\begin{definition}{$\alpha$-Mahlo Cardinal}\label{def:alpha_mahlo_cardinal}\\
-$\kappa$ is a \emph{$\alpha$-Mahlo Cardinal} iff it is an $\alpha$-inaccessible cardinal and the set of all $\alpha$-inaccessible ordinals less then $\kappa$ is stationary in $\kappa$.
-\end{definition}
-
-In other words, $\kappa$ is a (weakly-)Mahlo cardinal if it is (weakly-)inaccessible and every club set in $\kappa$ contains an (weakly-)inaccessible cardinal. Alternatively, a cardinal is (weakly-)Mahlo if it is (weakly-)inaccesible and there are $\kappa$ (weakly-)inaccessibles below $\kappa$.
-% viz http://euclid.colorado.edu/~monkd/m6730/gradsets12.pdf
-%Thus a~Mahlo cardinal $\kappa$ is not only inaccessible, but also has $\kappa$ inaccessibles below it.
-
-%\cite{DrakeBook}
-
-
-
-In a fashion similar to hyper-inaccessible cardinals, one can define hyper-Mahlo cardinals as well as hyper-hyper-Mahlo cardinals and so on.
-
-To see why we need to mention Mahlo Cardinals, notice that while an inaccessible cardinal reflects any first-order formula, a Mahlo cardinal reflects inaccessibility, so it, in a sense, reflects reflection. Hyper-Mahlo cardinals then stand for reflecting reflecting reflection and so on.
-
-Mahlo cardinals are also interesting from a different point of view. If we wanted to reach large cardinal from below via fixed-point argument, we don't get any higher.
-% TODO proc se vys nedostaneme pevnyma bodama?
-%TODO co s nima dela Jech?
-% TODO Drake p.121!!
-
-% TODO $\kappa$ is hyper-Mahlo iff $\kappa$ is inaccessible and the set $\{\lambda < \kappa : \lambda\mbox{ is Mahlo}\}$ is stationary in $\kappa$. to je to samy jako $\alpha$-Mahlo, ne?
-
-% TODO viz https://en.wikipedia.org/wiki/Mahlo_cardinal#Mahlo_cardinals_and_reflection_principles
-
-% Note that Mahlo cardinals were first described in 1911, almost 50 years before Lévy's reflection, which was heavily inspired by them.
-
-% `` We also state the appropriate generalization for greatly Mahlo cardinals.'' % viz http://arxiv.org/abs/math/9204218
-
-%TODO veta na zaver, shrnuti
-
-%sjednotil \then a~\implies
-% =====================================================================================================================================
-% \newpage
-\subsection{Second-Order Reflection}
-Let's try a different approach in formalizing reflection. We have seen that reflecting individual first-order formulas doesn't even transcend $\sf{ZFC}$, we have examined what can be done with axiom schemas. The aim of this chapter is to examine second-order formulas as possible axioms. Note that second-order variables (which will be established as type 2 variables later in the text) are subcollections of the universal class, but so are functions and relations. So first-order axiom schemata can also be interpreted as formulas with free second-order variables, which quantify over first-order variables only, we only need to customize the underlying theory accordingly. For example, the satisfaction relation was so far defined for first-order formulas only, but we will deal with that in a moment. Also note that by rewriting \emph{\emph{Replacement}} and \emph{Specification} to single axioms, $\sf{ZFC}$ becomes finitely axiomatizable, which in turn means that the reflection theorem as stated in section (\ref{sec:first_order}) does not hold for higher-order theories because of Gödel's second incompleteness theorem. We will explore stronger axioms of reflection instead.
-
-Let us establish a formal background first. We will now introduce higher-order formulas.
-
-\begin{definition}{(Higher-Order Variables)}\label{def:higher_order_variables}\\
-Let $M$ be a structure and $D$ it's domain. In first-order logic, variables range over individuals, that is, over elements of $D$. We shall call those \emph{type 1 variables} for the purposes of higher-order logic. Type 2 variables then range over collections, that is, the elements of $\power{D}$. Generally, type $n$ variables are defined for any $n \in \omega$ such that they range over $\mathscr{P}^{n-1}(D)$.
-\end{definition}
-We will use lowercase latin letters for type 1 variables for backwards compatibility with first-order logic, type 2 variables will be represented by uppercase letters, mostly $P, X, Y, Z$. If we ever stumble upon type 3 variables in this text, they shall be represented as $\mathscr{X}, \mathscr{Y}, \mathscr{Z}$ or in a similar font.
-
-\begin{definition}{(Full Prenex Normal Form)}\label{def:pnf}\\
-We say a formula is in the \emph{prenex normal form} if it is written as a block of quantifiers followed by a quantifier-free part.\\
-We say a formula is in the \emph{full prenex normal form} if it is written in \emph{prenex normal form} and if there are type $n+1$ quantifiers, they are written before type $n$ quantifiers.
-\end{definition}
-It is an elementary that every formula is equivalent to a formula in the prenex normal form.
-
-
-\begin{definition}{(Hierarchy of Formulas)}\label{def:analytical_hierarchy}\\
-Let $\varphi$ be a formula in the prenex formal form.
+\begin{definition}{(Iterated Mahlo Operation)}\label{def:iterated_mahlo_operation}\\
+Let $A$ be a class of ordinals. We shall extend the Mahlo operation in the following way:
 \bce[(i)]
-\item We say $\varphi$ is a $\Delta^0_0$-formula if it contains only bounded quantifiers.
-\item We say $\varphi$ is a $\Sigma^0_0$-formula or a $\Pi^0_0$-formula if it is a $\Delta^0_0$-formula.
-\item We say $\varphi$ is a $\Pi^{m+1}_0$-formula if it is a $\Pi^m_n$- or $\Sigma^m_n$-formula for any $n \in \omega$ or if it is a $\Pi^m_n$- or $\Sigma^m_n$-formula with additional free variables of type $m+1$.
-\item We say $\varphi$ is a $\Sigma^m_0$-formula if it is a $\Pi^m_0$-formula.
-\item We say $\varphi$ is a $\Sigma^m_n+1$-formula if it is of a form $\exists P_1, \ldots, P_i \psi$ for any non-zero $i$, where $\psi$ is a $\Pi^m_n$-formula and $P_1, \ldots, P_i$ are type $m+1$ variables.
-\item We say $\varphi$ is a $\Pi^m_n+1$-formula if it is of a form $\forall P_1, \ldots, P_i \psi$ for any non-zero $i$, where $\psi$ is a $\Sigma^m_n$-formula and $P_1, \ldots, P_i$ are type $m+1$ variables.
+\item $H^0(A) = A$,
+\item $H^{\alpha+1}(A) = H(H^{\alpha}(A))$,
+\item $H^{\lambda}(A) = \bigcap_{\alpha < \lambda} H^{\alpha}(X)$ for limit $\lambda$.
 \ece
 \end{definition}
 
-Now that we have introduced higher types of quantifiers, we will use it to formulate reflection. But first, let's make it clear how relativization works for higher-order quantifiers and type 2 parameters. Let $\alpha, \kappa$ be ordinals such that $\alpha < \kappa$, $R \subseteq V_\kappa$.
-\begin{equation}
-R^{V_\alpha} \defeq R \cap V_\alpha
-\end{equation}
-And let $\exists^{m}$ be a quantifier that ranges over type $m$ variables, let $P$ represent a type $m$ variable, let $\varphi$ be a type $m$ formula with the only free variable $P$.
-\begin{equation}
-(\exists P \varphi(P))^{V_\alpha} \defeq (\exists \power^(m-1){V_\alpha})\varphi^{V_\alpha}(P))
-\end{equation}
+Clearly it $A$ is the class of inaccessibles, $H^{\alpha}(A)$ is the class of $\alpha$-Mahlo cardinals. To get to hyper-Mahlo cardinals, we can diagonalize the operation.
 
-
-\begin{definition}{(Reflection)}\label{def:reflection_2}\\
-Let $\varphi(R)$ be a $\Pi^n_m$-formula with one free variable of type type 2 denoted $P$. We say $\varphi(R)$ reflects in $V_\kappa$ if for every $R \sub V_\kappa$ there is an ordinal $\alpha<\kappa$ such that the following holds:
-\begin{equation}
-\begin{gathered}
-\mbox{If }(V_\kappa,\in, R)\models \varphi(R),\\
-\mbox{ then }(V_\alpha,\in, R\cap V_\alpha)~\models~\varphi(R\cap V_\alpha).
-\end{gathered}
-\end{equation}
+\begin{definition}{(Diagonal Mahlo Operation)}\label{def:diagonal_mahlo_operation}\\
+Let $A$ be again a class of ordinals. Then the \emph{diagonal Mahlo operation} is defined as follows:
+\beq
+H^{\Delta}(A) = \{\alpha: \forall \beta < \alpha (\alpha \in H^{\beta}(X))\}\mbox{.}
+\eeq
 \end{definition}
 
-This formalization of the notion of reflection allows us to describe Inaccessible and Mahlo cardinals more easily, which we will do in the following section. 
+We can further diagonalize the diagonal version and continue this process ad libitum. All of the above steps can be turned into axioms similar to ... TODO ?
 
-It is important to see, that while we can now reflect $\Pi^m_n$-formulas for arbitrary $m, n \in \omega$, they can only have type 2 free variables. 
-This formalization of reflection can not be extended to higher-order parameters as is. This will be briefly reviewed in the next paragraph.
 
-In order to extend reflection as a stated above in (\ref{def:reflection_2}), we need to make sure that given the domain of the structure, $V_\kappa$, we know what relativization to $V_\alpha$, $\alpha < \kappa$, means.
-Since a type 3 parameters are collections of subcollections of $V_\kappa$ and we can already relativize subcollections of $V_\kappa$, this seems to be a reasonable way to extend relativization to type 3 parameters:
-\begin{equation}
-\mathscr{R}^{V_\alpha} = \{R^{V_\alpha} : R \in \mathscr{R} \}
-\end{equation}
-Where $R^{V_\alpha}$ is type 2 relativization, which is $R \cap V_\alpha$.
+\subsection{Indescribable Cardinals}
 
-For an infinite ordinal $\kappa$, let
-\begin{equation}
-\mathscr{S} \defeq \{\{x \in \kappa : x \in \alpha \}:\alpha < \kappa \}
-\end{equation}
-then consider the following formula $\varphi(\mathscr{R})$ with one type 3 parameter $\mathscr{R}$:
-\begin{equation}
-\varphi(\mathscr{R}) = (\forall R \in \mathscr{R})(\mbox{``$R$ is unbounded in $\kappa$''})
-\end{equation}
+% ===================================================== TODO check ===============================================
 
-Even though $\langle V_\kappa, \in \rangle~\models~\varphi(\mathscr{S})$ holds, there's no $\alpha < \kappa$ for which $\langle V_{\alpha}, \in \rangle~\models~\varphi(\mathscr{S})$.
-
-We will therefore stick to formulas with type 2 parameters. While there are ways to extend reflection for higher orders, it is beyond the scope of this thesis.
-% ========================================================
-\subsection{Indescribality}
-
-Since this section talks about indescribability, this is how an ordinal is described according to Drake \cite[Chapter 9]{DrakeBook}.
-\begin{definition}\
-We say an ordinal $\alpha$ is described by a formula $\varphi(P_1, \ldots, P_n)$ with type 2 parameters $P_1, \ldots, P_n$ given iff
-\begin{equation}
-\langle V_\alpha, \in \rangle~\models~\langle \varphi(P_1, \ldots, P_n)
-\end{equation}
-but for every $\beta < \alpha$
-\begin{equation}
-\langle V_\beta, \in \rangle \not\models \varphi(P_1 \cap V_\beta, \ldots, P_n \cap V_\beta)
-\end{equation}
-\end{definition}
-
-Drake then notes that the same notion can be established for sentences if the corresponding type 2 parameters are added to the language. Since the this approach is used by Kanamori in \cite{KanamoriBook}, we will stick to that too.\footnote{The first definition is included because it is more intuitive.}
 \begin{definition}{(Describability)}\label{def:describability}\\
 We say an ordinal $\alpha$ is described by a sentence $\varphi$ in the language $\mathscr{L}$ with relation symbols $P_1, \ldots, P_n$ given iff
 \begin{equation}
@@ -507,10 +358,16 @@ but for every $\beta < \alpha$
 \end{equation}
 \end{definition}
 
-\begin{definition}{($\Pi^m_n$-Indescribable Cardinal)}\label{def:pi_mn_indescribable}
+For the definition of a $\Pi^m_n$-formula and a $\Sigma^m_n$-formula, see TODO and TODO respectively.
+
+TODO nezavest spis pro provoradove fle?
+
+TODO Kanamori to dela pro vyssi rady, coz nas nesere?
+
+\begin{definition}{($\Pi^m_n$-Indescribable Cardinal)}\label{def:pi_mn_indescribable}\\
 We say that $\kappa$ is $\Pi^m_n$-indescribable iff it is not described by any $\Pi^m_n$-formula.
 \end{definition}
-\begin{definition}{($\Sigma^m_n$-Indescribable Cardinal)}\label{def:sigma_mn_indescribable}
+\begin{definition}{($\Sigma^m_n$-Indescribable Cardinal)}\label{def:sigma_mn_indescribable}\\
 We say that $\kappa$ is $\Sigma^m_n$-indescribable iff it is not described by any $\Sigma^m_n$-formula.
 \end{definition}
 
@@ -642,6 +499,179 @@ which implies that $\alpha$ is inaccessible.
 To be finished, we need to verify that $\alpha \in C$. Since $\kappa = V_\kappa$ for inaccessible $\kappa$, $C \cap V_\alpha = C \cap \alpha$, from unboundedness of $C \cap \alpha$ in $\alpha$, $\bigcup(C \cap \alpha) = \alpha$, which, together with the fact that $C$ is a club set in $\kappa$ and therefore closed in $\kappa$, yields that $\alpha \in C$.
 \end{proof}
 
+
+
+\begin{comment} % ============================================================
+
+We have transcended $\sf{ZFC}$, but that is just a~start. Naturally, we could go on and consider the next inaccessible cardinal, which is inaccessible with respect to the theory $\sf{ZFC} + \exists \kappa (\langle V_\kappa, \in \rangle~\models~\sf{ZFC})$. But let's try to find a faster way up, informally at first. 
+
+Since we can find an inaccessible set larger than any chosen set $M_0$, it is clear that there are arbitrarily large inaccessible cardinals in $V$, they are ``unbounded''\footnote{The notion is formally defined for sets, but the meaning should be obvious.} in $V$. If $V$ were a cardinal, we could say that there are $V$ inaccessible cardinals less than $V$, but this statement of course makes no sense in set theory as is because $V$ is not a set. But being more careful, we could find a property that can be formalized in second-order logic and reflect it to an initial segment of $V$. That would allow us to construct large cardinals more efficiently than by adding inaccessibles one by one. The property we are looking for ought to look like something like this (the following statement is not a mathematical  statement in a strict sense):
+\begin{equation}
+\begin{gathered}
+\kappa \mbox{ is an inaccessible cardinal and}\\
+\mbox{there are }\kappa\mbox{ inaccessible cardinals }\mu\ <\ \kappa
+\end{gathered}
+\end{equation}
+This is in fact a fixed-point type of statement. We shall call those cardinals hyper-inaccessible. Now consider the following definition.
+
+\begin{definition}{$0$-inaccessible Cardinal}\\
+A cardinal $\kappa$ is $0$-inaccessible if it is inaccessible.
+\end{definition}
+We can define \emph{$\alpha$-weakly-inaccessible} cardinals analogously with the only difference that those are limit, not strongly limit.
+
+\begin{definition}{$\alpha$-Inaccessible Cardinal}\label{def:alpha_inaccessible}\\
+For any ordinal $\alpha$, $\kappa$ is called $\alpha$-inaccessible, if $\kappa$ is inaccessible and for each $\beta$ < $\alpha$, the set of $\beta$-inaccessible cardinals less than $\kappa$ is unbounded in $\kappa$.
+\end{definition}
+
+Because $\kappa$ is inaccessible and therefore regular, the number of $\beta$-inaccessibles below $\kappa$ is equal to $\kappa$. We have therefore successfully formalized the above vague notion of hyper-inaccessible cardinal into a hierarchy of $\alpha$-inaccessibles.
+
+\
+
+Let's now consider iterating this process over again. Since, informally, $V$ would be $\alpha$-inaccessible for any $\alpha$, this property of the universal class could possibly be reflected to an initial segment, the smallest of those will be the first hyper-inaccessible cardinal. Such $\kappa$ is larger than any $\alpha$-inaccessible since from regularity of $\kappa$, for given $\alpha\ <\ \kappa$, $\kappa$ is $\kappa$-th $\alpha$-hyper-inaccessible cardinal. It is in fact ``inaccessible'' via $\alpha$-inaccessibility.
+
+\begin{definition}{Hyper-Inaccessible Cardinal}\\
+$\kappa$ is called the hyper-inaccessible, also $0$-hyper-inaccessible, cardinal if it is $\alpha$-inaccessible for every $\alpha\ <\ \kappa$.
+\end{definition}
+
+\begin{definition}{$\alpha$-Hyper-Inaccessible Cardinal}\\
+For any ordinal $\alpha$, $\kappa$ is called $\alpha$-hyper-inaccessible cardinal if for each ordinal $\beta\ <\ \alpha$, the set of $\beta$-hyper-inaccessible cardinals less the $\kappa$ is inbounded in $\kappa$.
+\end{definition}
+
+Obviously we could go on and iterate it ad libitum, yielding $\alpha$-hyper-$\ldots$-hyper-inaccessibles, but the nomenclature would be increasingly confusing. A smarter way to accomplish the same goal is carried out in the following section.
+
+% =====================================================================================================================================
+
+\subsection{Mahlo Cardinals}
+
+While the previous chapter introduced us to a notion of inaccessibility and the possibility of iterating it ad libitum in new theories, there is an even faster way to travel upwards in the cumulative hierarchy, that was proposed by Paul Mahlo in his articles (see \cite{Mahlo11}, \cite{Mahlo12} and \cite{Mahlo13}) at the very beginning of the 20th century, and which can be easily reformulated using reflection.
+
+\begin{theorem}\label{club_intersection} 
+Let $\kappa$ be a regular uncountable cardinal. The intersection of fewer than $\kappa$ club subsets of $\kappa$ is a club set.
+\end{theorem}
+For the proof, see \cite[Theorem 8.3]{JechBook}
+
+\begin{definition}{Weakly Mahlo Cardinal}\label{def:weakly_mahlo}\\
+$\kappa$ is \emph{weakly Mahlo} $\iff$ it is a~weakly-inaccessible ordinal and the set of all regular ordinals less then $\kappa$ is stationary in $\kappa$
+\end{definition}
+
+\begin{definition}{Mahlo Cardinal}\label{def:mahlo_cardinal}\\
+$\kappa$ is a \emph{Mahlo Cardinal} iff it is an inaccessible cardinal and the set of all inaccessible ordinals less then $\kappa$ is stationary in $\kappa$.
+\end{definition}
+% It is interesting to note, that weakly-Mahlo cardinals are fixed points of $\alpha$-weakly inaccessible cardinals, so if $\kappa$ is weakly mahlo,  .. viz Kanamori Proposition 1.1
+
+It should be clear that a cardinal $\kappa$ is Mahlo iff $V_\kappa$ is a models of $\sf{ZFC} + \mbox{\emph{Axiom Schema $M$}}$.
+
+Analogously, 
+\begin{definition}{$\alpha$-Mahlo Cardinal}\label{def:alpha_mahlo_cardinal}\\
+$\kappa$ is a \emph{$\alpha$-Mahlo Cardinal} iff it is an $\alpha$-inaccessible cardinal and the set of all $\alpha$-inaccessible ordinals less then $\kappa$ is stationary in $\kappa$.
+\end{definition}
+
+In other words, $\kappa$ is a (weakly-)Mahlo cardinal if it is (weakly-)inaccessible and every club set in $\kappa$ contains an (weakly-)inaccessible cardinal. Alternatively, a cardinal is (weakly-)Mahlo if it is (weakly-)inaccesible and there are $\kappa$ (weakly-)inaccessibles below $\kappa$.
+% viz http://euclid.colorado.edu/~monkd/m6730/gradsets12.pdf
+%Thus a~Mahlo cardinal $\kappa$ is not only inaccessible, but also has $\kappa$ inaccessibles below it.
+
+%\cite{DrakeBook}
+
+In a fashion similar to hyper-inaccessible cardinals, one can define hyper-Mahlo cardinals as well as hyper-hyper-Mahlo cardinals and so on.
+
+To see why we need to mention Mahlo Cardinals, notice that while an inaccessible cardinal reflects any first-order formula, a Mahlo cardinal reflects inaccessibility, so it, in a sense, reflects reflection. Hyper-Mahlo cardinals then stand for reflecting reflecting reflection and so on.
+
+Mahlo cardinals are also interesting from a different point of view. If we wanted to reach large cardinal from below via fixed-point argument, we don't get any higher. 
+
+% TODO proc se vys nedostaneme pevnyma bodama?
+%TODO co s nima dela Jech?
+% TODO Drake p.121!!
+
+% TODO $\kappa$ is hyper-Mahlo iff $\kappa$ is inaccessible and the set $\{\lambda < \kappa : \lambda\mbox{ is Mahlo}\}$ is stationary in $\kappa$. to je to samy jako $\alpha$-Mahlo, ne?
+
+% TODO viz https://en.wikipedia.org/wiki/Mahlo_cardinal#Mahlo_cardinals_and_reflection_principles
+
+% Note that Mahlo cardinals were first described in 1911, almost 50 years before Lévy's reflection, which was heavily inspired by them.
+
+% `` We also state the appropriate generalization for greatly Mahlo cardinals.'' % viz http://arxiv.org/abs/math/9204218
+
+%TODO veta na zaver, shrnuti
+
+%sjednotil \then a~\implies
+% =====================================================================================================================================
+% \newpage
+\subsection{Second-Order Reflection}
+Let's try a different approach in formalizing reflection. We have seen that reflecting individual first-order formulas doesn't even transcend $\sf{ZFC}$, we have examined what can be done with axiom schemas. The aim of this chapter is to examine second-order formulas as possible axioms. Note that second-order variables (which will be established as type 2 variables later in the text) are subcollections of the universal class, but so are functions and relations. So first-order axiom schemata can also be interpreted as formulas with free second-order variables, which quantify over first-order variables only, we only need to customize the underlying theory accordingly. For example, the satisfaction relation was so far defined for first-order formulas only, but we will deal with that in a moment. Also note that by rewriting \emph{\emph{Replacement}} and \emph{Specification} to single axioms, $\sf{ZFC}$ becomes finitely axiomatizable, which in turn means that the reflection theorem as stated in section (\ref{sec:first_order}) does not hold for higher-order theories because of Gödel's second incompleteness theorem. We will explore stronger axioms of reflection instead.
+
+Let us establish a formal background first. We will now introduce higher-order formulas.
+
+\begin{definition}{(Higher-Order Variables)}\label{def:higher_order_variables}\\
+Let $M$ be a structure and $D$ it's domain. In first-order logic, variables range over individuals, that is, over elements of $D$. We shall call those \emph{type 1 variables} for the purposes of higher-order logic. Type 2 variables then range over collections, that is, the elements of $\power{D}$. Generally, type $n$ variables are defined for any $n \in \omega$ such that they range over $\mathscr{P}^{n-1}(D)$.
+\end{definition}
+We will use lowercase latin letters for type 1 variables for backwards compatibility with first-order logic, type 2 variables will be represented by uppercase letters, mostly $P, X, Y, Z$. If we ever stumble upon type 3 variables in this text, they shall be represented as $\mathscr{X}, \mathscr{Y}, \mathscr{Z}$ or in a similar font.
+
+\begin{definition}{(Full Prenex Normal Form)}\label{def:pnf}\\
+We say a formula is in the \emph{prenex normal form} if it is written as a block of quantifiers followed by a quantifier-free part.\\
+We say a formula is in the \emph{full prenex normal form} if it is written in \emph{prenex normal form} and if there are type $n+1$ quantifiers, they are written before type $n$ quantifiers.
+\end{definition}
+It is an elementary that every formula is equivalent to a formula in the prenex normal form.
+
+
+\begin{definition}{(Hierarchy of Formulas)}\label{def:analytical_hierarchy}\\
+Let $\varphi$ be a formula in the prenex formal form.
+\bce[(i)]
+\item We say $\varphi$ is a $\Delta^0_0$-formula if it contains only bounded quantifiers.
+\item We say $\varphi$ is a $\Sigma^0_0$-formula or a $\Pi^0_0$-formula if it is a $\Delta^0_0$-formula.
+\item We say $\varphi$ is a $\Pi^{m+1}_0$-formula if it is a $\Pi^m_n$- or $\Sigma^m_n$-formula for any $n \in \omega$ or if it is a $\Pi^m_n$- or $\Sigma^m_n$-formula with additional free variables of type $m+1$.
+\item We say $\varphi$ is a $\Sigma^m_0$-formula if it is a $\Pi^m_0$-formula.
+\item We say $\varphi$ is a $\Sigma^m_n+1$-formula if it is of a form $\exists P_1, \ldots, P_i \psi$ for any non-zero $i$, where $\psi$ is a $\Pi^m_n$-formula and $P_1, \ldots, P_i$ are type $m+1$ variables.
+\item We say $\varphi$ is a $\Pi^m_n+1$-formula if it is of a form $\forall P_1, \ldots, P_i \psi$ for any non-zero $i$, where $\psi$ is a $\Sigma^m_n$-formula and $P_1, \ldots, P_i$ are type $m+1$ variables.
+\ece
+\end{definition}
+
+Now that we have introduced higher types of quantifiers, we will use it to formulate reflection. But first, let's make it clear how relativization works for higher-order quantifiers and type 2 parameters. Let $\alpha, \kappa$ be ordinals such that $\alpha < \kappa$, $R \subseteq V_\kappa$.
+\begin{equation}
+R^{V_\alpha} \defeq R \cap V_\alpha
+\end{equation}
+And let $\exists^{m}$ be a quantifier that ranges over type $m$ variables, let $P$ represent a type $m$ variable, let $\varphi$ be a type $m$ formula with the only free variable $P$.
+\begin{equation}
+(\exists P \varphi(P))^{V_\alpha} \defeq (\exists \power^(m-1){V_\alpha})\varphi^{V_\alpha}(P))
+\end{equation}
+
+
+\begin{definition}{(Reflection)}\label{def:reflection_2}\\
+Let $\varphi(R)$ be a $\Pi^n_m$-formula with one free variable of type type 2 denoted $P$. We say $\varphi(R)$ reflects in $V_\kappa$ if for every $R \sub V_\kappa$ there is an ordinal $\alpha<\kappa$ such that the following holds:
+\begin{equation}
+\begin{gathered}
+\mbox{If }(V_\kappa,\in, R)\models \varphi(R),\\
+\mbox{ then }(V_\alpha,\in, R\cap V_\alpha)~\models~\varphi(R\cap V_\alpha).
+\end{gathered}
+\end{equation}
+\end{definition}
+
+This formalization of the notion of reflection allows us to describe Inaccessible and Mahlo cardinals more easily, which we will do in the following section. 
+
+It is important to see, that while we can now reflect $\Pi^m_n$-formulas for arbitrary $m, n \in \omega$, they can only have type 2 free variables. 
+This formalization of reflection can not be extended to higher-order parameters as is. This will be briefly reviewed in the next paragraph.
+
+In order to extend reflection as a stated above in (\ref{def:reflection_2}), we need to make sure that given the domain of the structure, $V_\kappa$, we know what relativization to $V_\alpha$, $\alpha < \kappa$, means.
+Since a type 3 parameters are collections of subcollections of $V_\kappa$ and we can already relativize subcollections of $V_\kappa$, this seems to be a reasonable way to extend relativization to type 3 parameters:
+\begin{equation}
+\mathscr{R}^{V_\alpha} = \{R^{V_\alpha} : R \in \mathscr{R} \}
+\end{equation}
+Where $R^{V_\alpha}$ is type 2 relativization, which is $R \cap V_\alpha$.
+
+For an infinite ordinal $\kappa$, let
+\begin{equation}
+\mathscr{S} \defeq \{\{x \in \kappa : x \in \alpha \}:\alpha < \kappa \}
+\end{equation}
+then consider the following formula $\varphi(\mathscr{R})$ with one type 3 parameter $\mathscr{R}$:
+\begin{equation}
+\varphi(\mathscr{R}) = (\forall R \in \mathscr{R})(\mbox{``$R$ is unbounded in $\kappa$''})
+\end{equation}
+
+Even though $\langle V_\kappa, \in \rangle~\models~\varphi(\mathscr{S})$ holds, there's no $\alpha < \kappa$ for which $\langle V_{\alpha}, \in \rangle~\models~\varphi(\mathscr{S})$.
+
+We will therefore stick to formulas with type 2 parameters. While there are ways to extend reflection for higher orders, it is beyond the scope of this thesis.
+% ========================================================
+\subsection{Indescribality}
+
+% pasted from here to up there
 For a proof, see \cite{KanamoriBook}[Theorem 6.4]
 
 \begin{definition}{(Totally Indescribable Cardinal)}\label{def:totally_indescribable_cardinal}\\

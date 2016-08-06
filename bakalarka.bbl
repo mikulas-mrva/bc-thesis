@@ -10,6 +10,11 @@ Church, A. (1996).
 \newblock {\em Set theory. An introduction to large cardinals}.
 \newblock Studies in Logic and the Foundations of Mathematics, Volume 76. NH.
 
+\bibitem[Hamilton, 1988]{hamiltonBook}
+Hamilton, A. (1988).
+\newblock {\em Logic for Mathematicians}.
+\newblock Cambridge University Press.
+
 \bibitem[Jech, 2006]{JechBook}
 Jech, T. (2006).
 \newblock {\em Set theory}.
@@ -27,6 +32,12 @@ Kanamori, A. (2003).
 Lévy, A. (1960).
 \newblock Axiom schemata of strong infinity in axiomatic set theory.
 \newblock {\em Pacific Journal of Mathematics}, 10.
+
+\bibitem[Tait, 2005]{Tait_constructingcardinals}
+Tait, W.~W. (2005).
+\newblock Constructing cardinals from below.
+\newblock The Provenance of Pure Reason: Essays in the Philosophy of
+  Mathematics and Its History, 133-154.
 
 \bibitem[Wang, 1997]{GodelWang}
 Wang, H. (1997).
