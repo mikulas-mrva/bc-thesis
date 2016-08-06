@@ -171,7 +171,7 @@ there is a set $u$ such that $Scm^{\sf{S}}(u)$, $x \in u$ and all of the followi
 \bce[(i)]
 \item $\varphi \iff \varphi^{u}$
 \item $\exists y \varphi \iff (\exists y \varphi)^{u}$
-\item $\chi \iff \chi^{u}$
+% \item $\chi \iff \chi^{u}$
 % \item $\forall x, p_1, \ldots, p_n \chi \iff (\forall x, p_1, \ldots, p_n \chi)^{u}$.
 \ece
 %The above formulas are instances of the $N_0$ schema for $\varphi$, $\exists y \varphi$, $\chi$ and the universal closure of $\chi$ respectively.
@@ -182,7 +182,10 @@ From relativization, $(\exists y \varphi)^{u}$ is equivalent to $(\exists y \in 
 \end{equation}
 
 If $\varphi$ is a~function, %then for every $x \in u$, which is also $x \subset u$ since $u$ is transitive from $Scm^{\sf{S}}(u)$,
-it maps the elements of~$x$, which are also elements of $u$ due to transitivity of $u$, to elements $u$. From \emph{Specification}, we can find $y$, a~set of all images of the elements of~$x$~via $\varphi$. That means the following is an instance of \emph{Replacement} for $\varphi$ and~$x$~and it holds in $u$, so we get $\chi^{u}$, which means that $\chi$ holds by (iii).
+it maps the elements of~$x$, which are also elements of $u$ due to transitivity of $u$, to elements of $u$. 
+From \emph{Specification}, $y = \{ z \in u \}$
+we can find $y$, a~set of all images of the elements of~$x$~via $\varphi$. So we have satisfied \emph{Replacement} – given a function and a set, we have proven that image of the set via given function is also a set.
+% That means the following is an instance of \emph{Replacement} for $\varphi$ and~$x$~and it holds in $u$, so we get $\chi^{u}$, which means that $\chi$ holds by (iii).
 % \beq
 % (\forall p_1, \ldots, p_n \in u) \chi\mbox{.}
 % \eeq
