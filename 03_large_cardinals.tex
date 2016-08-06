@@ -282,6 +282,8 @@ We will call $\sf{ZMC}$ an axiomatic set theory that contains all axioms and sch
 \end{definition}
 We have decided to call it $\sf{ZMC}$, because Lévy uses $\sf{ZM}$, derived from $\sf{ZF}$, which is more intuitive, but we also need the axiom of choice, thus, $\sf{ZMC}$.
 
+As a sidenote, we should note that \sf{ZMC} is extension of \sf{ZFC}, which is in turn an extension of \sf{S}.
+
 \subsection{Mahlo Cardinals}
 We have shown that \sf{ZMC} contains arbitrarily large inaccessible cardinals. To return to reflection-style argument, is there a set that satisfies this property? To be able to properly answer this question, we have to formulate the notion of "containing arbitrarily large cardinals" more carefully. While we have previously used club sets, this is not an option because inaccessibles don't form a club class in \sf{ZMC}\footnote{Note that cofinality of the limit of the first $\omega$ inaccessibles is $\omega$, which makes is singular.}, we could try to formulate stronger versions of \emph{Axiom Schame $M$\textsubscript{1}}. 
 
@@ -294,9 +296,9 @@ Let's shortly review what \emph{Axiom Schema $M$\textsubscript{1}} says. We have
 We say that $\kappa$ is a \emph{Mahlo Cardinal} iff it is an inaccessible cardinal and the set $\{\lambda < \kappa : \lambda \mbox{ is inaccessible}\}$ is stationary in $\kappa$.
 \end{definition}
 
-Alternatively, $\kappa$ is Mahlo iff $\langle V_\kappa, \in \rangle~\models~\sf{ZMC}$ as shown above, this is also sometimes written as \emph{Ord is Mahlo}. There are also \emph{weakly Mahlo cardinals}, that are defined via weakly inaccessible cardinal below them, Mahlo cardinals are then also called \emph{strongly Mahlo} to highlight the difference, but we will only use the term \emph{Mahlo cardinal}.
+Alternatively, $\kappa$ is Mahlo iff $\langle V_\kappa, \in \rangle~\models~\sf{ZMC}$ as shown above, this is also sometimes written as \emph{Ord is Mahlo}. There are also \emph{weakly Mahlo cardinals}, that are defined via weakly inaccessible cardinals below them, Mahlo cardinals are then also called \emph{strongly Mahlo} to highlight the difference, but we will only use the term \emph{Mahlo cardinal}.
 
-Mahlo cardinals are related to reflection principles in an interesting way. Note that given a formula $\varphi$, reflection gave us a club set of ordinals $\alpha$ such that $V_\alpha$ reflects $\varphi$, all below the first inaccessible cardinal. We have then used a different reflection schema to obtain arbitrarily high inaccessible cardinals. Now we have a cardinal in which this reflection schema holds, so we're in fact reflecting reflection. Beware that this is done rather informally, because \emph{Axiom Schema $M$\textsubscript{1}} is a countable set of axioms, which is too large to be reflected via the schemas introduced so far. One way to deal with this would be to extend reflection for second- and possibly higher-order formulas, but we would have to be very careful with the notion of satisfaction. For now, explore where can stationary sets take us because as we have shown, their connection to reflection is quite clear.
+Mahlo cardinals are related to reflection principles in an interesting way. Note that given a formula $\varphi$, reflection gave us a club set of ordinals $\alpha$ such that $V_\alpha$ reflects $\varphi$, all below the first inaccessible cardinal. We have then used a different reflection schema to obtain arbitrarily high inaccessible cardinals. Now we have a cardinal in which this reflection schema holds, so we are in fact reflecting reflection. Beware that this is done rather informally, because \emph{Axiom Schema $M$\textsubscript{1}} is a countable set of axioms, which is too large to be reflected via the schemas introduced so far. One way to deal with this would be to extend reflection for second- and possibly higher-order formulas, but we would have to be very careful with the notion of satisfaction. For now, let us explore where can stationary sets take us because as we have shown, their connection to reflection is quite clear.
 
 What would happen if we strengthened \emph{Axiom Schema $M$\textsubscript{1}} to say that every normal function has a Mahlo cardinal in its range?
 
@@ -309,7 +311,7 @@ We say that $\kappa$ is a \emph{hyper-hyper-Mahlo cardinal} iff it is inaccessib
 \end{definition}
 
 It is clear that one can continue in this direction, but the nomenclature gets increasingly overwhelming even if we introduce \emph{hyper\textsuperscript{$\alpha$}-Mahlo cardinals}.
-To see this, let's try to establish an operation that would exhaust all such cardinals in a more unified manner.
+To see there is a more elegant way to reach those cardinals, we will now establish an operation that exhausts all such cardinals in a more unified manner. % trochu nesikovny
 
 \begin{definition}{(Mahlo Operation)}\label{def:mahlo_operation}\\
 Let $A$ be a class of ordinals. Let
@@ -334,13 +336,14 @@ Let $A$ be a class of ordinals. We shall extend the Mahlo operation in the follo
 Clearly it $A$ is the class of inaccessibles, $H^{\alpha}(A)$ is the class of $\alpha$-Mahlo cardinals. To get to hyper-Mahlo cardinals, we can diagonalize the operation.
 
 \begin{definition}{(Diagonal Mahlo Operation)}\label{def:diagonal_mahlo_operation}\\
-Let $A$ be again a class of ordinals. Then the \emph{diagonal Mahlo operation} is defined as follows:
+Let $A$ be a class of ordinals. Then the \emph{diagonal Mahlo operation} is defined as follows:
 \beq
 H^{\Delta}(A) = \{\alpha: \forall \beta < \alpha (\alpha \in H^{\beta}(X))\}\mbox{.}
 \eeq
 \end{definition}
 
-We can further diagonalize the diagonal version and continue this process ad libitum. All of the above steps can be turned into axioms similar to ... TODO ?
+We can further diagonalize the diagonal version and continue this process ad libitum in order to reach all large cardinals accessible "from below". 
+%All of the above steps can be turned into axioms similar to ... TODO ?
 
 
 \subsection{Indescribable Cardinals}
@@ -359,6 +362,8 @@ but for every $\beta < \alpha$
 \end{definition}
 
 For the definition of a $\Pi^m_n$-formula and a $\Sigma^m_n$-formula, see TODO and TODO respectively.
+
+TODO embeddingy?
 
 TODO nezavest spis pro provoradove fle?
 
