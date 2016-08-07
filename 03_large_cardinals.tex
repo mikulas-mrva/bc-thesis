@@ -345,11 +345,16 @@ H^{\Delta}(A) = \{\alpha: \forall \beta < \alpha (\alpha \in H^{\beta}(X))\}\mbo
 We can further diagonalize the diagonal version and continue this process ad libitum in order to reach all large cardinals accessible "from below". 
 %All of the above steps can be turned into axioms similar to ... TODO ?
 
+TODO par slov o tom co je "from below" (určitě až sem?)
 
 \subsection{Indescribable Cardinals}
 
-% ===================================================== TODO check ===============================================
+Indescriability is another approach towards large cardinals that is based on reflection. 
+We will briefly introduce the basic definitions and show that it yield larger objects, but most of them are not reachable from below
 
+Most of the results presented in this subchapter are taken from \cite{KanamoriBook}.
+
+% ===================================================== TODO check ===============================================
 \begin{definition}{(Describability)}\label{def:describability}\\
 We say an ordinal $\alpha$ is described by a sentence $\varphi$ in the language $\mathscr{L}$ with relation symbols $P_1, \ldots, P_n$ given iff
 \begin{equation}
@@ -376,23 +381,23 @@ We say that $\kappa$ is $\Pi^m_n$-indescribable iff it is not described by any $
 We say that $\kappa$ is $\Sigma^m_n$-indescribable iff it is not described by any $\Sigma^m_n$-formula.
 \end{definition}
 
-To see that this notion is based in reflection, note that for $\Pi^m_n$-formulas\footnote{This holds for $\Sigma^m_n$-formulas alike.}, a cardinal $\kappa$ is $\Pi^m_n$-indescribable iff every $\Pi^m_n$-formula reflects in $\kappa$ in the sense of definition (\ref{def:reflection_2}). Informally, can also view indescribability as a property held by the universe $V$, in the sense that every formula aiming to describe it in fact describes an initial segment, which is similar to a reflection principle, albeit stated informally.\footnote{Formally, we have to be once again careful with ``properties of $V$'' for the reasons mentioned in the introduction of this thesis. That's why this chapter only reflects sentences to models with additional relations.}
+To see that this notion is based in reflection, let us recall the opening quote by Gödel which says that \emph{``The Universe of sets cannot be uniquely characterised (i. e. dis- tinguished from all its initial elements) by any internal structural property of the membership relation in it (...)''}. A cardinal $\kappa$ is $\Pi^m_n$-indescribable\footnote{This holds for $\Sigma^m_n$-formulas alike.} iff every $\Pi^m_n$-formula fails to describe $V_\kappa$ and describes an initial segment instead.
+In a sense, $V_\kappa$ reflects the ``property''\footnote{In this case, we are not using the word to refer to a definable class, but on a meta level to refer to a property expressible in the natural language, hence the quotation marks.} of indescribability of the universal class with respect to certain classes of formulas.
 
 \
 
-Since we are interested accessing cardinals from below via fixed points of normal functions, we will limit ourselves to $\Pi^1_n$-formulas, with the exception of measurable cardinal, that is included for context.
-
-\
+Since we are interested inaccessing cardinals from below, we will limit ourselves to $\Pi^1_n$-formulas, with the exception of the measurable cardinal, that is included for context.
 
 \begin{lemma}
 Let $\kappa$ be a cardinal, the following holds for any $n \in \omega$. $\kappa$ is $\Pi^1_n$-indescribable iff $\kappa$ is $\Sigma^1_{n+1}$-indescribable
 \end{lemma}
 
 \begin{proof}
-The forward direction is obvious, we can always add a spare quantifier over a type 2 variable to turn a $\Pi^1_n$ formula $\varphi$ into a $\exists P \varphi$ which is obviously a $\Sigma^1_n+1$ formula.\footnote{Note that unlike in previous sections, it is worth noting that $\varphi$ is now a sentence so we don't have to worry whether $P$ is free in $\varphi$.}
+The forward direction is obvious, we can always add a spare quantifier over a type 2 variable to turn a $\Pi^1_n$ formula $\varphi$ into a $\exists P \varphi$ which is obviously a $\Sigma^1_{n+1}$-formula.\footnote{Note that unlike in previous sections, it is worth noting that $\varphi$ is now a sentence so we don't have to worry whether $P$ is free in $\varphi$.}
 
-To prove the opposite direction, suppose that $\langle V_\kappa, \in \rangle~\models~\exists X \varphi(X)$ where $X$ is a type 2 variable and $\varphi$ is a $\Pi^1_n$ formula with one free variable of type 2. This means that there is a set $S \subseteq V_\kappa$ that is a witness of $\exists X \varphi(X)$, in other words, $\varphi(S)$ holds. We can replace every occurence of $X$ in $\varphi$ by a new predicate symbol $S$, this allows us to say that $\kappa$ is $\Pi^1_n$-indescribable (with respect to $\langle V_\kappa, \in, R, S \rangle$).
-\footnote{A different yet interesting approach is taken by Tate in \cite{Tait_constructingcardinals}. He states that for $n\geq 0$, a formula of order $\leq n$ is called a $\Pi^n_0$ and a $\Sigma^n_0$ formula. Then a $\Pi^n_{m+1}$ is a formula of form $\forall Y \psi(Y)$ where $\psi$ is a $\Sigma^n_m$ formula and $Y$ is a variable of type $n$. Finally, a $\Sigma^n_{m+1}$ is the negation of a $\Pi^n_m$ formula. So the above holds ad definitio.}
+To prove the opposite direction, suppose that $\langle V_\kappa, \in \rangle~\models~\exists X \varphi(X)$ where $X$ is a type 2 variable and $\varphi$ is a $\Pi^1_n$ formula with one free variable of type 2. 
+This means that there is a set $S \subseteq V_\kappa$ that is a witness of $\exists X \varphi(X)$, in other words, $\varphi(S)$ holds. 
+We can replace every occurence of $X$ in $\varphi$ by a new predicate symbol $S$, this allows us to say that $\kappa$ is $\Pi^1_n$-indescribable (with respect to $\langle V_\kappa, \in, R, S \rangle$).\footnote{A different yet interesting approach is taken by Tate in \cite{Tait_constructingcardinals}. He states that for $n\geq 0$, a formula of order $\leq n$ is called a $\Pi^n_0$ and a $\Sigma^n_0$ formula. Then a $\Pi^n_{m+1}$ is a formula of form $\forall Y \psi(Y)$ where $\psi$ is a $\Sigma^n_m$ formula and $Y$ is a variable of type $n$. Finally, a $\Sigma^n_{m+1}$ is the negation of a $\Pi^n_m$ formula. So the above holds ad definitio.}
 \end{proof}
 
 The above lemma makes it clear that we can suppose that all formulas with no higher than type 2 variables are $\Pi^1_n$-formulas, $n \in \omega$, without the loss of generality.
@@ -405,13 +410,13 @@ If $\kappa$ is an inaccessible cardinal and given $R \subseteq V_\kappa$, then 
 \end{lemma}
 
 \begin{proof}
-To see that (\ref{eq:inacc_lemma_set}) is closed, let us recall that a $A \subseteq \kappa$ is closed iff for every ordinal $\alpha < \lambda$, $\alpha \neq \emptyset$: if $A \cap \alpha$ is unbounded in $\alpha$ then $\alpha \in A$. Since $\kappa$ is an inaccessible cardinal, thus strong limit, it is closed under limits of sequences of ordinals lesser than $\kappa$.  
+To see that (\ref{eq:inacc_lemma_set}) is closed, let us recall that a $A \subseteq \kappa$ is closed iff for every ordinal $\emptyset < \alpha < \lambda$: if $A \cap \alpha$ is unbounded in $\alpha$ then $\alpha \in A$. Since $\kappa$ is an inaccessible cardinal, thus strong limit, it is closed under limits of sequences of ordinals lesser than $\kappa$.  
 
 %TODO neco s $V_\kappa$, ze je tranzitivni a tak jso vsechny $V_\alpha$ pro $\alpha<\kappa$ $V_\alpha \in V_\kappa$
 
 We want to verify that it is unbounded, we will use a recursively defined sequence $\alpha_0, \alpha_1, \ldots$
 to build an elementary substructure of $\langle V_\kappa, \in, R \rangle$ that is built above an arbitrary $\alpha_0 <\kappa$ .
-Let us fix an arbitrary $\alpha_0 < \kappa$. Given $\alpha_n$, $\alpha_n+1$ is defined as the least $\beta$, $\alpha_n \leq \beta$ that satisfies 
+Let us fix an arbitrary $\alpha_0 < \kappa$. Given $\alpha_n$, $\alpha_{n+1}$ is defined as the least $\beta$, $\alpha_n \leq \beta$ that satisfies 
 the following for any formula $\varphi$, $p_1, \ldots, p_m \in V_{\alpha_{n}}, m \in \omega$:
 \begin{equation}
 \begin{gathered}
@@ -446,7 +451,8 @@ We have already shown in (\ref{theorem:inaccessible_models_zfc}) that there is n
 
 For (i)$\then$(ii), suppose that $\kappa$ is inaccessible.
 
-Then there is, by lemma (\ref{lemma:inaccessible_clubset}) a club set of ordinals $\alpha$ such that $V_\alpha$ is an elementary substructures of $V_\kappa$. For $\kappa$ to be $\Pi^1_0$inderscribable, we need to make sure that given an arbitrary first-order sentence $\varphi$ satisfied in the structure $\langle V_\kappa, \in, R \rangle$, there is an ordinal $\alpha < \kappa$, such that $\langle V_\alpha, \in, R \cap V_\alpha \rangle~\models~\varphi$. But this follows from the definition of elementary substructure.
+Then there is, by lemma (\ref{lemma:inaccessible_clubset}) a club set of ordinals $\alpha$ such that $V_\alpha$ is an elementary substructures of $V_\kappa$. 
+For $\kappa$ to be $\Pi^1_0$-inderscribable, we need to make sure that given an arbitrary first-order sentence $\varphi$ satisfied in the structure $\langle V_\kappa, \in, R \rangle$, there is an ordinal $\alpha < \kappa$, such that $\langle V_\alpha, \in, R \cap V_\alpha \rangle~\models~\varphi$. But this follows from the definition of elementary substructure.
 
 For (ii)$\then$(i), suppose $\kappa$ is not inaccessible, so it is either singular, or there is a cardinal $\nu < \kappa$ such that $\kappa \leq \power{\nu}$ or $\kappa=\omega$. 
 
@@ -464,7 +470,7 @@ there is obviously no $\alpha < \omega$ such that $\langle V_\alpha, \in \rangl
 
 \end{proof}
 
-Generally, it should be clear that it a cardinal $\kappa$ is $\Pi^m_n$-indescribable, it is also $\Pi^{m'}_{n'}$-indescribable for every $m'<m, n'<n$. By the same line of thought, if a cardinal $\kappa$ satisfies property implied by $\Pi^m_n$-indescribability, it satisfies all properties implied by $\Pi^{m'}_{n'}$-indescribability for $m'<m, n'<n$, for example $\kappa$ is $\Pi^m_n$-indescribable for $m \geq 1, n \geq 0$, it is also an inaccessible cardinal.
+Generally, it should be clear that it a cardinal $\kappa$ is $\Pi^m_n$-indescribable, it is also $\Pi^{m'}_{n'}$-indescribable for every $m'<m, n'<n$. By the same line of thought, if a cardinal $\kappa$ satisfies the property implied by $\Pi^m_n$-indescribability, it satisfies all properties implied by $\Pi^{m'}_{n'}$-indescribability for $m'<m, n'<n$. For example, if $\kappa$ is $\Pi^m_n$-indescribable for $m \geq 1$ then it is also an inaccessible cardinal.
 
 % TODO pozorovani ze kdyz je $\kappa$ $\Pi$
 
@@ -479,28 +485,29 @@ Assuming that $\kappa$ is $\Pi^1_1$-indescribable, we want to prove that every 
 Consider the following $\Pi^1_1$-sentence:
 \begin{equation}
 \begin{gathered}\label{eq:inac}
-\forall P (\mbox{``$P$ is a function''} \et \exists x(x = dom(P) \lor \power{x} = dom(P)) \then\
+\forall P (\mbox{``$P$ is a function''} \et \exists x(x = dom(P) \lor \power{x} = dom(P)) \then\\
 \then \exists y(y = rng(P)))
 \end{gathered}
 \end{equation}
 where $P$ is a type 2 variable and $x, y$ are type 1 variables, $rng(P)$ is defined in (\ref{def:rng}), $dom(P)$ in (\ref{def:dom}) and ``$P$ is a function'' is a first-order formula defined in (\ref{def:function}).
-We will call this sentence \emph{Inac}, as in ``inaccessible'', because, given a cardinal $\mu$, the following holds if and only if $\mu$ is inaccessible:
+We will call this sentence \emph{Inac}, as in ``inaccessible'', because given a cardinal $\mu$, the following holds if and only if $\mu$ is inaccessible:
 \begin{equation}
 \langle V_\mu, \in \rangle~\models~Inac % neni lepsi oznaceni?
 \end{equation}
 
 So let's fix an arbitrary $C \subset \kappa$, club set in $\kappa$. We want to show that it contains an inaccessible cardinal. Since $C$ is a subset of $V_\kappa$, let's add it to the structure $\langle V_\kappa, \in \rangle$, turning it into $\langle V_\kappa, \in, C \rangle$. Then the following holds:
 \begin{equation}
-\langle V_\kappa, \in, C \rangle~\models~Inac \et \mbox{``$C$ in unbounded''}
+\langle V_\kappa, \in, C \rangle~\models~Inac \et \mbox{``$C$ is unbounded''}
 \end{equation}
-Note that this is correct, because, as we have noted just before introducing the statement now being proven, if $\kappa$ is $\Pi^1_1$-indescribable, it is also $\Pi^1_0$-indescribable. So $\kappa$ is itself inaccessible and therefore $\langle V_\kappa, \in, C \rangle~\models~Inac$. $C$ is obviously picked so that it is unbounded in $\kappa$\footnote{``$C$ in unbounded'' is a first-order formula defined in (\ref{def:unbounded_class}).}.
+Note that this is correct, because as we have noted just before introducing the statement now being proven, if $\kappa$ is $\Pi^1_1$-indescribable, it is also $\Pi^1_0$-indescribable. So $\kappa$ is itself inaccessible and therefore $\langle V_\kappa, \in, C \rangle~\models~Inac$. $C$ is obviously picked so that it is unbounded in $\kappa$\footnote{``$C$ is unbounded'' is a first-order formula defined in (\ref{def:unbounded_class}).}.
 
-Now because we have assumed that $\kappa$ is $\Pi^1_1$-indescribable and $Inac$ is a $\Pi^1_1$-formula, so $Inac \et \mbox{``$C$ in unbounded''}$ is equivalent to a $\Pi^1_1$-formula, there must be an ordinal $\alpha$ that satisfies
+Now because we have assumed that $\kappa$ is $\Pi^1_1$-indescribable and $Inac$ is a $\Pi^1_1$-formula, so $Inac \et \mbox{``$C$ is unbounded''}$ is equivalent to a $\Pi^1_1$-formula, there must be an ordinal $\alpha$ that satisfies
 \begin{equation}
-\langle V_\alpha, \in, C \cap V_\alpha \rangle~\models~Inac \et \mbox{``$C$ in unbounded''}
+\langle V_\alpha, \in, C \cap V_\alpha \rangle~\models~Inac \et \mbox{``$C$ is unbounded''}
 \end{equation}
 which implies that $\alpha$ is inaccessible. 
 
+TODO !!!!! BLBE !!!
 To be finished, we need to verify that $\alpha \in C$. Since $\kappa = V_\kappa$ for inaccessible $\kappa$, $C \cap V_\alpha = C \cap \alpha$, from unboundedness of $C \cap \alpha$ in $\alpha$, $\bigcup(C \cap \alpha) = \alpha$, which, together with the fact that $C$ is a club set in $\kappa$ and therefore closed in $\kappa$, yields that $\alpha \in C$.
 \end{proof}
 
@@ -624,8 +631,8 @@ Let $\varphi$ be a formula in the prenex formal form.
 \item We say $\varphi$ is a $\Sigma^0_0$-formula or a $\Pi^0_0$-formula if it is a $\Delta^0_0$-formula.
 \item We say $\varphi$ is a $\Pi^{m+1}_0$-formula if it is a $\Pi^m_n$- or $\Sigma^m_n$-formula for any $n \in \omega$ or if it is a $\Pi^m_n$- or $\Sigma^m_n$-formula with additional free variables of type $m+1$.
 \item We say $\varphi$ is a $\Sigma^m_0$-formula if it is a $\Pi^m_0$-formula.
-\item We say $\varphi$ is a $\Sigma^m_n+1$-formula if it is of a form $\exists P_1, \ldots, P_i \psi$ for any non-zero $i$, where $\psi$ is a $\Pi^m_n$-formula and $P_1, \ldots, P_i$ are type $m+1$ variables.
-\item We say $\varphi$ is a $\Pi^m_n+1$-formula if it is of a form $\forall P_1, \ldots, P_i \psi$ for any non-zero $i$, where $\psi$ is a $\Sigma^m_n$-formula and $P_1, \ldots, P_i$ are type $m+1$ variables.
+\item We say $\varphi$ is a $\Sigma^m_{n+1}$-formula if it is of a form $\exists P_1, \ldots, P_i \psi$ for any non-zero $i$, where $\psi$ is a $\Pi^m_n$-formula and $P_1, \ldots, P_i$ are type $m+1$ variables.
+\item We say $\varphi$ is a $\Pi^m_{n+1}$-formula if it is of a form $\forall P_1, \ldots, P_i \psi$ for any non-zero $i$, where $\psi$ is a $\Sigma^m_n$-formula and $P_1, \ldots, P_i$ are type $m+1$ variables.
 \ece
 \end{definition}
 
@@ -822,7 +829,7 @@ We want to show that the following are all true for an inaccessible cardinal $\k
 \item $\mbox{``$\kappa$ is a cardinal''}^L$
 \item $(\omega < \kappa)^L$
 \item $\mbox{``$\kappa$ is regular''}^L$
-\item $\mbox{``$\kappa$ is limit''}^L$ .\footnote{While inaccessible cardinals are strong limit cardinals, since \emph{GCH} holds in $L$, $\mbox{``$\kappa$ is limit''}^L$ 
+\item $\mbox{``$\kappa$ is limit''}^L$.\footnote{While inaccessible cardinals are strong limit cardinals, since \emph{GCH} holds in $L$, $\mbox{``$\kappa$ is limit''}^L$ 
 implies $\mbox{``$\kappa$ is strong limit''}^L$.}
 \ece
 
