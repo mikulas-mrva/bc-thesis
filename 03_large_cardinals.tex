@@ -84,7 +84,7 @@ Note that $\alpha < \bigcup Y iff \exists \xi \in Y (\alpha < \xi)$. Since $f$ 
 
 \begin{lemma}\label{lemma:normal_enumerates_club}\
 Let $\alpha$ be a limit ordinal. Then the following hold:
-\bce[(i)] % TODO pozor na club / "closed unbounded"
+\bce[(i)] % TODO pozor na club / ``closed unbounded''
 \item If $C$ is a club set in $\alpha$, then there is an ordinal $\beta$ and a normal function $f: \beta \then \alpha$ such that $rng(f) = C$. We say that $f$ \emph{enumrates} $C$.
 \item If $\beta$ is an ordinal and $f$ is a normal function such that $f: \beta \then \alpha$ and $rng(f)$ is unbounded in $\alpha$, then $rng(f)$ is a closed unbouded set in $\alpha$.
 \ece
@@ -142,7 +142,7 @@ Similar axiom is proposed in \cite{DrakeBook}.
 Let $f$ be a normal function defined for all ordinals.
 \bce[(i)]
 \item There is a is normal function $g_1$ defined for all ordinals that enumerates the class $\{\alpha : f(\alpha) = \alpha \et \alpha \in Ord \}$.
-\item There is a is normal function $g_2$ defined for all ordinals that enumerates the class $\{ \lambda : \mbox{"$f(\lambda)$ is a strong limit cardinal."}\}$. 
+\item There is a is normal function $g_2$ defined for all ordinals that enumerates the class $\{ \lambda : \mbox{``$f(\lambda)$ is a strong limit cardinal.''}\}$. 
 % radsi jeste check co vlastne cisluju a co z toho je silne limitni
 \ece
 \end{lemma}
@@ -285,7 +285,7 @@ We have decided to call it $\sf{ZMC}$, because Lévy uses $\sf{ZM}$, derived fro
 As a sidenote, we should note that \sf{ZMC} is extension of \sf{ZFC}, which is in turn an extension of \sf{S}.
 
 \subsection{Mahlo Cardinals}
-We have shown that \sf{ZMC} contains arbitrarily large inaccessible cardinals. To return to reflection-style argument, is there a set that satisfies this property? To be able to properly answer this question, we have to formulate the notion of "containing arbitrarily large cardinals" more carefully. While we have previously used club sets, this is not an option because inaccessibles don't form a club class in \sf{ZMC}\footnote{Note that cofinality of the limit of the first $\omega$ inaccessibles is $\omega$, which makes is singular.}, we could try to formulate stronger versions of \emph{Axiom Schame $M$\textsubscript{1}}. 
+We have shown that \sf{ZMC} contains arbitrarily large inaccessible cardinals. To return to reflection-style argument, is there a set that satisfies this property? To be able to properly answer this question, we have to formulate the notion of ``containing arbitrarily large cardinals'' more carefully. While we have previously used club sets, this is not an option because inaccessibles don't form a club class in \sf{ZMC}\footnote{Note that cofinality of the limit of the first $\omega$ inaccessibles is $\omega$, which makes is singular.}, we could try to formulate stronger versions of \emph{Axiom Schame $M$\textsubscript{1}}. 
 
 Let's shortly review what \emph{Axiom Schema $M$\textsubscript{1}} says. We have shown earlier in this chapter that there is a simple relation between normal function defined for all ordinals and closed unbounded classes. So by saying that for a class of ordinals $C$, a normal function $f$ has at least one element of $C$ in its range, we say that $C$ is stationary. Or, as Drake puts it for $C$, the class of inaccessible cardinals, and a $\kappa$, in which $C$ is stationary:
 \begin{displayquote}
@@ -342,10 +342,10 @@ H^{\Delta}(A) = \{\alpha: \forall \beta < \alpha (\alpha \in H^{\beta}(X))\}\mbo
 \eeq
 \end{definition}
 
-We can further diagonalize the diagonal version and continue this process ad libitum in order to reach all large cardinals accessible "from below". 
+We can further diagonalize the diagonal version and continue this process ad libitum in order to reach all large cardinals accessible ``from below''. 
 %All of the above steps can be turned into axioms similar to ... TODO ?
 
-TODO par slov o tom co je "from below" (určitě až sem?)
+TODO par slov o tom co je ``from below'' (určitě až sem?)
 
 \subsection{Indescribable Cardinals}
 
@@ -480,38 +480,60 @@ If a cardinal $\kappa$ is $\Pi^1_1$-indescribable, then it is a Mahlo cardinal.
 
 % todo kappa a ne v-kappa?
 \begin{proof}
-Assuming that $\kappa$ is $\Pi^1_1$-indescribable, we want to prove that every club set in $\kappa$ contains an inaccessible cardinal. 
+Assuming that $\kappa$ is $\Pi^1_1$-indescribable, we want to prove that every club set of in $\kappa$ contains an inaccessible cardinal. 
 
-Consider the following $\Pi^1_1$-sentence:
-\begin{equation}
-\begin{gathered}\label{eq:inac}
-\forall P (\mbox{``$P$ is a function''} \et \exists x(x = dom(P) \lor \power{x} = dom(P)) \then\\
-\then \exists y(y = rng(P)))
+Consider the following $\Pi^1_1$-sentence $\varphi$:
+\beq
+\begin{gathered}
+\varphi = \forall P (``\mbox{P is a function}''\then \forall x \exists y \forall z (z \in y \iff (\exists q \in x)(P(x, y, p_1, \ldots, p_n))))\\
+\et \forall x \exists y \forall z (z \in y \iff z \subseteq x)
 \end{gathered}
-\end{equation}
-where $P$ is a type 2 variable and $x, y$ are type 1 variables, $rng(P)$ is defined in (\ref{def:rng}), $dom(P)$ in (\ref{def:dom}) and ``$P$ is a function'' is a first-order formula defined in (\ref{def:function}).
-We will call this sentence \emph{Inac}, as in ``inaccessible'', because given a cardinal $\mu$, the following holds if and only if $\mu$ is inaccessible:
+\eeq
+%\begin{gathered}\label{eq:inac}
+% \forall P (\mbox{``$P$ is a function''} \et \exists x(x = dom(P) \lor \power{x} = dom(P)) \then\\
+%\then \exists y(y = rng(P)))
+%\end{gathered}
+%\end{equation}
+where $P$ is a type 2 variable and the rest are type 1 variables,  ``$P$ is a function'' is a first-order formula defined in (\ref{def:function}). 
+As has been shown earlier in this chapter, given a cardinal $\mu$, the following holds if and only if $\mu$ is inaccessible:
 \begin{equation}
-\langle V_\mu, \in \rangle~\models~Inac % neni lepsi oznaceni?
+\langle V_\mu, \in \rangle~\models~\varphi
 \end{equation}
 
-So let's fix an arbitrary $C \subset \kappa$, club set in $\kappa$. We want to show that it contains an inaccessible cardinal. Since $C$ is a subset of $V_\kappa$, let's add it to the structure $\langle V_\kappa, \in \rangle$, turning it into $\langle V_\kappa, \in, C \rangle$. Then the following holds:
+Now fix an arbitrary $C \subset \kappa$, a club set in $\kappa$. We want to show that it contains an inaccessible cardinal. Since $C$ is a subset of $\kappa$, let's add it to the structure $\langle V_\kappa, \in \rangle$, turning it into $\langle V_\kappa, \in, C \rangle$. Then the following holds:
 \begin{equation}
-\langle V_\kappa, \in, C \rangle~\models~Inac \et \mbox{``$C$ is unbounded''}
+\langle V_\kappa, \in, C \rangle~\models~Inac \et \mbox{``$C$ is unbounded''}\footnote{``$C$ is unbounded'' is a first-order formula, see (\ref{def:unbounded_class}).}
 \end{equation}
-Note that this is correct, because as we have noted just before introducing the statement now being proven, if $\kappa$ is $\Pi^1_1$-indescribable, it is also $\Pi^1_0$-indescribable. So $\kappa$ is itself inaccessible and therefore $\langle V_\kappa, \in, C \rangle~\models~Inac$. $C$ is obviously picked so that it is unbounded in $\kappa$\footnote{``$C$ is unbounded'' is a first-order formula defined in (\ref{def:unbounded_class}).}.
+Note that this holds because $\kappa$ is $\Pi^1_1$-indescribable, and therefore also $\Pi^1_0$-indescribable.
+So $\kappa$ is itself inaccessible and therefore $\langle V_\kappa, \in, C \rangle~\models~\varphi$.
 
-Now because we have assumed that $\kappa$ is $\Pi^1_1$-indescribable and $Inac$ is a $\Pi^1_1$-formula, so $Inac \et \mbox{``$C$ is unbounded''}$ is equivalent to a $\Pi^1_1$-formula, there must be an ordinal $\alpha$ that satisfies
+Since we have assumed that $\kappa$ is $\Pi^1_1$-indescribable, $\varphi$ is a $\Pi^1_1$-formula and $\varphi \et \mbox{``$C$ is unbounded''}$ is equivalent to a $\Pi^1_1$-formula, there must be an ordinal $\alpha$ that satisfies
 \begin{equation}
 \langle V_\alpha, \in, C \cap V_\alpha \rangle~\models~Inac \et \mbox{``$C$ is unbounded''}
 \end{equation}
-which implies that $\alpha$ is inaccessible. 
+which implies that $\alpha$ is inaccessible.
 
-TODO !!!!! BLBE !!!
-To be finished, we need to verify that $\alpha \in C$. Since $\kappa = V_\kappa$ for inaccessible $\kappa$, $C \cap V_\alpha = C \cap \alpha$, from unboundedness of $C \cap \alpha$ in $\alpha$, $\bigcup(C \cap \alpha) = \alpha$, which, together with the fact that $C$ is a club set in $\kappa$ and therefore closed in $\kappa$, yields that $\alpha \in C$.
+To be finished, we need to verify that $\alpha \in C$, which is clear from the fact that $C$ is a club set in $\kappa$ and it is unbounded in $\alpha$.
 \end{proof}
 
+There is an even stronger large cardinal property implied by $\Pi_1^1$-indescribability that is based on reflection.
 
+\begin{definition}{(Extension Property)}\label{def:extension_property}\\
+We say a cardinal $\kappa$ has the \emph{extension property} iff for all $U \subset V_\kappa$ there exists a transitive set $X$ with $\kappa \in X$, and a subset $S \subset X, such that $(V_\kappa, \in, U)$ is an elementary substructure of $(X, \in, S)$. Here, U and S are regarded as unary predicates.s
+\end{definition}
+
+\begin{definition}{(Weakly Compact Cardinal)}\label{def:weakly_compact_cardinal}\\
+We say that a cardinal $\kappa$ is \emph{weakly compact} iff it has the extension property.
+\end{definition}
+
+\begin{theorem}\\
+A cardinal $\kappa$ is $\Pi_1^1$-indescribable iff it is weakly compact.
+\end{theorem}
+For the proof, see \cite{KanamoriBook}. % nebo spis Jech?
+
+TODO Meritelny?
+
+TODO L
 
 \begin{comment} % ============================================================
 
