@@ -6,7 +6,7 @@
 \usepackage{paralist}
 \usepackage{lineno}
 \usepackage{verbatim}
-\linenumbers
+%\linenumbers
 
 % \include{00_headers.tex}
 \usepackage{color} %pro barevné odkazy, příp. nadpisy
@@ -116,6 +116,9 @@ pdfhighlight=/O% ... (vzhled odkazu pri stisknuti)
 \newcommand{\treq}{\trianglelefteq}
 \newcommand{\et}{\mathrel{\&}}
 \newcommand{\proves}{\vdash}
+\newcommand{\bref}[1]{{\bf \ref{#1}}}
+\newcommand{\eref}[1]{(\ref{#1})}
+
 
 \newcommand\defeq{\mathrel{\overset{\makebox[0pt]{\mbox{\normalfont\tiny\sffamily def}}}{=}}}
 

@@ -1,7 +1,6 @@
 \subsection{Notation and Terminology}
 \subsubsection{The Language of Set Theory}
-% TODO predpokladame splnovani a tak, z logiky? link na ucebnici kdyztak? 
-This text assumes the knowledge of basic terminology and some results from first-order predicate logic, see \cite{hamiltonBook}. We won't introduce the notions of \emph{language}, \emph{function symbol}, \emph{predicate}, \emph{term}, \emph{model} and \emph{interpretation} that are used in (\ref{def:satisfaction}).
+This text assumes the knowledge of basic terminology and some results from first-order predicate logic, see any entry-level book on logic, e.g. \cite{hamiltonBook}. We won't introduce the notions of \emph{language}, \emph{function symbol}, \emph{predicate}, \emph{term}, \emph{model} and \emph{interpretation} that are used in definition \bref{def:satisfaction}.
 
 
 All proofs are based on \cite{JechBook} unless explicitly stated otherwise. Notable amount of inspiration is also drawn from \cite{KanamoriBook} and \cite{DrakeBook}.
@@ -62,7 +61,7 @@ We read $x \subseteq y$ as \emph{x is a subset of y} and $x \subset y$ as \emph{
 \end{definition}
 
 \begin{definition}{(Empty Set)}\label{def:emptyset}
-%Let $\varphi = \neg(x = x)$, $y$ is an arbitrary set, we there exists at least one set $y$ from (\ref{def:existence_of_a_set} or \emph{Infinity})
+%Let $\varphi = \neg(x = x)$, $y$ is an arbitrary set, we there exists at least one set $y$ from \bref{def:existence_of_a_set} or \emph{Infinity})
 %\begin{equation}
 %\emptyset \defeq \{x : x \in y\ \et \varphi(x)\}
 %\end{equation}
@@ -72,8 +71,7 @@ For an arbitrary set~$x$, the empty set, represented by the symbol ``$\emptyset$
 \beq
 (\forall y \in x)(y \in \emptyset \iff \neg(y = y))
 \eeq
-$\emptyset$ is a set due to \emph{Specification}, there is only one such set due to \emph{Extensionality}. %While the empty set could also be defined by the formula $\forall y (y \in \emptyset \iff \neg(y = y))$, the version we use is $\Delta_0$, which we will find useful later. The two definitions yield the same set for every~$x$~given because of \emph{Extensionality}.
-% TODO odkomentovat a pridat zduvodneni proc to neni vl. trida?
+$\emptyset$ is a set due to \emph{Specification}, there is only one such set due to \emph{Extensionality}. 
 \end{definition}
 
 \begin{definition}{(Axiom of Pairing)}\label{def:pairing}
@@ -116,7 +114,7 @@ $\emptyset$ is a set due to \emph{Specification}, there is only one such set due
 \begin{equation}
 \exists x (\emptyset \in x \et (\forall y \in x)(y\cup\{y\} \in x))\label{eq:axiom_of_infinity}
 \end{equation}
-The least set satisfying (\ref{eq:axiom_of_infinity}) is denoted $\omega$.
+The least set satisfying \eref{eq:axiom_of_infinity} is denoted $\omega$.
 \end{definition}
 
 \begin{definition}{(Function)}\label{def:function}\\
@@ -134,7 +132,7 @@ Alternatively, $f = \{\langle x, y \rangle : \varphi(x, y)\}$ is a class.
 
 Let us introduce a few more definitions that will make the two remaining axioms more comprehensible.
 \begin{definition}{(Powerset Function)}\\
-Given a set~$x$, the \emph{powerset of $x$}, denoted $\power{x}$ and satisfying the definition (\ref{def:powerset}), is defined as follows:
+Given a set~$x$, the \emph{powerset of $x$}, denoted $\power{x}$ and satisfying the definition \bref{def:powerset}\, is defined as follows:
 \begin{equation}
 \power{x} = \{y: y \subseteq x\}
 \end{equation}
@@ -142,13 +140,12 @@ Given a set~$x$, the \emph{powerset of $x$}, denoted $\power{x}$ and satisfying 
 
 % TODO hezci formulace
 \begin{definition}{(Domain of a Function)}\label{def:dom}\\
-Let $f$ be a function. We call the \emph{domain of $f$} the set of all sets for which $f$ is defined. We use ``$Dom(f)$'' to refer to this set.
+Let $f$ be a function. We call the \emph{domain of $f$} the class of all sets for which $f$ is defined. We use ``$Dom(f)$'' to refer to this set.
 %We read the following as ``$Dom(f)$ is the domain of $f$''.
 \begin{equation}
 x \in Dom(f) \iff \exists y (f(x) = y)
 \end{equation}
 \end{definition}
-% TODO nedat tam univerzalni uzaver?
 We say ``$f$ is a function on $A$'', $A$ being a class, if $A = dom(f)$.
 
 \begin{definition}{(Range of a Function)}\label{def:rng}\\
@@ -212,27 +209,27 @@ We will refer to the axioms by their name, written in italic type, e.g. \emph{Fo
 \begin{definition}{$(\sf{S})$}\label{def:s}\\ %ok
 We call $\sf{S}$ an axiomatic theory in the language $\mathscr{L} = \{=, \in\}$ with exactly the following axioms:
 \bce[(i)]
-\item \emph{Existence of a set} (see (\ref{def:existence_of_a_set}))
-\item \emph{Extensionality} (see (\ref{def:extensionality}))
-\item \emph{Specification} (see (\ref{def:specification}))
-\item \emph{Foundation} (see (\ref{def:foundation}))
-\item \emph{Pairing} (see (\ref{def:pairing}))
-\item \emph{Union} (see (\ref{def:union}))
-\item \emph{Powerset} (see (\ref{def:powerset}))
+\item \emph{Existence of a set} (see definition \bref{def:existence_of_a_set})
+\item \emph{Extensionality} (see definition \bref{def:extensionality})
+\item \emph{Specification} (see definition \bref{def:specification})
+\item \emph{Foundation} (see definition \bref{def:foundation})
+\item \emph{Pairing} (see definition \bref{def:pairing})
+\item \emph{Union} (see definition \bref{def:union})
+\item \emph{Powerset} (see definition \bref{def:powerset})
 \ece
 \end{definition}
 
 \begin{definition}{$(\sf{ZF})$}\label{def:zf}\\ %ok
 We call $\sf{ZF}$ an axiomatic theory in the language $\mathscr{L} = \{=, \in\}$ that contains all the axioms of $\sf{S}$ in addition to the following:
 \bce[(i)]
-\item \emph{Replacement} schema (see (\ref{def:replacement}))
-\item \emph{Infinity} (see (\ref{def:infinity}))
+\item \emph{Replacement} schema (see definition \bref{def:replacement})
+\item \emph{Infinity} (see definition \bref{def:infinity})
 \ece
 \emph{Existence of a set} is usually left out because it is a consequence of \emph{infinity}.
 \end{definition}
 
 \begin{definition}{$(\sf{ZFC})$}\label{def:zfc}\\ % ok
-$\sf{ZFC}$ is an axiomatic theory in the language $\mathscr{L} = \{=, \in\}$ that contains all the axioms of $\sf{ZF}$ plus \emph{Choice} (\ref{def:choice}).
+$\sf{ZFC}$ is an axiomatic theory in the language $\mathscr{L} = \{=, \in\}$ that contains all the axioms of $\sf{ZF}$ plus \emph{Choice}, see definition \bref{def:choice}).
 \end{definition}
 
 \
@@ -259,7 +256,8 @@ A class $A$ is said to be \emph{well ordered by $\in$} iff the following hold:
 A set~$x$~is said to be an \emph{ordinal number} if it is \emph{transitive} and \emph{well-ordered by $\in$}. 
 \end{definition}
 For the sake of brevity, we usually just say ``$x$~is an \emph{ordinal}''. 
-Note that ``$x$~is an ordinal'' is a well-defined formula in the language of set theory, since \ref{def:transitivity} is a first-order formula and \ref{def:well_ordering} is in fact a conjunction of four first-order formulas.
+Note that ``$x$~is an ordinal'' is a well-defined formula in the language of set theory, 
+since transitivity is defined in definition \bref{def:transitivity} via a first-order formula and well-ordering\footnote{See definition \bref{def:well_ordering}.} is in fact a conjunction of four first-order formulas.
 Ordinals will be usually denoted by lower case greek letters, starting from the beginning of the alphabet: $\alpha, \beta, \gamma, \ldots$.
 Given two different ordinals $\alpha, \beta$, we will write $\alpha < \beta$ for $\alpha \in \beta$, see Lemma 2.11 in \cite{JechBook} for technical details.
 
@@ -316,22 +314,9 @@ Due to \emph{Regularity}, every set has a rank.\footnote{See chapter 6 of \cite{
 The Von Neumann's hierarchy defined above can also be defined by the fact that every $V_\alpha$ is a set of all set with rank less than $\alpha$.
 
 \begin{definition}{(Order-type)}\label{def:order_type}\\ % TODO check
-Given an arbitrary well-ordered set~$x$, we say that an ordinal $\alpha$ is the \emph{order-type} of $x$ iff~$x$~and $\alpha$ are isomorphic. % TODO definovat izomorfismus?
+Given an arbitrary well-ordered set~$x$, we say that an ordinal $\alpha$ is the \emph{order-type} of $x$ iff~$x$~and $\alpha$ are isomorphic.
 \end{definition}
 
-%\begin{definition}{($\omega$)}\label{def:omega}\\ % ???? bacha na to
-%We call $\omega$
-%\begin{equation}
-%\omega \defeq \bigcap\{x : \mbox{``$x$ is a limit ordinal''})\}
-%\end{equation}
-%\end{definition}
-%$\omega$ is non-empty if \emph{Infinity} or any equivalent holds.
-
-%\begin{definition}{(LÃ©vy's Hierarchy)}\\
-%!!! pozor na konflikt s analytickou (vyres podle kanamoriho)
-%TODO (potrebujeme ji?)
-%\end{definition}
-% TODO levyho hierarchie?
 \
 
 \subsubsection{Cardinal Numbers}
@@ -342,7 +327,7 @@ Given a set~$x$, let the cardinality of~$x$, written $|x|$, be defined as the sm
 \end{definition}
 
 \begin{definition}{(Aleph function)}\label{def:aleph}\\
-Let $\omega$ be the set defined by \ref{def:omega}.
+Let $\omega$ be the set defined by definition \bref{def:omega}.
 We will recursively define the function $\aleph$ for all ordinals.
 \bce[(i)]
 \item $\aleph_0 = \omega$
@@ -364,10 +349,6 @@ Infinite cardinals will be notated by lowercase greek letters from the middle of
 
 For formal details as well as why every set can be well-ordered assuming \emph{Choice}, and therefore has a cardinality, see \cite{JechBook}. % proc je to tady?
 
-% todo mame def ``cofinal''?
-% TODO fix it!!
-% todo pozor na supremum, upravit! (ikdyz pro limitni je to stejny)
-
 \begin{definition}{(Sequence)}\label{def:sequence}\\
 We say that a function $\varphi(x, y)$ is a \emph{sequence} iff there is an ordinal $\alpha$ such that $dom(\varphi) = \alpha$. In other words, a function is called a sequence if it is defined exactly for every ordinal from $0$ to some $\alpha$. We then say it is an $\alpha$-sequence. We usually write $\langle \beta_i : i \in \alpha \rangle$ or $\langle \beta_0, \beta_1, \ldots \rangle$ when referring to a sequence, $\beta_i$ then denotes the elements of $rng(\varphi)$ for every $i \in dom(\varphi)$.
 \end{definition}
@@ -378,20 +359,18 @@ Given a class $A$ of ordinals, we say that $B \subseteq A$ is \emph{cofinal in $
 (\forall x \in A)(\exists y \in B)(x \in y)
 \eeq
 \end{definition}
-In other words, $B$ is cofinal in $A$ iff it is unbounded in $A$. % todo fakt?
+In other words, $B \subseteq A$ is cofinal in $A$ iff it is unbounded in $A$.
 
-% TODO mas to asi cely blbe :(
+% TODO bylo to blbe, je opraveno?
 \begin{definition}{(Cofinality of a Limit Ordinal)}\label{def:cofinality}\\ % a co https://math.berkeley.edu/~jhicks/links/SOTS/cskipper112613.pdf? 
 Let $\lambda$ be a limit ordinal. 
-We say that the \emph{cofinality} of $\lambda$ is $\kappa$ iff $\kappa$ is the least ordinal, such that there is a cofinal $\kappa$-sequence $\langle \beta_\xi : \xi < \kappa \rangle$, such that
+We say that the \emph{cofinality} of $\lambda$ is $\kappa$ iff $\kappa$ is the least ordinal, such that there is a cofinal $\kappa$-sequence $\langle \beta_\xi : \xi < \kappa \rangle$ satisfying
 \begin{equation}
-sup(\{\beta_\xi: \xi < \kappa\}) = \lambda
+sup(\{\beta_\xi: \xi < \kappa\}) = \lambda\mbox{.}
 \end{equation}
 We write $cf(\lambda) = \kappa$.
 \end{definition}
 Note that $cf(\alpha)$ is alway a cardinal\footnote{If $cf(\alpha)$ is not a cardinal, so $|cf(\alpha)| < cf(\alpha)$, then there is a mapping from $|cf(\alpha)|$ onto $cf(\alpha)$. But then the range of this mapping is a cofinal subset of $cf(\alpha)$ that is strictly smaller than $cf(\alpha)$.}.
-% TODO fixme
-% TODO asi staci rict ze existuje takovy limitni ordinal?
 
 \begin{definition}{(Regular Cardinal)}\label{def:regular_cardinal}\\
 We say an infinite cardinal $\kappa$ is \emph{regular} iff $cf(\kappa) = \kappa$. % TODO chyba podle honzika, watt?
@@ -493,7 +472,7 @@ Let $\varphi$ be a $\Delta_0$-formula, then $\varphi$ is absolute in any transit
 \begin{proof}
 This will be proven by induction over the complexity of a given $\Delta_0$-formula $\varphi$. Let $M$ be an arbitrary transitive class. 
 
-Atomic formulas are always absolute by the definition of relativisation, see (\ref{def:relativization}).
+Atomic formulas are always absolute by the definition of relativisation, see definition \bref{def:relativization}.
 Suppose that $\Delta_0$-formulas $\psi_1$ and $\psi_2$ are absolute in $M$. Then from relativization, $(\psi_1 \et \psi_2)^M \iff \psi_1^M \et \psi_2^M$, which is, from the induction hypothesis, equivalent to $\psi_1 \et \psi_2$. The same holds for $\lor, \then, \neg$.
 
 Suppose that a $\Delta_0$-formula $\psi$ is absolute in $M$. Let $y$ be a set and let $\varphi = (\exists x \in y) \psi(x)$. 
@@ -509,7 +488,7 @@ Let $\varphi$ be a $\Pi_1$-formula and $M$ a transitive class. Then the followin
 \end{lemma}
 \begin{proof}
 Since $\varphi(p_1, \ldots, p_n)$ is $\Pi_1$, there is a $\Delta_0$-formula $\psi(p_1, \ldots, p_n, x)$ such that $\varphi = \forall x \psi(p_1, \ldots, p_n, x)$. 
-From relativization and lemma (\ref{lemma:delta_0_absoluteness}), $\varphi^M(p_1, \ldots, p_n) \iff (\forall x \in M)\psi(p_1, \ldots, p_n, x)$.
+From relativization and lemma \bref{lemma:delta_0_absoluteness}, $\varphi^M(p_1, \ldots, p_n) \iff (\forall x \in M)\psi(p_1, \ldots, p_n, x)$.
 
 Assume that for $p_1, \ldots, p_n \in M$ fixed, that $\forall x \psi(p_1, \ldots, p_n, x)$ holds, but $(\forall x \in M)\psi(p_1, \ldots, p_n, x)$ does not. 
 Therefore $\exists x \neg \psi(p_1, \ldots, p_n, x)$, which contradicts $\forall x \psi(p_1, \ldots, p_n, x)$.
@@ -524,7 +503,7 @@ Let $\varphi$ be a $\Sigma_1$-formula and $M$ a transitive class. Then the follo
 \end{lemma}
 \begin{proof}
 Since $\varphi(p_1, \ldots, p_n)$ is $\Sigma_1$, there is a $\Delta_0$-formula $\psi(p_1, \ldots, p_n, x)$ such that $\varphi = \exists x \psi(p_1, \ldots, p_n, x)$. 
-From relativization and lemma (\ref{lemma:delta_0_absoluteness}), $\varphi^M(p_1, \ldots, p_n) \iff (\exists x \in M)\psi(p_1, \ldots, p_n, x)$.
+From relativization and lemma \bref{lemma:delta_0_absoluteness}, $\varphi^M(p_1, \ldots, p_n) \iff (\exists x \in M)\psi(p_1, \ldots, p_n, x)$.
 
 Assume that for $p_1, \ldots, p_n \in M$ fixed, that $(\exists x \in M)\psi(p_1, \ldots, p_n, x)$ holds, but $\exists x \psi(p_1, \ldots, p_n, x)$ does not. This is an obvious contradiction.
 \end{proof}
@@ -575,7 +554,6 @@ We say a class $A \subseteq Ord$ is closed iff it contains all its limit points.
 \begin{definition}{(Club set)}\label{def:club_set}\\
 For a regular uncountable cardinal $\kappa$, a set $x \subset \kappa$ is a \emph{closed unbounded} subset, abbreviated as a \emph{club set}, iff~$x$~is both closed and unbounded in $\kappa$.
 \end{definition}
-% TODO lemma o pruniku konecne mnoha club setu? % nakonec netreba
 
 \begin{definition}{(Stationary set)}\label{def:stationary_set}\\
 For a regular uncountable cardinal $\kappa$, we say a set $A \subset \kappa$ is stationary in $\kappa$ iff it intersects every club subset of $\kappa$.
@@ -600,5 +578,3 @@ Given the structures $\langle M_0, \in, R \rangle$, $\langle M_1, \in, R \rangle
 \end{equation}
 for $p_1, \ldots, p_n \in M_0$
 \end{definition}
-
-% While higher-order satisfaction relation for proper classes is unformalizable\footnote{TODO CITE KDE? Tarski nebo tak neco?},we can formalize satisfaction in a structure. For the rest of this chapter, let $D$ be a domain of such structure.
