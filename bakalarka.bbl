@@ -10,6 +10,12 @@ Church, A. (1996).
 \newblock {\em Set theory. An introduction to large cardinals}.
 \newblock Studies in Logic and the Foundations of Mathematics, Volume 76. NH.
 
+\bibitem[G{\"o}del and Brown, 1940]{Godel1940consistency}
+G{\"o}del, K. and Brown, G. (1940).
+\newblock {\em The Consistency of the Axiom of Choice and of the Generalized
+  Continuum-hypothesis with the Axioms of Set Theory}.
+\newblock @Annals of Math. Stud. Princeton University Press.
+
 \bibitem[Hamilton, 1988]{hamiltonBook}
 Hamilton, A. (1988).
 \newblock {\em Logic for Mathematicians}.
@@ -28,10 +34,20 @@ Kanamori, A. (2003).
 \newblock Springer Monographs in Mathematics. Springer-Verlag Berlin
   Heidelberg, 2 edition.
 
+\bibitem[Kunen, 1983]{Kunen_independence}
+Kunen, K. (1983).
+\newblock {\em Set Theory An Introduction To Independence Proofs}.
+\newblock Studies in Logic and the Foundations of Mathematics. North Holland.
+
 \bibitem[Lévy, 1960]{Levy60a}
 Lévy, A. (1960).
 \newblock Axiom schemata of strong infinity in axiomatic set theory.
 \newblock {\em Pacific Journal of Mathematics}, 10.
+
+\bibitem[Pinter, 2014]{PinterBook}
+Pinter, C.~C. (2014).
+\newblock {\em A Book of Set Theory}.
+\newblock Dover Books on Mathematics. Dover Publications.
 
 \bibitem[Tait, 2005]{Tait_constructingcardinals}
 Tait, W.~W. (2005).
