@@ -1,12 +1,12 @@
 \subsection{Notation and Terminology}
 \subsubsection{The Language of Set Theory}
 % TODO predpokladame splnovani a tak, z logiky? link na ucebnici kdyztak? 
-This text assumes the knowledge of basic terminology and some results from first-order predicate logic, for example \cite{hamiltonBook}. We won't introduce the notions of \emph{language}, \emph{function symbol}, \emph{predicate}, \emph{term}, \emph{model} and \emph{interpretation} that are used in (\ref{def:satisfaction}).
+This text assumes the knowledge of basic terminology and some results from first-order predicate logic, see \cite{hamiltonBook}. We won't introduce the notions of \emph{language}, \emph{function symbol}, \emph{predicate}, \emph{term}, \emph{model} and \emph{interpretation} that are used in (\ref{def:satisfaction}).
 
 
 All proofs are based on \cite{JechBook} unless explicitly stated otherwise. Notable amount of inspiration is also drawn from \cite{KanamoriBook} and \cite{DrakeBook}.
 
-We will now shortly review the basic notions that allow is to define the \emph{Zermelo-Fraenkel} set theory.
+We will now shortly review the basic notions that allow us to define the \emph{Zermelo-Fraenkel} set theory.
 
 % theory with the Axiom of Choice ($\sf{ZFC}$), a first-order set theory in the language $\mathscr{L} = \{=, \in\}$, which will be sometimes referred to as \emph{the language of set theory}. In Chapter 3, the Axiom of Choice is assumed. When tlaking about higher-order logic, we will usually denote type 1 variables, which are elements of the domain of discourse, by lowercase letters, mostly $u, v, w, x, y, z, p_1, p_2, p_3,  \ldots$ while type 2 variables, which represent $n$-ary relations of the domain of discourse for any natural number $n$, are usually denoted by uppercase letters $A, B, C, X, Y, Z$. Note that there are exception to convention rules as $f$ usually denotes a function, which is in fact a type 2 variable. On the other hand, $M$ stands for a set.
 
@@ -20,10 +20,10 @@ a class of all sets satisfying $\varphi(x, p_1, \ldots, p_n)$ in a sense that
 \begin{equation}
 x \in A \iff \varphi(x, p_1, \ldots, p_n)
 \end{equation}
-Given classes $A$, $B$, one can easily define the elementary set operations such as $A \cap B$, $A \cup B$, $A \setminus B$, $\bigcup A$, see the first part of \cite{JechBook} for details.
-Axioms are the tools by which we can decide whether a particular class is ``small enough'' to be considered a set\footnote{``Small enough'' means that it doesn't introduce a paradox similar to Russell's.}. A class that fails to be considered a set is called a \emph{proper class}.
+for some $p_1, \ldots, p_n$. Given classes $A$, $B$, one can easily define the elementary set operations such as $A \cap B$, $A \cup B$, $A \setminus B$, $\bigcup A$, see the first chapter of \cite{JechBook} for details.
+Axioms are the tools by which we can decide whether a particular class is ``small enough'' to be considered a set\footnote{``Small enough'' means that it doesn't lead to a paradox similar to the famous Russell's paradox.}. A class that fails to be considered a set is called a \emph{proper class}.
 
-We will often write something like ``$M$ is a limit ordinal'', it should always be clear that this can be rewritten as a formula that was introduced earlier.
+We will often write something like ``$M$ is a limit ordinal'', it should always be clear that this can be rewritten as a formula that was introduced earlier. Tuples are notated as $\la a, b \ra$.
 
 \
 
@@ -100,7 +100,6 @@ $\emptyset$ is a set due to \emph{Specification}, there is only one such set due
 %\eeq
 %\end{definition}
 
-Now we can introduce more axioms.
 \begin{definition}{(Axiom of Foundation)}\label{def:foundation}
 \begin{equation}
 \forall x (x \neq \emptyset \then (\exists y \in x) (x \cap y = \emptyset)) %ok
@@ -115,13 +114,13 @@ Now we can introduce more axioms.
 
 \begin{definition}{(Axiom of Infinity)}\label{def:infinity} %?
 \begin{equation}
-\exists x (\emptyset \in x \et (\forall y \in x)(y\cup\{y\} \in x))
+\exists x (\emptyset \in x \et (\forall y \in x)(y\cup\{y\} \in x))\label{eq:axiom_of_infinity}
 \end{equation}
-The least set satisfying this is denoted ``$\omega$''.
+The least set satisfying (\ref{eq:axiom_of_infinity}) is denoted $\omega$.
 \end{definition}
 
 \begin{definition}{(Function)}\label{def:function}\\
-Given arbitrary first-order formula $\varphi(x, y, p_1, \ldots, p_n)$, we say that $\varphi$ is a function iff
+Given an arbitrary first-order formula $\varphi(x, y, p_1, \ldots, p_n)$, we say that $\varphi$ is a function iff
 \begin{equation}\label{def:function_formula}
 \forall x, y, z, p_1, \ldots, p_n (\varphi(x, y, p_1, \ldots, p_n) \et \varphi(x, z, p_1, \ldots, p_n) \then y = z)
 \end{equation}
@@ -129,15 +128,15 @@ Given arbitrary first-order formula $\varphi(x, y, p_1, \ldots, p_n)$, we say th
 When a $\varphi(x, y)$ is a function, we also write the following:
 % \footnote{This can also be done for $\varphi$s with more than two free variables by either setting $f(x, p_1, \ldots p_n) = y \iff \varphi(x, y p_1, \ldots, p_n)$ or saying that $\varphi$ represents more functions, determined by the various parameters, so given terms $t_1, \ldots, t_n$, $f(x) = y \iff \varphi(x, y, t_1, \ldots, t_n)$.}
 \begin{equation}
-f(x) = y \iff \varphi(x, y)
+\varphi(x, y) \Iff f(x) = y
 \end{equation}
 Alternatively, $f = \{\langle x, y \rangle : \varphi(x, y)\}$ is a class.
 
 Let us introduce a few more definitions that will make the two remaining axioms more comprehensible.
 \begin{definition}{(Powerset Function)}\\
-Given a set~$x$, the \emph{powerset of $x$}, denoted $\power{x}$ and satisfying (\ref{def:powerset}), is defined as follows:
+Given a set~$x$, the \emph{powerset of $x$}, denoted $\power{x}$ and satisfying the definition (\ref{def:powerset}), is defined as follows:
 \begin{equation}
-\power{x} \defeq \{y: y \subseteq x\}
+\power{x} = \{y: y \subseteq x\}
 \end{equation}
 \end{definition}
 
