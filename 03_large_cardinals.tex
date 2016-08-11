@@ -349,7 +349,7 @@ TODO par slov o tom co je ``from below'' (určitě až sem?)
 
 \subsection{Indescribable Cardinals}
 
-Indescriability is another approach towards large cardinals that is based on reflection. 
+Indescribability is another approach towards large cardinals that is based on reflection. 
 We will briefly introduce the basic definitions and show that it yield larger objects, but most of them are not reachable from below
 
 Most of the results presented in this subchapter are taken from \cite{KanamoriBook}.
@@ -358,15 +358,15 @@ Most of the results presented in this subchapter are taken from \cite{KanamoriBo
 Since this chapter uses higher-order logic, we need to introduce the hierarchy of formulas first.
 
 \begin{definition}{(Higher-Order Variables)}\label{def:higher_order_variables}\\
-Let $M$ be a structure and $D$ it's domain. In first-order logic, variables range over individuals, that is, over elements of $D$. We shall call those \emph{type 1 variables} for the purposes of higher-order logic. Type 2 variables then range over collections, that is, the elements of $\power{D}$. Generally, type $n$ variables are defined for any $n \in \omega$ such that they range over $\mathscr{P}^{n-1}(D)$.
+Let $M$ be a structure and $D$ its domain. In first-order logic, variables range over individuals, that is, over elements of $D$. We shall call those \emph{type 1 variables} for the purposes of higher-order logic. Type 2 variables then range over collections, that is, the elements of $\power{D}$. Generally, type $n$ variables are defined for any $n \in \omega$ such that they range over $\mathscr{P}^{n-1}(D)$.
 \end{definition}
-We will use lowercase latin letters for type 1 variables for backward compatibility with first-order logic, type 2 variables will be represented by uppercase letters, mostly $P, X, Y, Z$. If we ever stumble upon type 3 variables in this text, they shall be represented as $\mathscr{X}, \mathscr{Y}, \mathscr{Z}$ or in a similar font.
+We will use lowercase latin letters for type 1 variables for backward compatibility with first-order logic, type 2 variables will be represented by uppercase letters, mostly $P, X, Y, Z$. 
 
 \begin{definition}{(Full Prenex Normal Form)}\label{def:pnf}\\
 We say a formula is in the \emph{prenex normal form} if it is written as a block of quantifiers followed by a quantifier-free part.\\
 We say a formula is in the \emph{full prenex normal form} if it is written in \emph{prenex normal form} and if there are type $n+1$ quantifiers, they are written before type $n$ quantifiers.
 \end{definition}
-It is an elementary that every formula is equivalent to a formula in the prenex normal form.
+It is an elementary that every formula is equivalent to a formula in the full prenex normal form.
 
 
 \begin{definition}{(Hierarchy of Formulas)}\label{def:analytical_hierarchy}\\
@@ -380,7 +380,6 @@ Let $\varphi$ be a formula in the prenex formal form.
 \item We say $\varphi$ is a $\Pi^m_n+1$-formula if it is of a form $\forall P_1, \ldots, P_i \psi$ for any non-zero $i$, where $\psi$ is a $\Sigma^m_n$-formula and $P_1, \ldots, P_i$ are type $m+1$ variables.
 \ece
 \end{definition}
-
 
 
 \begin{definition}{(Describability)}\label{def:describability}\\
@@ -594,6 +593,8 @@ If $\kappa$ is a measurable cardinal and $U$ is a normal ultrafilter over $\kapp
 \end{theorem}
 For a proof, see \emph{Proposition 6.6} in \cite{KanamoriBook}.
 
+TODO what does it mean?
+
 % TODO kratky komentar co znamenaj totalne nepopsatelny kardinaly
 
 % ==========================================================================================================
@@ -738,4 +739,4 @@ $\kappa$ remains Mahlo in $L$.
 
 It should be clear that the above process can be iterated over again. Since Mahlo cardinals are absolute in $L$, the same argument using stationary sets can be carried out for hyper-Mahlo cardinals and so on. It is clear that since a regular and an inaccessible cardinal in consistent with \emph{Constructibility}, so should be the higher properties acquired from assuring the existence of regular, inaccessible and Mahlo fixed points of normal functions.
 
-% TODO odkaz kde pisou ze Meritelny neni konzistentni s L
+TODO odkaz kde pisou ze Measurable neni konzistentni s L
