@@ -1,12 +1,13 @@
 \section{Levy's First-Order Reflection}\label{sec:first_order}
 
 \subsection{Lévy's Original Paper}\label{sec:levy1960}
-This section is based on Lévy's paper \emph{Axiom Schemata of Strong Infinity in Axiomatic Set Theory}, \cite{Levy60a}. It presents Lévy's general reflection principle and its equivalence to \emph{Replacement} and \emph{Infinity} under $\sf{S}$\footnote{See definition \bref{def:s}.}.
+This section is based on Lévy's paper \emph{Axiom Schemata of Strong Infinity in Axiomatic Set Theory}, \cite{Levy60a}. It presents Lévy's \emph{principle of complete reflection}% TODO for other reflection principles of Levy, see \emph{Principles of reflection in axiomatic set theory} TODO cite?
+ and its equivalence to the \emph{Replacement Schema} and \emph{Axiom of Infinity} under $\sf{S}$\footnote{See definition \bref{def:s}.}.
 
 First, we should point out that set theory has changed over the last 66 years and show a few notable differences.
 %When reading Lévy's article, one should bear in mind that while the author often speaks about a~model of $\sf{ZF}$, usually denoted $u$, it doesn't necessarily mean that there is a set $u$ that is a model of $\sf{ZF}$\footnote{This is indeed impossible to prove in $\sf{ZF}$ due to Gödel's Incompleteness.}, we are nowadays used to using the notion of universal class $V$ in similar sense, even though independently from a particular axiomatic set theory. %We will review the exact meaning of the notion of a standard complete model in a moment.
 %The theory $\sf{ZF}$ is practically identical to the theory we have established in definition \bref{def:zf}, the differences are only formal.
-One might be confused by the fact that Lévy treats the \emph{Subsets} axiom, which we call \emph{Specification}, as a single axiom rather than a schema. He even takes the conjunction of all axioms of $\sf{ZF}$ and treats it like a formula. This is possible because the underlying logic calculus is different. Lévy works with set theories formulated in the \emph{non-simple applied first order functional calculus}. The calculus works with two kinds of variables, one for sets and the other for functions. It contains a substitution rule for functional variables, but doesn't quantify over them, so it's not full second-order logic, see the beginning of \emph{Chapter IV} in \cite{church1996introduction} for details.% This way, \emph{Subsets} is de facto a schema even though it sometimes treated as a single formula\footnote{This way, the conjunction of all axioms is then in fact an axiom schema.} but the logic is still first-order since one can't quantify over functional variables. 
+One might be confused by the fact that Lévy treats the \emph{Axiom of Subsets}, which we call \emph{Axiom Schema of Specification}, as a single axiom rather than a schema. He even takes the conjunction of all axioms of $\sf{ZF}$ and treats it like a formula. This is possible because the underlying logic calculus is different. Lévy works with set theories formulated in the \emph{non-simple applied first order functional calculus}. The calculus works with two kinds of variables, one for sets and the other for functions. It contains a substitution rule for functional variables, but doesn't quantify over them, so it's not full second-order logic, see the beginning of \emph{Chapter IV} in \cite{church1996introduction} for details.% This way, \emph{Subsets} is de facto a schema even though it sometimes treated as a single formula\footnote{This way, the conjunction of all axioms is then in fact an axiom schema.} but the logic is still first-order since one can't quantify over functional variables. 
 We will use the usual first-order axiomatization of \sf{ZFC} as seen in \cite{JechBook}.
 It should also be noted that the logical connectives look different. The symbol used nowaday for an universal quantifier does not appear, $\forall x \varphi (x)$ was be written as $(x) \varphi (x)$.
 The symbol for negation is ``$\sim$'', implication is written as ``$\supset$'' and equivalence is ``$\equiv$''. We will use standard notation with ``$\neg$'', ``$\then$'' and ``$\iff$'' respectively when presenting Lévy's results.
@@ -23,7 +24,7 @@ Let $\sf{Q}$ be an arbitrary axiomatic set theory.
 We say that $u$ is a standard complete model of $\sf{Q}$ iff
 \bce[(i)]
 \item $(\forall \sigma \in \sf{Q})(\langle u, \in \rangle~\models~\sigma)$
-\item $\forall y (y \in u \then y \subset u)$ ($u$ is transitive)
+\item ``$u$ is transitive''
 % \item $\forall e \langle x, y \rangle \in e \iff (y \in u \et x \in y)$ % co je $e$? omg je to jinak, je to model vsech axiomu pro vsechny $e$!!! relatiizace do u, e?
 \ece 
 We write $Scm^{\sf{Q}}(u)$.
@@ -34,20 +35,19 @@ Let $\sf{Q}$ be an arbitrary axiomatic set theory. We say that a cardinal $\kapp
 \begin{equation}
 Scm^{\sf{Q}}(V_\kappa)
 \end{equation}
-We write $In^{\sf{Q}}(\kappa)$.\footnote{To be able to define $V_\kappa$, we need to work in a logic that contains the \emph{Replacement Schema} or any of it's equivalents. It should be noted that we don't work in an arbitrary theory \sf{Q}, but in \sf{ZF}, which contains the \emph{Replacement Schema}. $Scm^{\sf{Q}}(V_\kappa)$ in fact says ``\sf{ZF} thinks that $V_\kappa$ is a transitive model of \sf{Q}''.}
+We write $In^{\sf{Q}}(\kappa)$.\footnote{To be able to define $V_\kappa$, we need to work in a logic that contains the \emph{Replacement Schema} or any of it's equivalents. It should be noted that we don't work in an arbitrary theory \sf{Q}, but in \sf{ZF}, which contains the \emph{Replacement Schema}. 
+%$Scm^{\sf{Q}}(V_\kappa)$ in fact says ``\sf{ZF} thinks that $V_\kappa$ is a transitive model of \sf{Q}''.
+}
 \end{definition}
 
 \begin{definition}{(Inaccessible Cardinal With Respect to $\sf{ZF}$)}\label{def:levy_inaccessible}\\
-When a cardinal $\kappa$ is inaccessible with respect to $\sf{ZF}$, we only say that it is inaccessible. We write $In(\kappa)$.
-\begin{equation}
-In(\kappa) \iff In^{\sf{ZF}}(\kappa)
-\end{equation}
+When a cardinal $\kappa$ is inaccessible with respect to $\sf{ZF}$, we only say that it is inaccessible. We write $In(\kappa)$ instead of $In^{\sf{ZF}}(\kappa)$.
 \end{definition}
-The above definition of inaccessibles is used because it doesn't require \emph{Choice}.
+The above definition of inaccessibles is used because it doesn't require the \emph{Axiom of Choice}.
 
 For the definition of relativization, see definition \bref{def:relativization}. The notation used by Lévy is ``$Rel(u, \varphi)$'', we will stick to ``$\varphi^{u}$''.
 \begin{definition}{($N$)}\label{def:levy_axiom_n}\\
-The following is an axiom schema of complete reflection over $\sf{ZF}$, denoted $N$. For every first-order formula $\varphi$ in the language of set theory with no free variables except for $p_1, \ldots , p_n$, the following is an instance of schema $N$.
+The following is the \emph{Axiom Schema of Complete Reflection Over $\sf{ZF}$}, denoted $N$. For every first-order formula $\varphi$ in the language of set theory with no free variables except for $p_1, \ldots , p_n$, the following is an instance of schema $N$.
 \begin{equation}
 \exists u (Scm^{\sf{ZF}}(u) \et (\forall p_1, \ldots, p_n \in u)(\varphi \iff \varphi^{u}))
 \end{equation}
@@ -55,14 +55,14 @@ The following is an axiom schema of complete reflection over $\sf{ZF}$, denoted 
 \end{definition}
 
 \begin{definition}{(N')}\label{def:levy_axiom_n'}\\
-For any first-order formulas $\varphi_1, \ldots, \varphi_m$ in the language of set theory with no free variables except for $p_1, \ldots , p_n$, the following is an instance of schema $N'$.
+For any arbitrary first-order formulas $\varphi_1, \ldots, \varphi_m$ in the language of set theory with no free variables except for $p_1, \ldots , p_n$, the following is an instance of schema $N'$.
 \begin{equation}
 \exists u (z \in u \et Scm^{\sf{ZF}}(u) \et (\forall p_1, \ldots, p_n \in u)(\varphi_1 \iff \varphi_1^{u}) \et \ldots \et \varphi_m \iff \varphi_m^{u}))
 \end{equation}
 \end{definition}
 
-\begin{definition}{(N')}\label{def:levy_axiom_n'}\\
-For any first-order formulas $\varphi_1, \ldots, \varphi_m$ in the language of set theory with no free variables except for $p_1, \ldots , p_n$, the following is an instance of schema $N'$.
+\begin{definition}{(N'')}\label{def:levy_axiom_n''}\\
+For an arbitrary first-order formulas $\varphi_1, \ldots, \varphi_m$ in the language of set theory with no free variables except for $p_1, \ldots , p_n$, the following is an instance of schema $N''$.
 \begin{equation}
 \exists u (Scm^{\sf{ZF}}(u) \et (\forall p_1, \ldots, p_n \in u)(\varphi_1 \iff \varphi_1^{u}) \et \ldots \et \varphi_m \iff \varphi_m^{u}))
 \end{equation}
@@ -76,7 +76,7 @@ The schemas $N$, $N'$ and $N''$ are equivalent under \sf{S}.
 \end{lemma}
 
 \begin{proof}
-We will execute this proof in the theory \sf{ZF}, but the reader should note that we are neither using \emph{Replacement} nor \emph{Infinity}, 
+We will execute this proof in the theory \sf{ZF}, but the reader should note that we have neither used the \emph{Replacement Schema} nor the \emph{Axiom of Infinity}, 
 so for schemas similar to $N$, $N'$, $N''$ but with ``$Scm^{\sf{S}}(u)$'' instead of ``$Scm^{\sf{ZF}}(u)$'', the proof works equally well.
 
 Clearly, $N' \then N'' \then N$. 
@@ -112,53 +112,54 @@ But $\varphi_{m+2}$ is exactly the instance of $N'$ we were looking for.
 \end{proof}
 
 \begin{definition}{($N_0$)}\label{def:levy_axiom_n0}\\
-Axiom schema $N_0$ is similar to $N$ defined above, but with $\sf{S}$ instead of $\sf{ZF}$. For every $\varphi$, a first-order fomula in the language of set theory with no free variables except $p_1, \ldots , p_n$, the following is an instance of $N_0$.
+Axiom schema $N_0$ is similar to $N$ defined above, but with $\sf{S}$ instead of $\sf{ZF}$. For every $\varphi$, a first-order fomula in the language of set theory with no free variables except $p_1, \ldots , p_n$, the following is an instance of $N_0$:
 \begin{equation}
-\exists u (Scm^{\sf{S}}(u) \et (\forall p_1, \ldots , p_n \in u)(\varphi \iff \varphi^{u}))
+\exists u (Scm^{\sf{S}}(u) \et (\forall p_1, \ldots , p_n \in u)(\varphi \iff \varphi^{u}))\mbox{.}
 \end{equation}
 %where $\varphi$ is a~formula which contains no free variables except for $p_1, \ldots , p_n$.
 \end{definition}
 
-We will now show that in $\sf{S}$, $N_0$ implies both \emph{Replacement} and \emph{Infinity}.
+We will now show that in $\sf{S}$, $N_0$ implies both the \emph{Replacement Schema} and the \emph{Axiom of Infinity}.
 
 \
 
-Let $N_0$ be defined as in definition \bref{def:levy_axiom_n0}, for \emph{Infinity} see definition \bref{def:infinity}.
+Let $N_0$ be defined as in definition \bref{def:levy_axiom_n0}, for the \emph{Axiom of Infinity} see definition \bref{def:infinity}.
 \begin{theorem}\label{theorem:n0_implies_infinity}\
-In $\sf{S}$, the axiom schema $N_0$ implies \emph{Infinity}.
+In $\sf{S}$, the axiom schema $N_0$ implies the \emph{Axiom of Infinity}.
 \end{theorem}
 
 \begin{proof} % Levy to bere pres V_\lambda \models 
 Let $\varphi = \forall x \exists y (y = x \cup \{x\})$. 
-This clearly holds in $\sf{S}$ because given a set~$x$, there is a set $y = x \cup \{x\}$ obtained via \emph{Pairing} and \emph{Union}. %\emph{Powerset} and \emph{Specification}.
+This clearly holds in \sf{S} because given a set~$x$, there is a set $y = x \cup \{x\}$ obtained via \emph{Axiom of Pairing} and \emph{Axiom of Union} and since the sets obtained via these axioms are definable via $\Delta_0$-formulas, there are absolute in transitive structures thanks to Lemma \bref{lemma:delta_0_absolute}. %\emph{Axiom of Powerset} and \emph{Specification Schema}.
 From $N_0$, there is a set $u$ such that $\varphi^{u}$ holds. % TODO upresnit
- This $u$ satisfies the conditions required by \emph{Infinity}.
+ This $u$ satisfies the conditions required by the \emph{Axiom of Infinity}.
 \end{proof}
 
-Lévy proves this theorem in a different way. He argues that for an arbitrary formula $\varphi$, $N_0$ gives us $\exists u Scm^{\sf{S}}(u)$ and this $u$ already satisfies \emph{Infinity}. 
+Lévy proves this theorem in a different way. He argues that for an arbitrary formula $\varphi$, $N_0$ gives us $\exists u Scm^{\sf{S}}(u)$ and this $u$ already satisfies the \emph{Axiom of Infinity}. 
 To do this, we would need to prove lemma \bref{lemma:scm_s_is_limit} earlier on, we will do that later in this chapter.
 %We would need to prove lemma \bref{lemma:scm_s_is_limit}, which will happen later in this chapter, but we don't know that yet. % mozna taky trochu preformulovat
 
 \
 
-Let $\sf{S}$ be a set theory defined in definition \bref{def:s}, $N_0$ a schema defined in definition \bref{def:levy_axiom_n0} and \emph{Replacement} a schema defined in definition \bref{def:replacement}.
+Let $\sf{S}$ be a set theory defined in definition \bref{def:s}, $N_0$ a schema defined in definition \bref{def:levy_axiom_n0} and the \emph{Replacement Schema} a schema defined in definition \bref{def:replacement}.
 \begin{theorem} 
-%In $\sf{S}$ with $N_0$ implies \emph{Replacement}.\\
+%In $\sf{S}$ with $N_0$ implies the \emph{Replacement Schema}.\\
 %TODO jedno nebo druhe % nebo treti
-In $\sf{S}$, the axiom schema $N_0$ implies \emph{Replacement}.
+In $\sf{S}$, the axiom schema $N_0$ implies the \emph{Replacement Schema}.
 %\beq
-%\sf{S}, N_0 \vdash \mbox{\emph{Replacement}}
-%\sf{S} \vdash N_0 \then \mbox{\emph{Replacement}}
+%\sf{S}, N_0 \vdash \mbox{the \emph{Replacement Schema}}
+%\sf{S} \vdash N_0 \then \mbox{the \emph{Replacement Schema}}
 %\eeq % nebo S \vdash N_0 \then Replacement % (veta o dedukci?) nebo \sf{S} + N_0 \vdash Repl
 \end{theorem}
 % todo zkontrolovat ========================================================================================== % TODO asi cely blbe? ...
 \begin{proof}
-Let $\varphi(x, y, p_1, \ldots, p_n)$ be a~formula with no free variables except $x, y, p_1, \ldots, p_n$.
+Let $\varphi(x, y, p_1, \ldots, p_n)$ be a~formula with no free variables except for \\
+$x, y, p_1, \ldots, p_n$.
 %Out goal is to prove
 %\beq
 %``\varphi\mbox{ is a function}''\then \forall x \exists y \forall z (z \in y \iff (\exists q \in x)(\varphi(x, y, p_1, \ldots, p_n)))
 %\eeq
-Let a set~$x$~be given and let $\chi$ be an instance of the \emph{Replacement} schema for the $\varphi$ given.
+Let a set~$x$~be given and let $\chi$ be an instance of the the \emph{Replacement Schema} schema for the $\varphi$ given.
 We want to verify in $\sf{S}$ that given a formula $\varphi$, the instance of $N_0$ for $\varphi$ implies $\chi$.
 \begin{equation}
 \begin{gathered}
@@ -184,9 +185,15 @@ From relativization, $(\exists y \varphi)^{u}$ is equivalent to $(\exists y \in 
 
 If $\varphi$ is a~function, %then for every $x \in u$, which is also $x \subset u$ since $u$ is transitive from $Scm^{\sf{S}}(u)$,
 it maps the elements of~$x$, which are also elements of $u$ due to transitivity of $u$, to elements of $u$. 
-From \emph{Specification}, $y = \{ z \in u \}$
-we can find $y$, a~set of all images of the elements of~$x$~via $\varphi$. So we have satisfied \emph{Replacement} – given a function and a set, we have proven that image of the set via given function is also a set.
-% That means the following is an instance of \emph{Replacement} for $\varphi$ and~$x$~and it holds in $u$, so we get $\chi^{u}$, which means that $\chi$ holds by (iii).
+From \emph{Specification Schema}, $y = \{ z \in u : (\exists q \in x)\varphi(q, z, p_1, \ldots, p_n)\}$ is a set and it is a subset of $u$. 
+Since $Scm^{\sf{S}}(u)$ holds and $y \subset u$, then also \power{y} \subset u$, so $y \in u$.
+%From the following argument, we shall see that $y \in u$. Let $a$ be the least initial segment 
+% But because $Scm^{\sf}(u)$, every set in $y$ has a rank, let $a$ be the set of all elements with rank lesser than or equal to the maximal rank among the ranks elements of $y$.  % is it a set?
+% Then $\power{a} \in u$, so by transitivity, $y \in u$.
+%It is also an element of $u$ because $u$ is a models of \sf{S}. % proc presne?
+%we can find $y$, a~set of all images of the elements of~$x$~via $\varphi$. 
+That means we have satisfied the \emph{Replacement Schema} – given a function and a set, we have proven that the image of the set via the given function is again a set.
+% That means the following is an instance of the \emph{Replacement Schema} for $\varphi$ and~$x$~and it holds in $u$, so we get $\chi^{u}$, which means that $\chi$ holds by (iii).
 % \beq
 % (\forall p_1, \ldots, p_n \in u) \chi\mbox{.}
 % \eeq
@@ -207,7 +214,7 @@ What we have just proven is only a single theorem from Lévy's aforementioned ar
 % =====================================================================================================================================
 
 \subsection{Contemporary Restatement}
-We will now introduce and prove a theorem that is called Lévy's Reflection in contemporary set theory. The only difference is that while Lévy originally reflects a formula $\varphi$ from $V$ to a set $u$ which is a \emph{standard complete model of $\sf{S}$}, we say that there is a $V_\lambda$ for a limit $\lambda$ that reflects $\varphi$. Those two conditions are equivalent due to lemma \bref{lemma:scm_s_is_limit}.
+We will now introduce and prove a theorem that is called \emph{Lévy's Reflection} or \emph{Lévy–Montague Reflection} in contemporary set theory. The only difference is that while Lévy originally reflects a formula $\varphi$ from the universe of all sets to a set $u$ which is a \emph{standard complete model of $\sf{S}$}, we say that there is a $V_\lambda$ for a limit $\lambda$ that reflects $\varphi$. Those two conditions are equivalent due to lemma \bref{lemma:scm_s_is_limit}.
 
 %\begin{definition}{(Reflection\textsubscript{1})}\label{def:reflection_1}\\ % co spis Levy's reflection principle?
 %Let $\varphi(p_1, \ldots, p_n)$ be a first-order formula in the language of set theory. Than the following holds for any such $\varphi$.
@@ -219,7 +226,7 @@ We will now introduce and prove a theorem that is called Lévy's Reflection in c
 % Note that this is a restatement of both Lévy's $N$ and $N_0$ from the previous chapter\footnote{see \bref{def:levy_axiom_n} and lemma \bref{def:levy_axiom_n0}}. We prefer to call it \emph{First-order reflection} so it complies with how other axioms and schemata are named. \footnote{We will not use the name $N_0$, because it might be confusing to work $N_0$ and $M_0$ where $M_0$ is a set and $N_0$ is an axiom schema.} 
 % Note that the subscript 1 refers to the fact that $\varphi(p_1, \ldots, p_n)$ is a first-order formula, and since we're using the word ``reflection'' in less strict meaning throughout this thesis, distinguishing between the two just by using italic font face for the schema might cause confusion.
 
-% We will now prove the equivalence of \emph{First-order reflection} with \emph{Replacement} and \emph{Infinity} in $\sf{S}$ in two parts. First, we will show that \emph{First-order reflection} is a theorem of $\sf{ZFC}$, then we shall show that the second implication, which proves \emph{Infinity} and \emph{Replacement} from \emph{First-order reflection}, also holds.
+% We will now prove the equivalence of \emph{First-order reflection} with the \emph{Replacement Schema} and the \emph{Axiom of Infinity} in $\sf{S}$ in two parts. First, we will show that \emph{First-order reflection} is a theorem of $\sf{ZFC}$, then we shall show that the second implication, which proves the \emph{Axiom of Infinity} and the \emph{Replacement Schema} from \emph{First-order reflection}, also holds.
 
 % The following lemma is usually done in two parts, the first being for one formula, the other for $n$ formulas. We will only state and prove the more general version.
 
@@ -390,7 +397,7 @@ Let $\sf{S}$ be a set theory defined in definition \bref{def:s}, for $\sf{ZFC}$ 
 
 The two following lemmas are based on \cite{DrakeBook}[Chapter 3, Theorem 1.2].
 \begin{lemma}\label{lemma:extensionality_in_transitive} % Drake ch.3 Theorem 1.2
-If $M$ is a transitive set, then $\langle M, \in \rangle~\models~\mbox{\emph{Extensionality}}$.
+If $M$ is a transitive set, then $\langle M, \in \rangle~\models~\mbox{\emph{Axiom of Extensionality}}$.
 \end{lemma}
 
 \begin{proof}
@@ -410,7 +417,7 @@ so $\langle M, \in \rangle~\models~\forall z(z \in x \iff z \in y)$ holds iff $x
 \end{proof}
 
 \begin{lemma}\label{lemma:foundation_in_transitive}
-If $M$ is a transitive set, then $\langle M, \in \rangle~\models~\mbox{\emph{Foundation}}$.
+If $M$ is a transitive set, then $\langle M, \in \rangle~\models~\mbox{\emph{Axiom of Foundation}}$.
 \end{lemma}
 
 \begin{proof}
@@ -438,11 +445,11 @@ Given an arbitrary limit ordinal $\lambda$, we will verify the axioms of \sf{S} 
 \item \emph{The existence of a set} comes from the fact that $V_\lambda$ is a non-empty set because limit ordinal is non-zero by definition.
 % Jech 12.10, 12.11
 
-\item \emph{Extensionality} holds from lemma \bref{lemma:extensionality_in_transitive}.
+\item \emph{\emph{Axiom of Extensionality}} holds from lemma \bref{lemma:extensionality_in_transitive}.
 
-\item \emph{Foundation} holds from lemma \bref{lemma:foundation_in_transitive}.
+\item \emph{Axiom of Foundation} holds from lemma \bref{lemma:foundation_in_transitive}.
 
-\item \emph{Union}:\\ % TODO kontrola % separatni lemma, ze plati v kazdem V_\alpha?
+\item \emph{Axiom of Union}:\\ % TODO kontrola % separatni lemma, ze plati v kazdem V_\alpha?
 % (see definition \bref{def:union})
 %\begin{equation}
 %\forall x \exists y \forall z (z \in y \iff \exists q( z \in q \et q \in x))
@@ -458,7 +465,7 @@ y = \bigcup x \iff \langle V_\lambda, \in \rangle~\models~y = \bigcup x
 \eeq
 % asi ok ^
 
-\item \emph{Pairing}: \\ % TODO kontrola
+\item \emph{Axiom of Pairing}: \\ % TODO kontrola
 % (see definition \bref{def:pairing})
 %\beq
 %\forall x, y \exists z \forall q (q \in z \iff q = x \lor q = y)
@@ -475,7 +482,7 @@ z = \{x, y\} \iff \langle V_\lambda, \in \rangle~\models~z = \{x, y\}
 % asi ok ^
 
 
-\item \emph{Powerset}: \\
+\item \emph{Axiom of Powerset}: \\
 %\begin{equation}
 %\forall x \exists y \forall z (z \subseteq x \iff z \in y)
 %\end{equation}
@@ -484,7 +491,7 @@ according to definition \bref{def:subset}, $y \subset x$ is $\Delta_0$, so for 
 Because $\lambda$ is limit and $rank(\power{x}) = rank(x)+1$, if $\power{x} \in V_\lambda$ for every $x \in V_\lambda$.
 % cajk
 
-\item \emph{Specification}: \\ %zkontrolovat, podle Draka, pripadne Jech 12.11
+\item \emph{Specification Schema}: \\ %zkontrolovat, podle Draka, pripadne Jech 12.11
 Given a first-order formula $\varphi$, we want to show the following:
 \beq
 \langle V_\lambda, \in \rangle~\models~\forall x, p_1, \ldots, p_n, \exists y \forall z (z \in y \iff z \in x \et \varphi(z, p_1, \ldots, p_n))
@@ -513,16 +520,16 @@ We will refer to this axiom schema as \emph{First-order reflection}.
 % pozor na to, ze jsme dokazali zdanlive silnejsi tvrzeni pro n formuli a ted predpokladame jenom jednu.
 % zkontroluj ze to tak je a napis ze silnejsi vysledek a slabsi predpoklad jsou cool, jsou ve skutecnostni ekvivalentni
 
-Let \emph{Infinity} and \emph{Replacement} be as defined in definition \bref{def:infinity} and definition \bref{def:replacement} respectively.
+Let the \emph{Axiom of Infinity} and the \emph{Replacement Schema} be as defined in definition \bref{def:infinity} and definition \bref{def:replacement} respectively.
 
 \begin{theorem}\label{theorem:levy_equivalence_contemporary}
-\emph{First-order reflection} is equivalent to \emph{Infinity} $ \et $ \emph{Replacement} under $\sf{S}$.
+\emph{First-order reflection} is equivalent to the \emph{Axiom of Infinity} $ \et $ the \emph{Replacement Schema} under $\sf{S}$.
 \end{theorem}
 % lemma:model_of_s?
 \begin{proof}
 Since theorem \bref{theorem:first_order_reflection} already gives us one side of the implication, we are only interested in showing the converse which we shall do in two parts:
 
-$\bold{\emph{First-order reflection} \then \emph{Infinity}}$
+$\bold{\emph{First-order reflection} \then the \emph{Axiom of Infinity}}$
 This is done exactly like theorem \bref{theorem:n0_implies_infinity}. We pick for $\varphi$ the formula $(\forall y \in x)(y \cup \{y\} \in x)$, $M_0 = \{\emptyset\}$. From definition \bref{def:first_order_reflection}, there is a set $M$ that satisfies $\varphi$, so there is an inductive set. We have picked $M_0$ so that $\emptyset \in M$ obviously holds and $M$ is the witness for 
 \beq
 \exists x(\emptyset \in x \et (\forall y \in x)(y \cup \{y\} \in x))
@@ -531,7 +538,7 @@ which is exactly definition \bref{def:infinity}.
 
 \
 
-$\bold{\emph{First-order reflection} \then \emph{Replacement}}$
+$\bold{\emph{First-order reflection} \then the \emph{Replacement Schema}}$
 
 %Given a~formula $\varphi(x, y, p_1, \ldots, p_n)$, we can suppose that if it holds for given $x, y, p_1, \ldots, p_n$, it is reflected in a set $M$ \footnote{Which means that for $x, y, p_1, \ldots, p_n \in M$, $\varphi^M(x, y, p_1, \ldots, p_n) \iff \varphi(x, y, p_1, \ldots, p_n)$.}
 %What we want to obtain is the following:
@@ -567,7 +574,7 @@ Therefore
 holds too.
 That means that we have a set $M$ such that for every $x \in M$, if $\varphi$ is defined for~$x$, $(\exists y \in M) \varphi(x, y)$. 
 
-To show that \emph{Replacement} holds for this particular $\varphi$, we need to verify that given a set $M_0$, $M'_0 = \{ y : (\exists x \in M_0) \varphi(x, y)\}$ is also a set. But since $M_0 \subseteq M$ and because given any $x \in M$, there is $y \in M$ satisfying $\varphi(x, y)$, the following is a set due to \emph{Specification}:
+To show that the \emph{Replacement Schema} holds for this particular $\varphi$, we need to verify that given a set $M_0$, $M'_0 = \{ y : (\exists x \in M_0) \varphi(x, y)\}$ is also a set. But since $M_0 \subseteq M$ and because given any $x \in M$, there is $y \in M$ satisfying $\varphi(x, y)$, the following is a set due to \emph{Specification Schema}:
 \beq
 M'_0 = \{ y : (\exists x \in M_0) \varphi(x, y)\} = \{ y \in M : (\exists x \in M_0) \varphi(x, y)\}
 \eeq
@@ -585,7 +592,7 @@ M'_0 = \{ y : (\exists x \in M_0) \varphi(x, y)\} = \{ y \in M : (\exists x \in 
 
 % co s tema $\emph{Reflection}$ / reflection / Reflection ??
 We have shown that $\emph{Reflection}$ for first-order formulas, \emph{First-order reflection} is a~theorem of $\sf{ZFC}$.%, which means that it won't yield us any large cardinals. 
-We have also shown that it can be used instead of the \emph{Infinity} and \emph{Replacement} scheme, but $\sf{ZFC}\ +\ \emph{First-order reflection}$ is a~conservative extension of $\sf{ZF}$. Besides being a~starting point for more general and powerful statements, it can be used to show that $\sf{ZF}$ is not finitely axiomatizable. This follows from the fact that \emph{Reflection} gives a~model to any consistent finite set of formulas. % or their conjunction? % nedokazal jsem verzi pro n formuli!
+We have also shown that it can be used instead of the the \emph{Axiom of Infinity} and the \emph{Replacement Schema} scheme, but $\sf{ZFC}\ +\ \emph{First-order reflection}$ is a~conservative extension of $\sf{ZF}$. Besides being a~starting point for more general and powerful statements, it can be used to show that $\sf{ZF}$ is not finitely axiomatizable. This follows from the fact that \emph{Reflection} gives a~model to any consistent finite set of formulas. % or their conjunction? % nedokazal jsem verzi pro n formuli!
 So if $\varphi_1, \ldots, \varphi_n$ would be the axioms of $\sf{ZFC}$, $\emph{Reflection}$ would prove that every model of $\sf{ZFC}$ contains a smaller model of $\sf{ZFC}$, which would in turn contradict the Second Gödel's Theorem\footnote{See chapter \bref{section:inaccessibility} for further details.}.
 
 It is also worthwhile to note that, in a~way, Reflection is dual to compactness. 
