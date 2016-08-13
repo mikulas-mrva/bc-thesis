@@ -1,13 +1,13 @@
 \subsection{Notation and Terminology}
 \subsubsection{The Language of Set Theory}
-This text assumes the knowledge of basic terminology and some results from first-order predicate logic, see any entry-level book on logic, e.g. \cite{hamiltonBook}. For this reason, we won't introduce the notions of \emph{language}, \emph{function symbol}, \emph{predicate}, \emph{term}, \emph{model} and \emph{interpretation} that are used in definition \bref{def:satisfaction}.
+This text assumes the knowledge of basic terminology and some results from first–order predicate logic, see any entry–level book on logic, e.g. \cite{hamiltonBook}. For this reason, we won't introduce the notions of \emph{language}, \emph{function symbol}, \emph{predicate}, \emph{term}, \emph{model} and \emph{interpretation} that are used in definition \bref{def:satisfaction}.
 
 
 All proofs are based on \cite{JechBook} unless explicitly stated otherwise. Notable amount of inspiration is also drawn from \cite{KanamoriBook} and \cite{DrakeBook}.
 
-We will now shortly review the basic notions that allow us to define the \emph{Zermelo-Fraenkel} set theory.
+We will now shortly review the basic notions that allow us to define the \emph{Zermelo–Fraenkel} set theory.
 
-% theory with the Axiom of Choice ($\sf{ZFC}$), a first-order set theory in the language $\mathscr{L} = \{=, \in\}$, which will be sometimes referred to as \emph{the language of set theory}. In Chapter 3, the Axiom of Choice is assumed. When tlaking about higher-order logic, we will usually denote type 1 variables, which are elements of the domain of discourse, by lowercase letters, mostly $u, v, w, x, y, z, p_1, p_2, p_3,  \ldots$ while type 2 variables, which represent $n$-ary relations of the domain of discourse for any natural number $n$, are usually denoted by uppercase letters $A, B, C, X, Y, Z$. Note that there are exception to convention rules as $f$ usually denotes a function, which is in fact a type 2 variable. On the other hand, $M$ stands for a set.
+% theory with the Axiom of Choice ($\sf{ZFC}$), a first–order set theory in the language $\mathscr{L} = \{=, \in\}$, which will be sometimes referred to as \emph{the language of set theory}. In Chapter 3, the Axiom of Choice is assumed. When tlaking about higher–order logic, we will usually denote type 1 variables, which are elements of the domain of discourse, by lowercase letters, mostly $u, v, w, x, y, z, p_1, p_2, p_3,  \ldots$ while type 2 variables, which represent $n$–ary relations of the domain of discourse for any natural number $n$, are usually denoted by uppercase letters $A, B, C, X, Y, Z$. Note that there are exception to convention rules as $f$ usually denotes a function, which is in fact a type 2 variable. On the other hand, $M$ stands for a set.
 
 
 When we talk about a \emph{class}, we have the notion of a definable class in mind. 
@@ -43,7 +43,7 @@ We will often write something like ``$M$ is a limit ordinal'', it should always 
 \end{definition}
 
 \begin{definition}{(Axiom Schema of Specification)}\label{def:specification}\\
-The following yields an axiom for every first-order formula $\varphi(x, p_1, \ldots, p_n)$ with no free variables other than $x, p_1, \ldots, p_n$.
+The following yields an axiom for every first–order formula $\varphi(x, p_1, \ldots, p_n)$ with no free variables other than $x, p_1, \ldots, p_n$.
 \begin{equation}
 \forall x, p_1, \ldots, p_n \exists y \forall z ( z \in y \iff z \in x \et \varphi(z, p_1, \ldots, p_n)) %ok
 \end{equation}
@@ -118,7 +118,7 @@ The least set satisfying \eref{eq:axiom_of_infinity} is denoted $\omega$.
 \end{definition}
 
 \begin{definition}{(Function)}\label{def:function}\\
-Given an arbitrary first-order formula $\varphi(x, y, p_1, \ldots, p_n)$, we say that $\varphi$ is a function iff
+Given an arbitrary first–order formula $\varphi(x, y, p_1, \ldots, p_n)$, we say that $\varphi$ is a function iff
 \begin{equation}\label{def:function_formula}
 \forall x, y, z, p_1, \ldots, p_n (\varphi(x, y, p_1, \ldots, p_n) \et \varphi(x, z, p_1, \ldots, p_n) \then y = z)
 \end{equation}
@@ -175,7 +175,7 @@ Alternatively,
 \end{definition}
 
 \begin{definition}{(Axiom Schema of Replacement)}\label{def:replacement}\\
-The following is an axiom for every first-order formula $\varphi(x, p_1, \ldots, p_n)$ with no free variables other than $x, p_1, \ldots, p_n$.
+The following is an axiom for every first–order formula $\varphi(x, p_1, \ldots, p_n)$ with no free variables other than $x, p_1, \ldots, p_n$.
 \begin{equation}
 ``\varphi\mbox{ is a function}''\then \forall x \exists y \forall z (z \in y \iff (\exists q \in x)(\varphi(x, y, p_1, \ldots, p_n)))
 \end{equation}
@@ -240,16 +240,16 @@ A class $A$ is said to be \emph{well ordered by $\in$} iff the following hold:
 \end{definition}
 
 \begin{definition}{(Ordinal Number)}\label{def:ordinal}\\ % ok
-A set~$x$~is said to be an \emph{ordinal number} if it is \emph{transitive} and \emph{well-ordered by $\in$}. 
+A set~$x$~is said to be an \emph{ordinal number} if it is \emph{transitive} and \emph{well–ordered by $\in$}. 
 \end{definition}
 For the sake of brevity, we usually just say ``$x$~is an \emph{ordinal}''. 
-Note that ``$x$~is an ordinal'' is a well-defined formula in the language of set theory, 
-since transitivity is defined in definition \bref{def:transitivity} via a first-order formula and well-ordering\footnote{See definition \bref{def:well_ordering}.} is in fact a conjunction of four first-order formulas.
+Note that ``$x$~is an ordinal'' is a well–defined formula in the language of set theory, 
+since transitivity is defined in definition \bref{def:transitivity} via a first–order formula and well–ordering\footnote{See definition \bref{def:well_ordering}.} is in fact a conjunction of four first–order formulas.
 Ordinals will be usually denoted by lower case greek letters, starting from the beginning of the alphabet: $\alpha, \beta, \gamma, \ldots$.
 Given two different ordinals $\alpha, \beta$, we will write $\alpha < \beta$ for $\alpha \in \beta$, see Lemma 2.11 in \cite{JechBook} for technical details.
 
-\begin{definition}{(Non-Zero Ordinal)} % ok 
-We say an ordinal $\alpha$ is \emph{non-zero} iff $\alpha \neq \emptyset$.
+\begin{definition}{(Non–Zero Ordinal)} % ok 
+We say an ordinal $\alpha$ is \emph{non–zero} iff $\alpha \neq \emptyset$.
 \end{definition}
 
 \begin{definition}{(Successor Ordinal)}\label{def:successor_ordinal}\\ % ok 
@@ -261,7 +261,7 @@ An ordinal $\alpha$ is called a \emph{successor ordinal} iff there is an ordinal
 \end{definition}
 
 \begin{definition}{(Limit Ordinal)}\label{def:limit_ordinal}\\ % ok
-A non-zero ordinal $\alpha$ is called a \emph{limit ordinal} iff it is not a successor ordinal.
+A non–zero ordinal $\alpha$ is called a \emph{limit ordinal} iff it is not a successor ordinal.
 \end{definition}
 
 \begin{definition}{(Ord)}\label{def:ord}\\  % ok
@@ -304,13 +304,13 @@ Given a set~$x$, we say that the rank of~$x$~(written as $rank(x)$) is the least
 Due to \emph{Axiom of Regularity}, every set has a rank.\footnote{See chapter 6 of \cite{JechBook} for details.} 
 The Von Neumann's hierarchy defined above can also be defined by the fact that every $V_\alpha$ is a set of all set with rank less than $\alpha$.
 
-\begin{definition}{(Order-type)}\label{def:order_type}\\ % TODO check
-Given an arbitrary well-ordered set~$x$, we say that an ordinal $\alpha$ is the \emph{order-type} of $x$ iff~$x$~and $\alpha$ are isomorphic.
+\begin{definition}{(Order–type)}\label{def:order_type}\\ % TODO check
+Given an arbitrary well–ordered set~$x$, we say that an ordinal $\alpha$ is the \emph{order–type} of $x$ iff~$x$~and $\alpha$ are isomorphic.
 \end{definition}
 
 \subsubsection{Cardinal Numbers}
 
-% todo def one.to-one mapping?
+% todo def one.to–one mapping?
 \begin{definition}{(Cardinality)}\\
 Given a set~$x$, let the cardinality of~$x$, written $|x|$, be defined as the smallest ordinal number such that there is a one to one mapping from~$x$~onto $\alpha$.
 \end{definition}
@@ -336,10 +336,10 @@ If $\kappa = \aleph_\alpha$ and $\alpha$ is a successor ordinal, we call $\kappa
 We say $\kappa$ is an uncountable cardinal iff it is an infinite ordinal and $\aleph_0 < \kappa$.
 Infinite cardinals will be notated by lowercase greek letters from the middle of the alphabet, e.g. $\kappa, \mu, \nu, \ldots$ with the possible exception of $\lambda$, which is next to $\kappa$ in the greek alphabet, but is also sometimes used to denote limit ordinals.
 
-For formal details as well as why every set can be well-ordered assuming the \emph{Axiom of Choice}, and therefore has a cardinality, see \cite{JechBook}. % proc je to tady?
+For formal details as well as why every set can be well–ordered assuming the \emph{Axiom of Choice}, and therefore has a cardinality, see \cite{JechBook}. % proc je to tady?
 
 \begin{definition}{(Sequence)}\label{def:sequence}\\
-We say that a function $\varphi(x, y)$ is a \emph{sequence} iff there is an ordinal $\alpha$ such that $dom(\varphi) = \alpha$. In other words, a function is called a sequence if it is defined exactly for every ordinal from below some $\alpha$. We then say it is an $\alpha$-sequence. We usually write $\langle \beta_i : i \in \alpha \rangle$ or $\langle \beta_0, \beta_1, \ldots \rangle$ when referring to a sequence, for every $i \in dom(\varphi)$, $\beta_i$ then denotes the respective elements of $rng(\varphi)$.
+We say that a function $\varphi(x, y)$ is a \emph{sequence} iff there is an ordinal $\alpha$ such that $dom(\varphi) = \alpha$. In other words, a function is called a sequence if it is defined exactly for every ordinal from below some $\alpha$. We then say it is an $\alpha$–sequence. We usually write $\langle \beta_i : i \in \alpha \rangle$ or $\langle \beta_0, \beta_1, \ldots \rangle$ when referring to a sequence, for every $i \in dom(\varphi)$, $\beta_i$ then denotes the respective elements of $rng(\varphi)$.
 \end{definition}
 
 \begin{definition}{(Cofinal Subset)}\label{def:cofinal_subset}\\
@@ -351,7 +351,7 @@ Given a class $A$ of ordinals, we say that $B \subseteq A$ is \emph{cofinal in $
 
 \begin{definition}{(Cofinality of a Limit Ordinal)}\label{def:cofinality}\\ % a co https://math.berkeley.edu/~jhicks/links/SOTS/cskipper112613.pdf? 
 Let $\lambda$ be a limit ordinal. 
-We say that the \emph{cofinality} of $\lambda$ is $\kappa$ iff $\kappa$ is the least ordinal, such that there is a cofinal $\kappa$-sequence $\langle \beta_\xi : \xi < \kappa \rangle$ satisfying
+We say that the \emph{cofinality} of $\lambda$ is $\kappa$ iff $\kappa$ is the least ordinal, such that there is a cofinal $\kappa$–sequence $\langle \beta_\xi : \xi < \kappa \rangle$ satisfying
 \begin{equation}
 sup(\{\beta_\xi: \xi < \kappa\}) = \lambda\mbox{.}
 \end{equation}
@@ -381,7 +381,7 @@ If \emph{GCH} holds (for example in Gödel's $L$, see chapter 3), the notions of
 
 \subsubsection{Relativisation and Absoluteness} % TODO ujasni si co se deje s parametrama pri relativizaci. co na to Jech?
 \begin{definition}{(Relativization)}\label{def:relativization}\\
-Let $M$ be a class, $R \subseteq M\times M$ and let $\varphi(p_1, \ldots, p_n)$ be a first-order formula with no free variables besides $p_1, \ldots, p_n$. 
+Let $M$ be a class, $R \subseteq M\times M$ and let $\varphi(p_1, \ldots, p_n)$ be a first–order formula with no free variables besides $p_1, \ldots, p_n$. 
 The \emph{relativization of $\varphi$ to $M$ and $R$} is the formula, written as $\varphi^{M, R}$, defined in the following inductive manner:
 \bce[(i)]
 \item $(x \in y)^{M,R} \iff R(x, y)$
@@ -400,7 +400,7 @@ When $R=\in\cap(M \times M)$, we usually write $\varphi^M$ instead of $\varphi^{
 % TODO definice splnovani!
 
 \begin{definition}{(Satisfaction in a Structure)}\label{def:satisfaction}\\
-Let $M$ be a set and $R$ a binary relation on $M$. Let $Terms$ be the set of all terms, let $e: Terms \then M$ be any evaluation function. Let $\varphi$  be a first-order formula in the language of set theory.
+Let $M$ be a set and $R$ a binary relation on $M$. Let $Terms$ be the set of all terms, let $e: Terms \then M$ be any evaluation function. Let $\varphi$  be a first–order formula in the language of set theory.
 
 % neobratne, preformulovat, je to
 We say that $\varphi$ \emph{holds in $\langle M, R \rangle$ under the evaluation $e$}, we write $\langle M, R \rangle~\models~\varphi[e]$, iff any of the following hold:
@@ -431,34 +431,34 @@ Given a transitive class $M$, we say a formula $\varphi$ is \emph{absolute in $M
 \end{equation}
 \end{definition}
 
-\begin{definition}{(Hierarchy of First-Order Formulas)}\\
+\begin{definition}{(Hierarchy of First–Order Formulas)}\\
 \bce[(I)]
-\item A first-order formula $\varphi$ is $\Delta_0$ iff it is logically equivalent to a first-order formula $\varphi'$ satisfying any of the following:
+\item A first–order formula $\varphi$ is $\Delta_0$ iff it is logically equivalent to a first–order formula $\varphi'$ satisfying any of the following:
 \bce[(i)]
 \item $\varphi'$ contains no quantifiers
-\item $y$ is a set, $\psi$ is a $\Delta_0$-formula, and $\varphi'$ is either $(\exists x \in y)\psi(y)$ or $(\forall x \in y)\psi(y)$.
-\item $\psi_1, \psi_2$ are $\Delta_0$-formulas and $\varphi'$ is any of the following: $\psi_1 \lor \psi_2$, $\psi_1 \et \psi_2$, $\psi_1 \then \psi_2$, $\neg \psi_2$, 
+\item $y$ is a set, $\psi$ is a $\Delta_0$–formula, and $\varphi'$ is either $(\exists x \in y)\psi(y)$ or $(\forall x \in y)\psi(y)$.
+\item $\psi_1, \psi_2$ are $\Delta_0$–formulas and $\varphi'$ is any of the following: $\psi_1 \lor \psi_2$, $\psi_1 \et \psi_2$, $\psi_1 \then \psi_2$, $\neg \psi_2$, 
 \ece
 \item If a formula is $\Delta_0$ it is also $\Sigma_0$ and $\Pi_0$
-\item A formula $\varphi$ is $\Pi_n+1$ if it is logically equivalent to a formula $\varphi'$ such that $\varphi' = \forall x \psi$ where $\psi$ is a $\Sigma_n$-formula for any $n < \omega$.
-\item A formula $\varphi$ is $\Sigma_n+1$ if it is logically equivalent to a formula $\varphi'$ such that $\varphi' = \forall x \psi$ where $\psi$ is a $\Pi_n$-formula for any $n < \omega$.
+\item A formula $\varphi$ is $\Pi_n+1$ if it is logically equivalent to a formula $\varphi'$ such that $\varphi' = \forall x \psi$ where $\psi$ is a $\Sigma_n$–formula for any $n < \omega$.
+\item A formula $\varphi$ is $\Sigma_n+1$ if it is logically equivalent to a formula $\varphi'$ such that $\varphi' = \forall x \psi$ where $\psi$ is a $\Pi_n$–formula for any $n < \omega$.
 \ece
 \end{definition} % TODO kolem ty parovaci fce je neco blbe :(
 % Note that we can use the pairing function so that for $\forall p_1, \ldots, p_n \psi(p_1, \ldots, p_n)$, there is a logically equivalent formula of the form $\forall x \psi'(x)$.
 
 \begin{lemma}{($\Delta_0$ absoluteness)}\label{lemma:delta_0_absoluteness}
-Let $\varphi$ be a $\Delta_0$-formula, then $\varphi$ is absolute in any transitive class $M$.
+Let $\varphi$ be a $\Delta_0$–formula, then $\varphi$ is absolute in any transitive class $M$.
 \end{lemma}
 
 \begin{proof}
-This will be proven by induction over the complexity of a given $\Delta_0$-formula $\varphi$. Let $M$ be an arbitrary transitive class. 
+This will be proven by induction over the complexity of a given $\Delta_0$–formula $\varphi$. Let $M$ be an arbitrary transitive class. 
 
 As $M$ is transitive, atomic formulas are always absolute by the definition of relativisation, see definition \bref{def:relativization}.
-Suppose that $\Delta_0$-formulas $\psi_1$ and $\psi_2$ are absolute in $M$. 
+Suppose that $\Delta_0$–formulas $\psi_1$ and $\psi_2$ are absolute in $M$. 
 Then from relativization, $(\psi_1 \et \psi_2)^M \iff \psi_1^M \et \psi_2^M$, which is from the induction hypothesis equivalent to $\psi_1 \et \psi_2$. 
 The same holds for $\lor, \then, \neg$.
 
-Suppose that a $\Delta_0$-formula $\psi$ is absolute in $M$. Let $y$ be a set and let $\varphi = (\exists x \in y) \psi(x)$. 
+Suppose that a $\Delta_0$–formula $\psi$ is absolute in $M$. Let $y$ be a set and let $\varphi = (\exists x \in y) \psi(x)$. 
 From relativization, $(\exists x \psi(x))^M \iff (\exists x \in M) \psi^M(x)$. Since the hypothesis makes it clear that $\psi^M \iff \psi$, we get 
 \beq
 ((\exists x \in y) \psi(x))^M \iff (\exists x \in y\cap M) \psi(x)^M \iff (\exists x \in y\cap M) \psi(x)\mbox{,}
@@ -467,15 +467,15 @@ which is equivalent to $\varphi^M \iff \varphi$. Note that from transitivity of 
 The same argument applies to $\varphi = (\forall x \in y) \psi(x)$.
 \end{proof}
 
-% todo co Devlin -- p.27 -- downward a upward absoluteness? % nepouzivame
+% todo co Devlin –– p.27 –– downward a upward absoluteness? % nepouzivame
 \begin{lemma}{(Downward Absoluteness)}\label{lemma:downward_absoluteness}\\
-Let $\varphi$ be a $\Pi_1$-formula and $M$ a transitive class. Then the following holds:
+Let $\varphi$ be a $\Pi_1$–formula and $M$ a transitive class. Then the following holds:
 \begin{equation}
 (\forall p_1, \ldots, p_n \in M)(\varphi(p_1, \ldots, p_n) \then \varphi(p_1, \ldots, p_n)^M)
 \end{equation}
 \end{lemma}
 \begin{proof}
-Since $\varphi(p_1, \ldots, p_n)$ is $\Pi_1$, there is a $\Delta_0$-formula $\psi(p_1, \ldots, p_n, x)$ such that $\varphi = \forall x \psi(p_1, \ldots, p_n, x)$. 
+Since $\varphi(p_1, \ldots, p_n)$ is $\Pi_1$, there is a $\Delta_0$–formula $\psi(p_1, \ldots, p_n, x)$ such that $\varphi = \forall x \psi(p_1, \ldots, p_n, x)$. 
 From relativization and lemma \bref{lemma:delta_0_absoluteness}, $\varphi^M(p_1, \ldots, p_n) \iff (\forall x \in M)\psi(p_1, \ldots, p_n, x)$.
 
 Assume that for $p_1, \ldots, p_n \in M$ fixed, that $\forall x \psi(p_1, \ldots, p_n, x)$ holds, but $(\forall x \in M)\psi(p_1, \ldots, p_n, x)$ does not. 
@@ -484,13 +484,13 @@ Therefore $\exists x \neg \psi(p_1, \ldots, p_n, x)$, which contradicts $\forall
 
 
 \begin{lemma}{(Upward Absoluteness)}\label{lemma:upward_absoluteness}\\
-Let $\varphi$ be a $\Sigma_1$-formula and $M$ a transitive class. Then the following holds:
+Let $\varphi$ be a $\Sigma_1$–formula and $M$ a transitive class. Then the following holds:
 \begin{equation}
 (\forall p_1, \ldots, p_n \in M)(\varphi^M(p_1, \ldots, p_n) \then \varphi(p_1, \ldots, p_n))
 \end{equation}
 \end{lemma}
 \begin{proof}
-Since $\varphi(p_1, \ldots, p_n)$ is $\Sigma_1$, there is a $\Delta_0$-formula $\psi(p_1, \ldots, p_n, x)$ such that $\varphi = \exists x \psi(p_1, \ldots, p_n, x)$. 
+Since $\varphi(p_1, \ldots, p_n)$ is $\Sigma_1$, there is a $\Delta_0$–formula $\psi(p_1, \ldots, p_n, x)$ such that $\varphi = \exists x \psi(p_1, \ldots, p_n, x)$. 
 From relativization and lemma \bref{lemma:delta_0_absoluteness}, $\varphi^M(p_1, \ldots, p_n) \iff (\exists x \in M)\psi(p_1, \ldots, p_n, x)$.
 
 Assume that for $p_1, \ldots, p_n \in M$ fixed, that $(\exists x \in M)\psi(p_1, \ldots, p_n, x)$ holds, but $\exists x \psi(p_1, \ldots, p_n, x)$ does not. This is an obvious contradiction.
@@ -552,7 +552,7 @@ For a regular uncountable cardinal $\kappa$, we say a set $A \subset \kappa$ is 
 Structures will be denoted $\langle M, \in, R \rangle$ where $M$ is a domain, $\in$ stands for the standard membership relation, it is assumed to be restricted to the domain\footnote{To be totally explicit, we should write $\langle M, \in \cap M \times M, R \rangle$.}, $R \subseteq M$ is an unary relation on the domain. %When $R$ is not needed, we can as well only write $M$ instead of $\langle M, \in \rangle$.
 
 \begin{definition}{(Elementary Embedding)}\label{def:elementary_embedding}\\
-Given the structures $\langle M_0, \in, R \rangle$, $\langle M_1, \in, R \rangle$ and a one-to-one function $j: M_0 \then M_1$, we say $j$ is an \emph{elementary embedding} of $M_0$ into $M_1$, we write $j: M_0 \prec M_1$, when the following holds for every formula $\varphi(p_1, \ldots, p_n)$ and every $p_1, \ldots, p_n \in M_0$:
+Given the structures $\langle M_0, \in, R \rangle$, $\langle M_1, \in, R \rangle$ and a one–to–one function $j: M_0 \then M_1$, we say $j$ is an \emph{elementary embedding} of $M_0$ into $M_1$, we write $j: M_0 \prec M_1$, when the following holds for every formula $\varphi(p_1, \ldots, p_n)$ and every $p_1, \ldots, p_n \in M_0$:
 \begin{equation}
 \langle M_0, \in, R \rangle \models \varphi(p_1, \ldots, p_n) \iff \langle M_1, \in, R \rangle  \models \varphi(j(p_1), \ldots, j(p_n))
 \end{equation}
@@ -560,7 +560,7 @@ Given the structures $\langle M_0, \in, R \rangle$, $\langle M_1, \in, R \rangle
 
 
 \begin{definition}{(Elementary Substructure)}\label{def:elementary_substructure}\\
-Given the structures $\langle M_0, \in, R \rangle$, $\langle M_1, \in, R \rangle$ and a one-to-one function $j: M_0 \then M_1$ such that $j: M_0 \prec M_1$, we say that $M_0$ is an \emph{elementary substructure} of $M_1$, denoted as $M_0 \prec M_1$, iff $j$ is an identity on $M_0$. In other words
+Given the structures $\langle M_0, \in, R \rangle$, $\langle M_1, \in, R \rangle$ and a one–to–one function $j: M_0 \then M_1$ such that $j: M_0 \prec M_1$, we say that $M_0$ is an \emph{elementary substructure} of $M_1$, denoted as $M_0 \prec M_1$, iff $j$ is an identity on $M_0$. In other words
 \begin{equation}
 \langle M_0, \in, R \rangle \models \varphi(p_1, \ldots, p_n) \iff \langle M_1, \in, R \rangle  \models \varphi(p_1, \ldots, p_n)
 \end{equation}
