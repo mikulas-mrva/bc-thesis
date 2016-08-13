@@ -125,7 +125,7 @@ Given an arbitrary first-order formula $\varphi(x, y, p_1, \ldots, p_n)$, we say
 \end{definition}
 When a $\varphi(x, y)$ is a function, we also write the following:
 \begin{equation}
-\varphi(x, y) \iff (f(x) = y)
+\varphi(x, y) \mbox{ iff } f(x) = y
 \end{equation}
 Alternatively, $f = \{\langle x, y \rangle : \varphi(x, y)\}$ is a class.
 
@@ -459,7 +459,7 @@ Then from relativization, $(\psi_1 \et \psi_2)^M \iff \psi_1^M \et \psi_2^M$, wh
 The same holds for $\lor, \then, \neg$.
 
 Suppose that a $\Delta_0$-formula $\psi$ is absolute in $M$. Let $y$ be a set and let $\varphi = (\exists x \in y) \psi(x)$. 
-From relativization, $(\exists x \psi(x))^M \iff (\exists x \in M) \psi^M(x)$. Since the hypotheses makes it clear that $\psi^M \iff \psi$, we get 
+From relativization, $(\exists x \psi(x))^M \iff (\exists x \in M) \psi^M(x)$. Since the hypothesis makes it clear that $\psi^M \iff \psi$, we get 
 \beq
 ((\exists x \in y) \psi(x))^M \iff (\exists x \in y\cap M) \psi(x)^M \iff (\exists x \in y\cap M) \psi(x)\mbox{,}
 \eeq

@@ -10,6 +10,11 @@ Church, A. (1996).
 \newblock {\em Set theory. An introduction to large cardinals}.
 \newblock Studies in Logic and the Foundations of Mathematics, Volume 76. NH.
 
+\bibitem[Feferman, 2008]{Feferman2008}
+Feferman, S. (2008).
+\newblock My route to arithmetization.
+\newblock {\em Theoria}, 63(3):168--181.
+
 \bibitem[G{\"o}del and Brown, 1940]{Godel1940consistency}
 G{\"o}del, K. and Brown, G. (1940).
 \newblock {\em The Consistency of the Axiom of Choice and of the Generalized
@@ -54,10 +59,5 @@ Tait, W.~W. (2005).
 \newblock Constructing cardinals from below.
 \newblock The Provenance of Pure Reason: Essays in the Philosophy of
   Mathematics and Its History, 133-154.
-
-\bibitem[Wang, 1997]{GodelWang}
-Wang, H. (1997).
-\newblock {\em "A Logical Journey: From Gödel to Philosophy"}.
-\newblock A Bradford Book.
 
 \end{thebibliography}
