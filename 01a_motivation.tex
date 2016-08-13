@@ -6,39 +6,28 @@ For every property that holds in the universe of all sets, there is a set in whi
 Clearly, this formulation is rather vague and we should be extremely cautious when dealing with the word ``property''. 
 One problem that immediately comes to mind is that ``being the set of all sets'' must not be considered a property in this sense, otherwise we run into the well known paradox of Russell.
 This is a well-known problem that exemplifies the fact that reflection is a phenomenon that is closely connected to the very foundations of mathematics.
-This is also emphasised by the fact that the very first use of reflection in a mathematical proof can be found in Gödel's paper \cite{Godel1940consistency}  % 1938 nebo 1940?
-that deals with the consistency of the \emph{Generalised Continuum Hypothesis}, which is a question that was central to the development of set theory in the 20\textsuperscript{th} century.
-Furthermore, Lévy's article \emph{Axiom Schemata of Strong Infinity in Axiomatic Set Theory}, that is a cornerstone of this thesis is concerned primarily with the so called \emph{strong axioms of infinity}, which are axioms that imply the existence of the set of all natural numbers, so they might serve as alternatives to the Axiom of Infinity\footnote{For a rigorous definition, see definition \bref{def:infinity} later in this section.}, but they also imply the existence of larger sets whose existence can not be proven in the current theory\footnote{For the purposes of this thesis, unless stated otherwise, this will be the \emph{Zermelo–Fraenkel set theory}, that is formally established in definition \bref{def:zfc}.}.
+This is also emphasised by the fact that the very first explicit use of reflection in a mathematical proof can be found in Gödel's paper \emph{The Consistency of the Axiom of Choice and of the Generalized Continuum-hypothesis with the Axioms of Set Theory}\footnote{See \cite{Godel1940consistency}.}
+that deals with the consistency of the \emph{generalised continuum hypothesis}, which is a question that was central to the development of set theory in the 20\textsuperscript{th} century.
+Furthermore, Lévy's article \emph{Axiom Schemata of Strong Infinity in Axiomatic Set Theory}, that is a cornerstone of this thesis is concerned primarily with the so called \emph{strong axioms of infinity}, which are axioms that imply the existence of the set of all natural numbers, this assertion is called the \emph{Axiom of Infinity}\footnote{For a rigorous definition, see definition \bref{def:infinity} later in this section.}, but they also imply the existence of larger sets whose existence can not be proven in the current theory\footnote{For the purposes of this thesis, unless stated otherwise, this will be the \emph{Zermelo–Fraenkel set theory}, that is formally established in definition \bref{def:zfc}.}.
 
-After introducing the elementary theoretical tools required for this task in the rest of this chapter, in chapter 2, we will review the \emph{Reflection theorem} that originally formulated by Richard Montague in 1961\footnote{Note that Lévy's paper was published in 1960, a year before Montagues, but Lévy refers to Montague and not vice versa. While this may seem confusing, it is because Montague gave a lecture on this topic at a conference at the Cornell University in 1957. It is also interesting that Lévy's article refers for Montague's reflection to a publication by Richard Montague and Solomon Feferman called \emph{The method of arithmetization and some of its applications} which was planned never finished. This is explained by Solomon Feferman in \cite{Feferman2008}.} and extended by Azriel Lévy in his aforementioned article and then restate it in a way that is more in line with today's set theory. 
-Chapter 2 deals with the fact that when the term ``property'' is restricted to first-order formulas in the language of set theory, it does not behave like a axiom of strong infinity, but it is equivalent to the \emph{Axiom of Infinity} and \emph{Replacement Schema}.
+After introducing the elementary theoretical tools required for this task in the rest of this chapter, in chapter 2, we will review the \emph{Reflection theorem} that originally formulated by Richard Montague in 1961\footnote{Note that Lévy's paper was published in 1960, a year before Montague's, but Lévy refers to Montague and not vice versa. While this may seem confusing, it is because Montague gave a lecture on this topic at a conference at the Cornell University in 1957. It is also interesting that Lévy's article refers for Montague's reflection to a publication by Montague and Solomon Feferman called \emph{The method of arithmetization and some of its applications} which was never finished. This is explained by Solomon Feferman in \cite{Feferman2008}.} and extended by Azriel Lévy in his aforementioned article and then restate it in a way that is more in line with today's set theory. 
+Chapter 2 deals with the fact that when the term ``property'' is restricted to first-order formulas in the language of set theory, it does not behave like a axiom of strong infinity, but it is equivalent to the \emph{Axiom of Infinity} and \emph{Replacement Schema}, which is one of the key set-forming principles in the \emph{Zermelo–Fraenkel set theory}.
+
+It is in chapter 3 where we get to examine the large cardinals and in a manner similar to Lévy in his article, we introduce a various axioms schemata that come from reflection and lead towards \emph{inaccessible} and \emph{Mahlo cardinals}. We will briefly argue that Mahlo's operation exhausts large cardinals reachable via reflection from below and introduce indescribable cardinals, which are also based on reflection, but lead us into higher–order logic. We will introduce \emph{weakly inaccessible cardinals} and show that they are also based on reflection and examine their relation to the cardinals presented earlier. Finally, we will examine Gödel's constructible universe and see whether the large cardinals we have introduced are compatible with the \emph{axiom of constructibility}.
+
+%\begin{displayquote}
+%``The Universe of sets cannot be uniquely characterised (i. e. distinguished from all its initial elements) by any internal structural property of the membership relation in it, which is expressible in any logic of finite of transfinite type, including infinitary logics of any cardinal order.''
+%\end{displayquote}
+%\rightline{{\rm --- Kurt Gödel \cite{GodelWang}}}
 
 % TODO kapitola 3 resi velky kardinaly a L=V
 % TODO proc jsou nektery velky kardinaly jako omega
 % TODO nejakej Godeluv citat o strong infinity, the next theory above set theory
 % TODO collected works: \cite{Godel2003collected}
 
-Or, by Gödel's own words,
-
-\begin{displayquote}
-``The Universe of sets cannot be uniquely characterised (i. e. distinguished from all its initial elements) by any internal structural property of the membership relation in it, which is expressible in any logic of finite of transfinite type, including infinitary logics of any cardinal order.''
-\end{displayquote}
-\rightline{{\rm --- Kurt Gödel \cite{GodelWang}}}
-
-which was first explicitly used by Kurt Gödel in his (TODO KDE?), but it was implicit in axioms (axiomy? kdo to rikal?).
-
- in his 1960 paper \emph{Axiom Schemata of Strong Infinity in Axiomatic Set Theory}\cite{Levy60a}. We will first show Lévy's original proof and surrounding theory and then offer contemporary restatement that is base on the version used by Jech in \cite{JechBook}. This chapter is meant to make the reading of Lévy's aforementioned paper easier and more comprehensible to today's reader.
-
-The next chapter, \emph{Reflection And Large Cardinals},  %Since aim of Lévy's article wasn't reflection itself, but axiomatic set theories 
-
-
-
-% \subsection{Motivation and Origin}
-
 % poprve pouzil godel v dukazu 
 % axiomy ktere ho inspirovaly (najdi zneni?)
 % kontext (doba, kdy teorie mnozin jeste nebyla usazena?) proto i Levy navrhuje axiomy?
-% velky kardinaly?
 \begin{comment}
 Kanamori: (p.55)
 The heuristic of generalization from $\aleph_0$, like reflection, also came to be used to motivate various large cardinals. Recalling Cantor’s unitary view of the finite and the transfinite, large cardinal properties satisfied by $\aleph_0$ would be too accidental if they were not also ascribable to higher cardinals in an eternal recurrence.

@@ -1,6 +1,6 @@
 \subsection{Notation and Terminology}
 \subsubsection{The Language of Set Theory}
-This text assumes the knowledge of basic terminology and some results from first-order predicate logic, see any entry-level book on logic, e.g. \cite{hamiltonBook}. We won't introduce the notions of \emph{language}, \emph{function symbol}, \emph{predicate}, \emph{term}, \emph{model} and \emph{interpretation} that are used in definition \bref{def:satisfaction}.
+This text assumes the knowledge of basic terminology and some results from first-order predicate logic, see any entry-level book on logic, e.g. \cite{hamiltonBook}. For this reason, we won't introduce the notions of \emph{language}, \emph{function symbol}, \emph{predicate}, \emph{term}, \emph{model} and \emph{interpretation} that are used in definition \bref{def:satisfaction}.
 
 
 All proofs are based on \cite{JechBook} unless explicitly stated otherwise. Notable amount of inspiration is also drawn from \cite{KanamoriBook} and \cite{DrakeBook}.
@@ -49,7 +49,7 @@ The following yields an axiom for every first-order formula $\varphi(x, p_1, \ld
 \end{equation}
 \end{definition}
 
-We will now provide two definitions that are not axioms, but will be helpful in establishing some axioms in a more comprehensible way.
+We will now provide two definitions that are not axioms, but will be helpful in establishing the next axioms in a more comprehensible way.
 \begin{definition}{($x \subseteq y$, $x \subset y$)}\label{def:subset}
 \begin{equation}
 x \subseteq y \iff (\forall z \in x) z \in y
@@ -71,7 +71,7 @@ For an arbitrary set~$x$, the empty set, represented by the symbol ``$\emptyset$
 \beq
 (\forall y \in x)(y \in \emptyset \iff \neg(y = y))
 \eeq
-$\emptyset$ is a set due to \emph{Specification}, there is only one such set due to \emph{Extensionality}. 
+Clearly $\emptyset$ is a set due to \emph{Specification Schema}, there is only one such set due to the \emph{Axiom of Extensionality}, no matter which $x$ is chosen. 
 \end{definition}
 
 \begin{definition}{(Axiom of Pairing)}\label{def:pairing}
@@ -124,9 +124,8 @@ Given an arbitrary first-order formula $\varphi(x, y, p_1, \ldots, p_n)$, we say
 \end{equation}
 \end{definition}
 When a $\varphi(x, y)$ is a function, we also write the following:
-% \footnote{This can also be done for $\varphi$s with more than two free variables by either setting $f(x, p_1, \ldots p_n) = y \iff \varphi(x, y p_1, \ldots, p_n)$ or saying that $\varphi$ represents more functions, determined by the various parameters, so given terms $t_1, \ldots, t_n$, $f(x) = y \iff \varphi(x, y, t_1, \ldots, t_n)$.}
 \begin{equation}
-\varphi(x, y) \Iff f(x) = y
+\varphi(x, y) \iff (f(x) = y)
 \end{equation}
 Alternatively, $f = \{\langle x, y \rangle : \varphi(x, y)\}$ is a class.
 
@@ -143,7 +142,7 @@ Given a set~$x$, the \emph{powerset of $x$}, denoted $\power{x}$ and satisfying 
 Let $f$ be a function. We call the \emph{domain of $f$} the class of all sets for which $f$ is defined. We use ``$Dom(f)$'' to refer to this set.
 %We read the following as ``$Dom(f)$ is the domain of $f$''.
 \begin{equation}
-x \in Dom(f) \iff \exists y (f(x) = y)
+\forall x (x \in Dom(f) \iff \exists y (f(x) = y))
 \end{equation}
 \end{definition}
 We say ``$f$ is a function on $A$'', $A$ being a class, if $A = dom(f)$.
@@ -151,7 +150,7 @@ We say ``$f$ is a function on $A$'', $A$ being a class, if $A = dom(f)$.
 \begin{definition}{(Range of a Function)}\label{def:rng}\\
 Let $f$ be a function. We call the \emph{range of $f$} the set of all sets that are images of other sets via $f$. We use ``$Rng(f)$'' to refer to this set. %We read the following as ``$Rng(f)$ is the range of $f$''.
 \begin{equation}
-x \in Rng(f) \iff \exists y (f(y) = x)
+\forall x (x \in Rng(f) \iff \exists y (f(y) = x))
 \end{equation}
 \end{definition}
 We say that $f$ is \emph{a function into $A$}, $A$ being a class, iff $rng(f) \subseteq A$.
@@ -175,8 +174,6 @@ Alternatively,
 \end{equation}
 \end{definition}
 
-And now for the axioms.
-
 \begin{definition}{(Axiom Schema of Replacement)}\label{def:replacement}\\
 The following is an axiom for every first-order formula $\varphi(x, p_1, \ldots, p_n)$ with no free variables other than $x, p_1, \ldots, p_n$.
 \begin{equation}
@@ -194,51 +191,42 @@ dom(f) = x \setminus \{\emptyset\}) \et (\forall y \in dom(f))(f(y) \in y)
 
 \begin{definition}{(Axiom of Choice)}\label{def:choice}\\
 For every set~$x$~there is a function $f$ that is a choice function on $x$.
-%\begin{equation}
-%\begin{gathered}
-%\forall x \exists f ((f \mbox{ is a function with } dom(f) = x \setminus \{\emptyset\})\\
-%\et \forall y ((y \in y \et y \neq \emptyset) \then f(y) \in y))
-%\end{gathered}
-%\end{equation}
 \end{definition}
-One might be unsettled by the fact that this definition quantifies over functions, which are generally classes, but in this particular case, since $dom(f) = x$ and~$x$~is a set, $f$ is also a set due to \emph{Replacement}\footnote{If the underlying theory includes of implies \emph{Replacement}.}.% because a function is in fact a class of tuples and there is an obvious 1–1 mapping between those and the elements of $dom(f)$.
+One might be unsettled by the fact that this definition quantifies over functions, which are generally classes, but in this particular case, since $dom(f) = x$ and~$x$~is a set, $f$ is also a set due to \emph{Replacement}\footnote{If the underlying theory includes of implies \emph{Replacement}.}.
 
-We will refer to the axioms by their name, written in italic type, e.g. \emph{Foundation} refers to the Axiom of Foundation. Now we need to define the set theories to be used in the article. 
-% Note that axiomatic set theory is a set of formulas.
+% We will refer to the axioms by their name, written in italic type, e.g. \emph{Foundation} refers to the Axiom of Foundation. Now we need to define the set theories to be used in the article. 
 
 \begin{definition}{$(\sf{S})$}\label{def:s}\\ %ok
 We call $\sf{S}$ an axiomatic theory in the language $\mathscr{L} = \{=, \in\}$ with exactly the following axioms:
 \bce[(i)]
 \item \emph{Existence of a set} (see definition \bref{def:existence_of_a_set})
-\item \emph{Extensionality} (see definition \bref{def:extensionality})
-\item \emph{Specification} (see definition \bref{def:specification})
-\item \emph{Foundation} (see definition \bref{def:foundation})
-\item \emph{Pairing} (see definition \bref{def:pairing})
-\item \emph{Union} (see definition \bref{def:union})
-\item \emph{Powerset} (see definition \bref{def:powerset})
+\item \emph{Axiom of Extensionality} (see definition \bref{def:extensionality})
+\item \emph{Axiom of Specification} (see definition \bref{def:specification})
+\item \emph{Axiom of Foundation} (see definition \bref{def:foundation})
+\item \emph{Axiom of Pairing} (see definition \bref{def:pairing})
+\item \emph{Axiom of Union} (see definition \bref{def:union})
+\item \emph{Axiom of Powerset} (see definition \bref{def:powerset})
 \ece
 \end{definition}
 
 \begin{definition}{$(\sf{ZF})$}\label{def:zf}\\ %ok
 We call $\sf{ZF}$ an axiomatic theory in the language $\mathscr{L} = \{=, \in\}$ that contains all the axioms of $\sf{S}$ in addition to the following:
 \bce[(i)]
-\item \emph{Replacement} schema (see definition \bref{def:replacement})
-\item \emph{Infinity} (see definition \bref{def:infinity})
+\item \emph{Axiom of Replacement} schema (see definition \bref{def:replacement})
+\item \emph{Axiom of Infinity} (see definition \bref{def:infinity})
 \ece
-\emph{Existence of a set} is usually left out because it is a consequence of \emph{infinity}.
+\emph{Existence of a set} is usually left out because it is a consequence of the \emph{Axiom of Infinity}.
 \end{definition}
 
 \begin{definition}{$(\sf{ZFC})$}\label{def:zfc}\\ % ok
 $\sf{ZFC}$ is an axiomatic theory in the language $\mathscr{L} = \{=, \in\}$ that contains all the axioms of $\sf{ZF}$ plus \emph{Choice}, see definition \bref{def:choice}).
 \end{definition}
 
-\
-
 \subsubsection{The Transitive Universe}
 \begin{definition}{(Transitive Class)}\label{def:transitivity}\\ % ok
 We say a class $A$ is \emph{transitive} iff
 \begin{equation}
-(\forall x \in A)(x \subseteq A)
+(\forall x \in A)(x \subseteq A)\mbox{.}
 \end{equation}
 \end{definition}
 
@@ -247,7 +235,6 @@ A class $A$ is said to be \emph{well ordered by $\in$} iff the following hold:
 \bce[(i)]
 \item $(\forall x \in A)(x \not\in x)$ (Antireflexivity)
 \item $(\forall x, y, z \in A)(x \in y \et y \in z \then x \in z)$ (Transitivity)
-\item $(\forall x, y \in A)(x = y \lor x \in y \lor y \in x)$ (Linearity)
 \item $(\forall x \subseteq A)(x \neq \emptyset \then (\exists y \in x)(\forall z \in x)(z = y \lor z \in y)))$ (Existence of the least element)
 \ece
 \end{definition}
@@ -278,7 +265,7 @@ A non-zero ordinal $\alpha$ is called a \emph{limit ordinal} iff it is not a su
 \end{definition}
 
 \begin{definition}{(Ord)}\label{def:ord}\\  % ok
-\emph{The class of all ordinal numbers}, which we will denote ``$Ord$''\footnote{Other authors use ``$On$'', we will stick to the notation used in \cite{JechBook}.} is the proper class defined as follows.
+\emph{The class of all ordinal numbers}, which we will denote ``$Ord$''\footnote{Some authors use ``$On$'' instead of ``$Ord$'', we will stick to the notation used in \cite{JechBook}.} is the proper class defined as follows.
 \begin{equation}
 x \in Ord \iff x\mbox{ is an ordinal}
 \end{equation}
@@ -288,7 +275,7 @@ x \in Ord \iff x\mbox{ is an ordinal}
 %, the former referring more to the construction with the individual levels in mind, the latter referring more to the class $V$, but they can be interchanged with no confusion caused.
 
 \begin{definition}{(Von Neumann's Hierarchy)}\label{def:von_neumann}\\ % ok 
-The \emph{Von Neumann's Hierarchy} is a collection of sets indexed by elements of $Ord$, defined recursively in the following way:
+The \emph{Von Neumann's hierarchy} is a collection of sets indexed by elements of $Ord$, defined recursively in the following way:
 \bce[(i)]
 \item 
 \begin{equation}
@@ -302,22 +289,24 @@ V_{\alpha+1} = \power{V_\alpha}\mbox{ for any ordinal $\alpha$}
 \begin{equation} 
 V_\lambda = \bigcup_{\beta < \lambda} V_\beta \mbox{ for a limit ordinal $\lambda$}
 \end{equation}
+\item
+\beq
+V = \bigcup_{\alpha \in Ord} V_\alpha
+\eeq
 \ece
-We will also refer to the \emph{Von Neumann's Hierarchy} as \emph{Von Neumann's Universe} or the \emph{Cumulative Hierarchy}. % velky nebo maly c?
-This definition is only correct in a theory that contains or implies \emph{Replacement} because otherwise it's not clear that the successor step is a set. 
+We will also refer to the \emph{Von Neumann's hierarchy} as \emph{Von Neumann's universe} or the \emph{cumulative hierarchy}.
+This definition is only correct in a theory that contains or implies \emph{Replacement Schema}. $V$ is also used for the universal class that contains all sets, for us it will always mean the $V$ defined here.
 \end{definition}
 
 \begin{definition}{(Rank)}\label{def:rank}\\ % ok
 Given a set~$x$, we say that the rank of~$x$~(written as $rank(x)$) is the least ordinal $\alpha$ such that $x \in V_{\alpha+1}$
 \end{definition}
-Due to \emph{Regularity}, every set has a rank.\footnote{See chapter 6 of \cite{JechBook} for details.} 
+Due to \emph{Axiom of Regularity}, every set has a rank.\footnote{See chapter 6 of \cite{JechBook} for details.} 
 The Von Neumann's hierarchy defined above can also be defined by the fact that every $V_\alpha$ is a set of all set with rank less than $\alpha$.
 
 \begin{definition}{(Order-type)}\label{def:order_type}\\ % TODO check
 Given an arbitrary well-ordered set~$x$, we say that an ordinal $\alpha$ is the \emph{order-type} of $x$ iff~$x$~and $\alpha$ are isomorphic.
 \end{definition}
-
-\
 
 \subsubsection{Cardinal Numbers}
 
@@ -327,7 +316,7 @@ Given a set~$x$, let the cardinality of~$x$, written $|x|$, be defined as the sm
 \end{definition}
 
 \begin{definition}{(Aleph function)}\label{def:aleph}\\
-Let $\omega$ be the set defined by definition \bref{def:omega}.
+Let $\omega$ be the least set satisfying the \emph{Axiom of Infinity}.
 We will recursively define the function $\aleph$ for all ordinals.
 \bce[(i)]
 \item $\aleph_0 = \omega$
@@ -345,12 +334,12 @@ If $\kappa = \aleph_\alpha$ and $\alpha$ is a successor ordinal, we call $\kappa
 \ece
 \end{definition}
 We say $\kappa$ is an uncountable cardinal iff it is an infinite ordinal and $\aleph_0 < \kappa$.
-Infinite cardinals will be notated by lowercase greek letters from the middle of the alphabet, e.g. $\kappa, \mu, \nu, \ldots$ with the exception of $\lambda$, which is next to $\kappa$ in the greek alphabet, but is also sometimes used for limit ordinal.
+Infinite cardinals will be notated by lowercase greek letters from the middle of the alphabet, e.g. $\kappa, \mu, \nu, \ldots$ with the possible exception of $\lambda$, which is next to $\kappa$ in the greek alphabet, but is also sometimes used to denote limit ordinals.
 
-For formal details as well as why every set can be well-ordered assuming \emph{Choice}, and therefore has a cardinality, see \cite{JechBook}. % proc je to tady?
+For formal details as well as why every set can be well-ordered assuming the \emph{Axiom of Choice}, and therefore has a cardinality, see \cite{JechBook}. % proc je to tady?
 
 \begin{definition}{(Sequence)}\label{def:sequence}\\
-We say that a function $\varphi(x, y)$ is a \emph{sequence} iff there is an ordinal $\alpha$ such that $dom(\varphi) = \alpha$. In other words, a function is called a sequence if it is defined exactly for every ordinal from $0$ to some $\alpha$. We then say it is an $\alpha$-sequence. We usually write $\langle \beta_i : i \in \alpha \rangle$ or $\langle \beta_0, \beta_1, \ldots \rangle$ when referring to a sequence, $\beta_i$ then denotes the elements of $rng(\varphi)$ for every $i \in dom(\varphi)$.
+We say that a function $\varphi(x, y)$ is a \emph{sequence} iff there is an ordinal $\alpha$ such that $dom(\varphi) = \alpha$. In other words, a function is called a sequence if it is defined exactly for every ordinal from below some $\alpha$. We then say it is an $\alpha$-sequence. We usually write $\langle \beta_i : i \in \alpha \rangle$ or $\langle \beta_0, \beta_1, \ldots \rangle$ when referring to a sequence, for every $i \in dom(\varphi)$, $\beta_i$ then denotes the respective elements of $rng(\varphi)$.
 \end{definition}
 
 \begin{definition}{(Cofinal Subset)}\label{def:cofinal_subset}\\
@@ -359,9 +348,7 @@ Given a class $A$ of ordinals, we say that $B \subseteq A$ is \emph{cofinal in $
 (\forall x \in A)(\exists y \in B)(x \in y)
 \eeq
 \end{definition}
-In other words, $B \subseteq A$ is cofinal in $A$ iff it is unbounded in $A$.
 
-% TODO bylo to blbe, je opraveno?
 \begin{definition}{(Cofinality of a Limit Ordinal)}\label{def:cofinality}\\ % a co https://math.berkeley.edu/~jhicks/links/SOTS/cskipper112613.pdf? 
 Let $\lambda$ be a limit ordinal. 
 We say that the \emph{cofinality} of $\lambda$ is $\kappa$ iff $\kappa$ is the least ordinal, such that there is a cofinal $\kappa$-sequence $\langle \beta_\xi : \xi < \kappa \rangle$ satisfying
@@ -375,11 +362,6 @@ Note that $cf(\alpha)$ is alway a cardinal\footnote{If $cf(\alpha)$ is not a ca
 \begin{definition}{(Regular Cardinal)}\label{def:regular_cardinal}\\
 We say an infinite cardinal $\kappa$ is \emph{regular} iff $cf(\kappa) = \kappa$. % TODO chyba podle honzika, watt?
 \end{definition}
-
-%\begin{definition}{(Limit Cardinal)}\label{def:limit_cardinal}\\
-%We say that a cardinal $\kappa$ is a \emph{limit cardinal} iff there is a limit ordinal $\lambda$ such that $\kappa = \aleph_\lambda$ 
-% neni in ord redundantni, protoze je V_x def jenom pro ordinalni x?
-%\end{definition}
 
 \begin{definition}{(Strong Limit Cardinal)}\label{def:strong_limit_cardinal}\\
 We say that an ordinal $\kappa$ is a \emph{strong limit cardinal} if it is a \emph{limit cardinal} and 
@@ -411,21 +393,20 @@ The \emph{relativization of $\varphi$ to $M$ and $R$} is the formula, written as
 \item $(\exists x \varphi(x))^{M,R} \iff (\exists x \in M) \varphi^{M,R}(x)$
 \item $(\forall x \varphi(x))^{M,R} \iff (\forall x \in M) \varphi^{M,R}(x)$
 \ece
+
 \end{definition}
 When $R=\in\cap(M \times M)$, we usually write $\varphi^M$ instead of $\varphi^{M, R}$. When we talk about $\varphi^M(p_1, \ldots, p_n)$, it is understood that $p_1, \ldots, p_n \in M$.
 
 % TODO definice splnovani!
 
 \begin{definition}{(Satisfaction in a Structure)}\label{def:satisfaction}\\
-Let $M$ be a set and $R$ a binary relation on $M$. Let $Terms$ be the set of all terms, let $e: Terms \then M$ any evaluation function. Let $\varphi$  be a first-order formula in the language of set theory.
-
- iff any of the following hold 
+Let $M$ be a set and $R$ a binary relation on $M$. Let $Terms$ be the set of all terms, let $e: Terms \then M$ be any evaluation function. Let $\varphi$  be a first-order formula in the language of set theory.
 
 % neobratne, preformulovat, je to
-We say that $\varphi$ \emph{holds in $\langle M, R \rangle$ under the evaluation $e$}, we write $\langle M, R \rangle~\models~\varphi[e]$, iff any of the following hold
+We say that $\varphi$ \emph{holds in $\langle M, R \rangle$ under the evaluation $e$}, we write $\langle M, R \rangle~\models~\varphi[e]$, iff any of the following hold:
 \bce[(i)]
-\item $\varphi$ is the formula ``$s = t$'', $s, t$ are terms and $e(s) = e(t)$.
-\item $\varphi$ is the formula ``$s \in t$'', $s, t$ are terms and the pair $\rangle e(s), e(t) \langle$ is in $R$.
+\item $\varphi$ is the formula ``$s = t$'', $s, t$ are terms, both $e(s)$ and $e(t)$ are defined, and $e(s) = e(t)$.
+\item $\varphi$ is the formula ``$s \in t$'', $s, t$ are terms, both $e(s)$ and $e(t)$ are defined, and the pair $\rangle e(s), e(t) \langle$ is in $R$.
 \item $\varphi$ is the formula ``$\neg\psi$'' and not $\langle M, R \rangle~\models~\psi[e]$
 \item $\varphi$ is the formula ``$\psi_1 \et \psi_2$'' and both $\langle M, R \rangle~\models~\psi_1[e]$ and $\langle M, R \rangle~\models~\psi_2[e]$.
 \item $\varphi$ is the formula ``$\psi_1 \lor \psi_2$'' and either $\langle M, R \rangle~\models~\psi_1[e]$ or $\langle M, R \rangle~\models~\psi_2[e]$.
@@ -437,7 +418,7 @@ We say that $\varphi$ \emph{holds in $\langle M, R \rangle$ under the evaluation
 \ece
 % https://en.wikibooks.org/wiki/Formal_Logic/Predicate_Logic/Satisfactio
 % https://en.wikipedia.org/wiki/T-schema
-We also write $\langle M, R \rangle~\models~\varphi$, which 
+If $\varphi$ is a sentence, we also write $\langle M, R \rangle~\models~\varphi$. If $\varphi$ is not a sentence, universal closure is assumed to be used instead of $\varphi$ if no evaluation is present.
 \end{definition}
 Note that we say that $M$ is a set. 
 
@@ -463,7 +444,7 @@ Given a transitive class $M$, we say a formula $\varphi$ is \emph{absolute in $M
 \item A formula $\varphi$ is $\Sigma_n+1$ if it is logically equivalent to a formula $\varphi'$ such that $\varphi' = \forall x \psi$ where $\psi$ is a $\Pi_n$-formula for any $n < \omega$.
 \ece
 \end{definition} % TODO kolem ty parovaci fce je neco blbe :(
-Note that we can use the pairing function so that for $\forall p_1, \ldots, p_n \psi(p_1, \ldots, p_n)$, there is a logically equivalent formula of the form $\forall x \psi'(x)$.
+% Note that we can use the pairing function so that for $\forall p_1, \ldots, p_n \psi(p_1, \ldots, p_n)$, there is a logically equivalent formula of the form $\forall x \psi'(x)$.
 
 \begin{lemma}{($\Delta_0$ absoluteness)}\label{lemma:delta_0_absoluteness}
 Let $\varphi$ be a $\Delta_0$-formula, then $\varphi$ is absolute in any transitive class $M$.
@@ -472,11 +453,18 @@ Let $\varphi$ be a $\Delta_0$-formula, then $\varphi$ is absolute in any transit
 \begin{proof}
 This will be proven by induction over the complexity of a given $\Delta_0$-formula $\varphi$. Let $M$ be an arbitrary transitive class. 
 
-Atomic formulas are always absolute by the definition of relativisation, see definition \bref{def:relativization}.
-Suppose that $\Delta_0$-formulas $\psi_1$ and $\psi_2$ are absolute in $M$. Then from relativization, $(\psi_1 \et \psi_2)^M \iff \psi_1^M \et \psi_2^M$, which is, from the induction hypothesis, equivalent to $\psi_1 \et \psi_2$. The same holds for $\lor, \then, \neg$.
+As $M$ is transitive, atomic formulas are always absolute by the definition of relativisation, see definition \bref{def:relativization}.
+Suppose that $\Delta_0$-formulas $\psi_1$ and $\psi_2$ are absolute in $M$. 
+Then from relativization, $(\psi_1 \et \psi_2)^M \iff \psi_1^M \et \psi_2^M$, which is from the induction hypothesis equivalent to $\psi_1 \et \psi_2$. 
+The same holds for $\lor, \then, \neg$.
 
 Suppose that a $\Delta_0$-formula $\psi$ is absolute in $M$. Let $y$ be a set and let $\varphi = (\exists x \in y) \psi(x)$. 
-From relativization, $(\exists x \psi(x))^M \iff (\exists x \in M) \psi^M(x)$. Since the hypotheses makes it clear that $\psi^M \iff \psi$, we get $((\exists x \in y) \psi(x))^M \iff (\exists x \in y\cap M) \psi(x)$, which is the equivalent of $\varphi^M \iff \varphi$. The same applies to $\varphi = (\forall x \in y) \psi(x)$.
+From relativization, $(\exists x \psi(x))^M \iff (\exists x \in M) \psi^M(x)$. Since the hypotheses makes it clear that $\psi^M \iff \psi$, we get 
+\beq
+((\exists x \in y) \psi(x))^M \iff (\exists x \in y\cap M) \psi(x)^M \iff (\exists x \in y\cap M) \psi(x)\mbox{,}
+\eeq
+which is equivalent to $\varphi^M \iff \varphi$. Note that from transitivity of $M$, is $x \in M$ and $x \in y$, it is the case that $x \in y \cap M$. % urcite z tranzitivity?
+The same argument applies to $\varphi = (\forall x \in y) \psi(x)$.
 \end{proof}
 
 % todo co Devlin -- p.27 -- downward a upward absoluteness? % nepouzivame
@@ -514,14 +502,14 @@ Assume that for $p_1, \ldots, p_n \in M$ fixed, that $(\exists x \in M)\psi(p_1,
 \begin{definition}{(Strictly Increasing Function)}\label{def:increasing_function}\\
 A function $f: Ord \then Ord$ is said to be \emph{strictly increasing} iff
 \begin{equation}
-\forall \alpha, \beta \in Ord (\alpha < \beta \then f(\alpha) < f(\beta)).
+(\forall \alpha, \beta \in Ord) (\alpha < \beta \then f(\alpha) < f(\beta)).
 \end{equation}
 \end{definition}
 
 \begin{definition}{(Continuous Function)}\label{def:continuous_function}\\
 A function $f: Ord \then Ord$ is said to be \emph{continuous} iff
 \begin{equation}
-\lambda\mbox{ is limit } \then f(\lambda) = \bigcup_{\alpha < \lambda} f(\alpha).
+\mbox{``}\lambda\mbox{ is limit'' } \then f(\lambda) = \bigcup_{\alpha < \lambda} f(\alpha).
 \end{equation}
 \end{definition}
 
@@ -561,7 +549,7 @@ For a regular uncountable cardinal $\kappa$, we say a set $A \subset \kappa$ is 
 
 \subsubsection{Structure, Substructure and Embedding}
 
-Structures will be denoted $\langle M, \in, R \rangle$ where $M$ is a domain, $\in$ stands for the standard membership relation, it is assumed to be restricted to the domain\footnote{To be totally explicit, we should write $\langle M, \in \cap M \times M, R \rangle$.}, $R \subseteq M$ is a relation on the domain. When $R$ is not needed, we can as well only write $M$ instead of $\langle M, \in \rangle$.
+Structures will be denoted $\langle M, \in, R \rangle$ where $M$ is a domain, $\in$ stands for the standard membership relation, it is assumed to be restricted to the domain\footnote{To be totally explicit, we should write $\langle M, \in \cap M \times M, R \rangle$.}, $R \subseteq M$ is an unary relation on the domain. %When $R$ is not needed, we can as well only write $M$ instead of $\langle M, \in \rangle$.
 
 \begin{definition}{(Elementary Embedding)}\label{def:elementary_embedding}\\
 Given the structures $\langle M_0, \in, R \rangle$, $\langle M_1, \in, R \rangle$ and a one-to-one function $j: M_0 \then M_1$, we say $j$ is an \emph{elementary embedding} of $M_0$ into $M_1$, we write $j: M_0 \prec M_1$, when the following holds for every formula $\varphi(p_1, \ldots, p_n)$ and every $p_1, \ldots, p_n \in M_0$:
