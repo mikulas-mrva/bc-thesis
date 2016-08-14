@@ -184,7 +184,7 @@ The following is an axiom for every first–order formula $\varphi(x, p_1, \ldot
 \begin{definition}{(Choice function)}\label{def:choice_function}\\
 We say that a function $f$ is a \emph{choice function on $x$} iff
 \beq
-dom(f) = x \setminus \{\emptyset\}) \et (\forall y \in dom(f))(f(y) \in y)
+dom(f) = x \setminus \{\emptyset\}) \et (\forall y \in dom(f))(f(y) \in y)\mbox{.}
 \eeq
 \end{definition}
 
@@ -192,10 +192,10 @@ dom(f) = x \setminus \{\emptyset\}) \et (\forall y \in dom(f))(f(y) \in y)
 \begin{definition}{(Axiom of Choice)}\label{def:choice}\\
 For every set~$x$~there is a function $f$ that is a choice function on $x$.
 \end{definition}
-One might be unsettled by the fact that this definition quantifies over functions, which are generally classes, but in this particular case, since $dom(f) = x$ and~$x$~is a set, $f$ is also a set due to \emph{Replacement}\footnote{If the underlying theory includes of implies \emph{Replacement}.}.
+One might be unsettled by the fact that this definition quantifies over functions, which are generally classes, but in this particular case, since $dom(f)~=~x$ and~$x$~is a set, $f$ is also a set due to \emph{Replacement}\footnote{If the underlying theory includes of implies \emph{Replacement}.}.
 
 % We will refer to the axioms by their name, written in italic type, e.g. \emph{Foundation} refers to the Axiom of Foundation. Now we need to define the set theories to be used in the article. 
-
+\newpage
 \begin{definition}{$(\sf{S})$}\label{def:s}\\ %ok
 We call $\sf{S}$ an axiomatic theory in the language $\mathscr{L} = \{=, \in\}$ with exactly the following axioms:
 \bce[(i)]
@@ -265,9 +265,9 @@ A non–zero ordinal $\alpha$ is called a \emph{limit ordinal} iff it is not a 
 \end{definition}
 
 \begin{definition}{(Ord)}\label{def:ord}\\  % ok
-\emph{The class of all ordinal numbers}, which we will denote ``$Ord$''\footnote{Some authors use ``$On$'' instead of ``$Ord$'', we will stick to the notation used in \cite{JechBook}.} is the proper class defined as follows.
+\emph{The class of all ordinal numbers}, which we will denote ``$Ord$''\footnote{Some authors use ``$On$'' instead of ``$Ord$'', we will stick to the notation used in \cite{JechBook}.} is the proper class defined as follows:
 \begin{equation}
-x \in Ord \iff x\mbox{ is an ordinal}
+x \in Ord \iff x\mbox{ is an ordinal}\mbox{.}
 \end{equation}
 \end{definition}
 
@@ -300,7 +300,7 @@ Even though $V$ is sometimes also used for the universal class that contains all
 \end{definition}
 
 \begin{definition}{(Rank)}\label{def:rank}\\ % ok
-Given a set~$x$, we say that the rank of~$x$~(written as $rank(x)$) is the least ordinal $\alpha$ such that $x \in V_{\alpha+1}$
+Given a set~$x$, we say that the rank of~$x$~(written as $rank(x)$) is the least ordinal $\alpha$ such that $x \in V_{\alpha+1}$.
 \end{definition}
 Due to \emph{Axiom of Regularity}, every set has a rank.\footnote{See chapter 6 of \cite{JechBook} for details.} 
 The Von Neumann's hierarchy defined above can also be defined by the fact that every $V_\alpha$ is a set of all set with rank less than $\alpha$.
@@ -372,13 +372,12 @@ We say that an ordinal $\kappa$ is a \emph{strong limit cardinal} if it is a \em
 \end{definition}
 
 \begin{definition}{(Generalised Continuum Hypothesis)}\label{def:gch}\\
+The following sentence is known as the \emph{generalised continuum hypothesis}, often abbreviated to $GCH$:
 \begin{equation}
-(\forall \alpha \in Ord)(\aleph_{\alpha+1}=|\power{\aleph_\alpha}|)
+(\forall \alpha \in Ord)(\aleph_{\alpha+1}=|\power{\aleph_\alpha}|)\mbox{.}
 \end{equation}
 \end{definition}
 If \emph{GCH} holds (for example in Gödel's $L$, see chapter 3), the notions of limit cardinal and strong limit cardinal are equivalent.
-
-\
 
 \subsubsection{Relativisation and Absoluteness} % TODO ujasni si co se deje s parametrama pri relativizaci. co na to Jech?
 \begin{definition}{(Relativization)}\label{def:relativization}\\

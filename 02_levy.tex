@@ -1,13 +1,12 @@
 \section{Lévy's First–Order Reflection}\label{sec:first_order}
 
 \subsection{Lévy's Original Paper}\label{sec:levy1960}
-This section is based on Lévy's paper \emph{Axiom Schemata of Strong Infinity in Axiomatic Set Theory}, \cite{Levy60a}. It presents Lévy's \emph{principle of complete reflection}% TODO for other reflection principles of Levy, see \emph{Principles of reflection in axiomatic set theory} TODO cite?
- and its equivalence to the \emph{Replacement Schema} and \emph{Axiom of Infinity} under \sf{S}\footnote{See definition \bref{def:s}.}.
+
+This section is based on Lévy's paper \emph{Axiom Schemata of Strong Infinity in Axiomatic Set Theory}, \cite{Levy60a}. It presents Lévy's \emph{principle of complete reflection} 
+and its equivalence to the \emph{Replacement Schema} and \emph{Axiom of Infinity} under \sf{S}\footnote{See definition \bref{def:s}.}.
 
 First, we should point out that set theory has changed over the last 66 years and show a few notable differences.
-%When reading Lévy's article, one should bear in mind that while the author often speaks about a~model of \sf{ZF}, usually denoted $u$, it doesn't necessarily mean that there is a set $u$ that is a model of \sf{ZF}\footnote{This is indeed impossible to prove in \sf{ZF} due to Gödel's Incompleteness.}, we are nowadays used to using the notion of universal class $V$ in similar sense, even though independently from a particular axiomatic set theory. %We will review the exact meaning of the notion of a standard complete model in a moment.
-%The theory \sf{ZF} is practically identical to the theory we have established in definition \bref{def:zf}, the differences are only formal.
-One might be confused by the fact that Lévy treats the \emph{Axiom of Subsets}, which we call \emph{Axiom Schema of Specification}, as a single axiom rather than a schema. He even takes the conjunction of all axioms of \sf{ZF} and treats it like a formula. This is possible because the underlying logic calculus is different. Lévy works with set theories formulated in the \emph{non–simple applied first order functional calculus}. The calculus works with two kinds of variables, one for sets and the other for functions. It contains a substitution rule for functional variables, but doesn't quantify over them, so it is not full second–order logic, see the beginning of \emph{Chapter IV} in \cite{church1996introduction} for details.% This way, \emph{Subsets} is de facto a schema even though it sometimes treated as a single formula\footnote{This way, the conjunction of all axioms is then in fact an axiom schema.} but the logic is still first–order since one can't quantify over functional variables. 
+One might be confused by the fact that Lévy treats the \emph{Axiom of Subsets}, which we call \emph{Axiom Schema of Specification}, as a single axiom rather than a schema. He even takes the conjunction of all axioms of \sf{ZF} and treats it like a formula. This is possible because the underlying logic calculus is different. Lévy works with set theories formulated in the \emph{non–simple applied first order functional calculus}. The calculus works with two kinds of variables, one for sets and the other for functions. It contains a substitution rule for functional variables, but doesn't quantify over them, so it is not full second–order logic, see the beginning of \emph{Chapter IV} in \cite{church1996introduction} for details.
 We will use the usual first–order axiomatization of \sf{ZFC} as seen in \cite{JechBook}.
 It should also be noted that the logical connectives look different. The symbol used nowaday for an universal quantifier does not appear, $\forall x \varphi (x)$ was be written as $(x) \varphi (x)$.
 The symbol for negation is ``$\sim$'', implication is written as ``$\supset$'' and equivalence is ``$\equiv$''. We will use standard notation with ``$\neg$'', ``$\then$'' and ``$\iff$'' respectively when presenting Lévy's results.
@@ -35,7 +34,7 @@ Let \sf{Q} be an arbitrary axiomatic set theory. We say that a cardinal $\kappa$
 \begin{equation}
 Scm^{\sf{Q}}(V_\kappa)\mbox{.}
 \end{equation}
-We write $In^{\sf{Q}}(\kappa)$.\footnote{To be able to define $V_\kappa$, we need to work in a logic that contains the \emph{Replacement Schema} or any of its equivalents. It should be noted that we don't work in an arbitrary theory \sf{Q}, but in \sf{ZF}, which contains the \emph{Replacement Schema}. 
+We write $In^{\sf{Q}}(\kappa)$.\footnote{To be able to define $V_\kappa$, we need to work in a theory that contains the \emph{Replacement Schema} or any of its equivalents. It should be noted that we don't work in an arbitrary theory \sf{Q}, but in \sf{ZF}, which contains the \emph{Replacement Schema}. 
 %$Scm^{\sf{Q}}(V_\kappa)$ in fact says ``\sf{ZF} thinks that $V_\kappa$ is a transitive model of \sf{Q}''.
 }
 \end{definition}
@@ -252,12 +251,10 @@ H_i(p_1, \ldots, p_n) = \{x \in C_i: (\forall z \in C)(rank(x) \leq rank(z))\}
 \end{equation}
 for each $1 \leq i \leq n$, where
 \begin{equation}
-C_i = \{x: \varphi_i(p_1, \ldots, p_{m-1}, x)\} \mbox{ for $1 \leq i \leq n$}
+C_i = \{x: \varphi_i(p_1, \ldots, p_{m-1}, x)\} \mbox{ for $1 \leq i \leq n$}\mbox{.}
 \end{equation}
 
-\
-
-Next, let's construct $M$ from given $M_0$ by induction. 
+Next, let us construct $M$ from given $M_0$ by induction.:
 \begin{equation}
 M_{i+1} = M_i \cup \bigcup_{j=0}^{n} \bigcup \{H_j(p_1, \ldots, p_{m-1}): p_1, \ldots, p_{m-1} \in M_i\}
 \end{equation}
@@ -274,8 +271,6 @@ and the final $M$ is obtained by joining the previous steps.
 \begin{equation}
 M = \bigcup_{i=0}^{\infty} M_i, \mbox{  }M^T = \bigcup_{i=0}^{\infty} M^T_i = V_\lambda\mbox{ for some limit }\lambda\mbox{.}
 \end{equation}
-
-\
 
 We have yet to finish part (iii).
 Let's try to construct a~set $M'$ that satisfies the same conditions like $M$ but is kept as small as possible. Assuming the Axiom of Choice, we can modify the construction so that the cardinality of $M'$ is at most $|M_0| \cdot \aleph_0$. Note that the size of $M$ in the previous construction is determined by the size of $M_0$ and, most importantly, by the size of $H_i(p_1, \ldots, p_{m-1})$ for every $i$, $1 \leq i \leq n$ in individual iterations of the construction. Since (i) only ensures the existence of an~$x$~that satisfies $\varphi_i(p_1, \ldots, p_{m-1}, x)$ for any $i$, $1 \leq i \leq n$, we only need to add one $x$ for every set of parameters but $H_i(u_1, \dots, u_{m-1})$ can be arbitrarily large. Let $F$ be a~choice function on $\power{M'}$. Also let $h_i(p_1, \ldots, p_{m-1}) = F(H_i(p_1, \ldots, p_{m-1}))$ for $i$, where $1 \leq i \leq n$, which means that $h$ is a~function that outputs an~$x$~that satisfies $\varphi_i(p_1, \ldots, p_{m-1}, x)$ for $i$ such that $1 \leq i \leq n$ and has minimal rank among all such sets. The induction step needs to be redefined to
@@ -448,22 +443,22 @@ Given any $x \in V_\lambda$, we want verify that $y = \bigcup x$ is also in $V_\
 \beq
 y = \bigcup x \mbox{ iff } (\forall z \in y)(\exists q \in x) z \in q \et (\forall z \in x)(\forall q \in z) q \in y
 \eeq
-So by lemma \bref{lemma:delta_0_absoluteness}
+So by lemma \bref{lemma:delta_0_absoluteness},
 \beq
 % y = \bigcup x \iff (y = \bigcup x)^{V_\lambda}
-y = \bigcup x \mbox{ iff } \langle V_\lambda, \in \rangle~\models~y = \bigcup x
+y = \bigcup x \mbox{ iff } \langle V_\lambda, \in \rangle~\models~y = \bigcup x\mbox{.}
 \eeq
 % asi ok ^
 
 \item \emph{Axiom of Pairing}: \\
 Given two sets $x, y \in V_\lambda$, we want to show that $z = \{x, y\}$ is also an element of $V_\lambda$.
 \beq
-z = \{x, y\} \mbox{ iff } x \in z \et y \in z \et (\forall q \in z)(q = x \lor q = y)
+z = \{x, y\} \mbox{ iff } x \in z \et y \in z \et (\forall q \in z)(q = x \lor q = y)\mbox{.}
 \eeq
 So $z = \{x, y\}$ is a $\Delta_0$–formula, and thus by lemma \bref{lemma:delta_0_absoluteness} it holds that
 \beq
 %z = \{x, y\} \iff (z = \{x, y\})^{V_\lambda}
-z = \{x, y\} \mbox{ iff } \langle V_\lambda, \in \rangle~\models~z = \{x, y\}
+z = \{x, y\} \mbox{ iff } \langle V_\lambda, \in \rangle~\models~z = \{x, y\}\mbox{.}
 \eeq
 % asi ok ^
 
@@ -477,17 +472,17 @@ According to definition \bref{def:subset}, $y \subset x$ is $\Delta_0$, so for 
 \beq
 y = \power{x} \iff \langle V_\lambda, \in \rangle~\models~y = \power{x}\mbox{.}
 \eeq
-Because $\lambda$ is limit and $rank(\power{x}) = rank(x)+1$, we know that $\power{x} \in V_\lambda$ for every $x \in V_\lambda$.
+Because $\lambda$ is limit and $rank(\power{x}) = rank(x)+1$, we know that $\power{x}~\in~V_\lambda$ for every $x \in V_\lambda$.
 % cajk
 
 \item \emph{Specification Schema}: \\ %zkontrolovat, podle Draka, pripadne Jech 12.11
 Given a first–order formula $\varphi$, we want to show the following:
 \beq
-\langle V_\lambda, \in \rangle~\models~\forall x, p_1, \ldots, p_n \exists y \forall z (z \in y \iff z \in x \et \varphi(z, p_1, \ldots, p_n))
+\langle V_\lambda, \in \rangle~\models~\forall x, p_1, \ldots, p_n \exists y \forall z (z \in y \iff z \in x \et \varphi(z, p_1, \ldots, p_n))\mbox{.}
 \eeq
 Given any~$x$~along with parameters $p_1, \ldots, p_n \in V_\lambda$, we set
 \beq
-y~=~\{z~\in~x~:~\varphi^{V_\lambda}(z, p_1, \ldots, p_n)\}
+y~=~\{z~\in~x~:~\varphi^{V_\lambda}(z, p_1, \ldots, p_n)\}\mbox{.}
 \eeq
 From transitivity of $V_\lambda$ and the fact that $y \subset x$ and $x \in V_\lambda$, we know that $y \in V_\lambda$, so 
 \beq 
@@ -585,8 +580,7 @@ So if $\varphi_1, \ldots, \varphi_n$ would be the axioms of \sf{ZFC}, reflection
 It is also worthwhile to note that, in a~way, reflection is dual to compactness. 
 % ref http://www.helsinki.fi/sls2015/materials/Fontanella%20Scandinavian%20Summer%20School.pdf
 Compactness says that given a set of sentences, if every finite subset yields a~model, so does the whole set. Reflection, on the other hand, says that while the whole set has no model in the underlying theory, every finite subset has a model.
-
-Furthemore, reflection can be used in ways similar to upward Löwenheim–Skolem theorem.
+Furthermore, reflection can be used in ways similar to upward Löwenheim–Skolem theorem.
 Since Reflection extends any set $M_0$ into a~model of given formulas $\varphi_1, \ldots, \varphi_n$, we can choose the lower bound of the size of $M$ by appropriately choosing $M_0$.
 
 In the next section, we will try to generalise reflection in a~way that transcends \sf{ZFC} and yields some large cardinals.

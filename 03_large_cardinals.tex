@@ -1,46 +1,8 @@
 \section{Reflection And Large Cardinals}
 
-\begin{comment} % ======================================================================== //
-% TODO aspon par slov !!!
-
-
-% TODO druhoradova reflexe - odkaz na ORP_final (Koellner?) Co shapiro?
-% TODO Tate?
-% TODO Pro vyssi rady odkaz na Welche, \cite{Welch12globalreflection}
-
-In this chapter we aim to examine stronger reflection properties in order to reach cardinals unavailable in $\sf{ZFC}$. Like we said in the first chapter, 
-the variety of reflection principles comes from the fact that there are many way to formalise ``properties of the universal class''. It is not always obvious what properties hold for $V$ because, as Tarski
-has shown, there is no way to formalise satisfaction for proper classes. We have shown that reflecting properties as first–order formulas doesn't allow us to leave $\sf{ZFC}$. We will broaden the class of admissible properties to be reflected and see whether there is a~natural limit in the height or width on the reflected universe and also see that no matter how far we go, the universal class is still as elusive as it is when seen from $\sf{S}$. That is because for every process for obtaining larger sets such as for example the power set operation in $\sf{ZFC}$, this process can't reach $V$ and thus, from reflection, there is an initial segment of $V$ that can't be reached via said process.
-
-To see why this is important, let's dedicate a few lines to the intuition behind the notions of limitness, regularity and inaccessibility in a manner strongly influenced by \cite{Infinity_in_mind}. To see why limit and strongly limit cardinals are worth mentioning, note that they are ``limit'' not only in a sense of being a supremum of an ordinal sequence, they also show that a certain way of obtaining larger sets from smaller ones is limited. We will see that all of the alternatives offered in this thesis are in a sense limited. 
-$\aleph_\lambda$ is a limit cardinal if there is no $\alpha$ such that $\aleph_{\alpha+1}=\aleph_\lambda$. Strongly limit cardinals point to the limits of the power set operation. It has been too obvious so far, so let's look at the regular cardinals in this manner. Regular cardinals are those that cannot be\footnote{Assuming the $\emph{Axiom of Choice}$.}, expressed as a supremum of smaller amount of smaller objects\footnote{Just like $\omega$ can not be expressed as a supremum of a finite set consisting solely of finite numbers.}. More precisely, $\kappa$ is regular if there is no way to define it as a union of less than $\kappa$ ordinals, all smaller than $\kappa$. So unless there already is a set of size $\kappa$, \emph{Replacement} is useless in determining whether $\kappa$ is really a set. Note that assuming the \emph{Axiom of Choice}, successor cardinals are always regular, so most\footnote{All provable to exist in $\sf{ZFC}$.} limit cardinals are singular cardinals. So if one is traversing the class of all cardinals upwards, successor steps are still sets thanks to the power set axiom while singular limit cardinals are not proper classes because they are suprema of images of smaller sets via \emph{Replacement}. Regular cardinals are, in a way, limits of how far can we get by taking limits of increasing sequences of ordinals obtained via $\emph{Replacement}$. 
-
-In order to reach an inaccessible cardinal of size $\kappa$, one has to pass at least $\kappa$ limit ordinals. Them, to get to a Mahlo cardinal of size $\kappa$, one has to move past $\kappa$ inaccessible cardinals. This concept is then iterable for hyper–Mahlo cardinals, as we will see later in this section.
-
-% That all being said, it is easy to see that no cardinals in $\sf{ZFC}$ are both strongly limit and regular because there is no way to ensure they are sets and not proper classes in $\sf{ZFC}$. The only exception to this rule is $\aleph_0$ which needs \emph{Infinity} to exist. % nase otazka je: proc omega a ne jine kardinaly?
-% It should now be obvious why the fact that $\kappa$ is inaccessible implies that $\kappa = aleph_\kappa$.\footnote{This doesn't work backwards, the least fixed point of the $\aleph$ function is the limit of $\{\aleph_0,\ \aleph_{\aleph_0},\ \aleph_{\aleph_{\aleph_0}},\ \ldots \}$, it is singular since the sequence has countably many elements.}
-
-% We will first examine the connection between reflection principles and (regular) fixed points of ordinal functions in a manner proposed by Lévy in \cite{Levy60a}. %We will also see that, like Lévy has proposed in the same paper, there is a meaningful way to extend the relation between $\sf{S}$ and $\sf{ZFC}$ into a hierarchy of stronger axiomatic set theories. 
-% Those are the three lines of thinking that we will find are in fact different facets of the same gem, especially in the section devoted to Inaccessible and Mahlo cardinals.
-% viz Shapiro, Stewart. 1987. “Principles of Reflection and Second–order Logic”. Journal of Philosophical Logic 16 (3). Springer: 309–33. http://www.jstor.org/stable/30227043.
-% Reflections on \emph{Replacement} and Reflection: The axioms in a~structuralist setting (Geoffrey Hellman)
-%TODO neco o tom, ze kdyz je reflexe formule, da se sama reflektovat?
-% The above should make a clear picture of why $\emph{Infinity}$ is a specific case of $\emph{Reflection}$.
-%TODO proc je Refl zaroven zobecneny replacement?
-
-% TODO ze ``uplne totalni'' reflexe se zacykli a rozbije? nebo ne?
-
-
-\end{comment} % ======================================================================== //
-
 \subsection{Regular Fixed–Point Axioms}\label{sec:regular_fixed_points}
 Lévy's article mentions various schemata that are not instances of reflection per se, but deal with fixed points of normal ordinal functions. 
 After proving a helpful lemma, we will introduce them and show that they are equivalent to \emph{First–Order Reflection Schema}\footnote{For the definition, see definition \bref{def:first_order_reflection_schema}.}.
-
-% 
-%
-% This small chapter is dedicated to ?
-%
 
 \begin{lemma}{(Fixed–Point Lemma for Normal Functions)}\label{lemma:normal_fixed_point}\\
 Let $f$ be a normal function defined for all ordinals\footnote{For the definition of normal function, see definition \bref{def:normal_function}.}. Then all of the following hold:
@@ -266,7 +228,7 @@ because we have proved in the last section that for an inaccessible $\kappa$,
 \eeq
 
 \begin{theorem}
-\emph{Inaccessible Reflection Schema} is equivalent to \emph{Axiom schema $F$}.
+\emph{Inaccessible Reflection Schema} is equivalent to \emph{Axiom~schema~$F$}.
 \end{theorem}
 
 This is \emph{Theorem 4.1} in chapter 4 of \cite{DrakeBook}, also equivalent to \emph{Theorerem 3} in \cite{Levy60a}.
@@ -395,9 +357,7 @@ To see what is meant by \emph{from below}, note that the approach that led us to
 
 Indescribability is another approach towards large cardinals that is based on reflection. 
 We will briefly introduce the basic definitions and show that it yield large cardinals, but most of them are not reachable from below in a sense established at the end of previous subsection.
-
 Most of the results presented in this subchapter come from \cite{KanamoriBook}.
-
 Since this chapter uses higher–order logic, we need to introduce the hierarchy of formulas first.
 
 \begin{definition}{(Higher–Order Variables)}\label{def:higher_order_variables}\\
