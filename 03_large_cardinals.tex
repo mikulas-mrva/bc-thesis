@@ -12,7 +12,7 @@ the variety of reflection principles comes from the fact that there are many way
 has shown, there is no way to formalise satisfaction for proper classes. We have shown that reflecting properties as first–order formulas doesn't allow us to leave $\sf{ZFC}$. We will broaden the class of admissible properties to be reflected and see whether there is a~natural limit in the height or width on the reflected universe and also see that no matter how far we go, the universal class is still as elusive as it is when seen from $\sf{S}$. That is because for every process for obtaining larger sets such as for example the powerset operation in $\sf{ZFC}$, this process can't reach $V$ and thus, from reflection, there is an initial segment of $V$ that can't be reached via said process.
 
 To see why this is important, let's dedicate a few lines to the intuition behind the notions of limitness, regularity and inaccessibility in a manner strongly influenced by \cite{Infinity_in_mind}. To see why limit and strongly limit cardinals are worth mentioning, note that they are ``limit'' not only in a sense of being a supremum of an ordinal sequence, they also show that a certain way of obtaining larger sets from smaller ones is limited. We will see that all of the alternatives offered in this thesis are in a sense limited. 
-$\aleph_\lambda$ is a limit cardinal if there is no $\alpha$ such that $\aleph_{\alpha+1}=\aleph_\lambda$. Strongly limit cardinals point to the limits of the powerset operation. It has been too obvious so far, so let's look at the regular cardinals in this manner. Regular cardinals are those that cannot be\footnote{Assuming $\emph{Choice}$.}, expressed as a supremum of smaller amount of smaller objects\footnote{Just like $\omega$ can not be expressed as a supremum of a finite set consisting solely of finite numbers.}. More precisely, $\kappa$ is regular if there is no way to define it as a union of less than $\kappa$ ordinals, all smaller than $\kappa$. So unless there already is a set of size $\kappa$, \emph{Replacement} is useless in determining whether $\kappa$ is really a set. Note that assuming \emph{Choice}, successor cardinals are always regular, so most\footnote{All provable to exist in $\sf{ZFC}$.} limit cardinals are singular cardinals. So if one is traversing the class of all cardinals upwards, successor steps are still sets thanks to the powerset axiom while singular limit cardinals are not proper classes because they are suprema of images of smaller sets via \emph{Replacement}. Regular cardinals are, in a way, limits of how far can we get by taking limits of increasing sequences of ordinals obtained via $\emph{Replacement}$. 
+$\aleph_\lambda$ is a limit cardinal if there is no $\alpha$ such that $\aleph_{\alpha+1}=\aleph_\lambda$. Strongly limit cardinals point to the limits of the powerset operation. It has been too obvious so far, so let's look at the regular cardinals in this manner. Regular cardinals are those that cannot be\footnote{Assuming the $\emph{Axiom of Choice}$.}, expressed as a supremum of smaller amount of smaller objects\footnote{Just like $\omega$ can not be expressed as a supremum of a finite set consisting solely of finite numbers.}. More precisely, $\kappa$ is regular if there is no way to define it as a union of less than $\kappa$ ordinals, all smaller than $\kappa$. So unless there already is a set of size $\kappa$, \emph{Replacement} is useless in determining whether $\kappa$ is really a set. Note that assuming the \emph{Axiom of Choice}, successor cardinals are always regular, so most\footnote{All provable to exist in $\sf{ZFC}$.} limit cardinals are singular cardinals. So if one is traversing the class of all cardinals upwards, successor steps are still sets thanks to the powerset axiom while singular limit cardinals are not proper classes because they are suprema of images of smaller sets via \emph{Replacement}. Regular cardinals are, in a way, limits of how far can we get by taking limits of increasing sequences of ordinals obtained via $\emph{Replacement}$. 
 
 In order to reach an inaccessible cardinal of size $\kappa$, one has to pass at least $\kappa$ limit ordinals. Them, to get to a Mahlo cardinal of size $\kappa$, one has to move past $\kappa$ inaccessible cardinals. This concept is then iterable for hyper–Mahlo cardinals, as we will see later in this section.
 
@@ -381,17 +381,16 @@ To see what is meant by \emph{from below}, note that the approach that led us to
 \subsection{Indescribable Cardinals}
 
 Indescribability is another approach towards large cardinals that is based on reflection. 
-We will briefly introduce the basic definitions and show that it yield larger objects, but most of them are not reachable from below
+We will briefly introduce the basic definitions and show that it yield large cardinals, but most of them are not reachable from below in a sense established at the end of previous subsection.
 
 Most of the results presented in this subchapter are taken from \cite{KanamoriBook}.
 
-% ===================================================== TODO check ===============================================
 Since this chapter uses higher–order logic, we need to introduce the hierarchy of formulas first.
 
 \begin{definition}{(Higher–Order Variables)}\label{def:higher_order_variables}\\
-Let $M$ be a structure and $D$ its domain. In first–order logic, variables range over individuals, that is, over elements of $D$. We shall call those \emph{type 1 variables} for the purposes of higher–order logic. Type 2 variables then range over collections, that is, the elements of $\power{D}$. Generally, type $n$ variables are defined for any $n \in \omega$ such that they range over $\mathscr{P}^{n-1}(D)$.
+Let $M$ be a structure and $D$ its domain. In first–order logic, variables range over individuals, that is, over elements of $D$. We shall call those \emph{type~1 variables} for the purposes of higher–order logic. Type~2 variables then range over collections, that is, the elements of $\power{D}$. Generally, type $n$ variables are defined for any $n \in \omega$ such that they range over $\mathscr{P}^{n-1}(D)$.
 \end{definition}
-We will use lowercase latin letters for type 1 variables for backward compatibility with first–order logic, type 2 variables will be represented by uppercase letters, mostly $P, X, Y, Z$. 
+We will use lowercase latin letters for type~1 variables for backward compatibility with first–order logic, type~2 variables will be represented by uppercase letters, mostly $P, X, Y, Z$, higher–order variables won't be needed in this thesis. If we wanted to define satisfaction for second–order formulas in a model $\la V_\alpha, \in \ra$ that we have often used in this thesis, type~2 variables would be interpreted to range over a set is isomorphic to $V_{\alpha+1}$\footnote{It might be useful to keep a separate version instead of using $V_{\alpha+1}$ so that we can distinguish between sets and classes that turn out to have the same extension. See \cite{Koellner2009ORP} for details.}.
 
 \begin{definition}{(Full Prenex Normal Form)}\label{def:pnf}\\
 We say a formula is in the \emph{prenex normal form} if it is written as a block of quantifiers followed by a quantifier–free part.\\
@@ -399,7 +398,7 @@ We say a formula is in the \emph{full prenex normal form} if it is written in \e
 \end{definition}
 It is an elementary that every formula is equivalent to a formula in the full prenex normal form.
 
-
+% ===================================================== TODO check ===============================================
 \begin{definition}{(Hierarchy of Formulas)}\label{def:analytical_hierarchy}\\
 Let $\varphi$ be a formula in the prenex formal form.
 \bce[(i)]
@@ -433,10 +432,8 @@ We say that $\kappa$ is $\Pi^m_n$–indescribable iff it is not described by any
 We say that $\kappa$ is $\Sigma^m_n$–indescribable iff it is not described by any $\Sigma^m_n$–formula.
 \end{definition}
 
-To see that this notion is based in reflection, let us recall the opening quote of this thesis by Gödel which says \emph{``The Universe of sets cannot be uniquely characterised (i.~e.~distinguished from all its initial elements) by any internal structural property of the membership relation in it.''}. A cardinal $\kappa$ is $\Pi^m_n$–indescribable\footnote{This holds for $\Sigma^m_n$–formulas alike.} iff every $\Pi^m_n$–formula fails to describe $V_\kappa$ and describes an initial segment instead.
+To see that this notion is based in reflection, let us recall the opening quote of this thesis by Gödel which says \emph{``The Universe of sets cannot be uniquely characterised (i.~e.~distinguished from all its initial elements) by any internal structural property of the membership relation on it.''}. A cardinal $\kappa$ is $\Pi^m_n$–indescribable\footnote{This holds for $\Sigma^m_n$–formulas alike.} iff every $\Pi^m_n$–formula fails to describe $V_\kappa$ and describes an initial segment instead.
 In a sense, $V_\kappa$ reflects the ``property''\footnote{In this case, we are not using the word to refer to a definable class, but on a meta level to refer to a property expressible in the natural language, hence the quotation marks.} of indescribability of the universal class with respect to certain classes of formulas.
-
-\
 
 % Since we are interested inaccessing cardinals from below, we will limit ourselves to $\Pi^1_n$–formulas, with the exception of the measurable cardinal, that is included for context.
 
@@ -445,35 +442,34 @@ Let $\kappa$ be a cardinal, then the following holds for any $n \in \omega$. $\k
 \end{lemma}
 
 \begin{proof}
-The forward direction is obvious, we can always add a spare quantifier over a type 2 variable to turn a $\Pi^1_n$ formula $\varphi$ into a $\exists P \varphi$ which is obviously a $\Sigma^1_{n+1}$–formula.\footnote{Note that unlike in previous sections, it is worth noting that $\varphi$ is now a sentence so we don't have to worry whether $P$ is free in $\varphi$.}
+The forward direction is obvious, we can always add a spare quantifier over a type~2 variable to turn a $\Pi^1_n$ formula $\varphi$ into a $\exists P \varphi$ which is then a $\Sigma^1_{n+1}$–formula.\footnote{Note that unlike in previous sections, it is worth noting that $\varphi$ is now a sentence so we don't have to worry whether $P$ is free in $\varphi$.}
 
-To prove the opposite direction, suppose that $\langle V_\kappa, \in \rangle~\models~\exists X \varphi(X)$ where $X$ is a type 2 variable and $\varphi$ is a $\Pi^1_n$ formula with one free variable of type 2. 
-This means that there is a set $S \subseteq V_\kappa$ that is a witness of $\exists X \varphi(X)$, in other words, $\varphi(S)$ holds. 
+To prove the opposite direction, suppose that $\langle V_\kappa, \in \rangle~\models~\exists X \varphi(X)$ where $X$ is a type~2 variable and $\varphi$ is a $\Pi^1_n$–formula with one free variable of type~2. 
+This means that there is a set $S \subseteq V_\kappa$ that is a witness of $\exists X \varphi(X)$, in other words, $\varphi[S]$ holds. 
 We can replace every occurence of $X$ in $\varphi$ by a new predicate symbol $S$, this allows us to say that $\kappa$ is $\Pi^1_n$–indescribable (with respect to $\langle V_\kappa, \in, R, S \rangle$).\footnote{A different yet interesting approach is taken by Tate in \cite{Tait_constructingcardinals}. He states that for $n\geq 0$, a formula of order $\leq n$ is called a $\Pi^n_0$ and a $\Sigma^n_0$ formula. Then a $\Pi^n_{m+1}$ is a formula of form $\forall Y \psi(Y)$ where $\psi$ is a $\Sigma^n_m$ formula and $Y$ is a variable of type $n$. Finally, a $\Sigma^n_{m+1}$ is the negation of a $\Pi^n_m$ formula. So the above holds ad definitio.}
 \end{proof}
 
-The above lemma makes it clear that we can suppose that all formulas with no higher than type 2 variables are $\Pi^1_n$–formulas, $n \in \omega$, without the loss of generality.
+The above lemma makes it clear that, without the loss of generality, we can suppose that all formulas with no higher than type~2 variables are $\Pi^1_n$–formulas.
 
-\begin{lemma}\label{lemma:inaccessible_clubset}\ % nemame uz to?
+\begin{lemma}\label{lemma:inaccessible_clubset}
 If $\kappa$ is an inaccessible cardinal and given $R \subseteq V_\kappa$, then the following is a club set in $\kappa$:
 \begin{equation}
-\{\alpha : \alpha < \kappa \et \langle V_\alpha, \in, R \cap V_\alpha \rangle \prec \langle V_\kappa, \in, R \rangle \}\label{eq:inacc_lemma_set}
+\{\alpha \in \kappa : \langle V_\alpha, \in, R \cap V_\alpha \rangle \prec \langle V_\kappa, \in, R \rangle \}\label{eq:inacc_lemma_set}
 \end{equation}
 \end{lemma}
 
 \begin{proof}
-To see that \eref{eq:inacc_lemma_set} is closed, let us recall that a $A \subseteq \kappa$ is closed iff for every ordinal $\emptyset < \alpha < \lambda$: if $A \cap \alpha$ is unbounded in $\alpha$ then $\alpha \in A$. Since $\kappa$ is an inaccessible cardinal, thus strong limit, it is closed under limits of sequences of ordinals lesser than $\kappa$.  
-
+To see that \eref{eq:inacc_lemma_set} is closed, let us recall that a $A \subseteq \kappa$ is closed iff for every ordinal $\alpha$ such that $\emptyset < \alpha < \kappa$, it holds that if $A \cap \alpha$ is unbounded in $\alpha$ then $\alpha \in A$. Since $\kappa$ is an inaccessible cardinal, thus strong limit, it is closed under limits of sequences of ordinals smaller than $\kappa$.
 %TODO neco s $V_\kappa$, ze je tranzitivni a tak jso vsechny $V_\alpha$ pro $\alpha<\kappa$ $V_\alpha \in V_\kappa$
-
-We want to verify that it is unbounded, we will use a recursively defined sequence $\alpha_0, \alpha_1, \ldots$
-to build an elementary substructure of $\langle V_\kappa, \in, R \rangle$ that is built above an arbitrary $\alpha_0 <\kappa$ .
-Let us fix an arbitrary $\alpha_0 < \kappa$. Given $\alpha_n$, $\alpha_{n+1}$ is defined as the least $\beta$, $\alpha_n \leq \beta$ that satisfies 
-the following for any formula $\varphi$, $p_1, \ldots, p_m \in V_{\alpha_{n}}, m \in \omega$:
+In order to verify that it is unbounded, we will use a recursively defined $\kappa$–sequence $\la \alpha_0, \alpha_1, \ldots \ra$
+to build $\la V_\alpha, \in, R \cap V_\alpha \ra$, an elementary substructure of $\la V_\kappa, \in, R \ra$ such that $\alpha > \alpha_0$ for an arbitrary ordinal $\alpha_0 < \kappa$.
+% that is built above an arbitrary $V_{\alpha_0}$, $\alpha_0 <\kappa$.
+Let us fix one such $\alpha_0$. Given $\alpha_n$, $\alpha_{n+1}$ is defined as the least $\beta$, $\alpha_n \leq \beta$ that satisfies 
+the following for any formula $\varphi$ for $p_1, \ldots, p_m \in V_{\alpha_{n}}, m \in \omega$:
 \begin{equation}
 \begin{gathered}
-\mbox{If }\langle V_\kappa, \in, R \rangle~\models~\exists x \varphi(p_1, \ldots, p_n)\mbox{,}\
-\mbox{then }\langle V_\kappa, \in, R \rangle~\models~\varphi(x, p_1, \ldots, p_n)
+\mbox{If }\langle V_\kappa, \in, R \rangle~\models~\exists x \varphi(p_1, \ldots, p_n)\mbox{,}\\
+\mbox{then }\exists x \in V_\beta \mbox{ such that }\langle V_\kappa, \in, R \rangle~\models~\varphi(x, p_1, \ldots, p_n)
 \end{gathered}
 \end{equation}
 
@@ -483,7 +479,7 @@ Then $\langle V_\alpha, \in, R \cap V_\alpha \rangle \prec \langle V_\kappa, \in
 \begin{equation}
 \langle V_\alpha, \in, R \cap V_\alpha \rangle~\models~\varphi(p_1, \ldots, p_n) \iff \langle V_\kappa, \in, R \rangle~\models~\varphi(p_1, \ldots, p_n)
 \end{equation}
-Which should be clear from the construction of $\alpha$
+Which should be clear from the construction of $\alpha$.
 \end{proof}
 
 \begin{theorem}
@@ -494,32 +490,37 @@ Let $\kappa$ be an ordinal. The following are equivalent.
 \ece
 \end{theorem}
 
-%Note that $\Pi^1_0$ formulas are those that contain zero unbound quantifiers over type–2 variables, they are in fact first–order formulas, only with additional free type 2 variables allowed. For an example of a formula with type 1 quantifiers and a type 2 free variable, the axiom schemas used in previous parts, e.g. \emph{Replacement\textsubscript{1}}.
-
+Note that $\Pi^1_0$ formulas are those that contain zero unbound quantifiers over type–2 variables, they are in fact first–order formulas, but with additional type~2 free variables allowed.
 
 \begin{proof}
-Since $\Pi^1_0$–sentences are first–order sentences, we want to prove that $\kappa$ is an inaccessible cardinal iff whenever a first–order tries to describe $\kappa$ in the sense of definition \bref{def:describability}, the formula fails to do so and describes a initial segment thereof instead.
-We have already shown in theorem \bref{theorem:inaccessible_models_zfc} that there is no way to reach an inaccesible cardinal via first–order formulas in $\sf{ZFC}$. We will now prove it again in for formal clarity.
+$\Pi^1_0$–sentences contain type~2 variables, but only type~1 quantifiers. We want to prove that $\kappa$ is an inaccessible cardinal iff whenever a formula tries to describe $\kappa$ in the sense of definition \bref{def:describability}, the formula fails to do so and describes a initial segment thereof instead.
+We have already shown in theorem \bref{theorem:inaccessible_models_zfc} that there is no way to climb the cumulative hierarchy to the height of an inaccesible cardinal via first–order formulas in $\sf{ZFC}$. We will now prove that adding unqantified type~2 variables does not make it possible, note that all of the axiom schemata used in the previous chapter can be rewritten to use a type~2 variable instead of a given function.
 
 For (i)$\then$(ii), suppose that $\kappa$ is inaccessible.
 
-Then there is, by lemma \bref{lemma:inaccessible_clubset} a club set of ordinals $\alpha$ such that $V_\alpha$ is an elementary substructures of $V_\kappa$. 
-For $\kappa$ to be $\Pi^1_0$–inderscribable, we need to make sure that given an arbitrary first–order sentence $\varphi$ satisfied in the structure $\langle V_\kappa, \in, R \rangle$, there is an ordinal $\alpha < \kappa$, such that $\langle V_\alpha, \in, R \cap V_\alpha \rangle~\models~\varphi$. But this follows from the definition of elementary substructure.
+Then there is, by lemma \bref{lemma:inaccessible_clubset} a club set of ordinals $\alpha$ such that $V_\alpha$ is an elementary substructure of $V_\kappa$. 
+For $\kappa$ to be $\Pi^1_0$–indescribable, we need to make sure that given an arbitrary $\Pi^1_0$–formula $\varphi$ satisfied in the structure $\langle V_\kappa, \in, R \rangle$, there is an ordinal $\alpha < \kappa$, such that $\langle V_\alpha, \in, R \cap V_\alpha \rangle~\models~\varphi$. But this follows from the definition of elementary substructure.
 
 For (ii)$\then$(i), suppose $\kappa$ is not inaccessible, so it is either singular, or there is a cardinal $\nu < \kappa$ such that $\kappa \leq \power{\nu}$ or $\kappa=\omega$. 
 
 
 %For the successor case, there is some $\nu$ so that $\nu+1=\kappa$. 
-%Let's take $R = \{\nu\}$ and $\varphi = \exists x \psi(x)$ such that
+%Let us take $R = \{\nu\}$ and $\varphi = \exists x \psi(x)$ such that
 %\begin{eqaution}
-Suppose $\kappa$ is singular. Then there is a cardinal $\nu < \kappa$ and a function $f: \nu \then \kappa$ such that $rng(f)$ is cofinal in $\kappa$. Since $f \subseteq V_\kappa$, we can add $f$ as a relation to the language. We can do the same with $\{\nu\}$. That means $\langle V_\kappa, \in, P_1, P_1$ with $P_1 = f, P_2 = \{\nu\}$ is a structure, 
-let $\varphi = P_1 \neq \emptyset \et rng(P_1) = P_2$\footnote{$rng(x)=y$ is a first–order formula, see definition \bref{def:rng}.}. Since for every $\alpha < \nu$, $P_1 \cap V_\alpha = \emptyset$, $\varphi$ is false and therefore describes $\kappa$. That contradicts the fact that $\kappa$ was supposed to be $\Pi^1_0$–indescribable, but $\varphi$ is a first–order formula.
+Suppose $\kappa$ is singular. Then there is a cardinal $\nu~<~\kappa$ and a function $f:~\nu~\then~\kappa$ such that $rng(f)$ is cofinal in $\kappa$. Since $f \subseteq V_\kappa$, we can add $f$ as a relation to the language. We can do the same with $\{\nu\}$. That means $\langle~V_\kappa,~\in,~P_1,~P_2\ra$ with $P_1~=~f, P_2~=~\{\nu\}$ is a structure.
+Let 
+\beq
+\varphi = (P_1 \neq \emptyset \et rng(P_1) = P_2)\footnote{$rng(x)=y$ is a first–order formula, see definition \bref{def:rng}.}\mbox{.}
+\eeq
+Since for every $\alpha~<~\nu$, $P_1 \cap V_\alpha = \emptyset$, $\varphi$ is false and therefore describes $\kappa$. That contradicts the fact that $\kappa$ was supposed to be $\Pi^1_0$–indescribable, but $\varphi$ is a first–order formula.
 
-Suppose there a cardinal $\nu$ satisfying $\kappa \leq \power{\nu}$. Let there be a function $f: \power{\nu} \then \kappa$ that is onto. Then, like in the previous paragraph, we can obtain a structure $\langle V_\kappa, \in, P_1, P_2 \rangle$, where $P_1 = f$ like before, but this time $P_2 = \power{\nu}$. Again, $\varphi = P_1 \neq \emptyset \et rng(P_1) = P_2$ describes $\kappa$.
+Suppose there is a cardinal $\nu$ satisfying $\kappa \leq \power{\nu}$. Let there be a function $f: \power{\nu} \then \kappa$ that is onto. Then, like in the previous paragraph, we can obtain a structure $\langle V_\kappa, \in, P_1, P_2 \rangle$, where $P_1 = f$ like before, but this time $P_2 = \power{\nu}$. Again, 
+\beq
+\varphi = (P_1 \neq \emptyset \et rng(P_1) = P_2)
+\eeq
+describes $\kappa$.
 
-Finally, suppose $\kappa = \omega$, then the sentence $\varphi = \forall x \exists y (x \in y)$ describes $\kappa$, 
-there is obviously no $\alpha < \omega$ such that $\langle V_\alpha, \in \rangle~\models~\varphi$.
-
+Finally, suppose $\kappa = \omega$, then the first-order sentence $\varphi = \forall x \exists y (x \in y)$ describes $\kappa$, which is a contradiction.
 \end{proof}
 
 Generally, it should be clear that it a cardinal $\kappa$ is $\Pi^m_n$–indescribable, it is also $\Pi^{m'}_{n'}$–indescribable for every $m'<m, n'<n$. By the same line of thought, if a cardinal $\kappa$ satisfies the property implied by $\Pi^m_n$–indescribability, it satisfies all properties implied by $\Pi^{m'}_{n'}$–indescribability for $m'<m, n'<n$. For example, if $\kappa$ is $\Pi^m_n$–indescribable for $m \geq 1$ then it is also an inaccessible cardinal.
@@ -545,22 +546,24 @@ Consider the following $\Pi^1_1$–sentence $\varphi$:
 %\then \exists y(y = rng(P)))
 %\end{gathered}
 %\end{equation}
-where $P$ is a type 2 variable and the rest are type 1 variables,  ``$P$ is a function'' is a first–order formula defined in definition \bref{def:function}. 
+where $P$ is a type~2 variable and the rest are type~1 variables,  ``$P$ is a function'' is a first–order formula defined in definition \bref{def:function}. 
 As has been shown earlier in this chapter, given a cardinal $\mu$, the following holds if and only if $\mu$ is inaccessible:
 \begin{equation}
 \langle V_\mu, \in \rangle~\models~\varphi
 \end{equation}
 
-Now fix an arbitrary $C \subset \kappa$, a club set in $\kappa$. We want to show that it contains an inaccessible cardinal. Since $C$ is a subset of $\kappa$, let's add it to the structure $\langle V_\kappa, \in \rangle$, turning it into $\langle V_\kappa, \in, C \rangle$. Then the following holds:
+Now fix an arbitrary $C \subset \kappa$, a club set in $\kappa$. We want to show that it contains an inaccessible cardinal. 
+Since $C$ is a subset of $\kappa$ and therefore a subset of $V_\kappa$, we can use the structure $\langle V_\kappa, \in, C \rangle$ instead of $\langle V_\kappa, \in \rangle$. 
+Then the following holds:
 \begin{equation}
-\langle V_\kappa, \in, C \rangle~\models~Inac \et \mbox{``$C$ is unbounded''}\footnote{``$C$ is unbounded'' is a first–order formula, see definition \bref{def:unbounded_class}.}
+\langle V_\kappa, \in, C \rangle~\models~\varphi \et \mbox{``$C$ is unbounded''}\footnote{``$C$ is unbounded'' is a first–order formula, see definition \bref{def:unbounded_class}.}
 \end{equation}
 Note that this holds because $\kappa$ is $\Pi^1_1$–indescribable, and therefore also $\Pi^1_0$–indescribable.
 So $\kappa$ is itself inaccessible and therefore $\langle V_\kappa, \in, C \rangle~\models~\varphi$.
 
 Since  $\kappa$ is $\Pi^1_1$–indescribable and $\varphi \et \mbox{``$C$ is unbounded''}$ is equivalent to a $\Pi^1_1$–formula, there must be an ordinal $\alpha$ that satisfies
 \begin{equation}
-\langle V_\alpha, \in, C \cap V_\alpha \rangle~\models~Inac \et \mbox{``$C$ is unbounded'',}
+\langle V_\alpha, \in, C \cap V_\alpha \rangle~\models~\varphi \et \mbox{``$C$ is unbounded'',}
 \end{equation}
 which implies that $\alpha$ is inaccessible; it is regular because it reflects \emph{Replacement} and it is limit because if $\alpha$ were a successor ordinal, it couldn't contain an unbounded class of ordinals.
 
@@ -585,23 +588,27 @@ For the proof, see \cite{KanamoriBook}. % nebo spis Jech?
 Note that the extension property is also very similar to reflection
 % TODO slabe kompaktni a reflexe?
 
+We will now introduce the measurable cardinal, which is not based on reflection from below in our sense, but illustrates the fact that indescribability leads to cardinals that contradict \emph{Axiom of Constructibility}, that will be introduced right after the measurable cardinal.
 % TODO check:
 \begin{definition}{(Ultrafilter)}\\
 Given a set $x$, we say $U \subset \power{x}$ is an \emph{ultrafilter} over $x$ iff all of the following hold:
 \bce[(i)]
 \item $\emptyset \not\in U$
-\item $\forall y, z (\subset x \et y \subset z \et y \in U \then z \in U)$
-\item $\forall y, z \in U (y \cap z) \in U$
+\item $\forall y, z (y \subset x \et z \subset x \et y \subset z \et y \in U \then z \in U)$
+\item $(\forall y, z \in U)(y \cap z) \in U$
 \item $\forall y (y \subset x \then (y \in U \lor (x \setminus y) \in U))$
 \ece
 \end{definition}
 
 \begin{definition}{($\kappa$–Complete Ultrafilter)}\\
-We say that an ultrafilter $U$ is $\kappa$–complete iff
+We say that an ultrafilter $U$ is $\kappa$–complete iff it is closed under intersection of $\kappa$–many elements. More precisely,
+\beq
+(\forall \gamma < \kappa)(\{a_\alpha : \alpha < \gamma \} \subseteq U \then \bigcup_{\alpha < \gamma} a_\alpha \in U)
+\eeq
 \end{definition}
 
 \begin{definition}{(Measurable Cardinal)}\\
-Let $\kappa$ be a caridnal. We say $\kappa$ is a \emph{measurable cardinal} iff there is a $\kappa$–complete ultrafilter over $\kappa$.
+We say that a cardinal $\kappa$ is a \emph{measurable cardinal} iff there is a $\kappa$–complete ultrafilter over $\kappa$.
 \end{definition}
 
 \begin{theorem}
@@ -624,17 +631,16 @@ If $\kappa$ is a measurable cardinal and $U$ is a normal ultrafilter over $\kapp
 \end{theorem}
 For a proof, see \emph{Proposition 6.6} in \cite{KanamoriBook}.
 
-TODO what does it mean?
-
+% TODO what does it mean? 
 % TODO kratky komentar co znamenaj totalne nepopsatelny kardinaly
-
 % ==========================================================================================================
 % TODO check
 
 \subsection{The Constructible Universe}
 
 The constructible universe, denoted $L$, is a cumulative hierarchy of sets, presented by Kurt Gödel in his paper \cite{Godel1940consistency}.
-Assertion of their equality, $V=L$, is called the \emph{Axiom of Constructibility}. The axiom implies $GCH$ and therefore also $AC$ and contradicts the existence of some large cardinals, our goal is to decide whether those introduced earlier are among them.
+Assertion of its equality to the \emph{Von Neumann's hierarchy}, $V=L$, is called the \emph{Axiom of Constructibility}. 
+The axiom implies $GCH$ and $AC$ and contradicts the existence of some large cardinals, our goal is to decide whether those introduced earlier are among them.
 
 On order to formally establish this class, we need to formalise the notion of definability first. 
 \begin{definition}{(Definability)}\label{def:definability}\\ % musi ta fle byt prvoradova?
@@ -648,7 +654,7 @@ X = \{x: x \in M \et \langle M, \in \rangle~\models~\varphi(x, p_1, \ldots, p_n)
 The following is a set of all definable subsets of a given set $M$, denoted Def($M$).
 \begin{equation}
 \begin{gathered}
-Def(M) = \{\{y : x \in M \land \langle M, \in \rangle~\models~\varphi(y, u_1, \ldots, i_n) \} |\\
+Def(M) = \{\{y : x \in M \et \langle M, \in \rangle~\models~\varphi(y, u_1, \ldots, i_n) \} :\\
 \mbox{ $\varphi$ is a~first–order formula, }p_1, \ldots, p_n \in M \}
 \end{gathered}
 \end{equation}
@@ -656,7 +662,7 @@ Def(M) = \{\{y : x \in M \land \langle M, \in \rangle~\models~\varphi(y, u_1, \l
 
 We will use $Def(M)$ in the following construction in the way the powerset operation is used when constructing the usual Von Neumann's hierarchy of sets\footnote{For that reason, some authors use $\mathscr{P}^{*} (M)$ instead of $Def(M)$, see section 11 of \cite{PinterBook} for one such example.}.
 
-Now we can recursively build $L$.
+% Now we can recursively build $L$.
 \begin{definition}{(The Constructible Universe)}\label{def:constructible_universe}\\
 \bce[(i)]
 \item
@@ -692,15 +698,15 @@ L\mbox{ is a model of \sf{ZFC}}
 For details, refer to Theorem 13.3 in \cite{JechBook}.
 
 \begin{definition}{(Constructibility)}\\
-The axiom of constructibility say that every set is constructible. It is usually denoted as $L = V$.
+The axiom of constructibility states that every set is constructible. It is usually denoted as $L = V$.
 \end{definition}
 
 Without providing a proof, we will introduce two important results established by Gödel in his aforementioned article. 
-\sf{ZF} stands for Zermelo–Fraenkel set theory as introduced in definition \bref{def:zf}.
+% \sf{ZF} stands for Zermelo–Fraenkel set theory as introduced in definition \bref{def:zf}. % wtf
 
 \begin{theorem}{(Constructibility $\then$ Choice)}
 \begin{equation}
-\sf{ZF} \proves \mbox{\emph{Constructibility}} \then \mbox{\emph{Choice}} 
+\sf{ZF} \proves \mbox{\emph{Constructibility}} \then \mbox{\emph{Axiom of Choice}} 
 \end{equation}
 \end{theorem}
 
@@ -770,4 +776,5 @@ $\kappa$ remains Mahlo in $L$.
 
 It should be clear that the above process can be iterated over again. Since Mahlo cardinals are absolute in $L$, the same argument using stationary sets can be carried out for hyper–Mahlo cardinals and so on. It is clear that since a regular and an inaccessible cardinal in consistent with \emph{Constructibility}, so should be the higher properties acquired from assuring the existence of regular, inaccessible and Mahlo fixed points of normal functions.
 
-TODO odkaz kde pisou ze Measurable neni konzistentni s L
+% TODO odkaz kde pisou ze Measurable neni konzistentni s L
+% TODO ze meritelny resi sirku a ne vysku, ale nase karidnaly mluvi o vysce

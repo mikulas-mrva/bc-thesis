@@ -151,7 +151,6 @@ In \sf{S}, the axiom schema $N_0$ implies the \emph{Replacement Schema}.
 %\sf{S} \vdash N_0 \then \mbox{the \emph{Replacement Schema}}
 %\eeq % nebo S \vdash N_0 \then Replacement % (veta o dedukci?) nebo \sf{S} + N_0 \vdash Repl
 \end{theorem}
-% todo zkontrolovat ========================================================================================== % TODO asi cely blbe? ...
 \begin{proof}
 Let $\varphi(x, y, p_1, \ldots, p_n)$ be a~formula with no free variables except for \\
 $x, y, p_1, \ldots, p_n$.
@@ -381,17 +380,9 @@ To finish part (iv), we take $M$ of size $\leq |M_0| \cdot \aleph_0$, which exis
 % TODO existuje jich dokonce club set!
 % viz http://ozark.hendrix.edu/~yorgey/settheory/15-reflection-principle.pdf
 
-
-\
-
 Let \sf{S} be a set theory defined in definition \bref{def:s}, for \sf{ZFC} see definition \bref{def:zfc}.
 
-% ACHTUNG
-% Sm je definovany jako konjunkce vsech relativizovanych axiomu, takze to je kruh...
-% presunout do contemporary restatement?
 % viz Levy str. (224)
-% todo s/u/V_lambda
-% DRAKE!!! ch.3, ch.4 dukaz v_alfa models ZFC pro limitni alfa bez nekonecna etc
 % Drake dokazuje reflexi v ch.3 par.6.3
 
 The two following lemmas are based on \cite{DrakeBook}, \emph{Chapter 3, Theorem 1.2}.
@@ -460,11 +451,7 @@ Given an arbitrary limit ordinal $\lambda$, we will verify the axioms of \sf{S} 
 
 \item \emph{Axiom of Foundation} holds from lemma \bref{lemma:foundation_in_transitive}.
 
-\item \emph{Axiom of Union}:\\ % TODO kontrola % separatni lemma, ze plati v kazdem V_\alpha?
-% (see definition \bref{def:union})
-%\begin{equation}
-%\forall x \exists y \forall z (z \in y \iff \exists q( z \in q \et q \in x))
-%\end{equation}
+\item \emph{Axiom of Union}:\\
 Given any $x \in V_\lambda$, we want verify that $y = \bigcup x$ is also in $V_\lambda$. Note that $y = \bigcup x$ is a $\Delta_0$–formula.
 \beq
 y = \bigcup x \mbox{ iff } (\forall z \in y)(\exists q \in x) z \in q \et (\forall z \in x)(\forall q \in z) q \in y
@@ -476,11 +463,7 @@ y = \bigcup x \mbox{ iff } \langle V_\lambda, \in \rangle~\models~y = \bigcup x
 \eeq
 % asi ok ^
 
-\item \emph{Axiom of Pairing}: \\ % TODO kontrola
-% (see definition \bref{def:pairing})
-%\beq
-%\forall x, y \exists z \forall q (q \in z \iff q = x \lor q = y)
-%\eeq
+\item \emph{Axiom of Pairing}: \\
 Given two sets $x, y \in V_\lambda$, we want to show that $z = \{x, y\}$ is also an element of $V_\lambda$.
 \beq
 z = \{x, y\} \mbox{ iff } x \in z \et y \in z \et (\forall q \in z)(q = x \lor q = y)
@@ -528,8 +511,6 @@ For every first–order formula $\varphi$, the following is an axiom:
 \end{equation}
 We will refer to this axiom schema as \emph{First–Order Reflection Schema}.
 \end{definition}
-
-% TODO staci vzit uzaver obou fli a udelat konjunkci
 
 % pozor na to, ze jsme dokazali zdanlive silnejsi tvrzeni pro n formuli a ted predpokladame jenom jednu.
 % zkontroluj ze to tak je a napis ze silnejsi vysledek a slabsi predpoklad jsou cool, jsou ve skutecnostni ekvivalentni
