@@ -177,7 +177,8 @@ Let $f$ be a normal function defined for all ordinals.
 \begin{proof}
 We know that (ii) holds from lemma \bref{lemma:normal_fixed_point} and lemma \bref{lemma:normal_enumerates_club}.
 
-Clearly, there is no largest strong limit ordinal $\nu$, because the limit of $\la \nu, \power{\nu}, \power{\power{\nu}}, \ldots \ra$ is again a limit ordinal. % pozor na strong limit
+Clearly, there is no largest strong limit ordinal $\nu$, because the limit of\\
+$\la \nu, \power{\nu}, \power{\power{\nu}}, \ldots \ra$ is again a limit ordinal. % pozor na strong limit
 The class of strong limit ordinals is closed because a limit of strong limit ordinals of is always a strong limit ordinal.
 Let $h$ be a function enumerating limit ordinals that exists from lemma \bref{lemma:normal_enumerates_club}.
 Then $g_1(\alpha) = f(h(\alpha))$ for every ordinal $\alpha$ is normal and defined for all ordinals.
@@ -337,11 +338,19 @@ For now, let us explore where can stationary sets take us because as we have sho
 What would happen if we strengthened \emph{Axiom Schema $M$\textsubscript{1}} to say that every normal function has a Mahlo cardinal in its range?
 
 \begin{definition}{(hyper–Mahlo cardinal)}\label{def:hyper_mahlo_cardinal}\\
-We say that $\kappa$ is a \emph{hyper–Mahlo cardinal} iff it is inaccessible and the set $\{\lambda < \kappa : \lambda \mbox{ is Mahlo}\}$ is stationary in $\kappa$.
+We say that $\kappa$ is a \emph{hyper–Mahlo cardinal} iff it is inaccessible and the set 
+\beq
+\{\lambda < \kappa : \lambda \mbox{ is Mahlo}\}
+\eeq
+is stationary in $\kappa$.
 \end{definition}
 
 \begin{definition}{(hyper–hyper–Mahlo cardinal)}\label{def:hyper_hyper_mahlo_cardinal}\\
-We say that $\kappa$ is a \emph{hyper–hyper–Mahlo cardinal} iff it is inaccessible and the set $\{\lambda < \kappa : \lambda \mbox{ is hyper–Mahlo}\}$ is stationary in $\kappa$.
+We say that $\kappa$ is a \emph{hyper–hyper–Mahlo cardinal} iff it is inaccessible and the set 
+\beq
+\{\lambda < \kappa : \lambda \mbox{ is hyper–Mahlo}\}
+\eeq
+is stationary in $\kappa$.
 \end{definition}
 
 It is clear that one can continue in this direction, but the nomenclature gets increasingly overwhelming even if we rewrite them as \emph{hyper\textsuperscript{$\alpha$}–Mahlo cardinals} instead of repeating the prefix.
@@ -384,7 +393,7 @@ To see what is meant by \emph{from below}, note that the approach that led us to
 Indescribability is another approach towards large cardinals that is based on reflection. 
 We will briefly introduce the basic definitions and show that it yield large cardinals, but most of them are not reachable from below in a sense established at the end of previous subsection.
 
-Most of the results presented in this subchapter are taken from \cite{KanamoriBook}.
+Most of the results presented in this subchapter come from \cite{KanamoriBook}.
 
 Since this chapter uses higher–order logic, we need to introduce the hierarchy of formulas first.
 
