@@ -10,10 +10,10 @@
 
 In this chapter we aim to examine stronger reflection properties in order to reach cardinals unavailable in $\sf{ZFC}$. Like we said in the first chapter, 
 the variety of reflection principles comes from the fact that there are many way to formalise ``properties of the universal class''. It is not always obvious what properties hold for $V$ because, as Tarski
-has shown, there is no way to formalise satisfaction for proper classes. We have shown that reflecting properties as first–order formulas doesn't allow us to leave $\sf{ZFC}$. We will broaden the class of admissible properties to be reflected and see whether there is a~natural limit in the height or width on the reflected universe and also see that no matter how far we go, the universal class is still as elusive as it is when seen from $\sf{S}$. That is because for every process for obtaining larger sets such as for example the powerset operation in $\sf{ZFC}$, this process can't reach $V$ and thus, from reflection, there is an initial segment of $V$ that can't be reached via said process.
+has shown, there is no way to formalise satisfaction for proper classes. We have shown that reflecting properties as first–order formulas doesn't allow us to leave $\sf{ZFC}$. We will broaden the class of admissible properties to be reflected and see whether there is a~natural limit in the height or width on the reflected universe and also see that no matter how far we go, the universal class is still as elusive as it is when seen from $\sf{S}$. That is because for every process for obtaining larger sets such as for example the power set operation in $\sf{ZFC}$, this process can't reach $V$ and thus, from reflection, there is an initial segment of $V$ that can't be reached via said process.
 
 To see why this is important, let's dedicate a few lines to the intuition behind the notions of limitness, regularity and inaccessibility in a manner strongly influenced by \cite{Infinity_in_mind}. To see why limit and strongly limit cardinals are worth mentioning, note that they are ``limit'' not only in a sense of being a supremum of an ordinal sequence, they also show that a certain way of obtaining larger sets from smaller ones is limited. We will see that all of the alternatives offered in this thesis are in a sense limited. 
-$\aleph_\lambda$ is a limit cardinal if there is no $\alpha$ such that $\aleph_{\alpha+1}=\aleph_\lambda$. Strongly limit cardinals point to the limits of the powerset operation. It has been too obvious so far, so let's look at the regular cardinals in this manner. Regular cardinals are those that cannot be\footnote{Assuming the $\emph{Axiom of Choice}$.}, expressed as a supremum of smaller amount of smaller objects\footnote{Just like $\omega$ can not be expressed as a supremum of a finite set consisting solely of finite numbers.}. More precisely, $\kappa$ is regular if there is no way to define it as a union of less than $\kappa$ ordinals, all smaller than $\kappa$. So unless there already is a set of size $\kappa$, \emph{Replacement} is useless in determining whether $\kappa$ is really a set. Note that assuming the \emph{Axiom of Choice}, successor cardinals are always regular, so most\footnote{All provable to exist in $\sf{ZFC}$.} limit cardinals are singular cardinals. So if one is traversing the class of all cardinals upwards, successor steps are still sets thanks to the powerset axiom while singular limit cardinals are not proper classes because they are suprema of images of smaller sets via \emph{Replacement}. Regular cardinals are, in a way, limits of how far can we get by taking limits of increasing sequences of ordinals obtained via $\emph{Replacement}$. 
+$\aleph_\lambda$ is a limit cardinal if there is no $\alpha$ such that $\aleph_{\alpha+1}=\aleph_\lambda$. Strongly limit cardinals point to the limits of the power set operation. It has been too obvious so far, so let's look at the regular cardinals in this manner. Regular cardinals are those that cannot be\footnote{Assuming the $\emph{Axiom of Choice}$.}, expressed as a supremum of smaller amount of smaller objects\footnote{Just like $\omega$ can not be expressed as a supremum of a finite set consisting solely of finite numbers.}. More precisely, $\kappa$ is regular if there is no way to define it as a union of less than $\kappa$ ordinals, all smaller than $\kappa$. So unless there already is a set of size $\kappa$, \emph{Replacement} is useless in determining whether $\kappa$ is really a set. Note that assuming the \emph{Axiom of Choice}, successor cardinals are always regular, so most\footnote{All provable to exist in $\sf{ZFC}$.} limit cardinals are singular cardinals. So if one is traversing the class of all cardinals upwards, successor steps are still sets thanks to the power set axiom while singular limit cardinals are not proper classes because they are suprema of images of smaller sets via \emph{Replacement}. Regular cardinals are, in a way, limits of how far can we get by taking limits of increasing sequences of ordinals obtained via $\emph{Replacement}$. 
 
 In order to reach an inaccessible cardinal of size $\kappa$, one has to pass at least $\kappa$ limit ordinals. Them, to get to a Mahlo cardinal of size $\kappa$, one has to move past $\kappa$ inaccessible cardinals. This concept is then iterable for hyper–Mahlo cardinals, as we will see later in this section.
 
@@ -85,7 +85,10 @@ We have defined the above sequence so that
 \beq
 f(\beta) = \bigcup_{i < \omega} f(\alpha) = \bigcup_{i < \omega} \alpha_{i+1}\mbox{,}
 \eeq 
-which means we are done, since $\bigcup_{i < \omega} \alpha_{i+1} = \bigcup_{i < \omega} \alpha_{i}  = \beta$.
+which means we are done, since 
+\beq
+\bigcup_{i < \omega} \alpha_{i+1} = \bigcup_{i < \omega} \alpha_{i}  = \beta\mbox{.}
+\eeq
 
 % Todo http://math.stackexchange.com/questions/1865519/when-is-the-union-of-a-set-of-ordinals-a-limit-ordinal/1865527#1865527
 \item The class of fixed points of $f$ is obviously unbounded because in (iii), we start with an arbitrary ordinal.
@@ -189,10 +192,10 @@ The following is \emph{Theorem 1} in \cite{Levy60a}, the parts dealing with \emp
 \begin{theorem}
 The following are all equivalent:
 \bce[(i)]
-\item \emph{Axiom Schema $M$\textsubscript{1}}
-\item \emph{Axiom Schema $M$\textsubscript{2}} 
-\item \emph{Axiom Schema $M$\textsubscript{3}} 
-\item \emph{Axiom Schema $F$}
+\item \emph{Axiom Schema $M$\textsubscript{1}},
+\item \emph{Axiom Schema $M$\textsubscript{2}},
+\item \emph{Axiom Schema $M$\textsubscript{3}},
+\item \emph{Axiom Schema $F$}.
 \ece
 \end{theorem}
 
@@ -280,11 +283,11 @@ For any ordinal $\alpha$, there is an ordinal $\kappa$ such that
 \eeq
 and
 \beq
-\alpha < \kappa \et In(\kappa) \et \forall \gamma \exists \delta (f(\gamma) = \delta) \iff (\forall \gamma \exists \delta f(\gamma) = \delta)^{V_\kappa}
+\alpha < \kappa \et In(\kappa) \et \forall \gamma \exists \delta (f(\gamma) = \delta) \iff (\forall \gamma \exists \delta f(\gamma) = \delta)^{V_\kappa}\mbox{.}
 \eeq
 Since $V_\kappa$ is the set of all sets of rank less than $\kappa$ and since every ordinal is the rank of itself, there is an inaccessible ordinal $\kappa$ such that
 \beq
-(\forall \gamma < \kappa)(\exists \delta < \kappa)(f^{V_\kappa} (\gamma) = \delta)\label{eq:reflected_function}
+(\forall \gamma < \kappa)(\exists \delta < \kappa)(f^{V_\kappa} (\gamma) = \delta)\label{eq:reflected_function}\mbox{.}
 \eeq
 We also know that $f(\gamma) = \delta$ iff $(f(\gamma) = \delta)^{V_\kappa}$. 
 Now since $\kappa$ is a limit ordinal and $f$ is continuous we get
@@ -319,9 +322,9 @@ We have shown that \sf{ZMC} contains arbitrarily large inaccessible cardinals. T
 
 %  Let's shortly review what \emph{Axiom Schema $M$\textsubscript{1}} says in order to formulate even stronger version.  % ??
 We have shown earlier in this chapter that there is a simple relation between normal functions defined for all ordinals and closed unbounded classes.
-For now, we will use a similar, weaker approach using normal functions.
+We will now use a similar approach utilising normal functions.
 By saying that for a class of ordinals $C$, a normal function $f$ has at least one element of $C$ in its range, we say that $C$ is stationary. 
-Or, as Drake puts it when dealing with the class of inaccessible cardinals, and a cardinal $\kappa$, in which inaccessibles are stationary:
+Or, as Drake writes in \cite{DrakeBook} when dealing with the class of inaccessible cardinals, and a cardinal $\kappa$, in which inaccessibles are stationary:
 \begin{displayquote}
 `` The class of inaccessible cardinals is so rich that there are members $\kappa$ of the class such that no normal function on $\kappa$ can avoid this class; however we climb though $\kappa$, provided we are continuous at limits (so that we are enumerating a closed subset of $\kappa$), we shall eventually have to hit an inaccessible.''
 \end{displayquote}
@@ -353,7 +356,7 @@ We say that $\kappa$ is a \emph{hyper–hyper–Mahlo cardinal} iff it is inacce
 is stationary in $\kappa$.
 \end{definition}
 
-It is clear that one can continue in this direction, but the nomenclature gets increasingly overwhelming even if we rewrite them as \emph{hyper\textsuperscript{$\alpha$}–Mahlo cardinals} instead of repeating the prefix.
+It is clear that one can continue in this direction, but the nomenclature gets increasingly confusing even if we rewrite them as \emph{hyper\textsuperscript{$\alpha$}–Mahlo cardinals} instead of repeating the prefix.
 To see there is a more elegant way to reach those cardinals, we will now establish an operation that elegantly exhausts all such cardinals.
 
 \begin{definition}{(Mahlo Operation)}\label{def:mahlo_operation}\\
@@ -429,7 +432,7 @@ We say an ordinal $\alpha$ is described by a sentence $\varphi$ in the language
 \end{equation}
 but for every $\beta < \alpha$
 \begin{equation}
-\langle V_\beta, \in, P_1 \cap V_\beta, \ldots, P_n \cap V_\beta \rangle \not\models \varphi
+\langle V_\beta, \in, P_1 \cap V_\beta, \ldots, P_n \cap V_\beta \rangle \not\models \varphi\mbox{.}
 \end{equation}
 \end{definition}
 
@@ -448,7 +451,7 @@ In a sense, $V_\kappa$ reflects the ``property''\footnote{In this case, we are n
 % Since we are interested inaccessing cardinals from below, we will limit ourselves to $\Pi^1_n$–formulas, with the exception of the measurable cardinal, that is included for context.
 
 \begin{lemma}
-Let $\kappa$ be a cardinal, then the following holds for any $n \in \omega$. $\kappa$ is $\Pi^1_n$–indescribable iff $\kappa$ is $\Sigma^1_{n+1}$–indescribable
+Let $\kappa$ be a cardinal, then the following holds for any $n \in \omega$. $\kappa$ is $\Pi^1_n$–indescribable iff $\kappa$ is $\Sigma^1_{n+1}$–indescribable.
 \end{lemma}
 
 \begin{proof}
@@ -464,7 +467,7 @@ The above lemma makes it clear that, without the loss of generality, we can supp
 \begin{lemma}\label{lemma:inaccessible_clubset}
 If $\kappa$ is an inaccessible cardinal and given $R \subseteq V_\kappa$, then the following is a club set in $\kappa$:
 \begin{equation}
-\{\alpha \in \kappa : \langle V_\alpha, \in, R \cap V_\alpha \rangle \prec \langle V_\kappa, \in, R \rangle \}\label{eq:inacc_lemma_set}
+\{\alpha \in \kappa : \langle V_\alpha, \in, R \cap V_\alpha \rangle \prec \langle V_\kappa, \in, R \rangle \}\label{eq:inacc_lemma_set}\mbox{.}
 \end{equation}
 \end{lemma}
 
@@ -479,23 +482,25 @@ the following for any formula $\varphi$ for $p_1, \ldots, p_m \in V_{\alpha_{n}}
 \begin{equation}
 \begin{gathered}
 \mbox{If }\langle V_\kappa, \in, R \rangle~\models~\exists x \varphi(p_1, \ldots, p_n)\mbox{,}\\
-\mbox{then }\exists x \in V_\beta \mbox{ such that }\langle V_\kappa, \in, R \rangle~\models~\varphi(x, p_1, \ldots, p_n)
+\mbox{then }\exists x \in V_\beta \mbox{ such that }\langle V_\kappa, \in, R \rangle~\models~\varphi(x, p_1, \ldots, p_n)\mbox{.}
 \end{gathered}
 \end{equation}
 
-Let $\alpha = \bigcup_{n < \omega} \alpha_n$. 
-
-Then $\langle V_\alpha, \in, R \cap V_\alpha \rangle \prec \langle V_\kappa, \in, R \rangle$, in other words, for any $\varphi$ with given arbitrary parameters $p_1, \ldots, p_n \in V_\alpha$, it holds that
-\begin{equation}
-\langle V_\alpha, \in, R \cap V_\alpha \rangle~\models~\varphi(p_1, \ldots, p_n) \iff \langle V_\kappa, \in, R \rangle~\models~\varphi(p_1, \ldots, p_n)
-\end{equation}
+Let $\alpha = \bigcup_{n < \omega} \alpha_n$. Then 
+\beq
+\langle V_\alpha, \in, R \cap V_\alpha \rangle \prec \langle V_\kappa, \in, R \rangle\mbox{,}
+\eeq
+in other words, for any $\varphi$ with given arbitrary parameters $p_1, \ldots, p_n \in V_\alpha$, it holds that
+\beq
+\langle V_\alpha, \in, R \cap V_\alpha \rangle~\models~\varphi(p_1, \ldots, p_n) \iff \langle V_\kappa, \in, R \rangle~\models~\varphi(p_1, \ldots, p_n)\mbox{.}
+\eeq
 Which should be clear from the construction of $\alpha$.
 \end{proof}
 
 \begin{theorem}
 Let $\kappa$ be an ordinal. The following are equivalent.
 \bce[(i)]
-\item $\kappa$ is inaccessible
+\item $\kappa$ is inaccessible.
 \item $\kappa$ is $\Pi^1_0$–indescribable.
 \ece
 \end{theorem}
@@ -559,14 +564,14 @@ Consider the following $\Pi^1_1$–sentence $\varphi$:
 where $P$ is a type~2 variable and the rest are type~1 variables,  ``$P$ is a function'' is a first–order formula defined in definition \bref{def:function}. 
 As has been shown earlier in this chapter, given a cardinal $\mu$, the following holds if and only if $\mu$ is inaccessible:
 \begin{equation}
-\langle V_\mu, \in \rangle~\models~\varphi
+\langle V_\mu, \in \rangle~\models~\varphi\mbox{.}
 \end{equation}
 
 Now fix an arbitrary $C \subset \kappa$, a club set in $\kappa$. We want to show that it contains an inaccessible cardinal. 
 Since $C$ is a subset of $\kappa$ and therefore a subset of $V_\kappa$, we can use the structure $\langle V_\kappa, \in, C \rangle$ instead of $\langle V_\kappa, \in \rangle$. 
 Then the following holds:
 \begin{equation}
-\langle V_\kappa, \in, C \rangle~\models~\varphi \et \mbox{``$C$ is unbounded''}\footnote{``$C$ is unbounded'' is a first–order formula, see definition \bref{def:unbounded_class}.}
+\langle V_\kappa, \in, C \rangle~\models~\varphi \et \mbox{``$C$ is unbounded''.}\footnote{``$C$ is unbounded'' is a first–order formula, see definition \bref{def:unbounded_class}.}
 \end{equation}
 Note that this holds because $\kappa$ is $\Pi^1_1$–indescribable, and therefore also $\Pi^1_0$–indescribable.
 So $\kappa$ is itself inaccessible and therefore $\langle V_\kappa, \in, C \rangle~\models~\varphi$.
@@ -593,27 +598,25 @@ We say that a cardinal $\kappa$ is \emph{weakly compact} iff it has the extensio
 \begin{theorem}\
 A cardinal $\kappa$ is $\Pi_1^1$–indescribable iff it is weakly compact.
 \end{theorem}
-For the proof, see \cite{KanamoriBook}. % nebo spis Jech?
-
+For the proof, see \cite{KanamoriBook}.
 Note that the extension property is also very similar to reflection
-% TODO slabe kompaktni a reflexe?
 
 We will now introduce the measurable cardinal, which is not based on reflection from below in our sense, but illustrates the fact that indescribability leads to cardinals that contradict \emph{Axiom of Constructibility}, that will be introduced right after the measurable cardinal.
-% TODO check:
+
 \begin{definition}{(Ultrafilter)}\\
 Given a set $x$, we say $U \subset \power{x}$ is an \emph{ultrafilter} over $x$ iff all of the following hold:
 \bce[(i)]
-\item $\emptyset \not\in U$
-\item $\forall y, z (y \subset x \et z \subset x \et y \subset z \et y \in U \then z \in U)$
-\item $(\forall y, z \in U)(y \cap z) \in U$
-\item $\forall y (y \subset x \then (y \in U \lor (x \setminus y) \in U))$
+\item $\emptyset \not\in U$,
+\item $\forall y, z (y \subset x \et z \subset x \et y \subset z \et y \in U \then z \in U)$,
+\item $(\forall y, z \in U)(y \cap z) \in U$,
+\item $\forall y (y \subset x \then (y \in U \lor (x \setminus y) \in U))$.
 \ece
 \end{definition}
 
 \begin{definition}{($\kappa$–Complete Ultrafilter)}\\
 We say that an ultrafilter $U$ is $\kappa$–complete iff it is closed under intersection of $\kappa$–many elements. More precisely,
 \beq
-(\forall \gamma < \kappa)(\{a_\alpha : \alpha < \gamma \} \subseteq U \then \bigcup_{\alpha < \gamma} a_\alpha \in U)
+(\forall \gamma < \kappa)(\{a_\alpha : \alpha < \gamma \} \subseteq U \then \bigcup_{\alpha < \gamma} a_\alpha \in U)\mbox{.}
 \eeq
 \end{definition}
 
@@ -626,31 +629,26 @@ Let $\kappa$ be a cardinal. If $\kappa$ is a measurable cardinal then the follow
 \bce[(i)]
 \item $\kappa$ is $\Pi^2_1$–indescribable.
 \item Given $U$, a normal ultrafilter over $\kappa$, a relation $R \subseteq V_\kappa$ and a $\Pi^2_1$–formula $\varphi$ such that $\langle V_\kappa, \in, R \rangle \models \varphi$, then
-\begin{equation}
-\{ \alpha < \kappa : \langle V_\alpha, \in, R \cap V_\alpha \rangle \models \varphi \} \in U
-\end{equation}
+\beq
+\{ \alpha < \kappa : \langle V_\alpha, \in, R \cap V_\alpha \rangle \models \varphi \} \in U\mbox{.}
+\eeq
 \ece
 \end{theorem}
 For a proof, see \emph{Proposition 6.5} in \cite{KanamoriBook}.
 
-\begin{theorem}
-If $\kappa$ is a measurable cardinal and $U$ is a normal ultrafilter over $\kappa$, the following holds:
-\begin{equation}
-\{ \alpha < \kappa: \mbox{"$\alpha$ is totally indescribable"}\} \in U
-\end{equation}
-\end{theorem}
-For a proof, see \emph{Proposition 6.6} in \cite{KanamoriBook}.
-
-% TODO what does it mean? 
-% TODO kratky komentar co znamenaj totalne nepopsatelny kardinaly
-% ==========================================================================================================
-% TODO check
+%\begin{theorem}
+%If $\kappa$ is a measurable cardinal and $U$ is a normal ultrafilter over $\kappa$, the following holds:
+%\begin{equation}
+%\{ \alpha < \kappa: \mbox{"$\alpha$ is totally indescribable"}\} \in U\mbox{.}
+%\end{equation}
+%\end{theorem}
+%For a proof, see \emph{Proposition 6.6} in \cite{KanamoriBook}.
 
 \subsection{The Constructible Universe}
 
 The constructible universe, denoted $L$, is a cumulative hierarchy of sets, presented by Kurt Gödel in his paper \cite{Godel1940consistency}.
 Assertion of its equality to the \emph{Von Neumann's hierarchy}, $V=L$, is called the \emph{Axiom of Constructibility}. 
-The axiom implies $GCH$ and $AC$ and contradicts the existence of some large cardinals, our goal is to decide whether those introduced earlier are among them.
+The axiom implies $GCH$ and $AC$ and contradicts the existence of some\ large cardinals, our goal is to decide whether those introduced earlier are among them.
 
 On order to formally establish this class, we need to formalise the notion of definability first. 
 \begin{definition}{(Definability)}\label{def:definability}\\ % musi ta fle byt prvoradova?
@@ -670,39 +668,39 @@ Def(M) = \{\{y : x \in M \et \langle M, \in \rangle~\models~\varphi(y, u_1, \ldo
 \end{equation}
 \end{definition}
 
-We will use $Def(M)$ in the following construction in the way the powerset operation is used when constructing the usual Von Neumann's hierarchy of sets\footnote{For that reason, some authors use $\mathscr{P}^{*} (M)$ instead of $Def(M)$, see section 11 of \cite{PinterBook} for one such example.}.
+We will use $Def(M)$ in the following construction in the way the power set operation is used when constructing the usual Von Neumann's hierarchy of sets\footnote{For that reason, some authors use $\mathscr{P}^{*} (M)$ instead of $Def(M)$, see section 11 of \cite{PinterBook} for one such example.}.
 
 % Now we can recursively build $L$.
 \begin{definition}{(The Constructible Universe)}\label{def:constructible_universe}\\
+The \emph{constructible universe} is a collection of sets similar to the Von Neumann's hierarchy but consisting only of definable sets.
 \bce[(i)]
 \item
 \beq
-L_0 = \emptyset
+L_0 = \emptyset\mbox{,}
 \eeq
 
 \item
 \beq
-L_{\alpha+1} = Def(L_{\alpha})\mbox{ for any ordinal $\alpha$}
+L_{\alpha+1} = Def(L_{\alpha})\mbox{ for any ordinal $\alpha$,}
 \eeq
 \item
 \beq
-L_{\lambda} = \bigcup_{\alpha < \lambda} L_{\alpha}\mbox{ For a~limit ordinal }\lambda
+L_{\lambda} = \bigcup_{\alpha < \lambda} L_{\alpha}\mbox{ For a~limit ordinal }\lambda\mbox{,}
 \eeq
 \item
 \beq
-L = \bigcup_{\alpha\in Ord} L_{\alpha}
+L = \bigcup_{\alpha\in Ord} L_{\alpha}\mbox{.}
 \eeq
 \ece
 \end{definition}
 
 Note that while $L$ bears very close resemblance to $V$, the difference is, that in every successor step of constructing $V$, we take every subset of $V_\alpha$ to be $V_{\alpha+1}$, whereas $L_{\alpha+1}$ consists only of definable subsets of $L_\alpha$. Also note that $L$ is transitive.
 
-In order to 
-
+%In order to 
 \begin{theorem}
 Let $L$ be as in definition \bref{def:constructible_universe}.
 \begin{equation}
-L\mbox{ is a model of \sf{ZFC}}
+\la L, \in \ra \mbox{ is a model of \sf{ZFC}}
 \end{equation}
 \end{theorem}
 For details, refer to Theorem 13.3 in \cite{JechBook}.
@@ -711,7 +709,7 @@ For details, refer to Theorem 13.3 in \cite{JechBook}.
 The axiom of constructibility states that every set is constructible. It is usually denoted as $L = V$.
 \end{definition}
 
-Without providing a proof, we will introduce two important results established by Gödel in his aforementioned article. 
+Without providing a proof, we will introduce two important results established by Gödel in \cite{Godel1940consistency}. 
 % \sf{ZF} stands for Zermelo–Fraenkel set theory as introduced in definition \bref{def:zf}. % wtf
 
 \begin{theorem}{(Constructibility $\then$ Choice)}
@@ -734,15 +732,15 @@ Since \emph{GCH} implies that $\kappa$ is a limit cardinal iff $\kappa$ is a str
 % =============================================================================================
 
 \begin{theorem}{(Inaccessibility in $L$)}\label{theorem:inaccessible_in_l}\\
-Let $\kappa$ be an inaccessible cardinal. Then $\mbox{``$\kappa$ is inaccessible''}^L$.
+Let $\kappa$ be an inaccessible cardinal. Then $In(\kappa)^L$.
 \end{theorem}
 \begin{proof}
 We want to show that the following are all true for an inaccessible cardinal $\kappa$:
 \bce[(i)] 
-\item $\mbox{``$\kappa$ is a cardinal''}^L$
-\item $(\omega < \kappa)^L$
-\item $\mbox{``$\kappa$ is regular''}^L$
-\item $\mbox{``$\kappa$ is limit''}^L$.\footnote{While inaccessible cardinals are strong limit cardinals, since \emph{GCH} holds in $L$, $\mbox{``$\kappa$ is limit''}^L$ 
+\item $\mbox{``$\kappa$ is a cardinal''}^L$,
+\item $(\omega < \kappa)^L$,
+\item $\mbox{``$\kappa$ is regular''}^L$,
+\item $\mbox{``$\kappa$ is limit''}^L$.\footnote{While inaccessible cardinals are strong limit cardinals, since \emph{GCH} holds in $L$, $\mbox{``$\kappa$ is limit''}^L$,
 implies $\mbox{``$\kappa$ is strong limit''}^L$.}
 \ece
 
@@ -765,21 +763,23 @@ Let $\kappa$ be a Mahlo cardinal. From the definition of Mahloness in definition
 \mbox{``The set }\{\alpha : \alpha \in \kappa \et \mbox{'$\alpha$ is inaccessible'}\}\mbox{ is stationary in $\kappa$''}^L
 \end{equation}
 
-Since we have shown that an inaccessible cardinals remain inaccessible in $L$ in the previous theorem, $L\mbox{``$\kappa$ is inaccessible''}^L$ holds.
+Since we have shown that an inaccessible cardinals remain inaccessible in $L$ in the previous theorem, $In(\kappa)^L$ holds.
 
 Now consider the two following sets:
-\bce[(i)]
-\item \begin{equation}
-S \defeq \{\alpha : \alpha \in \kappa \et \mbox{``$\alpha$ is inaccessible''}\}
-\end{equation}
-\item \begin{equation}
-T \defeq \{\alpha : \alpha \in \kappa \et \mbox{``$\alpha$ is inaccessible''}^L\}
-\end{equation} 
-\ece 
+\beq
+S = \{\alpha \in \kappa : In(\alpha)\}\label{eq:mahloness_l_eq_1}
+\eeq
+\beq
+T = \{\alpha \in \kappa : In(\alpha)^L\}\label{eq:mahloness_l_eq_2}
+\eeq
 Since inaccessible cardinals are inaccessible in $L$ from theorem \bref{theorem:inaccessible_in_l}, $S \subseteq T$.
 So if $T$ is stationary in $\kappa$, we are done. Suppose for contradiction that it is not the case. 
 Therefore there is a $C \subset \kappa$ satisfying $\mbox{``$C$ is a club set in $\kappa$''}^L$, but it is the case that $T \cap C = \emptyset$.
-But because $\mbox{``$C$ is a club set in $\kappa$''}$ is equivalent to a $\Delta_0$ formula, $\mbox{``$C$ is a club set in $\kappa$''}^M \iff \mbox{``$C$ is a club set in $\kappa$''}$, ergo $C$ is a club set in $\kappa$. But since it has o intersection with $T$, it can't have an intersection with a subset thereof, which contradicts the fact that $S$ is stationary in $\kappa$.
+But because $\mbox{``$C$ is a club set in $\kappa$''}$ is equivalent to a $\Delta_0$ formula, 
+\beq
+\mbox{``$C$ is a club set in $\kappa$''}^M \iff \mbox{``$C$ is a club set in $\kappa$'',}
+\eeq
+ergo $C$ is a club set in $\kappa$. But since it has o intersection with $T$, it can't have an intersection with a subset thereof, which contradicts the fact that $S$ is stationary in $\kappa$.
 
 $\kappa$ remains Mahlo in $L$.
 \end{proof}
@@ -794,9 +794,12 @@ This is proved in \cite{scott_measurable_constructible} or \cite{KanamoriBook}.
 % Measurable cardinals yield inconsistency with the \emph{Axiom of Constructibility}, which was shown by Dana S. Scott in his article \cite{scott_measurable_constructible}. 
 
 \subsection{Conclusion}
-To have an intuitive idea of this distinction, let us stress that every large cardinal property we have mentioned before measurability deals with the height of the cumulative hierarchy of sets.
+To have an intuitive idea of why apart from measurability, every large cardinal property we have established is absolute in $L$, let us stress that measurability is the only one that does not deal with the height of the cumulative hierarchy of sets.
 The assertion of the existence of an inaccessible cardinal can be informally rephrased as
 ``The universe of all sets is so big in terms of height, there are ordinals unreachable by the power set operation''\footnote{This approach is embodied in the definition of \sf{Q}–inaccessibility used by Lévy, see definition \bref{def:levy_inaccessible_q}, that can be understood as ``given a set theory with some means of traversing the cumulative hierarchy upwards, a cardinal is inaccessible with respect to \sf{Q} if it can't be reached by those means alone''.}. 
-Gödel's Constructible universe deals only with the width of the universe, which is kept as smell as possible, so there is no way it can be inconsistent with assertions that deal with height and have no implications in terms of width. Similarly, the Mahlo operation only deals with ordinals, therefore it's not surprising that it has no implications on width of the universe alone. 
+Gödel's Constructible universe deals only with the width of the universe, which is kept as small as possible, so there is no way it can be inconsistent with assertions that deal with height and have no implications in terms of width. Similarly, the Mahlo operation only deals with ordinals, therefore it's not surprising that it has no implications on width of the universe alone. 
+This is not the case with measurability. 
+Measurability is such a strong statement that even though it seems to explicitly speak of height only, 
+the existence of a measurable cardinal implies the existence of non–constructible subsets of $\omega$\footnote{See \cite{DrakeBook}, p. 196.}.
 
 % TODO ze meritelny resi sirku a ne vysku, ale nase karidnaly mluvi o vysce WATT
