@@ -1,4 +1,5 @@
 \section{Reflection And Large Cardinals}
+
 \begin{comment} % ======================================================================== //
 % TODO aspon par slov !!!
 
@@ -63,7 +64,7 @@ Because $f$ is continuous and $\lambda$ is limit, $f(\lambda) = \bigcup_{\gamma 
 Therefore $\lambda$ is limit, so is $f(\lambda)$.
 %So we have found $f(\beta)$ such that $f(\alpha) < f(\beta) < f(\lambda)$, therefore $f(\lambda)$ is a limit ordinal.\\
 
-\item This step will be proven using the transfinite induction.
+\item This step will be proved using the transfinite induction.
 Since $f$ is defined for all ordinals, there is an ordinal $\alpha$ such that $f(\emptyset) = \alpha$ and because $\emptyset$ is the least ordinal, (ii) holds for $\emptyset$.
 
 Suppose (ii) holds for some $\beta$ from the induction hypothesis. It then holds for $\beta+1$ because $f$ is strictly increasing. 
@@ -255,7 +256,7 @@ We have added the requirement that $\alpha$ is inaccessible, which trivially mea
 \beq
 \forall M_0 \exists \kappa (M_0 \subseteq V_\kappa \et \langle V_\kappa, \in \rangle~\models~\sf{ZFC} \et (\varphi(p_1, \ldots, p_n) \iff \varphi(p_1, \ldots, p_n)^{V_\kappa}))
 \eeq
-because we have proven in the last section that for an inaccessible $\kappa$,
+because we have proved in the last section that for an inaccessible $\kappa$,
 \beq
 \langle V_\kappa, \in \rangle~\models~\sf{ZFC}\mbox{.}
 \eeq
@@ -371,7 +372,7 @@ Clearly if $A$ is the class of inaccessibles, $H^{\alpha}(A)$ is the class of $\
 \begin{definition}{(Diagonal Mahlo Operation)}\label{def:diagonal_mahlo_operation}\\
 Let $A$ be a class of ordinals. Then the \emph{diagonal Mahlo operation} is defined as follows:
 \beq
-H^{\Delta}(A) = \{\alpha: \forall \beta < \alpha (\alpha \in H^{\beta}(X))\}\mbox{.}
+H^{\Delta}(A) = \{\alpha \in Ord: \forall \beta < \alpha (\alpha \in H^{\beta}(X))\}\mbox{.}
 \eeq
 \end{definition}
 
@@ -776,5 +777,17 @@ $\kappa$ remains Mahlo in $L$.
 
 It should be clear that the above process can be iterated over again. Since Mahlo cardinals are absolute in $L$, the same argument using stationary sets can be carried out for hyper–Mahlo cardinals and so on. It is clear that since a regular and an inaccessible cardinal in consistent with \emph{Constructibility}, so should be the higher properties acquired from assuring the existence of regular, inaccessible and Mahlo fixed points of normal functions.
 
-% TODO odkaz kde pisou ze Measurable neni konzistentni s L
-% TODO ze meritelny resi sirku a ne vysku, ale nase karidnaly mluvi o vysce
+
+\begin{theorem}
+If there is a measurable cardinal, then $V \neq L$.
+\end{theorem}
+This is proved in \cite{scott_measurable_constructible} or \cite{KanamoriBook}.
+% Measurable cardinals yield inconsistency with the \emph{Axiom of Constructibility}, which was shown by Dana S. Scott in his article \cite{scott_measurable_constructible}. 
+
+\subsection{Conclusion}
+To have an intuitive idea of this distinction, let us stress that every large cardinal property we have mentioned before measurability deals with the height of the cumulative hierarchy of sets.
+The assertion of the existence of an inaccessible cardinal can be informally rephrased as
+``The universe of all sets is so big in terms of height, there are ordinals unreachable by the power set operation''\footnote{This approach is embodied in the definition of \sf{Q}–inaccessibility used by Lévy, see definition \bref{def:levy_inaccessible_q}, that can be understood as ``given a set theory with some means of traversing the cumulative hierarchy upwards, a cardinal is inaccessible with respect to \sf{Q} if it can't be reached by those means alone''.}. 
+Gödel's Constructible universe deals only with the width of the universe, which is kept as smell as possible, so there is no way it can be inconsistent with assertions that deal with height and have no implications in terms of width. Similarly, the Mahlo operation only deals with ordinals, therefore it's not surprising that it has no implications on width of the universe alone. 
+
+% TODO ze meritelny resi sirku a ne vysku, ale nase karidnaly mluvi o vysce WATT

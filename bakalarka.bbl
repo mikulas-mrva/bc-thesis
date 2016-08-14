@@ -26,6 +26,13 @@ Hamilton, A. (1988).
 \newblock {\em Logic for Mathematicians}.
 \newblock Cambridge University Press.
 
+\bibitem[Hellman, 2010]{HellmanInfinite}
+Hellman, G. (2010).
+\newblock Infinite possibilities and possibilities of infinity.
+\newblock \url{
+  http://www.tc.umn.edu/~hellm001/Publications/InfinitePossibilitiesPossibilitiesofInfinity.pdf}.
+\newblock Accessed: 2016-07-11.
+
 \bibitem[Jech, 2006]{JechBook}
 Jech, T. (2006).
 \newblock {\em Set theory}.
@@ -38,6 +45,11 @@ Kanamori, A. (2003).
   beginnings}.
 \newblock Springer Monographs in Mathematics. Springer-Verlag Berlin
   Heidelberg, 2 edition.
+
+\bibitem[Koellner, 2009]{Koellner2009ORP}
+Koellner, P. (2009).
+\newblock On reflection principles.
+\newblock {\em Annals of Pure and Applied Logic}, 157(2):206--219.
 
 \bibitem[Kunen, 1983]{Kunen_independence}
 Kunen, K. (1983).
@@ -59,6 +71,12 @@ Monk, D. (2011).
 Pinter, C.~C. (2014).
 \newblock {\em A Book of Set Theory}.
 \newblock Dover Books on Mathematics. Dover Publications.
+
+\bibitem[Scott, 1961]{scott_measurable_constructible}
+Scott, D. (1961).
+\newblock Measurable cardinals and constructible sets.
+\newblock {\em  Bulletin de l' Académie Polonaise des Sciences, Série des
+  sciences mathématiques, astronomiques et physiques}, 9.
 
 \bibitem[Tait, 2005]{Tait_constructingcardinals}
 Tait, W.~W. (2005).
